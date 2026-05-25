@@ -20,7 +20,7 @@ const FEATURED: { name: string; category: FeaturedRepo["category"] }[] = [
   { name: "algolens", category: "Frontend" },
   { name: "Track-Person-App", category: "Mobile" },
   { name: "chat-app", category: "Frontend" },
-  { name: "Smart-Brain", category: "Frontend" },
+  { name: "Smart-Brain", category: "AI" },
   { name: "Note_Taking_App", category: "Frontend" },
   { name: "Daily-Coding-Problem-Solutions", category: "CP" },
   { name: "Codeforces-Contests", category: "CP" },

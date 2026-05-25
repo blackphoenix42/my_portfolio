@@ -20,6 +20,7 @@ import { PostureDemo } from "@/components/projects/posture-demo";
 import { XmaiPipelineDemo } from "@/components/projects/xmai-demo";
 import { TrackPersonDemo } from "@/components/projects/track-person-demo";
 import { SmartBrainDemo } from "@/components/projects/smart-brain-demo";
+import { SkillChip } from "@/components/logos/skill-chip";
 
 const DIAGRAMS: Record<string, () => React.ReactElement> = {
   xmai: () => <XmaiPipeline />,
@@ -187,8 +188,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <h2 className="text-base font-semibold tracking-tight">Stack</h2>
           <ul className="mt-3 flex flex-wrap gap-1.5">
             {project.stack.map((s) => (
-              <li key={s} className="chip">
-                {s}
+              <li key={s}>
+                <SkillChip name={s} accent="cyan" />
               </li>
             ))}
           </ul>

@@ -1,27 +1,35 @@
 "use client";
 
-import { Briefcase, Check } from "lucide-react";
+import { Briefcase, Check, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRecruiterMode } from "./recruiter-mode";
 import { cn } from "@/lib/utils";
 
+const TOAST_MS = 4200;
+
 export function RecruiterToggle() {
   const { recruiter, toggle } = useRecruiterMode();
-  const [justEnabled, setJustEnabled] = useState(false);
+  const [toast, setToast] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    if (!justEnabled) return;
-    const t = setTimeout(() => setJustEnabled(false), 4200);
+    if (!toast) return;
+    const t = setTimeout(() => setToast(false), TOAST_MS);
     return () => clearTimeout(t);
-  }, [justEnabled]);
+  }, [toast]);
 
   const handleClick = () => {
-    if (!recruiter) setJustEnabled(true);
+    if (!recruiter) setToast(true);
+    else setToast(false);
     toggle();
   };
 
   return (
-    <div className="relative inline-flex items-center">
+    <>
       <button
         type="button"
         onClick={handleClick}
@@ -53,19 +61,53 @@ export function RecruiterToggle() {
           </>
         )}
       </button>
-      {/* Brief one-time explainer right after enabling. */}
-      {justEnabled && recruiter && (
-        <div
-          role="status"
-          className="absolute right-0 top-full z-50 mt-2 w-72 rounded-lg border border-accent-emerald/40 bg-bg-elev p-3 text-xs shadow-xl"
-        >
-          <p className="font-semibold text-accent-emerald">Recruiter mode enabled</p>
-          <p className="mt-1.5 leading-relaxed text-fg-muted">
-            Optimized for time-pressed reviewers — résumé, contact and impact bubble to the top.
-            Preference is saved locally.
-          </p>
-        </div>
-      )}
-    </div>
+
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {toast && recruiter && (
+              <motion.div
+                key="recruiter-toast"
+                role="status"
+                aria-live="polite"
+                initial={{ opacity: 0, y: -16, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -12, scale: 0.96 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="fixed right-4 top-28 z-[100] w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-lg border border-accent-emerald/40 bg-bg-elev p-3 text-xs shadow-2xl backdrop-blur sm:right-6"
+              >
+                <div className="flex items-start gap-2">
+                  <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-accent-emerald/15 text-accent-emerald">
+                    <Check className="h-3 w-3" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold text-accent-emerald">Recruiter mode enabled</p>
+                    <p className="mt-1 leading-relaxed text-fg-muted">
+                      Optimized for time-pressed reviewers — résumé, contact and impact bubble to
+                      the top. Preference is saved locally.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setToast(false)}
+                    aria-label="Dismiss"
+                    className="flex-none rounded p-0.5 text-fg-subtle transition-colors hover:bg-bg-sunken hover:text-fg"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+                {/* auto-dismiss progress bar */}
+                <motion.div
+                  className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-accent-emerald"
+                  initial={{ scaleX: 1 }}
+                  animate={{ scaleX: 0 }}
+                  transition={{ duration: TOAST_MS / 1000, ease: "linear" }}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
+        )}
+    </>
   );
 }

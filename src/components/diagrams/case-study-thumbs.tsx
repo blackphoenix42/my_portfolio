@@ -283,49 +283,89 @@ export function PostureMini() {
         postureiq · live pose tracking · 60 fps
       </text>
       <line x1="40" y1="180" x2="440" y2="180" stroke={BD} strokeDasharray="3 4" />
-      <motion.g
-        animate={reduce ? undefined : { y: [0, 18, 0] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        transform="translate(205,0)"
-      >
-        <circle cx="60" cy="60" r="14" fill={BG} stroke={A} strokeWidth="1.8" />
-        <circle cx="60" cy="60" r="2.5" fill={A} />
-        <line x1="60" y1="74" x2="60" y2="120" stroke={V} strokeWidth="3" />
-        {/* arms: animate to "hands forward" during the rep bottom */}
+      {/* squat figure: feet stay planted, knees track outward, hips drop, torso leans */}
+      <g transform="translate(205,0)">
+        {/* head */}
+        <motion.circle
+          cx="60"
+          r="11"
+          fill={BG}
+          stroke={A}
+          strokeWidth="1.8"
+          animate={reduce ? undefined : { cy: [56, 92, 56] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.circle
+          cx="60"
+          r="2"
+          fill={A}
+          animate={reduce ? undefined : { cy: [56, 92, 56] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* spine (head → hips); slight forward lean at bottom */}
         <motion.line
-          x1="60"
-          y1="86"
+          stroke={V}
+          strokeWidth="3"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [60, 56, 60],
+                  y1: [67, 103, 67],
+                  x2: [60, 60, 60],
+                  y2: [120, 146, 120],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* arms: hang at sides → swing forward for balance at bottom */}
+        <motion.line
           stroke={E}
           strokeWidth="2.5"
-          animate={reduce ? undefined : { x2: [32, 22, 32], y2: [92, 70, 92] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [60, 56, 60],
+                  y1: [80, 116, 80],
+                  x2: [42, 30, 42],
+                  y2: [108, 110, 108],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.line
-          x1="60"
-          y1="86"
           stroke={E}
           strokeWidth="2.5"
-          animate={reduce ? undefined : { x2: [88, 98, 88], y2: [92, 70, 92] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [60, 56, 60],
+                  y1: [80, 116, 80],
+                  x2: [78, 90, 78],
+                  y2: [108, 110, 108],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
-        <line x1="46" y1="120" x2="74" y2="120" stroke={A} strokeWidth="2.5" />
-        {/* legs: upper (hip→knee) and lower (knee→ankle) move together */}
+        {/* pelvis line */}
         <motion.line
+          stroke={A}
+          strokeWidth="2.5"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  y1: [120, 146, 120],
+                  y2: [120, 146, 120],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
           x1="46"
-          y1="120"
-          stroke={M}
-          strokeWidth="2.5"
-          animate={reduce ? undefined : { x2: [38, 28, 38], y2: [148, 144, 148] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          x2="74"
         />
-        <motion.line
-          x1="74"
-          y1="120"
-          stroke={M}
-          strokeWidth="2.5"
-          animate={reduce ? undefined : { x2: [82, 92, 82], y2: [148, 144, 148] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        />
+        {/* upper leg L (hip → knee) — knee moves outward & forward at bottom */}
         <motion.line
           stroke={M}
           strokeWidth="2.5"
@@ -333,14 +373,15 @@ export function PostureMini() {
             reduce
               ? undefined
               : {
-                  x1: [38, 28, 38],
-                  y1: [148, 144, 148],
-                  x2: [34, 30, 34],
-                  y2: [178, 176, 178],
+                  x1: [46, 46, 46],
+                  y1: [120, 146, 120],
+                  x2: [40, 26, 40],
+                  y2: [150, 158, 150],
                 }
           }
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
+        {/* upper leg R */}
         <motion.line
           stroke={M}
           strokeWidth="2.5"
@@ -348,33 +389,79 @@ export function PostureMini() {
             reduce
               ? undefined
               : {
-                  x1: [82, 92, 82],
-                  y1: [148, 144, 148],
-                  x2: [86, 90, 86],
-                  y2: [178, 176, 178],
+                  x1: [74, 74, 74],
+                  y1: [120, 146, 120],
+                  x2: [80, 94, 80],
+                  y2: [150, 158, 150],
                 }
           }
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
-        {[
-          [60, 60],
-          [60, 86],
-          [46, 120],
-          [74, 120],
-          [34, 178],
-          [86, 178],
-        ].map(([x, y], i) => (
-          <motion.circle
-            key={i}
-            cx={x}
-            cy={y}
-            r="2.6"
-            fill={E}
-            animate={reduce ? undefined : { opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.1 }}
-          />
-        ))}
-      </motion.g>
+        {/* lower leg L (knee → ankle) — ankle planted */}
+        <motion.line
+          stroke={M}
+          strokeWidth="2.5"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [40, 26, 40],
+                  y1: [150, 158, 150],
+                  x2: [38, 38, 38],
+                  y2: [178, 178, 178],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* lower leg R */}
+        <motion.line
+          stroke={M}
+          strokeWidth="2.5"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [80, 94, 80],
+                  y1: [150, 158, 150],
+                  x2: [82, 82, 82],
+                  y2: [178, 178, 178],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* feet: planted */}
+        <line x1="30" y1="178" x2="46" y2="178" stroke={A} strokeWidth="3" />
+        <line x1="74" y1="178" x2="90" y2="178" stroke={A} strokeWidth="3" />
+        {/* pose-estimation landmarks — track the moving knees + hips */}
+        <motion.circle
+          r="2.6"
+          fill={E}
+          animate={reduce ? undefined : { cx: [40, 26, 40], cy: [150, 158, 150] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.circle
+          r="2.6"
+          fill={E}
+          animate={reduce ? undefined : { cx: [80, 94, 80], cy: [150, 158, 150] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.circle
+          cx="46"
+          r="2.6"
+          fill={E}
+          animate={reduce ? undefined : { cy: [120, 146, 120] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.circle
+          cx="74"
+          r="2.6"
+          fill={E}
+          animate={reduce ? undefined : { cy: [120, 146, 120] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <circle cx="38" cy="178" r="2.6" fill={E} />
+        <circle cx="82" cy="178" r="2.6" fill={E} />
+      </g>
       <g>
         <rect x="40" y="50" width="120" height="92" rx="6" fill={BG} stroke={BD} />
         <text x="50" y="68" style={{ fontSize: 10, fill: FG_S, fontFamily: "var(--font-mono)" }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search, ArrowUpRight, Command as CmdIcon } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -215,49 +216,18 @@ export function SiteHeader() {
 
 function Logo() {
   return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
+    <span
       aria-hidden="true"
-      className="transition-transform group-hover:-rotate-6 group-hover:scale-110"
+      className="relative inline-flex h-8 w-8 overflow-hidden rounded-md border border-border bg-bg-sunken/60 transition-transform group-hover:-rotate-6 group-hover:scale-110"
     >
-      <defs>
-        <linearGradient id="phx-flame" x1="0.5" y1="1" x2="0.5" y2="0">
-          <stop offset="0%" stopColor="#fbbf24" />
-          <stop offset="40%" stopColor="#f97316" />
-          <stop offset="80%" stopColor="#dc2626" />
-          <stop offset="100%" stopColor="hsl(var(--accent-violet))" />
-        </linearGradient>
-        <linearGradient id="phx-wing" x1="0" y1="0.5" x2="1" y2="0.5">
-          <stop offset="0%" stopColor="hsl(var(--accent-cyan))" stopOpacity="0" />
-          <stop offset="50%" stopColor="hsl(var(--accent-cyan))" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="hsl(var(--accent-cyan))" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M5 18 Q10 12 16 14"
-        stroke="url(#phx-wing)"
-        strokeWidth="1.4"
-        fill="none"
-        strokeLinecap="round"
+      <Image
+        src="/assets/logos/phoenix.jpg"
+        alt=""
+        fill
+        sizes="32px"
+        className="object-cover"
+        priority
       />
-      <path
-        d="M27 18 Q22 12 16 14"
-        stroke="url(#phx-wing)"
-        strokeWidth="1.4"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M16 4 C 13 9 11 11 11 15 C 11 17 12.2 18.5 13.6 19.2 C 12.8 19.8 12.4 20.7 12.4 21.6 C 12.4 24 14 26 16 26 C 18 26 19.6 24 19.6 21.6 C 19.6 20.7 19.2 19.8 18.4 19.2 C 19.8 18.5 21 17 21 15 C 21 11 19 9 16 4 Z"
-        fill="url(#phx-flame)"
-      />
-      <path
-        d="M16 9 C 14.5 12 13.5 13.5 13.5 15.5 C 13.5 17 14.5 18 16 18 C 17.5 18 18.5 17 18.5 15.5 C 18.5 13.5 17.5 12 16 9 Z"
-        fill="#fde68a"
-        opacity="0.55"
-      />
-    </svg>
+    </span>
   );
 }

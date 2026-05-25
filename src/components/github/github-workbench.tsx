@@ -5,10 +5,21 @@ import { motion } from "framer-motion";
 import { Github, GitFork, Star } from "lucide-react";
 import type { FeaturedRepo } from "@/lib/github";
 
-const CATEGORIES = ["All", "AI", "Systems", "Frontend", "Mobile", "CP", "Blockchain"] as const;
-
 export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
-  const [cat, setCat] = useState<(typeof CATEGORIES)[number]>("All");
+  // Build categories dynamically so empty filters never show.
+  const categories = useMemo(() => {
+    const order: FeaturedRepo["category"][] = [
+      "AI",
+      "Systems",
+      "Frontend",
+      "Mobile",
+      "CP",
+      "Blockchain",
+    ];
+    const present = new Set(repos.map((r) => r.category));
+    return ["All", ...order.filter((c) => present.has(c))] as const;
+  }, [repos]);
+  const [cat, setCat] = useState<string>("All");
   const filtered = useMemo(
     () => (cat === "All" ? repos : repos.filter((r) => r.category === cat)),
     [cat, repos],
@@ -30,7 +41,7 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
             </p>
           </div>
           <ul className="flex flex-wrap gap-1.5">
-            {CATEGORIES.map((c) => (
+            {categories.map((c) => (
               <li key={c}>
                 <button
                   onClick={() => setCat(c)}

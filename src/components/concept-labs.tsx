@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Beaker, Github } from "lucide-react";
 import { concepts } from "@/content/concepts";
 import { accentText, cn } from "@/lib/utils";
+import { SkillChip } from "@/components/logos/skill-chip";
 
 const statusStyles: Record<string, string> = {
   design: "text-accent-amber border-accent-amber/40 bg-accent-amber/10",
@@ -52,8 +53,8 @@ export function ConceptLabs() {
               <p className="mt-2 text-sm text-fg-muted">{c.description}</p>
               <ul className="mt-4 flex flex-wrap gap-1.5">
                 {c.stack.map((s) => (
-                  <li key={s} className="chip">
-                    {s}
+                  <li key={s}>
+                    <SkillChip name={s} accent={c.accent} />
                   </li>
                 ))}
               </ul>
