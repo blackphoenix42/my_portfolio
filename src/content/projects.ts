@@ -108,7 +108,89 @@ export const projects: Project[] = [
     ],
     stack: ["TypeScript", "React", "Canvas", "FFmpeg-WASM", "Playwright", "Storybook", "Sentry"],
     links: [{ label: "GitHub", href: "https://github.com/blackphoenix42/algolens" }],
-    related: ["xmai"],
+    related: ["xmai", "postureiq"],
+  },
+  {
+    slug: "postureiq",
+    title: "PostureIQ — Real-Time ML Posture Analysis",
+    tagline:
+      "A 60 FPS computer-vision coaching system that scores exercise form with deterministic feedback loops.",
+    category: "Computer Vision × ML Product",
+    categories: ["AI", "Frontend"],
+    status: "open-source",
+    tags: ["Python", "OpenCV", "MediaPipe", "BlazePose", "NumPy", "Kalman"],
+    summary:
+      "PostureIQ is an ML-powered posture and form-coaching system built around real-time pose estimation, temporal smoothing, confidence gating and rep-quality scoring for exercise feedback.",
+    problem:
+      "Exercise-form feedback is usually delayed, subjective or dependent on a trainer being present. A useful assistant needs to infer pose continuously and provide clear feedback without jitter or false positives.",
+    challenge:
+      "Maintain real-time capture, inference and rendering while making noisy pose landmarks stable enough for actionable coaching and automated quality scoring.",
+    approach: [
+      "Built a deterministic capture-to-infer-to-render loop with OpenCV and MediaPipe/BlazePose.",
+      "Added temporal smoothing, Kalman filtering, confidence gating, adaptive thresholds and 3D landmark checks to reduce noisy corrections.",
+      "Implemented rep-quality scoring around ROM, tempo and symmetry with audio/visual feedback cues.",
+      "Instrumented FPS, latency and error telemetry with dashboards for repeatable performance analysis.",
+      "Added pytest coverage, golden traces and a CLI for reproducible validation runs.",
+    ],
+    impact: [
+      { label: "Frame rate", value: "60 FPS" },
+      { label: "Accuracy", value: ">95%" },
+      { label: "Quality", value: "pytest · golden traces · CLI" },
+    ],
+    stack: ["Python", "OpenCV", "MediaPipe", "BlazePose", "NumPy", "pytest"],
+    related: ["algolens"],
+  },
+  {
+    slug: "track-person-app",
+    title: "Track Person App — Movement Tracking & Visualization",
+    tagline:
+      "A React Native movement-tracking app for capturing and visualizing person-location trails.",
+    category: "Mobile × Data Visualization",
+    categories: ["Frontend"],
+    status: "open-source",
+    tags: ["React Native", "MongoDB", "NoSQL", "Tracking", "Visualization"],
+    summary:
+      "A mobile-first tracking and visualization project that stores movement events in MongoDB and renders location history for inspection.",
+    problem:
+      "Movement data is hard to reason about from raw coordinates alone; users need a visual trail and a clean data model for location events.",
+    challenge:
+      "Design a lightweight mobile interface and persistence model that can capture, store and replay movement history without turning the app into a heavyweight GIS tool.",
+    approach: [
+      "Built the mobile surface in React Native around a simple capture and replay workflow.",
+      "Modeled location samples in MongoDB for flexible movement-history queries.",
+      "Added visualization views for scanning movement paths and spot-checking recorded sessions.",
+    ],
+    impact: [
+      { label: "Platform", value: "React Native" },
+      { label: "Storage", value: "MongoDB" },
+    ],
+    stack: ["React Native", "MongoDB", "JavaScript", "NoSQL"],
+  },
+  {
+    slug: "smart-brain",
+    title: "Smart Brain — Face Detection App",
+    tagline:
+      "A full-stack face-detection app integrating Clarifai inference with an Express/React product surface.",
+    category: "Full-Stack × Computer Vision",
+    categories: ["AI", "Frontend"],
+    status: "open-source",
+    tags: ["React", "Express", "Clarifai API", "JavaScript", "Node.js"],
+    summary:
+      "Smart Brain is a full-stack application that sends image URLs to Clarifai, receives face-detection predictions and renders bounding boxes in a React interface.",
+    problem:
+      "Computer-vision APIs are powerful but abstract; a useful learning project needs to make the request/response loop visible and interactive.",
+    challenge:
+      "Integrate a third-party ML API with a clean backend boundary while keeping the frontend responsive and easy to understand.",
+    approach: [
+      "Built an Express API layer for Clarifai requests and response normalization.",
+      "Created React UI flows for image submission, prediction rendering and result feedback.",
+      "Modeled the app so API integration details remain isolated from the presentation layer.",
+    ],
+    impact: [
+      { label: "ML API", value: "Clarifai" },
+      { label: "Stack", value: "React · Express" },
+    ],
+    stack: ["React", "Express", "Node.js", "Clarifai API", "JavaScript"],
   },
   {
     slug: "tezos-premier-league",
@@ -118,23 +200,25 @@ export const projects: Project[] = [
     category: "Web3 × Product Engineering",
     categories: ["Blockchain", "Frontend"],
     status: "open-source",
-    tags: ["Tezos", "Smart Contracts", "React", "Web3"],
+    tags: ["Tezos", "Smart Contracts", "React", "Web3", "NFT", "IPFS"],
     summary:
-      "A blockchain-based gaming project on the Tezos network. The work was selected for a $10,000 award to support continued development.",
+      "A blockchain-based PvP gaming project and NFT marketplace on the Tezos network. The work was selected for a $10,000 award to support continued development.",
     problem:
       "Designing engaging on-chain gaming experiences while keeping the user experience approachable on a non-EVM ecosystem.",
     challenge:
       "Translate game mechanics into Tezos primitives and deliver a usable frontend that hides chain complexity from players.",
     approach: [
       "Designed product flows around bracket-style gameplay.",
-      "Built a React frontend integrating with Tezos infrastructure.",
+      "Built a React frontend integrating with Tezos infrastructure, Taquito and SmartPy contracts.",
+      "Used Pinata/IPFS for NFT metadata and added safer key-handling flows around wallet interactions.",
+      "Added rate-limited RPC handling and resilient contract-call patterns for a smoother player experience.",
       "Iterated on UX based on player feedback from early access.",
     ],
     impact: [
       { label: "Recognition", value: "$10,000 award" },
       { label: "Ecosystem", value: "Tezos blockchain" },
     ],
-    stack: ["React", "Tezos", "Web3"],
+    stack: ["React", "Tezos", "SmartPy", "Taquito", "Pinata/IPFS", "ECDSA"],
     links: [{ label: "GitHub", href: "https://github.com/blackphoenix42/tpl-frontend" }],
   },
 ];

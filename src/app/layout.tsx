@@ -81,7 +81,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     email: `mailto:${SITE.email}`,
     jobTitle: SITE.role,
     worksFor: { "@type": "Organization", name: SITE.company },
-    sameAs: [SITE.github, SITE.linkedin, SITE.codechef],
+    sameAs: [
+      SITE.github,
+      SITE.linkedin,
+      SITE.codechef,
+      SITE.codeforces,
+      SITE.leetcode,
+      SITE.hackerrank,
+    ],
   };
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrains.variable}`}>

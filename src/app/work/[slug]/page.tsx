@@ -4,7 +4,53 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getProject, projects } from "@/content/projects";
 import { XmaiArchitecture } from "@/components/diagrams/xmai-architecture";
+import {
+  XmaiPipeline,
+  FlamegraphMini,
+  AlgoMini,
+  ChainBracket,
+  PostureMini,
+  TrackMini,
+  BrainMini,
+} from "@/components/diagrams/case-study-thumbs";
 import { AlgoLensDemo } from "@/components/projects/algolens-demo";
+import { XceliumDemo } from "@/components/projects/xcelium-demo";
+import { TezosBracketDemo } from "@/components/projects/tezos-bracket-demo";
+import { PostureDemo } from "@/components/projects/posture-demo";
+
+const DIAGRAMS: Record<string, () => React.ReactElement> = {
+  xmai: () => <XmaiPipeline />,
+  "xcelium-optimization": () => <FlamegraphMini />,
+  algolens: () => <AlgoMini />,
+  postureiq: () => <PostureMini />,
+  "track-person-app": () => <TrackMini />,
+  "smart-brain": () => <BrainMini />,
+  "tezos-premier-league": () => <ChainBracket />,
+};
+
+const DEMOS: Record<string, { title: string; subtitle: string; render: () => React.ReactElement }> =
+  {
+    algolens: {
+      title: "Interactive demo",
+      subtitle: "A miniature visualizer of the AlgoLens execution model.",
+      render: () => <AlgoLensDemo />,
+    },
+    "xcelium-optimization": {
+      title: "Interactive demo",
+      subtitle: "Drag the slider to see profiles compress as RTL/runtime optimizations land.",
+      render: () => <XceliumDemo />,
+    },
+    "tezos-premier-league": {
+      title: "Interactive demo",
+      subtitle: "Click play to simulate a deterministic on-chain PvP bracket.",
+      render: () => <TezosBracketDemo />,
+    },
+    postureiq: {
+      title: "Interactive demo",
+      subtitle: "Live-simulated rep quality with confidence gating.",
+      render: () => <PostureDemo />,
+    },
+  };
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -30,7 +76,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         href="/work"
         className="inline-flex items-center gap-1 text-sm text-fg-muted hover:text-fg"
       >
-        <ArrowLeft className="h-3.5 w-3.5" /> All case studies
+        <ArrowLeft className="h-3.5 w-3.5" /> All work
       </Link>
 
       <header className="mt-6 max-w-3xl">
@@ -69,15 +115,23 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      {project.slug === "algolens" && (
+      {project.slug !== "xmai" && DIAGRAMS[project.slug] && (
         <section className="mt-12">
-          <h2 className="section-title">Interactive demo</h2>
-          <p className="mt-2 text-sm text-fg-muted">
-            A miniature visualizer of the AlgoLens execution model.
+          <h2 className="section-title">Diagram</h2>
+          <p className="mt-2 text-sm text-fg-subtle">
+            Conceptual visualization of the project&apos;s core idea.
           </p>
-          <div className="mt-6">
-            <AlgoLensDemo />
+          <div className="card mt-6 p-6">
+            <div className="h-56 sm:h-72">{DIAGRAMS[project.slug]!()}</div>
           </div>
+        </section>
+      )}
+
+      {DEMOS[project.slug] && (
+        <section className="mt-12">
+          <h2 className="section-title">{DEMOS[project.slug]!.title}</h2>
+          <p className="mt-2 text-sm text-fg-muted">{DEMOS[project.slug]!.subtitle}</p>
+          <div className="mt-6">{DEMOS[project.slug]!.render()}</div>
         </section>
       )}
 

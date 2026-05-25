@@ -12,9 +12,13 @@ export default function SkillsPage() {
     <div>
       <header className="container-tight pt-16">
         <p className="mono-label">/ skills</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Engineering arsenal</h1>
+        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Engineering spectrum</h1>
+        <p className="mt-3 max-w-2xl text-fg-muted">
+          Capability clusters spanning low-level performance, intelligent systems, distributed
+          backends, product engineering, infrastructure and reliability.
+        </p>
       </header>
-      <EngineeringSpectrum />
+      <EngineeringSpectrum hideHeader />
     </div>
   );
 }

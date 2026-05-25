@@ -13,14 +13,19 @@ export function RecruiterToggle() {
       aria-pressed={recruiter}
       title="Toggle Recruiter Mode"
       className={cn(
-        "hidden items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs transition-colors sm:inline-flex",
+        "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs transition-colors",
         recruiter
-          ? "border-accent-emerald/50 bg-accent-emerald/10 text-accent-emerald"
+          ? "border-accent-emerald/50 bg-accent-emerald/10 text-accent-emerald shadow-[0_0_0_1px_hsl(var(--accent-emerald)/0.25)]"
           : "border-border text-fg-muted hover:border-accent-cyan/40 hover:text-fg",
       )}
     >
       <Briefcase className="h-3.5 w-3.5" />
-      Recruiter
+      <span className="hidden sm:inline">Recruiter</span>
+      {recruiter && (
+        <span className="hidden sm:inline" aria-hidden>
+          · ON
+        </span>
+      )}
     </button>
   );
 }

@@ -125,10 +125,10 @@ export function HeroVisualization() {
             />
             <circle r="3" fill={n.accent} />
             <text
-              y="-18"
+              y="-22"
               textAnchor="middle"
               className="fill-current font-mono"
-              style={{ fontSize: 10, fill: "hsl(var(--fg-muted))" }}
+              style={{ fontSize: 16, fontWeight: 600, fill: "hsl(var(--fg))" }}
             >
               {n.label}
             </text>

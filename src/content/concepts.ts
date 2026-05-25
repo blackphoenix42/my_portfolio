@@ -5,6 +5,9 @@ export type Concept = {
   description: string;
   stack: string[];
   accent: "cyan" | "violet" | "emerald" | "amber";
+  repo: string;
+  status: "design" | "prototyping" | "in-development";
+  eta?: string;
 };
 
 export const concepts: Concept[] = [
@@ -17,6 +20,9 @@ export const concepts: Concept[] = [
       "An assistant that ingests OpenTelemetry traces and metrics, builds a queryable trace knowledge graph, and uses LLM reasoning to triage latency regressions and propose hypotheses with evidence.",
     stack: ["Go", "OpenTelemetry", "Kafka", "ClickHouse", "LLM / RAG", "React"],
     accent: "cyan",
+    repo: "https://github.com/blackphoenix42/tracemind",
+    status: "design",
+    eta: "Q3 2026",
   },
   {
     slug: "silicongraph",
@@ -27,6 +33,9 @@ export const concepts: Concept[] = [
       "A WebAssembly-powered explorer that lets engineers traverse RTL dependency graphs, highlight optimization candidates and run what-if transformations directly in the browser.",
     stack: ["C++", "WebAssembly", "TypeScript", "WebGL", "Graph Viz"],
     accent: "violet",
+    repo: "https://github.com/blackphoenix42/silicongraph",
+    status: "prototyping",
+    eta: "Q4 2026",
   },
   {
     slug: "infralens",
@@ -37,5 +46,8 @@ export const concepts: Concept[] = [
       "A live system-design sandbox where you compose services, queues, caches and failure modes, then watch traffic, backpressure and consistency play out in real time.",
     stack: ["Go", "Redis", "PostgreSQL", "WebSockets", "React", "Canvas"],
     accent: "emerald",
+    repo: "https://github.com/blackphoenix42/infralens",
+    status: "in-development",
+    eta: "Q2 2026",
   },
 ];

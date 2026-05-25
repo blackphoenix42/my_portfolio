@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducedMotion } from "framer-motion";
-import { TechIcon, type TechName } from "@/components/logos/tech-icons";
+import { TECH_ICONS, TechIcon, type TechName } from "@/components/logos/tech-icons";
 
 const LOGOS: TechName[] = [
   "C++",
@@ -10,8 +10,8 @@ const LOGOS: TechName[] = [
   "Go",
   "Next.js",
   "React",
-  "Tailwind",
-  "Node.js" as TechName, // not present, will be filtered
+  "Tailwind CSS",
+  "Node.js",
   "GraphQL",
   "PostgreSQL",
   "MongoDB",
@@ -25,8 +25,6 @@ const LOGOS: TechName[] = [
   "GitHub",
 ];
 
-// Filter to those actually present in the icon set
-import { TECH_ICONS } from "@/components/logos/tech-icons";
 const ICONS = LOGOS.filter((l) => l in TECH_ICONS) as TechName[];
 
 export function TechMarquee() {

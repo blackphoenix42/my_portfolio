@@ -199,3 +199,239 @@ export function ChainBracket() {
     </svg>
   );
 }
+
+export function PostureMini() {
+  const reduce = useReducedMotion();
+  // Stylized stick-figure with pose landmarks
+  return (
+    <svg viewBox="0 0 480 180" className="h-full w-full">
+      {/* head */}
+      <motion.circle
+        cx="240"
+        cy="38"
+        r="14"
+        fill="hsl(var(--bg-elev))"
+        stroke="hsl(var(--accent-cyan))"
+        strokeWidth="1.5"
+        animate={reduce ? undefined : { cy: [38, 36, 38] }}
+        transition={{ duration: 1.6, repeat: Infinity }}
+      />
+      {/* spine */}
+      <line x1="240" y1="52" x2="240" y2="115" stroke="hsl(var(--accent-violet))" strokeWidth="2" />
+      {/* shoulders */}
+      <line x1="200" y1="68" x2="280" y2="68" stroke="hsl(var(--accent-cyan))" strokeWidth="2" />
+      {/* arms */}
+      <motion.line
+        x1="200"
+        y1="68"
+        x2="172"
+        y2="120"
+        stroke="hsl(var(--accent-emerald))"
+        strokeWidth="2"
+        animate={reduce ? undefined : { x2: [172, 178, 172] }}
+        transition={{ duration: 1.6, repeat: Infinity }}
+      />
+      <motion.line
+        x1="280"
+        y1="68"
+        x2="308"
+        y2="120"
+        stroke="hsl(var(--accent-emerald))"
+        strokeWidth="2"
+        animate={reduce ? undefined : { x2: [308, 302, 308] }}
+        transition={{ duration: 1.6, repeat: Infinity }}
+      />
+      {/* hips */}
+      <line x1="218" y1="115" x2="262" y2="115" stroke="hsl(var(--accent-cyan))" strokeWidth="2" />
+      {/* legs */}
+      <line x1="218" y1="115" x2="206" y2="160" stroke="hsl(var(--accent-amber))" strokeWidth="2" />
+      <line x1="262" y1="115" x2="274" y2="160" stroke="hsl(var(--accent-amber))" strokeWidth="2" />
+      {/* landmark dots */}
+      {[
+        [240, 38],
+        [200, 68],
+        [280, 68],
+        [172, 120],
+        [308, 120],
+        [218, 115],
+        [262, 115],
+        [206, 160],
+        [274, 160],
+      ].map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="3" fill="hsl(var(--accent-cyan))" />
+      ))}
+      {/* score badge */}
+      <rect
+        x="380"
+        y="20"
+        width="78"
+        height="34"
+        rx="6"
+        fill="hsl(var(--bg-elev))"
+        stroke="hsl(var(--accent-emerald))"
+      />
+      <text
+        x="419"
+        y="42"
+        textAnchor="middle"
+        style={{
+          fontSize: 14,
+          fontWeight: 600,
+          fill: "hsl(var(--accent-emerald))",
+          fontFamily: "var(--font-mono)",
+        }}
+      >
+        REP 12
+      </text>
+      <text
+        x="40"
+        y="172"
+        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
+      >
+        PostureIQ · 60 FPS pose landmarks
+      </text>
+    </svg>
+  );
+}
+
+export function TrackMini() {
+  const reduce = useReducedMotion();
+  // Simulated movement trail on a grid
+  const pts = [
+    [60, 130],
+    [120, 80],
+    [180, 110],
+    [240, 60],
+    [300, 100],
+    [360, 70],
+    [420, 110],
+  ];
+  const d = pts.map(([x, y], i) => (i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`)).join(" ");
+  return (
+    <svg viewBox="0 0 480 180" className="h-full w-full">
+      <defs>
+        <pattern id="grid-t" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" />
+        </pattern>
+      </defs>
+      <rect width="480" height="180" fill="url(#grid-t)" opacity="0.5" />
+      <path d={d} stroke="hsl(var(--accent-cyan))" strokeWidth="2" fill="none" opacity="0.85" />
+      {pts.map(([x, y], i) => (
+        <motion.circle
+          key={i}
+          cx={x}
+          cy={y}
+          r={i === pts.length - 1 ? 6 : 3.5}
+          fill={i === pts.length - 1 ? "hsl(var(--accent-violet))" : "hsl(var(--accent-cyan))"}
+          animate={reduce ? undefined : { scale: [1, 1.2, 1] }}
+          transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.12 }}
+          style={{ transformOrigin: `${x}px ${y}px` }}
+        />
+      ))}
+      <text
+        x="40"
+        y="172"
+        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
+      >
+        Track Person · movement trail
+      </text>
+    </svg>
+  );
+}
+
+export function BrainMini() {
+  const reduce = useReducedMotion();
+  return (
+    <svg viewBox="0 0 480 180" className="h-full w-full">
+      {/* image frame */}
+      <rect
+        x="40"
+        y="22"
+        width="220"
+        height="130"
+        rx="6"
+        fill="hsl(var(--bg-elev))"
+        stroke="hsl(var(--border))"
+      />
+      {/* face silhouette */}
+      <circle cx="150" cy="80" r="36" fill="hsl(var(--accent-cyan)/0.18)" />
+      <circle cx="138" cy="76" r="3" fill="hsl(var(--fg-muted))" />
+      <circle cx="162" cy="76" r="3" fill="hsl(var(--fg-muted))" />
+      <path
+        d="M 138 92 Q 150 100 162 92"
+        stroke="hsl(var(--fg-muted))"
+        strokeWidth="1.5"
+        fill="none"
+      />
+      {/* detection box */}
+      <motion.rect
+        x="110"
+        y="46"
+        width="80"
+        height="80"
+        rx="4"
+        fill="none"
+        stroke="hsl(var(--accent-emerald))"
+        strokeWidth="2"
+        animate={reduce ? undefined : { opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 1.4, repeat: Infinity }}
+      />
+      <text
+        x="114"
+        y="42"
+        style={{ fontSize: 10, fill: "hsl(var(--accent-emerald))", fontFamily: "var(--font-mono)" }}
+      >
+        face · 98%
+      </text>
+      {/* API call arrow */}
+      <line
+        x1="270"
+        y1="80"
+        x2="320"
+        y2="80"
+        stroke="hsl(var(--accent-violet))"
+        strokeWidth="2"
+        strokeDasharray="4 3"
+      />
+      <polygon points="320,76 330,80 320,84" fill="hsl(var(--accent-violet))" />
+      {/* Clarifai badge */}
+      <rect
+        x="335"
+        y="58"
+        width="105"
+        height="44"
+        rx="6"
+        fill="hsl(var(--bg-elev))"
+        stroke="hsl(var(--accent-violet))"
+      />
+      <text
+        x="387"
+        y="78"
+        textAnchor="middle"
+        style={{
+          fontSize: 11,
+          fontWeight: 600,
+          fill: "hsl(var(--fg))",
+          fontFamily: "var(--font-mono)",
+        }}
+      >
+        Clarifai
+      </text>
+      <text
+        x="387"
+        y="93"
+        textAnchor="middle"
+        style={{ fontSize: 9, fill: "hsl(var(--fg-muted))", fontFamily: "var(--font-mono)" }}
+      >
+        face-detect
+      </text>
+      <text
+        x="40"
+        y="172"
+        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
+      >
+        Smart Brain · vision API loop
+      </text>
+    </svg>
+  );
+}

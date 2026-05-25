@@ -4,9 +4,9 @@ import { projects } from "@/content/projects";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Work · Case Studies",
+  title: "Work",
   description:
-    "Selected case studies across performance engineering, agentic AI, developer tooling and product engineering.",
+    "Selected work across performance engineering, agentic AI, developer tooling and product engineering.",
 };
 
 export default function WorkIndexPage() {
@@ -14,7 +14,7 @@ export default function WorkIndexPage() {
     <div className="container-tight py-20">
       <header className="mb-10 max-w-2xl">
         <p className="mono-label">/ work</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Case studies</h1>
+        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Work</h1>
         <p className="mt-3 text-fg-muted">
           Deep-dives into selected engineering work — problem framing, technical decisions,
           trade-offs and measurable impact.

@@ -1,7 +1,7 @@
 "use client";
 
 import { Command } from "cmdk";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Search,
@@ -23,12 +23,12 @@ const groups = [
     heading: "Navigate",
     items: [
       { id: "home", label: "Home", icon: User, href: "/" },
-      { id: "work", label: "Work", icon: Layers, href: "/work" },
-      { id: "experience", label: "Experience", icon: Briefcase, href: "/experience" },
-      { id: "skills", label: "Skills", icon: Cpu, href: "/skills" },
-      { id: "cp", label: "Competitive Programming", icon: Code2, href: "/competitive-programming" },
-      { id: "lab", label: "Concept Lab", icon: Beaker, href: "/lab" },
       { id: "about", label: "About", icon: User, href: "/about" },
+      { id: "work", label: "Work", icon: Layers, href: "/work" },
+      { id: "skills", label: "Skills", icon: Cpu, href: "/skills" },
+      { id: "experience", label: "Experience", icon: Briefcase, href: "/experience" },
+      { id: "cp", label: "Competitive Programming", icon: Code2, href: "/competitive-programming" },
+      { id: "lab", label: "Roadmap", icon: Beaker, href: "/lab" },
       { id: "contact", label: "Contact", icon: Mail, href: "/contact" },
     ],
   },
@@ -36,6 +36,7 @@ const groups = [
 
 export function CommandMenu() {
   const [open, setOpen] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -55,6 +56,12 @@ export function CommandMenu() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const frame = requestAnimationFrame(() => inputRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [open]);
+
   if (!open) return null;
 
   const go = (href: string) => {
@@ -68,17 +75,19 @@ export function CommandMenu() {
       aria-modal="true"
       aria-label="Command menu"
       className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 pt-[10vh] backdrop-blur-sm"
-      onClick={() => setOpen(false)}
     >
-      <div
-        className="w-full max-w-xl overflow-hidden rounded-xl border border-border bg-bg-elev shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <Command label="Command Menu">
+      <button
+        type="button"
+        aria-label="Close command menu"
+        className="absolute inset-0 cursor-default"
+        onClick={() => setOpen(false)}
+      />
+      <div className="relative z-10 w-full max-w-xl overflow-hidden rounded-xl border border-border bg-bg-elev shadow-2xl">
+        <Command label="Command Menu" shouldFilter>
           <div className="flex items-center gap-2 border-b border-border px-3">
             <Search className="h-4 w-4 text-fg-subtle" />
             <Command.Input
-              autoFocus
+              ref={inputRef}
               placeholder="Search projects, skills, pages…"
               className="h-12 w-full bg-transparent text-sm text-fg outline-none placeholder:text-fg-subtle"
             />
@@ -110,7 +119,7 @@ export function CommandMenu() {
               </Command.Group>
             ))}
             <Command.Group
-              heading="Projects"
+              heading="Work"
               className="px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-fg-subtle"
             >
               {projects.map((p) => (
@@ -160,6 +169,13 @@ export function CommandMenu() {
               </Command.Item>
             </Command.Group>
           </Command.List>
+          <div className="flex items-center justify-between gap-2 border-t border-border bg-bg-sunken/40 px-3 py-1.5 font-mono text-[10px] text-fg-subtle">
+            <span>
+              search: <span className="text-fg-muted">prefix · substring · fuzzy</span> (cmdk
+              command-score)
+            </span>
+            <span className="hidden sm:inline">↑↓ navigate · ⏎ select</span>
+          </div>
         </Command>
       </div>
     </div>

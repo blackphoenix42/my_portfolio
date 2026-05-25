@@ -9,12 +9,18 @@ import {
   FlamegraphMini,
   AlgoMini,
   ChainBracket,
+  PostureMini,
+  TrackMini,
+  BrainMini,
 } from "@/components/diagrams/case-study-thumbs";
 
 const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
   xmai: Cpu,
   "xcelium-optimization": Activity,
   algolens: Layers,
+  postureiq: Activity,
+  "track-person-app": Layers,
+  "smart-brain": Cpu,
   "tezos-premier-league": Coins,
 };
 
@@ -22,6 +28,9 @@ const Thumbs: Record<string, () => React.ReactElement> = {
   xmai: () => <XmaiPipeline />,
   "xcelium-optimization": () => <FlamegraphMini />,
   algolens: () => <AlgoMini />,
+  postureiq: () => <PostureMini />,
+  "track-person-app": () => <TrackMini />,
+  "smart-brain": () => <BrainMini />,
   "tezos-premier-league": () => <ChainBracket />,
 };
 
@@ -32,14 +41,14 @@ export function FeaturedWork() {
         <header className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="mono-label">/ work</p>
-            <h2 className="section-title mt-2">Featured projects</h2>
+            <h2 className="section-title mt-2">Featured work</h2>
             <p className="mt-2 max-w-xl text-fg-muted">
-              Selected work across performance engineering, agentic AI, developer tooling and
+              Selected projects across performance engineering, agentic AI, developer tooling and
               product engineering.
             </p>
           </div>
           <Link href="/work" className="btn-secondary text-sm">
-            All case studies <ArrowUpRight className="h-4 w-4" />
+            All work <ArrowUpRight className="h-4 w-4" />
           </Link>
         </header>
 
@@ -57,7 +66,13 @@ export function FeaturedWork() {
                 className="card card-hover group overflow-hidden"
               >
                 <div className="relative h-44 overflow-hidden border-b border-border bg-bg-sunken/60">
-                  {Thumb && <Thumb />}
+                  {Thumb ? (
+                    <Thumb />
+                  ) : (
+                    <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_30%,hsl(var(--accent-cyan)/0.18),transparent_45%),linear-gradient(135deg,hsl(var(--bg-elev)),hsl(var(--bg-sunken)))]">
+                      <Icon className="h-14 w-14 text-accent-cyan/70" />
+                    </div>
+                  )}
                   <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/80 px-2.5 py-1 font-mono text-[10px] text-fg-muted backdrop-blur">
                     <Icon className="h-3 w-3" /> {p.category}
                   </div>
@@ -77,7 +92,7 @@ export function FeaturedWork() {
                       href={`/work/${p.slug}`}
                       className="inline-flex items-center gap-1 text-sm font-medium text-accent-cyan transition-colors group-hover:text-fg"
                     >
-                      Read case study <ArrowUpRight className="h-3.5 w-3.5" />
+                      Read more <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                     {p.status === "professional" && (
                       <span className="chip text-accent-amber">Professional</span>

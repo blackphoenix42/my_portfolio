@@ -8,20 +8,29 @@ import { projects } from "@/content/projects";
 import { accentText, cn } from "@/lib/utils";
 import { TECH_ICONS } from "@/components/logos/tech-icons";
 
-export function EngineeringSpectrum() {
+const accentDot: Record<string, string> = {
+  cyan: "bg-accent-cyan",
+  violet: "bg-accent-violet",
+  emerald: "bg-accent-emerald",
+  amber: "bg-accent-amber",
+};
+
+export function EngineeringSpectrum({ hideHeader = false }: { hideHeader?: boolean }) {
   const [activeCluster, setActiveCluster] = useState<string | null>(null);
 
   return (
     <section className="section" aria-label="Engineering spectrum">
       <div className="container-tight">
-        <header className="mb-10">
-          <p className="mono-label">/ engineering arsenal</p>
-          <h2 className="section-title mt-2">Engineering spectrum</h2>
-          <p className="mt-2 max-w-2xl text-fg-muted">
-            Capability clusters spanning low-level performance, intelligent systems, distributed
-            backends, product engineering and infrastructure.
-          </p>
-        </header>
+        {!hideHeader && (
+          <header className="mb-10">
+            <p className="mono-label">/ skills</p>
+            <h2 className="section-title mt-2">Engineering spectrum</h2>
+            <p className="mt-2 max-w-2xl text-fg-muted">
+              Capability clusters spanning low-level performance, intelligent systems, distributed
+              backends, product engineering, infrastructure and reliability.
+            </p>
+          </header>
+        )}
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {clusters.map((c, i) => {
@@ -58,9 +67,19 @@ export function EngineeringSpectrum() {
                     return (
                       <li
                         key={s.name}
-                        className={cn("chip", s.level === "core" && "border-fg/40 text-fg")}
+                        className={cn("chip gap-1.5", s.level === "core" && "border-fg/40 text-fg")}
                       >
-                        {Icon ? <Icon className="h-3 w-3" /> : null}
+                        {Icon ? (
+                          <Icon className="h-3 w-3" />
+                        ) : (
+                          <span
+                            aria-hidden
+                            className={cn(
+                              "h-1.5 w-1.5 rounded-full opacity-80",
+                              accentDot[c.accent],
+                            )}
+                          />
+                        )}
                         {s.name}
                       </li>
                     );

@@ -28,7 +28,7 @@ export default async function HomePage() {
         recruiter={
           <>
             <div className={lazy}>
-              <CareerTimeline />
+              <CareerTimeline cta={{ href: "/experience", label: "View full experience" }} />
             </div>
             <div className={lazy}>
               <FeaturedWork />
@@ -50,7 +50,7 @@ export default async function HomePage() {
               <EngineeringSpectrum />
             </div>
             <div className={lazy}>
-              <CareerTimeline />
+              <CareerTimeline cta={{ href: "/experience", label: "View full experience" }} />
             </div>
             <div className={lazy}>
               <CPCommandCenter />

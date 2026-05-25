@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Terminal, ExternalLink } from "lucide-react";
-import { competitive, otherAchievements } from "@/content/achievements";
+import { competitive } from "@/content/achievements";
 import { accentText } from "@/lib/utils";
 import { SITE } from "@/content/profile";
 
@@ -21,7 +21,7 @@ export function CPCommandCenter() {
             </p>
           </div>
           <div className="flex gap-2">
-            <Link href="/competitive-programming" className="btn-secondary text-sm">
+            <Link href="/work/algolens" className="btn-secondary text-sm">
               Explore AlgoLens
             </Link>
             <a href={`${SITE.github}?tab=repositories`} className="btn-secondary text-sm">
@@ -66,17 +66,6 @@ export function CPCommandCenter() {
             ))}
           </div>
         </div>
-
-        {otherAchievements.length > 0 && (
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {otherAchievements.map((o) => (
-              <li key={o.title} className="card p-4">
-                <div className="text-sm font-semibold text-fg">{o.title}</div>
-                <p className="mt-1 text-xs text-fg-muted">{o.detail}</p>
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
     </section>
   );

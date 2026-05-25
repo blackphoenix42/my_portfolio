@@ -80,10 +80,10 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link href="/work" className="btn-primary">
-              Explore My Impact <ArrowRight className="h-4 w-4" />
+              View Projects <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/work" className="btn-secondary">
-              View Projects
+            <Link href="/experience" className="btn-secondary">
+              See experience
             </Link>
           </div>
 
@@ -127,13 +127,13 @@ export function Hero() {
               <span className="h-2 w-2 rounded-full bg-accent-amber/70" />
               <span className="h-2 w-2 rounded-full bg-accent-emerald/70" />
               <span className="h-2 w-2 rounded-full bg-accent-cyan/70" />
-              <span className="ml-2 font-mono text-[10px] text-fg-subtle">
+              <span className="ml-2 font-mono text-xs font-medium text-fg-muted">
                 xmai · profiler · live
               </span>
             </div>
             <HeroVisualization />
-            <div className="pointer-events-none absolute inset-x-3 bottom-2 flex items-center justify-between font-mono text-[10px] text-fg-subtle">
-              <span>artifacts → retrieval → agent → rtl</span>
+            <div className="pointer-events-none absolute inset-x-3 bottom-2 flex items-center justify-between font-mono text-xs font-medium">
+              <span className="text-fg-muted">artifacts → retrieval → agent → rtl</span>
               <span className="text-accent-emerald">↑ throughput</span>
             </div>
           </div>

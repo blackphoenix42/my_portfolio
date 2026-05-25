@@ -1,11 +1,11 @@
 // Inline SVG tech icons. Single-color (currentColor) so they inherit theme.
 // Paths from Simple Icons (CC0). Each icon is wrapped with title for a11y.
 
-import type { SVGProps } from "react";
+import type { ReactElement, ReactNode, SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement> & { title?: string };
 
-function Base({ title, children, ...props }: IconProps & { children: React.ReactNode }) {
+function Base({ title, children, ...props }: IconProps & { children: ReactNode }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -129,6 +129,13 @@ export const NextIcon = (p: IconProps) => (
   </Base>
 );
 
+export const NodeIcon = (p: IconProps) => (
+  <Base title="Node.js" {...p}>
+    <path d="M12 1.25 3 6.45v11.1l9 5.2 9-5.2V6.45zm0 2.14 7.15 4.13v8.96L12 20.61l-7.15-4.13V7.52z" />
+    <path d="M8.55 8.35h1.55l3.82 6.08V8.35h1.54v7.3h-1.65L10.1 9.76v5.89H8.55z" />
+  </Base>
+);
+
 export type TechName =
   | "C++"
   | "Python"
@@ -136,6 +143,8 @@ export type TechName =
   | "Go"
   | "React"
   | "Tailwind"
+  | "Tailwind CSS"
+  | "Node.js"
   | "Docker"
   | "AWS"
   | "GCP"
@@ -149,13 +158,15 @@ export type TechName =
   | "GitHub"
   | "Next.js";
 
-export const TECH_ICONS: Record<TechName, (p: IconProps) => React.ReactElement> = {
+export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   "C++": CppIcon,
   Python: PythonIcon,
   TypeScript: TypeScriptIcon,
   Go: GoIcon,
   React: ReactIcon,
   Tailwind: TailwindIcon,
+  "Tailwind CSS": TailwindIcon,
+  "Node.js": NodeIcon,
   Docker: DockerIcon,
   AWS: AwsIcon,
   GCP: GcpIcon,

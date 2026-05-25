@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Command, ArrowUpRight } from "lucide-react";
+import { Menu, X, Search, ArrowUpRight, Command as CmdIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -12,12 +12,12 @@ import { SITE } from "@/content/profile";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
-  { href: "/experience", label: "Experience" },
-  { href: "/skills", label: "Skills" },
-  { href: "/competitive-programming", label: "CP" },
-  { href: "/lab", label: "Lab" },
   { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
+  { href: "/skills", label: "Skills" },
+  { href: "/experience", label: "Experience" },
+  { href: "/competitive-programming", label: "CP" },
+  { href: "/lab", label: "Roadmap" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -67,10 +67,17 @@ export function SiteHeader() {
       )}
     >
       <div className="container-tight flex h-16 items-center justify-between gap-3">
-        <Link href="/" className="group inline-flex shrink-0 items-center gap-2">
+        <Link
+          href="/"
+          className="group inline-flex shrink-0 items-center gap-2"
+          aria-label="Ayush Yadav — Home"
+        >
           <Logo />
-          <span className="font-mono text-sm tracking-tight">
-            ayush<span className="text-accent-cyan">.</span>yadav
+          <span className="flex flex-col leading-none">
+            <span className="text-sm font-semibold tracking-tight text-fg">Ayush Yadav</span>
+            <span className="font-mono text-[10px] tracking-widest text-fg-subtle">
+              R&amp;D <span className="text-accent-cyan">·</span> SWE
+            </span>
           </span>
         </Link>
 
@@ -112,7 +119,7 @@ export function SiteHeader() {
             className="hidden items-center gap-2 rounded-md border border-border bg-bg-elev/60 px-2.5 py-1.5 text-xs text-fg-muted transition-colors hover:border-accent-cyan/40 hover:text-fg lg:inline-flex"
             aria-label="Open command menu"
           >
-            <Command className="h-3.5 w-3.5" />
+            <Search className="h-3.5 w-3.5" />
             <span>Search</span>
             <kbd className="rounded bg-bg-sunken px-1.5 py-0.5 font-mono text-[10px]">⌘K</kbd>
           </button>
@@ -197,7 +204,7 @@ export function SiteHeader() {
                     }}
                     className="btn-secondary text-xs"
                   >
-                    <Command className="h-3.5 w-3.5" /> Search
+                    <CmdIcon className="h-3.5 w-3.5" /> Search
                   </button>
                 </div>
               </div>
@@ -212,26 +219,48 @@ export function SiteHeader() {
 function Logo() {
   return (
     <svg
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
       aria-hidden="true"
-      className="text-accent-cyan transition-transform group-hover:rotate-6"
+      className="transition-transform group-hover:rotate-6"
     >
       <defs>
         <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="hsl(var(--accent-cyan))" />
-          <stop offset="100%" stopColor="hsl(var(--accent-violet))" />
+          <stop offset="60%" stopColor="hsl(var(--accent-violet))" />
+          <stop offset="100%" stopColor="hsl(var(--accent-emerald))" />
         </linearGradient>
       </defs>
-      <rect x="2" y="2" width="24" height="24" rx="6" fill="url(#lg)" opacity="0.18" />
+      <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="url(#lg)" opacity="0.18" />
+      <rect
+        x="1.5"
+        y="1.5"
+        width="29"
+        height="29"
+        rx="8"
+        fill="none"
+        stroke="url(#lg)"
+        strokeWidth="1.25"
+        opacity="0.55"
+      />
+      {/* Monogram A·Y intersecting peak */}
       <path
-        d="M7 19 L13 9 L19 19 M9.5 15 H16.5"
+        d="M7 23 L13 9 L19 23 M9.6 18 H16.4"
         stroke="url(#lg)"
         strokeWidth="2"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+      <path
+        d="M19 9 L23 15 L27 9 M23 15 V23"
+        stroke="url(#lg)"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.85"
       />
     </svg>
   );
