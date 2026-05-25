@@ -17,6 +17,9 @@ import { AlgoLensDemo } from "@/components/projects/algolens-demo";
 import { XceliumDemo } from "@/components/projects/xcelium-demo";
 import { TezosBracketDemo } from "@/components/projects/tezos-bracket-demo";
 import { PostureDemo } from "@/components/projects/posture-demo";
+import { XmaiPipelineDemo } from "@/components/projects/xmai-demo";
+import { TrackPersonDemo } from "@/components/projects/track-person-demo";
+import { SmartBrainDemo } from "@/components/projects/smart-brain-demo";
 
 const DIAGRAMS: Record<string, () => React.ReactElement> = {
   xmai: () => <XmaiPipeline />,
@@ -30,6 +33,11 @@ const DIAGRAMS: Record<string, () => React.ReactElement> = {
 
 const DEMOS: Record<string, { title: string; subtitle: string; render: () => React.ReactElement }> =
   {
+    xmai: {
+      title: "Interactive demo",
+      subtitle: "Try a prompt against the simulated retrieve → embed → agent pipeline.",
+      render: () => <XmaiPipelineDemo />,
+    },
     algolens: {
       title: "Interactive demo",
       subtitle: "A miniature visualizer of the AlgoLens execution model.",
@@ -49,6 +57,16 @@ const DEMOS: Record<string, { title: string; subtitle: string; render: () => Rea
       title: "Interactive demo",
       subtitle: "Live-simulated rep quality with confidence gating.",
       render: () => <PostureDemo />,
+    },
+    "track-person-app": {
+      title: "Interactive demo",
+      subtitle: "Animated waypoint route on a stylized map — play / pause / reset.",
+      render: () => <TrackPersonDemo />,
+    },
+    "smart-brain": {
+      title: "Interactive demo",
+      subtitle: "Try different scenes; the simulated detector reveals bounding boxes & confidence.",
+      render: () => <SmartBrainDemo />,
     },
   };
 

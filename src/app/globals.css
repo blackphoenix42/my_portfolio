@@ -37,6 +37,23 @@
     --ring: 187 86% 38%;
   }
 
+  .phoenix {
+    /* Warm phoenix-fire palette — deep ember background, amber/orange/violet flames */
+    --bg: 14 40% 6%;
+    --bg-elev: 14 35% 10%;
+    --bg-sunken: 14 45% 4%;
+    --fg: 30 60% 96%;
+    --fg-muted: 26 30% 80%;
+    --fg-subtle: 24 18% 60%;
+    --border: 16 30% 18%;
+    --line: 16 30% 14%;
+    --accent-cyan: 38 95% 62%;
+    --accent-violet: 285 85% 70%;
+    --accent-emerald: 18 90% 60%;
+    --accent-amber: 48 100% 60%;
+    --ring: 18 90% 60%;
+  }
+
   * {
     border-color: hsl(var(--border));
   }

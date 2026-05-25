@@ -136,11 +136,98 @@ export const NodeIcon = (p: IconProps) => (
   </Base>
 );
 
+export const JavaIcon = (p: IconProps) => (
+  <Base title="Java" {...p}>
+    <path d="M8.5 18.7c-3 .8-1.8 2.5 2.2 2.5 2.3 0 4.8-.3 6.5-1.1l-1.4-.8c-1 .4-2.7.7-4.4.7-1.9 0-2.9-.4-2.9-.6 0-.2 1-.4 2-.6zM10.4 16c-2.5.6-1.5 2 1.3 2 2.1 0 4.5-.2 6.1-.6l-1.4-.9c-.8.2-2.4.5-4 .5-1.6 0-2.4-.3-2.4-.5 0-.1.5-.3 1.2-.5zM18 4.5s2.6 2.6-2.5 6.6c-4 3.2-.9 5 0 7.1-2.4-2.2-4.2-4.1-3-5.8 1.7-2.6 6.4-3.8 5.5-7.9zM12.7 1S15 3.3 11 6.8c-2.4 2.1-1.5 4.1.7 5.6-2 .2-4.4-1.6-3-3.5C10 7 13.4 4.9 12.7 1zM7 21.4c-1.7.4-1.6 1.1-.5 1.5 4 1.2 12.4.6 12.4-.5 0-.4-1.1-.6-1.7-.7l1.1.7c-1.3.5-7.8.7-10.3.1-1.4-.3-.8-.8-1-1.1z" />
+  </Base>
+);
+
+export const KubernetesIcon = (p: IconProps) => (
+  <Base title="Kubernetes" {...p}>
+    <path d="M11.55.18a1.78 1.78 0 0 0-.7.18L3.27 4.02a1.78 1.78 0 0 0-.97 1.22L.43 13.45a1.78 1.78 0 0 0 .34 1.51l5.27 6.57c.34.43.86.69 1.4.7l8.42-.01c.55-.01 1.06-.27 1.4-.7l5.26-6.58c.34-.43.47-1 .34-1.51L21 5.25a1.78 1.78 0 0 0-.97-1.22L12.45.37a1.78 1.78 0 0 0-.9-.19zM12 4.36c.27 0 .49.21.49.49v3.39c0 .27-.22.49-.49.49-.27 0-.49-.22-.49-.49V4.85c0-.28.22-.49.49-.49zm-4.39 1.4c.06 0 .12.01.18.04.25.11.36.4.25.65l-1.39 3.16a.49.49 0 0 1-.65.25.49.49 0 0 1-.25-.65l1.39-3.16a.49.49 0 0 1 .47-.29zm8.78 0c.18 0 .36.1.45.29l1.39 3.16c.11.25 0 .54-.25.65a.49.49 0 0 1-.65-.25l-1.39-3.16a.49.49 0 0 1 .25-.65c.06-.03.13-.04.2-.04zM12 9.83l4.18 1.95-1.04 4.42h-6.28l-1.04-4.42L12 9.83z" />
+  </Base>
+);
+
+export const MysqlIcon = (p: IconProps) => (
+  <Base title="MySQL" {...p}>
+    <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 0 0-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01c-.063 1.555-.18 3.026-.34 4.41H0c.196-1.69.49-3.275.88-4.755h1.295l1.337 4.064h.009l1.346-4.064h1.234c.43 1.731.682 3.318.769 4.755zm4.011-3.524c-.376 2.04-.873 3.521-1.495 4.45-.485.717-1.017 1.078-1.6 1.078-.154 0-.346-.046-.574-.137v-.494c.113.017.244.026.394.026.272 0 .491-.075.658-.227.197-.183.295-.394.295-.633 0-.164-.082-.5-.246-1.011L6.33 15.171h.91l.788 2.553c.177.58.251.985.224 1.215.422-1.129.722-2.34.886-3.621.293-.034.553-.034.91-.034l.001.012zm9.46 3.524h-2.617v-4.755h.881v4.064h1.736zm-3.31.137l-1.012-.498c.09-.072.176-.151.252-.241.421-.494.629-1.227.629-2.197 0-1.784-.7-2.677-2.097-2.677-.685 0-1.219.226-1.602.679-.42.494-.63 1.224-.63 2.191 0 .951.187 1.648.563 2.092.342.402.858.602 1.55.602.27 0 .518-.041.74-.123l1.328.773.27-.45.009.001zm-2.946-1.534c-.221-.354-.331-.926-.331-1.716 0-1.379.418-2.07 1.255-2.07.437 0 .758.165.964.494.221.354.332.92.332 1.704 0 1.391-.418 2.087-1.256 2.087-.437 0-.758-.164-.964-.494v-.005zM21.586 17.378c0 .403-.146.733-.444.991-.297.258-.696.388-1.193.388-.466 0-.917-.149-1.353-.443l.237-.474c.376.188.717.282 1.025.282.286 0 .51-.063.673-.19a.617.617 0 0 0 .244-.514c0-.226-.157-.418-.443-.58-.265-.146-.794-.452-.794-.452-.546-.397-.819-.822-.819-1.526 0-.385.135-.696.405-.934.27-.238.62-.357 1.051-.357.443 0 .846.118 1.207.357l-.213.474c-.31-.131-.616-.197-.918-.197-.244 0-.432.058-.563.177a.575.575 0 0 0-.207.45c0 .225.16.421.456.589.27.149.812.464.812.464.561.395.842.815.842 1.495z" />
+  </Base>
+);
+
+export const OpenCVIcon = (p: IconProps) => (
+  <Base title="OpenCV" {...p}>
+    <circle cx="11" cy="6.5" r="3" />
+    <circle cx="6.5" cy="14" r="3" />
+    <circle cx="15.5" cy="14" r="3" />
+  </Base>
+);
+
+export const NumpyIcon = (p: IconProps) => (
+  <Base title="NumPy" {...p}>
+    <path d="M12 0 2.4 5.4v11.2L12 22l9.6-5.4V5.4zm-1 4.7v3.5L4.5 5.6zm2 0 6.5 1-6.5 3.6V4.7zM3.6 7l6.4 3.4v7L3.6 14V7zm16.8 0v7l-6.4 3.4v-7L20.4 7z" />
+  </Base>
+);
+
+export const FirebaseIcon = (p: IconProps) => (
+  <Base title="Firebase" {...p}>
+    <path d="M5 18 8 3l2 3.5L13 1l6 17-7 4z" />
+  </Base>
+);
+
+export const JenkinsIcon = (p: IconProps) => (
+  <Base title="Jenkins" {...p}>
+    <circle cx="12" cy="9" r="4.5" />
+    <path d="M8 13c0 2.5 1.8 4.5 4 4.5s4-2 4-4.5M8 21h8l-1-3H9z" />
+  </Base>
+);
+
+export const MediaPipeIcon = (p: IconProps) => (
+  <Base title="MediaPipe" {...p}>
+    <circle cx="6" cy="6" r="2" />
+    <circle cx="18" cy="6" r="2" />
+    <circle cx="6" cy="18" r="2" />
+    <circle cx="18" cy="18" r="2" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path
+      d="M6 6 12 12M18 6 12 12M6 18 12 12M18 18 12 12"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      fill="none"
+    />
+  </Base>
+);
+
+export const RestIcon = (p: IconProps) => (
+  <Base title="REST" {...p}>
+    <path d="M3 8h4a2 2 0 0 1 0 4H5v4H3V8zm2 1v2h2a1 1 0 0 0 0-2H5zm6-1h4l1 4-1 4h-4V8zm2 1v6h1.6l.6-3-.6-3H13zm5-1h4v2h-2v1.5h2V13h-2V15h2v2h-4V8z" />
+    <circle cx="11" cy="6" r="1.5" />
+    <circle cx="11" cy="18" r="1.5" />
+  </Base>
+);
+
+export const OpenTelemetryIcon = (p: IconProps) => (
+  <Base title="OpenTelemetry" {...p}>
+    <circle cx="12" cy="12" r="3.5" />
+    <circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1"
+      opacity="0.5"
+    />
+  </Base>
+);
+
 export type TechName =
   | "C++"
+  | "C"
   | "Python"
   | "TypeScript"
   | "Go"
+  | "Java"
   | "React"
   | "Tailwind"
   | "Tailwind CSS"
@@ -149,6 +236,7 @@ export type TechName =
   | "AWS"
   | "GCP"
   | "PostgreSQL"
+  | "MySQL"
   | "MongoDB"
   | "Redis"
   | "Kafka"
@@ -156,13 +244,23 @@ export type TechName =
   | "Linux"
   | "GraphQL"
   | "GitHub"
-  | "Next.js";
+  | "Next.js"
+  | "Kubernetes"
+  | "OpenCV"
+  | "NumPy"
+  | "Firebase"
+  | "Jenkins"
+  | "MediaPipe"
+  | "REST"
+  | "OpenTelemetry";
 
 export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   "C++": CppIcon,
+  C: CppIcon,
   Python: PythonIcon,
   TypeScript: TypeScriptIcon,
   Go: GoIcon,
+  Java: JavaIcon,
   React: ReactIcon,
   Tailwind: TailwindIcon,
   "Tailwind CSS": TailwindIcon,
@@ -171,6 +269,7 @@ export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   AWS: AwsIcon,
   GCP: GcpIcon,
   PostgreSQL: PostgresIcon,
+  MySQL: MysqlIcon,
   MongoDB: MongoIcon,
   Redis: RedisIcon,
   Kafka: KafkaIcon,
@@ -179,6 +278,14 @@ export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   GraphQL: GraphQLIcon,
   GitHub: GitHubIcon,
   "Next.js": NextIcon,
+  Kubernetes: KubernetesIcon,
+  OpenCV: OpenCVIcon,
+  NumPy: NumpyIcon,
+  Firebase: FirebaseIcon,
+  Jenkins: JenkinsIcon,
+  MediaPipe: MediaPipeIcon,
+  REST: RestIcon,
+  OpenTelemetry: OpenTelemetryIcon,
 };
 
 export function TechIcon({ name, ...props }: IconProps & { name: TechName }) {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CareerTimeline } from "@/components/experience/career-timeline";
+import { CompanyLogo } from "@/components/experience/company-logo";
 import { educationHistory, internships } from "@/content/experience";
 
 export const metadata: Metadata = {
@@ -25,13 +26,19 @@ export default function ExperiencePage() {
         <h2 className="section-title">Education</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {educationHistory.map((education) => (
-            <div key={education.school} className="card p-6">
-              <p className="font-mono text-xs text-accent-cyan">
-                {education.start} — {education.end}
-              </p>
-              <h3 className="mt-2 text-xl font-semibold">{education.school}</h3>
-              <p className="mt-1 text-fg-muted">{education.degree}</p>
-              <p className="mt-1 font-mono text-xs text-fg-subtle">Score: {education.cgpa}</p>
+            <div key={education.school} className="card flex gap-4 p-6">
+              <CompanyLogo
+                name={education.school}
+                className="h-14 w-14 shrink-0 rounded-md border border-border bg-bg-elev p-1.5"
+              />
+              <div className="min-w-0">
+                <p className="font-mono text-xs text-accent-cyan">
+                  {education.start} — {education.end}
+                </p>
+                <h3 className="mt-1 text-lg font-semibold leading-snug">{education.school}</h3>
+                <p className="mt-1 text-fg-muted">{education.degree}</p>
+                <p className="mt-1 font-mono text-xs text-fg-subtle">Score: {education.cgpa}</p>
+              </div>
             </div>
           ))}
         </div>

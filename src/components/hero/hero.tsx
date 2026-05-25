@@ -30,7 +30,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="container-tight grid gap-12 py-20 sm:py-28 lg:grid-cols-12 lg:items-center lg:gap-8">
+      <div className="container-tight grid gap-12 py-10 sm:py-14 lg:grid-cols-12 lg:items-center lg:gap-8">
         <div className="lg:col-span-7">
           <motion.div
             initial={{ opacity: 0, y: 8 }}

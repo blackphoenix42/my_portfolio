@@ -6,7 +6,9 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandMenu } from "@/components/layout/command-menu";
 import { RecruiterModeProvider } from "@/components/layout/recruiter-mode";
+import { RecruiterBanner } from "@/components/layout/recruiter-banner";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
+import { ScrollFab } from "@/components/layout/scroll-fab";
 import { SITE } from "@/content/profile";
 
 const inter = Inter({
@@ -93,18 +95,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrains.variable}`}>
       <body className="min-h-dvh bg-bg text-fg antialiased">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          themes={["light", "dark", "phoenix"]}
+        >
           <RecruiterModeProvider>
-            <a href="#main" className="skip-link">
-              Skip to content
-            </a>
             <SiteHeader />
+            <RecruiterBanner />
             <main id="main" tabIndex={-1}>
               {children}
             </main>
             <SiteFooter />
             <CommandMenu />
             <MobileActionBar />
+            <ScrollFab />
           </RecruiterModeProvider>
         </ThemeProvider>
         <script

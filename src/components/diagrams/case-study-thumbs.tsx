@@ -1,436 +1,762 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
+const A = "hsl(var(--accent-cyan))";
+const V = "hsl(var(--accent-violet))";
+const E = "hsl(var(--accent-emerald))";
+const M = "hsl(var(--accent-amber))";
+const BG = "hsl(var(--bg-elev))";
+const BG_S = "hsl(var(--bg-sunken))";
+const BD = "hsl(var(--border))";
+const FG_S = "hsl(var(--fg-subtle))";
+const FG_M = "hsl(var(--fg-muted))";
+const FG = "hsl(var(--fg))";
+
+/* -------------------------------------------------------------------------- */
+/*  XMAI — hero-style flow with named stages                                   */
+/* -------------------------------------------------------------------------- */
 export function XmaiPipeline() {
   const reduce = useReducedMotion();
-  const steps = ["Logs", "Embed", "Retrieve", "Agent", "RTL"];
+  const nodes = [
+    { x: 60, label: "artifacts", c: A },
+    { x: 180, label: "retrieve", c: A },
+    { x: 300, label: "agent", c: V },
+    { x: 420, label: "rtl", c: E },
+  ];
   return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
+    <svg viewBox="0 0 480 200" className="h-full w-full">
       <defs>
-        <linearGradient id="x-edge" x1="0" x2="1">
-          <stop offset="0%" stopColor="hsl(var(--accent-cyan))" stopOpacity="0.0" />
-          <stop offset="50%" stopColor="hsl(var(--accent-cyan))" stopOpacity="0.9" />
-          <stop offset="100%" stopColor="hsl(var(--accent-violet))" stopOpacity="0.0" />
+        <linearGradient id="xm-edge" x1="0" x2="1">
+          <stop offset="0%" stopColor={A} stopOpacity="0" />
+          <stop offset="50%" stopColor={V} stopOpacity="0.9" />
+          <stop offset="100%" stopColor={E} stopOpacity="0" />
         </linearGradient>
       </defs>
-      <line x1="40" y1="90" x2="440" y2="90" stroke="url(#x-edge)" strokeWidth="1.5" />
-      {steps.map((s, i) => {
-        const x = 40 + i * 100;
-        return (
-          <g key={s} transform={`translate(${x}, 90)`}>
-            <motion.circle
-              r="14"
-              fill="hsl(var(--bg-elev))"
-              stroke="hsl(var(--accent-cyan))"
-              strokeWidth="1.5"
-              animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
-              transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.25 }}
-            />
-            <circle r="3" fill="hsl(var(--accent-cyan))" />
-            <text
-              y="38"
-              textAnchor="middle"
-              style={{ fontSize: 10, fill: "hsl(var(--fg-muted))", fontFamily: "var(--font-mono)" }}
-            >
-              {s}
-            </text>
-          </g>
-        );
-      })}
-    </svg>
-  );
-}
-
-export function FlamegraphMini() {
-  const rows = [
-    [120, "hsl(var(--accent-amber))"],
-    [110, "hsl(var(--accent-cyan))"],
-    [80, "hsl(var(--accent-violet))"],
-    [60, "hsl(var(--accent-emerald))"],
-    [40, "hsl(var(--accent-amber))"],
-  ] as const;
-  return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
-      <g>
-        {rows.map(([w, c], i) => (
-          <rect
-            key={i}
-            x={40 + i * 12}
-            y={20 + i * 22}
-            width={w * 3}
-            height={16}
-            rx={2}
-            fill={c}
-            opacity={0.8}
-          />
-        ))}
-        {/* "after" overlay shorter, lighter */}
-        {rows.map(([w, c], i) => (
-          <rect
-            key={`a-${i}`}
-            x={40 + i * 12}
-            y={20 + i * 22}
-            width={w * 3 * 0.82}
-            height={16}
-            rx={2}
-            fill="hsl(var(--bg-elev))"
-            opacity={0.55}
-          />
-        ))}
-      </g>
-      <text
-        x="40"
-        y="172"
-        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
-      >
-        before · after — 18–19% throughput gain
-      </text>
-    </svg>
-  );
-}
-
-export function AlgoMini() {
-  const bars = [40, 80, 30, 100, 55, 70, 20, 90, 60, 45];
-  return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
-      {bars.map((h, i) => (
-        <motion.rect
-          key={i}
-          x={40 + i * 38}
-          y={150 - h}
-          width={28}
-          height={h}
-          rx={2}
-          fill={i === 3 ? "hsl(var(--accent-violet))" : "hsl(var(--accent-cyan))"}
-          opacity={0.85}
-          initial={{ scaleY: 0.6 }}
-          animate={{ scaleY: [0.6, 1, 0.6] }}
-          transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: i * 0.05 }}
-          style={{ transformOrigin: "bottom" }}
+      <line x1="60" y1="100" x2="420" y2="100" stroke="url(#xm-edge)" strokeWidth="1.5" />
+      {!reduce && (
+        <motion.circle
+          r="4"
+          fill={V}
+          cy={100}
+          animate={{ cx: [60, 420], opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
         />
-      ))}
-      <text
-        x="40"
-        y="172"
-        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
-      >
-        AlgoLens · 60+ algorithms
-      </text>
-    </svg>
-  );
-}
-
-export function ChainBracket() {
-  return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
-      {Array.from({ length: 4 }).map((_, i) => (
-        <g key={i}>
-          <rect
-            x={40}
-            y={20 + i * 36}
-            width={120}
-            height={22}
-            rx={3}
-            fill="hsl(var(--bg-elev))"
-            stroke="hsl(var(--border))"
+      )}
+      {nodes.map((n, i) => (
+        <g key={n.label} transform={`translate(${n.x},100)`}>
+          <motion.circle
+            r="22"
+            fill={BG}
+            stroke={n.c}
+            strokeWidth="1.5"
+            animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
+            transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.3 }}
+            style={{ transformOrigin: "center" }}
           />
-          <line
-            x1={160}
-            y1={31 + i * 36}
-            x2={220}
-            y2={i < 2 ? 60 : 120}
-            stroke="hsl(var(--accent-amber))"
-            strokeWidth="1.2"
-          />
+          <circle r="5" fill={n.c} />
+          <text
+            y="44"
+            textAnchor="middle"
+            style={{ fontSize: 11, fill: FG_M, fontFamily: "var(--font-mono)" }}
+          >
+            {n.label}
+          </text>
         </g>
       ))}
-      <rect
-        x={220}
-        y={50}
-        width={120}
-        height={22}
-        rx={3}
-        fill="hsl(var(--bg-elev))"
-        stroke="hsl(var(--accent-amber))"
-      />
-      <rect
-        x={220}
-        y={110}
-        width={120}
-        height={22}
-        rx={3}
-        fill="hsl(var(--bg-elev))"
-        stroke="hsl(var(--accent-amber))"
-      />
-      <line
-        x1={340}
-        y1={61}
-        x2={400}
-        y2={91}
-        stroke="hsl(var(--accent-violet))"
-        strokeWidth="1.2"
-      />
-      <line
-        x1={340}
-        y1={121}
-        x2={400}
-        y2={91}
-        stroke="hsl(var(--accent-violet))"
-        strokeWidth="1.2"
-      />
-      <rect
-        x={400}
-        y={80}
-        width={40}
-        height={22}
-        rx={3}
-        fill="hsl(var(--accent-violet))"
-        opacity="0.3"
-        stroke="hsl(var(--accent-violet))"
-      />
-      <text
-        x="40"
-        y="172"
-        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
-      >
-        Tezos · bracket on-chain
+      <text x="60" y="32" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        xmai · profiler → retrieval → agent → rtl
       </text>
     </svg>
   );
 }
 
-export function PostureMini() {
+/* -------------------------------------------------------------------------- */
+/*  XCELIUM — developer @ screen, throughput surges                            */
+/* -------------------------------------------------------------------------- */
+export function FlamegraphMini() {
   const reduce = useReducedMotion();
-  // Stylized stick-figure with pose landmarks
-  return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
-      {/* head */}
-      <motion.circle
-        cx="240"
-        cy="38"
-        r="14"
-        fill="hsl(var(--bg-elev))"
-        stroke="hsl(var(--accent-cyan))"
-        strokeWidth="1.5"
-        animate={reduce ? undefined : { cy: [38, 36, 38] }}
-        transition={{ duration: 1.6, repeat: Infinity }}
-      />
-      {/* spine */}
-      <line x1="240" y1="52" x2="240" y2="115" stroke="hsl(var(--accent-violet))" strokeWidth="2" />
-      {/* shoulders */}
-      <line x1="200" y1="68" x2="280" y2="68" stroke="hsl(var(--accent-cyan))" strokeWidth="2" />
-      {/* arms */}
-      <motion.line
-        x1="200"
-        y1="68"
-        x2="172"
-        y2="120"
-        stroke="hsl(var(--accent-emerald))"
-        strokeWidth="2"
-        animate={reduce ? undefined : { x2: [172, 178, 172] }}
-        transition={{ duration: 1.6, repeat: Infinity }}
-      />
-      <motion.line
-        x1="280"
-        y1="68"
-        x2="308"
-        y2="120"
-        stroke="hsl(var(--accent-emerald))"
-        strokeWidth="2"
-        animate={reduce ? undefined : { x2: [308, 302, 308] }}
-        transition={{ duration: 1.6, repeat: Infinity }}
-      />
-      {/* hips */}
-      <line x1="218" y1="115" x2="262" y2="115" stroke="hsl(var(--accent-cyan))" strokeWidth="2" />
-      {/* legs */}
-      <line x1="218" y1="115" x2="206" y2="160" stroke="hsl(var(--accent-amber))" strokeWidth="2" />
-      <line x1="262" y1="115" x2="274" y2="160" stroke="hsl(var(--accent-amber))" strokeWidth="2" />
-      {/* landmark dots */}
-      {[
-        [240, 38],
-        [200, 68],
-        [280, 68],
-        [172, 120],
-        [308, 120],
-        [218, 115],
-        [262, 115],
-        [206, 160],
-        [274, 160],
-      ].map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="3" fill="hsl(var(--accent-cyan))" />
-      ))}
-      {/* score badge */}
-      <rect
-        x="380"
-        y="20"
-        width="78"
-        height="34"
-        rx="6"
-        fill="hsl(var(--bg-elev))"
-        stroke="hsl(var(--accent-emerald))"
-      />
-      <text
-        x="419"
-        y="42"
-        textAnchor="middle"
-        style={{
-          fontSize: 14,
-          fontWeight: 600,
-          fill: "hsl(var(--accent-emerald))",
-          fontFamily: "var(--font-mono)",
-        }}
-      >
-        REP 12
-      </text>
-      <text
-        x="40"
-        y="172"
-        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
-      >
-        PostureIQ · 60 FPS pose landmarks
-      </text>
-    </svg>
-  );
-}
-
-export function TrackMini() {
-  const reduce = useReducedMotion();
-  // Simulated movement trail on a grid
   const pts = [
-    [60, 130],
-    [120, 80],
-    [180, 110],
-    [240, 60],
-    [300, 100],
-    [360, 70],
-    [420, 110],
+    [110, 130],
+    [150, 128],
+    [190, 130],
+    [225, 122],
+    [255, 90],
+    [285, 70],
+    [320, 55],
+    [355, 48],
+    [395, 42],
   ];
   const d = pts.map(([x, y], i) => (i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`)).join(" ");
   return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
-      <defs>
-        <pattern id="grid-t" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" />
-        </pattern>
-      </defs>
-      <rect width="480" height="180" fill="url(#grid-t)" opacity="0.5" />
-      <path d={d} stroke="hsl(var(--accent-cyan))" strokeWidth="2" fill="none" opacity="0.85" />
-      {pts.map(([x, y], i) => (
-        <motion.circle
-          key={i}
-          cx={x}
-          cy={y}
-          r={i === pts.length - 1 ? 6 : 3.5}
-          fill={i === pts.length - 1 ? "hsl(var(--accent-violet))" : "hsl(var(--accent-cyan))"}
-          animate={reduce ? undefined : { scale: [1, 1.2, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.12 }}
-          style={{ transformOrigin: `${x}px ${y}px` }}
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <g transform="translate(20,60)">
+        <rect x="0" y="0" width="58" height="40" rx="3" fill={BG} stroke={BD} />
+        <rect x="3" y="3" width="52" height="32" rx="1" fill={BG_S} />
+        {[8, 14, 20, 26].map((y, i) => (
+          <line
+            key={i}
+            x1="6"
+            y1={y}
+            x2={6 + (12 + i * 6)}
+            y2={y}
+            stroke={i === 2 ? E : A}
+            strokeWidth="1.5"
+          />
+        ))}
+        <rect x="20" y="40" width="18" height="3" fill={BD} />
+        <rect x="14" y="43" width="30" height="2" rx="1" fill={BD} />
+        <circle cx="29" cy="60" r="6" fill={M} />
+        <path d="M 18 80 Q 29 70 40 80 L 40 90 L 18 90 Z" fill={V} />
+        <motion.g
+          animate={reduce ? undefined : { opacity: [0, 1, 1, 0], y: [0, -6, -6, -10] }}
+          transition={{ duration: 3, repeat: Infinity, times: [0, 0.2, 0.7, 1] }}
+        >
+          <circle cx="58" cy="-8" r="10" fill={M} opacity="0.9" />
+          <text
+            x="58"
+            y="-5"
+            textAnchor="middle"
+            style={{ fontSize: 10, fontWeight: 700, fill: BG_S, fontFamily: "var(--font-mono)" }}
+          >
+            !
+          </text>
+        </motion.g>
+      </g>
+      <g>
+        <line x1="100" y1="160" x2="430" y2="160" stroke={BD} />
+        <line x1="100" y1="160" x2="100" y2="30" stroke={BD} />
+        <text x="100" y="180" style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+          time
+        </text>
+        <text
+          x="92"
+          y="35"
+          textAnchor="end"
+          style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+        >
+          tput
+        </text>
+        <motion.path
+          d={d}
+          stroke={E}
+          strokeWidth="2.5"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={reduce ? undefined : { pathLength: [0, 1] }}
+          transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1 }}
         />
-      ))}
-      <text
-        x="40"
-        y="172"
-        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
-      >
-        Track Person · movement trail
+        <motion.circle
+          cx={395}
+          cy={42}
+          r="6"
+          fill={M}
+          animate={reduce ? undefined : { scale: [1, 1.6, 1] }}
+          transition={{ duration: 1.4, repeat: Infinity }}
+          style={{ transformOrigin: "395px 42px" }}
+        />
+        <text
+          x={395}
+          y={30}
+          textAnchor="middle"
+          style={{ fontSize: 10, fontWeight: 600, fill: M, fontFamily: "var(--font-mono)" }}
+        >
+          +19%
+        </text>
+      </g>
+      <text x="20" y="190" style={{ fontSize: 10, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        xcelium · ship optimization · throughput surge
       </text>
     </svg>
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/*  ALGOLENS — bubble-sort live array                                          */
+/* -------------------------------------------------------------------------- */
+export function AlgoMini() {
+  const reduce = useReducedMotion();
+  const initial = [35, 80, 50, 110, 70, 30, 95, 55, 75, 45];
+  const [bars, setBars] = useState(initial);
+  const [swap, setSwap] = useState(0);
+
+  useEffect(() => {
+    if (reduce) return;
+    const id = setInterval(() => {
+      setSwap((prev) => {
+        const next = (prev + 1) % (bars.length - 1);
+        setBars((arr) => {
+          // single bubble-sort step at `prev`
+          const a = arr.slice();
+          if (a[prev]! > a[prev + 1]!) {
+            const t = a[prev]!;
+            a[prev] = a[prev + 1]!;
+            a[prev + 1] = t;
+          }
+          // when pass completes, reshuffle to keep motion going
+          if (next === 0) {
+            return initial.slice().sort(() => Math.random() - 0.5);
+          }
+          return a;
+        });
+        return next;
+      });
+    }, 900);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reduce]);
+
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <defs>
+        <marker id="algo-arrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill={V} />
+        </marker>
+      </defs>
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        algolens · bubble sort · comparing [{swap}, {swap + 1}]
+      </text>
+      <line x1="40" y1="170" x2="440" y2="170" stroke={BD} />
+      {bars.map((h, i) => {
+        const isActive = i === swap || i === swap + 1;
+        return (
+          <g key={i}>
+            <motion.rect
+              x={50 + i * 38}
+              width={28}
+              rx={2}
+              animate={{
+                y: 170 - h,
+                height: h,
+                fill: isActive ? M : A,
+              }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              opacity={isActive ? 1 : 0.85}
+            />
+            <motion.text
+              x={50 + i * 38 + 14}
+              y={186}
+              textAnchor="middle"
+              animate={{ opacity: isActive ? 1 : 0.6 }}
+              style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+            >
+              {h}
+            </motion.text>
+          </g>
+        );
+      })}
+      <motion.path
+        animate={{
+          d: `M ${50 + swap * 38 + 14} 36 Q ${50 + swap * 38 + 33} 14 ${50 + (swap + 1) * 38 + 14} 36`,
+        }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        stroke={V}
+        strokeWidth="1.5"
+        fill="none"
+        markerEnd="url(#algo-arrow)"
+      />
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  POSTUREIQ — exercise figure + pose overlay + coaching                      */
+/* -------------------------------------------------------------------------- */
+export function PostureMini() {
+  const reduce = useReducedMotion();
+  const [reps, setReps] = useState(12);
+  const [form, setForm] = useState(92);
+
+  useEffect(() => {
+    if (reduce) return;
+    const id = setInterval(() => {
+      setReps((r) => r + 1);
+      setForm(() => 88 + Math.floor(Math.random() * 9)); // 88-96
+    }, 2400);
+    return () => clearInterval(id);
+  }, [reduce]);
+
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        postureiq · live pose tracking · 60 fps
+      </text>
+      <line x1="40" y1="180" x2="440" y2="180" stroke={BD} strokeDasharray="3 4" />
+      <motion.g
+        animate={reduce ? undefined : { y: [0, 18, 0] }}
+        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        transform="translate(205,0)"
+      >
+        <circle cx="60" cy="60" r="14" fill={BG} stroke={A} strokeWidth="1.8" />
+        <circle cx="60" cy="60" r="2.5" fill={A} />
+        <line x1="60" y1="74" x2="60" y2="120" stroke={V} strokeWidth="3" />
+        {/* arms: animate to "hands forward" during the rep bottom */}
+        <motion.line
+          x1="60"
+          y1="86"
+          stroke={E}
+          strokeWidth="2.5"
+          animate={reduce ? undefined : { x2: [32, 22, 32], y2: [92, 70, 92] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.line
+          x1="60"
+          y1="86"
+          stroke={E}
+          strokeWidth="2.5"
+          animate={reduce ? undefined : { x2: [88, 98, 88], y2: [92, 70, 92] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <line x1="46" y1="120" x2="74" y2="120" stroke={A} strokeWidth="2.5" />
+        {/* legs: upper (hip→knee) and lower (knee→ankle) move together */}
+        <motion.line
+          x1="46"
+          y1="120"
+          stroke={M}
+          strokeWidth="2.5"
+          animate={reduce ? undefined : { x2: [38, 28, 38], y2: [148, 144, 148] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.line
+          x1="74"
+          y1="120"
+          stroke={M}
+          strokeWidth="2.5"
+          animate={reduce ? undefined : { x2: [82, 92, 82], y2: [148, 144, 148] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.line
+          stroke={M}
+          strokeWidth="2.5"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [38, 28, 38],
+                  y1: [148, 144, 148],
+                  x2: [34, 30, 34],
+                  y2: [178, 176, 178],
+                }
+          }
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.line
+          stroke={M}
+          strokeWidth="2.5"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  x1: [82, 92, 82],
+                  y1: [148, 144, 148],
+                  x2: [86, 90, 86],
+                  y2: [178, 176, 178],
+                }
+          }
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {[
+          [60, 60],
+          [60, 86],
+          [46, 120],
+          [74, 120],
+          [34, 178],
+          [86, 178],
+        ].map(([x, y], i) => (
+          <motion.circle
+            key={i}
+            cx={x}
+            cy={y}
+            r="2.6"
+            fill={E}
+            animate={reduce ? undefined : { opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.1 }}
+          />
+        ))}
+      </motion.g>
+      <g>
+        <rect x="40" y="50" width="120" height="92" rx="6" fill={BG} stroke={BD} />
+        <text x="50" y="68" style={{ fontSize: 10, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+          form
+        </text>
+        <motion.text
+          x="50"
+          y="92"
+          key={form}
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          style={{ fontSize: 24, fontWeight: 700, fill: E }}
+        >
+          {form}
+        </motion.text>
+        <text x="50" y="112" style={{ fontSize: 10, fill: FG_M, fontFamily: "var(--font-mono)" }}>
+          ✓ back straight
+        </text>
+        <text x="50" y="128" style={{ fontSize: 10, fill: M, fontFamily: "var(--font-mono)" }}>
+          ! drop hips lower
+        </text>
+      </g>
+      <g>
+        <rect x="370" y="50" width="70" height="44" rx="6" fill={BG} stroke={M} />
+        <text
+          x="405"
+          y="68"
+          textAnchor="middle"
+          style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+        >
+          REPS
+        </text>
+        <motion.text
+          x="405"
+          y="88"
+          key={reps}
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.35 }}
+          textAnchor="middle"
+          style={{ fontSize: 18, fontWeight: 700, fill: M, fontFamily: "var(--font-mono)" }}
+        >
+          {reps}
+        </motion.text>
+      </g>
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  TRACK PERSON — stylized map with route + live person                       */
+/* -------------------------------------------------------------------------- */
+export function TrackMini() {
+  const reduce = useReducedMotion();
+  const pts: [number, number][] = [
+    [70, 150],
+    [120, 130],
+    [165, 100],
+    [220, 110],
+    [270, 70],
+    [320, 90],
+    [380, 60],
+    [420, 100],
+  ];
+  const d = pts.map(([x, y], i) => (i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`)).join(" ");
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <defs>
+        <pattern id="map-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+          <path d="M 22 0 L 0 0 0 22" fill="none" stroke={BD} strokeWidth="0.5" />
+        </pattern>
+        <linearGradient id="trail" x1="0" x2="1">
+          <stop offset="0%" stopColor={A} stopOpacity="0.15" />
+          <stop offset="100%" stopColor={V} />
+        </linearGradient>
+      </defs>
+      <rect x="40" y="35" width="400" height="135" rx="6" fill={BG_S} stroke={BD} />
+      <rect x="40" y="35" width="400" height="135" rx="6" fill="url(#map-grid)" opacity="0.7" />
+      <path d="M 40 80 H 440" stroke={BD} strokeWidth="2" />
+      <path d="M 40 130 H 440" stroke={BD} strokeWidth="2" />
+      <path d="M 160 35 V 170" stroke={BD} strokeWidth="2" />
+      <path d="M 290 35 V 170" stroke={BD} strokeWidth="2" />
+      {[
+        [70, 50, 30, 22],
+        [200, 50, 40, 22],
+        [340, 50, 28, 22],
+        [80, 140, 30, 22],
+        [220, 140, 50, 22],
+        [360, 140, 36, 22],
+      ].map(([x, y, w, h], i) => (
+        <rect key={i} x={x} y={y} width={w} height={h} fill={BG} stroke={BD} opacity="0.7" />
+      ))}
+      <path d={d} stroke="url(#trail)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      {pts.map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r={2.6} fill={A} opacity={i / pts.length + 0.3} />
+      ))}
+      <g transform={`translate(${pts[0]![0]},${pts[0]![1]})`}>
+        <circle r="6" fill={E} stroke={BG_S} strokeWidth="2" />
+      </g>
+      {!reduce && (
+        <motion.circle
+          r="8"
+          fill={V}
+          stroke={BG_S}
+          strokeWidth="2"
+          animate={{ cx: pts.map((p) => p[0]), cy: pts.map((p) => p[1]) }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+        />
+      )}
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        track-person · live geofenced route · 8 waypoints
+      </text>
+      <text x="40" y="194" style={{ fontSize: 10, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        ● start · → trail · ● live position
+      </text>
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  SMART BRAIN — animated face + scanning detection                           */
+/* -------------------------------------------------------------------------- */
 export function BrainMini() {
   const reduce = useReducedMotion();
   return (
-    <svg viewBox="0 0 480 180" className="h-full w-full">
-      {/* image frame */}
-      <rect
-        x="40"
-        y="22"
-        width="220"
-        height="130"
-        rx="6"
-        fill="hsl(var(--bg-elev))"
-        stroke="hsl(var(--border))"
-      />
-      {/* face silhouette */}
-      <circle cx="150" cy="80" r="36" fill="hsl(var(--accent-cyan)/0.18)" />
-      <circle cx="138" cy="76" r="3" fill="hsl(var(--fg-muted))" />
-      <circle cx="162" cy="76" r="3" fill="hsl(var(--fg-muted))" />
-      <path
-        d="M 138 92 Q 150 100 162 92"
-        stroke="hsl(var(--fg-muted))"
-        strokeWidth="1.5"
-        fill="none"
-      />
-      {/* detection box */}
-      <motion.rect
-        x="110"
-        y="46"
-        width="80"
-        height="80"
-        rx="4"
-        fill="none"
-        stroke="hsl(var(--accent-emerald))"
-        strokeWidth="2"
-        animate={reduce ? undefined : { opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 1.4, repeat: Infinity }}
-      />
-      <text
-        x="114"
-        y="42"
-        style={{ fontSize: 10, fill: "hsl(var(--accent-emerald))", fontFamily: "var(--font-mono)" }}
-      >
-        face · 98%
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <defs>
+        <radialGradient id="face-g" cx="0.5" cy="0.45" r="0.6">
+          <stop offset="0%" stopColor={A} stopOpacity="0.55" />
+          <stop offset="100%" stopColor={A} stopOpacity="0.05" />
+        </radialGradient>
+        <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={E} stopOpacity="0" />
+          <stop offset="50%" stopColor={E} stopOpacity="0.9" />
+          <stop offset="100%" stopColor={E} stopOpacity="0" />
+        </linearGradient>
+        <clipPath id="cam-clip">
+          <rect x="40" y="36" width="240" height="144" rx="6" />
+        </clipPath>
+      </defs>
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        smart-brain · clarifai face-detect · streaming
       </text>
-      {/* API call arrow */}
-      <line
-        x1="270"
-        y1="80"
-        x2="320"
-        y2="80"
-        stroke="hsl(var(--accent-violet))"
-        strokeWidth="2"
-        strokeDasharray="4 3"
-      />
-      <polygon points="320,76 330,80 320,84" fill="hsl(var(--accent-violet))" />
-      {/* Clarifai badge */}
-      <rect
-        x="335"
-        y="58"
-        width="105"
-        height="44"
-        rx="6"
-        fill="hsl(var(--bg-elev))"
-        stroke="hsl(var(--accent-violet))"
-      />
-      <text
-        x="387"
-        y="78"
-        textAnchor="middle"
-        style={{
-          fontSize: 11,
-          fontWeight: 600,
-          fill: "hsl(var(--fg))",
-          fontFamily: "var(--font-mono)",
-        }}
-      >
-        Clarifai
+      <rect x="40" y="36" width="240" height="144" rx="6" fill={BG_S} stroke={BD} />
+      <g clipPath="url(#cam-clip)">
+        <motion.circle
+          cx="160"
+          cy="108"
+          r="48"
+          fill="url(#face-g)"
+          animate={reduce ? undefined : { scale: [1, 1.03, 1] }}
+          transition={{ duration: 2.2, repeat: Infinity }}
+          style={{ transformOrigin: "160px 108px" }}
+        />
+        <motion.ellipse
+          cx="142"
+          cy="100"
+          rx="3"
+          ry="4"
+          fill={FG}
+          animate={reduce ? undefined : { ry: [4, 0.5, 4, 4] }}
+          transition={{ duration: 3, repeat: Infinity, times: [0, 0.1, 0.2, 1] }}
+        />
+        <motion.ellipse
+          cx="178"
+          cy="100"
+          rx="3"
+          ry="4"
+          fill={FG}
+          animate={reduce ? undefined : { ry: [4, 0.5, 4, 4] }}
+          transition={{ duration: 3, repeat: Infinity, times: [0, 0.1, 0.2, 1] }}
+        />
+        <motion.path
+          d="M 146 124 Q 160 134 174 124"
+          stroke={FG}
+          strokeWidth="2"
+          fill="none"
+          animate={
+            reduce
+              ? undefined
+              : {
+                  d: [
+                    "M 146 124 Q 160 134 174 124",
+                    "M 146 126 Q 160 130 174 126",
+                    "M 146 124 Q 160 134 174 124",
+                  ],
+                }
+          }
+          transition={{ duration: 2.4, repeat: Infinity }}
+        />
+        <motion.rect
+          x="108"
+          y="58"
+          width="104"
+          height="104"
+          rx="4"
+          fill="none"
+          stroke={E}
+          strokeWidth="2"
+          animate={reduce ? undefined : { x: [108, 106, 108], width: [104, 108, 104] }}
+          transition={{ duration: 1.6, repeat: Infinity }}
+        />
+        <text x="112" y="52" style={{ fontSize: 10, fill: E, fontFamily: "var(--font-mono)" }}>
+          face · 0.98
+        </text>
+        {!reduce && (
+          <motion.rect
+            x="40"
+            width="240"
+            height="6"
+            fill="url(#scan)"
+            animate={{ y: [36, 174, 36] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          />
+        )}
+      </g>
+      <line x1="290" y1="108" x2="340" y2="108" stroke={V} strokeWidth="2" strokeDasharray="4 3" />
+      <polygon points="340,104 350,108 340,112" fill={V} />
+      <g>
+        <rect x="358" y="64" width="82" height="92" rx="6" fill={BG} stroke={BD} />
+        <text
+          x="399"
+          y="84"
+          textAnchor="middle"
+          style={{ fontSize: 10, fill: FG_S, fontFamily: "var(--font-mono)" }}
+        >
+          CLARIFAI
+        </text>
+        <circle cx="399" cy="110" r="14" fill={V} opacity="0.18" />
+        <motion.circle
+          cx="399"
+          cy="110"
+          r="8"
+          fill={V}
+          animate={reduce ? undefined : { scale: [1, 1.2, 1] }}
+          transition={{ duration: 1.4, repeat: Infinity }}
+          style={{ transformOrigin: "399px 110px" }}
+        />
+        <text
+          x="399"
+          y="142"
+          textAnchor="middle"
+          style={{ fontSize: 10, fill: FG_M, fontFamily: "var(--font-mono)" }}
+        >
+          model · v2
+        </text>
+      </g>
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  TEZOS — Steam-style marketplace grid                                       */
+/* -------------------------------------------------------------------------- */
+export function ChainBracket() {
+  const reduce = useReducedMotion();
+  const cards = [
+    { x: 50, y: 50, c: A, label: "phx_arena" },
+    { x: 158, y: 50, c: V, label: "chain_quest" },
+    { x: 266, y: 50, c: E, label: "nft_drift" },
+    { x: 374, y: 50, c: M, label: "pixl_war" },
+    { x: 50, y: 120, c: V, label: "battle_xtz" },
+    { x: 158, y: 120, c: E, label: "kaiju_loot" },
+    { x: 266, y: 120, c: M, label: "card_realm" },
+    { x: 374, y: 120, c: A, label: "skybound" },
+  ];
+
+  const [hot, setHot] = useState(0);
+  const [tick, setTick] = useState(0);
+
+  useEffect(() => {
+    if (reduce) return;
+    const id = setInterval(() => {
+      setHot((h) => (h + 1) % cards.length);
+      setTick((t) => t + 1);
+    }, 1400);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reduce]);
+
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        tezos premier league · on-chain games marketplace
       </text>
-      <text
-        x="387"
-        y="93"
-        textAnchor="middle"
-        style={{ fontSize: 9, fill: "hsl(var(--fg-muted))", fontFamily: "var(--font-mono)" }}
-      >
-        face-detect
-      </text>
-      <text
-        x="40"
-        y="172"
-        style={{ fontSize: 10, fill: "hsl(var(--fg-subtle))", fontFamily: "var(--font-mono)" }}
-      >
-        Smart Brain · vision API loop
+      {cards.map((c, i) => {
+        const isHot = i === hot;
+        const price = (i + 2) * 3 + ((tick + i) % 5);
+        return (
+          <motion.g
+            key={c.label}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: i * 0.06 }}
+          >
+            <motion.rect
+              x={c.x}
+              y={c.y}
+              width="92"
+              height="56"
+              rx="5"
+              fill={BG}
+              animate={{
+                stroke: isHot ? c.c : BD,
+                strokeWidth: isHot ? 2 : 1,
+              }}
+              transition={{ duration: 0.4 }}
+            />
+            <rect x={c.x + 6} y={c.y + 6} width="80" height="28" rx="3" fill={c.c} opacity="0.25" />
+            {[0, 1, 2, 3, 4].map((j) => (
+              <motion.circle
+                key={j}
+                cx={c.x + 14 + j * 14}
+                cy={c.y + 20}
+                fill={c.c}
+                animate={
+                  reduce
+                    ? undefined
+                    : {
+                        r: j === 2 ? [5, 6, 5] : [3, 3.6, 3],
+                        opacity: isHot ? 1 : j === 2 ? 0.9 : 0.5,
+                      }
+                }
+                transition={{ duration: 1.6, repeat: Infinity, delay: (i + j) * 0.1 }}
+              />
+            ))}
+            <text
+              x={c.x + 8}
+              y={c.y + 48}
+              style={{ fontSize: 10, fontWeight: 600, fill: FG, fontFamily: "var(--font-mono)" }}
+            >
+              {c.label}
+            </text>
+            <rect
+              x={c.x + 64}
+              y={c.y + 40}
+              width="22"
+              height="11"
+              rx="2"
+              fill={c.c}
+              opacity="0.85"
+            />
+            <motion.text
+              x={c.x + 75}
+              y={c.y + 48}
+              key={`${c.label}-${price}`}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              textAnchor="middle"
+              style={{
+                fontSize: 8,
+                fontWeight: 700,
+                fill: BG_S,
+                fontFamily: "var(--font-mono)",
+              }}
+            >
+              ꜩ{price}
+            </motion.text>
+            {isHot && (
+              <motion.text
+                x={c.x + 88}
+                y={c.y - 2}
+                textAnchor="end"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                style={{
+                  fontSize: 8,
+                  fontWeight: 700,
+                  fill: c.c,
+                  fontFamily: "var(--font-mono)",
+                }}
+              >
+                ▲ trending
+              </motion.text>
+            )}
+          </motion.g>
+        );
+      })}
+      <text x="40" y="194" style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        devs publish · users browse &amp; play · payouts settle on Tezos
       </text>
     </svg>
   );

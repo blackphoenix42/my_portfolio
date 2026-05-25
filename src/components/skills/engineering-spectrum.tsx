@@ -7,12 +7,13 @@ import { clusters } from "@/content/skills";
 import { projects } from "@/content/projects";
 import { accentText, cn } from "@/lib/utils";
 import { TECH_ICONS } from "@/components/logos/tech-icons";
+import { SKILL_GLYPHS, SkillFallbackGlyph } from "@/components/logos/skill-glyph";
 
-const accentDot: Record<string, string> = {
-  cyan: "bg-accent-cyan",
-  violet: "bg-accent-violet",
-  emerald: "bg-accent-emerald",
-  amber: "bg-accent-amber",
+const accentTile: Record<string, string> = {
+  cyan: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/40",
+  violet: "bg-accent-violet/10 text-accent-violet border-accent-violet/40",
+  emerald: "bg-accent-emerald/10 text-accent-emerald border-accent-emerald/40",
+  amber: "bg-accent-amber/10 text-accent-amber border-accent-amber/40",
 };
 
 export function EngineeringSpectrum({ hideHeader = false }: { hideHeader?: boolean }) {
@@ -64,22 +65,27 @@ export function EngineeringSpectrum({ hideHeader = false }: { hideHeader?: boole
                         (p: { className?: string }) => React.ReactElement
                       >
                     )[s.name];
+                    const Glyph = SKILL_GLYPHS[s.name];
                     return (
                       <li
                         key={s.name}
                         className={cn("chip gap-1.5", s.level === "core" && "border-fg/40 text-fg")}
                       >
-                        {Icon ? (
-                          <Icon className="h-3 w-3" />
-                        ) : (
-                          <span
-                            aria-hidden
-                            className={cn(
-                              "h-1.5 w-1.5 rounded-full opacity-80",
-                              accentDot[c.accent],
-                            )}
-                          />
-                        )}
+                        <span
+                          aria-hidden
+                          className={cn(
+                            "inline-grid h-4 w-4 place-items-center rounded-sm border",
+                            accentTile[c.accent],
+                          )}
+                        >
+                          {Icon ? (
+                            <Icon className="h-2.5 w-2.5" />
+                          ) : Glyph ? (
+                            <Glyph className="h-2.5 w-2.5" strokeWidth={2.2} />
+                          ) : (
+                            <SkillFallbackGlyph className="h-2.5 w-2.5" />
+                          )}
+                        </span>
                         {s.name}
                       </li>
                     );

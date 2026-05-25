@@ -3,16 +3,39 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-// Domain mapping for known companies / schools. Clearbit Logo API:
-//   https://logo.clearbit.com/<domain>
-// Falls back to a colored monogram if the logo fails to load.
+// Local logo files in /public/assets/logos. Preferred over network sources.
+const LOCAL: Record<string, string> = {
+  "Cadence Design Systems": "/assets/logos/cadence.svg",
+  "Omikron Technologies": "/assets/logos/omikron.jpg",
+  "Script Winter of Code": "/assets/logos/swoc.png",
+  "Delta Winter of Code": "/assets/logos/dwoc.png",
+  "Tezos India": "/assets/logos/tezos.png",
+  "Programming Club Summer of Code": "/assets/logos/pclub.png",
+  Trotbee: "/assets/logos/fenmo.jpg",
+  "Trotbee Private Limited": "/assets/logos/fenmo.jpg",
+  Fenmo: "/assets/logos/fenmo.jpg",
+  "Miri Infotech": "/assets/logos/miri-infotech.png",
+  "Netaji Subhas University of Technology (East Campus)": "/assets/logos/nsut.png",
+  NSUT: "/assets/logos/nsut.png",
+  "Ramjas School, R. K. Puram": "/assets/logos/ramjas.jpg",
+  "Ramjas International School, R. K. Puram": "/assets/logos/ramjas.jpg",
+  "Dynamix Club": "/assets/logos/dynamix.jpg",
+  "Game Geeks": "/assets/logos/game-geeks.jpeg",
+  CodeChef: "/assets/logos/codechef.png",
+  Codeforces: "/assets/logos/codeforces.svg",
+  HackerRank: "/assets/logos/hackerrank.png",
+  LeetCode: "/assets/logos/leetcode.png",
+  Phoenix: "/assets/logos/phoenix.jpg",
+};
+
+// Network fallback domains (Clearbit + Google s2 favicons).
 const DOMAINS: Record<string, string> = {
   "Cadence Design Systems": "cadence.com",
   "Omikron Technologies": "omikrontech.com",
   "Script Winter of Code": "script.foundation",
   "Delta Winter of Code": "deltawoc.com",
   "Tezos India": "tezosindia.foundation",
-  "Programming Club Summer of Code": "iitkanpur.org.in",
+  "Programming Club Summer of Code": "pclub.in",
   "Trotbee Private Limited": "trotbee.com",
   "Miri Infotech": "miritech.com",
   "Netaji Subhas University of Technology (East Campus)": "nsut.ac.in",
@@ -30,31 +53,45 @@ function initials(name: string) {
 }
 
 export function CompanyLogo({ name, className }: { name: string; className?: string }) {
-  const domain = DOMAINS[name];
-  const [failed, setFailed] = useState(false);
+  const hasLocal = !!LOCAL[name];
+  const hasDomain = !!DOMAINS[name];
+  const initialStage: 0 | 1 | 2 | 3 = hasLocal ? 0 : hasDomain ? 1 : 3;
+  const [stage, setStage] = useState<0 | 1 | 2 | 3>(initialStage);
 
-  if (domain && !failed) {
+  if (stage === 3) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={`https://logo.clearbit.com/${domain}`}
-        alt={`${name} logo`}
-        loading="lazy"
-        onError={() => setFailed(true)}
-        className={cn("object-contain", className)}
-      />
+      <div
+        aria-hidden
+        className={cn(
+          "grid place-items-center bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 font-mono text-[10px] font-semibold text-fg",
+          className,
+        )}
+      >
+        {initials(name) || "•"}
+      </div>
     );
   }
 
+  let src = "";
+  if (stage === 0 && hasLocal) src = LOCAL[name]!;
+  else if (stage === 1 && hasDomain) src = `https://logo.clearbit.com/${DOMAINS[name]}`;
+  else if (stage === 2 && hasDomain)
+    src = `https://www.google.com/s2/favicons?sz=128&domain=${DOMAINS[name]}`;
+
   return (
-    <div
-      aria-hidden
-      className={cn(
-        "grid place-items-center bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 font-mono text-[10px] font-semibold text-fg",
-        className,
-      )}
-    >
-      {initials(name) || "•"}
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={`${name} logo`}
+      loading="lazy"
+      onError={() =>
+        setStage((s) => {
+          if (s === 0) return hasDomain ? 1 : 3;
+          if (s === 1) return 2;
+          return 3;
+        })
+      }
+      className={cn("object-contain", className)}
+    />
   );
 }
