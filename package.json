@@ -31,7 +31,7 @@
     "cmdk": "^1.0.4",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.460.0",
-    "next": "16.2.6",
+    "next": "15.5.18",
     "next-themes": "^0.4.3",
     "react": "19.2.6",
     "react-dom": "19.2.6",
@@ -58,13 +58,8 @@
     "autoprefixer": "^10.4.20",
     "axe-core": "4.11.4",
     "cross-env": "10.1.0",
-<<<<<<< dependabot/npm_and_yarn/tooling-eeca9c6785
-    "eslint": "^10.4.0",
-    "eslint-config-next": "15.5.18",
-=======
     "eslint": "^8.57.1",
-    "eslint-config-next": "16.2.6",
->>>>>>> master
+    "eslint-config-next": "15.5.18",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "9.1.7",
     "jsdom": "^29.1.1",
@@ -72,12 +67,15 @@
     "markdownlint-cli2": "0.22.1",
     "postcss": "8.5.15",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.14",
-    "typescript": "^6.0.3",
+    "typescript": "^5.6.3",
     "vitest": "^4.1.7"
   },
   "overrides": {
-    "glob": "^10.5.0"
+    "glob": "^10.5.0",
+    "next": {
+      "postcss": "^8.5.10"
+    }
   }
 }

@@ -212,11 +212,7 @@ export function ContactForm() {
             <span
               className={
                 "font-mono text-[10px] tabular-nums " +
-                (messageOver
-                  ? "text-accent-amber"
-                  : messageUnder
-                    ? "text-fg-subtle"
-                    : "text-fg-subtle/70")
+                (messageOver ? "text-accent-amber" : messageUnder ? "text-fg-subtle" : "text-fg")
               }
               aria-live="polite"
             >
