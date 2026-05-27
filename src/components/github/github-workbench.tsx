@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, GitFork, Star } from "lucide-react";
+import { GitFork, Star } from "lucide-react";
+import { Github } from "@/components/icons/brand";
 import type { FeaturedRepo } from "@/lib/github";
 
 export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
@@ -27,7 +28,7 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
 
   return (
     <section
-      className="section border-y border-border/60 bg-bg-sunken/30"
+      className="section border-border/60 bg-bg-sunken/30 border-y"
       aria-label="GitHub workbench"
     >
       <div className="container-tight">
@@ -35,7 +36,7 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
           <div>
             <p className="mono-label">/ github</p>
             <h2 className="section-title mt-2">Public workbench</h2>
-            <p className="mt-2 max-w-xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-xl">
               A curated slice of public repositories spanning algorithms, full-stack apps, mobile,
               blockchain and competitive programming.
             </p>
@@ -74,15 +75,15 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Github className="h-4 w-4 text-fg-subtle" />
+                  <Github className="text-fg-subtle h-4 w-4" />
                   <span className="font-mono text-sm font-medium">{r.name}</span>
                 </div>
                 <span className="chip">{r.category}</span>
               </div>
-              <p className="mt-3 line-clamp-2 text-sm text-fg-muted">
+              <p className="text-fg-muted mt-3 line-clamp-2 text-sm">
                 {r.description ?? "No description provided."}
               </p>
-              <div className="mt-4 flex items-center justify-between font-mono text-[11px] text-fg-subtle">
+              <div className="text-fg-subtle mt-4 flex items-center justify-between font-mono text-[11px]">
                 <span className="inline-flex items-center gap-1">
                   <span
                     className="inline-block h-2 w-2 rounded-full"

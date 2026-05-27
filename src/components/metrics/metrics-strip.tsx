@@ -9,7 +9,7 @@ export function MetricsStrip() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10%" });
   return (
-    <section className="border-b border-border/60 bg-bg-sunken/30" aria-label="Impact metrics">
+    <section className="border-border/60 bg-bg-sunken/30 border-b" aria-label="Impact metrics">
       <div className="container-tight py-14">
         <div className="mb-8 flex items-end justify-between">
           <div>
@@ -32,8 +32,8 @@ export function MetricsStrip() {
               <div className={`font-mono text-2xl font-semibold ${accentText[m.accent]}`}>
                 {m.value}
               </div>
-              <div className="mt-2 text-sm font-medium text-fg">{m.label}</div>
-              <p className="mt-1 text-xs leading-snug text-fg-subtle">{m.detail}</p>
+              <div className="text-fg mt-2 text-sm font-medium">{m.label}</div>
+              <p className="text-fg-subtle mt-1 text-xs leading-snug">{m.detail}</p>
             </motion.article>
           ))}
         </div>

@@ -14,7 +14,9 @@ const ROUTES = [
 
 for (const route of ROUTES) {
   test(`a11y: ${route} has no WCAG 2.1 A/AA violations`, async ({ page }) => {
-    await page.goto(route);
+    // Allow generous time for Next 16 dev-server first-compile under parallel workers.
+    test.setTimeout(90_000);
+    await page.goto(route, { waitUntil: "domcontentloaded", timeout: 60_000 });
     await page.waitForLoadState("networkidle");
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])

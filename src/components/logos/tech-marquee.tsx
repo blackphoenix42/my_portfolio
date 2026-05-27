@@ -34,11 +34,11 @@ export function TechMarquee() {
       {ICONS.map((name) => (
         <div
           key={name}
-          className="group flex items-center gap-2 text-fg-muted transition-colors hover:text-fg"
+          className="group text-fg-muted hover:text-fg flex items-center gap-2 transition-colors"
           title={name}
         >
           <TechIcon name={name} className="h-7 w-7" />
-          <span className="font-mono text-xs uppercase tracking-wider opacity-70 group-hover:opacity-100">
+          <span className="font-mono text-xs tracking-wider uppercase opacity-70 group-hover:opacity-100">
             {name}
           </span>
         </div>
@@ -49,10 +49,10 @@ export function TechMarquee() {
   return (
     <section
       aria-label="Technologies"
-      className="relative overflow-hidden border-y border-line/60 bg-bg-elev/30 py-8"
+      className="border-line/60 bg-bg-elev/30 relative overflow-hidden border-y py-8"
     >
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-bg to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-bg to-transparent" />
+      <div className="from-bg pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r to-transparent" />
+      <div className="from-bg pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l to-transparent" />
       <div
         className={reduce ? "flex flex-wrap justify-center gap-y-4" : "marquee-track flex w-max"}
       >

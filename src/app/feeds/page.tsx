@@ -17,8 +17,8 @@ export default function FeedsPage() {
         <p className="mono-label inline-flex items-center gap-2">
           <Rss className="h-3.5 w-3.5" /> / feeds
         </p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Live activity</h1>
-        <p className="mt-3 max-w-2xl text-fg-muted">
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">Live activity</h1>
+        <p className="text-fg-muted mt-3 max-w-2xl">
           Live signals from where I work in public — recent Medium posts, YouTube uploads and GitHub
           events. Pulled server-side from RSS / public APIs and cached at the edge for an hour.
         </p>

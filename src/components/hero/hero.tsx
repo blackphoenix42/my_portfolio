@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, FileDown, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, FileDown, Mail, Sparkles } from "lucide-react";
+import { Github, Linkedin } from "@/components/icons/brand";
 import { SITE, TAGLINES } from "@/content/profile";
 import { HeroVisualization } from "./hero-visualization";
 import { useEffect, useState } from "react";
@@ -18,15 +19,15 @@ export function Hero() {
   }, [reduce]);
 
   return (
-    <section className="relative overflow-hidden border-b border-border/60" aria-label="Hero">
+    <section className="border-border/60 relative overflow-hidden border-b" aria-label="Hero">
       {/* background grid + glow */}
       <div className="grid-bg absolute inset-0 -z-10 opacity-40" aria-hidden />
       <div
-        className="absolute -top-32 left-1/2 -z-10 h-[28rem] w-[44rem] -translate-x-1/2 rounded-full bg-accent-cyan/10 blur-[70px]"
+        className="bg-accent-cyan/10 absolute -top-32 left-1/2 -z-10 h-[28rem] w-[44rem] -translate-x-1/2 rounded-full blur-[70px]"
         aria-hidden
       />
       <div
-        className="absolute -bottom-32 right-0 -z-10 h-[22rem] w-[32rem] rounded-full bg-accent-violet/10 blur-[80px]"
+        className="bg-accent-violet/10 absolute right-0 -bottom-32 -z-10 h-[22rem] w-[32rem] rounded-full blur-[80px]"
         aria-hidden
       />
 
@@ -36,11 +37,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/60 px-3 py-1.5 font-mono text-[11px] text-fg-muted"
+            className="border-border bg-bg-elev/60 text-fg-muted inline-flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-[11px]"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-emerald opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-emerald" />
+              <span className="bg-accent-emerald absolute inline-flex h-full w-full animate-ping rounded-full opacity-60" />
+              <span className="bg-accent-emerald relative inline-flex h-2 w-2 rounded-full" />
             </span>
             {SITE.role} @ {SITE.company}
           </motion.div>
@@ -49,7 +50,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className="mt-6 text-3xl font-semibold leading-tight tracking-tight text-fg sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+            className="text-fg mt-6 text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
           >
             I engineer <span className="text-accent-cyan">performance-critical systems</span> and{" "}
             <span className="text-accent-cyan">AI-powered developer tools</span>.
@@ -59,20 +60,20 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-6 max-w-2xl text-lg text-fg-muted"
+            className="text-fg-muted mt-6 max-w-2xl text-lg"
           >
             C++ performance engineering, distributed systems, agentic AI workflows and developer
             tooling — shipped at scale, measured in production, owned end-to-end.
           </motion.p>
 
           <div className="mt-4 flex items-center gap-2">
-            <Sparkles className="h-3.5 w-3.5 text-accent-cyan" aria-hidden />
+            <Sparkles className="text-accent-cyan h-3.5 w-3.5" aria-hidden />
             <motion.span
               key={tagIndex}
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="font-mono text-xs text-fg-subtle"
+              className="text-fg-subtle font-mono text-xs"
             >
               {TAGLINES[tagIndex]}
             </motion.span>
@@ -88,20 +89,20 @@ export function Hero() {
           </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-2">
-            <a href={SITE.github} className="btn-ghost text-xs text-fg-muted" aria-label="GitHub">
+            <a href={SITE.github} className="btn-ghost text-fg-muted text-xs" aria-label="GitHub">
               <Github className="h-3.5 w-3.5" /> GitHub
             </a>
             <a
               href={SITE.linkedin}
-              className="btn-ghost text-xs text-fg-muted"
+              className="btn-ghost text-fg-muted text-xs"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-3.5 w-3.5" /> LinkedIn
             </a>
-            <a href={SITE.resumePath} download className="btn-ghost text-xs text-fg-muted">
+            <a href={SITE.resumePath} download className="btn-ghost text-fg-muted text-xs">
               <FileDown className="h-3.5 w-3.5" /> Download Résumé
             </a>
-            <Link href="/contact" className="btn-ghost text-xs text-fg-muted">
+            <Link href="/contact" className="btn-ghost text-fg-muted text-xs">
               <Mail className="h-3.5 w-3.5" /> Contact
             </Link>
           </div>
@@ -113,21 +114,21 @@ export function Hero() {
               { v: "~40%", l: "Faster RCA" },
               { v: "Top 1%", l: "LeetCode global" },
             ].map((m) => (
-              <li key={m.l} className="rounded-lg border border-border bg-bg-elev/50 p-3">
-                <div className="font-mono text-lg font-semibold text-fg">{m.v}</div>
-                <div className="mt-1 text-[11px] text-fg-subtle">{m.l}</div>
+              <li key={m.l} className="border-border bg-bg-elev/50 rounded-lg border p-3">
+                <div className="text-fg font-mono text-lg font-semibold">{m.v}</div>
+                <div className="text-fg-subtle mt-1 text-[11px]">{m.l}</div>
               </li>
             ))}
           </ul>
         </div>
 
         <div className="relative lg:col-span-5">
-          <div className="card relative aspect-[5/4] overflow-hidden rounded-2xl border-border/80 bg-gradient-to-br from-bg-elev/80 to-bg-sunken/80 p-4">
-            <div className="absolute left-3 top-3 flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-accent-amber/70" />
-              <span className="h-2 w-2 rounded-full bg-accent-emerald/70" />
-              <span className="h-2 w-2 rounded-full bg-accent-cyan/70" />
-              <span className="ml-2 font-mono text-xs font-medium text-fg-muted">
+          <div className="card border-border/80 from-bg-elev/80 to-bg-sunken/80 relative aspect-[5/4] overflow-hidden rounded-2xl bg-gradient-to-br p-4">
+            <div className="absolute top-3 left-3 flex items-center gap-1.5">
+              <span className="bg-accent-amber/70 h-2 w-2 rounded-full" />
+              <span className="bg-accent-emerald/70 h-2 w-2 rounded-full" />
+              <span className="bg-accent-cyan/70 h-2 w-2 rounded-full" />
+              <span className="text-fg-muted ml-2 font-mono text-xs font-medium">
                 xmai · profiler · live
               </span>
             </div>

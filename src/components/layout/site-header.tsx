@@ -62,7 +62,7 @@ export function SiteHeader() {
       className={cn(
         "sticky top-0 z-40 transition-all duration-200",
         scrolled
-          ? "border-b border-border/70 bg-bg/80 backdrop-blur-md"
+          ? "border-border/70 bg-bg/80 border-b backdrop-blur-md"
           : "border-b border-transparent",
       )}
     >
@@ -74,7 +74,7 @@ export function SiteHeader() {
         >
           <Logo />
           <span className="flex flex-col leading-none">
-            <span className="text-sm font-semibold tracking-tight text-fg">Ayush Yadav</span>
+            <span className="text-fg text-sm font-semibold tracking-tight">Ayush Yadav</span>
           </span>
         </Link>
 
@@ -98,7 +98,7 @@ export function SiteHeader() {
                     <motion.span
                       layoutId="nav-pill"
                       aria-hidden
-                      className="absolute inset-0 rounded-full border border-accent-cyan/30 bg-accent-cyan/10"
+                      className="border-accent-cyan/30 bg-accent-cyan/10 absolute inset-0 rounded-full border"
                       transition={
                         reduce ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 32 }
                       }
@@ -113,18 +113,18 @@ export function SiteHeader() {
         <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-command-menu"))}
-            className="hidden items-center gap-2 rounded-md border border-border bg-bg-elev/60 px-2.5 py-1.5 text-xs text-fg-muted transition-colors hover:border-accent-cyan/40 hover:text-fg lg:inline-flex"
+            className="border-border bg-bg-elev/60 text-fg-muted hover:border-accent-cyan/40 hover:text-fg hidden items-center gap-2 rounded-md border px-2.5 py-1.5 text-xs transition-colors lg:inline-flex"
             aria-label="Open command menu"
           >
             <Search className="h-3.5 w-3.5" />
             <span>Search</span>
-            <kbd className="ml-1 rounded bg-bg-sunken px-1.5 py-0.5 font-mono text-[10px]">⌘K</kbd>
+            <kbd className="bg-bg-sunken ml-1 rounded px-1.5 py-0.5 font-mono text-[10px]">⌘K</kbd>
           </button>
           <Link
             href="/feeds"
             aria-label="Live feeds (Medium, YouTube, GitHub)"
             title="Live feeds"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-bg-elev/40 text-fg-muted transition-colors hover:border-accent-amber/40 hover:text-accent-amber"
+            className="border-border bg-bg-elev/40 text-fg-muted hover:border-accent-amber/40 hover:text-accent-amber inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
           >
             <Rss className="h-4 w-4" />
           </Link>
@@ -135,7 +135,7 @@ export function SiteHeader() {
           </a>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-bg-elev/40 text-fg-muted transition-colors hover:text-fg md:hidden"
+            className="border-border bg-bg-elev/40 text-fg-muted hover:text-fg inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -151,7 +151,7 @@ export function SiteHeader() {
           <>
             <motion.div
               key="scrim"
-              className="fixed inset-0 top-16 z-30 bg-bg/60 backdrop-blur-sm md:hidden"
+              className="bg-bg/60 fixed inset-0 top-16 z-30 backdrop-blur-sm md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -162,7 +162,7 @@ export function SiteHeader() {
               id="mobile-nav"
               key="sheet"
               aria-label="Mobile"
-              className="fixed inset-x-0 top-16 z-40 border-b border-border bg-bg-elev/95 backdrop-blur-md md:hidden"
+              className="border-border bg-bg-elev/95 fixed inset-x-0 top-16 z-40 border-b backdrop-blur-md md:hidden"
               initial={reduce ? { opacity: 0 } : { y: -12, opacity: 0 }}
               animate={reduce ? { opacity: 1 } : { y: 0, opacity: 1 }}
               exit={reduce ? { opacity: 0 } : { y: -12, opacity: 0 }}
@@ -225,7 +225,7 @@ function Logo() {
   return (
     <span
       aria-hidden="true"
-      className="relative inline-flex h-8 w-8 overflow-hidden rounded-md border border-border bg-bg-sunken/60 transition-transform group-hover:-rotate-6 group-hover:scale-110"
+      className="border-border bg-bg-sunken/60 relative inline-flex h-8 w-8 overflow-hidden rounded-md border transition-transform group-hover:scale-110 group-hover:-rotate-6"
     >
       <Image
         src="/assets/logos/phoenix.jpg"

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import { Github, Linkedin } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 
 export function AboutSection() {
@@ -14,20 +15,20 @@ export function AboutSection() {
             <div className="relative shrink-0">
               <span
                 aria-hidden
-                className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent-amber/30 via-accent-violet/20 to-accent-cyan/30 blur-md"
+                className="from-accent-amber/30 via-accent-violet/20 to-accent-cyan/30 absolute -inset-1 rounded-2xl bg-gradient-to-br blur-md"
               />
               <Image
                 src="/assets/profile/my_pic.jpg"
                 alt="Ayush Yadav"
                 width={160}
                 height={200}
-                className="relative h-40 w-32 rounded-2xl border border-border object-cover shadow-md sm:h-48 sm:w-40"
+                className="border-border relative h-40 w-32 rounded-2xl border object-cover shadow-md sm:h-48 sm:w-40"
                 priority
               />
             </div>
-            <div className="space-y-4 text-fg-muted">
+            <div className="text-fg-muted space-y-4">
               <p>
-                I'm <span className="font-medium text-fg">Ayush Yadav</span>, a software engineer
+                I'm <span className="text-fg font-medium">Ayush Yadav</span>, a software engineer
                 shipping performance-critical systems and AI-assisted developer tooling at scale. At{" "}
                 {SITE.company}, my C++ and runtime work has delivered measurable wins on production
                 workloads run by Apple, Google, Samsung and NVIDIA.
@@ -45,30 +46,30 @@ export function AboutSection() {
             <p className="mono-label">Engineering principles in motion</p>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex gap-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-cyan" />
+                <span className="bg-accent-cyan mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" />
                 <span className="text-fg-muted">
-                  <span className="font-medium text-fg">Profile first.</span> Optimization without
+                  <span className="text-fg font-medium">Profile first.</span> Optimization without
                   measurement is folklore.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-violet" />
+                <span className="bg-accent-violet mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" />
                 <span className="text-fg-muted">
-                  <span className="font-medium text-fg">Reduce the gap</span> between intent and
+                  <span className="text-fg font-medium">Reduce the gap</span> between intent and
                   observability.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-emerald" />
+                <span className="bg-accent-emerald mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" />
                 <span className="text-fg-muted">
-                  <span className="font-medium text-fg">Design for trust:</span> deterministic,
+                  <span className="text-fg font-medium">Design for trust:</span> deterministic,
                   accessible, well-tested.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-amber" />
+                <span className="bg-accent-amber mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" />
                 <span className="text-fg-muted">
-                  <span className="font-medium text-fg">Treat performance</span> as a first-class
+                  <span className="text-fg font-medium">Treat performance</span> as a first-class
                   product feature.
                 </span>
               </li>

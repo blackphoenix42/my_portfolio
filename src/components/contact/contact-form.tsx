@@ -93,11 +93,11 @@ export function ContactForm() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--accent-emerald)/0.12),transparent_60%)]"
         />
         <div className="relative flex flex-col items-center gap-4">
-          <div className="grid h-14 w-14 place-items-center rounded-full bg-accent-emerald/10 ring-1 ring-accent-emerald/30">
-            <CheckCircle2 className="h-7 w-7 text-accent-emerald" />
+          <div className="bg-accent-emerald/10 ring-accent-emerald/30 grid h-14 w-14 place-items-center rounded-full ring-1">
+            <CheckCircle2 className="text-accent-emerald h-7 w-7" />
           </div>
           <h2 className="text-xl font-semibold">Message sent.</h2>
-          <p className="max-w-md text-sm text-fg-muted">
+          <p className="text-fg-muted max-w-md text-sm">
             Thanks for reaching out — I&apos;ll get back to you as soon as possible. In urgent
             cases, email me directly.
           </p>
@@ -123,7 +123,7 @@ export function ContactForm() {
       {/* subtle gradient top border accent */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-cyan/60 to-transparent"
+        className="via-accent-cyan/60 pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent"
       />
 
       {/* honeypot */}
@@ -165,7 +165,7 @@ export function ContactForm() {
 
         {/* Role pill picker — replaces the redundant opportunity checkbox + plain select */}
         <fieldset className="grid gap-2">
-          <legend className="font-mono text-[11px] uppercase tracking-widest text-fg-subtle">
+          <legend className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase">
             I&apos;m a…
           </legend>
           <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Role">
@@ -205,7 +205,7 @@ export function ContactForm() {
           <div className="flex items-center justify-between">
             <label
               htmlFor="message"
-              className="font-mono text-[11px] uppercase tracking-widest text-fg-subtle"
+              className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase"
             >
               Message <span className="text-accent-cyan">*</span>
             </label>
@@ -220,7 +220,7 @@ export function ContactForm() {
             </span>
           </div>
           <div className="relative">
-            <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-fg-subtle" />
+            <MessageSquare className="text-fg-subtle pointer-events-none absolute top-3 left-3 h-4 w-4" />
             <textarea
               id="message"
               name="message"
@@ -231,21 +231,21 @@ export function ContactForm() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="A few lines about the role, project, or what you'd like to discuss."
-              className="w-full resize-y rounded-md border border-border bg-bg-elev/60 py-2.5 pl-10 pr-3 text-sm outline-none transition-colors placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-2 focus:ring-accent-cyan/20"
+              className="border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full resize-y rounded-md border py-2.5 pr-3 pl-10 text-sm transition-colors outline-none focus:ring-2"
             />
           </div>
           {errors.message && <FieldError message={errors.message} />}
         </div>
 
         {serverError && (
-          <div className="flex items-start gap-2 rounded-md border border-accent-amber/40 bg-accent-amber/10 p-3 text-sm text-accent-amber">
+          <div className="border-accent-amber/40 bg-accent-amber/10 text-accent-amber flex items-start gap-2 rounded-md border p-3 text-sm">
             <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
             <span>{serverError}</span>
           </div>
         )}
 
         <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p id="contact-form-note" className="font-mono text-[10px] text-fg-subtle">
+          <p id="contact-form-note" className="text-fg-subtle font-mono text-[10px]">
             Protected by rate limiting &amp; server validation.
           </p>
           <button
@@ -259,7 +259,7 @@ export function ContactForm() {
               </>
             ) : (
               <>
-                <Send className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 Send message
               </>
             )}
@@ -294,13 +294,13 @@ function Field({
     <div className="grid gap-1.5">
       <label
         htmlFor={id}
-        className="font-mono text-[11px] uppercase tracking-widest text-fg-subtle"
+        className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase"
       >
         {label} {required && <span className="text-accent-cyan">*</span>}
       </label>
       <div className="relative">
         {icon && (
-          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-fg-subtle">
+          <span className="text-fg-subtle pointer-events-none absolute top-1/2 left-3 -translate-y-1/2">
             {icon}
           </span>
         )}
@@ -313,7 +313,7 @@ function Field({
           autoComplete={autoComplete}
           aria-invalid={error ? true : undefined}
           className={
-            "w-full rounded-md border border-border bg-bg-elev/60 py-2.5 pr-3 text-sm outline-none transition-colors placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-2 focus:ring-accent-cyan/20 " +
+            "border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full rounded-md border py-2.5 pr-3 text-sm transition-colors outline-none focus:ring-2 " +
             (icon ? "pl-10" : "pl-3")
           }
         />
@@ -325,7 +325,7 @@ function Field({
 
 function FieldError({ message }: { message: string }) {
   return (
-    <p role="alert" className="flex items-center gap-1 font-mono text-[11px] text-accent-amber">
+    <p role="alert" className="text-accent-amber flex items-center gap-1 font-mono text-[11px]">
       <AlertCircle className="h-3 w-3" />
       {message}
     </p>

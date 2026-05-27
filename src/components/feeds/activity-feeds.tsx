@@ -1,4 +1,5 @@
-import { Rss, PenTool, Youtube, Github, ArrowUpRight } from "lucide-react";
+import { Rss, PenTool, ArrowUpRight } from "lucide-react";
+import { Github, Youtube } from "@/components/icons/brand";
 import {
   fetchMediumFeed,
   fetchYouTubeFeed,
@@ -58,7 +59,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
   ];
 
   return (
-    <section className="section border-t border-border/60" aria-label="Live activity feeds">
+    <section className="section border-border/60 border-t" aria-label="Live activity feeds">
       <div className="container-tight">
         {!hideHeader && (
           <header className="mb-8">
@@ -66,7 +67,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
               <Rss className="h-3.5 w-3.5" /> / live feeds
             </p>
             <h2 className="section-title mt-2">Live activity</h2>
-            <p className="mt-2 max-w-2xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-2xl">
               Recent posts, videos and commits — pulled live from Medium, YouTube and GitHub and
               cached for an hour at the edge.
             </p>
@@ -85,12 +86,12 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
                 </div>
                 <ul className="mt-4 flex-1 space-y-3">
                   {p.items.length === 0 ? (
-                    <li className="text-xs text-fg-subtle">{p.empty}</li>
+                    <li className="text-fg-subtle text-xs">{p.empty}</li>
                   ) : (
                     p.items.map((it, idx) => (
                       <li
                         key={`${p.key}-${idx}`}
-                        className="border-l-2 border-border/60 pl-3 transition-colors hover:border-accent-amber/50"
+                        className="border-border/60 hover:border-accent-amber/50 border-l-2 pl-3 transition-colors"
                       >
                         <a
                           href={it.url}
@@ -98,14 +99,14 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
                           rel="noopener noreferrer"
                           className="group block"
                         >
-                          <p className="line-clamp-2 text-sm font-medium text-fg group-hover:text-accent-amber">
+                          <p className="text-fg group-hover:text-accent-amber line-clamp-2 text-sm font-medium">
                             {it.title}
                           </p>
                           {it.excerpt && (
-                            <p className="mt-1 line-clamp-2 text-xs text-fg-muted">{it.excerpt}</p>
+                            <p className="text-fg-muted mt-1 line-clamp-2 text-xs">{it.excerpt}</p>
                           )}
                           {it.date && (
-                            <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
+                            <p className="text-fg-subtle mt-1 font-mono text-[10px] tracking-wider uppercase">
                               {formatRelative(it.date)}
                             </p>
                           )}
@@ -118,7 +119,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
                   href={p.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-1 text-xs text-accent-cyan hover:text-fg"
+                  className="text-accent-cyan hover:text-fg mt-5 inline-flex items-center gap-1 text-xs"
                 >
                   {p.cta.label} <ArrowUpRight className="h-3 w-3" />
                 </a>

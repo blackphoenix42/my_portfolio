@@ -80,15 +80,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <article className="container-tight py-16">
       <Link
         href="/work"
-        className="inline-flex items-center gap-1 text-sm text-fg-muted hover:text-fg"
+        className="text-fg-muted hover:text-fg inline-flex items-center gap-1 text-sm"
       >
         <ArrowLeft className="h-3.5 w-3.5" /> All work
       </Link>
 
       <header className="mt-6 max-w-3xl">
         <p className="mono-label">{project.category}</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">{project.title}</h1>
-        <p className="mt-4 text-lg text-fg-muted">{project.tagline}</p>
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{project.title}</h1>
+        <p className="text-fg-muted mt-4 text-lg">{project.tagline}</p>
         <ul className="mt-5 flex flex-wrap gap-1.5">
           {project.tags.map((t) => (
             <li key={t} className="chip">
@@ -101,10 +101,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {project.impact.map((m) => (
           <div key={m.label} className="card p-4">
-            <div className="font-mono text-[11px] uppercase tracking-widest text-fg-subtle">
+            <div className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase">
               {m.label}
             </div>
-            <div className="mt-2 text-xl font-semibold text-fg">{m.value}</div>
+            <div className="text-fg mt-2 text-xl font-semibold">{m.value}</div>
           </div>
         ))}
       </section>
@@ -112,7 +112,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {project.slug === "xmai" && (
         <section className="mt-12">
           <h2 className="section-title">Architecture</h2>
-          <p className="mt-2 text-sm text-fg-subtle">
+          <p className="text-fg-subtle mt-2 text-sm">
             Conceptual architecture based on publicly shareable project information.
           </p>
           <div className="card mt-6 p-6">
@@ -126,7 +126,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {DEMOS[project.slug] && (
         <section className="mt-12">
           <h2 className="section-title">{DEMOS[project.slug]!.title}</h2>
-          <p className="mt-2 text-sm text-fg-muted">{DEMOS[project.slug]!.subtitle}</p>
+          <p className="text-fg-muted mt-2 text-sm">{DEMOS[project.slug]!.subtitle}</p>
           <div className="mt-6">{DEMOS[project.slug]!.render()}</div>
         </section>
       )}
@@ -134,15 +134,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="mt-12 grid gap-10 lg:grid-cols-3">
         <div>
           <h2 className="text-xl font-semibold tracking-tight">Problem</h2>
-          <p className="mt-3 text-fg-muted">{project.problem}</p>
+          <p className="text-fg-muted mt-3">{project.problem}</p>
         </div>
         <div>
           <h2 className="text-xl font-semibold tracking-tight">Technical challenge</h2>
-          <p className="mt-3 text-fg-muted">{project.challenge}</p>
+          <p className="text-fg-muted mt-3">{project.challenge}</p>
         </div>
         <div>
           <h2 className="text-xl font-semibold tracking-tight">Overview</h2>
-          <p className="mt-3 text-fg-muted">{project.summary}</p>
+          <p className="text-fg-muted mt-3">{project.summary}</p>
         </div>
       </section>
 
@@ -153,8 +153,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <ol className="mt-4 grid gap-3 sm:grid-cols-2">
           {project.approach.map((step, i) => (
             <li key={i} className="card p-4">
-              <span className="font-mono text-[11px] text-accent-cyan">Step {i + 1}</span>
-              <p className="mt-2 text-sm text-fg-muted">{step}</p>
+              <span className="text-accent-cyan font-mono text-[11px]">Step {i + 1}</span>
+              <p className="text-fg-muted mt-2 text-sm">{step}</p>
             </li>
           ))}
         </ol>
@@ -173,7 +173,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="card p-5">
           <h2 className="text-base font-semibold tracking-tight">Lessons learned</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-4 text-sm text-fg-muted">
+          <ul className="text-fg-muted mt-3 list-disc space-y-2 pl-4 text-sm">
             <li>
               Profiling-first thinking beats premature abstraction in performance-critical systems.
             </li>
@@ -213,9 +213,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               return (
                 <li key={slug}>
                   <Link href={`/work/${r.slug}`} className="card card-hover block p-4">
-                    <p className="font-mono text-[11px] text-fg-subtle">{r.category}</p>
+                    <p className="text-fg-subtle font-mono text-[11px]">{r.category}</p>
                     <h3 className="mt-1 font-semibold">{r.title}</h3>
-                    <p className="mt-1 text-sm text-fg-muted">{r.tagline}</p>
+                    <p className="text-fg-muted mt-1 text-sm">{r.tagline}</p>
                   </Link>
                 </li>
               );

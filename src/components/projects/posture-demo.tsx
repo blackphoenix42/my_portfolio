@@ -33,7 +33,7 @@ export function PostureDemo() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-border bg-bg-sunken/60 px-4 py-2 font-mono text-xs text-fg-subtle">
+      <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span>postureiq · live rep · simulated</span>
         <span className={gate ? "text-accent-emerald" : "text-accent-amber"}>
           {gate ? "● tracking" : "○ low confidence"}
@@ -53,20 +53,20 @@ export function PostureDemo() {
               opacity="0.5"
             />
           </svg>
-          <p className="mt-2 font-mono text-[11px] text-fg-subtle">
+          <p className="text-fg-subtle mt-2 font-mono text-[11px]">
             form-score(t) with confidence gate — peaks count when above threshold
           </p>
         </div>
         <div className="space-y-2">
-          <div className="rounded-md border border-border bg-bg-elev p-3">
-            <p className="font-mono text-[10px] text-fg-subtle">FORM SCORE</p>
-            <p className="font-mono text-2xl font-semibold text-accent-cyan">{score}</p>
+          <div className="border-border bg-bg-elev rounded-md border p-3">
+            <p className="text-fg-subtle font-mono text-[10px]">FORM SCORE</p>
+            <p className="text-accent-cyan font-mono text-2xl font-semibold">{score}</p>
           </div>
-          <div className="rounded-md border border-border bg-bg-elev p-3">
-            <p className="font-mono text-[10px] text-fg-subtle">REPS · CONF</p>
-            <p className="font-mono text-lg font-semibold text-fg">
+          <div className="border-border bg-bg-elev rounded-md border p-3">
+            <p className="text-fg-subtle font-mono text-[10px]">REPS · CONF</p>
+            <p className="text-fg font-mono text-lg font-semibold">
               {reps}{" "}
-              <span className="text-xs text-fg-muted">· {(confidence * 100).toFixed(0)}%</span>
+              <span className="text-fg-muted text-xs">· {(confidence * 100).toFixed(0)}%</span>
             </p>
           </div>
           <div className="flex gap-1.5">

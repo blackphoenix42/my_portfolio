@@ -37,14 +37,14 @@ export function TrackPersonDemo() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-border bg-bg-sunken/60 px-4 py-2 font-mono text-xs text-fg-subtle">
+      <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span>track-person · live route · simulated</span>
         <span className="text-accent-emerald">● in-zone</span>
       </div>
       <div className="grid gap-4 p-5 lg:grid-cols-[1fr,220px]">
         <svg
           viewBox="0 0 480 200"
-          className="h-64 w-full rounded-md border border-border bg-bg-sunken/40"
+          className="border-border bg-bg-sunken/40 h-64 w-full rounded-md border"
         >
           <defs>
             <pattern id="map-grid-d" width="22" height="22" patternUnits="userSpaceOnUse">
@@ -83,13 +83,13 @@ export function TrackPersonDemo() {
           <circle cx={x} cy={y} r="16" fill="hsl(var(--accent-violet))" opacity="0.18" />
         </svg>
         <div className="space-y-2">
-          <div className="rounded-md border border-border bg-bg-elev p-3">
-            <p className="font-mono text-[10px] text-fg-subtle">DISTANCE</p>
-            <p className="font-mono text-xl font-semibold text-accent-cyan">{distance} km</p>
+          <div className="border-border bg-bg-elev rounded-md border p-3">
+            <p className="text-fg-subtle font-mono text-[10px]">DISTANCE</p>
+            <p className="text-accent-cyan font-mono text-xl font-semibold">{distance} km</p>
           </div>
-          <div className="rounded-md border border-border bg-bg-elev p-3">
-            <p className="font-mono text-[10px] text-fg-subtle">WAYPOINT</p>
-            <p className="font-mono text-lg text-fg">
+          <div className="border-border bg-bg-elev rounded-md border p-3">
+            <p className="text-fg-subtle font-mono text-[10px]">WAYPOINT</p>
+            <p className="text-fg font-mono text-lg">
               {seg + 1} / {PATH.length}
             </p>
           </div>

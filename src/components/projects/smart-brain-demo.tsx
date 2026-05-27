@@ -103,7 +103,6 @@ export function SmartBrainDemo() {
   // initial scan on mount
   useEffect(() => {
     run(0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function push(msg: string) {
@@ -112,7 +111,7 @@ export function SmartBrainDemo() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-border bg-bg-sunken/60 px-4 py-2 font-mono text-xs text-fg-subtle">
+      <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span className="inline-flex items-center gap-1.5">
           <Camera className="h-3.5 w-3.5" />
           smart-brain · vision inference · simulated
@@ -124,7 +123,7 @@ export function SmartBrainDemo() {
             </>
           ) : (
             <>
-              <Sparkles className="h-3 w-3 text-accent-emerald" /> ready
+              <Sparkles className="text-accent-emerald h-3 w-3" /> ready
             </>
           )}
         </span>
@@ -132,7 +131,7 @@ export function SmartBrainDemo() {
 
       <div className="grid gap-5 p-5 lg:grid-cols-[1fr,240px]">
         {/* canvas */}
-        <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-border bg-bg-sunken/60">
+        <div className="border-border bg-bg-sunken/60 relative aspect-[16/10] overflow-hidden rounded-md border">
           <svg
             viewBox="0 0 100 60"
             preserveAspectRatio="none"
@@ -266,9 +265,9 @@ export function SmartBrainDemo() {
           </svg>
 
           {/* progress bar */}
-          <div className="absolute inset-x-2 bottom-2 h-1 overflow-hidden rounded-full bg-border/40">
+          <div className="bg-border/40 absolute inset-x-2 bottom-2 h-1 overflow-hidden rounded-full">
             <motion.div
-              className="h-full bg-accent-emerald"
+              className="bg-accent-emerald h-full"
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.1 }}
             />
@@ -278,7 +277,7 @@ export function SmartBrainDemo() {
         {/* sidebar */}
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-between">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-fg-subtle">
+            <p className="text-fg-subtle font-mono text-[10px] tracking-widest uppercase">
               Try a sample
             </p>
             <button
@@ -286,7 +285,7 @@ export function SmartBrainDemo() {
               onClick={() => run(idx)}
               disabled={scanning}
               aria-label="Re-run inference"
-              className="inline-flex items-center gap-1 rounded-md border border-border px-1.5 py-0.5 font-mono text-[10px] text-fg-muted transition-colors hover:border-accent-emerald/40 hover:text-fg disabled:opacity-50"
+              className="border-border text-fg-muted hover:border-accent-emerald/40 hover:text-fg inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 font-mono text-[10px] transition-colors disabled:opacity-50"
             >
               <RefreshCcw className="h-3 w-3" /> rerun
             </button>
@@ -304,18 +303,18 @@ export function SmartBrainDemo() {
               } disabled:opacity-50`}
             >
               <span>{s.name}</span>
-              <span className="font-mono text-[10px] text-fg-subtle">
+              <span className="text-fg-subtle font-mono text-[10px]">
                 {s.detections.length} obj
               </span>
             </button>
           ))}
 
           {/* inference log */}
-          <div className="rounded-md border border-border bg-bg-elev p-2">
-            <p className="mb-1 font-mono text-[10px] uppercase tracking-widest text-fg-subtle">
+          <div className="border-border bg-bg-elev rounded-md border p-2">
+            <p className="text-fg-subtle mb-1 font-mono text-[10px] tracking-widest uppercase">
               Inference log
             </p>
-            <ul className="space-y-0.5 font-mono text-[10px] text-fg-muted">
+            <ul className="text-fg-muted space-y-0.5 font-mono text-[10px]">
               {log.length === 0 && <li className="text-fg-subtle">waiting for input…</li>}
               {log.map((l, i) => (
                 <li key={i} className="flex justify-between gap-2">
@@ -328,20 +327,20 @@ export function SmartBrainDemo() {
 
           {/* results */}
           {!scanning && revealedDets.length > 0 && (
-            <div className="rounded-md border border-border bg-bg-elev p-2">
-              <p className="mb-1 font-mono text-[10px] uppercase tracking-widest text-fg-subtle">
+            <div className="border-border bg-bg-elev rounded-md border p-2">
+              <p className="text-fg-subtle mb-1 font-mono text-[10px] tracking-widest uppercase">
                 Detections
               </p>
               <ul className="space-y-1">
                 {revealedDets.map((d, i) => (
                   <li key={i} className="text-[11px]">
-                    <div className="flex justify-between font-mono text-fg-muted">
+                    <div className="text-fg-muted flex justify-between font-mono">
                       <span>{d.label}</span>
                       <span className="text-accent-emerald">{(d.conf * 100).toFixed(0)}%</span>
                     </div>
-                    <div className="mt-0.5 h-1 overflow-hidden rounded-full bg-border/40">
+                    <div className="bg-border/40 mt-0.5 h-1 overflow-hidden rounded-full">
                       <div
-                        className="h-full bg-accent-emerald"
+                        className="bg-accent-emerald h-full"
                         style={{ width: `${d.conf * 100}%` }}
                       />
                     </div>

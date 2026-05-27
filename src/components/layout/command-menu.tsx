@@ -3,18 +3,8 @@
 import { Command } from "cmdk";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Search,
-  Briefcase,
-  Code2,
-  Mail,
-  FileDown,
-  User,
-  Cpu,
-  Github,
-  Layers,
-  Beaker,
-} from "lucide-react";
+import { Search, Briefcase, Code2, Mail, FileDown, User, Cpu, Layers, Beaker } from "lucide-react";
+import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { projects } from "@/content/projects";
 
@@ -82,26 +72,26 @@ export function CommandMenu() {
         className="absolute inset-0 cursor-default"
         onClick={() => setOpen(false)}
       />
-      <div className="relative z-10 w-full max-w-xl overflow-hidden rounded-xl border border-border bg-bg-elev shadow-2xl">
+      <div className="border-border bg-bg-elev relative z-10 w-full max-w-xl overflow-hidden rounded-xl border shadow-2xl">
         <Command label="Command Menu" shouldFilter>
-          <div className="flex items-center gap-2 border-b border-border px-3">
-            <Search className="h-4 w-4 text-fg-subtle" />
+          <div className="border-border flex items-center gap-2 border-b px-3">
+            <Search className="text-fg-subtle h-4 w-4" />
             <Command.Input
               ref={inputRef}
               placeholder="Search projects, skills, pages…"
-              className="h-12 w-full bg-transparent text-sm text-fg outline-none placeholder:text-fg-subtle"
+              className="text-fg placeholder:text-fg-subtle h-12 w-full bg-transparent text-sm outline-none"
             />
-            <kbd className="rounded bg-bg-sunken px-1.5 py-0.5 font-mono text-[10px] text-fg-subtle">
+            <kbd className="bg-bg-sunken text-fg-subtle rounded px-1.5 py-0.5 font-mono text-[10px]">
               ESC
             </kbd>
           </div>
           <Command.List className="max-h-[60vh] overflow-y-auto p-2">
-            <Command.Empty className="px-3 py-4 text-sm text-fg-subtle">No results.</Command.Empty>
+            <Command.Empty className="text-fg-subtle px-3 py-4 text-sm">No results.</Command.Empty>
             {groups.map((g) => (
               <Command.Group
                 key={g.heading}
                 heading={g.heading}
-                className="px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-fg-subtle"
+                className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
               >
                 {g.items.map((item) => {
                   const Icon = item.icon;
@@ -109,9 +99,9 @@ export function CommandMenu() {
                     <Command.Item
                       key={item.id}
                       onSelect={() => go(item.href)}
-                      className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm aria-selected:bg-bg-sunken aria-selected:text-fg"
+                      className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
                     >
-                      <Icon className="h-4 w-4 text-fg-subtle" />
+                      <Icon className="text-fg-subtle h-4 w-4" />
                       <span>{item.label}</span>
                     </Command.Item>
                   );
@@ -120,31 +110,31 @@ export function CommandMenu() {
             ))}
             <Command.Group
               heading="Work"
-              className="px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-fg-subtle"
+              className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
             >
               {projects.map((p) => (
                 <Command.Item
                   key={p.slug}
                   onSelect={() => go(`/work/${p.slug}`)}
-                  className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm aria-selected:bg-bg-sunken aria-selected:text-fg"
+                  className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
                 >
-                  <Layers className="h-4 w-4 text-fg-subtle" />
+                  <Layers className="text-fg-subtle h-4 w-4" />
                   <span>{p.title}</span>
                 </Command.Item>
               ))}
             </Command.Group>
             <Command.Group
               heading="Actions"
-              className="px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:text-fg-subtle"
+              className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
             >
               <Command.Item
                 onSelect={() => {
                   setOpen(false);
                   window.open(SITE.resumePath, "_blank");
                 }}
-                className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm aria-selected:bg-bg-sunken aria-selected:text-fg"
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
-                <FileDown className="h-4 w-4 text-fg-subtle" />
+                <FileDown className="text-fg-subtle h-4 w-4" />
                 Download Résumé
               </Command.Item>
               <Command.Item
@@ -152,9 +142,9 @@ export function CommandMenu() {
                   setOpen(false);
                   navigator.clipboard.writeText(SITE.email);
                 }}
-                className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm aria-selected:bg-bg-sunken aria-selected:text-fg"
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
-                <Mail className="h-4 w-4 text-fg-subtle" />
+                <Mail className="text-fg-subtle h-4 w-4" />
                 Copy Email
               </Command.Item>
               <Command.Item
@@ -162,14 +152,14 @@ export function CommandMenu() {
                   setOpen(false);
                   window.open(SITE.github, "_blank");
                 }}
-                className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm aria-selected:bg-bg-sunken aria-selected:text-fg"
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
-                <Github className="h-4 w-4 text-fg-subtle" />
+                <Github className="text-fg-subtle h-4 w-4" />
                 Open GitHub
               </Command.Item>
             </Command.Group>
           </Command.List>
-          <div className="flex items-center justify-between gap-2 border-t border-border bg-bg-sunken/40 px-3 py-1.5 font-mono text-[10px] text-fg-subtle">
+          <div className="border-border bg-bg-sunken/40 text-fg-subtle flex items-center justify-between gap-2 border-t px-3 py-1.5 font-mono text-[10px]">
             <span>
               search: <span className="text-fg-muted">prefix · substring · fuzzy</span> (cmdk
               command-score)

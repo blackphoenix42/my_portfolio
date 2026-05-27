@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Download, Linkedin, Mail, MessageSquare, X } from "lucide-react";
+import { Download, Mail, MessageSquare, X } from "lucide-react";
+import { Linkedin } from "@/components/icons/brand";
 import { useRecruiterMode } from "./recruiter-mode";
 import { SITE } from "@/content/profile";
 
@@ -9,12 +10,12 @@ export function RecruiterBanner() {
   const { recruiter, setRecruiter } = useRecruiterMode();
   if (!recruiter) return null;
   return (
-    <div className="sticky top-16 z-30 border-b border-accent-emerald/30 bg-accent-emerald/10 backdrop-blur-md">
+    <div className="border-accent-emerald/30 bg-accent-emerald/10 sticky top-16 z-30 border-b backdrop-blur-md">
       <div className="container-tight flex flex-wrap items-center gap-3 px-5 py-2 text-xs">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-accent-emerald">
+        <span className="text-accent-emerald font-mono text-[10px] tracking-widest uppercase">
           Recruiter mode · on
         </span>
-        <span className="hidden text-fg-muted sm:inline">
+        <span className="text-fg-muted hidden sm:inline">
           {SITE.role} · {SITE.location} · open to software engineering roles — C++ performance,
           distributed systems, AI tooling. Production wins on Apple, Google, Samsung &amp; NVIDIA
           workloads.
@@ -24,7 +25,7 @@ export function RecruiterBanner() {
             href={SITE.resumePath}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-md border border-accent-emerald/40 bg-bg-elev px-2 py-1 text-fg hover:border-accent-emerald"
+            className="border-accent-emerald/40 bg-bg-elev text-fg hover:border-accent-emerald inline-flex items-center gap-1 rounded-md border px-2 py-1"
           >
             <Download className="h-3 w-3" /> Resume
           </a>
@@ -32,19 +33,19 @@ export function RecruiterBanner() {
             href={SITE.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-fg-muted hover:text-fg"
+            className="border-border text-fg-muted hover:text-fg inline-flex items-center gap-1 rounded-md border px-2 py-1"
           >
             <Linkedin className="h-3 w-3" /> LinkedIn
           </a>
           <a
             href={`mailto:${SITE.email}`}
-            className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-fg-muted hover:text-fg"
+            className="border-border text-fg-muted hover:text-fg inline-flex items-center gap-1 rounded-md border px-2 py-1"
           >
             <Mail className="h-3 w-3" /> Email
           </a>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1 rounded-md border border-accent-emerald/40 bg-accent-emerald/10 px-2 py-1 text-accent-emerald hover:bg-accent-emerald/20"
+            className="border-accent-emerald/40 bg-accent-emerald/10 text-accent-emerald hover:bg-accent-emerald/20 inline-flex items-center gap-1 rounded-md border px-2 py-1"
           >
             <MessageSquare className="h-3 w-3" /> Contact
           </Link>
@@ -52,7 +53,7 @@ export function RecruiterBanner() {
             type="button"
             onClick={() => setRecruiter(false)}
             aria-label="Exit recruiter mode"
-            className="rounded-md border border-border p-1 text-fg-subtle hover:text-fg"
+            className="border-border text-fg-subtle hover:text-fg rounded-md border p-1"
           >
             <X className="h-3 w-3" />
           </button>

@@ -27,7 +27,7 @@ export function CertPreview({ href, label, kind, className, compact = false }: C
       target="_blank"
       rel="noopener noreferrer"
       className={
-        "group block overflow-hidden rounded-lg border border-border bg-bg-elev/60 transition-colors hover:border-accent-amber/50 " +
+        "group border-border bg-bg-elev/60 hover:border-accent-amber/50 block overflow-hidden rounded-lg border transition-colors " +
         (className ?? "")
       }
       title={`Open ${label} in new tab`}
@@ -52,24 +52,24 @@ export function CertPreview({ href, label, kind, className, compact = false }: C
               className="pointer-events-none h-full w-full"
               aria-label={label}
             >
-              <div className="grid h-full w-full place-items-center text-fg-subtle">
+              <div className="text-fg-subtle grid h-full w-full place-items-center">
                 <FileText className="h-8 w-8" />
               </div>
             </object>
-            <span className="pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-b from-bg/40 to-transparent px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
+            <span className="from-bg/40 text-fg-subtle pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-b to-transparent px-2 py-1 font-mono text-[10px] tracking-wider uppercase">
               pdf
             </span>
           </>
         )}
-        <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-bg/85 px-2.5 py-1.5 text-xs text-fg-muted opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+        <span className="bg-bg/85 text-fg-muted pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 px-2.5 py-1.5 text-xs opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
           <span className="line-clamp-1">{label}</span>
           <ExternalLink className="h-3 w-3 shrink-0" />
         </span>
       </div>
       {!compact && (
-        <div className="flex items-center justify-between gap-2 border-t border-border/60 px-3 py-2">
-          <span className="line-clamp-1 text-xs font-medium text-fg">{label}</span>
-          <FileText className="h-3.5 w-3.5 shrink-0 text-fg-subtle" />
+        <div className="border-border/60 flex items-center justify-between gap-2 border-t px-3 py-2">
+          <span className="text-fg line-clamp-1 text-xs font-medium">{label}</span>
+          <FileText className="text-fg-subtle h-3.5 w-3.5 shrink-0" />
         </div>
       )}
     </a>

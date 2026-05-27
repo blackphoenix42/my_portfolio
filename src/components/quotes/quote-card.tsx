@@ -55,11 +55,11 @@ export function QuoteCard({
       className={`my-10 rounded-xl border ${accent} relative px-5 py-5 sm:px-7 sm:py-6`}
       aria-label="Programming quote"
     >
-      <QuoteIcon className="absolute left-3 top-3 h-4 w-4 text-fg-subtle/50" aria-hidden />
-      <blockquote className="pl-6 text-sm leading-relaxed text-fg sm:text-base">
+      <QuoteIcon className="text-fg-subtle/50 absolute top-3 left-3 h-4 w-4" aria-hidden />
+      <blockquote className="text-fg pl-6 text-sm leading-relaxed sm:text-base">
         <span suppressHydrationWarning>{mounted ? q.text : fallback.text}</span>
       </blockquote>
-      <figcaption className="mt-3 flex items-center justify-between gap-3 pl-6 font-mono text-[11px] uppercase tracking-wider text-fg-subtle">
+      <figcaption className="text-fg-subtle mt-3 flex items-center justify-between gap-3 pl-6 font-mono text-[11px] tracking-wider uppercase">
         <span suppressHydrationWarning>
           — {mounted ? q.author : fallback.author}
           {showTone && (

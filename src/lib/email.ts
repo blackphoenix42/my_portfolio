@@ -9,7 +9,7 @@ export async function sendContactEmail(input: ContactInput, meta: { ip?: string;
   if (!apiKey) {
     // Soft success in dev — log instead of throwing so the form remains usable locally.
     if (process.env.NODE_ENV !== "production") {
-      // eslint-disable-next-line no-console
+      // Soft success in dev — log instead of throwing so the form remains usable locally.
       console.info("[contact] (dev) RESEND_API_KEY not set. Payload:", { input, meta });
       return { ok: true, dev: true };
     }

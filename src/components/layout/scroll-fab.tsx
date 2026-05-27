@@ -26,13 +26,13 @@ export function ScrollFab() {
   const showBottom = pct < 0.7;
 
   return (
-    <div className="pointer-events-none fixed bottom-6 right-4 z-40 flex flex-col gap-2 sm:bottom-8 sm:right-6">
+    <div className="pointer-events-none fixed right-4 bottom-6 z-40 flex flex-col gap-2 sm:right-6 sm:bottom-8">
       {showTop && (
         <button
           type="button"
           onClick={goTop}
           aria-label="Scroll to top"
-          className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-bg-elev/95 text-fg-muted shadow-lg backdrop-blur transition-colors hover:border-accent-cyan/50 hover:text-fg"
+          className="border-border bg-bg-elev/95 text-fg-muted hover:border-accent-cyan/50 hover:text-fg pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border shadow-lg backdrop-blur transition-colors"
         >
           <ArrowUp className="h-4 w-4" />
         </button>
@@ -42,7 +42,7 @@ export function ScrollFab() {
           type="button"
           onClick={goBottom}
           aria-label="Scroll to bottom"
-          className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-bg-elev/95 text-fg-muted shadow-lg backdrop-blur transition-colors hover:border-accent-cyan/50 hover:text-fg"
+          className="border-border bg-bg-elev/95 text-fg-muted hover:border-accent-cyan/50 hover:text-fg pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border shadow-lg backdrop-blur transition-colors"
         >
           <ArrowDown className="h-4 w-4" />
         </button>

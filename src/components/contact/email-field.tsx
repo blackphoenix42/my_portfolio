@@ -257,7 +257,7 @@ export function EmailField({
     <div className="grid gap-1.5">
       <label
         htmlFor={id}
-        className="font-mono text-[11px] uppercase tracking-widest text-fg-subtle"
+        className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase"
       >
         {label} {required && <span className="text-accent-cyan">*</span>}
       </label>
@@ -266,24 +266,24 @@ export function EmailField({
             letting the ghost text show through (the input itself is transparent). */}
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-0 rounded-md border bg-bg-elev/60 transition-colors ${
+          className={`bg-bg-elev/60 pointer-events-none absolute inset-0 rounded-md border transition-colors ${
             focused
-              ? "border-accent-cyan/60 bg-bg-elev ring-2 ring-accent-cyan/20"
+              ? "border-accent-cyan/60 bg-bg-elev ring-accent-cyan/20 ring-2"
               : "border-border"
           } ${error ? "border-accent-amber/60" : ""}`}
         />
-        <Mail className="pointer-events-none absolute left-3 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-fg-subtle" />
+        <Mail className="text-fg-subtle pointer-events-none absolute top-1/2 left-3 z-10 h-4 w-4 -translate-y-1/2" />
 
         {/* Ghost layer — sits exactly on top of the input area and prints the
             invisible typed value followed by the muted suggestion tail, so the
             tail appears inline right after the caret. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-10 flex items-center overflow-hidden py-2.5 pl-10 pr-3 font-sans text-sm"
+          className="pointer-events-none absolute inset-0 z-10 flex items-center overflow-hidden py-2.5 pr-3 pl-10 font-sans text-sm"
         >
           <span className="invisible whitespace-pre">{value}</span>
           {showGhost && (
-            <span className="whitespace-pre text-fg-subtle/70" data-testid="email-ghost">
+            <span className="text-fg-subtle/70 whitespace-pre" data-testid="email-ghost">
               {ghostTail}
             </span>
           )}
@@ -328,11 +328,11 @@ export function EmailField({
               }
             }
           }}
-          className="relative z-20 w-full rounded-md border border-transparent bg-transparent py-2.5 pl-10 pr-3 text-sm outline-none placeholder:text-fg-subtle/60 focus:outline-none"
+          className="placeholder:text-fg-subtle/60 relative z-20 w-full rounded-md border border-transparent bg-transparent py-2.5 pr-3 pl-10 text-sm outline-none focus:outline-none"
         />
       </div>
       {error && (
-        <p role="alert" className="font-mono text-[11px] text-accent-amber">
+        <p role="alert" className="text-accent-amber font-mono text-[11px]">
           {error}
         </p>
       )}

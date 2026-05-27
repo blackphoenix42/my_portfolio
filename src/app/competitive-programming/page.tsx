@@ -16,21 +16,21 @@ export default function CPPage() {
     <div>
       <header className="container-tight pt-16">
         <p className="mono-label">/ craft</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">
           Competitive programming
         </h1>
-        <p className="mt-3 max-w-2xl text-fg-muted">
+        <p className="text-fg-muted mt-3 max-w-2xl">
           Sustained problem-solving across the major platforms — sharpening data structures,
           algorithms and the kind of disciplined thinking that pays off in performance engineering.
         </p>
       </header>
       <CPCommandCenter />
-      <section className="section border-t border-border/60" aria-label="Engineering roadmap">
+      <section className="section border-border/60 border-t" aria-label="Engineering roadmap">
         <div className="container-tight">
           <header className="mb-6">
             <p className="mono-label">/ roadmap</p>
             <h2 className="section-title mt-2">What I&apos;m building next</h2>
-            <p className="mt-2 max-w-2xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-2xl">
               Product concepts under active design — the next set of systems I&apos;d love to ship.
             </p>
           </header>

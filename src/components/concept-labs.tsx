@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Beaker, Github } from "lucide-react";
+import { Beaker } from "lucide-react";
+import { Github } from "@/components/icons/brand";
 import { concepts } from "@/content/concepts";
 import { accentText, cn } from "@/lib/utils";
 import { SkillChip } from "@/components/logos/skill-chip";
@@ -27,7 +28,7 @@ export function ConceptLabs() {
             <Beaker className="h-3.5 w-3.5" /> / roadmap
           </p>
           <h2 className="section-title mt-2">What I'd build next</h2>
-          <p className="mt-2 max-w-2xl text-fg-muted">
+          <p className="text-fg-muted mt-2 max-w-2xl">
             Product concepts at the intersection of performance engineering and intelligent
             developer tooling.{" "}
             <span className="text-accent-amber">Pre-launch — repos are placeholders</span> until the
@@ -45,12 +46,12 @@ export function ConceptLabs() {
               transition={{ duration: 0.45, delay: i * 0.07 }}
               className="card card-hover relative flex flex-col p-5"
             >
-              <div className={cn("chip absolute right-3 top-3", statusStyles[c.status])}>
+              <div className={cn("chip absolute top-3 right-3", statusStyles[c.status])}>
                 {statusLabel[c.status]}
               </div>
               <h3 className={`text-lg font-semibold ${accentText[c.accent]}`}>{c.name}</h3>
-              <p className="mt-2 text-sm font-medium text-fg">{c.pitch}</p>
-              <p className="mt-2 text-sm text-fg-muted">{c.description}</p>
+              <p className="text-fg mt-2 text-sm font-medium">{c.pitch}</p>
+              <p className="text-fg-muted mt-2 text-sm">{c.description}</p>
               <ul className="mt-4 flex flex-wrap gap-1.5">
                 {c.stack.map((s) => (
                   <li key={s}>
@@ -58,19 +59,19 @@ export function ConceptLabs() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-5 flex items-center justify-between border-t border-border/60 pt-3 text-xs">
+              <div className="border-border/60 mt-5 flex items-center justify-between border-t pt-3 text-xs">
                 <a
                   href={c.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-fg-muted hover:text-fg"
+                  className="text-fg-muted hover:text-fg inline-flex items-center gap-1.5 font-mono"
                   title="Placeholder repo — in development"
                 >
                   <Github className="h-3.5 w-3.5" />
                   blackphoenix42/{c.slug}
                 </a>
                 {c.eta && (
-                  <span className="font-mono text-[10px] text-fg-subtle">target {c.eta}</span>
+                  <span className="text-fg-subtle font-mono text-[10px]">target {c.eta}</span>
                 )}
               </div>
             </motion.article>

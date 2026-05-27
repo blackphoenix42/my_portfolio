@@ -35,18 +35,18 @@ export function XmaiPipelineDemo() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-border bg-bg-sunken/60 px-4 py-2 font-mono text-xs text-fg-subtle">
+      <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span>xmai · agent shell · simulated</span>
         <span>rag · gpt-4 · profiler tool</span>
       </div>
       <div className="grid gap-5 p-5 lg:grid-cols-[1fr,260px]">
         <div className="space-y-3">
-          <div className="rounded-md border border-border bg-bg-sunken/40 p-3 font-mono text-xs text-fg">
+          <div className="border-border bg-bg-sunken/40 text-fg rounded-md border p-3 font-mono text-xs">
             <span className="text-accent-cyan">$</span> {EXAMPLES[idx]!.q}
           </div>
-          <div className="min-h-[120px] rounded-md border border-border bg-bg-elev p-3 text-sm leading-relaxed text-fg-muted">
+          <div className="border-border bg-bg-elev text-fg-muted min-h-[120px] rounded-md border p-3 text-sm leading-relaxed">
             {loading ? (
-              <span className="inline-flex items-center gap-2 font-mono text-xs text-accent-violet">
+              <span className="text-accent-violet inline-flex items-center gap-2 font-mono text-xs">
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
                 retrieving traces · embedding · calling agent…
               </span>
@@ -54,13 +54,13 @@ export function XmaiPipelineDemo() {
               (response ?? EXAMPLES[idx]!.a)
             )}
           </div>
-          <p className="text-[11px] text-fg-subtle">
+          <p className="text-fg-subtle text-[11px]">
             Illustrative — responses are canned but pipeline (retrieve → embed → agent → answer)
             mirrors XMAI's real flow.
           </p>
         </div>
         <div className="space-y-2">
-          <p className="font-mono text-[10px] uppercase tracking-widest text-fg-subtle">
+          <p className="text-fg-subtle font-mono text-[10px] tracking-widest uppercase">
             Try a prompt
           </p>
           {EXAMPLES.map((e, i) => (

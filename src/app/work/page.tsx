@@ -49,8 +49,8 @@ export default async function WorkIndexPage() {
     <div className="container-tight py-20">
       <header className="mb-10 max-w-2xl">
         <p className="mono-label">/ work</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Work</h1>
-        <p className="mt-3 text-fg-muted">
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">Work</h1>
+        <p className="text-fg-muted mt-3">
           Deep-dives into selected engineering work — problem framing, technical decisions,
           trade-offs and measurable impact.
         </p>
@@ -70,21 +70,21 @@ export default async function WorkIndexPage() {
             const Thumb = Thumbs[p.slug];
             return (
               <article key={p.slug} className="card card-hover group overflow-hidden">
-                <div className="relative h-44 overflow-hidden border-b border-border bg-bg-sunken/60">
+                <div className="border-border bg-bg-sunken/60 relative h-44 overflow-hidden border-b">
                   {Thumb ? (
                     <Thumb />
                   ) : (
                     <div className="absolute inset-0 grid place-items-center">
-                      <Icon className="h-14 w-14 text-accent-cyan/70" />
+                      <Icon className="text-accent-cyan/70 h-14 w-14" />
                     </div>
                   )}
-                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/80 px-2.5 py-1 font-mono text-[10px] text-fg-muted backdrop-blur">
+                  <div className="border-border bg-bg-elev/80 text-fg-muted absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border px-2.5 py-1 font-mono text-[10px] backdrop-blur">
                     <Icon className="h-3 w-3" /> {p.category}
                   </div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm text-fg-muted">{p.tagline}</p>
+                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{p.tagline}</p>
                   <ul className="mt-4 flex flex-wrap gap-1.5">
                     {p.tags.slice(0, 6).map((t) => (
                       <li key={t} className="chip">
@@ -95,7 +95,7 @@ export default async function WorkIndexPage() {
                   <div className="mt-5 flex items-center justify-between">
                     <Link
                       href={`/work/${p.slug}`}
-                      className="inline-flex items-center gap-1 text-sm font-medium text-accent-cyan transition-colors group-hover:text-fg"
+                      className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors"
                     >
                       Read more <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>

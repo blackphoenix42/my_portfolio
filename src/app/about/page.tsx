@@ -6,8 +6,6 @@ import { CertPreview } from "@/components/certs/cert-preview";
 import {
   Award,
   PenTool,
-  Youtube,
-  Github as GithubIcon,
   HandHeart,
   Users,
   GraduationCap,
@@ -21,6 +19,7 @@ import {
   Code2,
   HeartHandshake,
 } from "lucide-react";
+import { Github as GithubIcon, Youtube } from "@/components/icons/brand";
 
 export const metadata: Metadata = {
   title: "About",
@@ -232,19 +231,19 @@ export default function AboutPage() {
     <div>
       <header className="container-tight pt-16">
         <p className="mono-label">/ about</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">About</h1>
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">About</h1>
       </header>
 
       <AboutSection />
 
-      <section className="section border-t border-border/60" aria-label="Beyond the day job">
+      <section className="section border-border/60 border-t" aria-label="Beyond the day job">
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
               <Award className="h-3.5 w-3.5" /> / beyond the day job
             </p>
             <h2 className="section-title mt-2">What I do outside work</h2>
-            <p className="mt-2 max-w-2xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-2xl">
               Writing, teaching, open-source, mentorship and community work that complement my
               engineering practice — each pursued for its own reasons.
             </p>
@@ -260,13 +259,13 @@ export default function AboutPage() {
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="text-base font-semibold tracking-tight">{t.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-fg-muted">{t.body}</p>
+                  <p className="text-fg-muted mt-2 text-sm leading-relaxed">{t.body}</p>
                   {t.href && (
                     <a
                       href={t.href}
                       target={t.href.startsWith("http") ? "_blank" : undefined}
                       rel={t.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="mt-3 inline-flex items-center gap-1 text-xs text-accent-cyan hover:text-fg"
+                      className="text-accent-cyan hover:text-fg mt-3 inline-flex items-center gap-1 text-xs"
                     >
                       {t.cta} ↗
                     </a>
@@ -278,14 +277,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section border-t border-border/60" aria-label="Honors and awards">
+      <section className="section border-border/60 border-t" aria-label="Honors and awards">
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
               <Trophy className="h-3.5 w-3.5" /> / honors &amp; awards
             </p>
             <h2 className="section-title mt-2">Recognition</h2>
-            <p className="mt-2 max-w-2xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-2xl">
               Grants, competition wins and program recognitions from school through fellowship work.
             </p>
           </header>
@@ -300,12 +299,12 @@ export default function AboutPage() {
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="text-sm font-semibold tracking-tight">{h.title}</h3>
-                  <p className="mt-1 font-mono text-[11px] text-fg-subtle">
+                  <p className="text-fg-subtle mt-1 font-mono text-[11px]">
                     {h.org} · {h.date}
                     {h.amount ? ` · ${h.amount}` : ""}
                   </p>
                   {h.detail && (
-                    <p className="mt-2 text-xs leading-relaxed text-fg-muted">{h.detail}</p>
+                    <p className="text-fg-muted mt-2 text-xs leading-relaxed">{h.detail}</p>
                   )}
                 </li>
               );
@@ -314,7 +313,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section border-t border-border/60" aria-label="Languages">
+      <section className="section border-border/60 border-t" aria-label="Languages">
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
@@ -326,14 +325,14 @@ export default function AboutPage() {
             {languages.map((l) => (
               <li key={l.name} className="card flex items-center gap-4 p-4">
                 <div
-                  className={`grid h-12 w-12 place-items-center rounded-lg border border-accent-violet/30 bg-accent-violet/5 text-2xl font-semibold text-accent-violet ${l.scriptClass ?? ""}`}
+                  className={`border-accent-violet/30 bg-accent-violet/5 text-accent-violet grid h-12 w-12 place-items-center rounded-lg border text-2xl font-semibold ${l.scriptClass ?? ""}`}
                   aria-hidden
                 >
                   {l.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-fg">{l.name}</p>
-                  <p className="mt-0.5 font-mono text-[11px] text-fg-subtle">{l.level}</p>
+                  <p className="text-fg text-sm font-semibold">{l.name}</p>
+                  <p className="text-fg-subtle mt-0.5 font-mono text-[11px]">{l.level}</p>
                 </div>
               </li>
             ))}
@@ -341,14 +340,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section border-t border-border/60" aria-label="Certifications">
+      <section className="section border-border/60 border-t" aria-label="Certifications">
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
               <FileText className="h-3.5 w-3.5" /> / certifications
             </p>
             <h2 className="section-title mt-2">Certificates</h2>
-            <p className="mt-2 max-w-2xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-2xl">
               Selected certificates across cloud, contests, frameworks and structured learning.
               Click any preview to open the original.
             </p>
@@ -359,11 +358,11 @@ export default function AboutPage() {
               return (
                 <div key={cat.title}>
                   <div className="mb-4 flex items-center gap-3">
-                    <div className="grid h-9 w-9 place-items-center rounded-lg border border-accent-violet/30 bg-accent-violet/5 text-accent-violet">
+                    <div className="border-accent-violet/30 bg-accent-violet/5 text-accent-violet grid h-9 w-9 place-items-center rounded-lg border">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="text-base font-semibold tracking-tight">{cat.title}</h3>
-                    <span className="ml-auto font-mono text-[11px] text-fg-subtle">
+                    <span className="text-fg-subtle ml-auto font-mono text-[11px]">
                       {cat.items.length}
                     </span>
                   </div>
@@ -378,7 +377,7 @@ export default function AboutPage() {
               );
             })}
           </div>
-          <p className="mt-8 text-xs text-fg-subtle">
+          <p className="text-fg-subtle mt-8 text-xs">
             Internship and program certificates appear next to their respective roles in{" "}
             <Link href="/experience" className="underline">
               experience

@@ -19,11 +19,11 @@ export function RoadmapDiagram() {
       <div className="mb-4 flex items-center justify-between">
         <div>
           <p className="mono-label">/ roadmap diagram</p>
-          <h3 className="mt-1 text-base font-semibold text-fg">Delivery timeline</h3>
+          <h3 className="text-fg mt-1 text-base font-semibold">Delivery timeline</h3>
         </div>
         <ul className="hidden gap-3 sm:flex">
           {Object.entries(statusColor).map(([k, v]) => (
-            <li key={k} className="flex items-center gap-1.5 font-mono text-[10px] text-fg-muted">
+            <li key={k} className="text-fg-muted flex items-center gap-1.5 font-mono text-[10px]">
               <span className="h-2 w-2 rounded-full" style={{ background: v }} /> {k}
             </li>
           ))}

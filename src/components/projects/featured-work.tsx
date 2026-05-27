@@ -44,7 +44,7 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
           <div>
             <p className="mono-label">/ work</p>
             <h2 className="section-title mt-2">Featured work</h2>
-            <p className="mt-2 max-w-xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-xl">
               Selected projects across performance engineering, agentic AI, developer tooling and
               product engineering.
             </p>
@@ -67,23 +67,23 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                 transition={{ duration: 0.55, delay: i * 0.08 }}
                 className="card card-hover group overflow-hidden"
               >
-                <div className="relative h-44 overflow-hidden border-b border-border bg-bg-sunken/60">
+                <div className="border-border bg-bg-sunken/60 relative h-44 overflow-hidden border-b">
                   {Thumb ? (
                     <InView rootMargin="300px" minHeight={176} className="absolute inset-0">
                       <Thumb />
                     </InView>
                   ) : (
                     <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_30%,hsl(var(--accent-cyan)/0.18),transparent_45%),linear-gradient(135deg,hsl(var(--bg-elev)),hsl(var(--bg-sunken)))]">
-                      <Icon className="h-14 w-14 text-accent-cyan/70" />
+                      <Icon className="text-accent-cyan/70 h-14 w-14" />
                     </div>
                   )}
-                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/90 px-2.5 py-1 font-mono text-[10px] text-fg-muted">
+                  <div className="border-border bg-bg-elev/90 text-fg-muted absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border px-2.5 py-1 font-mono text-[10px]">
                     <Icon className="h-3 w-3" /> {p.category}
                   </div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm text-fg-muted">{p.tagline}</p>
+                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{p.tagline}</p>
                   <ul className="mt-4 flex flex-wrap gap-1.5">
                     {p.tags.slice(0, 6).map((t) => (
                       <li key={t} className="chip">
@@ -94,7 +94,7 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                   <div className="mt-5 flex items-center justify-between">
                     <Link
                       href={`/work/${p.slug}`}
-                      className="inline-flex items-center gap-1 text-sm font-medium text-accent-cyan transition-colors group-hover:text-fg"
+                      className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors"
                     >
                       Read more <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>

@@ -13,14 +13,14 @@ export default function SkillsPage() {
     <div>
       <header className="container-tight pt-16">
         <p className="mono-label">/ skills</p>
-        <h1 className="mt-2 text-display-2 font-semibold tracking-tight">Engineering arsenal</h1>
-        <p className="mt-3 max-w-2xl text-fg-muted">
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">Engineering arsenal</h1>
+        <p className="text-fg-muted mt-3 max-w-2xl">
           Filter individual skills by category, or scroll down to see the capability clusters and
           how they map onto real projects.
         </p>
       </header>
       <SkillsExplorer />
-      <section className="border-t border-border/60">
+      <section className="border-border/60 border-t">
         <EngineeringSpectrum hideHeader />
       </section>
     </div>

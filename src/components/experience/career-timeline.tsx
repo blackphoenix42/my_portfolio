@@ -23,7 +23,7 @@ export function CareerTimeline({
   cta,
 }: CareerTimelineProps = {}) {
   return (
-    <section className="section border-y border-border/60 bg-bg-sunken/30" aria-label={ariaLabel}>
+    <section className="section border-border/60 bg-bg-sunken/30 border-y" aria-label={ariaLabel}>
       <div className="container-tight">
         <header className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -44,20 +44,20 @@ export function CareerTimeline({
                 <div className="flex items-center gap-3">
                   <CompanyLogo
                     name={exp.company}
-                    className="h-10 w-10 rounded-md border border-border bg-bg-elev p-1"
+                    className="border-border bg-bg-elev h-10 w-10 rounded-md border p-1"
                   />
                   <div>
-                    <p className="font-mono text-xs text-accent-cyan">
+                    <p className="text-accent-cyan font-mono text-xs">
                       {exp.start} — {exp.end}
                     </p>
-                    <h3 className="mt-1 text-2xl font-semibold leading-tight tracking-tight">
+                    <h3 className="mt-1 text-2xl leading-tight font-semibold tracking-tight">
                       {exp.company}
                     </h3>
                   </div>
                 </div>
-                <p className="mt-2 text-fg-muted">{exp.role}</p>
-                <p className="mt-1 font-mono text-xs text-fg-subtle">{exp.location}</p>
-                <p className="mt-4 max-w-sm text-sm text-fg-muted">{exp.summary}</p>
+                <p className="text-fg-muted mt-2">{exp.role}</p>
+                <p className="text-fg-subtle mt-1 font-mono text-xs">{exp.location}</p>
+                <p className="text-fg-muted mt-4 max-w-sm text-sm">{exp.summary}</p>
                 {exp.certificateUrl && (
                   <div className="mt-4 max-w-[220px]">
                     <p className="mono-label mb-2">Certificate</p>
@@ -71,7 +71,7 @@ export function CareerTimeline({
               </header>
               <ol className="relative lg:col-span-8">
                 <span
-                  className="absolute bottom-2 left-3 top-2 w-px bg-gradient-to-b from-accent-cyan via-accent-violet to-accent-emerald opacity-50"
+                  className="from-accent-cyan via-accent-violet to-accent-emerald absolute top-2 bottom-2 left-3 w-px bg-gradient-to-b opacity-50"
                   aria-hidden
                 />
                 {exp.highlights.map((h, i) => (
@@ -84,11 +84,11 @@ export function CareerTimeline({
                     className="relative mb-6 pl-10 last:mb-0"
                   >
                     <span
-                      className="absolute left-1.5 top-2 h-3 w-3 rounded-full border-2 border-bg bg-accent-cyan"
+                      className="border-bg bg-accent-cyan absolute top-2 left-1.5 h-3 w-3 rounded-full border-2"
                       aria-hidden
                     />
                     <h4 className="text-base font-semibold tracking-tight">{h.title}</h4>
-                    <p className="mt-1 text-sm text-fg-muted">{h.detail}</p>
+                    <p className="text-fg-muted mt-1 text-sm">{h.detail}</p>
                     <ul className="mt-2 flex flex-wrap gap-1.5">
                       {h.tags.map((t) => (
                         <li key={t} className="chip">

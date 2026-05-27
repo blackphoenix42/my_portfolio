@@ -31,7 +31,7 @@ export function XceliumDemo() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-border bg-bg-sunken/60 px-4 py-2 font-mono text-xs text-fg-subtle">
+      <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span>xcelium · runtime profile</span>
         <span className="text-accent-emerald">{gainPct}% throughput gain</span>
       </div>
@@ -41,17 +41,17 @@ export function XceliumDemo() {
             const value = s.before * (1 - mix) + s.after * mix;
             return (
               <div key={s.name}>
-                <div className="mb-1 flex items-center justify-between font-mono text-[11px] text-fg-subtle">
+                <div className="text-fg-subtle mb-1 flex items-center justify-between font-mono text-[11px]">
                   <span>{s.name}</span>
                   <span>{value.toFixed(0)} ms</span>
                 </div>
-                <div className="relative h-4 overflow-hidden rounded-sm bg-bg-sunken/70">
+                <div className="bg-bg-sunken/70 relative h-4 overflow-hidden rounded-sm">
                   <div
-                    className="absolute inset-y-0 left-0 rounded-sm bg-accent-cyan/70 transition-[width] duration-300"
+                    className="bg-accent-cyan/70 absolute inset-y-0 left-0 rounded-sm transition-[width] duration-300"
                     style={{ width: `${value}%` }}
                   />
                   <div
-                    className="pointer-events-none absolute inset-y-0 left-0 border-r border-accent-violet/50"
+                    className="border-accent-violet/50 pointer-events-none absolute inset-y-0 left-0 border-r"
                     style={{ width: `${s.after}%` }}
                     aria-hidden
                   />
@@ -61,7 +61,7 @@ export function XceliumDemo() {
           })}
         </div>
         <div className="space-y-3">
-          <label className="block font-mono text-[11px] text-fg-subtle">
+          <label className="text-fg-subtle block font-mono text-[11px]">
             workload mix
             <input
               type="range"
@@ -87,7 +87,7 @@ export function XceliumDemo() {
             {auto ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
             {auto ? "Pause" : "Play"} animation
           </button>
-          <p className="text-[11px] text-fg-subtle">
+          <p className="text-fg-subtle text-[11px]">
             Illustrative: bars compress from the &quot;before&quot; profile to the optimized
             &quot;after&quot; profile as you drag the slider.
           </p>

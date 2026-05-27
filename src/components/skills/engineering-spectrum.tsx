@@ -42,7 +42,7 @@ export function EngineeringSpectrum({
           <header className="mb-10">
             <p className="mono-label">/ skills</p>
             <h2 className="section-title mt-2">Engineering spectrum</h2>
-            <p className="mt-2 max-w-2xl text-fg-muted">
+            <p className="text-fg-muted mt-2 max-w-2xl">
               Capability clusters spanning low-level performance, intelligent systems, distributed
               backends, product engineering, infrastructure and reliability.
             </p>
@@ -96,11 +96,11 @@ export function EngineeringSpectrum({
               >
                 <div className="flex items-baseline justify-between">
                   <h3 className={cn("text-base font-semibold", accentText[c.accent])}>{c.name}</h3>
-                  <span className="font-mono text-[10px] text-fg-subtle">
+                  <span className="text-fg-subtle font-mono text-[10px]">
                     {c.skills.length} tools
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-fg-muted">{c.blurb}</p>
+                <p className="text-fg-muted mt-2 text-sm">{c.blurb}</p>
                 <ul className="mt-4 flex flex-wrap gap-1.5">
                   {c.skills.map((s) => {
                     const Icon = (
@@ -136,14 +136,14 @@ export function EngineeringSpectrum({
                   })}
                 </ul>
                 {related.length > 0 && (
-                  <div className="mt-4 border-t border-border/60 pt-3">
+                  <div className="border-border/60 mt-4 border-t pt-3">
                     <p className="mono-label">Applied in</p>
                     <ul className="mt-2 flex flex-wrap gap-2">
                       {related.map((r) => (
                         <li key={r.slug}>
                           <Link
                             href={`/work/${r.slug}`}
-                            className="text-xs text-fg-muted underline-offset-4 hover:text-fg hover:underline"
+                            className="text-fg-muted hover:text-fg text-xs underline-offset-4 hover:underline"
                           >
                             {r.title.split("—")[0]?.trim()}
                           </Link>

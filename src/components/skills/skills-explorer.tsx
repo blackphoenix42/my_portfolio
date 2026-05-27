@@ -33,7 +33,7 @@ export function SkillsExplorer() {
             <Filter className="h-3.5 w-3.5" /> / skills
           </p>
           <h2 className="section-title mt-2">Skills explorer</h2>
-          <p className="mt-2 max-w-2xl text-fg-muted">
+          <p className="text-fg-muted mt-2 max-w-2xl">
             Filter by category to see just the tools in that area — languages, frontend, backend,
             cloud, AI/ML and more.
           </p>
@@ -68,7 +68,7 @@ export function SkillsExplorer() {
 
         <div className="space-y-8">
           {visible.length === 0 && (
-            <p className="rounded-lg border border-dashed border-border/70 bg-bg-elev/30 px-4 py-8 text-center text-sm text-fg-subtle">
+            <p className="border-border/70 bg-bg-elev/30 text-fg-subtle rounded-lg border border-dashed px-4 py-8 text-center text-sm">
               Pick a category above to see the tools in that area.
             </p>
           )}
@@ -81,7 +81,7 @@ export function SkillsExplorer() {
             >
               <div className="mb-3 flex items-baseline justify-between">
                 <h3 className="text-base font-semibold tracking-tight">{cat.label}</h3>
-                <span className="font-mono text-[11px] text-fg-subtle">
+                <span className="text-fg-subtle font-mono text-[11px]">
                   {cat.skills.length} tools
                 </span>
               </div>

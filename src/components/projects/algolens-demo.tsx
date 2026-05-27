@@ -65,7 +65,7 @@ export function AlgoLensDemo() {
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-border bg-bg-sunken/60 px-4 py-2 font-mono text-xs text-fg-subtle">
+      <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span>algolens · bubble-sort · deterministic</span>
         <span>
           step {idx + 1} / {steps.length}
@@ -123,12 +123,12 @@ export function AlgoLensDemo() {
         <aside>
           <div>
             <p className="mono-label">Pseudocode</p>
-            <pre className="mt-2 rounded-md border border-border bg-bg-sunken p-3 font-mono text-xs leading-relaxed">
+            <pre className="border-border bg-bg-sunken mt-2 rounded-md border p-3 font-mono text-xs leading-relaxed">
               {PSEUDO.map((line, i) => (
                 <span
                   key={i}
                   className={
-                    i === s.pseudo ? "block bg-accent-cyan/15 text-fg" : "block text-fg-muted"
+                    i === s.pseudo ? "bg-accent-cyan/15 text-fg block" : "text-fg-muted block"
                   }
                 >
                   {line}
@@ -137,13 +137,13 @@ export function AlgoLensDemo() {
             </pre>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-2">
-            <div className="rounded-md border border-border p-2">
-              <p className="font-mono text-[10px] text-fg-subtle">Time</p>
-              <p className="text-sm text-fg">O(n²)</p>
+            <div className="border-border rounded-md border p-2">
+              <p className="text-fg-subtle font-mono text-[10px]">Time</p>
+              <p className="text-fg text-sm">O(n²)</p>
             </div>
-            <div className="rounded-md border border-border p-2">
-              <p className="font-mono text-[10px] text-fg-subtle">Space</p>
-              <p className="text-sm text-fg">O(1)</p>
+            <div className="border-border rounded-md border p-2">
+              <p className="text-fg-subtle font-mono text-[10px]">Space</p>
+              <p className="text-fg text-sm">O(1)</p>
             </div>
           </div>
           <a

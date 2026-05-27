@@ -77,7 +77,7 @@ export function CompanyLogo({ name, className }: { name: string; className?: str
       <div
         aria-hidden
         className={cn(
-          "grid place-items-center bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 font-mono text-[10px] font-semibold text-fg",
+          "from-accent-cyan/20 to-accent-violet/20 text-fg grid place-items-center bg-gradient-to-br font-mono text-[10px] font-semibold",
           className,
         )}
       >

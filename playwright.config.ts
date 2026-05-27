@@ -10,7 +10,9 @@ export default defineConfig({
     trace: "on-first-retry",
   },
   webServer: {
-    command: "npm run dev",
+    // Use the production build for stable, pre-compiled routes. Avoids the
+    // first-compile timing races seen under Next 16 Turbopack + parallel workers.
+    command: "npm run start",
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

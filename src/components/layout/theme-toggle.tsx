@@ -20,12 +20,12 @@ export function ThemeToggle() {
       <button
         type="button"
         aria-label="Theme"
-        className="inline-flex items-center gap-1.5 rounded-md border border-border px-2 py-1.5 text-fg-muted hover:border-accent-cyan/40 hover:text-fg"
+        className="border-border text-fg-muted hover:border-accent-cyan/40 hover:text-fg inline-flex items-center gap-1.5 rounded-md border px-2 py-1.5"
         suppressHydrationWarning
       >
         <Moon className="h-4 w-4" aria-hidden />
         <span
-          className="hidden font-mono text-[10px] uppercase tracking-widest sm:inline"
+          className="hidden font-mono text-[10px] tracking-widest uppercase sm:inline"
           aria-hidden
         >
           theme
@@ -44,11 +44,11 @@ export function ThemeToggle() {
       type="button"
       aria-label={`Theme: ${current}. Click for ${next}.`}
       title={`Theme: ${current} → ${next}`}
-      className="inline-flex items-center gap-1.5 rounded-md border border-border px-2 py-1.5 text-fg-muted hover:border-accent-cyan/40 hover:text-fg"
+      className="border-border text-fg-muted hover:border-accent-cyan/40 hover:text-fg inline-flex items-center gap-1.5 rounded-md border px-2 py-1.5"
       onClick={() => setTheme(next)}
     >
       <Icon className={`h-4 w-4 ${current === "phoenix" ? "text-accent-amber" : ""}`} />
-      <span className="hidden font-mono text-[10px] uppercase tracking-widest sm:inline">
+      <span className="hidden font-mono text-[10px] tracking-widest uppercase sm:inline">
         {current}
       </span>
     </button>
