@@ -49,10 +49,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className="mt-6 text-display-1 font-semibold tracking-tight"
+            className="mt-6 text-3xl font-semibold leading-tight tracking-tight text-fg sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
           >
-            I engineer <span className="gradient-text">performance-critical systems</span> and{" "}
-            <span className="gradient-text">AI-powered developer tools</span>.
+            I engineer <span className="text-accent-cyan">performance-critical systems</span> and{" "}
+            <span className="text-accent-cyan">AI-powered developer tools</span>.
           </motion.h1>
 
           <motion.p
@@ -61,8 +61,8 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-6 max-w-2xl text-lg text-fg-muted"
           >
-            C++ performance engineering, EDA simulation optimization, agentic AI workflows and
-            interactive developer products — built for measurable impact.
+            C++ performance engineering, distributed systems, agentic AI workflows and developer
+            tooling — shipped at scale, measured in production, owned end-to-end.
           </motion.p>
 
           <div className="mt-4 flex items-center gap-2">

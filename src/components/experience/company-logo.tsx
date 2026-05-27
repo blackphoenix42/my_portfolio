@@ -3,6 +3,20 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+// Logo slugs whose source artwork uses dark text/marks and need a light background
+// in dark/phoenix themes to remain readable.
+const DARK_TEXT_LOGOS = new Set<string>([
+  "Cadence Design Systems",
+  "Tezos India",
+  "Codeforces",
+  "LeetCode",
+  "HackerRank",
+  "Programming Club Summer of Code",
+  "Miri Infotech",
+  "Script Winter of Code",
+  "Delta Winter of Code",
+]);
+
 // Local logo files in /public/assets/logos. Preferred over network sources.
 const LOCAL: Record<string, string> = {
   "Cadence Design Systems": "/assets/logos/cadence.svg",
@@ -78,6 +92,8 @@ export function CompanyLogo({ name, className }: { name: string; className?: str
   else if (stage === 2 && hasDomain)
     src = `https://www.google.com/s2/favicons?sz=128&domain=${DOMAINS[name]}`;
 
+  const needsLightBg = DARK_TEXT_LOGOS.has(name);
+
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
@@ -91,7 +107,7 @@ export function CompanyLogo({ name, className }: { name: string; className?: str
           return 3;
         })
       }
-      className={cn("object-contain", className)}
+      className={cn("object-contain", needsLightBg && "rounded-[3px] bg-white p-0.5", className)}
     />
   );
 }

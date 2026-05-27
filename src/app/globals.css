@@ -71,6 +71,52 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* Themed scrollbars — slim, accent thumb, theme-aware via CSS vars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--border)) 0%,
+      hsl(var(--accent-amber) / 0.45) 50%,
+      hsl(var(--border)) 100%
+    );
+    border: 2px solid hsl(var(--bg));
+    border-radius: 999px;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--accent-amber) / 0.65) 0%,
+      hsl(var(--accent-violet) / 0.65) 100%
+    );
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Suppress cmdk internal data-value labels that can leak as visible
+     "cmdk command-score" text in some browsers/configs. */
+  [cmdk-input-wrapper] [cmdk-input]::-webkit-search-cancel-button {
+    display: none;
+  }
+  [cmdk-item] [data-value],
+  [cmdk-list] [cmdk-item][data-value]::after,
+  [data-cmdk-score] {
+    display: none !important;
+  }
+
   :focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;

@@ -4,7 +4,7 @@ export const SITE = {
   company: "Cadence Design Systems",
   tagline: "Engineering intelligence into performance-critical systems.",
   description:
-    "Portfolio of Ayush Yadav, R&D Software Engineer at Cadence specializing in C++ performance optimization, EDA, distributed systems, cloud-native backends, agentic AI and accessible React/TypeScript products.",
+    "Ayush Yadav — R&D Software Engineer at Cadence. C++ performance, distributed systems, agentic AI and developer tooling. Production wins on Apple, Google, Samsung and NVIDIA workloads.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ayushyadav.dev",
   email: "aayush.sang@gmail.com",
   github: "https://github.com/blackphoenix42",
@@ -20,8 +20,8 @@ export const SITE = {
 } as const;
 
 export const TAGLINES = [
-  "Building faster simulators, smarter profilers and intelligent developer tools.",
-  "Performance Engineering × Agentic AI × Product Craft.",
-  "From low-level C++ optimization to AI-powered engineering workflows.",
-  "Turning system bottlenecks into measurable breakthroughs.",
+  "Performance-critical C++ × distributed systems × agentic AI.",
+  "Production wins on Apple, Google, Samsung and NVIDIA workloads.",
+  "From low-level profiling to AI-assisted developer tooling at scale.",
+  "Owning problems end-to-end — measure, design, ship, operate.",
 ] as const;

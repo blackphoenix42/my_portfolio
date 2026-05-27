@@ -15,7 +15,9 @@ export function RecruiterBanner() {
           Recruiter mode · on
         </span>
         <span className="hidden text-fg-muted sm:inline">
-          {SITE.role} · {SITE.location} · open to MAANG, infra &amp; EDA roles
+          {SITE.role} · {SITE.location} · open to software engineering roles — C++ performance,
+          distributed systems, AI tooling. Production wins on Apple, Google, Samsung &amp; NVIDIA
+          workloads.
         </span>
         <div className="ml-auto flex items-center gap-2">
           <a

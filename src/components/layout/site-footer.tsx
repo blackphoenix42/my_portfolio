@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { SITE } from "@/content/profile";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { QuoteCard } from "@/components/quotes/quote-card";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/70 bg-bg-sunken/40">
+      <div className="container-tight pt-10">
+        <QuoteCard placement="footer" />
+      </div>
       <div className="container-tight flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-fg">{SITE.name}</p>

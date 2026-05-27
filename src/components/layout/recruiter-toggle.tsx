@@ -23,8 +23,19 @@ export function RecruiterToggle() {
   }, [toast]);
 
   const handleClick = () => {
-    if (!recruiter) setToast(true);
-    else setToast(false);
+    if (!recruiter) {
+      const seen = typeof window !== "undefined" && localStorage.getItem("recruiter-toast-seen");
+      if (!seen) {
+        setToast(true);
+        try {
+          localStorage.setItem("recruiter-toast-seen", "1");
+        } catch {
+          /* ignore */
+        }
+      }
+    } else {
+      setToast(false);
+    }
     toggle();
   };
 
@@ -83,8 +94,8 @@ export function RecruiterToggle() {
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-accent-emerald">Recruiter mode enabled</p>
                     <p className="mt-1 leading-relaxed text-fg-muted">
-                      Optimized for time-pressed reviewers — résumé, contact and impact bubble to
-                      the top. Preference is saved locally.
+                      Optimized for time-pressed reviewers — résumé, impact metrics and contact
+                      bubble to the top.
                     </p>
                   </div>
                   <button

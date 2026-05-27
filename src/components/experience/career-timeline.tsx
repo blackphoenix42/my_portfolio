@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { experiences, type Experience } from "@/content/experience";
 import { CompanyLogo } from "@/components/experience/company-logo";
+import { CertPreview } from "@/components/certs/cert-preview";
 
 type CareerTimelineProps = {
   items?: Experience[];
@@ -57,6 +58,16 @@ export function CareerTimeline({
                 <p className="mt-2 text-fg-muted">{exp.role}</p>
                 <p className="mt-1 font-mono text-xs text-fg-subtle">{exp.location}</p>
                 <p className="mt-4 max-w-sm text-sm text-fg-muted">{exp.summary}</p>
+                {exp.certificateUrl && (
+                  <div className="mt-4 max-w-[220px]">
+                    <p className="mono-label mb-2">Certificate</p>
+                    <CertPreview
+                      href={exp.certificateUrl}
+                      label={`${exp.company} — certificate`}
+                      compact
+                    />
+                  </div>
+                )}
               </header>
               <ol className="relative lg:col-span-8">
                 <span

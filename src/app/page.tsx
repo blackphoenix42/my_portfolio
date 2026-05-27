@@ -1,27 +1,24 @@
 import { Hero } from "@/components/hero/hero";
 import { MetricsStrip } from "@/components/metrics/metrics-strip";
 import { FeaturedWork } from "@/components/projects/featured-work";
-import { EngineeringSpectrum } from "@/components/skills/engineering-spectrum";
 import { CareerTimeline } from "@/components/experience/career-timeline";
 import { CPCommandCenter } from "@/components/competitive-programming/cp-command-center";
-import { GithubWorkbench } from "@/components/github/github-workbench";
 import { AboutSection } from "@/components/about-section";
 import { ContactCTA } from "@/components/contact/contact-cta";
-import { ConceptLabs } from "@/components/concept-labs";
 import { RecruiterAware } from "@/components/layout/recruiter-aware";
 import { TechMarquee } from "@/components/logos/tech-marquee";
-import { fetchFeaturedRepos } from "@/lib/github";
 
 export const revalidate = 3600;
 
 const lazy = "lazy-section";
 
 export default async function HomePage() {
-  const repos = await fetchFeaturedRepos();
-
   return (
     <>
       <Hero />
+      <div className={lazy}>
+        <AboutSection />
+      </div>
       <MetricsStrip />
       <TechMarquee />
       <RecruiterAware
@@ -31,10 +28,7 @@ export default async function HomePage() {
               <CareerTimeline cta={{ href: "/experience", label: "View full experience" }} />
             </div>
             <div className={lazy}>
-              <FeaturedWork />
-            </div>
-            <div className={lazy}>
-              <EngineeringSpectrum />
+              <FeaturedWork limit={4} />
             </div>
             <div className={lazy}>
               <ContactCTA />
@@ -44,25 +38,13 @@ export default async function HomePage() {
         full={
           <>
             <div className={lazy}>
-              <FeaturedWork />
-            </div>
-            <div className={lazy}>
-              <EngineeringSpectrum />
+              <FeaturedWork limit={2} />
             </div>
             <div className={lazy}>
               <CareerTimeline cta={{ href: "/experience", label: "View full experience" }} />
             </div>
             <div className={lazy}>
               <CPCommandCenter />
-            </div>
-            <div className={lazy}>
-              <GithubWorkbench repos={repos} />
-            </div>
-            <div className={lazy}>
-              <ConceptLabs />
-            </div>
-            <div className={lazy}>
-              <AboutSection />
             </div>
             <div className={lazy}>
               <ContactCTA />

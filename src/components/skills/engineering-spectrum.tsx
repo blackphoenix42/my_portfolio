@@ -16,8 +16,24 @@ const accentTile: Record<string, string> = {
   amber: "bg-accent-amber/10 text-accent-amber border-accent-amber/40",
 };
 
-export function EngineeringSpectrum({ hideHeader = false }: { hideHeader?: boolean }) {
+export function EngineeringSpectrum({
+  hideHeader = false,
+  clusterIds,
+  showFilters = false,
+}: {
+  hideHeader?: boolean;
+  clusterIds?: string[];
+  showFilters?: boolean;
+}) {
   const [activeCluster, setActiveCluster] = useState<string | null>(null);
+  const [filter, setFilter] = useState<string>("all");
+  const base = clusterIds ? clusters.filter((c) => clusterIds.includes(c.id)) : clusters;
+  const visible = filter === "all" ? base : base.filter((c) => c.id === filter);
+
+  const filterChips: { id: string; label: string }[] = [
+    { id: "all", label: "All" },
+    ...base.map((c) => ({ id: c.id, label: c.name })),
+  ];
 
   return (
     <section className="section" aria-label="Engineering spectrum">
@@ -33,8 +49,36 @@ export function EngineeringSpectrum({ hideHeader = false }: { hideHeader?: boole
           </header>
         )}
 
+        {showFilters && (
+          <div
+            role="tablist"
+            aria-label="Filter skills by cluster"
+            className="mb-8 flex flex-wrap gap-2"
+          >
+            {filterChips.map((f) => {
+              const active = filter === f.id;
+              return (
+                <button
+                  key={f.id}
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setFilter(f.id)}
+                  className={cn(
+                    "chip transition-colors",
+                    active
+                      ? "border-accent-amber/60 bg-accent-amber/10 text-accent-amber"
+                      : "hover:border-accent-cyan/40 hover:text-fg",
+                  )}
+                >
+                  {f.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {clusters.map((c, i) => {
+          {visible.map((c, i) => {
             const related = projects.filter((p) => c.relatedProjects?.includes(p.slug));
             return (
               <motion.div

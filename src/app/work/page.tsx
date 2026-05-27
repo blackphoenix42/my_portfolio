@@ -1,7 +1,18 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
 import { projects } from "@/content/projects";
-import { ArrowUpRight } from "lucide-react";
+import {
+  XmaiPipeline,
+  FlamegraphMini,
+  AlgoMini,
+  ChainBracket,
+  PostureMini,
+  TrackMini,
+  BrainMini,
+} from "@/components/diagrams/case-study-thumbs";
+import { GithubWorkbench } from "@/components/github/github-workbench";
+import { fetchFeaturedRepos } from "@/lib/github";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -9,7 +20,31 @@ export const metadata: Metadata = {
     "Selected work across performance engineering, agentic AI, developer tooling and product engineering.",
 };
 
-export default function WorkIndexPage() {
+const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
+  xmai: Cpu,
+  "xcelium-optimization": Activity,
+  algolens: Layers,
+  postureiq: Activity,
+  "track-person-app": Layers,
+  "smart-brain": Cpu,
+  "tezos-premier-league": Coins,
+};
+
+const Thumbs: Record<string, () => React.ReactElement> = {
+  xmai: () => <XmaiPipeline />,
+  "xcelium-optimization": () => <FlamegraphMini />,
+  algolens: () => <AlgoMini />,
+  postureiq: () => <PostureMini />,
+  "track-person-app": () => <TrackMini />,
+  "smart-brain": () => <BrainMini />,
+  "tezos-premier-league": () => <ChainBracket />,
+};
+
+export const revalidate = 3600;
+
+export default async function WorkIndexPage() {
+  const repos = await fetchFeaturedRepos();
+
   return (
     <div className="container-tight py-20">
       <header className="mb-10 max-w-2xl">
@@ -20,30 +55,67 @@ export default function WorkIndexPage() {
           trade-offs and measurable impact.
         </p>
       </header>
-      <ul className="grid gap-4">
-        {projects.map((p) => (
-          <li key={p.slug}>
-            <Link
-              href={`/work/${p.slug}`}
-              className="card card-hover group flex items-start justify-between gap-6 p-6"
-            >
-              <div className="min-w-0">
-                <p className="font-mono text-[11px] text-fg-subtle">{p.category}</p>
-                <h2 className="mt-1 text-xl font-semibold tracking-tight">{p.title}</h2>
-                <p className="mt-2 max-w-2xl text-sm text-fg-muted">{p.tagline}</p>
-                <ul className="mt-3 flex flex-wrap gap-1.5">
-                  {p.tags.slice(0, 8).map((t) => (
-                    <li key={t} className="chip">
-                      {t}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-fg-subtle transition-colors group-hover:text-accent-cyan" />
-            </Link>
-          </li>
-        ))}
-      </ul>
+
+      <section aria-label="Featured projects" className="mb-20">
+        <header className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="mono-label">/ featured</p>
+            <h2 className="mt-1 text-2xl font-semibold tracking-tight">Featured projects</h2>
+          </div>
+        </header>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {projects.map((p) => {
+            const Icon = Icons[p.slug] ?? Cpu;
+            const Thumb = Thumbs[p.slug];
+            return (
+              <article key={p.slug} className="card card-hover group overflow-hidden">
+                <div className="relative h-44 overflow-hidden border-b border-border bg-bg-sunken/60">
+                  {Thumb ? (
+                    <Thumb />
+                  ) : (
+                    <div className="absolute inset-0 grid place-items-center">
+                      <Icon className="h-14 w-14 text-accent-cyan/70" />
+                    </div>
+                  )}
+                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/80 px-2.5 py-1 font-mono text-[10px] text-fg-muted backdrop-blur">
+                    <Icon className="h-3 w-3" /> {p.category}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm text-fg-muted">{p.tagline}</p>
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {p.tags.slice(0, 6).map((t) => (
+                      <li key={t} className="chip">
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 flex items-center justify-between">
+                    <Link
+                      href={`/work/${p.slug}`}
+                      className="inline-flex items-center gap-1 text-sm font-medium text-accent-cyan transition-colors group-hover:text-fg"
+                    >
+                      Read more <ArrowUpRight className="h-3.5 w-3.5" />
+                    </Link>
+                    {p.status === "professional" && (
+                      <span className="chip text-accent-amber">Professional</span>
+                    )}
+                    {p.status === "open-source" && (
+                      <span className="chip text-accent-emerald">Open source</span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section aria-label="Public workbench">
+        <GithubWorkbench repos={repos} />
+      </section>
     </div>
   );
 }

@@ -4,15 +4,6 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getProject, projects } from "@/content/projects";
 import { XmaiArchitecture } from "@/components/diagrams/xmai-architecture";
-import {
-  XmaiPipeline,
-  FlamegraphMini,
-  AlgoMini,
-  ChainBracket,
-  PostureMini,
-  TrackMini,
-  BrainMini,
-} from "@/components/diagrams/case-study-thumbs";
 import { AlgoLensDemo } from "@/components/projects/algolens-demo";
 import { XceliumDemo } from "@/components/projects/xcelium-demo";
 import { TezosBracketDemo } from "@/components/projects/tezos-bracket-demo";
@@ -21,16 +12,6 @@ import { XmaiPipelineDemo } from "@/components/projects/xmai-demo";
 import { TrackPersonDemo } from "@/components/projects/track-person-demo";
 import { SmartBrainDemo } from "@/components/projects/smart-brain-demo";
 import { SkillChip } from "@/components/logos/skill-chip";
-
-const DIAGRAMS: Record<string, () => React.ReactElement> = {
-  xmai: () => <XmaiPipeline />,
-  "xcelium-optimization": () => <FlamegraphMini />,
-  algolens: () => <AlgoMini />,
-  postureiq: () => <PostureMini />,
-  "track-person-app": () => <TrackMini />,
-  "smart-brain": () => <BrainMini />,
-  "tezos-premier-league": () => <ChainBracket />,
-};
 
 const DEMOS: Record<string, { title: string; subtitle: string; render: () => React.ReactElement }> =
   {
@@ -134,17 +115,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      {project.slug !== "xmai" && DIAGRAMS[project.slug] && (
-        <section className="mt-12">
-          <h2 className="section-title">Diagram</h2>
-          <p className="mt-2 text-sm text-fg-subtle">
-            Conceptual visualization of the project&apos;s core idea.
-          </p>
-          <div className="card mt-6 p-6">
-            <div className="h-56 sm:h-72">{DIAGRAMS[project.slug]!()}</div>
-          </div>
-        </section>
-      )}
+      {project.slug !== "xmai" && null /* thumb removed — appears on /work list view */}
 
       {DEMOS[project.slug] && (
         <section className="mt-12">

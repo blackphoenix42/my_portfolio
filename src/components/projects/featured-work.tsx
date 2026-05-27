@@ -34,7 +34,8 @@ const Thumbs: Record<string, () => React.ReactElement> = {
   "tezos-premier-league": () => <ChainBracket />,
 };
 
-export function FeaturedWork() {
+export function FeaturedWork({ limit }: { limit?: number } = {}) {
+  const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
   return (
     <section className="section" aria-label="Featured work">
       <div className="container-tight">
@@ -53,7 +54,7 @@ export function FeaturedWork() {
         </header>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((p, i) => {
+          {items.map((p, i) => {
             const Icon = Icons[p.slug] ?? Cpu;
             const Thumb = Thumbs[p.slug];
             return (

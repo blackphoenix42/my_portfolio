@@ -1,13 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, Github, Linkedin } from "lucide-react";
 import { SITE } from "@/content/profile";
-
-const philosophy = [
-  "Measure before optimizing",
-  "Build tools engineers trust",
-  "Complexity made observable",
-  "Performance is a product feature",
-];
 
 export function AboutSection() {
   return (
@@ -16,26 +10,35 @@ export function AboutSection() {
         <div className="lg:col-span-7">
           <p className="mono-label">/ about</p>
           <h2 className="section-title mt-2">A brief introduction</h2>
-          <div className="mt-5 space-y-4 text-fg-muted">
-            <p>
-              I'm <span className="font-medium text-fg">Ayush Yadav</span>, an engineer focused on
-              building faster systems and more intelligent developer workflows. At {SITE.company}, I
-              work at the intersection of low-level performance optimization, simulation technology
-              and AI-assisted analysis.
-            </p>
-            <p>
-              Beyond professional engineering, I enjoy transforming complex ideas into interactive
-              products — from algorithm visualization platforms to full-stack applications and
-              competitive-programming solutions.
-            </p>
+          <div className="mt-5 flex flex-col gap-5 sm:flex-row sm:items-start">
+            <div className="relative shrink-0">
+              <span
+                aria-hidden
+                className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent-amber/30 via-accent-violet/20 to-accent-cyan/30 blur-md"
+              />
+              <Image
+                src="/assets/profile/my_pic.jpg"
+                alt="Ayush Yadav"
+                width={160}
+                height={200}
+                className="relative h-40 w-32 rounded-2xl border border-border object-cover shadow-md sm:h-48 sm:w-40"
+                priority
+              />
+            </div>
+            <div className="space-y-4 text-fg-muted">
+              <p>
+                I'm <span className="font-medium text-fg">Ayush Yadav</span>, a software engineer
+                shipping performance-critical systems and AI-assisted developer tooling at scale. At{" "}
+                {SITE.company}, my C++ and runtime work has delivered measurable wins on production
+                workloads run by Apple, Google, Samsung and NVIDIA.
+              </p>
+              <p>
+                I care about ownership end-to-end — from low-level profiling and distributed-system
+                design to polished, accessible product surfaces. Outside of work I ship open-source
+                tools, mentor engineers and stay sharp through competitive programming.
+              </p>
+            </div>
           </div>
-          <ul className="mt-6 flex flex-wrap gap-2">
-            {philosophy.map((p) => (
-              <li key={p} className="chip border-accent-cyan/30 text-fg">
-                {p}
-              </li>
-            ))}
-          </ul>
         </div>
         <aside className="lg:col-span-5">
           <div className="card p-6">

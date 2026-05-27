@@ -97,8 +97,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-dvh bg-bg text-fg antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem
+          defaultTheme="phoenix"
+          enableSystem={false}
           themes={["light", "dark", "phoenix"]}
         >
           <RecruiterModeProvider>

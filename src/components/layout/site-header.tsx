@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search, ArrowUpRight, Command as CmdIcon } from "lucide-react";
+import { Menu, X, Search, ArrowUpRight, Command as CmdIcon, Rss } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -17,8 +17,7 @@ const NAV = [
   { href: "/work", label: "Work" },
   { href: "/skills", label: "Skills" },
   { href: "/experience", label: "Experience" },
-  { href: "/competitive-programming", label: "CP" },
-  { href: "/lab", label: "Roadmap" },
+  { href: "/competitive-programming", label: "Craft" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -121,6 +120,14 @@ export function SiteHeader() {
             <span>Search</span>
             <kbd className="ml-1 rounded bg-bg-sunken px-1.5 py-0.5 font-mono text-[10px]">⌘K</kbd>
           </button>
+          <Link
+            href="/feeds"
+            aria-label="Live feeds (Medium, YouTube, GitHub)"
+            title="Live feeds"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-bg-elev/40 text-fg-muted transition-colors hover:border-accent-amber/40 hover:text-accent-amber"
+          >
+            <Rss className="h-4 w-4" />
+          </Link>
           <RecruiterToggle />
           <ThemeToggle />
           <a href={SITE.resumePath} download className="btn-primary hidden text-xs sm:inline-flex">

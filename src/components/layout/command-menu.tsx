@@ -28,7 +28,7 @@ const groups = [
       { id: "skills", label: "Skills", icon: Cpu, href: "/skills" },
       { id: "experience", label: "Experience", icon: Briefcase, href: "/experience" },
       { id: "cp", label: "Competitive Programming", icon: Code2, href: "/competitive-programming" },
-      { id: "lab", label: "Roadmap", icon: Beaker, href: "/lab" },
+      { id: "lab", label: "Roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
       { id: "contact", label: "Contact", icon: Mail, href: "/contact" },
     ],
   },
