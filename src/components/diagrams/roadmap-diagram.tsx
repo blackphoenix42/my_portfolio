@@ -94,7 +94,7 @@ export function RoadmapDiagram() {
             "Q4 2026": [513, 746],
             "Q1 2027": [746, 840],
           };
-          const range = (c.eta && map[c.eta]) ?? [280, 513];
+          const range: [number, number] = (c.eta && map[c.eta]) || [280, 513];
           const x1 = range[0];
           const x2 = range[1];
           const color = statusColor[c.status]!;

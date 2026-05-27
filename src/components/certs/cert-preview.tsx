@@ -40,9 +40,9 @@ export function CertPreview({ href, label, kind, className, compact = false }: C
             src={href}
             alt={label}
             fill
-            sizes="(max-width: 768px) 100vw, 320px"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 320px"
             className="object-contain p-2 transition-transform group-hover:scale-[1.02]"
-            unoptimized
+            loading="lazy"
           />
         ) : (
           <>

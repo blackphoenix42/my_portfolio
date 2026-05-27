@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
 import { projects } from "@/content/projects";
+import { InView } from "@/components/layout/in-view";
 import {
   XmaiPipeline,
   FlamegraphMini,
@@ -68,13 +69,15 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
               >
                 <div className="relative h-44 overflow-hidden border-b border-border bg-bg-sunken/60">
                   {Thumb ? (
-                    <Thumb />
+                    <InView rootMargin="300px" minHeight={176} className="absolute inset-0">
+                      <Thumb />
+                    </InView>
                   ) : (
                     <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_30%,hsl(var(--accent-cyan)/0.18),transparent_45%),linear-gradient(135deg,hsl(var(--bg-elev)),hsl(var(--bg-sunken)))]">
                       <Icon className="h-14 w-14 text-accent-cyan/70" />
                     </div>
                   )}
-                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/80 px-2.5 py-1 font-mono text-[10px] text-fg-muted backdrop-blur">
+                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-border bg-bg-elev/90 px-2.5 py-1 font-mono text-[10px] text-fg-muted">
                     <Icon className="h-3 w-3" /> {p.category}
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducedMotion } from "framer-motion";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Node = { id: string; x: number; y: number; label: string; accent: string };
 
@@ -29,9 +29,24 @@ const EDGES: [string, string][] = [
 export function HeroVisualization() {
   const reduce = useReducedMotion();
   const nodesById = useMemo(() => Object.fromEntries(NODES.map((n) => [n.id, n])), []);
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const [inView, setInView] = useState(true);
+
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(([entry]) => setInView(!!entry?.isIntersecting), {
+      rootMargin: "100px",
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const animate = !reduce && inView;
 
   return (
     <svg
+      ref={svgRef}
       viewBox="0 0 780 400"
       className="h-full w-full"
       role="img"
@@ -93,7 +108,7 @@ export function HeroVisualization() {
                 fill="none"
                 opacity="0.75"
               />
-              {!reduce && (
+              {animate && (
                 <circle r="3" fill="hsl(var(--accent-cyan))">
                   <animateMotion
                     dur={`${3 + (i % 3)}s`}
@@ -116,12 +131,12 @@ export function HeroVisualization() {
           <g key={n.id} transform={`translate(${n.x}, ${n.y})`}>
             <circle r="22" fill="url(#nodeGlow)" opacity="0.5" />
             <circle
-              className={reduce ? undefined : "node-pulse"}
+              className={animate ? "node-pulse" : undefined}
               r="10"
               fill="hsl(var(--bg-elev))"
               stroke={n.accent}
               strokeWidth="1.5"
-              style={reduce ? undefined : { animationDelay: `${NODES.indexOf(n) * 0.25}s` }}
+              style={animate ? { animationDelay: `${NODES.indexOf(n) * 0.25}s` } : undefined}
             />
             <circle r="3" fill={n.accent} />
             <text
