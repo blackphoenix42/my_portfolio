@@ -56,8 +56,13 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const p = getProject(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const p = getProject(slug);
   if (!p) return {};
   return {
     title: p.title,
@@ -66,8 +71,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProject(params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = getProject(slug);
   if (!project) notFound();
 
   return (
@@ -183,7 +189,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <ul className="mt-3 flex flex-wrap gap-2">
             {project.links.map((l) => (
               <li key={l.href}>
-                <a className="btn-secondary text-sm" href={l.href} target="_blank" rel="noreferrer">
+                <a
+                  className="btn-secondary text-sm"
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {l.label} <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               </li>

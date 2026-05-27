@@ -7,12 +7,12 @@ import {
   Send,
   Loader2,
   User,
-  Mail,
   Building2,
   MessageSquare,
   Type,
 } from "lucide-react";
 import { contactSchema, type ContactInput } from "@/lib/validation";
+import { EmailField } from "@/components/contact/email-field";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -145,15 +145,12 @@ export function ContactForm() {
             required
             autoComplete="name"
           />
-          <Field
-            label="Work email"
+          <EmailField
+            label="Email"
             name="email"
-            type="email"
-            icon={<Mail className="h-4 w-4" />}
-            placeholder="jane@company.com"
+            placeholder="you@company.com"
             error={errors.email}
             required
-            autoComplete="email"
           />
         </div>
 

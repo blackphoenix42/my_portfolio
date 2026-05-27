@@ -35,7 +35,10 @@ export function QuoteCard({
     return () => clearInterval(t);
   }, [mounted]);
 
-  const fallback: Quote = quotes[0] ?? { text: "", author: "", tone: "motivational" };
+  const fallback: Quote = useMemo(
+    () => quotes[0] ?? { text: "", author: "", tone: "motivational" },
+    [],
+  );
   const q: Quote = useMemo(() => quotes[idx % quotes.length] ?? fallback, [idx, fallback]);
 
   const accent =

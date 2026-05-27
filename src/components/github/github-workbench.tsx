@@ -65,7 +65,7 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
               key={r.full_name}
               href={r.html_url}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

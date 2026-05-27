@@ -1,0 +1,35 @@
+name: 🚀 Performance
+description: Report a performance regression or slowdown.
+title: "perf: <short summary>"
+labels: ["performance", "triage"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: URL / page affected
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behaviour
+      placeholder: "Scrolling the homepage drops to ~15fps on mid-range mobile."
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device / browser
+      placeholder: "Pixel 7 / Chrome 126"
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics
+      description: Paste Lighthouse / WebPageTest / DevTools timings if available.
+  - type: textarea
+    id: trace
+    attributes:
+      label: Profile / trace
+      description: Attach a `.json` performance trace or screenshot.

@@ -1,7 +1,7 @@
 # Ayush Yadav — Portfolio
 
 A production-grade personal portfolio for **Ayush Yadav**, R&D Software Engineer II at Cadence Design Systems.
-Built with **Next.js 14 (App Router)**, **TypeScript (strict)**, **Tailwind CSS**, **Framer Motion** and a curated set
+Built with **Next.js 15 (App Router)**, **React 19**, **TypeScript (strict)**, **Tailwind CSS**, **Framer Motion** and a curated set
 of lightweight libraries. Designed for **recruiter conversion**, **accessibility**, and **fast performance**.
 
 ## Highlights
@@ -21,14 +21,15 @@ of lightweight libraries. Designed for **recruiter conversion**, **accessibility
 
 | Area          | Tools                                                           |
 | ------------- | --------------------------------------------------------------- |
-| Framework     | Next.js 14 App Router, React 18, TypeScript (strict)            |
+| Framework     | Next.js 15 App Router, React 19, TypeScript (strict)            |
 | Styling       | Tailwind CSS, `tailwindcss-animate`, design tokens via CSS vars |
 | Animation     | Framer Motion                                                   |
 | UI primitives | Radix UI, `cmdk`, `lucide-react`                                |
 | Validation    | Zod                                                             |
 | Email         | Resend                                                          |
-| Testing       | Playwright                                                      |
+| Testing       | Vitest, Testing Library, jsdom, Playwright                      |
 | Lint/format   | ESLint (next + jsx-a11y), Prettier with Tailwind plugin         |
+| CI / Quality  | GitHub Actions (lint, typecheck, test, build, CodeQL, e2e)      |
 
 ## Getting started
 
@@ -88,14 +89,33 @@ public/assets/        # logos, resume PDF, social
 
 ## Scripts
 
-```bash
-pnpm dev        # local dev
-pnpm build      # production build
-pnpm start      # serve production
-pnpm typecheck  # strict TS check
-pnpm lint       # ESLint + jsx-a11y
-pnpm test:e2e   # Playwright tests (auto-starts dev server)
-```
+| Script                   | Purpose                                                   |
+| ------------------------ | --------------------------------------------------------- |
+| `npm run dev`            | Start local dev server at http://localhost:3000           |
+| `npm run build`          | Production build                                          |
+| `npm run start`          | Serve the production build                                |
+| `npm run typecheck`      | Strict TypeScript check (no emit)                         |
+| `npm run lint`           | ESLint + `jsx-a11y` rules                                 |
+| `npm run format`         | Prettier (with Tailwind plugin) write                     |
+| `npm test`               | Vitest in watch mode (unit + component)                   |
+| `npm run test:coverage`  | Vitest run with V8 coverage (HTML report under coverage/) |
+| `npm run test:e2e`       | Playwright tests (auto-starts dev server)                 |
+| `npm run adr -- "Title"` | Scaffold a new ADR under `docs/ADR/`                      |
+
+## Documentation
+
+All project documentation lives under [`docs/`](./docs):
+
+- [Architecture overview](./docs/ARCHITECTURE.md)
+- [Design guide](./docs/DESIGN_GUIDE.md)
+- [Contributing guide](./docs/CONTRIBUTING.md)
+- [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
+- [Roadmap](./docs/ROADMAP.md)
+- [Changelog](./docs/CHANGELOG.md)
+- [Privacy notice](./docs/PRIVACY.md)
+- [Terms](./docs/TERMS.md)
+- [Architecture Decision Records](./docs/ADR/)
+- [Security policy](./SECURITY.md)
 
 ## Deploy to Vercel
 
@@ -118,6 +138,37 @@ All employer impact, projects, and metrics shown are based **only** on the verif
 information provided. No fabricated testimonials, deployments, or customer claims.
 "Concept Lab" entries are explicitly labelled as experiments — not shipped work.
 
+## Contributing
+
+Bug reports, perf fixes, and accessibility improvements are welcome. Start with the
+[contributing guide](./docs/CONTRIBUTING.md) — it covers the local setup, the automated
+quality gates (Husky pre-commit / commit-msg / pre-push), the "definition of done" for
+a new feature (tests, changelog, docs, ADR), and a one-line reference for every dotfile
+in the repo. Commits follow [Conventional Commits](https://www.conventionalcommits.org/);
+the `commit-msg` hook enforces them.
+
+## Security
+
+Found a vulnerability? Please **do not** open a public issue — follow the disclosure
+process in [`SECURITY.md`](./SECURITY.md). The app ships with HSTS (`max-age=2y; preload`),
+COOP `same-origin`, CORP `same-origin`, a tightened `Permissions-Policy`, `X-Frame-Options
+SAMEORIGIN`, and `X-Content-Type-Options nosniff` (see `next.config.mjs`). Dependencies are
+tracked weekly by Dependabot; `gitleaks` runs on every push via GitHub Actions.
+
+## License
+
+This project is **proprietary** — see [`LICENSE`](./LICENSE) for the full text.
+
+- ✅ Viewing the source for personal study and reference is fine.
+- ✅ Pull requests, bug reports, and suggestions are welcome and licensed back under
+  the same terms when merged.
+- ❌ Copying, forking-and-publishing, redistributing, or using this repository as a
+  template / theme / SaaS / portfolio for someone else is **not permitted**.
+- ❌ Using the source or content to train ML models without prior written permission
+  is **not permitted**.
+
+For licensing inquiries or commercial use, contact **aayush.sang@gmail.com**.
+
 ---
 
-© Ayush Yadav. All rights reserved.
+© 2026 Ayush Yadav. All rights reserved.

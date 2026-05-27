@@ -1,0 +1,18 @@
+/* TEAM */
+Maintainer: Ayush Yadav
+Site: https://ayushyadav.dev
+GitHub: @blackphoenix42
+LinkedIn: linkedin.com/in/ayushyadav
+
+/* THANKS */
+- Vercel & the Next.js team
+- The Tailwind CSS team
+- The Radix UI team
+- The framer-motion team
+- Open-source contributors of every dependency in package.json
+
+/* SITE */
+Last update: 2026
+Standards: HTML5, CSS3, ES2022
+Components: Next.js 14, React 18, TypeScript 5, Tailwind CSS 3
+Software: VS Code, GitHub

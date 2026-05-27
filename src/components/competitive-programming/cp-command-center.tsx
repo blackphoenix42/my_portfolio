@@ -89,7 +89,7 @@ export function CPCommandCenter() {
                   key={a.platform}
                   href={a.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

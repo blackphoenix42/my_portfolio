@@ -13,11 +13,8 @@ export function SiteFooter() {
         <div>
           <p className="text-sm text-fg">{SITE.name}</p>
           <p className="mt-1 text-xs text-fg-subtle">
-            {SITE.role} · {SITE.company} · {SITE.location}
-          </p>
-          <p className="mt-2 max-w-md text-xs text-fg-subtle">
-            Built with Next.js, TypeScript, Tailwind and Framer Motion. Designed for clarity, speed
-            and accessibility.
+            <span className="mono-label mr-2 text-fg-muted">Built with</span>
+            Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -35,6 +32,7 @@ export function SiteFooter() {
           </Link>
         </div>
       </div>
+
       <div className="container-tight flex items-center justify-between border-t border-border/60 py-4 font-mono text-[11px] text-fg-subtle">
         <span>
           © {new Date().getFullYear()} {SITE.name}

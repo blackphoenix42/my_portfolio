@@ -1,0 +1,20 @@
+# .husky/pre-commit — fast-path. Only runs prettier --write on staged files
+# via lint-staged (so commits stay snappy) and blocks accidentally committed
+# .only / .skip in tests. Linting, typecheck, markdown lint, and tests are all
+# run by .husky/pre-push instead.
+echo "🔎 Pre-commit (format + focused-test guard)…"
+npx --no-install lint-staged
+
+# Block focused/skipped tests (only scan source/test files — skip docs/configs)
+STAGED_CODE=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx|js|jsx|mjs|cjs)$' || true)
+if [ -n "$STAGED_CODE" ]; then
+  FOCUSED=$(git diff --cached -U0 -- $STAGED_CODE | grep -E '^\+[^+].*\b(it|test|describe)\.(only|skip)\(' || true)
+  if [ -n "$FOCUSED" ]; then
+    echo "⛔ Found focused/skipped tests in staged changes:"
+    echo "$FOCUSED" | sed 's/^/   /'
+    echo "Remove .only/.skip before committing."
+    exit 1
+  fi
+fi
+
+echo "✅ Pre-commit passed."

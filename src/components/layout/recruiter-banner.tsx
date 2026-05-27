@@ -23,7 +23,7 @@ export function RecruiterBanner() {
           <a
             href={SITE.resumePath}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1 rounded-md border border-accent-emerald/40 bg-bg-elev px-2 py-1 text-fg hover:border-accent-emerald"
           >
             <Download className="h-3 w-3" /> Resume
@@ -31,7 +31,7 @@ export function RecruiterBanner() {
           <a
             href={SITE.linkedin}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-fg-muted hover:text-fg"
           >
             <Linkedin className="h-3 w-3" /> LinkedIn

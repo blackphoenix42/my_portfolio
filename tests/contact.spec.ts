@@ -5,7 +5,7 @@ test("contact form validates required fields", async ({ page }) => {
   await page.getByRole("button", { name: /Send message/i }).click();
   // HTML5 required will block submission — but Zod fallback also runs on partial fills:
   await page.getByLabel("Name *").fill("Recruiter Test");
-  await page.getByLabel("Work email *").fill("not-an-email");
+  await page.getByLabel("Email *").fill("not-an-email");
   await page.getByLabel("Subject *").fill("Hi");
   await page.getByLabel("Message *").fill("short");
   await page.getByRole("button", { name: /Send message/i }).click();
@@ -17,7 +17,7 @@ test("contact form happy path (dev mode without RESEND_API_KEY soft-succeeds)", 
 }) => {
   await page.goto("/contact");
   await page.getByLabel("Name *").fill("Recruiter Test");
-  await page.getByLabel("Work email *").fill("recruiter@example.com");
+  await page.getByLabel("Email *").fill("recruiter@example.com");
   await page.getByLabel("Subject *").fill("Exploring senior engineer roles");
   await page
     .getByLabel("Message *")

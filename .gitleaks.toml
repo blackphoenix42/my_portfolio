@@ -1,0 +1,24 @@
+# Gitleaks config: extend default rules + project allowlist
+title = "Portfolio gitleaks config"
+extends = "github://zricethezav/gitleaks/v8/config/gitleaks.toml"
+
+[allowlist]
+description = "Ignore build outputs, reports, and obvious placeholders"
+paths = [
+  '''^\.next/''',
+  '''^out/''',
+  '''^coverage/''',
+  '''^playwright-report/''',
+  '''^test-results/''',
+  '''^public/assets/''',
+  '''^node_modules/''',
+]
+regexes = [
+  '''(?i)(dummy|placeholder|example|test|fake|sample)[-_]?(key|token|secret|api)''',
+  '''(?i)localhost(:\d+)?''',
+  '''127\.0\.0\.1''',
+  '''^re_test$''',
+  '''^ghp_test$''',
+  '''^-----BEGIN PUBLIC KEY-----$''',
+]
+commits = []

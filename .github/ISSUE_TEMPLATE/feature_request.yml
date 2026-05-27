@@ -1,0 +1,63 @@
+name: ✨ Feature request
+description: Suggest a new feature, improvement, or enhancement.
+title: "feat: <short summary>"
+labels: ["enhancement", "triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Home / Hero
+        - About
+        - Work / Projects
+        - Experience
+        - Skills
+        - Competitive Programming
+        - Contact form
+        - Lab / Concepts
+        - Feeds
+        - Navigation / Header / Footer
+        - Theming / Dark-mode
+        - Accessibility
+        - Performance
+        - Build / Tooling / CI
+        - Docs
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options:
+        - New feature
+        - Improvement to existing feature
+        - Performance optimization
+        - Developer experience
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem are you trying to solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the feature or change you'd like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any alternative approaches?
+  - type: textarea
+    id: extra
+    attributes:
+      label: Mockups, references, links

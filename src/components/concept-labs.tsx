@@ -62,7 +62,7 @@ export function ConceptLabs() {
                 <a
                   href={c.repo}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-mono text-fg-muted hover:text-fg"
                   title="Placeholder repo — in development"
                 >

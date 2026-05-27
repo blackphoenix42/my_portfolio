@@ -1,0 +1,42 @@
+# Normalize line endings & mark text files
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.bat  text eol=crlf
+*.ps1  text eol=crlf
+
+*.{js,ts,tsx,jsx,mjs,cjs,css,scss,html,json,yml,yaml,md,svg} text eol=lf
+
+# Binary assets (no diff)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+
+# Nicer diffs
+*.md  diff=markdown
+*.ts  diff=typescript
+*.tsx diff=typescript
+*.js  diff=javascript
+
+# Mark generated content so GitHub Linguist won't skew language stats
+.next/*                 linguist-generated=true
+coverage/*              linguist-generated=true
+playwright-report/*     linguist-generated=true
+test-results/*          linguist-generated=true
+public/assets/resume/*  linguist-vendored=true
+
+# Exclude from `git archive`
+.github/  export-ignore
+tests/    export-ignore
+playwright.config.ts  export-ignore
+
+.husky/* text eol=lf

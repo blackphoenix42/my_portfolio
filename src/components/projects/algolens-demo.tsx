@@ -149,7 +149,7 @@ export function AlgoLensDemo() {
           <a
             href="https://github.com/blackphoenix42/algolens"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn-secondary mt-4 w-full text-xs"
           >
             Explore full AlgoLens →

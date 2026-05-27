@@ -1,0 +1,10 @@
+# .husky/commit-msg — enforces Conventional Commits via commitlint. Merge,
+# Revert, and Release commits are exempt so automated tools can still push.
+MSG_FILE="$1"
+
+# Allow merges/reverts/releases
+if grep -qiE '^(Merge|Revert|Release|chore\(release\))' "$MSG_FILE"; then
+  exit 0
+fi
+
+npx --no-install commitlint --edit "$MSG_FILE"

@@ -1,0 +1,13 @@
+# .prettierignore — files Prettier should not touch.
+node_modules
+.next
+out
+dist
+coverage
+playwright-report
+test-results
+public/assets
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+next-env.d.ts

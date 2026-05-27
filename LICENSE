@@ -1,0 +1,69 @@
+PROPRIETARY LICENSE
+===================
+
+Copyright (c) 2026 Ayush Yadav. All rights reserved.
+
+The source code, written content, designs, images, and any other material
+contained in this repository (collectively, the "Software") are the proprietary
+work of Ayush Yadav. Possession of, or access to, the Software does not grant
+any ownership, license, or other rights except as expressly set out below.
+
+1. PERMITTED USE
+   You may:
+   a) View and read the Software locally for personal study and evaluation.
+   b) Clone the repository solely for the purpose of preparing a contribution
+      back to it (see section 2).
+   c) Reference small, properly-attributed excerpts (≤ 25 lines) in good-faith
+      technical discussion, education, or code review, with a link back to
+      this repository.
+
+2. CONTRIBUTIONS
+   Pull requests, bug reports, and suggestions are welcome. By submitting a
+   contribution you agree that:
+   a) You authored the contribution or have the right to submit it.
+   b) You license the contribution to Ayush Yadav under the terms of this
+      License, on a perpetual, worldwide, royalty-free, irrevocable basis,
+      to be incorporated into the Software.
+   c) You retain copyright in your contribution but waive any claim to
+      additional compensation or attribution beyond commit history.
+
+3. PROHIBITED USE
+   Without prior written permission from Ayush Yadav, you may NOT:
+   a) Copy, fork-and-publish, redistribute, mirror, host, or republish the
+      Software, in whole or in substantial part, on any public or private
+      platform.
+   b) Modify the Software and distribute or deploy the modified version
+      (whether as a portfolio, template, theme, SaaS, or otherwise).
+   c) Use the Software, in whole or in part, to create a derivative work,
+      product, or service, whether for commercial or non-commercial purposes.
+   d) Remove, obscure, or alter any copyright, trademark, or attribution
+      notice contained in the Software.
+   e) Use the name "Ayush Yadav", any associated likeness, or the visual
+      design of this portfolio to endorse or promote products derived from
+      the Software.
+   f) Use the Software to train, fine-tune, or evaluate machine-learning
+      models without prior written permission.
+
+4. NO TRADEMARK LICENSE
+   This License does not grant permission to use the trade names, trademarks,
+   service marks, or product names of the licensor.
+
+5. TERMINATION
+   Any breach of this License immediately terminates the rights granted under
+   section 1. Upon termination you must delete all local copies of the
+   Software in your possession.
+
+6. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
+   FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
+
+7. CONTACT
+   For licensing inquiries, permission requests, or commercial use, contact:
+   Ayush Yadav — aayush.sang@gmail.com
+
+By accessing, viewing, downloading, or otherwise interacting with the
+Software you agree to be bound by the terms of this License.

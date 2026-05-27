@@ -5,14 +5,15 @@ test("homepage renders core hero content", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "performance-critical systems",
   );
-  await expect(page.getByRole("link", { name: /Explore My Impact/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /View Projects/i })).toBeVisible();
 });
 
 test("primary navigation works", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "Work", exact: true }).first().click();
+  const primaryNav = page.getByRole("navigation", { name: "Primary" });
+  await primaryNav.getByRole("link", { name: "Work", exact: true }).click();
   await expect(page).toHaveURL(/\/work$/);
-  await expect(page.getByRole("heading", { name: "Case studies" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Work" })).toBeVisible();
 });
 
 test("project detail loads", async ({ page }) => {
