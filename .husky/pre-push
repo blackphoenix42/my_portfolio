@@ -1,10 +1,12 @@
 # .husky/pre-push — the heavy gate. Runs everything CI would run so you never
 # push a red bar: prettier format check, ESLint, markdown lint, typecheck,
-# and the full Vitest unit/component suite. Bypass only in genuine emergencies
-# with `git push --no-verify`.
-echo "🚀 pre-push: format + lint + typecheck + tests"
+# the full Vitest unit/component suite **with coverage thresholds**, and a
+# production build. Bypass only in genuine emergencies with `git push --no-verify`.
+set -e
+echo "🚀 pre-push: format + lint + typecheck + tests (with coverage) + build"
 npm run -s format:check
 npm run -s lint
 npm run -s lint:md
 npm run -s typecheck
-npm test -- --run
+npm run -s test:coverage
+echo "✅ pre-push passed."

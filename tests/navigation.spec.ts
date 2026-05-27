@@ -10,9 +10,15 @@ test("homepage renders core hero content", async ({ page }) => {
 
 test("primary navigation works", async ({ page }) => {
   await page.goto("/");
+  // Wait until the client bundle is settled so the Next.js router has bound
+  // its click interception.
+  await page.waitForLoadState("networkidle");
   const primaryNav = page.getByRole("navigation", { name: "Primary" });
-  await primaryNav.getByRole("link", { name: "Work", exact: true }).click();
-  await expect(page).toHaveURL(/\/work$/);
+  const workLink = primaryNav.getByRole("link", { name: "Work", exact: true });
+  await Promise.all([
+    page.waitForURL(/\/work$/, { waitUntil: "commit", timeout: 15_000 }),
+    workLink.click(),
+  ]);
   await expect(page.getByRole("heading", { level: 1, name: "Work" })).toBeVisible();
 });
 

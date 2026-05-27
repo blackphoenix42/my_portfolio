@@ -14,8 +14,8 @@
     "format:check": "prettier --check .",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
-    "a11y": "axe http://127.0.0.1:3000/ http://127.0.0.1:3000/about http://127.0.0.1:3000/work http://127.0.0.1:3000/experience http://127.0.0.1:3000/skills http://127.0.0.1:3000/competitive-programming http://127.0.0.1:3000/contact --tags wcag2a,wcag2aa --exit",
+    "test:e2e": "cross-env NODE_OPTIONS=--disable-warning=DEP0205 playwright test",
+    "a11y": "cross-env NODE_OPTIONS=--disable-warning=DEP0205 playwright test tests/a11y.spec.ts --project=chromium",
     "adr": "node scripts/adr-new.mjs",
     "prepare": "husky"
   },
@@ -42,7 +42,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@axe-core/cli": "4.11.3",
+    "@axe-core/playwright": "4.11.3",
     "@commitlint/cli": "21.0.1",
     "@commitlint/config-conventional": "21.0.1",
     "@playwright/test": "^1.49.0",
@@ -56,6 +56,8 @@
     "@vitejs/plugin-react": "^6.0.2",
     "@vitest/coverage-v8": "^4.1.7",
     "autoprefixer": "^10.4.20",
+    "axe-core": "4.11.4",
+    "cross-env": "10.1.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.5.18",
     "eslint-plugin-jsx-a11y": "^6.10.2",

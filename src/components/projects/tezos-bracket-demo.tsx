@@ -36,6 +36,7 @@ export function TezosBracketDemo() {
   }, [running, rounds]);
 
   const champion = rounds[rounds.length - 1]!.length === 1 ? rounds[rounds.length - 1]![0] : null;
+  const isFinal = rounds[rounds.length - 1]!.length === 1;
 
   return (
     <div className="card overflow-hidden">
@@ -66,7 +67,7 @@ export function TezosBracketDemo() {
         <div className="space-y-3">
           <button
             type="button"
-            disabled={running || rounds[rounds.length - 1]!.length === 1}
+            disabled={running || isFinal}
             onClick={() => setRunning(true)}
             className="btn-primary w-full text-xs disabled:opacity-50"
           >
