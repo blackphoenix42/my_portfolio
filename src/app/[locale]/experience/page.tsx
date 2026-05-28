@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CareerTimeline } from "@/components/experience/career-timeline";
 import { CompanyLogo } from "@/components/experience/company-logo";
 import { educationHistory, internships } from "@/content/experience";
@@ -9,7 +9,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t("title"), description: t("description") };
 }
 
-export default async function ExperiencePage() {
+export default async function ExperiencePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("experience");
   return (
     <div>

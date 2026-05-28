@@ -59,7 +59,12 @@ export function ContactForm() {
       const fieldErrors: typeof errors = {};
       for (const issue of parsed.error.issues) {
         const key = issue.path[0] as keyof ContactInput;
-        if (!fieldErrors[key]) fieldErrors[key] = issue.message;
+        if (!fieldErrors[key]) {
+          // Schema messages are short codes (e.g. "nameShort"); map to a
+          // localized string when one exists, otherwise fall back to the code.
+          const path = `errors.${issue.message}` as never;
+          fieldErrors[key] = t.has(path) ? t(path) : issue.message;
+        }
       }
       setErrors(fieldErrors);
       setStatus("error");

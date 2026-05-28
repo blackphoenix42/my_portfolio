@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { EngineeringSpectrum } from "@/components/skills/engineering-spectrum";
 import { SkillsExplorer } from "@/components/skills/skills-explorer";
 
@@ -8,7 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t("pageTitle"), description: t("pageDescription") };
 }
 
-export default async function SkillsPage() {
+export default async function SkillsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("skills");
   return (
     <div>

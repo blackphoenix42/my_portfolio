@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Send, Loader2 } from "lucide-react";
 
 const EXAMPLES = [
@@ -19,6 +20,8 @@ const EXAMPLES = [
 ];
 
 export function XmaiPipelineDemo() {
+  const t = useTranslations("demos.xmai");
+  const tc = useTranslations("demos.common");
   const [idx, setIdx] = useState(0);
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState<string | null>(null);
@@ -36,8 +39,8 @@ export function XmaiPipelineDemo() {
   return (
     <div className="card overflow-hidden">
       <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
-        <span>xmai · agent shell · simulated</span>
-        <span>rag · gpt-4 · profiler tool</span>
+        <span>{t("title")}</span>
+        <span>{t("subtitle")}</span>
       </div>
       <div className="grid gap-5 p-5 lg:grid-cols-[1fr,260px]">
         <div className="space-y-3">
@@ -48,20 +51,17 @@ export function XmaiPipelineDemo() {
             {loading ? (
               <span className="text-accent-violet inline-flex items-center gap-2 font-mono text-xs">
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                retrieving traces · embedding · calling agent…
+                {t("loading")}
               </span>
             ) : (
               (response ?? EXAMPLES[idx]!.a)
             )}
           </div>
-          <p className="text-fg-subtle text-[11px]">
-            Illustrative — responses are canned but pipeline (retrieve → embed → agent → answer)
-            mirrors XMAI's real flow.
-          </p>
+          <p className="text-fg-subtle text-[11px]">{tc("illustrative")}</p>
         </div>
         <div className="space-y-2">
           <p className="text-fg-subtle font-mono text-[10px] tracking-widest uppercase">
-            Try a prompt
+            {tc("tryPrompt")}
           </p>
           {EXAMPLES.map((e, i) => (
             <button

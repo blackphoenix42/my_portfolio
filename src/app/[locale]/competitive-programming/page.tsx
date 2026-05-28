@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CPCommandCenter } from "@/components/competitive-programming/cp-command-center";
 import { ConceptLabs } from "@/components/concept-labs";
 import { RoadmapDiagram } from "@/components/diagrams/roadmap-diagram";
@@ -11,7 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const revalidate = 3600;
 
-export default async function CPPage() {
+export default async function CPPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("competitiveProgramming");
   return (
     <div>

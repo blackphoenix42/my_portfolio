@@ -421,7 +421,19 @@
       "roleAriaLabel": "Role",
       "formNote": "Protected by rate limiting & server validation.",
       "networkError": "Network error. Please try again or email directly.",
-      "genericServerError": "Something went wrong. Please email me directly."
+      "genericServerError": "Something went wrong. Please email me directly.",
+      "errors": {
+        "nameShort": "Name is too short.",
+        "nameLong": "Name is too long.",
+        "emailInvalid": "Please enter a valid email address.",
+        "emailLong": "Email is too long.",
+        "companyLong": "Company is too long.",
+        "roleInvalid": "Pick one of the listed roles.",
+        "subjectShort": "Subject is too short.",
+        "subjectLong": "Subject is too long.",
+        "messageShort": "Please write at least 20 characters.",
+        "messageLong": "Please shorten your message."
+      }
     }
   },
   "contactCta": {
@@ -499,6 +511,74 @@
   },
   "techMarquee": {
     "heading": "Tech I ship with"
+  },
+  "demos": {
+    "common": {
+      "play": "Play",
+      "pause": "Pause",
+      "reset": "Reset",
+      "stepBack": "Step back",
+      "stepForward": "Step forward",
+      "tryPrompt": "Try a prompt",
+      "trySample": "Try a sample",
+      "rerun": "rerun",
+      "illustrative": "Illustrative — pipeline mirrors the real flow, but responses are canned."
+    },
+    "algolens": {
+      "title": "algolens · bubble-sort · deterministic",
+      "step": "step {current} / {total}",
+      "pseudocode": "Pseudocode",
+      "time": "Time",
+      "space": "Space",
+      "explore": "Explore full AlgoLens →",
+      "barLabel": "Bar value {value}"
+    },
+    "xmai": {
+      "title": "xmai · agent shell · simulated",
+      "subtitle": "rag · gpt-4 · profiler tool",
+      "loading": "retrieving traces · embedding · calling agent…"
+    },
+    "xcelium": {
+      "title": "xcelium · runtime profile",
+      "throughputGain": "{pct}% throughput gain",
+      "workloadMix": "workload mix",
+      "before": "before",
+      "after": "after",
+      "mixAriaLabel": "Before / after mix",
+      "note": "Illustrative: bars compress from the \"before\" profile to the optimized \"after\" profile as you drag the slider."
+    },
+    "tezos": {
+      "title": "tpl · pvp bracket · deterministic sim",
+      "round": "round {current} / {total}",
+      "play": "Play bracket",
+      "championLabel": "champion",
+      "roundLabel": "round {n}",
+      "note": "Illustrative on-chain bracket — winners are derived deterministically (no real wallet)."
+    },
+    "posture": {
+      "title": "postureiq · live rep · simulated",
+      "tracking": "● tracking",
+      "lowConfidence": "○ low confidence",
+      "formScore": "FORM SCORE",
+      "repsConf": "REPS · CONF",
+      "note": "form-score(t) with confidence gate — peaks count when above threshold"
+    },
+    "track": {
+      "title": "track-person · live route · simulated",
+      "inZone": "● in-zone",
+      "distance": "DISTANCE",
+      "waypoint": "WAYPOINT"
+    },
+    "smart": {
+      "title": "smart-brain · vision inference · simulated",
+      "scanning": "scanning…",
+      "ready": "ready",
+      "inferenceLog": "Inference log",
+      "waitingForInput": "waiting for input…",
+      "detections": "Detections",
+      "rerunAriaLabel": "Re-run inference",
+      "sampleObj": "{count} obj"
+    }
   },
   "quotes": {
     "label": "Quote",
@@ -795,9 +875,7 @@
     "ariaLabel": "Roadmap",
     "eyebrow": "/ roadmap",
     "heading": "What I'd build next",
-    "introPrefix": "Product concepts at the intersection of performance engineering and intelligent developer tooling.",
-    "preLaunch": "Pre-launch — repos are placeholders",
-    "introSuffix": "until the first commit lands.",
+    "intro": "Product concepts at the intersection of performance engineering and intelligent developer tooling. <warn>Pre-launch — repos are placeholders</warn> until the first commit lands.",
     "placeholderRepo": "Placeholder repo — in development",
     "target": "target",
     "status": {

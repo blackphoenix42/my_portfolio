@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { projects } from "@/content/projects";
 import {
@@ -42,7 +42,9 @@ const Thumbs: Record<string, () => React.ReactElement> = {
 
 export const revalidate = 3600;
 
-export default async function WorkIndexPage() {
+export default async function WorkIndexPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("work");
   const tCommon = await getTranslations("common");
   const tProjects = await getTranslations("projects");

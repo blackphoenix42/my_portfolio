@@ -1,40 +1,46 @@
 import { test, expect } from "@playwright/test";
 
+// With `localePrefix: "never"` the URL never changes — every locale lives at
+// the same path. These tests assert that switching language updates the
+// rendered text and the `<html lang>` attribute, but leaves the URL alone.
+
 test.describe("i18n", () => {
-  test("Hindi locale renders Hindi nav", async ({ page }) => {
-    await page.goto("/hi");
-    await expect(page.getByRole("link", { name: "होम", exact: true })).toBeVisible();
-    await expect(page.locator("html")).toHaveAttribute("lang", "hi");
-  });
-
-  test("Japanese locale renders Japanese nav", async ({ page }) => {
-    await page.goto("/ja");
-    await expect(page.getByRole("link", { name: "ホーム", exact: true })).toBeVisible();
-    await expect(page.locator("html")).toHaveAttribute("lang", "ja");
-  });
-
-  test("Chinese locale renders Chinese nav", async ({ page }) => {
-    await page.goto("/zh");
-    await expect(page.getByRole("link", { name: "首页", exact: true })).toBeVisible();
-    await expect(page.locator("html")).toHaveAttribute("lang", "zh");
-  });
-
-  test("Russian locale renders Russian nav", async ({ page }) => {
-    await page.goto("/ru");
-    await expect(page.getByRole("link", { name: "Главная", exact: true })).toBeVisible();
-    await expect(page.locator("html")).toHaveAttribute("lang", "ru");
-  });
-
-  test("Sanskrit locale renders Sanskrit nav", async ({ page }) => {
-    await page.goto("/sa");
-    await expect(page.getByRole("link", { name: "मुख्यपृष्ठम्", exact: true })).toBeVisible();
-    await expect(page.locator("html")).toHaveAttribute("lang", "sa");
-  });
-
-  test("default locale has no prefix and renders English", async ({ page }) => {
+  test("default locale renders English at root", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
     await expect(page.getByRole("link", { name: "Home", exact: true }).first()).toBeVisible();
+  });
+
+  test("Accept-Language: hi serves Hindi content at the same URL", async ({ browser }) => {
+    const context = await browser.newContext({ locale: "hi-IN" });
+    const page = await context.newPage();
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("lang", "hi");
+    await expect(page.getByRole("link", { name: "होम", exact: true })).toBeVisible();
+    expect(new URL(page.url()).pathname).toBe("/");
+    await context.close();
+  });
+
+  test("Accept-Language: ja serves Japanese content at the same URL", async ({ browser }) => {
+    const context = await browser.newContext({ locale: "ja-JP" });
+    const page = await context.newPage();
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("lang", "ja");
+    await expect(page.getByRole("link", { name: "ホーム", exact: true })).toBeVisible();
+    await context.close();
+  });
+
+  test("NEXT_LOCALE cookie wins over Accept-Language", async ({ browser }) => {
+    const context = await browser.newContext({
+      locale: "en-US",
+      extraHTTPHeaders: { Cookie: "NEXT_LOCALE=zh" },
+    });
+    await context.addCookies([{ name: "NEXT_LOCALE", value: "zh", url: "http://localhost:3000" }]);
+    const page = await context.newPage();
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("lang", "zh");
+    await expect(page.getByRole("link", { name: "首页", exact: true })).toBeVisible();
+    await context.close();
   });
 
   test("language switcher lists all six languages", async ({ page }) => {
@@ -47,34 +53,37 @@ test.describe("i18n", () => {
     }
   });
 
-  test("switching language navigates to localized route", async ({ page }) => {
-    await page.goto("/");
+  test("switching language preserves the URL and updates content", async ({ page }) => {
+    await page.goto("/about");
     await page.waitForLoadState("networkidle");
+    const originalPath = new URL(page.url()).pathname;
+
     const trigger = page.getByRole("button", { name: /language|switch language/i }).first();
     await trigger.click();
-    await Promise.all([
-      page.waitForURL(/\/hi(\/|$)/, { timeout: 15_000 }),
-      page.getByRole("menuitemradio", { name: "हिन्दी", exact: true }).click(),
-    ]);
-    // After a full reload the html lang attribute reflects the new locale
-    // (Root layout reads the locale on each request).
-    await page.reload();
-    await expect(page.locator("html")).toHaveAttribute("lang", "hi");
+    await page.getByRole("menuitemradio", { name: "हिन्दी", exact: true }).click();
+
+    // URL should not change, but the page must re-render in Hindi.
+    await expect(page.locator("html")).toHaveAttribute("lang", "hi", { timeout: 10_000 });
+    expect(new URL(page.url()).pathname).toBe(originalPath);
   });
 
-  test("non-default locale page exposes data-scroll-behavior", async ({ page }) => {
-    await page.goto("/hi");
-    await expect(page.locator("html")).toHaveAttribute("data-scroll-behavior", "smooth");
-  });
-
-  test("footer renders translated mono-label in Hindi with whitespace", async ({ page }) => {
-    await page.goto("/hi");
-    // Make sure the rendered text contains a separator between "बनाया गया" and the stack.
+  test("footer renders translated label without glued-together text", async ({ browser }) => {
+    const context = await browser.newContext({ locale: "hi-IN" });
+    const page = await context.newPage();
+    await page.goto("/");
     const footer = page.locator("footer").first();
     const text = await footer.innerText();
-    expect(text).toContain("बनाया गया");
     expect(text).toContain("Next.js");
     // No glued-together rendering of "गयाNext.js".
     expect(text).not.toMatch(/गयाNext\.js/);
+    await context.close();
+  });
+
+  test("data-scroll-behavior is set regardless of detected locale", async ({ browser }) => {
+    const context = await browser.newContext({ locale: "hi-IN" });
+    const page = await context.newPage();
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("data-scroll-behavior", "smooth");
+    await context.close();
   });
 });

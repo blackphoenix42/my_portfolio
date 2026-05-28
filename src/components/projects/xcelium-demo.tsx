@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 // Interactive "before vs after" simulation throughput slider.
 // Pure visual — illustrates the 18-19% Xcelium gain story.
@@ -13,12 +13,8 @@ const STAGES = [
 ];
 
 export function XceliumDemo() {
+  const t = useTranslations("demos.xcelium");
   const [mix, setMix] = useState(0.8); // 0 = before, 1 = after
-  const [auto, setAuto] = useState(false);
-
-  if (auto) {
-    // simple oscillation via requestAnimationFrame timing isn't needed; rely on CSS transition
-  }
 
   const gainPct = Math.round(
     (STAGES.reduce(
@@ -32,8 +28,8 @@ export function XceliumDemo() {
   return (
     <div className="card overflow-hidden">
       <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
-        <span>xcelium · runtime profile</span>
-        <span className="text-accent-emerald">{gainPct}% throughput gain</span>
+        <span>{t("title")}</span>
+        <span className="text-accent-emerald">{t("throughputGain", { pct: gainPct })}</span>
       </div>
       <div className="grid gap-6 p-5 lg:grid-cols-[1fr,220px]">
         <div className="space-y-3">
@@ -62,7 +58,7 @@ export function XceliumDemo() {
         </div>
         <div className="space-y-3">
           <label className="text-fg-subtle block font-mono text-[11px]">
-            workload mix
+            {t("workloadMix")}
             <input
               type="range"
               min={0}
@@ -71,26 +67,14 @@ export function XceliumDemo() {
               value={mix}
               onChange={(e) => setMix(Number(e.target.value))}
               className="mt-2 w-full accent-[hsl(var(--accent-cyan))]"
-              aria-label="Before / after mix"
+              aria-label={t("mixAriaLabel")}
             />
             <div className="mt-1 flex justify-between text-[10px]">
-              <span>before</span>
-              <span>after</span>
+              <span>{t("before")}</span>
+              <span>{t("after")}</span>
             </div>
           </label>
-          <button
-            type="button"
-            onClick={() => setAuto((v) => !v)}
-            className="btn-secondary text-xs"
-            aria-pressed={auto}
-          >
-            {auto ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
-            {auto ? "Pause" : "Play"} animation
-          </button>
-          <p className="text-fg-subtle text-[11px]">
-            Illustrative: bars compress from the &quot;before&quot; profile to the optimized
-            &quot;after&quot; profile as you drag the slider.
-          </p>
+          <p className="text-fg-subtle text-[11px]">{t("note")}</p>
         </div>
       </div>
     </div>

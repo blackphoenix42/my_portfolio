@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/hero/hero";
 import { MetricsStrip } from "@/components/metrics/metrics-strip";
 import { FeaturedWork } from "@/components/projects/featured-work";
@@ -13,7 +13,9 @@ export const revalidate = 3600;
 
 const lazy = "lazy-section";
 
-export default async function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("common");
   const viewFullExperience = t("viewFullExperience");
   return (

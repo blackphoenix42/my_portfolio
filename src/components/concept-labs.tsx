@@ -35,8 +35,9 @@ export function ConceptLabs() {
           </p>
           <h2 className="section-title mt-2">{t("heading")}</h2>
           <p className="text-fg-muted mt-2 max-w-2xl">
-            {t("introPrefix")} <span className="text-accent-amber">{t("preLaunch")}</span>{" "}
-            {t("introSuffix")}
+            {t.rich("intro", {
+              warn: (chunks) => <span className="text-accent-amber">{chunks}</span>,
+            })}
           </p>
         </header>
 

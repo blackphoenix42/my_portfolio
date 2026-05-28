@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Loader2, Sparkles, RefreshCcw, Camera } from "lucide-react";
 
 type Box = [number, number, number, number]; // x1,y1,x2,y2 in 0..100 / 0..60
@@ -45,12 +46,18 @@ const SAMPLES: Sample[] = [
 type LogLine = { t: number; msg: string };
 
 export function SmartBrainDemo() {
+  const reduce = useReducedMotion();
+  const t = useTranslations("demos.smart");
+  const tc = useTranslations("demos.common");
   const [idx, setIdx] = useState(0);
   const [scanning, setScanning] = useState(false);
   const [progress, setProgress] = useState(0); // 0..100
   const [revealedCount, setRevealedCount] = useState(0);
   const [log, setLog] = useState<LogLine[]>([]);
   const startedAt = useRef<number>(0);
+  // Tracks the highest log stage already emitted this run; reset on every run.
+  // Reading state inside the rAF tick captures a stale value, so we use a ref.
+  const logStage = useRef<number>(0);
 
   const sample = SAMPLES[idx]!;
   const revealedDets = sample.detections.slice(0, revealedCount);
@@ -61,51 +68,67 @@ export function SmartBrainDemo() {
     setRevealedCount(0);
     setProgress(0);
     setLog([]);
+    logStage.current = 0;
     startedAt.current = performance.now();
   };
 
   // Drive the scan: progress bar 0→100 over 1100ms, then reveal detections one by one.
   useEffect(() => {
     if (!scanning) return;
-    const total = 1100;
+    const total = reduce ? 0 : 1100;
     const target = SAMPLES[idx]!;
     let raf = 0;
+
+    const finalize = () => {
+      pushLog(`detected · ${target.detections.length} region(s)`);
+      target.detections.forEach((_, k) => {
+        setTimeout(() => setRevealedCount(k + 1), reduce ? 0 : 120 * k + 60);
+      });
+      setTimeout(() => setScanning(false), reduce ? 0 : 120 * target.detections.length + 80);
+    };
+
+    if (reduce) {
+      setProgress(100);
+      pushLog("input · 224×224 RGB normalized");
+      pushLog("backbone · ResNet-50 forward pass");
+      pushLog("nms · suppress overlapping boxes");
+      logStage.current = 3;
+      finalize();
+      return;
+    }
 
     const tick = () => {
       const t = performance.now() - startedAt.current;
       const p = Math.min(100, (t / total) * 100);
       setProgress(p);
-      if (p >= 25 && log.length < 1) {
-        push("input · 224×224 RGB normalized");
+      if (p >= 25 && logStage.current < 1) {
+        logStage.current = 1;
+        pushLog("input · 224×224 RGB normalized");
       }
-      if (p >= 55 && log.length < 2) {
-        push("backbone · ResNet-50 forward pass");
+      if (p >= 55 && logStage.current < 2) {
+        logStage.current = 2;
+        pushLog("backbone · ResNet-50 forward pass");
       }
-      if (p >= 80 && log.length < 3) {
-        push("nms · suppress overlapping boxes");
+      if (p >= 80 && logStage.current < 3) {
+        logStage.current = 3;
+        pushLog("nms · suppress overlapping boxes");
       }
       if (p < 100) {
         raf = requestAnimationFrame(tick);
       } else {
-        push(`detected · ${target.detections.length} region(s)`);
-        // reveal one by one
-        target.detections.forEach((_, k) => {
-          setTimeout(() => setRevealedCount(k + 1), 120 * k + 60);
-        });
-        setTimeout(() => setScanning(false), 120 * target.detections.length + 80);
+        finalize();
       }
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scanning, idx]);
+  }, [scanning, idx, reduce]);
 
   // initial scan on mount
   useEffect(() => {
     run(0);
   }, []);
 
-  function push(msg: string) {
+  function pushLog(msg: string) {
     setLog((prev) => [...prev, { t: performance.now() - startedAt.current, msg }]);
   }
 
@@ -114,16 +137,16 @@ export function SmartBrainDemo() {
       <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
         <span className="inline-flex items-center gap-1.5">
           <Camera className="h-3.5 w-3.5" />
-          smart-brain · vision inference · simulated
+          {t("title")}
         </span>
         <span className="inline-flex items-center gap-1">
           {scanning ? (
             <>
-              <Loader2 className="h-3 w-3 animate-spin" /> scanning…
+              <Loader2 className="h-3 w-3 animate-spin" /> {t("scanning")}
             </>
           ) : (
             <>
-              <Sparkles className="text-accent-emerald h-3 w-3" /> ready
+              <Sparkles className="text-accent-emerald h-3 w-3" /> {t("ready")}
             </>
           )}
         </span>
@@ -278,16 +301,16 @@ export function SmartBrainDemo() {
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <p className="text-fg-subtle font-mono text-[10px] tracking-widest uppercase">
-              Try a sample
+              {tc("trySample")}
             </p>
             <button
               type="button"
               onClick={() => run(idx)}
               disabled={scanning}
-              aria-label="Re-run inference"
+              aria-label={t("rerunAriaLabel")}
               className="border-border text-fg-muted hover:border-accent-emerald/40 hover:text-fg inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 font-mono text-[10px] transition-colors disabled:opacity-50"
             >
-              <RefreshCcw className="h-3 w-3" /> rerun
+              <RefreshCcw className="h-3 w-3" /> {tc("rerun")}
             </button>
           </div>
           {SAMPLES.map((s, i) => (
@@ -304,7 +327,7 @@ export function SmartBrainDemo() {
             >
               <span>{s.name}</span>
               <span className="text-fg-subtle font-mono text-[10px]">
-                {s.detections.length} obj
+                {t("sampleObj", { count: s.detections.length })}
               </span>
             </button>
           ))}
@@ -312,10 +335,10 @@ export function SmartBrainDemo() {
           {/* inference log */}
           <div className="border-border bg-bg-elev rounded-md border p-2">
             <p className="text-fg-subtle mb-1 font-mono text-[10px] tracking-widest uppercase">
-              Inference log
+              {t("inferenceLog")}
             </p>
             <ul className="text-fg-muted space-y-0.5 font-mono text-[10px]">
-              {log.length === 0 && <li className="text-fg-subtle">waiting for input…</li>}
+              {log.length === 0 && <li className="text-fg-subtle">{t("waitingForInput")}</li>}
               {log.map((l, i) => (
                 <li key={i} className="flex justify-between gap-2">
                   <span className="text-fg-subtle">{(l.t / 1000).toFixed(2)}s</span>
@@ -329,7 +352,7 @@ export function SmartBrainDemo() {
           {!scanning && revealedDets.length > 0 && (
             <div className="border-border bg-bg-elev rounded-md border p-2">
               <p className="text-fg-subtle mb-1 font-mono text-[10px] tracking-widest uppercase">
-                Detections
+                {t("detections")}
               </p>
               <ul className="space-y-1">
                 {revealedDets.map((d, i) => (

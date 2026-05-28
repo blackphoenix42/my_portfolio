@@ -2,12 +2,12 @@
 
 import { Command } from "cmdk";
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Search, Briefcase, Code2, Mail, FileDown, User, Cpu, Layers, Beaker } from "lucide-react";
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 
 const NAV_ITEMS = [
   { id: "home", key: "home", icon: User, href: "/" },

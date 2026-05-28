@@ -8,25 +8,52 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Added
 
-- Email field with inline domain autocomplete (Tab / → to accept) on the contact form.
-- `.github/` scaffolding: CI / CodeQL / Security / Stale / E2E workflows, issue & PR templates,
-  Dependabot, CODEOWNERS, FUNDING.
-- `docs/` folder: Architecture, Contributing, Code of Conduct, Privacy, Terms, Roadmap, Design Guide, ADRs.
-- Vitest unit tests for `src/lib/*` (validation, utils, email subject/body, rate-limit).
-- `sharp` installed for production image optimization.
+- Phoenix favicon (`src/app/icon.jpg`, `src/app/apple-icon.jpg`).
+- Full demo-control localization (algolens, xmai, xcelium, tezos, posture, track-person,
+  smart-brain) under a new `demos.*` namespace.
+- Translated contact-form validation errors via short Zod codes mapped to
+  `contact.form.errors.*` on the client.
+- AI/LLM adapter files: `AGENTS.md`, `llms.txt`, `llms-full.txt`, `.cursor/rules/`,
+  `.github/copilot-instructions.md`.
+- Content-Security-Policy header (`next.config.mjs`).
+- `setRequestLocale(locale)` in every page so SSG knows the active locale.
 
 ### Changed
 
-- Contact form: redundant "opportunity" checkbox removed; role moved to a pill-style picker;
-  added live char counter and improved focus/hover affordances.
+- **i18n architecture:** switched `next-intl` from `localePrefix: "as-needed"` to
+  `localePrefix: "never"`. Every page renders at one canonical URL across all six locales;
+  switching language updates content + cookie + `<html lang>` without changing the URL.
+- Sitemap now emits one URL per route (no locale fan-out) since URLs are locale-agnostic.
+- `.dark` palette is now a real CSS selector — previously dark mode worked only by
+  accident via the `:root` default.
+- ConceptLabs intro uses one rich-text translation key instead of three glued sentences.
+- Mobile action bar, command menu, recruiter banner, and `/lab` redirect now use
+  `@/i18n/navigation` so locale context isn't lost on navigation.
+- CI workflows pinned to `.node-version` instead of a hardcoded major.
 
 ### Fixed
 
-- Build failure in `roadmap-diagram.tsx` due to `noUncheckedIndexedAccess` arithmetic.
+- CODEOWNERS pattern (`-` → `*`) so PRs auto-request review.
+- SmartBrain demo: inference log no longer floods (every-frame push) — uses a stage ref.
+- XceliumDemo: removed dead `auto`/`Play/Pause` state that never animated anything.
+- All project demos now honour `prefers-reduced-motion` (timers and tickers no-op or
+  jump to final state).
+- `/lab` redirect preserves the active locale.
+- Stray `sr-only` span at the end of `AboutSection`.
+
+### Removed
+
+- `/lab` from the sitemap (it 308-redirects to `/competitive-programming`).
+- Unimplemented Upstash env vars from `.env.example`.
+
+### Security
+
+- Content-Security-Policy header added (`default-src 'self'` with explicit allow-list
+  for GitHub avatars, Clearbit, Google s2 favicons).
+- `npm audit` re-enabled locally so contributors see advisories on install.
 
 ### Performance
 
-- Hero SVG and project demo thumbs now pause animations when scrolled off-screen.
-- Marquee gets explicit GPU promotion (`will-change: transform`, `translateZ(0)`).
-- Removed `unoptimized` on certificate images so Next/sharp can shrink them.
-- Dropped redundant `backdrop-blur` from project card badges.
+- `setRequestLocale` enables static generation for content pages.
+- Demos jump straight to the final visual when `prefers-reduced-motion` is set, instead
+  of running their setInterval ticker.

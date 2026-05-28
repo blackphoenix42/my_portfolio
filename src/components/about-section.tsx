@@ -18,7 +18,6 @@ const PRINCIPLE_DOTS: Record<(typeof PRINCIPLE_KEYS)[number], string> = {
 export function AboutSection() {
   const t = useTranslations("aboutSection");
   const tCommon = useTranslations("common");
-  const tNav = useTranslations("nav");
   return (
     <section className="section" aria-label={t("heading")}>
       <div className="container-tight grid gap-10 lg:grid-cols-12 lg:gap-12">
@@ -82,7 +81,6 @@ export function AboutSection() {
                 <Linkedin className="h-3.5 w-3.5" /> {tCommon("linkedin")}
               </a>
             </div>
-            <span className="sr-only">{tNav("contact")}</span>
           </div>
         </aside>
       </div>

@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { Download, Mail, MessageSquare, X } from "lucide-react";
 import { Linkedin } from "@/components/icons/brand";
 import { useRecruiterMode } from "./recruiter-mode";
 import { SITE } from "@/content/profile";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export function RecruiterBanner() {
   const t = useTranslations("recruiterBanner");

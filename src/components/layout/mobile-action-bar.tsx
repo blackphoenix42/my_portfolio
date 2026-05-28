@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { FileDown, Mail } from "lucide-react";
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export function MobileActionBar() {
   const t = useTranslations("mobileActionBar");
@@ -23,14 +23,16 @@ export function MobileActionBar() {
           <FileDown className="h-4 w-4" />
           {t("resume")}
         </a>
-        <Link
+        <a
           href={SITE.github}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-fg-muted hover:text-fg inline-flex flex-col items-center gap-0.5 px-3 py-1 text-[10px]"
           aria-label={t("github")}
         >
           <Github className="h-4 w-4" />
           {t("github")}
-        </Link>
+        </a>
         <Link
           href="/contact"
           className="text-fg-muted hover:text-fg inline-flex flex-col items-center gap-0.5 px-3 py-1 text-[10px]"

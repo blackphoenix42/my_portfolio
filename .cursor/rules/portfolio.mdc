@@ -1,0 +1,78 @@
+---
+description: Portfolio repository — core rules for any Cursor agent or chat
+alwaysApply: true
+---
+
+# Portfolio repository rules
+
+> The definitive rules live in [`AGENTS.md`](mdc:AGENTS.md). This file is a
+> Cursor-shaped summary that Cursor will always inject into context.
+
+## Identity
+
+This is **Ayush Yadav's** proprietary personal portfolio (see `LICENSE`).
+Do not invent professional history, customers, or metrics. The only
+authoritative source for those facts is `src/content/*.ts`.
+
+## Stack
+
+Next.js 16 App Router · React 19 · TypeScript 6 strict (`noUncheckedIndexedAccess`) ·
+Tailwind CSS 4 · next-intl 4 · Vitest · Playwright · Zod 4 · Resend · framer-motion.
+
+## i18n — the load-bearing decision
+
+`src/i18n/routing.ts` uses `localePrefix: "never"`. **Every page lives at the
+same URL across all six locales.** Switching language updates the
+`NEXT_LOCALE` cookie + re-renders server components without touching the URL.
+Never reintroduce `/hi/...` / `/ja/...` style prefixes.
+
+Always import from `@/i18n/navigation`, not from `next/link` /
+`next/navigation`, for internal routes.
+
+Every server `page.tsx`:
+
+```tsx
+import { setRequestLocale, getTranslations } from "next-intl/server";
+
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("namespace");
+  // ...
+}
+```
+
+## Coding non-negotiables
+
+- Server components by default; `"use client"` only when interactivity demands it.
+- No raw `<img>` except in `src/components/experience/company-logo.tsx`.
+- No new `dangerouslySetInnerHTML` (the only existing use is the Person JSON-LD).
+- All animations must gate on `useReducedMotion()` from `framer-motion`.
+- All user-visible strings come from `messages/en.json` via `t()`.
+- External `<a>` links use `target="_blank" rel="noopener noreferrer"`.
+- Tailwind tokens: `text-fg`, `bg-bg-elev`, `text-accent-cyan`, etc. — never raw hex.
+
+## Quality gate
+
+```sh
+npm run format && npm run lint && npm run lint:md && \
+  npm run typecheck && npm test -- --run && npm run build
+```
+
+CI runs the same gate plus Playwright e2e, axe accessibility, CodeQL,
+dependency-review, and `npm audit`. `--max-warnings=0` everywhere — zero
+warnings tolerated.
+
+## Commit messages
+
+Conventional Commits: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`,
+`test`, `build`, `ci`, `chore`, `revert`, `deps`. Subject ≤ 100 chars.
+
+## Where to look first
+
+- `src/content/*.ts` — the truth about projects, experience, skills, metrics.
+- `messages/en.json` — every translatable string.
+- `src/app/[locale]/` — routes and layouts.
+- `src/components/` — UI, grouped by feature folder.
+- `src/lib/` — pure utilities; this is also where coverage thresholds bite.
+- `docs/ADR/` — past architecture decisions; read before contradicting them.

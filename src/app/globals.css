@@ -20,6 +20,25 @@
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
   }
 
+  /* `.dark` is the dark palette, applied when next-themes adds `class="dark"`
+     to <html>. Same tokens as :root (which represents the pre-hydration
+     default) so Tailwind's `dark:` variant works consistently. */
+  .dark {
+    --bg: 222 47% 6%;
+    --bg-elev: 222 40% 9%;
+    --bg-sunken: 222 47% 4%;
+    --fg: 210 40% 98%;
+    --fg-muted: 215 20% 75%;
+    --fg-subtle: 215 16% 55%;
+    --border: 222 30% 16%;
+    --line: 222 30% 14%;
+    --accent-cyan: 187 96% 60%;
+    --accent-violet: 262 90% 70%;
+    --accent-emerald: 152 76% 55%;
+    --accent-amber: 38 95% 62%;
+    --ring: 187 96% 60%;
+  }
+
   .light {
     --bg: 0 0% 100%;
     --bg-elev: 220 20% 98%;

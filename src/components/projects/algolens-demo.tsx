@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Play, Pause, SkipBack, SkipForward, RotateCcw } from "lucide-react";
 
 // Deterministic input
@@ -39,6 +41,9 @@ function generateBubbleSortSteps(input: number[]): Step[] {
 }
 
 export function AlgoLensDemo() {
+  const reduce = useReducedMotion();
+  const t = useTranslations("demos.algolens");
+  const tc = useTranslations("demos.common");
   const steps = useMemo(() => generateBubbleSortSteps(SAMPLE), []);
   const [idx, setIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
@@ -46,6 +51,12 @@ export function AlgoLensDemo() {
 
   useEffect(() => {
     if (!playing) return;
+    // Respect prefers-reduced-motion: jump to the end instead of animating.
+    if (reduce) {
+      setIdx(steps.length - 1);
+      setPlaying(false);
+      return;
+    }
     ref.current = window.setInterval(() => {
       setIdx((i) => {
         if (i >= steps.length - 1) {
@@ -58,7 +69,7 @@ export function AlgoLensDemo() {
     return () => {
       if (ref.current) window.clearInterval(ref.current);
     };
-  }, [playing, steps.length]);
+  }, [playing, steps.length, reduce]);
 
   const s = steps[idx]!;
   const max = Math.max(...SAMPLE);
@@ -66,10 +77,8 @@ export function AlgoLensDemo() {
   return (
     <div className="card overflow-hidden">
       <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
-        <span>algolens · bubble-sort · deterministic</span>
-        <span>
-          step {idx + 1} / {steps.length}
-        </span>
+        <span>{t("title")}</span>
+        <span>{t("step", { current: idx + 1, total: steps.length })}</span>
       </div>
       <div className="grid gap-6 p-5 lg:grid-cols-[1fr,260px]">
         <div>
@@ -87,34 +96,38 @@ export function AlgoLensDemo() {
                       : "hsl(var(--accent-cyan) / 0.7)",
                     boxShadow: active ? "0 0 0 1px hsl(var(--accent-violet))" : undefined,
                   }}
-                  aria-label={`Bar value ${v}`}
+                  aria-label={t("barLabel", { value: v })}
                 />
               );
             })}
           </div>
           <div className="mt-3 flex items-center gap-2">
-            <button className="btn-secondary text-xs" onClick={() => setIdx(0)} aria-label="Reset">
+            <button
+              className="btn-secondary text-xs"
+              onClick={() => setIdx(0)}
+              aria-label={tc("reset")}
+            >
               <RotateCcw className="h-3.5 w-3.5" />
             </button>
             <button
               className="btn-secondary text-xs"
               onClick={() => setIdx((i) => Math.max(0, i - 1))}
-              aria-label="Step back"
+              aria-label={tc("stepBack")}
             >
               <SkipBack className="h-3.5 w-3.5" />
             </button>
             <button
               className="btn-primary text-xs"
               onClick={() => setPlaying((p) => !p)}
-              aria-label={playing ? "Pause" : "Play"}
+              aria-label={playing ? tc("pause") : tc("play")}
             >
               {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
-              {playing ? "Pause" : "Play"}
+              {playing ? tc("pause") : tc("play")}
             </button>
             <button
               className="btn-secondary text-xs"
               onClick={() => setIdx((i) => Math.min(steps.length - 1, i + 1))}
-              aria-label="Step forward"
+              aria-label={tc("stepForward")}
             >
               <SkipForward className="h-3.5 w-3.5" />
             </button>
@@ -122,7 +135,7 @@ export function AlgoLensDemo() {
         </div>
         <aside>
           <div>
-            <p className="mono-label">Pseudocode</p>
+            <p className="mono-label">{t("pseudocode")}</p>
             <pre className="border-border bg-bg-sunken mt-2 rounded-md border p-3 font-mono text-xs leading-relaxed">
               {PSEUDO.map((line, i) => (
                 <span
@@ -138,11 +151,11 @@ export function AlgoLensDemo() {
           </div>
           <div className="mt-4 grid grid-cols-2 gap-2">
             <div className="border-border rounded-md border p-2">
-              <p className="text-fg-subtle font-mono text-[10px]">Time</p>
+              <p className="text-fg-subtle font-mono text-[10px]">{t("time")}</p>
               <p className="text-fg text-sm">O(n²)</p>
             </div>
             <div className="border-border rounded-md border p-2">
-              <p className="text-fg-subtle font-mono text-[10px]">Space</p>
+              <p className="text-fg-subtle font-mono text-[10px]">{t("space")}</p>
               <p className="text-fg text-sm">O(1)</p>
             </div>
           </div>
@@ -152,7 +165,7 @@ export function AlgoLensDemo() {
             rel="noopener noreferrer"
             className="btn-secondary mt-4 w-full text-xs"
           >
-            Explore full AlgoLens →
+            {t("explore")}
           </a>
         </aside>
       </div>

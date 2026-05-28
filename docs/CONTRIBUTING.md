@@ -71,16 +71,20 @@ npm run dev          # http://localhost:3000
 ## Internationalization
 
 UI strings live in `messages/*.json`. `messages/en.json` is the source of truth — every other
-locale overlays English keys; missing keys silently fall back to English.
+locale overlays English keys; missing keys silently fall back to English. The site uses
+`localePrefix: "never"`, so URLs are identical across locales and switching language only
+rewrites the `NEXT_LOCALE` cookie + re-renders server components.
 
 When adding or changing UI:
 
 1. Add the key to `messages/en.json` first (under the appropriate namespace).
-2. Use `useTranslations("namespace")` (client) or `getTranslations({ locale, namespace })` (server).
-3. Replace any `next/link` import with `@/i18n/navigation`'s `Link` so locale prefixes are preserved.
-4. Translate the new key in `messages/{hi,ja,sa,zh,ru}.json` when possible; otherwise English
+2. Use `useTranslations("namespace")` (client) or `getTranslations("namespace")` (server).
+3. Use `@/i18n/navigation` (`Link`, `useRouter`, `redirect`) — **not** `next/link` or
+   `next/navigation` — for anything that should stay inside the locale-aware router.
+4. In server pages, call `setRequestLocale(locale)` after `await params` so SSG works.
+5. Translate the new key in `messages/{hi,ja,sa,zh,ru}.json` when possible; otherwise English
    will be shown automatically.
-5. Do not hardcode user-facing strings inside components.
+6. Do not hardcode user-facing strings inside components.
 
 Add a new locale:
 
@@ -172,14 +176,14 @@ The repo has a lot of dotfiles — here's what each one does so nothing feels my
 
 ### Editor / formatter
 
-| File                      | Purpose                                                                           |
-| ------------------------- | --------------------------------------------------------------------------------- |
-| `.editorconfig`           | Keeps indentation, charset, and line endings consistent across editors.           |
-| `.prettierrc.json`        | Prettier formatting rules (also wired through `prettier-plugin-tailwindcss`).     |
-| `.eslintrc.json`          | ESLint config — extends `next/core-web-vitals` plus `eslint-plugin-jsx-a11y`.     |
-| `.markdownlint.json`      | Markdown style rules consumed by `markdownlint-cli2` (and the VS Code extension). |
-| `.vscode/settings.json`   | Workspace-level VS Code defaults (format on save, file nesting, etc.).            |
-| `.vscode/extensions.json` | Recommended VS Code extensions — VS Code prompts to install them on first open.   |
+| File                      | Purpose                                                                                |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| `.editorconfig`           | Keeps indentation, charset, and line endings consistent across editors.                |
+| `.prettierrc.json`        | Prettier formatting rules (also wired through `prettier-plugin-tailwindcss`).          |
+| `eslint.config.mjs`       | ESLint **flat config** — extends `next/core-web-vitals` plus `eslint-plugin-jsx-a11y`. |
+| `.markdownlint.json`      | Markdown style rules consumed by `markdownlint-cli2` (and the VS Code extension).      |
+| `.vscode/settings.json`   | Workspace-level VS Code defaults (format on save, file nesting, etc.).                 |
+| `.vscode/extensions.json` | Recommended VS Code extensions — VS Code prompts to install them on first open.        |
 
 ### Git / line endings / secrets
 

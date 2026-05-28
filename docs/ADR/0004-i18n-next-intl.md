@@ -28,27 +28,36 @@ Locales chosen: `en` (default), `hi`, `ja`, `sa` (Sanskrit), `zh`, `ru`.
 
 Use **next-intl 4** with:
 
-- `localePrefix: "as-needed"` — English at root URLs, all other locales prefixed.
-- `localeDetection: true` — Accept-Language detection + automatic `NEXT_LOCALE` cookie persistence.
+- `localePrefix: "never"` — **the URL never carries a locale segment**. Every page lives
+  at a single canonical path (`/about`, `/work/xmai`, …) and the rendered content swaps
+  based on the resolved locale. This avoids duplicate URLs and gives the user a stable
+  bookmark/share story regardless of language.
+- `localeDetection: true` — `NEXT_LOCALE` cookie wins, then `Accept-Language`, then default.
 - Proxy (Next 16 rename of middleware) wires locale resolution at the edge.
 - `src/i18n/request.ts` deep-merges `messages/en.json` (base) with `messages/{locale}.json` (overlay)
   so partial locales silently fall back to English keys.
-- `src/i18n/navigation.ts` exposes a locale-aware `Link`, `useRouter`, `usePathname`.
-- A `LanguageSwitcher` (globe icon dropdown) in the site header preserves the current path
-  when switching locales.
+- `src/i18n/navigation.ts` exposes a locale-aware `Link`, `useRouter`, `usePathname`, `redirect`.
+- A `LanguageSwitcher` (globe icon dropdown) in the site header calls
+  `router.replace(pathname, { locale })` followed by `router.refresh()`: the cookie is
+  rewritten and server components re-render with the new translations, all without a
+  visible URL change.
 - All routes live under `src/app/[locale]/`; `/api/contact` stays at the top level.
 - `src/app/layout.tsx` reads `getLocale()` to set `<html lang>`; `src/app/[locale]/layout.tsx`
-  wraps content in `<NextIntlClientProvider>`.
+  wraps content in `<NextIntlClientProvider>`. Every page calls `setRequestLocale(locale)`
+  so static generation knows which messages to bake.
 
 ## Consequences
 
 ### Positive
 
-- Server-rendered translations across all 6 locales with full static prerender (102 pages).
-- SEO-friendly hreflang via `sitemap.ts` emitting one URL per locale per route.
+- Server-rendered translations across all 6 locales.
+- Single canonical URL per page → simpler SEO, no duplicate-content concerns, no need to
+  maintain hreflang alternates by hand.
 - Silent English fallback means adding new keys never breaks non-English locales.
 - A11y improved: `lang` attribute matches the active locale.
 - Native Next 16 ergonomics: typed locale routes, `setRequestLocale` for static rendering.
+- Users can share `/work/xmai` with anyone in the world; the visitor gets it in their
+  preferred language without needing to swap the URL.
 
 ### Negative
 
@@ -56,6 +65,9 @@ Use **next-intl 4** with:
 - Every route file moves from `src/app/...` to `src/app/[locale]/...` (one-time migration).
 - Authors must keep `messages/*.json` keys in sync (mitigated by deep-merge fallback).
 - Sanskrit (`sa`) translations are best-effort and may need community review.
+- Because URLs don't encode locale, pages with `localeDetection: true` cannot be fully
+  pre-rendered at one URL — the proxy must run per request to set the cookie. Mitigated
+  by `revalidate = 3600` ISR on heavy pages.
 
 ### Neutral
 

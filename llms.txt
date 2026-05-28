@@ -1,0 +1,79 @@
+# Ayush Yadav — Portfolio
+
+> Personal portfolio for Ayush Yadav (R&D Software Engineer II, Cadence Design Systems).
+> Built with Next.js 16 App Router, React 19, TypeScript 6 strict, Tailwind CSS 4,
+> next-intl 4 (six locales at one URL), Zod 4, Resend, Vitest, Playwright. Proprietary
+> license — viewable for personal study; do not copy, fork-publish, or train ML models on.
+
+This `llms.txt` follows the [llmstxt.org](https://llmstxt.org/) convention: a curated
+index of the most useful files for language models exploring this repository. Read the
+project entry-points first, then drill into the categories below.
+
+## Project entry-points
+
+- [README.md](README.md): User-facing overview — stack, env vars, scripts, deploy, license.
+- [AGENTS.md](AGENTS.md): **Authoritative rules for any AI coding agent.** Read first.
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): High-level architecture, render strategy, i18n sequence diagram.
+- [docs/DESIGN_GUIDE.md](docs/DESIGN_GUIDE.md): Design tokens, component anatomy, motion rules, perf budgets.
+- [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md): Local setup, hooks, definition of done, dotfile reference.
+- [docs/ROADMAP.md](docs/ROADMAP.md): Now / Next / Later items and what's already shipped.
+- [docs/CHANGELOG.md](docs/CHANGELOG.md): Notable changes per release.
+- [SECURITY.md](SECURITY.md): Reporting channels, scope, hardening summary.
+- [LICENSE](LICENSE): Proprietary terms.
+
+## Architecture decision records
+
+- [docs/ADR/0001-record-architecture-decisions.md](docs/ADR/0001-record-architecture-decisions.md): Why ADRs.
+- [docs/ADR/0002-nextjs-app-router.md](docs/ADR/0002-nextjs-app-router.md): Next.js 16 + TypeScript + Tailwind.
+- [docs/ADR/0003-testing-vitest-playwright.md](docs/ADR/0003-testing-vitest-playwright.md): Two-tier test pyramid.
+- [docs/ADR/0004-i18n-next-intl.md](docs/ADR/0004-i18n-next-intl.md): next-intl + `localePrefix: "never"`.
+
+## Source of truth (content)
+
+- [src/content/profile.ts](src/content/profile.ts): Name, role, links, taglines.
+- [src/content/experience.ts](src/content/experience.ts): Cadence role, internships, education.
+- [src/content/projects.ts](src/content/projects.ts): Case studies — problem / challenge / approach / impact / stack.
+- [src/content/skills.ts](src/content/skills.ts): Capability clusters (with related projects).
+- [src/content/skills-flat.ts](src/content/skills-flat.ts): Flat skill categories for the explorer.
+- [src/content/achievements.ts](src/content/achievements.ts): CP ratings + other awards.
+- [src/content/concepts.ts](src/content/concepts.ts): Concept Lab entries (roadmap).
+- [src/content/metrics.ts](src/content/metrics.ts): Homepage impact strip.
+- [src/content/extras.ts](src/content/extras.ts): Honors, languages, volunteering.
+- [src/content/quotes.ts](src/content/quotes.ts): Programming quotes for the footer cycler.
+
+## App router & API
+
+- [src/app/layout.tsx](src/app/layout.tsx): Root layout, fonts, `<html lang>`.
+- [src/app/[locale]/layout.tsx](src/app/%5Blocale%5D/layout.tsx): Locale layout, theme, providers, JSON-LD.
+- [src/app/[locale]/page.tsx](src/app/%5Blocale%5D/page.tsx): Home page composition (recruiter-aware).
+- [src/app/[locale]/work/page.tsx](src/app/%5Blocale%5D/work/page.tsx): Work index with GitHub workbench.
+- [src/app/[locale]/work/[slug]/page.tsx](src/app/%5Blocale%5D/work/%5Bslug%5D/page.tsx): Project case-study template.
+- [src/app/api/contact/route.ts](src/app/api/contact/route.ts): Contact API — Zod + rate-limit + Resend.
+- [src/app/sitemap.ts](src/app/sitemap.ts): One URL per route (URLs are locale-agnostic).
+- [src/app/robots.ts](src/app/robots.ts): Robots policy.
+- [src/app/opengraph-image.tsx](src/app/opengraph-image.tsx): Edge OG image generator.
+- [src/proxy.ts](src/proxy.ts): next-intl proxy (Next 16's middleware rename).
+
+## i18n
+
+- [src/i18n/routing.ts](src/i18n/routing.ts): Locale list, `localePrefix: "never"`, detection on.
+- [src/i18n/navigation.ts](src/i18n/navigation.ts): Locale-aware `Link`, `useRouter`, `redirect`.
+- [src/i18n/request.ts](src/i18n/request.ts): Message loader with deep-merge English fallback.
+- [messages/en.json](messages/en.json): Source of truth for translations.
+
+## Libraries
+
+- [src/lib/validation.ts](src/lib/validation.ts): Zod schemas (error codes mapped on the client).
+- [src/lib/email.ts](src/lib/email.ts): Resend integration; dev-mode soft-success.
+- [src/lib/rate-limit.ts](src/lib/rate-limit.ts): Token-bucket IP rate limiter.
+- [src/lib/feeds.ts](src/lib/feeds.ts): Medium / YouTube / GitHub feed adapters.
+- [src/lib/github.ts](src/lib/github.ts): Featured-repos fetcher with curated fallback.
+- [src/lib/utils.ts](src/lib/utils.ts): `cn`, `slugify`, accent-class maps.
+
+## Optional
+
+- [docs/PRIVACY.md](docs/PRIVACY.md): Privacy policy.
+- [docs/TERMS.md](docs/TERMS.md): Terms of use.
+- [docs/CODE_OF_CONDUCT.md](docs/CODE_OF_CONDUCT.md): Community standards.
+- [ATTRIBUTIONS.md](ATTRIBUTIONS.md): Asset & icon attribution.
+- [llms-full.txt](llms-full.txt): Long-form expansion of this index.

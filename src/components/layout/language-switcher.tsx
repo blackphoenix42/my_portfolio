@@ -35,7 +35,12 @@ export function LanguageSwitcher() {
 
   function switchTo(next: Locale) {
     setOpen(false);
+    // With `localePrefix: "never"` the URL doesn't change — only the locale
+    // cookie does. next-intl's router handles writing the cookie; the explicit
+    // `router.refresh()` forces a server-component re-render so the new
+    // translations swap in without a hard reload.
     router.replace(pathname, { locale: next });
+    router.refresh();
   }
 
   return (

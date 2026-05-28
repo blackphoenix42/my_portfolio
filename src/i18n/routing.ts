@@ -12,8 +12,10 @@ import { defineRouting } from "next-intl/routing";
 export const routing = defineRouting({
   locales: ["en", "hi", "ja", "sa", "zh", "ru"] as const,
   defaultLocale: "en",
-  // Hide /en in URLs but prefix all other locales: /about, /hi/about, /ja/about, ...
-  localePrefix: "as-needed",
+  // URLs never carry a locale segment — every page lives at the same path in
+  // every language. The active locale is resolved from the `NEXT_LOCALE` cookie
+  // and the `Accept-Language` header, persisted via the language switcher.
+  localePrefix: "never",
   // Detect from Accept-Language on first visit, persist in cookie.
   localeDetection: true,
 });

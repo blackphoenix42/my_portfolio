@@ -1,9 +1,9 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
-export default function NotFound() {
-  const t = useTranslations("notFound");
-  const tNav = useTranslations("nav");
+export default async function NotFound() {
+  const t = await getTranslations("notFound");
+  const tNav = await getTranslations("nav");
   return (
     <div className="container-tight flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
       <p className="mono-label">/ 404</p>

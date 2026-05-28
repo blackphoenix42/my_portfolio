@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { AboutSection } from "@/components/about-section";
 import { honors, languages } from "@/content/extras";
@@ -231,11 +230,13 @@ const certCategories: CertCategory[] = [
   },
 ];
 
-export default function AboutPage() {
-  const t = useTranslations("about");
-  const tHonors = useTranslations("honorsData");
-  const tLanguages = useTranslations("languagesData");
-  const tCerts = useTranslations("certsData");
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("about");
+  const tHonors = await getTranslations("honorsData");
+  const tLanguages = await getTranslations("languagesData");
+  const tCerts = await getTranslations("certsData");
   const trHonor = (slug: string, key: "title" | "org" | "detail", fallback: string) => {
     const path = `${slug}.${key}` as never;
     return tHonors.has(path) ? tHonors(path) : fallback;

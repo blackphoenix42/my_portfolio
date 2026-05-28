@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Rss } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ActivityFeeds } from "@/components/feeds/activity-feeds";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -10,7 +10,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const revalidate = 3600;
 
-export default async function FeedsPage() {
+export default async function FeedsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("feeds");
   return (
     <div>

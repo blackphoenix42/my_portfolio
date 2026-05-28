@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Play, Pause, RotateCcw } from "lucide-react";
 
 const PATH: [number, number][] = [
@@ -15,17 +17,20 @@ const PATH: [number, number][] = [
 ];
 
 export function TrackPersonDemo() {
+  const reduce = useReducedMotion();
+  const tr = useTranslations("demos.track");
+  const tc = useTranslations("demos.common");
   const [t, setT] = useState(0);
   const [playing, setPlaying] = useState(true);
   const ref = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!playing) return;
+    if (!playing || reduce) return;
     ref.current = window.setInterval(() => setT((x) => (x + 1) % (PATH.length * 12)), 80);
     return () => {
       if (ref.current) window.clearInterval(ref.current);
     };
-  }, [playing]);
+  }, [playing, reduce]);
 
   const seg = Math.floor(t / 12);
   const frac = (t % 12) / 12;
@@ -38,8 +43,8 @@ export function TrackPersonDemo() {
   return (
     <div className="card overflow-hidden">
       <div className="border-border bg-bg-sunken/60 text-fg-subtle flex items-center justify-between border-b px-4 py-2 font-mono text-xs">
-        <span>track-person · live route · simulated</span>
-        <span className="text-accent-emerald">● in-zone</span>
+        <span>{tr("title")}</span>
+        <span className="text-accent-emerald">{tr("inZone")}</span>
       </div>
       <div className="grid gap-4 p-5 lg:grid-cols-[1fr,220px]">
         <svg
@@ -84,11 +89,11 @@ export function TrackPersonDemo() {
         </svg>
         <div className="space-y-2">
           <div className="border-border bg-bg-elev rounded-md border p-3">
-            <p className="text-fg-subtle font-mono text-[10px]">DISTANCE</p>
+            <p className="text-fg-subtle font-mono text-[10px]">{tr("distance")}</p>
             <p className="text-accent-cyan font-mono text-xl font-semibold">{distance} km</p>
           </div>
           <div className="border-border bg-bg-elev rounded-md border p-3">
-            <p className="text-fg-subtle font-mono text-[10px]">WAYPOINT</p>
+            <p className="text-fg-subtle font-mono text-[10px]">{tr("waypoint")}</p>
             <p className="text-fg font-mono text-lg">
               {seg + 1} / {PATH.length}
             </p>
@@ -100,12 +105,12 @@ export function TrackPersonDemo() {
               className="btn-secondary flex-1 text-xs"
             >
               {playing ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
-              {playing ? "Pause" : "Play"}
+              {playing ? tc("pause") : tc("play")}
             </button>
             <button
               type="button"
               onClick={() => setT(0)}
-              aria-label="Reset"
+              aria-label={tc("reset")}
               className="btn-secondary text-xs"
             >
               <RotateCcw className="h-3.5 w-3.5" />

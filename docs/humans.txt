@@ -9,10 +9,11 @@ LinkedIn: linkedin.com/in/ayushyadav
 - The Tailwind CSS team
 - The Radix UI team
 - The framer-motion team
+- The next-intl team
 - Open-source contributors of every dependency in package.json
 
 /* SITE */
 Last update: 2026
 Standards: HTML5, CSS3, ES2022
-Components: Next.js 14, React 18, TypeScript 5, Tailwind CSS 3
+Components: Next.js 16, React 19, TypeScript 6, Tailwind CSS 4, next-intl 4
 Software: VS Code, GitHub

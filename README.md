@@ -1,7 +1,7 @@
 # Ayush Yadav — Portfolio
 
 A production-grade personal portfolio for **Ayush Yadav**, R&D Software Engineer II at Cadence Design Systems.
-Built with **Next.js 15 (App Router)**, **React 19**, **TypeScript (strict)**, **Tailwind CSS**, **Framer Motion** and a curated set
+Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript (strict)**, **Tailwind CSS 4**, **Framer Motion** and a curated set
 of lightweight libraries. Designed for **recruiter conversion**, **accessibility**, and **fast performance**.
 
 ## Highlights
@@ -19,17 +19,18 @@ of lightweight libraries. Designed for **recruiter conversion**, **accessibility
 
 ## Tech stack
 
-| Area          | Tools                                                           |
-| ------------- | --------------------------------------------------------------- |
-| Framework     | Next.js 15 App Router, React 19, TypeScript (strict)            |
-| Styling       | Tailwind CSS, `tailwindcss-animate`, design tokens via CSS vars |
-| Animation     | Framer Motion                                                   |
-| UI primitives | Radix UI, `cmdk`, `lucide-react`                                |
-| Validation    | Zod                                                             |
-| Email         | Resend                                                          |
-| Testing       | Vitest, Testing Library, jsdom, Playwright                      |
-| Lint/format   | ESLint (next + jsx-a11y), Prettier with Tailwind plugin         |
-| CI / Quality  | GitHub Actions (lint, typecheck, test, build, CodeQL, e2e)      |
+| Area          | Tools                                                             |
+| ------------- | ----------------------------------------------------------------- |
+| Framework     | Next.js 16 App Router, React 19, TypeScript 6 (strict)            |
+| Styling       | Tailwind CSS 4, `tailwindcss-animate`, design tokens via CSS vars |
+| Animation     | Framer Motion                                                     |
+| UI primitives | Radix UI, `cmdk`, `lucide-react`                                  |
+| Validation    | Zod 4                                                             |
+| Email         | Resend                                                            |
+| Internat.     | next-intl 4 (URL-stable, cookie-driven locale resolution)         |
+| Testing       | Vitest, Testing Library, jsdom, Playwright, axe-core              |
+| Lint/format   | ESLint 10 (flat config + jsx-a11y), Prettier with Tailwind plugin |
+| CI / Quality  | GitHub Actions (lint, typecheck, test, build, CodeQL, e2e, audit) |
 
 ## Getting started
 
@@ -56,21 +57,26 @@ See [`.env.example`](.env.example):
 
 ## Internationalization
 
-The site is multilingual via [next-intl](https://next-intl.dev). Six locales are supported:
+The site is multilingual via [next-intl](https://next-intl.dev). Six locales are supported,
+and **every locale lives at the same URL** — `/about` renders in English, Hindi, Japanese,
+Sanskrit, Chinese, or Russian depending on the active locale; the URL never changes.
 
-| Code | Language                          | URL prefix      |
-| ---- | --------------------------------- | --------------- |
-| `en` | English                           | `/` (no prefix) |
-| `hi` | हिन्दी (Hindi)                    | `/hi/...`       |
-| `ja` | 日本語 (Japanese)                 | `/ja/...`       |
-| `sa` | संस्कृतम् (Sanskrit, best-effort) | `/sa/...`       |
-| `zh` | 中文 (Chinese)                    | `/zh/...`       |
-| `ru` | Русский (Russian)                 | `/ru/...`       |
+| Code | Language                          |
+| ---- | --------------------------------- |
+| `en` | English (default)                 |
+| `hi` | हिन्दी (Hindi)                    |
+| `ja` | 日本語 (Japanese)                 |
+| `sa` | संस्कृतम् (Sanskrit, best-effort) |
+| `zh` | 中文 (Chinese)                    |
+| `ru` | Русский (Russian)                 |
 
-- **Detection:** First visit reads `Accept-Language`; the user's choice persists in a `NEXT_LOCALE` cookie.
-- **Switcher:** Globe icon in the header — picks a locale and preserves the current path.
+- **Resolution order:** `NEXT_LOCALE` cookie → `Accept-Language` header → default (`en`).
+- **Switcher:** Globe icon in the header — picks a locale, writes the cookie, and re-renders
+  server components in place. The URL is preserved.
 - **Fallback:** Missing translation keys silently fall back to English (production safe).
-- **SEO:** `sitemap.xml` emits one URL per locale per route.
+- **SEO:** Since URLs are locale-agnostic, `sitemap.xml` emits one URL per route. Search
+  engines see one canonical URL per page; serve the right language via `Vary: Accept-Language`
+  (handled by the framework).
 
 Add a new locale in three steps:
 
@@ -116,7 +122,7 @@ public/assets/        # logos, resume PDF, social
 
 ## Replace these assets before launch
 
-- `public/assets/resume/Ayush-Yadav-Resume.pdf` — replace placeholder with the real résumé PDF.
+- `public/assets/resume/Resume.pdf` — replace placeholder with the real résumé PDF.
 - Optional: add brand SVG logos under `public/assets/logos/` (kept light intentionally).
 
 ## Scripts
