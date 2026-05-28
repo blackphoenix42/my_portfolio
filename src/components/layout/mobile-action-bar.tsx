@@ -4,8 +4,10 @@ import Link from "next/link";
 import { FileDown, Mail } from "lucide-react";
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
+import { useTranslations } from "next-intl";
 
 export function MobileActionBar() {
+  const t = useTranslations("mobileActionBar");
   return (
     <div
       className="fixed inset-x-0 z-30 flex justify-center px-3 md:hidden"
@@ -16,26 +18,26 @@ export function MobileActionBar() {
           href={SITE.resumePath}
           download
           className="text-fg-muted hover:text-fg inline-flex flex-col items-center gap-0.5 px-3 py-1 text-[10px]"
-          aria-label="Download résumé"
+          aria-label={t("downloadResume")}
         >
           <FileDown className="h-4 w-4" />
-          Résumé
+          {t("resume")}
         </a>
         <Link
           href={SITE.github}
           className="text-fg-muted hover:text-fg inline-flex flex-col items-center gap-0.5 px-3 py-1 text-[10px]"
-          aria-label="GitHub"
+          aria-label={t("github")}
         >
           <Github className="h-4 w-4" />
-          GitHub
+          {t("github")}
         </Link>
         <Link
           href="/contact"
           className="text-fg-muted hover:text-fg inline-flex flex-col items-center gap-0.5 px-3 py-1 text-[10px]"
-          aria-label="Contact"
+          aria-label={t("contact")}
         >
           <Mail className="h-4 w-4" />
-          Contact
+          {t("contact")}
         </Link>
       </div>
     </div>

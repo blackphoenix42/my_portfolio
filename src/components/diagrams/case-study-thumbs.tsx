@@ -37,6 +37,7 @@ export function XmaiPipeline() {
       <line x1="60" y1="100" x2="420" y2="100" stroke="url(#xm-edge)" strokeWidth="1.5" />
       {!reduce && (
         <motion.circle
+          initial={false}
           r="4"
           fill={V}
           cy={100}
@@ -47,6 +48,7 @@ export function XmaiPipeline() {
       {nodes.map((n, i) => (
         <g key={n.label} transform={`translate(${n.x},100)`}>
           <motion.circle
+            initial={false}
             r="22"
             fill={BG}
             stroke={n.c}
@@ -110,6 +112,7 @@ export function FlamegraphMini() {
         <circle cx="29" cy="60" r="6" fill={M} />
         <path d="M 18 80 Q 29 70 40 80 L 40 90 L 18 90 Z" fill={V} />
         <motion.g
+          initial={false}
           animate={reduce ? undefined : { opacity: [0, 1, 1, 0], y: [0, -6, -6, -10] }}
           transition={{ duration: 3, repeat: Infinity, times: [0, 0.2, 0.7, 1] }}
         >
@@ -148,6 +151,7 @@ export function FlamegraphMini() {
           transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1 }}
         />
         <motion.circle
+          initial={false}
           cx={395}
           cy={42}
           r="6"
@@ -223,6 +227,7 @@ export function AlgoMini() {
         return (
           <g key={i}>
             <motion.rect
+              initial={false}
               x={50 + i * 38}
               width={28}
               rx={2}
@@ -235,6 +240,7 @@ export function AlgoMini() {
               opacity={isActive ? 1 : 0.85}
             />
             <motion.text
+              initial={false}
               x={50 + i * 38 + 14}
               y={186}
               textAnchor="middle"
@@ -247,6 +253,7 @@ export function AlgoMini() {
         );
       })}
       <motion.path
+        initial={false}
         animate={{
           d: `M ${50 + swap * 38 + 14} 36 Q ${50 + swap * 38 + 33} 14 ${50 + (swap + 1) * 38 + 14} 36`,
         }}
@@ -287,6 +294,7 @@ export function PostureMini() {
       <g transform="translate(205,0)">
         {/* head */}
         <motion.circle
+          initial={false}
           cx="60"
           r="11"
           fill={BG}
@@ -296,6 +304,7 @@ export function PostureMini() {
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
+          initial={false}
           cx="60"
           r="2"
           fill={A}
@@ -304,6 +313,7 @@ export function PostureMini() {
         />
         {/* spine (head → hips); slight forward lean at bottom */}
         <motion.line
+          initial={false}
           stroke={V}
           strokeWidth="3"
           animate={
@@ -320,6 +330,7 @@ export function PostureMini() {
         />
         {/* arms: hang at sides → swing forward for balance at bottom */}
         <motion.line
+          initial={false}
           stroke={E}
           strokeWidth="2.5"
           animate={
@@ -335,6 +346,7 @@ export function PostureMini() {
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.line
+          initial={false}
           stroke={E}
           strokeWidth="2.5"
           animate={
@@ -351,6 +363,7 @@ export function PostureMini() {
         />
         {/* pelvis line */}
         <motion.line
+          initial={false}
           stroke={A}
           strokeWidth="2.5"
           animate={
@@ -367,6 +380,7 @@ export function PostureMini() {
         />
         {/* upper leg L (hip → knee) — knee moves outward & forward at bottom */}
         <motion.line
+          initial={false}
           stroke={M}
           strokeWidth="2.5"
           animate={
@@ -383,6 +397,7 @@ export function PostureMini() {
         />
         {/* upper leg R */}
         <motion.line
+          initial={false}
           stroke={M}
           strokeWidth="2.5"
           animate={
@@ -399,6 +414,7 @@ export function PostureMini() {
         />
         {/* lower leg L (knee → ankle) — ankle planted */}
         <motion.line
+          initial={false}
           stroke={M}
           strokeWidth="2.5"
           animate={
@@ -415,6 +431,7 @@ export function PostureMini() {
         />
         {/* lower leg R */}
         <motion.line
+          initial={false}
           stroke={M}
           strokeWidth="2.5"
           animate={
@@ -434,18 +451,21 @@ export function PostureMini() {
         <line x1="74" y1="178" x2="90" y2="178" stroke={A} strokeWidth="3" />
         {/* pose-estimation landmarks — track the moving knees + hips */}
         <motion.circle
+          initial={false}
           r="2.6"
           fill={E}
           animate={reduce ? undefined : { cx: [40, 26, 40], cy: [150, 158, 150] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
+          initial={false}
           r="2.6"
           fill={E}
           animate={reduce ? undefined : { cx: [80, 94, 80], cy: [150, 158, 150] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
+          initial={false}
           cx="46"
           r="2.6"
           fill={E}
@@ -453,6 +473,7 @@ export function PostureMini() {
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
+          initial={false}
           cx="74"
           r="2.6"
           fill={E}
@@ -564,6 +585,7 @@ export function TrackMini() {
       </g>
       {!reduce && (
         <motion.circle
+          initial={false}
           r="8"
           fill={V}
           stroke={BG_S}
@@ -609,6 +631,7 @@ export function BrainMini() {
       <rect x="40" y="36" width="240" height="144" rx="6" fill={BG_S} stroke={BD} />
       <g clipPath="url(#cam-clip)">
         <motion.circle
+          initial={false}
           cx="160"
           cy="108"
           r="48"
@@ -618,6 +641,7 @@ export function BrainMini() {
           style={{ transformOrigin: "160px 108px" }}
         />
         <motion.ellipse
+          initial={false}
           cx="142"
           cy="100"
           rx="3"
@@ -627,6 +651,7 @@ export function BrainMini() {
           transition={{ duration: 3, repeat: Infinity, times: [0, 0.1, 0.2, 1] }}
         />
         <motion.ellipse
+          initial={false}
           cx="178"
           cy="100"
           rx="3"
@@ -636,6 +661,7 @@ export function BrainMini() {
           transition={{ duration: 3, repeat: Infinity, times: [0, 0.1, 0.2, 1] }}
         />
         <motion.path
+          initial={false}
           d="M 146 124 Q 160 134 174 124"
           stroke={FG}
           strokeWidth="2"
@@ -654,6 +680,7 @@ export function BrainMini() {
           transition={{ duration: 2.4, repeat: Infinity }}
         />
         <motion.rect
+          initial={false}
           x="108"
           y="58"
           width="104"
@@ -670,6 +697,7 @@ export function BrainMini() {
         </text>
         {!reduce && (
           <motion.rect
+            initial={false}
             x="40"
             width="240"
             height="6"
@@ -693,6 +721,7 @@ export function BrainMini() {
         </text>
         <circle cx="399" cy="110" r="14" fill={V} opacity="0.18" />
         <motion.circle
+          initial={false}
           cx="399"
           cy="110"
           r="8"
@@ -759,6 +788,7 @@ export function ChainBracket() {
             transition={{ duration: 0.45, delay: i * 0.06 }}
           >
             <motion.rect
+              initial={false}
               x={c.x}
               y={c.y}
               width="92"
@@ -774,6 +804,7 @@ export function ChainBracket() {
             <rect x={c.x + 6} y={c.y + 6} width="80" height="28" rx="3" fill={c.c} opacity="0.25" />
             {[0, 1, 2, 3, 4].map((j) => (
               <motion.circle
+                initial={false}
                 key={j}
                 cx={c.x + 14 + j * 14}
                 cy={c.y + 20}

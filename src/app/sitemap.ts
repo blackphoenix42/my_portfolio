@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
 import { SITE } from "@/content/profile";
+import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
@@ -14,8 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/feeds",
     "/about",
     "/contact",
+    "/lab",
   ];
-  const staticUrls = routes.map((r) => ({ url: `${base}${r || "/"}`, lastModified: now }));
-  const projectUrls = projects.map((p) => ({ url: `${base}/work/${p.slug}`, lastModified: now }));
+
+  function urlsFor(path: string) {
+    // localePrefix: "as-needed" → English at root, others prefixed.
+    return routing.locales.map((l) => {
+      const u = l === routing.defaultLocale ? `${base}${path || "/"}` : `${base}/${l}${path || ""}`;
+      return { url: u, lastModified: now };
+    });
+  }
+
+  const staticUrls = routes.flatMap(urlsFor);
+  const projectUrls = projects.flatMap((p) => urlsFor(`/work/${p.slug}`));
   return [...staticUrls, ...projectUrls];
 }

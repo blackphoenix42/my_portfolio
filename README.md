@@ -54,6 +54,32 @@ See [`.env.example`](.env.example):
 | `GITHUB_TOKEN`                                 | Optional — raises GitHub API rate limits for the workbench.         |
 | `NEXT_PUBLIC_SHOW_PHONE` / `NEXT_PUBLIC_PHONE` | Toggle/render phone number in contact page.                         |
 
+## Internationalization
+
+The site is multilingual via [next-intl](https://next-intl.dev). Six locales are supported:
+
+| Code | Language                          | URL prefix      |
+| ---- | --------------------------------- | --------------- |
+| `en` | English                           | `/` (no prefix) |
+| `hi` | हिन्दी (Hindi)                    | `/hi/...`       |
+| `ja` | 日本語 (Japanese)                 | `/ja/...`       |
+| `sa` | संस्कृतम् (Sanskrit, best-effort) | `/sa/...`       |
+| `zh` | 中文 (Chinese)                    | `/zh/...`       |
+| `ru` | Русский (Russian)                 | `/ru/...`       |
+
+- **Detection:** First visit reads `Accept-Language`; the user's choice persists in a `NEXT_LOCALE` cookie.
+- **Switcher:** Globe icon in the header — picks a locale and preserves the current path.
+- **Fallback:** Missing translation keys silently fall back to English (production safe).
+- **SEO:** `sitemap.xml` emits one URL per locale per route.
+
+Add a new locale in three steps:
+
+1. Add the code to `src/i18n/routing.ts` (`locales` array + language name).
+2. Create `messages/{code}.json` (any subset of keys; the rest will fall back to English).
+3. Add a display name in `messages/en.json` → `language.names.{code}`.
+
+See [docs/ADR/0004-i18n-next-intl.md](docs/ADR/0004-i18n-next-intl.md) for the rationale.
+
 ## Content
 
 All copy and data are colocated under `src/content/` as strongly typed modules:
@@ -72,12 +98,18 @@ Update these to refresh the site — no component changes required.
 
 ```
 src/
-  app/                # Next.js App Router routes (home, work, work/[slug], experience, skills, cp, about, contact, lab, api/contact)
-  components/         # layout, hero, metrics, projects, diagrams, skills, github, competitive-programming, contact, concept-labs
+  app/                # Next.js App Router
+    layout.tsx        # root layout (locale-aware <html lang>)
+    [locale]/         # all user-facing routes under here (home, work, about, ...)
+    api/contact/      # locale-agnostic API
+    opengraph-image.tsx
+    sitemap.ts / robots.ts
+  components/         # layout (header/footer/language-switcher/...), hero, metrics, projects, ...
   content/            # typed content modules
+  i18n/               # routing, navigation, request config (next-intl)
   lib/                # utils, validation (Zod), rate-limit, email (Resend), github
-  app/opengraph-image.tsx  # dynamic OG image
-  app/sitemap.ts / robots.ts
+  proxy.ts            # Next.js 16 proxy (next-intl locale resolution)
+messages/             # per-locale UI strings (en.json is the source of truth)
 tests/                # Playwright tests
 public/assets/        # logos, resume PDF, social
 ```

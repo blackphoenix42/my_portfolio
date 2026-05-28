@@ -1,19 +1,20 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function NotFound() {
+  const t = useTranslations("notFound");
+  const tNav = useTranslations("nav");
   return (
     <div className="container-tight flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
       <p className="mono-label">/ 404</p>
-      <h1 className="text-display-2 mt-2 font-semibold tracking-tight">Page not found</h1>
-      <p className="text-fg-muted mt-3 max-w-md">
-        The page you're looking for doesn't exist. Try the home page or browse my work.
-      </p>
+      <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{t("title")}</h1>
+      <p className="text-fg-muted mt-3 max-w-md">{t("subheading")}</p>
       <div className="mt-6 flex gap-2">
         <Link href="/" className="btn-primary">
-          Home
+          {tNav("home")}
         </Link>
         <Link href="/work" className="btn-secondary">
-          Work
+          {tNav("work")}
         </Link>
       </div>
     </div>

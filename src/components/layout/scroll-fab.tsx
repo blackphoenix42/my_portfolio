@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { ArrowDown, ArrowUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ScrollFab() {
+  const t = useTranslations("scroll");
   const [pct, setPct] = useState(0);
 
   useEffect(() => {
@@ -31,7 +33,7 @@ export function ScrollFab() {
         <button
           type="button"
           onClick={goTop}
-          aria-label="Scroll to top"
+          aria-label={t("toTop")}
           className="border-border bg-bg-elev/95 text-fg-muted hover:border-accent-cyan/50 hover:text-fg pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border shadow-lg backdrop-blur transition-colors"
         >
           <ArrowUp className="h-4 w-4" />
@@ -41,7 +43,7 @@ export function ScrollFab() {
         <button
           type="button"
           onClick={goBottom}
-          aria-label="Scroll to bottom"
+          aria-label={t("toBottom")}
           className="border-border bg-bg-elev/95 text-fg-muted hover:border-accent-cyan/50 hover:text-fg pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full border shadow-lg backdrop-blur transition-colors"
         >
           <ArrowDown className="h-4 w-4" />

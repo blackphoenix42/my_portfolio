@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Hero } from "@/components/hero/hero";
 import { MetricsStrip } from "@/components/metrics/metrics-strip";
 import { FeaturedWork } from "@/components/projects/featured-work";
@@ -13,6 +14,8 @@ export const revalidate = 3600;
 const lazy = "lazy-section";
 
 export default async function HomePage() {
+  const t = await getTranslations("common");
+  const viewFullExperience = t("viewFullExperience");
   return (
     <>
       <Hero />
@@ -25,7 +28,7 @@ export default async function HomePage() {
         recruiter={
           <>
             <div className={lazy}>
-              <CareerTimeline cta={{ href: "/experience", label: "View full experience" }} />
+              <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
             </div>
             <div className={lazy}>
               <FeaturedWork limit={4} />
@@ -41,7 +44,7 @@ export default async function HomePage() {
               <FeaturedWork limit={2} />
             </div>
             <div className={lazy}>
-              <CareerTimeline cta={{ href: "/experience", label: "View full experience" }} />
+              <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
             </div>
             <div className={lazy}>
               <CPCommandCenter />

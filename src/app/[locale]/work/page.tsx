@@ -1,6 +1,7 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { projects } from "@/content/projects";
 import {
   XmaiPipeline,
@@ -14,11 +15,10 @@ import {
 import { GithubWorkbench } from "@/components/github/github-workbench";
 import { fetchFeaturedRepos } from "@/lib/github";
 
-export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Selected work across performance engineering, agentic AI, developer tooling and product engineering.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("work");
+  return { title: t("title"), description: t("description") };
+}
 
 const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
   xmai: Cpu,
@@ -43,24 +43,29 @@ const Thumbs: Record<string, () => React.ReactElement> = {
 export const revalidate = 3600;
 
 export default async function WorkIndexPage() {
+  const t = await getTranslations("work");
+  const tCommon = await getTranslations("common");
+  const tProjects = await getTranslations("projects");
   const repos = await fetchFeaturedRepos();
+
+  const tr = (slug: string, key: string, fallback: string) => {
+    const path = `items.${slug}.${key}` as never;
+    return tProjects.has(path) ? (tProjects(path) as string) : fallback;
+  };
 
   return (
     <div className="container-tight py-20">
       <header className="mb-10 max-w-2xl">
-        <p className="mono-label">/ work</p>
-        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">Work</h1>
-        <p className="text-fg-muted mt-3">
-          Deep-dives into selected engineering work — problem framing, technical decisions,
-          trade-offs and measurable impact.
-        </p>
+        <p className="mono-label">{t("tag")}</p>
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{t("pageTitle")}</h1>
+        <p className="text-fg-muted mt-3">{t("pageIntro")}</p>
       </header>
 
-      <section aria-label="Featured projects" className="mb-20">
+      <section aria-label={t("featuredAria")} className="mb-20">
         <header className="mb-6 flex items-end justify-between gap-4">
           <div>
-            <p className="mono-label">/ featured</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-tight">Featured projects</h2>
+            <p className="mono-label">{t("featuredTag")}</p>
+            <h2 className="mt-1 text-2xl font-semibold tracking-tight">{t("featuredHeading")}</h2>
           </div>
         </header>
 
@@ -68,6 +73,9 @@ export default async function WorkIndexPage() {
           {projects.map((p) => {
             const Icon = Icons[p.slug] ?? Cpu;
             const Thumb = Thumbs[p.slug];
+            const title = tr(p.slug, "title", p.title);
+            const tagline = tr(p.slug, "tagline", p.tagline);
+            const category = tr(p.slug, "category", p.category);
             return (
               <article key={p.slug} className="card card-hover group overflow-hidden">
                 <div className="border-border bg-bg-sunken/60 relative h-44 overflow-hidden border-b">
@@ -79,16 +87,16 @@ export default async function WorkIndexPage() {
                     </div>
                   )}
                   <div className="border-border bg-bg-elev/80 text-fg-muted absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border px-2.5 py-1 font-mono text-[10px] backdrop-blur">
-                    <Icon className="h-3 w-3" /> {p.category}
+                    <Icon className="h-3 w-3" /> {category}
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
-                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{p.tagline}</p>
+                  <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
+                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{tagline}</p>
                   <ul className="mt-4 flex flex-wrap gap-1.5">
-                    {p.tags.slice(0, 6).map((t) => (
-                      <li key={t} className="chip">
-                        {t}
+                    {p.tags.slice(0, 6).map((tag) => (
+                      <li key={tag} className="chip">
+                        {tag}
                       </li>
                     ))}
                   </ul>
@@ -97,13 +105,13 @@ export default async function WorkIndexPage() {
                       href={`/work/${p.slug}`}
                       className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors"
                     >
-                      Read more <ArrowUpRight className="h-3.5 w-3.5" />
+                      {t("readMore")} <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                     {p.status === "professional" && (
-                      <span className="chip text-accent-amber">Professional</span>
+                      <span className="chip text-accent-amber">{tCommon("professional")}</span>
                     )}
                     {p.status === "open-source" && (
-                      <span className="chip text-accent-emerald">Open source</span>
+                      <span className="chip text-accent-emerald">{tCommon("openSource")}</span>
                     )}
                   </div>
                 </div>
@@ -113,7 +121,7 @@ export default async function WorkIndexPage() {
         </div>
       </section>
 
-      <section aria-label="Public workbench">
+      <section aria-label={t("workbenchAria")}>
         <GithubWorkbench repos={repos} />
       </section>
     </div>

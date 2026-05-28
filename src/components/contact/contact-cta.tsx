@@ -1,11 +1,16 @@
-import Link from "next/link";
+"use client";
+
 import { Mail, FileDown, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Github, Linkedin } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
+import { Link } from "@/i18n/navigation";
 
 export function ContactCTA() {
+  const t = useTranslations("contactCta");
+  const tCommon = useTranslations("common");
   return (
-    <section className="section" aria-label="Contact">
+    <section className="section" aria-label={t("eyebrow")}>
       <div className="container-tight">
         <div className="card relative overflow-hidden p-8 sm:p-12">
           <div
@@ -18,46 +23,43 @@ export function ContactCTA() {
           />
           <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="mono-label">/ let's talk</p>
+              <p className="mono-label">{t("eyebrow")}</p>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Let's build systems that scale, perform and think.
+                {t("heading")}
               </h2>
-              <p className="text-fg-muted mt-4 max-w-lg">
-                Open to conversations around performance engineering, AI infrastructure, developer
-                tooling, EDA, backend platforms and high-impact software roles.
-              </p>
+              <p className="text-fg-muted mt-4 max-w-lg">{t("subheading")}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <Link href="/contact" className="btn-primary">
-                  Start a conversation <ArrowRight className="h-4 w-4" />
+                  {t("cta")} <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a href={SITE.resumePath} download className="btn-secondary">
-                  <FileDown className="h-4 w-4" /> Download Résumé
+                  <FileDown className="h-4 w-4" /> {t("downloadResume")}
                 </a>
               </div>
             </div>
             <ul className="grid gap-3 sm:grid-cols-2">
               <ContactLink
                 icon={Mail}
-                label="Email"
+                label={tCommon("email")}
                 value={SITE.email}
                 href={`mailto:${SITE.email}`}
               />
               <ContactLink
                 icon={Linkedin}
-                label="LinkedIn"
-                value="/in/ayushyadav"
+                label={tCommon("linkedin")}
+                value={t("linkedinHandle")}
                 href={SITE.linkedin}
               />
               <ContactLink
                 icon={Github}
-                label="GitHub"
-                value="@blackphoenix42"
+                label={tCommon("github")}
+                value={t("githubHandle")}
                 href={SITE.github}
               />
               <ContactLink
                 icon={FileDown}
-                label="Résumé"
-                value="PDF"
+                label={tCommon("resume")}
+                value={t("resumeValue")}
                 href={SITE.resumePath}
                 download
               />

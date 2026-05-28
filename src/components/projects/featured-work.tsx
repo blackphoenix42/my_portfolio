@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { projects } from "@/content/projects";
 import { InView } from "@/components/layout/in-view";
+import { Link } from "@/i18n/navigation";
 import {
   XmaiPipeline,
   FlamegraphMini,
@@ -37,20 +38,27 @@ const Thumbs: Record<string, () => React.ReactElement> = {
 
 export function FeaturedWork({ limit }: { limit?: number } = {}) {
   const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
+  const t = useTranslations("work");
+  const tCommon = useTranslations("common");
+  const tProjects = useTranslations("projects");
+  const tr = (slug: string, key: "title" | "tagline" | "category", fallback: string) => {
+    try {
+      return tProjects(`items.${slug}.${key}`);
+    } catch {
+      return fallback;
+    }
+  };
   return (
-    <section className="section" aria-label="Featured work">
+    <section className="section" aria-label={t("featured")}>
       <div className="container-tight">
         <header className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mono-label">/ work</p>
-            <h2 className="section-title mt-2">Featured work</h2>
-            <p className="text-fg-muted mt-2 max-w-xl">
-              Selected projects across performance engineering, agentic AI, developer tooling and
-              product engineering.
-            </p>
+            <p className="mono-label">/ {t("title").toLowerCase()}</p>
+            <h2 className="section-title mt-2">{t("featured")}</h2>
+            <p className="text-fg-muted mt-2 max-w-xl">{t("featuredSubheading")}</p>
           </div>
           <Link href="/work" className="btn-secondary text-sm">
-            All work <ArrowUpRight className="h-4 w-4" />
+            {t("allWork")} <ArrowUpRight className="h-4 w-4" />
           </Link>
         </header>
 
@@ -78,16 +86,20 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                     </div>
                   )}
                   <div className="border-border bg-bg-elev/90 text-fg-muted absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border px-2.5 py-1 font-mono text-[10px]">
-                    <Icon className="h-3 w-3" /> {p.category}
+                    <Icon className="h-3 w-3" /> {tr(p.slug, "category", p.category)}
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold tracking-tight">{p.title}</h3>
-                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{p.tagline}</p>
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    {tr(p.slug, "title", p.title)}
+                  </h3>
+                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">
+                    {tr(p.slug, "tagline", p.tagline)}
+                  </p>
                   <ul className="mt-4 flex flex-wrap gap-1.5">
-                    {p.tags.slice(0, 6).map((t) => (
-                      <li key={t} className="chip">
-                        {t}
+                    {p.tags.slice(0, 6).map((tag) => (
+                      <li key={tag} className="chip">
+                        {tag}
                       </li>
                     ))}
                   </ul>
@@ -96,13 +108,13 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                       href={`/work/${p.slug}`}
                       className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors"
                     >
-                      Read more <ArrowUpRight className="h-3.5 w-3.5" />
+                      {t("readMore")} <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                     {p.status === "professional" && (
-                      <span className="chip text-accent-amber">Professional</span>
+                      <span className="chip text-accent-amber">{tCommon("professional")}</span>
                     )}
                     {p.status === "open-source" && (
-                      <span className="chip text-accent-emerald">Open source</span>
+                      <span className="chip text-accent-emerald">{tCommon("openSource")}</span>
                     )}
                   </div>
                 </div>

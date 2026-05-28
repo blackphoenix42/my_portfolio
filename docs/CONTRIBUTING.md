@@ -68,6 +68,27 @@ npm run dev          # http://localhost:3000
 - ARIA labels where the visible label is ambiguous.
 - Run an axe / Lighthouse pass before requesting review.
 
+## Internationalization
+
+UI strings live in `messages/*.json`. `messages/en.json` is the source of truth — every other
+locale overlays English keys; missing keys silently fall back to English.
+
+When adding or changing UI:
+
+1. Add the key to `messages/en.json` first (under the appropriate namespace).
+2. Use `useTranslations("namespace")` (client) or `getTranslations({ locale, namespace })` (server).
+3. Replace any `next/link` import with `@/i18n/navigation`'s `Link` so locale prefixes are preserved.
+4. Translate the new key in `messages/{hi,ja,sa,zh,ru}.json` when possible; otherwise English
+   will be shown automatically.
+5. Do not hardcode user-facing strings inside components.
+
+Add a new locale:
+
+1. Add the code to `routing.locales` in `src/i18n/routing.ts`.
+2. Add the display name to `messages/en.json` → `language.names.{code}` (and the other locales).
+3. Create `messages/{code}.json` (partial files are OK — keys fall back to English).
+4. Run `npm run build` to verify all routes pre-render under the new locale.
+
 ## Architecture decisions
 
 Significant decisions live as ADRs in [`docs/ADR/`](./ADR/). Run `npm run adr` to scaffold a new one.

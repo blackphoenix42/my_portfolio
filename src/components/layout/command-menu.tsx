@@ -7,24 +7,26 @@ import { Search, Briefcase, Code2, Mail, FileDown, User, Cpu, Layers, Beaker } f
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { projects } from "@/content/projects";
+import { useTranslations } from "next-intl";
 
-const groups = [
-  {
-    heading: "Navigate",
-    items: [
-      { id: "home", label: "Home", icon: User, href: "/" },
-      { id: "about", label: "About", icon: User, href: "/about" },
-      { id: "work", label: "Work", icon: Layers, href: "/work" },
-      { id: "skills", label: "Skills", icon: Cpu, href: "/skills" },
-      { id: "experience", label: "Experience", icon: Briefcase, href: "/experience" },
-      { id: "cp", label: "Competitive Programming", icon: Code2, href: "/competitive-programming" },
-      { id: "lab", label: "Roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
-      { id: "contact", label: "Contact", icon: Mail, href: "/contact" },
-    ],
-  },
-];
+const NAV_ITEMS = [
+  { id: "home", key: "home", icon: User, href: "/" },
+  { id: "about", key: "about", icon: User, href: "/about" },
+  { id: "work", key: "workNav", icon: Layers, href: "/work" },
+  { id: "skills", key: "skills", icon: Cpu, href: "/skills" },
+  { id: "experience", key: "experience", icon: Briefcase, href: "/experience" },
+  { id: "cp", key: "cp", icon: Code2, href: "/competitive-programming" },
+  { id: "lab", key: "roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
+  { id: "contact", key: "contact", icon: Mail, href: "/contact" },
+] as const;
 
 export function CommandMenu() {
+  const t = useTranslations("command");
+  const tProjects = useTranslations("projects");
+  const trProject = (slug: string, fallback: string) => {
+    const path = `items.${slug}.title` as never;
+    return tProjects.has(path) ? tProjects(path) : fallback;
+  };
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
@@ -63,22 +65,22 @@ export function CommandMenu() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Command menu"
+      aria-label={t("title")}
       className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 pt-[10vh] backdrop-blur-sm"
     >
       <button
         type="button"
-        aria-label="Close command menu"
+        aria-label={t("close")}
         className="absolute inset-0 cursor-default"
         onClick={() => setOpen(false)}
       />
       <div className="border-border bg-bg-elev relative z-10 w-full max-w-xl overflow-hidden rounded-xl border shadow-2xl">
-        <Command label="Command Menu" shouldFilter>
+        <Command label={t("title")} shouldFilter>
           <div className="border-border flex items-center gap-2 border-b px-3">
             <Search className="text-fg-subtle h-4 w-4" />
             <Command.Input
               ref={inputRef}
-              placeholder="Search projects, skills, pages…"
+              placeholder={t("searchPlaceholder")}
               className="text-fg placeholder:text-fg-subtle h-12 w-full bg-transparent text-sm outline-none"
             />
             <kbd className="bg-bg-sunken text-fg-subtle rounded px-1.5 py-0.5 font-mono text-[10px]">
@@ -86,30 +88,29 @@ export function CommandMenu() {
             </kbd>
           </div>
           <Command.List className="max-h-[60vh] overflow-y-auto p-2">
-            <Command.Empty className="text-fg-subtle px-3 py-4 text-sm">No results.</Command.Empty>
-            {groups.map((g) => (
-              <Command.Group
-                key={g.heading}
-                heading={g.heading}
-                className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
-              >
-                {g.items.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Command.Item
-                      key={item.id}
-                      onSelect={() => go(item.href)}
-                      className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
-                    >
-                      <Icon className="text-fg-subtle h-4 w-4" />
-                      <span>{item.label}</span>
-                    </Command.Item>
-                  );
-                })}
-              </Command.Group>
-            ))}
+            <Command.Empty className="text-fg-subtle px-3 py-4 text-sm">
+              {t("noResults")}
+            </Command.Empty>
             <Command.Group
-              heading="Work"
+              heading={t("navigate")}
+              className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
+            >
+              {NAV_ITEMS.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Command.Item
+                    key={item.id}
+                    onSelect={() => go(item.href)}
+                    className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+                  >
+                    <Icon className="text-fg-subtle h-4 w-4" />
+                    <span>{t(`items.${item.key}`)}</span>
+                  </Command.Item>
+                );
+              })}
+            </Command.Group>
+            <Command.Group
+              heading={t("work")}
               className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
             >
               {projects.map((p) => (
@@ -119,12 +120,12 @@ export function CommandMenu() {
                   className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
                 >
                   <Layers className="text-fg-subtle h-4 w-4" />
-                  <span>{p.title}</span>
+                  <span>{trProject(p.slug, p.title)}</span>
                 </Command.Item>
               ))}
             </Command.Group>
             <Command.Group
-              heading="Actions"
+              heading={t("actions")}
               className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
             >
               <Command.Item
@@ -135,7 +136,7 @@ export function CommandMenu() {
                 className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
                 <FileDown className="text-fg-subtle h-4 w-4" />
-                Download Résumé
+                {t("downloadResume")}
               </Command.Item>
               <Command.Item
                 onSelect={() => {
@@ -145,7 +146,7 @@ export function CommandMenu() {
                 className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
                 <Mail className="text-fg-subtle h-4 w-4" />
-                Copy Email
+                {t("copyEmail")}
               </Command.Item>
               <Command.Item
                 onSelect={() => {
@@ -155,16 +156,15 @@ export function CommandMenu() {
                 className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
                 <Github className="text-fg-subtle h-4 w-4" />
-                Open GitHub
+                {t("openGitHub")}
               </Command.Item>
             </Command.Group>
           </Command.List>
           <div className="border-border bg-bg-sunken/40 text-fg-subtle flex items-center justify-between gap-2 border-t px-3 py-1.5 font-mono text-[10px]">
             <span>
-              search: <span className="text-fg-muted">prefix · substring · fuzzy</span> (cmdk
-              command-score)
+              {t("footerHint")} <span className="text-fg-muted">{t("footerHintMode")}</span>
             </span>
-            <span className="hidden sm:inline">↑↓ navigate · ⏎ select</span>
+            <span className="hidden sm:inline">{t("footerHintKeys")}</span>
           </div>
         </Command>
       </div>

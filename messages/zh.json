@@ -1,0 +1,559 @@
+{
+  "common": {
+    "skipToContent": "跳转到内容",
+    "viewProjects": "查看项目",
+    "seeExperience": "查看经历",
+    "download": "下载",
+    "downloadResume": "下载简历",
+    "resume": "简历",
+    "viewMore": "查看更多",
+    "readMore": "阅读更多",
+    "viewFullExperience": "查看完整经历",
+    "allWork": "所有作品",
+    "loading": "加载中…",
+    "error": "出错了",
+    "retry": "重试",
+    "close": "关闭",
+    "open": "打开",
+    "search": "搜索",
+    "menu": "菜单",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "电子邮件",
+    "phone": "电话",
+    "location": "位置",
+    "home": "首页",
+    "professional": "专业",
+    "openSource": "开源",
+    "personal": "个人",
+    "certificate": "证书",
+    "tags": "标签",
+    "category": "类别",
+    "stack": "技术栈",
+    "live": "在线",
+    "code": "代码",
+    "demo": "演示",
+    "year": "年",
+    "present": "至今"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "work": "作品",
+    "skills": "技能",
+    "experience": "经历",
+    "craft": "工艺",
+    "contact": "联系",
+    "openCommandMenu": "打开命令菜单",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "navigate": "导航",
+    "liveFeeds": "实时动态",
+    "liveFeedsLabel": "实时动态 (Medium、YouTube、GitHub)",
+    "primary": "主导航"
+  },
+  "header": {
+    "ariaLogoHome": "{name} — 首页"
+  },
+  "footer": {
+    "builtWith": "构建技术",
+    "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",
+    "copyright": "© {year} {name}"
+  },
+  "language": {
+    "label": "语言",
+    "switch": "切换语言",
+    "current": "当前语言：{name}",
+    "names": {
+      "en": "English",
+      "hi": "हिन्दी",
+      "ja": "日本語",
+      "sa": "संस्कृतम्",
+      "zh": "中文",
+      "ru": "Русский"
+    }
+  },
+  "theme": {
+    "label": "主题",
+    "toggle": "切换主题",
+    "light": "浅色",
+    "dark": "深色",
+    "phoenix": "凤凰"
+  },
+  "recruiter": {
+    "label": "招聘者模式",
+    "on": "招聘者模式已开启",
+    "off": "招聘者模式已关闭",
+    "toggleLabel": "切换招聘者模式",
+    "bannerTitle": "招聘者视图已启用",
+    "bannerDescription": "正在显示精简的、面向招聘的摘要。关闭以查看完整作品集。",
+    "turnOff": "关闭",
+    "exit": "退出招聘者视图",
+    "enable": "启用招聘者视图",
+    "short": "招聘者",
+    "onShort": "开",
+    "toastTitle": "招聘者模式已开启",
+    "toastBody": "显示面向招聘者的精简视图。随时可关闭。",
+    "dismiss": "关闭"
+  },
+  "recruiterBanner": {
+    "modeOn": "招聘者模式已开启",
+    "summary": "{role} · {location} · 面向招聘者的精简视图",
+    "resume": "简历",
+    "linkedin": "LinkedIn",
+    "email": "邮箱",
+    "contact": "联系",
+    "exitAria": "退出招聘者视图"
+  },
+  "scroll": {
+    "toTop": "回到顶部",
+    "toBottom": "滚动到底部"
+  },
+  "command": {
+    "title": "命令菜单",
+    "placeholder": "输入命令或搜索…",
+    "empty": "未找到结果。",
+    "navigation": "导航",
+    "actions": "操作",
+    "theme": "主题",
+    "external": "外部",
+    "openGitHub": "打开 GitHub",
+    "openLinkedIn": "打开 LinkedIn",
+    "downloadResume": "下载简历",
+    "copyEmail": "复制邮箱",
+    "switchLanguage": "切换语言",
+    "navigate": "导航",
+    "work": "作品",
+    "close": "关闭",
+    "searchPlaceholder": "搜索…",
+    "noResults": "未找到结果",
+    "footerHint": "提示",
+    "footerHintMode": "模式",
+    "footerHintKeys": "键位",
+    "items": {
+      "home": "首页",
+      "about": "关于",
+      "workNav": "作品",
+      "skills": "技能",
+      "experience": "经历",
+      "cp": "算法竞赛",
+      "roadmap": "路线图",
+      "contact": "联系"
+    }
+  },
+  "mobileActionBar": {
+    "contact": "联系",
+    "resume": "简历",
+    "menu": "菜单",
+    "downloadResume": "下载简历",
+    "github": "GitHub"
+  },
+  "hero": {
+    "statusLabel": "{role} @ {company}",
+    "headline": "我设计 <strong>性能关键型系统</strong>和 <strong>AI 驱动的开发者工具</strong>。",
+    "subhead": "C++ 性能工程、分布式系统、智能 AI 工作流和开发者工具 — 大规模交付，生产环境中度量，端到端拥有。",
+    "primaryCta": "查看项目",
+    "secondaryCta": "查看经历",
+    "impactStrip": {
+      "throughput": "模拟吞吐量",
+      "rca": "更快 RCA",
+      "leetcode": "LeetCode 全球"
+    },
+    "visualization": {
+      "panelLabel": "xmai · 分析器 · 在线",
+      "flow": "工件 → 检索 → 代理 → rtl",
+      "throughputUp": "↑ 吞吐量"
+    }
+  },
+  "home": {
+    "title": "首页",
+    "description": "性能工程、智能 AI 和研发软件工程。"
+  },
+  "aboutSection": {
+    "eyebrow": "/ 关于",
+    "heading": "简要介绍",
+    "bio1": "我是 <strong>{name}</strong>，一名在规模化场景中交付性能关键型系统和 AI 辅助开发者工具的软件工程师。在 {company}，我的 C++ 和运行时工作已在 Apple、Google、Samsung 和 NVIDIA 运行的生产工作负载上带来可衡量的成果。",
+    "bio2": "我关心端到端的所有权 — 从低层分析和分布式系统设计，到精致、可访问的产品界面。工作之外，我交付开源工具，指导工程师，通过算法竞赛保持锐度。",
+    "principlesEyebrow": "实践中的工程原则",
+    "principles": {
+      "profile": {
+        "title": "先分析。",
+        "body": "没有度量的优化是民间传说。"
+      },
+      "gap": {
+        "title": "缩小差距",
+        "body": "在意图与可观测性之间。"
+      },
+      "trust": {
+        "title": "为信任而设计：",
+        "body": "确定性、可访问、测试充分。"
+      },
+      "performance": {
+        "title": "将性能视为",
+        "body": "一等公民的产品特性。"
+      }
+    },
+    "getInTouch": "联系"
+  },
+  "about": {
+    "title": "关于",
+    "description": "背景、理念和正在做的事。",
+    "heading": "关于",
+    "subheading": "系统性能与应用 AI 交汇处的工程师。",
+    "beyondHeading": "代码之外",
+    "beyondSubheading": "保持手艺锐度并回馈社区的活动。",
+    "certsHeading": "认证与培训",
+    "certsSubheading": "已完成的证书、项目和竞赛精选。",
+    "honorsHeading": "荣誉与认可",
+    "languagesHeading": "工作语言",
+    "languagesSubheading": "口语与书面 — 在分布式团队中有用。",
+    "educationHeading": "教育",
+    "writingTitle": "在 Medium 上写作",
+    "writingBody": "关于系统性能、AI 工具和前端工艺的长文。",
+    "teachingTitle": "在 YouTube 上教学",
+    "teachingBody": "编程、解题和工程过程的讲解。",
+    "openSourceTitle": "开源维护者",
+    "openSourceBody": "在 @blackphoenix42 名下维护和贡献跨可视化、AI 工具与开发者体验的开源项目。",
+    "mentorshipTitle": "指导与社区",
+    "mentorshipBody": "为 100+ 名学生提供软件工程和算法竞赛指导。",
+    "crowdsourceTitle": "Google Crowdsource — 8 级",
+    "crowdsourceBody": "在 Google 的 Crowdsource 项目中达到 8 级。",
+    "nssTitle": "NSS 志愿者",
+    "nssBody": "在 NSUT 参加 NSS 活动和宣传。",
+    "clubTitle": "编程俱乐部领导",
+    "clubBody": "Ramjas 学校 Dynamix Club 编程负责人。",
+    "houseTitle": "院队长 — 木星院",
+    "houseBody": "Ramjas 学校木星院院长。",
+    "cpTitle": "算法竞赛",
+    "cpBody": "活跃于 CodeChef (6★)、Codeforces Master、LeetCode Knight 和 HackerRank 6★。",
+    "viewProfiles": "查看个人主页",
+    "tag": "/ 关于",
+    "pageTitle": "关于",
+    "beyondTag": "/ 代码之外",
+    "beyondAriaLabel": "代码之外的活动",
+    "beyondTitle": "代码之外",
+    "beyondIntro": "保持手艺锐度并回馈社区的活动。",
+    "writingCta": "阅读 Medium",
+    "teachingCta": "查看 YouTube",
+    "openSourceCta": "查看 GitHub",
+    "crowdsourceCta": "查看个人主页",
+    "honorsTag": "/ 荣誉",
+    "honorsAriaLabel": "荣誉与认可",
+    "honorsTitle": "荣誉与认可",
+    "honorsIntro": "我引以为安的奖项、奖学金和認定。",
+    "languagesTag": "/ 语言",
+    "languagesAriaLabel": "口语语言",
+    "languagesTitle": "工作语言",
+    "certsTag": "/ 认证",
+    "certsAriaLabel": "认证与培训",
+    "certsTitle": "认证与培训",
+    "certsIntro": "已完成的证书、项目和竞赛精选。",
+    "certsFooterPrefix": "查看更多",
+    "certsFooterMiddle": "与",
+    "certsFooterSuffix": "部分。",
+    "experienceLink": "经历",
+    "cpLink": "算法竞赛",
+    "certCategories": {
+      "cloud": "云计算",
+      "codechef": "CodeChef",
+      "hackerrank": "HackerRank",
+      "forage": "Forage",
+      "niit": "NIIT",
+      "udemy": "Udemy"
+    }
+  },
+  "work": {
+    "title": "作品",
+    "description": "跨性能工程、AI 基础设施和开发者工具的精选项目。",
+    "heading": "作品",
+    "subheading": "端到端交付的精选项目。",
+    "featured": "精选作品",
+    "featuredSubheading": "跨性能工程、智能 AI、开发者工具和产品工程的精选项目。",
+    "allWork": "所有作品",
+    "readMore": "阅读更多",
+    "viewCase": "查看案例研究",
+    "live": "在线",
+    "repo": "仓库",
+    "tech": "技术栈",
+    "category": "类别",
+    "outcomes": "成果",
+    "highlights": "亮点",
+    "links": "链接",
+    "back": "返回作品",
+    "tag": "/ 作品",
+    "pageTitle": "作品",
+    "pageIntro": "精选工程作品的深入探讨 — 问题界定、技术决策、权衡与可衡量的影响。",
+    "featuredAria": "精选项目",
+    "featuredTag": "/ 精选",
+    "featuredHeading": "精选项目",
+    "workbenchAria": "公开工作台",
+    "demoTitle": "交互演示",
+    "architectureTitle": "架构",
+    "architectureNote": "基于可公开分享的项目信息的概念架构。",
+    "problemHeading": "问题",
+    "challengeHeading": "技术挑战",
+    "overviewHeading": "概述",
+    "approachHeading": "方法与工程决策",
+    "step": "步骤",
+    "stackHeading": "技术栈",
+    "lessonsHeading": "经验教训",
+    "lesson1": "在性能关键系统中，优先分析胜于过早抽象。",
+    "lesson2": "智能 AI 在植根于检索和结构化工具调用时最有用。",
+    "lesson3": "可信的开发者工具比出色的演示更快被采纳。",
+    "linksHeading": "链接",
+    "relatedHeading": "相关作品",
+    "demoSubtitle": {
+      "xmai": "在模拟的 retrieve → embed → agent 管道中尝试提示词。",
+      "algolens": "AlgoLens 执行模型的迷你可视化。",
+      "xcelium-optimization": "拖动滑块以查看随着 RTL/运行时优化落地，性能分析如何压缩。",
+      "tezos-premier-league": "点击播放以模拟确定性的链上 PvP 赛事。",
+      "postureiq": "带信心门控的实时模拟动作质量。",
+      "track-person-app": "在风格化地图上动画路线 — 播放 / 暂停 / 重置。",
+      "smart-brain": "尝试不同场景；模拟检测器显示边界框和置信度。"
+    }
+  },
+  "skills": {
+    "title": "技能",
+    "description": "我使用的技术、语言、工具和平台。",
+    "heading": "技能",
+    "subheading": "我用来交付的东西。",
+    "categories": "类别",
+    "all": "全部",
+    "pageTitle": "技能 · 工程兵器库",
+    "pageDescription": "可筛选的技能探索器以及跨越性能、智能系统、后端、产品与基础设施的能力簇。",
+    "tag": "/ 技能",
+    "pageHeading": "工程兵器库",
+    "pageIntro": "按类别筛选单项技能，或向下滚动查看能力簇以及它们如何映射到实际项目。"
+  },
+  "experience": {
+    "title": "经历",
+    "description": "角色、里程碑与职业时间线。",
+    "heading": "职业时间线",
+    "subheading": "工作过的地方和交付的成果。",
+    "eyebrow": "/ 经历",
+    "present": "至今",
+    "certificate": "证书",
+    "years": "{count, plural, other {# 年}}",
+    "months": "{count, plural, other {# 个月}}",
+    "tag": "/ 经历",
+    "pageTitle": "经历",
+    "internshipsEyebrow": "/ 实习",
+    "internshipsTitle": "实习与研修",
+    "internshipsAria": "实习与研修时间线",
+    "educationHeading": "教育",
+    "score": "分数："
+  },
+  "competitiveProgramming": {
+    "title": "算法竞赛",
+    "description": "各平台上的简介、评级和解题情况。",
+    "heading": "命令中心",
+    "subheading": "多年严谨解题 — 转化为性能工作的系统直觉。",
+    "eyebrow": "/ 算法竞赛",
+    "exploreAlgolens": "探索 AlgoLens",
+    "cpRepos": "CP 仓库",
+    "stats": {
+      "yearsCompeting": "竞赛年数",
+      "problemsSolved": "已解题数",
+      "contestPodiums": "比赛奖台",
+      "peakRating": "最高评级"
+    },
+    "tagline": "句柄和实时评级在各平台独立更新 — 点击磁贴以核实。",
+    "pageTitle": "手艺 · 算法竞赛与路线图",
+    "pageDescription": "在 CodeChef、Codeforces、LeetCode 和 HackerRank 上多年的算法竞赛 — 以及我接下来要构建的东西的工程路线图。",
+    "craftTag": "/ 手艺",
+    "pageHeading": "算法竞赛",
+    "pageIntro": "在主要平台持续解题 — 打磨数据结构、算法以及在性能工程中获得回报的那种有纪律的思考。",
+    "roadmapAria": "工程路线图",
+    "roadmapTag": "/ 路线图",
+    "roadmapHeading": "接下来要构建的",
+    "roadmapIntro": "正在设计中的产品概念 — 我想交付的下一组系统。"
+  },
+  "contact": {
+    "title": "联系",
+    "description": "就性能工程、AI 基础设施、开发者工具或合作进行联系。",
+    "tag": "/ 联系",
+    "heading": "让我们构建可衡量的东西。",
+    "intro": "对性能工程、AI 基础设施、开发者工具、EDA、后端平台和高影响力软件岗位开放交流。",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "您的全名",
+      "email": "电子邮件",
+      "emailPlaceholder": "you@example.com",
+      "subject": "主题",
+      "subjectPlaceholder": "关于什么？",
+      "message": "消息",
+      "messagePlaceholder": "稍微介绍您的项目或问题…",
+      "company": "公司",
+      "companyPlaceholder": "组织（可选）",
+      "role": "您的角色",
+      "roles": {
+        "recruiter": "招聘者",
+        "hiringManager": "招聘经理",
+        "founder": "创始人",
+        "engineer": "工程师",
+        "collaboration": "合作",
+        "other": "其他"
+      },
+      "submit": "发送消息",
+      "submitting": "发送中…",
+      "success": "感谢！您的消息已发送，我会尽快回复。",
+      "errorGeneric": "出错了。请重试或直接发邮件给我。",
+      "errorRateLimit": "此 IP 的消息过多。请稍后再试。",
+      "errorValidation": "请修正高亮字段后重试。",
+      "honeypot": "请将此字段留空",
+      "consent": "发送即表示同意就您的消息接受联系。",
+      "required": "必填",
+      "invalidEmail": "请输入有效的电子邮件地址。",
+      "tooShort": "太短 — 请补充一些细节。",
+      "tooLong": "太长 — 请缩短您的消息。",
+      "charactersRemaining": "剩余 {count} 个字符",
+      "successHeading": "消息已发送。",
+      "successBody": "感谢您的联系 — 我会尽快回复。紧急情况请直接发邮件。",
+      "sendAnother": "再发一条",
+      "honeypotLabel": "请勿填写此字段",
+      "namePlaceholderShort": "张三",
+      "emailPlaceholderShort": "you@company.com",
+      "companyPlaceholderShort": "可选",
+      "subjectPlaceholderShort": "…的性能工程职位",
+      "messagePlaceholderShort": "关于职位、项目或您希望讨论的内容，请简要说明。",
+      "iAmA": "我是…",
+      "roleAriaLabel": "角色",
+      "formNote": "由速率限制和服务器验证保护。",
+      "networkError": "网络错误。请重试或直接发送邮件。",
+      "genericServerError": "出了点问题。请直接发送邮件给我。"
+    }
+  },
+  "contactCta": {
+    "eyebrow": "/ 聊一聊",
+    "heading": "让我们构建可扩展、高性能、能思考的系统。",
+    "subheading": "对性能工程、AI 基础设施、开发者工具、EDA、后端平台和高影响力软件岗位开放交流。",
+    "cta": "开始对话",
+    "downloadResume": "下载简历",
+    "linkedinHandle": "/in/ayushyadav",
+    "githubHandle": "@blackphoenix42",
+    "resumeValue": "PDF"
+  },
+  "feeds": {
+    "title": "实时动态",
+    "description": "Medium、YouTube 和 GitHub 上的最新动态。",
+    "heading": "实时动态",
+    "subheading": "来自 Medium、YouTube 和 GitHub 的最新内容。",
+    "medium": "Medium",
+    "youtube": "YouTube",
+    "github": "GitHub",
+    "openSource": "打开原文",
+    "noPosts": "暂无最近动态。",
+    "viewAll": "查看全部",
+    "watchOn": "在 YouTube 上观看",
+    "readOn": "在 Medium 上阅读",
+    "pageTitle": "动态 · 实时活动",
+    "pageDescription": "实时活动动态 — Medium 上的最新帖子、YouTube 视频和最近的 GitHub 活动，每小时刷新。",
+    "tag": "/ 动态",
+    "pageHeading": "实时活动",
+    "pageIntro": "我公开工作之处的实时信号 — 最近的 Medium 帖子、YouTube 上传和 GitHub 事件。在服务器端从 RSS / 公开 API 拉取，在边缘缓存一小时。"
+  },
+  "lab": {
+    "title": "实验室",
+    "description": "概念实验室、实验和进行中的工作。",
+    "heading": "实验室",
+    "subheading": "实验、原型和小研究。"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您要查找的页面不存在或已移动。",
+    "heading": "404 — 页面未找到",
+    "subheading": "您要查找的页面不存在或已移动。",
+    "cta": "返回首页"
+  },
+  "metrics": {
+    "eyebrow": "影响 · 已验证",
+    "heading": "可衡量的工程成果",
+    "context": "节奏 · 2022—至今",
+    "items": {
+      "throughput": {
+        "label": "模拟吞吐量",
+        "detail": "在 Xcelium Logic Simulator 大型客户工作负载上的改进。"
+      },
+      "rtl": {
+        "label": "RTL 变换运行时",
+        "detail": "在 Apple、Google、Samsung、NVIDIA 设计上的 Xform Engine 提升。"
+      },
+      "rca": {
+        "label": "调试 RCA 时间",
+        "detail": "通过 Top-N 分析和结构化诊断库带来的减少。"
+      },
+      "tezos": {
+        "label": "Tezos 奖项",
+        "detail": "扩展 Tezos 上去中心化游戏应用的资助。"
+      },
+      "algorithms": {
+        "label": "算法",
+        "detail": "AlgoLens 中可交互、可逐步浏览的可视化。"
+      },
+      "leetcode": {
+        "label": "LeetCode 全球",
+        "detail": "Knight 等级 · Codeforces Master · CodeChef 6 星 (AIR 29)。"
+      }
+    }
+  },
+  "techMarquee": {
+    "heading": "我使用的技术"
+  },
+  "quotes": {
+    "label": "引用",
+    "items": {
+      "abelson": "程序应该为人阅读而写，机器执行只是顺带。",
+      "knuth": "过早优化是万恶之源。",
+      "dijkstra": "简洁是可靠性的前提。",
+      "carmack": "专注且艰苦的工作才是成功的真正关键。"
+    }
+  },
+  "projects": {
+    "categories": {
+      "ai-eda": "AI × EDA × 开发者工具",
+      "systems-performance": "系统性能",
+      "developer-tools": "开发者工具",
+      "product": "产品工程",
+      "fullstack": "全栈",
+      "ml": "机器学习",
+      "blockchain": "区块链"
+    },
+    "items": {
+      "xmai": {
+        "title": "XMAI — 智能 AI 分析器",
+        "tagline": "将复杂的仿真工件转化为可执行优化指导的 AI 辅助分析器。",
+        "category": "AI × EDA × 开发者工具"
+      },
+      "xcelium-optimization": {
+        "title": "Xcelium Logic Simulator — 性能工程",
+        "tagline": "在大型真实工作负载上带来可衡量吞吐量改进的底层优化工作。",
+        "category": "系统性能"
+      },
+      "algolens": {
+        "title": "AlgoLens — 算法可视化",
+        "tagline": "60+ 算法的交互式分步可视化。",
+        "category": "开发者工具"
+      },
+      "postureiq": {
+        "title": "PostureIQ",
+        "tagline": "使用计算机视觉的实时姿态检测与反馈。",
+        "category": "产品工程"
+      },
+      "track-person-app": {
+        "title": "Track Person App",
+        "tagline": "多摄像头协同与叠加的实时人员追踪。",
+        "category": "产品工程"
+      },
+      "smart-brain": {
+        "title": "Smart Brain",
+        "tagline": "基于 Clarifai 的人脸检测 Web 应用，全栈 TypeScript 后端。",
+        "category": "全栈"
+      },
+      "tezos-premier-league": {
+        "title": "Tezos Premier League",
+        "tagline": "Tezos 上基于 NFT 阵容的去中心化梦幻足球平台。",
+        "category": "区块链"
+      }
+    }
+  }
+}

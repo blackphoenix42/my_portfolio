@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { AboutSection } from "@/components/about-section";
 import { honors, languages } from "@/content/extras";
 import { CertPreview } from "@/components/certs/cert-preview";
+import { slugify } from "@/lib/utils";
 import {
   Award,
   PenTool,
@@ -21,78 +24,80 @@ import {
 } from "lucide-react";
 import { Github as GithubIcon, Youtube } from "@/components/icons/brand";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "About Ayush Yadav — engineer focused on performance, AI tooling and interactive products.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("about");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
-const beyondTopics = [
+const BEYOND = [
   {
-    title: "Writing on Medium",
+    keyTitle: "writingTitle",
+    keyBody: "writingBody",
+    keyCta: "writingCta",
     icon: PenTool,
     accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
-    body: "Long-form essays on systems performance, AI tooling and frontend craft. Writing forces me to formalize patterns I'd otherwise leave as tacit knowledge — and it pays it forward to engineers walking the same paths.",
     href: "https://binaryphoenix01.medium.com",
-    cta: "binaryphoenix01.medium.com",
   },
   {
-    title: "Teaching on YouTube",
+    keyTitle: "teachingTitle",
+    keyBody: "teachingBody",
+    keyCta: "teachingCta",
     icon: Youtube,
     accent: "text-accent-violet border-accent-violet/30 bg-accent-violet/5",
-    body: "Explainers on programming, problem-solving and engineering process. Recording forces clear thinking — the best feedback is when someone says a concept finally clicked.",
     href: "https://www.youtube.com/channel/UCcINlOM-rC1_8yiRGH_iFBg?sub_confirmation=1",
-    cta: "YouTube channel",
   },
   {
-    title: "Open Source Maintainer",
+    keyTitle: "openSourceTitle",
+    keyBody: "openSourceBody",
+    keyCta: "openSourceCta",
     icon: GithubIcon,
     accent: "text-accent-cyan border-accent-cyan/30 bg-accent-cyan/5",
-    body: "I maintain and contribute to open-source projects across visualization, AI tooling and developer experience under @blackphoenix42 — algorithm visualizers, profiling tools and small UX experiments shipped to a real audience.",
     href: "https://github.com/blackphoenix42",
-    cta: "github.com/blackphoenix42",
   },
   {
-    title: "Mentorship & Community",
+    keyTitle: "mentorshipTitle",
+    keyBody: "mentorshipBody",
     icon: HandHeart,
     accent: "text-accent-emerald border-accent-emerald/30 bg-accent-emerald/5",
-    body: "Mentored 100+ students across software engineering and competitive programming — code reviews, mock interviews, system-design walk-throughs and DSA progressions tuned to where each person is.",
   },
   {
-    title: "Google Crowdsource — Level 8",
+    keyTitle: "crowdsourceTitle",
+    keyBody: "crowdsourceBody",
+    keyCta: "crowdsourceCta",
     icon: Sparkles,
     accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
-    body: "Reached Level 8 in Google's Crowdsource program across image labeling, translation and validation tasks — small, repeated contributions that compound into useful training data.",
     href: "https://crowdsource.google.com/",
-    cta: "Crowdsource",
   },
   {
-    title: "NSS Volunteer",
+    keyTitle: "nssTitle",
+    keyBody: "nssBody",
     icon: HeartHandshake,
     accent: "text-accent-violet border-accent-violet/30 bg-accent-violet/5",
-    body: "Participated in NSS drives and awareness campaigns at NSUT — community service that grounded technical work in lived experience and broadened the people I learn from.",
   },
   {
-    title: "Programming Club Leadership",
+    keyTitle: "clubTitle",
+    keyBody: "clubBody",
     icon: Users,
     accent: "text-accent-cyan border-accent-cyan/30 bg-accent-cyan/5",
-    body: "Head of Programming at Dynamix Club, Ramjas School — ran DSA sessions, mock contests and mentored juniors, learning early that leadership is mostly clearing blockers for the team.",
   },
   {
-    title: "House Captain — Jupiter House",
+    keyTitle: "houseTitle",
+    keyBody: "houseBody",
     icon: GraduationCap,
     accent: "text-accent-emerald border-accent-emerald/30 bg-accent-emerald/5",
-    body: "Captained Jupiter House at Ramjas School — organized inter-house tournaments, anchored school events and represented the house in council activities.",
   },
   {
-    title: "Competitive Programming",
+    keyTitle: "cpTitle",
+    keyBody: "cpBody",
+    keyCta: "viewProfiles",
     icon: Code2,
     accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
-    body: "Active across CodeChef (6★), Codeforces Master, LeetCode Knight and HackerRank 6★. CP is where reflexes for complexity, invariants and edge-case thinking get sharpened.",
     href: "/competitive-programming",
-    cta: "View profiles",
   },
-];
+] as const;
 
 const accentRing: Record<string, string> = {
   cyan: "text-accent-cyan border-accent-cyan/30 bg-accent-cyan/5",
@@ -103,14 +108,14 @@ const accentRing: Record<string, string> = {
 
 type CertItem = { label: string; href: string };
 type CertCategory = {
-  title: string;
+  key: string;
   icon: typeof Cpu;
   items: CertItem[];
 };
 
 const certCategories: CertCategory[] = [
   {
-    title: "Cloud",
+    key: "cloud",
     icon: Cpu,
     items: [
       {
@@ -128,7 +133,7 @@ const certCategories: CertCategory[] = [
     ],
   },
   {
-    title: "Coding Contests · CodeChef",
+    key: "codechef",
     icon: Trophy,
     items: [
       { label: "Adobe Contest", href: "/assets/certs/Codechef/Adobe%20-%203a22575.pdf" },
@@ -144,7 +149,7 @@ const certCategories: CertCategory[] = [
     ],
   },
   {
-    title: "HackerRank",
+    key: "hackerrank",
     icon: Award,
     items: [
       {
@@ -179,7 +184,7 @@ const certCategories: CertCategory[] = [
     ],
   },
   {
-    title: "Forage Virtual Programs",
+    key: "forage",
     icon: BookOpen,
     items: [
       {
@@ -194,7 +199,7 @@ const certCategories: CertCategory[] = [
     ],
   },
   {
-    title: "NIIT",
+    key: "niit",
     icon: GraduationCap,
     items: [
       { label: "Core Java", href: "/assets/certs/NIIT/Core%20Java.jpeg" },
@@ -203,7 +208,7 @@ const certCategories: CertCategory[] = [
     ],
   },
   {
-    title: "Udemy",
+    key: "udemy",
     icon: Brain,
     items: [
       {
@@ -227,47 +232,64 @@ const certCategories: CertCategory[] = [
 ];
 
 export default function AboutPage() {
+  const t = useTranslations("about");
+  const tHonors = useTranslations("honorsData");
+  const tLanguages = useTranslations("languagesData");
+  const tCerts = useTranslations("certsData");
+  const trHonor = (slug: string, key: "title" | "org" | "detail", fallback: string) => {
+    const path = `${slug}.${key}` as never;
+    return tHonors.has(path) ? tHonors(path) : fallback;
+  };
+  const trLang = (slug: string, key: "name" | "level", fallback: string) => {
+    const path = `${slug}.${key}` as never;
+    return tLanguages.has(path) ? tLanguages(path) : fallback;
+  };
+  const trCert = (slug: string, fallback: string) => {
+    return tCerts.has(slug as never) ? tCerts(slug as never) : fallback;
+  };
   return (
     <div>
       <header className="container-tight pt-16">
-        <p className="mono-label">/ about</p>
-        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">About</h1>
+        <p className="mono-label">{t("tag")}</p>
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{t("pageTitle")}</h1>
       </header>
 
       <AboutSection />
 
-      <section className="section border-border/60 border-t" aria-label="Beyond the day job">
+      <section className="section border-border/60 border-t" aria-label={t("beyondAriaLabel")}>
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
-              <Award className="h-3.5 w-3.5" /> / beyond the day job
+              <Award className="h-3.5 w-3.5" /> {t("beyondTag")}
             </p>
-            <h2 className="section-title mt-2">What I do outside work</h2>
-            <p className="text-fg-muted mt-2 max-w-2xl">
-              Writing, teaching, open-source, mentorship and community work that complement my
-              engineering practice — each pursued for its own reasons.
-            </p>
+            <h2 className="section-title mt-2">{t("beyondTitle")}</h2>
+            <p className="text-fg-muted mt-2 max-w-2xl">{t("beyondIntro")}</p>
           </header>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {beyondTopics.map((t) => {
-              const Icon = t.icon;
+            {BEYOND.map((item) => {
+              const Icon = item.icon;
+              const title = t(item.keyTitle);
+              const body = t(item.keyBody);
+              const ctaKey = "keyCta" in item ? item.keyCta : undefined;
+              const cta = ctaKey ? t(ctaKey) : null;
+              const href = "href" in item ? item.href : undefined;
               return (
-                <li key={t.title} className="card card-hover group p-5">
+                <li key={item.keyTitle} className="card card-hover group p-5">
                   <div
-                    className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg border ${t.accent}`}
+                    className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg border ${item.accent}`}
                   >
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-base font-semibold tracking-tight">{t.title}</h3>
-                  <p className="text-fg-muted mt-2 text-sm leading-relaxed">{t.body}</p>
-                  {t.href && (
+                  <h3 className="text-base font-semibold tracking-tight">{title}</h3>
+                  <p className="text-fg-muted mt-2 text-sm leading-relaxed">{body}</p>
+                  {href && cta && (
                     <a
-                      href={t.href}
-                      target={t.href.startsWith("http") ? "_blank" : undefined}
-                      rel={t.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      href={href}
+                      target={href.startsWith("http") ? "_blank" : undefined}
+                      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="text-accent-cyan hover:text-fg mt-3 inline-flex items-center gap-1 text-xs"
                     >
-                      {t.cta} ↗
+                      {cta} ↗
                     </a>
                   )}
                 </li>
@@ -277,20 +299,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section border-border/60 border-t" aria-label="Honors and awards">
+      <section className="section border-border/60 border-t" aria-label={t("honorsAriaLabel")}>
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
-              <Trophy className="h-3.5 w-3.5" /> / honors &amp; awards
+              <Trophy className="h-3.5 w-3.5" /> {t("honorsTag")}
             </p>
-            <h2 className="section-title mt-2">Recognition</h2>
-            <p className="text-fg-muted mt-2 max-w-2xl">
-              Grants, competition wins and program recognitions from school through fellowship work.
-            </p>
+            <h2 className="section-title mt-2">{t("honorsTitle")}</h2>
+            <p className="text-fg-muted mt-2 max-w-2xl">{t("honorsIntro")}</p>
           </header>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {honors.map((h) => {
               const Icon = h.icon;
+              const slug = slugify(h.title);
               return (
                 <li key={h.title} className="card p-5">
                   <div
@@ -298,13 +319,17 @@ export default function AboutPage() {
                   >
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-sm font-semibold tracking-tight">{h.title}</h3>
+                  <h3 className="text-sm font-semibold tracking-tight">
+                    {trHonor(slug, "title", h.title)}
+                  </h3>
                   <p className="text-fg-subtle mt-1 font-mono text-[11px]">
-                    {h.org} · {h.date}
+                    {trHonor(slug, "org", h.org)} · {h.date}
                     {h.amount ? ` · ${h.amount}` : ""}
                   </p>
                   {h.detail && (
-                    <p className="text-fg-muted mt-2 text-xs leading-relaxed">{h.detail}</p>
+                    <p className="text-fg-muted mt-2 text-xs leading-relaxed">
+                      {trHonor(slug, "detail", h.detail)}
+                    </p>
                   )}
                 </li>
               );
@@ -313,55 +338,59 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section border-border/60 border-t" aria-label="Languages">
+      <section className="section border-border/60 border-t" aria-label={t("languagesAriaLabel")}>
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
-              <LanguagesIcon className="h-3.5 w-3.5" /> / languages
+              <LanguagesIcon className="h-3.5 w-3.5" /> {t("languagesTag")}
             </p>
-            <h2 className="section-title mt-2">Languages</h2>
+            <h2 className="section-title mt-2">{t("languagesTitle")}</h2>
           </header>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {languages.map((l) => (
-              <li key={l.name} className="card flex items-center gap-4 p-4">
-                <div
-                  className={`border-accent-violet/30 bg-accent-violet/5 text-accent-violet grid h-12 w-12 place-items-center rounded-lg border text-2xl font-semibold ${l.scriptClass ?? ""}`}
-                  aria-hidden
-                >
-                  {l.icon}
-                </div>
-                <div>
-                  <p className="text-fg text-sm font-semibold">{l.name}</p>
-                  <p className="text-fg-subtle mt-0.5 font-mono text-[11px]">{l.level}</p>
-                </div>
-              </li>
-            ))}
+            {languages.map((l) => {
+              const slug = slugify(l.name);
+              return (
+                <li key={l.name} className="card flex items-center gap-4 p-4">
+                  <div
+                    className={`border-accent-violet/30 bg-accent-violet/5 text-accent-violet grid h-12 w-12 place-items-center rounded-lg border text-2xl font-semibold ${l.scriptClass ?? ""}`}
+                    aria-hidden
+                  >
+                    {l.icon}
+                  </div>
+                  <div>
+                    <p className="text-fg text-sm font-semibold">{trLang(slug, "name", l.name)}</p>
+                    <p className="text-fg-subtle mt-0.5 font-mono text-[11px]">
+                      {trLang(slug, "level", l.level)}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
 
-      <section className="section border-border/60 border-t" aria-label="Certifications">
+      <section className="section border-border/60 border-t" aria-label={t("certsAriaLabel")}>
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
-              <FileText className="h-3.5 w-3.5" /> / certifications
+              <FileText className="h-3.5 w-3.5" /> {t("certsTag")}
             </p>
-            <h2 className="section-title mt-2">Certificates</h2>
-            <p className="text-fg-muted mt-2 max-w-2xl">
-              Selected certificates across cloud, contests, frameworks and structured learning.
-              Click any preview to open the original.
-            </p>
+            <h2 className="section-title mt-2">{t("certsTitle")}</h2>
+            <p className="text-fg-muted mt-2 max-w-2xl">{t("certsIntro")}</p>
           </header>
           <div className="space-y-12">
             {certCategories.map((cat) => {
               const Icon = cat.icon;
               return (
-                <div key={cat.title}>
+                <div key={cat.key}>
                   <div className="mb-4 flex items-center gap-3">
                     <div className="border-accent-violet/30 bg-accent-violet/5 text-accent-violet grid h-9 w-9 place-items-center rounded-lg border">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="text-base font-semibold tracking-tight">{cat.title}</h3>
+                    <h3 className="text-base font-semibold tracking-tight">
+                      {t(`certCategories.${cat.key}`)}
+                    </h3>
                     <span className="text-fg-subtle ml-auto font-mono text-[11px]">
                       {cat.items.length}
                     </span>
@@ -369,7 +398,7 @@ export default function AboutPage() {
                   <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {cat.items.map((it) => (
                       <li key={it.label}>
-                        <CertPreview href={it.href} label={it.label} />
+                        <CertPreview href={it.href} label={trCert(slugify(it.label), it.label)} />
                       </li>
                     ))}
                   </ul>
@@ -378,15 +407,15 @@ export default function AboutPage() {
             })}
           </div>
           <p className="text-fg-subtle mt-8 text-xs">
-            Internship and program certificates appear next to their respective roles in{" "}
+            {t("certsFooterPrefix")}{" "}
             <Link href="/experience" className="underline">
-              experience
+              {t("experienceLink")}
             </Link>
-            . See{" "}
+            {t("certsFooterMiddle")}{" "}
             <Link href="/competitive-programming" className="underline">
-              competitive programming
+              {t("cpLink")}
             </Link>{" "}
-            for contest profiles and ratings.
+            {t("certsFooterSuffix")}
           </p>
         </div>
       </section>

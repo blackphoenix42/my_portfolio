@@ -1,4 +1,5 @@
 import { Rss, PenTool, ArrowUpRight } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Github, Youtube } from "@/components/icons/brand";
 import {
   fetchMediumFeed,
@@ -19,6 +20,8 @@ type FeedPanel = {
 };
 
 export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boolean } = {}) {
+  const t = await getTranslations("liveFeeds");
+  const locale = await getLocale();
   const [medium, youtube, github] = await Promise.all([
     fetchMediumFeed("@binaryphoenix01", 3),
     fetchYouTubeFeed("UCcINlOM-rC1_8yiRGH_iFBg", 3),
@@ -28,49 +31,46 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
   const panels: FeedPanel[] = [
     {
       key: "medium",
-      label: "Latest blog posts",
+      label: t("medium.label"),
       icon: PenTool,
       accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
-      cta: { label: "Read on Medium", href: "https://binaryphoenix01.medium.com" },
+      cta: { label: t("medium.cta"), href: "https://binaryphoenix01.medium.com" },
       items: medium,
-      empty: "Visit Medium for the latest articles.",
+      empty: t("medium.empty"),
     },
     {
       key: "youtube",
-      label: "Latest YouTube videos",
+      label: t("youtube.label"),
       icon: Youtube,
       accent: "text-accent-violet border-accent-violet/30 bg-accent-violet/5",
       cta: {
-        label: "Open channel",
+        label: t("youtube.cta"),
         href: "https://www.youtube.com/channel/UCcINlOM-rC1_8yiRGH_iFBg?sub_confirmation=1",
       },
       items: youtube,
-      empty: "Visit YouTube for the latest videos.",
+      empty: t("youtube.empty"),
     },
     {
       key: "github",
-      label: "Recent GitHub activity",
+      label: t("github.label"),
       icon: Github,
       accent: "text-accent-cyan border-accent-cyan/30 bg-accent-cyan/5",
-      cta: { label: "github.com/blackphoenix42", href: "https://github.com/blackphoenix42" },
+      cta: { label: t("github.cta"), href: "https://github.com/blackphoenix42" },
       items: github,
-      empty: "Recent activity will appear here when the feed is reachable.",
+      empty: t("github.empty"),
     },
   ];
 
   return (
-    <section className="section border-border/60 border-t" aria-label="Live activity feeds">
+    <section className="section border-border/60 border-t" aria-label={t("ariaLabel")}>
       <div className="container-tight">
         {!hideHeader && (
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
-              <Rss className="h-3.5 w-3.5" /> / live feeds
+              <Rss className="h-3.5 w-3.5" /> {t("eyebrow")}
             </p>
-            <h2 className="section-title mt-2">Live activity</h2>
-            <p className="text-fg-muted mt-2 max-w-2xl">
-              Recent posts, videos and commits — pulled live from Medium, YouTube and GitHub and
-              cached for an hour at the edge.
-            </p>
+            <h2 className="section-title mt-2">{t("heading")}</h2>
+            <p className="text-fg-muted mt-2 max-w-2xl">{t("intro")}</p>
           </header>
         )}
         <div className="grid gap-4 lg:grid-cols-3">
@@ -107,7 +107,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
                           )}
                           {it.date && (
                             <p className="text-fg-subtle mt-1 font-mono text-[10px] tracking-wider uppercase">
-                              {formatRelative(it.date)}
+                              {formatRelative(it.date, locale)}
                             </p>
                           )}
                         </a>

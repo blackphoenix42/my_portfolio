@@ -3,10 +3,20 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { GitFork, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Github } from "@/components/icons/brand";
 import type { FeaturedRepo } from "@/lib/github";
 
 export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
+  const t = useTranslations("workbench");
+  const tCat = (id: string, fallback: string) => {
+    const key = `categories.${id}`;
+    return t.has(key as never) ? t(key as never) : fallback;
+  };
+  const trRepo = (name: string, key: "description", fallback: string) => {
+    const path = `repos.${name}.${key}`;
+    return t.has(path as never) ? t(path as never) : fallback;
+  };
   // Build categories dynamically so empty filters never show.
   const categories = useMemo(() => {
     const order: FeaturedRepo["category"][] = [
@@ -29,17 +39,14 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
   return (
     <section
       className="section border-border/60 bg-bg-sunken/30 border-y"
-      aria-label="GitHub workbench"
+      aria-label={t("ariaLabel")}
     >
       <div className="container-tight">
         <header className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mono-label">/ github</p>
-            <h2 className="section-title mt-2">Public workbench</h2>
-            <p className="text-fg-muted mt-2 max-w-xl">
-              A curated slice of public repositories spanning algorithms, full-stack apps, mobile,
-              blockchain and competitive programming.
-            </p>
+            <p className="mono-label">{t("eyebrow")}</p>
+            <h2 className="section-title mt-2">{t("heading")}</h2>
+            <p className="text-fg-muted mt-2 max-w-xl">{t("intro")}</p>
           </div>
           <ul className="flex flex-wrap gap-1.5">
             {categories.map((c) => (
@@ -53,7 +60,7 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
                       : "border-border text-fg-muted hover:border-accent-cyan/40 hover:text-fg"
                   }`}
                 >
-                  {c}
+                  {tCat(c, c)}
                 </button>
               </li>
             ))}
@@ -78,10 +85,10 @@ export function GithubWorkbench({ repos }: { repos: FeaturedRepo[] }) {
                   <Github className="text-fg-subtle h-4 w-4" />
                   <span className="font-mono text-sm font-medium">{r.name}</span>
                 </div>
-                <span className="chip">{r.category}</span>
+                <span className="chip">{tCat(r.category, r.category)}</span>
               </div>
               <p className="text-fg-muted mt-3 line-clamp-2 text-sm">
-                {r.description ?? "No description provided."}
+                {trRepo(r.name, "description", r.description ?? t("noDescription"))}
               </p>
               <div className="text-fg-subtle mt-4 flex items-center justify-between font-mono text-[11px]">
                 <span className="inline-flex items-center gap-1">

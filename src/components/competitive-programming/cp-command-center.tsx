@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Terminal, ExternalLink, Trophy, Target, Flame, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { competitive } from "@/content/achievements";
 import { accentText } from "@/lib/utils";
 import { SITE } from "@/content/profile";
+import { Link } from "@/i18n/navigation";
 
 const PLATFORM_LOGOS: Record<string, string> = {
   CodeChef: "/assets/logos/codechef.png",
@@ -16,31 +17,29 @@ const PLATFORM_LOGOS: Record<string, string> = {
 };
 
 const HIGHLIGHTS = [
-  { label: "Years competing", value: "6+", icon: Flame, accent: "amber" as const },
-  { label: "Problems solved", value: "2.4k+", icon: Target, accent: "cyan" as const },
-  { label: "Contest podiums", value: "10+", icon: Trophy, accent: "violet" as const },
-  { label: "Peak rating", value: "2353", icon: Zap, accent: "emerald" as const },
+  { key: "yearsCompeting" as const, value: "6+", icon: Flame, accent: "amber" as const },
+  { key: "problemsSolved" as const, value: "2.4k+", icon: Target, accent: "cyan" as const },
+  { key: "contestPodiums" as const, value: "10+", icon: Trophy, accent: "violet" as const },
+  { key: "peakRating" as const, value: "2353", icon: Zap, accent: "emerald" as const },
 ];
 
 export function CPCommandCenter() {
+  const t = useTranslations("competitiveProgramming");
   return (
-    <section className="section" aria-label="Competitive programming">
+    <section className="section" aria-label={t("title")}>
       <div className="container-tight">
         <header className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mono-label">/ competitive programming</p>
-            <h2 className="section-title mt-2">Command center</h2>
-            <p className="text-fg-muted mt-2 max-w-xl">
-              Years of rigorous problem-solving — translated into systems intuition for performance
-              work.
-            </p>
+            <p className="mono-label">{t("eyebrow")}</p>
+            <h2 className="section-title mt-2">{t("heading")}</h2>
+            <p className="text-fg-muted mt-2 max-w-xl">{t("subheading")}</p>
           </div>
           <div className="flex gap-2">
             <Link href="/work/algolens" className="btn-secondary text-sm">
-              Explore AlgoLens
+              {t("exploreAlgolens")}
             </Link>
             <a href={`${SITE.github}?tab=repositories`} className="btn-secondary text-sm">
-              CP repositories
+              {t("cpRepos")}
             </a>
           </div>
         </header>
@@ -50,7 +49,7 @@ export function CPCommandCenter() {
           {HIGHLIGHTS.map((h) => {
             const Icon = h.icon;
             return (
-              <li key={h.label} className="card flex items-center gap-3 p-4">
+              <li key={h.key} className="card flex items-center gap-3 p-4">
                 <span
                   className={`inline-flex h-9 w-9 items-center justify-center rounded-md border ${
                     h.accent === "amber"
@@ -67,7 +66,7 @@ export function CPCommandCenter() {
                 <div>
                   <p className={`text-xl font-semibold ${accentText[h.accent]}`}>{h.value}</p>
                   <p className="text-fg-subtle font-mono text-[10px] tracking-widest uppercase">
-                    {h.label}
+                    {t(`stats.${h.key}`)}
                   </p>
                 </div>
               </li>
@@ -141,9 +140,7 @@ export function CPCommandCenter() {
           </div>
         </div>
 
-        <p className="text-fg-subtle mt-4 text-xs">
-          Handles &amp; live ratings update independently on each platform — click a tile to verify.
-        </p>
+        <p className="text-fg-subtle mt-4 text-xs">{t("tagline")}</p>
       </div>
     </section>
   );

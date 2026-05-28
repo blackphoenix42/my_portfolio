@@ -1,29 +1,31 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { CareerTimeline } from "@/components/experience/career-timeline";
 import { CompanyLogo } from "@/components/experience/company-logo";
 import { educationHistory, internships } from "@/content/experience";
 
-export const metadata: Metadata = {
-  title: "Experience",
-  description: "Engineering experience and education timeline.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("experience");
+  return { title: t("title"), description: t("description") };
+}
 
-export default function ExperiencePage() {
+export default async function ExperiencePage() {
+  const t = await getTranslations("experience");
   return (
     <div>
       <header className="container-tight pt-16">
-        <p className="mono-label">/ experience</p>
-        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">Experience</h1>
+        <p className="mono-label">{t("tag")}</p>
+        <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{t("pageTitle")}</h1>
       </header>
       <CareerTimeline />
       <CareerTimeline
         items={internships}
-        eyebrow="/ internships"
-        title="Internships & fellowships"
-        ariaLabel="Internships and fellowships timeline"
+        eyebrow={t("internshipsEyebrow")}
+        title={t("internshipsTitle")}
+        ariaLabel={t("internshipsAria")}
       />
       <section className="container-tight pt-16 pb-20">
-        <h2 className="section-title">Education</h2>
+        <h2 className="section-title">{t("educationHeading")}</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {educationHistory.map((education) => (
             <div key={education.school} className="card flex gap-4 p-6">
@@ -37,7 +39,9 @@ export default function ExperiencePage() {
                 </p>
                 <h3 className="mt-1 text-lg leading-snug font-semibold">{education.school}</h3>
                 <p className="text-fg-muted mt-1">{education.degree}</p>
-                <p className="text-fg-subtle mt-1 font-mono text-xs">Score: {education.cgpa}</p>
+                <p className="text-fg-subtle mt-1 font-mono text-xs">
+                  {t("score")} {education.cgpa}
+                </p>
               </div>
             </div>
           ))}

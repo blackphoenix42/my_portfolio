@@ -1,25 +1,26 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { Menu, X, Search, ArrowUpRight, Command as CmdIcon, Rss } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { RecruiterToggle } from "@/components/layout/recruiter-toggle";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { SITE } from "@/content/profile";
+import { Link, usePathname } from "@/i18n/navigation";
 
 const NAV = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/work", label: "Work" },
-  { href: "/skills", label: "Skills" },
-  { href: "/experience", label: "Experience" },
-  { href: "/competitive-programming", label: "Craft" },
-  { href: "/contact", label: "Contact" },
-];
+  { href: "/", labelKey: "home" },
+  { href: "/about", labelKey: "about" },
+  { href: "/work", labelKey: "work" },
+  { href: "/skills", labelKey: "skills" },
+  { href: "/experience", labelKey: "experience" },
+  { href: "/competitive-programming", labelKey: "craft" },
+  { href: "/contact", labelKey: "contact" },
+] as const;
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -28,6 +29,9 @@ function isActive(pathname: string, href: string) {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
+  const tCommon = useTranslations("common");
+  const tHeader = useTranslations("header");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduce = useReducedMotion();
@@ -70,15 +74,15 @@ export function SiteHeader() {
         <Link
           href="/"
           className="group inline-flex shrink-0 items-center gap-2"
-          aria-label="Ayush Yadav — Home"
+          aria-label={tHeader("ariaLogoHome", { name: SITE.name })}
         >
           <Logo />
           <span className="flex flex-col leading-none">
-            <span className="text-fg text-sm font-semibold tracking-tight">Ayush Yadav</span>
+            <span className="text-fg text-sm font-semibold tracking-tight">{SITE.name}</span>
           </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden md:block">
+        <nav aria-label={t("primary")} className="hidden md:block">
           <ul className="relative flex items-center gap-0.5">
             {NAV.map((item) => {
               const active = isActive(pathname, item.href);
@@ -92,7 +96,7 @@ export function SiteHeader() {
                       active ? "text-fg" : "text-fg-muted hover:text-fg",
                     )}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </Link>
                   {active && (
                     <motion.span
@@ -114,29 +118,30 @@ export function SiteHeader() {
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-command-menu"))}
             className="border-border bg-bg-elev/60 text-fg-muted hover:border-accent-cyan/40 hover:text-fg hidden items-center gap-2 rounded-md border px-2.5 py-1.5 text-xs transition-colors lg:inline-flex"
-            aria-label="Open command menu"
+            aria-label={t("openCommandMenu")}
           >
             <Search className="h-3.5 w-3.5" />
-            <span>Search</span>
+            <span>{tCommon("search")}</span>
             <kbd className="bg-bg-sunken ml-1 rounded px-1.5 py-0.5 font-mono text-[10px]">⌘K</kbd>
           </button>
           <Link
             href="/feeds"
-            aria-label="Live feeds (Medium, YouTube, GitHub)"
-            title="Live feeds"
+            aria-label={t("liveFeedsLabel")}
+            title={t("liveFeeds")}
             className="border-border bg-bg-elev/40 text-fg-muted hover:border-accent-amber/40 hover:text-accent-amber inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
           >
             <Rss className="h-4 w-4" />
           </Link>
+          <LanguageSwitcher />
           <RecruiterToggle />
           <ThemeToggle />
           <a href={SITE.resumePath} download className="btn-primary hidden text-xs sm:inline-flex">
-            Résumé
+            {tCommon("resume")}
           </a>
           <button
             type="button"
             className="border-border bg-bg-elev/40 text-fg-muted hover:text-fg inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t("closeMenu") : t("openMenu")}
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
@@ -161,7 +166,7 @@ export function SiteHeader() {
             <motion.nav
               id="mobile-nav"
               key="sheet"
-              aria-label="Mobile"
+              aria-label={t("primary")}
               className="border-border bg-bg-elev/95 fixed inset-x-0 top-16 z-40 border-b backdrop-blur-md md:hidden"
               initial={reduce ? { opacity: 0 } : { y: -12, opacity: 0 }}
               animate={reduce ? { opacity: 1 } : { y: 0, opacity: 1 }}
@@ -169,7 +174,7 @@ export function SiteHeader() {
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="container-tight py-3">
-                <p className="mono-label mb-2 px-2">Navigate</p>
+                <p className="mono-label mb-2 px-2">{t("navigate")}</p>
                 <ul className="grid grid-cols-2 gap-1">
                   {NAV.map((item) => {
                     const active = isActive(pathname, item.href);
@@ -185,7 +190,7 @@ export function SiteHeader() {
                               : "border-border/60 bg-bg-sunken/40 text-fg-muted hover:border-accent-cyan/30 hover:text-fg",
                           )}
                         >
-                          <span>{item.label}</span>
+                          <span>{t(item.labelKey)}</span>
                           <ArrowUpRight className="h-3.5 w-3.5 opacity-60" />
                         </Link>
                       </li>
@@ -199,7 +204,7 @@ export function SiteHeader() {
                     onClick={() => setOpen(false)}
                     className="btn-primary flex-1 text-xs"
                   >
-                    Download Résumé
+                    {tCommon("downloadResume")}
                   </a>
                   <button
                     type="button"
@@ -209,7 +214,7 @@ export function SiteHeader() {
                     }}
                     className="btn-secondary text-xs"
                   >
-                    <CmdIcon className="h-3.5 w-3.5" /> Search
+                    <CmdIcon className="h-3.5 w-3.5" /> {tCommon("search")}
                   </button>
                 </div>
               </div>

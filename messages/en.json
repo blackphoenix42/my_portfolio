@@ -1,0 +1,997 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "viewProjects": "View Projects",
+    "seeExperience": "See experience",
+    "download": "Download",
+    "downloadResume": "Download Résumé",
+    "resume": "Résumé",
+    "viewMore": "View more",
+    "readMore": "Read more",
+    "viewFullExperience": "View full experience",
+    "allWork": "All work",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "close": "Close",
+    "open": "Open",
+    "search": "Search",
+    "menu": "Menu",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "home": "Home",
+    "professional": "Professional",
+    "openSource": "Open source",
+    "personal": "Personal",
+    "certificate": "Certificate",
+    "tags": "Tags",
+    "category": "Category",
+    "stack": "Stack",
+    "live": "Live",
+    "code": "Code",
+    "demo": "Demo",
+    "year": "Year",
+    "present": "Present"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "skills": "Skills",
+    "experience": "Experience",
+    "craft": "Craft",
+    "contact": "Contact",
+    "openCommandMenu": "Open command menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "navigate": "Navigate",
+    "liveFeeds": "Live feeds",
+    "liveFeedsLabel": "Live feeds (Medium, YouTube, GitHub)",
+    "primary": "Primary"
+  },
+  "header": {
+    "ariaLogoHome": "{name} — Home"
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",
+    "copyright": "© {year} {name}",
+    "tagline": "Engineering intelligence into performance-critical systems."
+  },
+  "language": {
+    "label": "Language",
+    "switch": "Switch language",
+    "current": "Current language: {name}",
+    "names": {
+      "en": "English",
+      "hi": "हिन्दी",
+      "ja": "日本語",
+      "sa": "संस्कृतम्",
+      "zh": "中文",
+      "ru": "Русский"
+    }
+  },
+  "theme": {
+    "label": "Theme",
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "phoenix": "Phoenix"
+  },
+  "recruiter": {
+    "label": "Recruiter mode",
+    "on": "Recruiter mode on",
+    "off": "Recruiter mode off",
+    "toggleLabel": "Toggle recruiter mode",
+    "exit": "Exit recruiter mode",
+    "enable": "Enable recruiter mode",
+    "short": "Recruiter",
+    "onShort": "on",
+    "bannerTitle": "Recruiter view enabled",
+    "bannerDescription": "Showing a condensed, hiring-focused summary. Toggle off for the full portfolio.",
+    "turnOff": "Turn off",
+    "toastTitle": "Recruiter mode enabled",
+    "toastBody": "Optimized for time-pressed reviewers — résumé, impact metrics and contact bubble to the top.",
+    "dismiss": "Dismiss"
+  },
+  "scroll": {
+    "toTop": "Scroll to top",
+    "toBottom": "Scroll to bottom"
+  },
+  "recruiterBanner": {
+    "modeOn": "Recruiter mode · on",
+    "summary": "{role} · {location} · open to software engineering roles — C++ performance, distributed systems, AI tooling. Production wins on Apple, Google, Samsung & NVIDIA workloads.",
+    "resume": "Resume",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "contact": "Contact",
+    "exitAria": "Exit recruiter mode"
+  },
+  "command": {
+    "title": "Command Menu",
+    "placeholder": "Type a command or search…",
+    "empty": "No results found.",
+    "navigation": "Navigation",
+    "navigate": "Navigate",
+    "actions": "Actions",
+    "theme": "Theme",
+    "external": "External",
+    "work": "Work",
+    "openGitHub": "Open GitHub",
+    "openLinkedIn": "Open LinkedIn",
+    "downloadResume": "Download Résumé",
+    "copyEmail": "Copy Email",
+    "switchLanguage": "Switch language",
+    "close": "Close command menu",
+    "searchPlaceholder": "Search projects, skills, pages…",
+    "noResults": "No results.",
+    "footerHint": "search:",
+    "footerHintMode": "prefix · substring · fuzzy",
+    "footerHintKeys": "↑↓ navigate · ⏎ select",
+    "items": {
+      "home": "Home",
+      "about": "About",
+      "workNav": "Work",
+      "skills": "Skills",
+      "experience": "Experience",
+      "cp": "Competitive Programming",
+      "roadmap": "Roadmap",
+      "contact": "Contact"
+    }
+  },
+  "mobileActionBar": {
+    "contact": "Contact",
+    "resume": "Résumé",
+    "menu": "Menu",
+    "downloadResume": "Download résumé",
+    "github": "GitHub"
+  },
+  "hero": {
+    "statusLabel": "{role} @ {company}",
+    "headline": "I engineer <strong>performance-critical systems</strong> and <strong>AI-powered developer tools</strong>.",
+    "subhead": "C++ performance engineering, distributed systems, agentic AI workflows and developer tooling — shipped at scale, measured in production, owned end-to-end.",
+    "primaryCta": "View Projects",
+    "secondaryCta": "See experience",
+    "impactStrip": {
+      "throughput": "Sim. throughput",
+      "rca": "Faster RCA",
+      "leetcode": "LeetCode global"
+    },
+    "visualization": {
+      "panelLabel": "xmai · profiler · live",
+      "flow": "artifacts → retrieval → agent → rtl",
+      "throughputUp": "↑ throughput"
+    }
+  },
+  "home": {
+    "title": "Home",
+    "description": "Performance Engineering, Agentic AI, and R&D Software Engineering."
+  },
+  "aboutSection": {
+    "eyebrow": "/ about",
+    "heading": "A brief introduction",
+    "bio1": "I'm <strong>{name}</strong>, a software engineer shipping performance-critical systems and AI-assisted developer tooling at scale. At {company}, my C++ and runtime work has delivered measurable wins on production workloads run by Apple, Google, Samsung and NVIDIA.",
+    "bio2": "I care about ownership end-to-end — from low-level profiling and distributed-system design to polished, accessible product surfaces. Outside of work I ship open-source tools, mentor engineers and stay sharp through competitive programming.",
+    "principlesEyebrow": "Engineering principles in motion",
+    "principles": {
+      "profile": {
+        "title": "Profile first.",
+        "body": "Optimization without measurement is folklore."
+      },
+      "gap": {
+        "title": "Reduce the gap",
+        "body": "between intent and observability."
+      },
+      "trust": {
+        "title": "Design for trust:",
+        "body": "deterministic, accessible, well-tested."
+      },
+      "performance": {
+        "title": "Treat performance",
+        "body": "as a first-class product feature."
+      }
+    },
+    "getInTouch": "Get in touch"
+  },
+  "about": {
+    "title": "About",
+    "description": "Background, philosophy and what I'm working on.",
+    "heading": "About",
+    "subheading": "Engineer at the intersection of systems performance and applied AI.",
+    "beyondHeading": "Beyond code",
+    "beyondSubheading": "Side pursuits that keep the craft sharp and pay it forward.",
+    "certsHeading": "Certifications & training",
+    "certsSubheading": "A selection of the credentials, programs and contests I've completed.",
+    "honorsHeading": "Honors & recognition",
+    "languagesHeading": "Languages I work in",
+    "languagesSubheading": "Spoken & written — useful across distributed teams.",
+    "educationHeading": "Education",
+    "writingTitle": "Writing on Medium",
+    "writingBody": "Long-form essays on systems performance, AI tooling and frontend craft. Writing forces me to formalize patterns I'd otherwise leave as tacit knowledge — and it pays it forward to engineers walking the same paths.",
+    "teachingTitle": "Teaching on YouTube",
+    "teachingBody": "Explainers on programming, problem-solving and engineering process. Recording forces clear thinking — the best feedback is when someone says a concept finally clicked.",
+    "openSourceTitle": "Open Source Maintainer",
+    "openSourceBody": "I maintain and contribute to open-source projects across visualization, AI tooling and developer experience under @blackphoenix42 — algorithm visualizers, profiling tools and small UX experiments shipped to a real audience.",
+    "mentorshipTitle": "Mentorship & Community",
+    "mentorshipBody": "Mentored 100+ students across software engineering and competitive programming — code reviews, mock interviews, system-design walk-throughs and DSA progressions tuned to where each person is.",
+    "crowdsourceTitle": "Google Crowdsource — Level 8",
+    "crowdsourceBody": "Reached Level 8 in Google's Crowdsource program across image labeling, translation and validation tasks — small, repeated contributions that compound into useful training data.",
+    "nssTitle": "NSS Volunteer",
+    "nssBody": "Participated in NSS drives and awareness campaigns at NSUT — community service that grounded technical work in lived experience and broadened the people I learn from.",
+    "clubTitle": "Programming Club Leadership",
+    "clubBody": "Head of Programming at Dynamix Club, Ramjas School — ran DSA sessions, mock contests and mentored juniors, learning early that leadership is mostly clearing blockers for the team.",
+    "houseTitle": "House Captain — Jupiter House",
+    "houseBody": "Captained Jupiter House at Ramjas School — organized inter-house tournaments, anchored school events and represented the house in council activities.",
+    "cpTitle": "Competitive Programming",
+    "cpBody": "Active across CodeChef (6★), Codeforces Master, LeetCode Knight and HackerRank 6★. CP is where reflexes for complexity, invariants and edge-case thinking get sharpened.",
+    "viewProfiles": "View profiles",
+    "tag": "/ about",
+    "pageTitle": "About",
+    "beyondTag": "/ beyond the day job",
+    "beyondAriaLabel": "Beyond the day job",
+    "beyondTitle": "What I do outside work",
+    "beyondIntro": "Writing, teaching, open-source, mentorship and community work that complement my engineering practice — each pursued for its own reasons.",
+    "writingCta": "binaryphoenix01.medium.com",
+    "teachingCta": "YouTube channel",
+    "openSourceCta": "github.com/blackphoenix42",
+    "crowdsourceCta": "Crowdsource",
+    "honorsTag": "/ honors & awards",
+    "honorsAriaLabel": "Honors and awards",
+    "honorsTitle": "Recognition",
+    "honorsIntro": "Grants, competition wins and program recognitions from school through fellowship work.",
+    "languagesTag": "/ languages",
+    "languagesAriaLabel": "Languages",
+    "languagesTitle": "Languages",
+    "certsTag": "/ certifications",
+    "certsAriaLabel": "Certifications",
+    "certsTitle": "Certificates",
+    "certsIntro": "Selected certificates across cloud, contests, frameworks and structured learning. Click any preview to open the original.",
+    "certsFooterPrefix": "Internship and program certificates appear next to their respective roles in",
+    "certsFooterMiddle": ". See",
+    "certsFooterSuffix": "for contest profiles and ratings.",
+    "experienceLink": "experience",
+    "cpLink": "competitive programming",
+    "certCategories": {
+      "cloud": "Cloud",
+      "codechef": "Coding Contests · CodeChef",
+      "hackerrank": "HackerRank",
+      "forage": "Forage Virtual Programs",
+      "niit": "NIIT",
+      "udemy": "Udemy"
+    }
+  },
+  "work": {
+    "title": "Work",
+    "description": "Selected projects spanning performance engineering, AI infrastructure and developer tools.",
+    "heading": "Work",
+    "subheading": "Selected projects, shipped end-to-end.",
+    "featured": "Featured work",
+    "featuredSubheading": "Selected projects across performance engineering, agentic AI, developer tooling and product engineering.",
+    "allWork": "All work",
+    "readMore": "Read more",
+    "viewCase": "View case study",
+    "live": "Live",
+    "repo": "Repo",
+    "tech": "Stack",
+    "category": "Category",
+    "outcomes": "Outcomes",
+    "highlights": "Highlights",
+    "links": "Links",
+    "back": "Back to work",
+    "tag": "/ work",
+    "pageTitle": "Work",
+    "pageIntro": "Deep-dives into selected engineering work — problem framing, technical decisions, trade-offs and measurable impact.",
+    "featuredAria": "Featured projects",
+    "featuredTag": "/ featured",
+    "featuredHeading": "Featured projects",
+    "workbenchAria": "Public workbench",
+    "demoTitle": "Interactive demo",
+    "architectureTitle": "Architecture",
+    "architectureNote": "Conceptual architecture based on publicly shareable project information.",
+    "problemHeading": "Problem",
+    "challengeHeading": "Technical challenge",
+    "overviewHeading": "Overview",
+    "approachHeading": "Approach & engineering decisions",
+    "step": "Step",
+    "stackHeading": "Stack",
+    "lessonsHeading": "Lessons learned",
+    "lesson1": "Profiling-first thinking beats premature abstraction in performance-critical systems.",
+    "lesson2": "Agentic AI is most useful when grounded in retrieval and structured tool calls.",
+    "lesson3": "Trustworthy developer tooling earns adoption faster than impressive demos.",
+    "linksHeading": "Links",
+    "relatedHeading": "Related work",
+    "demoSubtitle": {
+      "xmai": "Try a prompt against the simulated retrieve → embed → agent pipeline.",
+      "algolens": "A miniature visualizer of the AlgoLens execution model.",
+      "xcelium-optimization": "Drag the slider to see profiles compress as RTL/runtime optimizations land.",
+      "tezos-premier-league": "Click play to simulate a deterministic on-chain PvP bracket.",
+      "postureiq": "Live-simulated rep quality with confidence gating.",
+      "track-person-app": "Animated waypoint route on a stylized map — play / pause / reset.",
+      "smart-brain": "Try different scenes; the simulated detector reveals bounding boxes & confidence."
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Technologies, languages, tools and platforms I work with.",
+    "heading": "Skills",
+    "subheading": "What I use to ship.",
+    "categories": "Categories",
+    "all": "All",
+    "pageTitle": "Skills · Engineering Arsenal",
+    "pageDescription": "Filterable skills explorer plus capability clusters spanning performance, intelligent systems, backend, product and infrastructure.",
+    "tag": "/ skills",
+    "pageHeading": "Engineering arsenal",
+    "pageIntro": "Filter individual skills by category, or scroll down to see the capability clusters and how they map onto real projects."
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "Roles, milestones and career timeline.",
+    "heading": "Career timeline",
+    "subheading": "Where I've worked and what I shipped.",
+    "eyebrow": "/ experience",
+    "present": "Present",
+    "certificate": "Certificate",
+    "years": "{count, plural, one {# year} other {# years}}",
+    "months": "{count, plural, one {# month} other {# months}}",
+    "tag": "/ experience",
+    "pageTitle": "Experience",
+    "internshipsEyebrow": "/ internships",
+    "internshipsTitle": "Internships & fellowships",
+    "internshipsAria": "Internships and fellowships timeline",
+    "educationHeading": "Education",
+    "score": "Score:"
+  },
+  "competitiveProgramming": {
+    "title": "Competitive Programming",
+    "description": "Profiles, ratings and problem-solving across platforms.",
+    "heading": "Command center",
+    "subheading": "Years of rigorous problem-solving — translated into systems intuition for performance work.",
+    "eyebrow": "/ competitive programming",
+    "exploreAlgolens": "Explore AlgoLens",
+    "cpRepos": "CP repositories",
+    "stats": {
+      "yearsCompeting": "Years competing",
+      "problemsSolved": "Problems solved",
+      "contestPodiums": "Contest podiums",
+      "peakRating": "Peak rating"
+    },
+    "tagline": "Handles & live ratings update independently on each platform — click a tile to verify.",
+    "pageTitle": "Craft · Competitive Programming & Roadmap",
+    "pageDescription": "Years of competitive programming across CodeChef, Codeforces, LeetCode and HackerRank — plus the engineering roadmap of what I'm building next.",
+    "craftTag": "/ craft",
+    "pageHeading": "Competitive programming",
+    "pageIntro": "Sustained problem-solving across the major platforms — sharpening data structures, algorithms and the kind of disciplined thinking that pays off in performance engineering.",
+    "roadmapAria": "Engineering roadmap",
+    "roadmapTag": "/ roadmap",
+    "roadmapHeading": "What I'm building next",
+    "roadmapIntro": "Product concepts under active design — the next set of systems I'd love to ship."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Reach out about performance engineering, AI infrastructure, developer tooling or collaboration.",
+    "tag": "/ contact",
+    "heading": "Let's build something measurable.",
+    "intro": "Open to conversations around performance engineering, AI infrastructure, developer tooling, EDA, backend platforms and high-impact software roles.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me a little about your project or question…",
+      "company": "Company",
+      "companyPlaceholder": "Organization (optional)",
+      "role": "Your role",
+      "roles": {
+        "recruiter": "Recruiter",
+        "hiringManager": "Hiring Manager",
+        "founder": "Founder",
+        "engineer": "Engineer",
+        "collaboration": "Collaboration",
+        "other": "Other"
+      },
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Thanks! Your message is on its way. I'll get back to you soon.",
+      "errorGeneric": "Something went wrong. Please try again or email me directly.",
+      "errorRateLimit": "Too many messages from this IP. Please try again later.",
+      "errorValidation": "Please fix the highlighted fields and try again.",
+      "honeypot": "Leave this field empty",
+      "consent": "By sending, you agree to be contacted regarding your message.",
+      "required": "Required",
+      "invalidEmail": "Please enter a valid email address.",
+      "tooShort": "Too short — please add a bit more detail.",
+      "tooLong": "Too long — please shorten your message.",
+      "charactersRemaining": "{count} characters remaining",
+      "successHeading": "Message sent.",
+      "successBody": "Thanks for reaching out — I'll get back to you as soon as possible. In urgent cases, email me directly.",
+      "sendAnother": "Send another",
+      "honeypotLabel": "Do not fill this field",
+      "namePlaceholderShort": "Jane Doe",
+      "emailPlaceholderShort": "you@company.com",
+      "companyPlaceholderShort": "Optional",
+      "subjectPlaceholderShort": "Performance engineering role at …",
+      "messagePlaceholderShort": "A few lines about the role, project, or what you'd like to discuss.",
+      "iAmA": "I'm a…",
+      "roleAriaLabel": "Role",
+      "formNote": "Protected by rate limiting & server validation.",
+      "networkError": "Network error. Please try again or email directly.",
+      "genericServerError": "Something went wrong. Please email me directly."
+    }
+  },
+  "contactCta": {
+    "eyebrow": "/ let's talk",
+    "heading": "Let's build systems that scale, perform and think.",
+    "subheading": "Open to conversations around performance engineering, AI infrastructure, developer tooling, EDA, backend platforms and high-impact software roles.",
+    "cta": "Start a conversation",
+    "downloadResume": "Download Résumé",
+    "linkedinHandle": "/in/ayushyadav",
+    "githubHandle": "@blackphoenix42",
+    "resumeValue": "PDF"
+  },
+  "feeds": {
+    "title": "Live Feeds",
+    "description": "Latest posts and activity across Medium, YouTube and GitHub.",
+    "heading": "Live Feeds",
+    "subheading": "Latest from Medium, YouTube and GitHub.",
+    "medium": "Medium",
+    "youtube": "YouTube",
+    "github": "GitHub",
+    "openSource": "Open the original",
+    "noPosts": "No recent posts yet.",
+    "viewAll": "View all",
+    "watchOn": "Watch on YouTube",
+    "readOn": "Read on Medium",
+    "pageTitle": "Feeds · Live activity",
+    "pageDescription": "Live activity feeds — latest posts from Medium, videos from YouTube and recent GitHub activity, refreshed hourly.",
+    "tag": "/ feeds",
+    "pageHeading": "Live activity",
+    "pageIntro": "Live signals from where I work in public — recent Medium posts, YouTube uploads and GitHub events. Pulled server-side from RSS / public APIs and cached at the edge for an hour."
+  },
+  "lab": {
+    "title": "Lab",
+    "description": "Concept labs, experiments and works in progress.",
+    "heading": "Lab",
+    "subheading": "Experiments, prototypes and small studies."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has moved.",
+    "heading": "404 — Page not found",
+    "subheading": "The page you're looking for doesn't exist or has moved.",
+    "cta": "Back home"
+  },
+  "metrics": {
+    "eyebrow": "Impact · verified",
+    "heading": "Measurable engineering outcomes",
+    "context": "cadence · 2022–present",
+    "items": {
+      "throughput": {
+        "label": "Simulation throughput",
+        "detail": "Improvement on large customer workloads in Xcelium Logic Simulator."
+      },
+      "rtl": {
+        "label": "RTL transform runtime",
+        "detail": "Xform Engine gains on designs from Apple, Google, Samsung, NVIDIA."
+      },
+      "rca": {
+        "label": "Debug RCA time",
+        "detail": "Reduction via Top-N profiling and structured diagnostics library."
+      },
+      "tezos": {
+        "label": "Tezos award",
+        "detail": "Grant to expand a decentralized gaming application on Tezos."
+      },
+      "algorithms": {
+        "label": "Algorithms",
+        "detail": "Interactive, step-throughable visualizations in AlgoLens."
+      },
+      "leetcode": {
+        "label": "LeetCode global",
+        "detail": "Knight tier · Codeforces Master · CodeChef 6-Star (AIR 29)."
+      }
+    }
+  },
+  "techMarquee": {
+    "heading": "Tech I ship with"
+  },
+  "quotes": {
+    "label": "Quote",
+    "items": {
+      "abelson": "Programs must be written for people to read, and only incidentally for machines to execute.",
+      "knuth": "Premature optimization is the root of all evil.",
+      "dijkstra": "Simplicity is prerequisite for reliability.",
+      "carmack": "Focused, hard work is the real key to success."
+    }
+  },
+  "projects": {
+    "categories": {
+      "ai-eda": "AI × EDA × Developer Tooling",
+      "systems-performance": "Systems Performance",
+      "developer-tools": "Developer Tooling",
+      "product": "Product Engineering",
+      "fullstack": "Full-stack",
+      "ml": "Machine Learning",
+      "blockchain": "Blockchain"
+    },
+    "items": {
+      "xmai": {
+        "title": "XMAI — Agentic AI Profiler",
+        "tagline": "An AI-assisted profiler that transforms complex simulation artifacts into actionable optimization guidance.",
+        "category": "AI × EDA × Developer Tooling",
+        "summary": "XMAI is an AI-assisted EDA profiler designed to accelerate failure analysis and runtime optimization for large-scale simulation workloads. It combines retrieval-augmented generation, tool-enabled agents and graph-compatible RTL representations into a coherent diagnostic experience.",
+        "problem": "Engineers analyzing large SoC simulations spend significant time correlating logs, profiles and RTL artifacts to localize bottlenecks. The signal is buried across heterogeneous sources, and root-cause analysis is slow.",
+        "challenge": "Build a profiler that ingests simulation artifacts at scale, retrieves the most relevant context, reasons about hotspots using LLMs, and emits trustworthy RTL-level optimization recommendations — across CLI, TUI, GUI and MCP server interfaces.",
+        "approach": {
+          "0": "Parse simulation logs and structured artifacts into a canonical event/signal model.",
+          "1": "Generate embeddings for design context, signals and runtime traces; index in a vector store for retrieval.",
+          "2": "Orchestrate tool-enabled agents with prompt routing for hotspot triage, recommendation synthesis and explainability.",
+          "3": "Expose surfaces via CLI, TUI, GUI and a Model Context Protocol (MCP) server with an auto-analyze-on-failure workflow.",
+          "4": "Contribute composable building blocks to ChipStack AI — C++ APIs, JEDAI embedding-upload flows and agent primitives."
+        }
+      },
+      "xcelium-optimization": {
+        "title": "Xcelium Logic Simulator — Performance Engineering",
+        "tagline": "Low-level optimization work delivering measurable throughput improvements on large real-world workloads.",
+        "category": "Systems Performance",
+        "summary": "A multi-quarter performance engineering effort on Cadence's Xcelium logic simulator, focused on profiling-driven optimization, RTL transformations and structured diagnostics for production customer workloads.",
+        "problem": "Customer designs of increasing scale stress simulator throughput. Even small inefficiencies in hot paths compound across millions of simulation events, costing engineering hours and infrastructure.",
+        "challenge": "Identify high-leverage bottlenecks across an industrial simulation engine, reason rigorously about runtime behavior, and ship low-risk C++ changes that move the needle on production workloads.",
+        "approach": {
+          "0": "Built a reusable C++ performance-analysis library enabling Top-N profiling and structured diagnostics, presented at Cadence India Conference.",
+          "1": "Used Valgrind, AddressSanitizer and runtime profilers to isolate hotspots in critical simulation paths.",
+          "2": "Implemented RTL transformations in the Xform Engine that reshape designs into more simulator-friendly forms.",
+          "3": "Validated improvements against designs from Apple, Google, Samsung and NVIDIA on representative workloads."
+        }
+      },
+      "algolens": {
+        "title": "AlgoLens — Algorithm Visualizer",
+        "tagline": "Interactive, step-by-step visualizations for 60+ algorithms with rich controls and explanations.",
+        "category": "Developer Tooling",
+        "summary": "AlgoLens is an interactive algorithm visualizer supporting 60+ algorithms with real-time step-through, deterministic replay, FFmpeg-WASM export, GenAI explanations and rich search.",
+        "problem": "Algorithm learning resources tend to be static. Understanding behavior under different inputs, replaying state and exporting visuals for teaching are awkward at best.",
+        "challenge": "Build a fluid, accessible, GPU-friendly visualization engine that handles 60+ algorithms with a unified step model, deterministic replay, video export and AI-assisted understanding — held to product-grade quality bars.",
+        "approach": {
+          "0": "Designed a step-based execution model with deterministic replay across all algorithms.",
+          "1": "Built Canvas-based renderers with smooth, reduced-motion-aware animations.",
+          "2": "Integrated FFmpeg-WASM for in-browser video export of execution traces.",
+          "3": "Layered GenAI for natural-language explanations and complexity analysis.",
+          "4": "Implemented exact, fuzzy, phonetic and semantic search for algorithm discovery.",
+          "5": "Hardened with WCAG 2.1 AA, Sentry, Web Vitals, Playwright, Storybook, Percy and CI quality gates."
+        }
+      },
+      "postureiq": {
+        "title": "PostureIQ",
+        "tagline": "Real-time posture detection and feedback using computer vision.",
+        "category": "Product Engineering",
+        "summary": "PostureIQ is an ML-powered posture and form-coaching system built around real-time pose estimation, temporal smoothing, confidence gating and rep-quality scoring for exercise feedback.",
+        "problem": "Exercise-form feedback is usually delayed, subjective or dependent on a trainer being present. A useful assistant needs to infer pose continuously and provide clear feedback without jitter or false positives.",
+        "challenge": "Maintain real-time capture, inference and rendering while making noisy pose landmarks stable enough for actionable coaching and automated quality scoring.",
+        "approach": {
+          "0": "Built a deterministic capture-to-infer-to-render loop with OpenCV and MediaPipe/BlazePose.",
+          "1": "Added temporal smoothing, Kalman filtering, confidence gating, adaptive thresholds and 3D landmark checks to reduce noisy corrections.",
+          "2": "Implemented rep-quality scoring around ROM, tempo and symmetry with audio/visual feedback cues.",
+          "3": "Instrumented FPS, latency and error telemetry with dashboards for repeatable performance analysis.",
+          "4": "Added pytest coverage, golden traces and a CLI for reproducible validation runs."
+        }
+      },
+      "track-person-app": {
+        "title": "Track Person App",
+        "tagline": "Live person tracking with multi-camera coordination and overlays.",
+        "category": "Product Engineering",
+        "summary": "A mobile-first tracking and visualization project that stores movement events in MongoDB and renders location history for inspection.",
+        "problem": "Movement data is hard to reason about from raw coordinates alone; users need a visual trail and a clean data model for location events.",
+        "challenge": "Design a lightweight mobile interface and persistence model that can capture, store and replay movement history without turning the app into a heavyweight GIS tool.",
+        "approach": {
+          "0": "Built the mobile surface in React Native around a simple capture and replay workflow.",
+          "1": "Modeled location samples in MongoDB for flexible movement-history queries.",
+          "2": "Added visualization views for scanning movement paths and spot-checking recorded sessions."
+        }
+      },
+      "smart-brain": {
+        "title": "Smart Brain",
+        "tagline": "Face-detection web app built on Clarifai with a full-stack TypeScript backend.",
+        "category": "Full-stack",
+        "summary": "Smart Brain is a full-stack application that sends image URLs to Clarifai, receives face-detection predictions and renders bounding boxes in a React interface.",
+        "problem": "Computer-vision APIs are powerful but abstract; a useful learning project needs to make the request/response loop visible and interactive.",
+        "challenge": "Integrate a third-party ML API with a clean backend boundary while keeping the frontend responsive and easy to understand.",
+        "approach": {
+          "0": "Built an Express API layer for Clarifai requests and response normalization.",
+          "1": "Created React UI flows for image submission, prediction rendering and result feedback.",
+          "2": "Modeled the app so API integration details remain isolated from the presentation layer."
+        }
+      },
+      "tezos-premier-league": {
+        "title": "Tezos Premier League",
+        "tagline": "Decentralized fantasy football platform on Tezos with NFT-based rosters.",
+        "category": "Blockchain",
+        "summary": "A blockchain-based PvP gaming project and NFT marketplace on the Tezos network. The work was selected for a $10,000 award to support continued development.",
+        "problem": "Designing engaging on-chain gaming experiences while keeping the user experience approachable on a non-EVM ecosystem.",
+        "challenge": "Translate game mechanics into Tezos primitives and deliver a usable frontend that hides chain complexity from players.",
+        "approach": {
+          "0": "Designed product flows around bracket-style gameplay.",
+          "1": "Built a React frontend integrating with Tezos infrastructure, Taquito and SmartPy contracts.",
+          "2": "Used Pinata/IPFS for NFT metadata and added safer key-handling flows around wallet interactions.",
+          "3": "Added rate-limited RPC handling and resilient contract-call patterns for a smoother player experience.",
+          "4": "Iterated on UX based on player feedback from early access."
+        }
+      }
+    }
+  },
+  "experienceData": {
+    "cadence-design-systems": {
+      "role": "R&D Software Engineer II",
+      "location": "Noida, India",
+      "summary": "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, distributed-workload analysis and AI-assisted developer tooling.",
+      "highlights": {
+        "0": {
+          "title": "XMAI — Agentic AI Profiler",
+          "detail": "Built an AI-assisted EDA profiler using LLMs, RAG, vector embeddings, MCP and Cadence JEDAI to accelerate failure analysis and optimization workflows."
+        },
+        "1": {
+          "title": "Xcelium Logic Simulator Optimization",
+          "detail": "Engineered low-level C++ and simulator-architecture optimizations that improved overall throughput by 18–19% on large customer workloads and helped secure a strategic Samsung performance win."
+        },
+        "2": {
+          "title": "Xform Engine RTL Transformations",
+          "detail": "Implemented RTL transformations in the Xform Engine, delivering 13–14% cumulative parsing/runtime gains across designs from Apple, Google, Samsung and NVIDIA."
+        },
+        "3": {
+          "title": "Performance-Analysis Library",
+          "detail": "Built reusable C++ diagnostics APIs and a structured-log pipeline across Compile, Elab and Sim; added Top-N profiling, graph-based attribution and Fenwick counters, reducing RCA time by ~40%."
+        },
+        "4": {
+          "title": "Corporate VP / MD Recognition",
+          "detail": "Presented performance findings at Cadence India Conference and received multiple awards, Corporate VP recognition and All-Hands spotlighting for Samsung-deal performance work."
+        }
+      }
+    },
+    "game-geeks": {
+      "role": "Blockchain Engineer (Tezos Premier League)",
+      "location": "Remote",
+      "summary": "Designed and shipped Tezos Premier League — a PvP blockchain gaming product and NFT marketplace recognized with a $10,000 grant from Tezos India for continued development.",
+      "highlights": {
+        "0": {
+          "title": "Tezos Premier League — Product Lead",
+          "detail": "Owned the end-to-end product design for a bracket-style PvP gaming dApp on Tezos, translating game mechanics into on-chain primitives and approachable UX."
+        },
+        "1": {
+          "title": "$10,000 Tezos India Grant",
+          "detail": "Won a $10,000 grant from Tezos India to extend the platform after a demo evaluated for product innovation, technical quality and ecosystem fit."
+        },
+        "2": {
+          "title": "NFT Marketplace & Smart Contracts",
+          "detail": "Designed an NFT marketplace with Pinata/IPFS storage, SmartPy contracts, Taquito integrations and rate-limited RPC handling for resilient on-chain calls."
+        }
+      }
+    },
+    "omikron-technologies": {
+      "role": "Software Engineer Intern",
+      "location": "Delhi, India",
+      "summary": "Product engineering internship focused on modular single-page applications, release quality and accessibility-minded frontend delivery.",
+      "highlights": {
+        "0": {
+          "title": "Modular SPA Delivery",
+          "detail": "Built modular React/TypeScript SPAs with Redux Toolkit, RTK Query, per-PR CI, test-pyramid coverage and accessibility gates to reduce change-failure risk."
+        },
+        "1": {
+          "title": "Scalable Frontend Architecture",
+          "detail": "Established reusable component, theming and routing patterns that let multiple feature teams ship in parallel without stepping on each other."
+        }
+      }
+    },
+    "script-winter-of-code": {
+      "role": "Developer",
+      "location": "Delhi, India",
+      "summary": "Open-source contribution program focused on authentication, identity-provider workflows and secure API design.",
+      "highlights": {
+        "0": {
+          "title": "UniAuth Identity Provider",
+          "detail": "Implemented UniAuth with OAuth 2.0, OIDC, PKCE, refresh-token rotation, scoped JWTs and a written threat model across Python, TypeScript, Django, Flask and Go services."
+        },
+        "1": {
+          "title": "Polyglot Service Plumbing",
+          "detail": "Wired the identity flow across TypeScript front-end, Django/Flask Python services and a Go authorization service with consistent error and audit semantics."
+        }
+      }
+    },
+    "delta-winter-of-code": {
+      "role": "Developer",
+      "location": "Delhi, India",
+      "summary": "Open-source contribution program focused on log analytics, containerization and CI/CD automation.",
+      "highlights": {
+        "0": {
+          "title": "Dockerized Log Analytics",
+          "detail": "Dockerized a full-stack log analyzer (Django REST + Celery + Redis + Elasticsearch), added GitHub Actions CI/CD and structured cardinality-safe logs."
+        },
+        "1": {
+          "title": "CI/CD Pipeline",
+          "detail": "Built reproducible GitHub Actions workflows covering lint, tests, image build and deploy with cached layers and trace context for faster investigations."
+        }
+      }
+    },
+    "tezos-india": {
+      "role": "Fellow",
+      "location": "Delhi, India",
+      "summary": "Blockchain fellowship where a decentralized gaming product and NFT marketplace earned a $10,000 grant for continued development.",
+      "highlights": {
+        "0": {
+          "title": "PvP Gaming dApp & NFT Marketplace",
+          "detail": "Shipped a Tezos-based PvP gaming dApp with safer key handling, resilient contract calls, Pinata/IPFS storage, Taquito integrations and SmartPy contracts."
+        },
+        "1": {
+          "title": "PLAY Token Marketplace",
+          "detail": "Designed matchmaking and a PLAY-token-driven marketplace flow so players could buy, sell and use in-game assets across matches."
+        }
+      }
+    },
+    "programming-club-summer-of-code": {
+      "role": "Developer",
+      "location": "Delhi, India",
+      "summary": "Led a small engineering team building real-time collaboration software with WebRTC and browser-first product architecture.",
+      "highlights": {
+        "0": {
+          "title": "WebRTC Conferencing Platform",
+          "detail": "Led a 5-member team to deliver a video conferencing app, tuning ICE signaling and congestion behavior to cut join time and stalls by roughly 30%."
+        },
+        "1": {
+          "title": "Team Leadership",
+          "detail": "Coordinated a 5-person team across design, frontend, signaling and infra — running standups, code reviews and a release checklist for predictable shipping."
+        }
+      }
+    },
+    "trotbee-private-limited": {
+      "role": "Back End Developer Intern (Fenmo App)",
+      "location": "Delhi, India",
+      "summary": "Backend internship on the Fenmo App as part of a 2-member team — building MVC OTP services and S3-backed video APIs, with a 15% latency reduction across hot paths.",
+      "highlights": {
+        "0": {
+          "title": "Fenmo MVC OTP & Video APIs",
+          "detail": "As one of a 2-member team, built MVC-structured OTP onboarding and S3-backed video upload/playback APIs with idempotent endpoints, retries with backoff and observability hooks."
+        },
+        "1": {
+          "title": "15% Latency Reduction",
+          "detail": "Reduced end-to-end API latency by ~15% through query tuning, payload trimming and pre-warmed connections, validated with load tests."
+        }
+      }
+    },
+    "miri-infotech": {
+      "role": "Software Development Engineer Intern",
+      "location": "Noida, India",
+      "summary": "Full-stack internship building an encrypted real-time chat app with React/Redux, Sequelize/Postgres, Socket.io and Bcrypt-secured auth.",
+      "highlights": {
+        "0": {
+          "title": "Encrypted Real-Time Chat",
+          "detail": "Built a full-stack chat app with React/Redux frontend, Sequelize + PostgreSQL persistence, Socket.io real-time delivery and Bcrypt-hashed credentials."
+        },
+        "1": {
+          "title": "Context-Based Messaging",
+          "detail": "Modeled context-based message channels with latency/error SLOs, dashboards and runbooks to reduce MTTR on production incidents."
+        }
+      }
+    },
+    "dynamix-club": {
+      "role": "Head of Programming",
+      "location": "Ramjas School, Delhi",
+      "summary": "Led the programming wing of Dynamix Club — running competitive-programming sessions, mentoring juniors and representing the school at inter-school coding events.",
+      "highlights": {
+        "0": {
+          "title": "Programming Wing Leadership",
+          "detail": "Designed weekly DSA / problem-solving sessions for club members, curated a progression from basics to contest-grade topics and ran internal mock contests."
+        },
+        "1": {
+          "title": "Inter-school Competitions",
+          "detail": "Represented the school at multiple inter-school programming and tech events including Force Fest, Digilogous, BVEST and Virtual Fiesta — winning podium finishes."
+        }
+      }
+    }
+  },
+  "concepts": {
+    "ariaLabel": "Roadmap",
+    "eyebrow": "/ roadmap",
+    "heading": "What I'd build next",
+    "introPrefix": "Product concepts at the intersection of performance engineering and intelligent developer tooling.",
+    "preLaunch": "Pre-launch — repos are placeholders",
+    "introSuffix": "until the first commit lands.",
+    "placeholderRepo": "Placeholder repo — in development",
+    "target": "target",
+    "status": {
+      "design": "Design phase",
+      "prototyping": "Prototyping",
+      "inDevelopment": "In development"
+    },
+    "items": {
+      "tracemind": {
+        "name": "TraceMind",
+        "pitch": "AI-powered distributed tracing assistant for diagnosing production latency regressions.",
+        "description": "An assistant that ingests OpenTelemetry traces and metrics, builds a queryable trace knowledge graph, and uses LLM reasoning to triage latency regressions and propose hypotheses with evidence."
+      },
+      "silicongraph": {
+        "name": "SiliconGraph",
+        "pitch": "Interactive graph explorer for debugging RTL dependency chains and optimization opportunities.",
+        "description": "A WebAssembly-powered explorer that lets engineers traverse RTL dependency graphs, highlight optimization candidates and run what-if transformations directly in the browser."
+      },
+      "infralens": {
+        "name": "InfraLens",
+        "pitch": "Visual system-design playground for experimenting with queues, caches, sharding and failure scenarios.",
+        "description": "A live system-design sandbox where you compose services, queues, caches and failure modes, then watch traffic, backpressure and consistency play out in real time."
+      }
+    }
+  },
+  "workbench": {
+    "ariaLabel": "GitHub workbench",
+    "eyebrow": "/ github",
+    "heading": "Public workbench",
+    "intro": "A curated slice of public repositories spanning algorithms, full-stack apps, mobile, blockchain and competitive programming.",
+    "noDescription": "No description provided.",
+    "categories": {
+      "All": "All",
+      "AI": "AI",
+      "Systems": "Systems",
+      "Frontend": "Frontend",
+      "Mobile": "Mobile",
+      "CP": "CP",
+      "Blockchain": "Blockchain"
+    }
+  },
+  "liveFeeds": {
+    "ariaLabel": "Live activity feeds",
+    "eyebrow": "/ live feeds",
+    "heading": "Live activity",
+    "intro": "Recent posts, videos and commits — pulled live from Medium, YouTube and GitHub and cached for an hour at the edge.",
+    "medium": {
+      "label": "Latest blog posts",
+      "cta": "Read on Medium",
+      "empty": "Visit Medium for the latest articles."
+    },
+    "youtube": {
+      "label": "Latest YouTube videos",
+      "cta": "Open channel",
+      "empty": "Visit YouTube for the latest videos."
+    },
+    "github": {
+      "label": "Recent GitHub activity",
+      "cta": "github.com/blackphoenix42",
+      "empty": "Recent activity will appear here when the feed is reachable."
+    }
+  },
+  "engineeringSpectrum": {
+    "ariaLabel": "Engineering spectrum",
+    "eyebrow": "/ skills",
+    "heading": "Engineering spectrum",
+    "intro": "Capability clusters spanning low-level performance, intelligent systems, distributed backends, product engineering, infrastructure and reliability.",
+    "filterAriaLabel": "Filter skills by cluster",
+    "all": "All",
+    "toolsCount": "{count} tools",
+    "appliedIn": "Applied in",
+    "clusters": {
+      "performance": {
+        "name": "Performance Core",
+        "blurb": "Low-level engineering for simulation, profiling and runtime optimization."
+      },
+      "intelligent": {
+        "name": "Intelligent Systems",
+        "blurb": "Agentic AI, retrieval, embeddings and computer vision for engineering workflows."
+      },
+      "backend": {
+        "name": "Distributed Backend",
+        "blurb": "Service architecture, streaming, identity and storage for scalable systems."
+      },
+      "product": {
+        "name": "Product Engineering",
+        "blurb": "Polished, accessible product surfaces with rigorous quality gates."
+      },
+      "infra": {
+        "name": "Infrastructure",
+        "blurb": "Cloud, containers, observability and developer-experience plumbing."
+      },
+      "reliability-security": {
+        "name": "Reliability & Security",
+        "blurb": "Identity, hardening, API contracts and production-readiness controls."
+      }
+    }
+  },
+  "skillsExplorer": {
+    "ariaLabel": "Skills explorer",
+    "eyebrow": "/ skills",
+    "heading": "Skills explorer",
+    "intro": "Filter by category to see just the tools in that area — languages, frontend, backend, cloud, AI/ML and more.",
+    "filterAriaLabel": "Filter skills by category",
+    "emptyState": "Pick a category above to see the tools in that area.",
+    "toolsCount": "{count} tools",
+    "categories": {
+      "languages": "Programming Languages",
+      "frontend": "Frontend",
+      "backend": "Backend & APIs",
+      "data": "Databases & Storage",
+      "messaging": "Messaging & Streaming",
+      "ai": "AI / ML",
+      "cloud": "Cloud & DevOps",
+      "performance": "Performance & Systems",
+      "reliability-security": "Reliability & Security",
+      "testing": "Testing & QA",
+      "observability": "Observability",
+      "tooling": "Tooling"
+    }
+  },
+  "honorsData": {
+    "10-000-tezos-blockchain-grant": {
+      "title": "$10,000 Tezos Blockchain Grant",
+      "org": "Tezos India · Game Geeks",
+      "detail": "Awarded for expanding Tezos Premier League — a decentralized gaming application and NFT marketplace on Tezos."
+    },
+    "30-days-of-google-cloud-completion": {
+      "title": "30 Days of Google Cloud Completion",
+      "org": "Google Cloud",
+      "detail": "Completed 30 Days of Google Cloud — 11 Qwiklabs quests covering core GCP, networking, security and ML services."
+    },
+    "runner-up-virtual-fiesta-code-sword": {
+      "title": "Runner-Up — Virtual Fiesta (CODE SWORD)",
+      "org": "NSUT",
+      "detail": "Runner-up at NSUT Virtual Fiesta's CODE SWORD programming contest."
+    },
+    "runner-up-bvest-code-trek": {
+      "title": "Runner-Up — BVEST (CODE TREK)",
+      "org": "BVCOE",
+      "detail": "Runner-up at BVEST CODE TREK inter-school programming competition."
+    },
+    "second-runner-up-force-fest-pro-sort": {
+      "title": "Second Runner-Up — Force Fest (PRO SORT)",
+      "org": "Air Force Bal Bharati School",
+      "detail": "Second runner-up at Force Fest's PRO SORT inter-school coding event."
+    },
+    "second-runner-up-digilogous-sudo-solve": {
+      "title": "Second Runner-Up — Digilogous (SUDO SOLVE)",
+      "org": "Rukmini Devi Public School",
+      "detail": "Second runner-up at Digilogous SUDO SOLVE programming contest."
+    },
+    "niit-it-wizard-very-good": {
+      "title": "NIIT IT Wizard — Very Good",
+      "org": "NIIT",
+      "detail": "Recognized at the 'Very Good' tier in NIIT's IT Wizard national programme."
+    },
+    "niit-it-wizard-excellent": {
+      "title": "NIIT IT Wizard — Excellent",
+      "org": "NIIT",
+      "detail": "Recognized at the 'Excellent' tier in NIIT's IT Wizard national programme."
+    }
+  },
+  "languagesData": {
+    "english": { "name": "English", "level": "Native or bilingual" },
+    "hindi": { "name": "Hindi", "level": "Native or bilingual" },
+    "japanese": { "name": "Japanese", "level": "Elementary proficiency" },
+    "sanskrit": { "name": "Sanskrit", "level": "Limited working proficiency" }
+  },
+  "certsData": {
+    "google-cloud-30-days-completion": "Google Cloud — 30 Days Completion",
+    "gcp-participation-certificate": "GCP Participation Certificate",
+    "aws-fundamentals-coursera": "AWS Fundamentals (Coursera)",
+    "adobe-contest": "Adobe Contest",
+    "amazon-contest": "Amazon Contest",
+    "google-contest": "Google Contest",
+    "microsoft-coding-interview": "Microsoft Coding Interview",
+    "software-engineer": "Software Engineer",
+    "problem-solving-intermediate": "Problem Solving — Intermediate",
+    "rest-api-intermediate": "REST API — Intermediate",
+    "frontend-react": "Frontend (React)",
+    "sql-advanced": "SQL — Advanced",
+    "node-js-intermediate": "Node.js — Intermediate",
+    "javascript-intermediate": "JavaScript — Intermediate",
+    "golang-intermediate": "Golang — Intermediate",
+    "jp-morgan-chase-swe-virtual": "JP Morgan Chase — SWE Virtual",
+    "flipkart-d2c-participation": "Flipkart D2C Participation",
+    "freecodecamp-javascript": "freeCodeCamp — JavaScript",
+    "core-java": "Core Java",
+    "advanced-java": "Advanced Java",
+    "python": "Python",
+    "react-hooks-redux": "React Hooks + Redux",
+    "web-chat-using-react": "Web Chat using React",
+    "yaml": "YAML",
+    "seo": "SEO"
+  }
+}

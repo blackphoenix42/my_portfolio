@@ -8,24 +8,37 @@ export type FeedItem = {
   excerpt?: string;
 };
 
+const ENTITY_MAP: Record<string, string> = {
+  "&lt;": "<",
+  "&gt;": ">",
+  "&quot;": '"',
+  "&#39;": "'",
+  "&apos;": "'",
+  "&#x27;": "'",
+  "&amp;": "&",
+};
+
 function decode(s: string) {
-  return s
-    .replace(/<!\[CDATA\[(.*?)\]\]>/gs, "$1")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&#x27;/g, "'")
+  // Strip CDATA wrappers first.
+  const withoutCdata = s.replace(/<!\[CDATA\[(.*?)\]\]>/gs, "$1");
+  // Single-pass entity replacement so '&amp;' decodes last and cannot
+  // re-introduce other entity sequences via chained replacements.
+  return withoutCdata
+    .replace(/&(?:lt|gt|quot|apos|amp|#39|#x27);/g, (m) => ENTITY_MAP[m] ?? m)
     .trim();
 }
 
 function stripHtml(s: string) {
-  return decode(s)
-    .replace(/<[^>]+>/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  // Repeatedly strip angle-bracket-bounded tokens until the input is stable so
+  // that nested or overlapping sequences (e.g. "<scri<script>pt>") cannot
+  // resurface intact after a single pass.
+  let prev: string;
+  let current = decode(s);
+  do {
+    prev = current;
+    current = current.replace(/<[^>]*>?/g, "");
+  } while (current !== prev);
+  return current.replace(/[<>]/g, "").replace(/\s+/g, " ").trim();
 }
 
 function take<T>(arr: T[], n: number) {
@@ -165,12 +178,32 @@ export async function fetchGithubActivity(user: string, limit = 4): Promise<Feed
   return take(out, limit);
 }
 
-export function formatRelative(iso?: string): string {
+export function formatRelative(iso?: string, locale?: string): string {
   if (!iso) return "";
   const d = new Date(iso).getTime();
   const now = Date.now();
   const diff = Math.max(0, now - d);
   const s = Math.floor(diff / 1000);
+
+  // Locale-aware path: use Intl.RelativeTimeFormat for proper i18n + pluralization.
+  if (locale) {
+    try {
+      const rtf = new Intl.RelativeTimeFormat(locale, { numeric: "auto", style: "short" });
+      if (s < 60) return rtf.format(-s, "second");
+      const m = Math.floor(s / 60);
+      if (m < 60) return rtf.format(-m, "minute");
+      const h = Math.floor(m / 60);
+      if (h < 24) return rtf.format(-h, "hour");
+      const day = Math.floor(h / 24);
+      if (day < 30) return rtf.format(-day, "day");
+      const mo = Math.floor(day / 30);
+      if (mo < 12) return rtf.format(-mo, "month");
+      return rtf.format(-Math.floor(mo / 12), "year");
+    } catch {
+      // Fall through to default formatting on bad locale tag.
+    }
+  }
+
   if (s < 60) return `${s}s ago`;
   const m = Math.floor(s / 60);
   if (m < 60) return `${m}m ago`;

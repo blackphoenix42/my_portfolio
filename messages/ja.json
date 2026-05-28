@@ -1,0 +1,559 @@
+{
+  "common": {
+    "skipToContent": "コンテンツへスキップ",
+    "viewProjects": "プロジェクトを見る",
+    "seeExperience": "経歴を見る",
+    "download": "ダウンロード",
+    "downloadResume": "履歴書をダウンロード",
+    "resume": "履歴書",
+    "viewMore": "さらに見る",
+    "readMore": "続きを読む",
+    "viewFullExperience": "経歴を全て見る",
+    "allWork": "すべての作品",
+    "loading": "読み込み中…",
+    "error": "問題が発生しました",
+    "retry": "再試行",
+    "close": "閉じる",
+    "open": "開く",
+    "search": "検索",
+    "menu": "メニュー",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "メール",
+    "phone": "電話",
+    "location": "所在地",
+    "home": "ホーム",
+    "professional": "プロフェッショナル",
+    "openSource": "オープンソース",
+    "personal": "個人",
+    "certificate": "証明書",
+    "tags": "タグ",
+    "category": "カテゴリ",
+    "stack": "スタック",
+    "live": "ライブ",
+    "code": "コード",
+    "demo": "デモ",
+    "year": "年",
+    "present": "現在"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "About",
+    "work": "作品",
+    "skills": "スキル",
+    "experience": "経歴",
+    "craft": "クラフト",
+    "contact": "お問い合わせ",
+    "openCommandMenu": "コマンドメニューを開く",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "navigate": "ナビゲート",
+    "liveFeeds": "ライブフィード",
+    "liveFeedsLabel": "ライブフィード (Medium、YouTube、GitHub)",
+    "primary": "プライマリナビゲーション"
+  },
+  "header": {
+    "ariaLogoHome": "{name} — ホーム"
+  },
+  "footer": {
+    "builtWith": "使用技術",
+    "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",
+    "copyright": "© {year} {name}"
+  },
+  "language": {
+    "label": "言語",
+    "switch": "言語を切り替え",
+    "current": "現在の言語: {name}",
+    "names": {
+      "en": "English",
+      "hi": "हिन्दी",
+      "ja": "日本語",
+      "sa": "संस्कृतम्",
+      "zh": "中文",
+      "ru": "Русский"
+    }
+  },
+  "theme": {
+    "label": "テーマ",
+    "toggle": "テーマを切り替え",
+    "light": "ライト",
+    "dark": "ダーク",
+    "phoenix": "フェニックス"
+  },
+  "recruiter": {
+    "label": "リクルーターモード",
+    "on": "リクルーターモード オン",
+    "off": "リクルーターモード オフ",
+    "toggleLabel": "リクルーターモードを切り替え",
+    "bannerTitle": "リクルータービューが有効",
+    "bannerDescription": "採用向けの簡潔な要約を表示中。完全版を見るにはオフにしてください。",
+    "turnOff": "オフにする",
+    "exit": "リクルータービューを終了",
+    "enable": "リクルータービューを有効化",
+    "short": "リクルーター",
+    "onShort": "オン",
+    "toastTitle": "リクルーターモードがオンになりました",
+    "toastBody": "採用担当者向けの簡潔ビューを表示中。いつでもオフにできます。",
+    "dismiss": "閉じる"
+  },
+  "recruiterBanner": {
+    "modeOn": "リクルーターモード オン",
+    "summary": "{role} · {location} · 採用向けの簡潔ビュー",
+    "resume": "履歴書",
+    "linkedin": "LinkedIn",
+    "email": "メール",
+    "contact": "お問い合わせ",
+    "exitAria": "リクルータービューを終了"
+  },
+  "scroll": {
+    "toTop": "トップへ",
+    "toBottom": "最下部へ"
+  },
+  "command": {
+    "title": "コマンドメニュー",
+    "placeholder": "コマンドを入力または検索…",
+    "empty": "結果が見つかりません。",
+    "navigation": "ナビゲーション",
+    "actions": "アクション",
+    "theme": "テーマ",
+    "external": "外部",
+    "openGitHub": "GitHub を開く",
+    "openLinkedIn": "LinkedIn を開く",
+    "downloadResume": "履歴書をダウンロード",
+    "copyEmail": "メールをコピー",
+    "switchLanguage": "言語を切り替え",
+    "navigate": "移動",
+    "work": "作品",
+    "close": "閉じる",
+    "searchPlaceholder": "検索…",
+    "noResults": "結果がありません",
+    "footerHint": "ヒント",
+    "footerHintMode": "モード",
+    "footerHintKeys": "キー",
+    "items": {
+      "home": "ホーム",
+      "about": "About",
+      "workNav": "作品",
+      "skills": "スキル",
+      "experience": "経歴",
+      "cp": "競技プログラミング",
+      "roadmap": "ロードマップ",
+      "contact": "お問い合わせ"
+    }
+  },
+  "mobileActionBar": {
+    "contact": "お問い合わせ",
+    "resume": "履歴書",
+    "menu": "メニュー",
+    "downloadResume": "履歴書をダウンロード",
+    "github": "GitHub"
+  },
+  "hero": {
+    "statusLabel": "{role} @ {company}",
+    "headline": "私は <strong>パフォーマンス重視のシステム</strong>と<strong>AI 搭載の開発者ツール</strong>を設計します。",
+    "subhead": "C++ パフォーマンスエンジニアリング、分散システム、エージェント AI ワークフロー、開発者ツール — スケールで出荷し、本番で計測し、エンドツーエンドで所有。",
+    "primaryCta": "プロジェクトを見る",
+    "secondaryCta": "経歴を見る",
+    "impactStrip": {
+      "throughput": "シミュレーションスループット",
+      "rca": "RCA を高速化",
+      "leetcode": "LeetCode 世界"
+    },
+    "visualization": {
+      "panelLabel": "xmai · プロファイラ · ライブ",
+      "flow": "アーティファクト → 検索 → エージェント → rtl",
+      "throughputUp": "↑ スループット"
+    }
+  },
+  "home": {
+    "title": "ホーム",
+    "description": "パフォーマンスエンジニアリング、エージェント AI、R&D ソフトウェアエンジニアリング。"
+  },
+  "aboutSection": {
+    "eyebrow": "/ about",
+    "heading": "簡単な自己紹介",
+    "bio1": "私は <strong>{name}</strong>、スケールでパフォーマンス重視のシステムと AI 支援の開発者ツールを出荷するソフトウェアエンジニアです。{company} では、C++ とランタイムの作業が Apple、Google、Samsung、NVIDIA が運用する本番ワークロードで測定可能な成果をもたらしています。",
+    "bio2": "私は低レベルプロファイリングや分散システム設計から、洗練されたアクセシブルなプロダクト表面まで、エンドツーエンドでの所有を大切にしています。仕事以外ではオープンソースツールを出荷し、エンジニアをメンタリングし、競技プログラミングで研鑽を続けています。",
+    "principlesEyebrow": "実践するエンジニアリング原則",
+    "principles": {
+      "profile": {
+        "title": "まずプロファイル。",
+        "body": "計測なき最適化は迷信です。"
+      },
+      "gap": {
+        "title": "ギャップを縮める",
+        "body": "意図と可観測性の間を。"
+      },
+      "trust": {
+        "title": "信頼のための設計：",
+        "body": "決定的、アクセシブル、十分にテスト。"
+      },
+      "performance": {
+        "title": "パフォーマンスは",
+        "body": "ファーストクラスのプロダクト機能として扱う。"
+      }
+    },
+    "getInTouch": "お問い合わせ"
+  },
+  "about": {
+    "title": "About",
+    "description": "背景、哲学、そして取り組んでいること。",
+    "heading": "About",
+    "subheading": "システム性能と応用 AI の交差点にいるエンジニア。",
+    "beyondHeading": "コードを超えて",
+    "beyondSubheading": "技術を磨き、還元する活動。",
+    "certsHeading": "認定・トレーニング",
+    "certsSubheading": "取得した資格・プログラム・大会の抜粋。",
+    "honorsHeading": "受賞・表彰",
+    "languagesHeading": "対応言語",
+    "languagesSubheading": "話し言葉・書き言葉 — 分散チームで活用。",
+    "educationHeading": "学歴",
+    "writingTitle": "Medium での執筆",
+    "writingBody": "システム性能、AI ツール、フロントエンド技術に関する長文エッセイ。",
+    "teachingTitle": "YouTube での教育",
+    "teachingBody": "プログラミング、問題解決、エンジニアリング手法の解説。",
+    "openSourceTitle": "オープンソースメンテナー",
+    "openSourceBody": "@blackphoenix42 として可視化、AI ツール、開発者体験のオープンソースを保守・貢献。",
+    "mentorshipTitle": "メンタリング・コミュニティ",
+    "mentorshipBody": "ソフトウェアエンジニアリングと競プロで 100+ 人の学生を指導。",
+    "crowdsourceTitle": "Google Crowdsource — レベル 8",
+    "crowdsourceBody": "Google の Crowdsource プログラムでレベル 8 に到達。",
+    "nssTitle": "NSS ボランティア",
+    "nssBody": "NSUT で NSS 活動と啓発キャンペーンに参加。",
+    "clubTitle": "プログラミングクラブのリーダーシップ",
+    "clubBody": "Ramjas School の Dynamix Club プログラミング部長。",
+    "houseTitle": "ハウスキャプテン — Jupiter House",
+    "houseBody": "Ramjas School の Jupiter House キャプテン。",
+    "cpTitle": "競技プログラミング",
+    "cpBody": "CodeChef (6★)、Codeforces Master、LeetCode Knight、HackerRank 6★ で活動中。",
+    "viewProfiles": "プロフィールを見る",
+    "tag": "/ About",
+    "pageTitle": "About",
+    "beyondTag": "/ コードを超えて",
+    "beyondAriaLabel": "コードを超えた活動",
+    "beyondTitle": "コードを超えて",
+    "beyondIntro": "技術を磨き、コミュニティに還元する活動。",
+    "writingCta": "Medium を読む",
+    "teachingCta": "YouTube を見る",
+    "openSourceCta": "GitHub を見る",
+    "crowdsourceCta": "プロフィールを見る",
+    "honorsTag": "/ 受賞",
+    "honorsAriaLabel": "受賞・表彰",
+    "honorsTitle": "受賞・表彰",
+    "honorsIntro": "誇りに思う賞、奨学金、表彰。",
+    "languagesTag": "/ 言語",
+    "languagesAriaLabel": "話す言語",
+    "languagesTitle": "対応言語",
+    "certsTag": "/ 認定",
+    "certsAriaLabel": "認定・トレーニング",
+    "certsTitle": "認定・トレーニング",
+    "certsIntro": "取得した資格・プログラム・大会の抜粋。",
+    "certsFooterPrefix": "詳しくは",
+    "certsFooterMiddle": "および",
+    "certsFooterSuffix": "セクションをご覧ください。",
+    "experienceLink": "経歴",
+    "cpLink": "競技プログラミング",
+    "certCategories": {
+      "cloud": "クラウド",
+      "codechef": "CodeChef",
+      "hackerrank": "HackerRank",
+      "forage": "Forage",
+      "niit": "NIIT",
+      "udemy": "Udemy"
+    }
+  },
+  "work": {
+    "title": "作品",
+    "description": "パフォーマンスエンジニアリング、AI インフラ、開発者ツールに渡る厳選プロジェクト。",
+    "heading": "作品",
+    "subheading": "エンドツーエンドで出荷した厳選プロジェクト。",
+    "featured": "注目の作品",
+    "featuredSubheading": "パフォーマンスエンジニアリング、エージェント AI、開発者ツール、プロダクトエンジニアリングに渡る厳選プロジェクト。",
+    "allWork": "すべての作品",
+    "readMore": "続きを読む",
+    "viewCase": "ケーススタディを見る",
+    "live": "ライブ",
+    "repo": "リポジトリ",
+    "tech": "スタック",
+    "category": "カテゴリ",
+    "outcomes": "成果",
+    "highlights": "ハイライト",
+    "links": "リンク",
+    "back": "作品に戻る",
+    "tag": "/ 作品",
+    "pageTitle": "作品",
+    "pageIntro": "厳選したエンジニアリング作品の詳細 — 問題定義、技術的判断、トレードオフ、測定可能なインパクト。",
+    "featuredAria": "注目プロジェクト",
+    "featuredTag": "/ 注目",
+    "featuredHeading": "注目プロジェクト",
+    "workbenchAria": "公開ワークベンチ",
+    "demoTitle": "インタラクティブデモ",
+    "architectureTitle": "アーキテクチャ",
+    "architectureNote": "公開可能な情報に基づく概念アーキテクチャ。",
+    "problemHeading": "課題",
+    "challengeHeading": "技術的課題",
+    "overviewHeading": "概要",
+    "approachHeading": "アプローチとエンジニアリング判断",
+    "step": "ステップ",
+    "stackHeading": "スタック",
+    "lessonsHeading": "得られた教訓",
+    "lesson1": "パフォーマンス重視のシステムでは、プロファイリング先行の思考が早すぎる抽象化を上回る。",
+    "lesson2": "エージェント AI は検索と構造化ツール呼び出しに根ざすと最も役立つ。",
+    "lesson3": "信頼できる開発者ツールは、派手なデモより速く採用される。",
+    "linksHeading": "リンク",
+    "relatedHeading": "関連作品",
+    "demoSubtitle": {
+      "xmai": "シミュレートされた retrieve → embed → agent パイプラインにプロンプトを試す。",
+      "algolens": "AlgoLens 実行モデルのミニ可視化。",
+      "xcelium-optimization": "スライダーをドラッグして RTL/ランタイム最適化でプロファイルが縮むのを確認。",
+      "tezos-premier-league": "再生をクリックして決定論的なオンチェーン PvP ブラケットをシミュレート。",
+      "postureiq": "信頼度ゲート付きのライブ・シミュレートされたレップ品質。",
+      "track-person-app": "スタイル化された地図上のアニメーション経路 — 再生 / 一時停止 / リセット。",
+      "smart-brain": "異なるシーンを試す; シミュレートされた検出器が境界ボックスと信頼度を表示。"
+    }
+  },
+  "skills": {
+    "title": "スキル",
+    "description": "扱う技術・言語・ツール・プラットフォーム。",
+    "heading": "スキル",
+    "subheading": "出荷に使うもの。",
+    "categories": "カテゴリ",
+    "all": "すべて",
+    "pageTitle": "スキル · エンジニアリング兵器庫",
+    "pageDescription": "フィルタ可能なスキルエクスプローラと、パフォーマンス、知的システム、バックエンド、プロダクト、インフラに広がるケイパビリティクラスター。",
+    "tag": "/ スキル",
+    "pageHeading": "エンジニアリング兵器庫",
+    "pageIntro": "カテゴリごとに個別スキルをフィルタリングするか、下にスクロールしてケイパビリティクラスターとそれらが実プロジェクトにどう対応するかをご覧ください。"
+  },
+  "experience": {
+    "title": "経歴",
+    "description": "役割、節目、キャリアタイムライン。",
+    "heading": "キャリアタイムライン",
+    "subheading": "勤務先と成果。",
+    "eyebrow": "/ 経歴",
+    "present": "現在",
+    "certificate": "証明書",
+    "years": "{count, plural, other {# 年}}",
+    "months": "{count, plural, other {# ヶ月}}",
+    "tag": "/ 経歴",
+    "pageTitle": "経歴",
+    "internshipsEyebrow": "/ インターンシップ",
+    "internshipsTitle": "インターンシップ・フェローシップ",
+    "internshipsAria": "インターンシップ・フェローシップのタイムライン",
+    "educationHeading": "学歴",
+    "score": "スコア:"
+  },
+  "competitiveProgramming": {
+    "title": "競技プログラミング",
+    "description": "各プラットフォームのプロフィール、レーティング、問題解決。",
+    "heading": "コマンドセンター",
+    "subheading": "厳しい問題解決の年月 — パフォーマンス作業のためのシステム直感に翻訳。",
+    "eyebrow": "/ 競技プログラミング",
+    "exploreAlgolens": "AlgoLens を見る",
+    "cpRepos": "CP リポジトリ",
+    "stats": {
+      "yearsCompeting": "競技年数",
+      "problemsSolved": "解いた問題数",
+      "contestPodiums": "大会表彰",
+      "peakRating": "最高レーティング"
+    },
+    "tagline": "ハンドルとライブレーティングは各プラットフォームで独立して更新されます — タイルをクリックして確認してください。",
+    "pageTitle": "クラフト · 競技プログラミングとロードマップ",
+    "pageDescription": "CodeChef、Codeforces、LeetCode、HackerRank に渡る競技プログラミングの年月 — そして次に構築しているもののエンジニアリングロードマップ。",
+    "craftTag": "/ クラフト",
+    "pageHeading": "競技プログラミング",
+    "pageIntro": "主要プラットフォームでの持続的な問題解決 — データ構造、アルゴリズム、そしてパフォーマンスエンジニアリングで実を結ぶ規律ある思考を磨く。",
+    "roadmapAria": "エンジニアリングロードマップ",
+    "roadmapTag": "/ ロードマップ",
+    "roadmapHeading": "次に構築するもの",
+    "roadmapIntro": "アクティブに設計中のプロダクトコンセプト — 出荷したい次のシステム群。"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "パフォーマンスエンジニアリング、AI インフラ、開発者ツール、コラボレーションについてご連絡ください。",
+    "tag": "/ お問い合わせ",
+    "heading": "測定可能なものを共に作りましょう。",
+    "intro": "パフォーマンスエンジニアリング、AI インフラ、開発者ツール、EDA、バックエンド、影響力のあるソフトウェアロールについてオープンです。",
+    "form": {
+      "name": "お名前",
+      "namePlaceholder": "フルネーム",
+      "email": "メール",
+      "emailPlaceholder": "you@example.com",
+      "subject": "件名",
+      "subjectPlaceholder": "ご用件は？",
+      "message": "メッセージ",
+      "messagePlaceholder": "プロジェクトや質問について少し教えてください…",
+      "company": "会社",
+      "companyPlaceholder": "組織 (任意)",
+      "role": "あなたの役割",
+      "roles": {
+        "recruiter": "リクルーター",
+        "hiringManager": "採用マネージャー",
+        "founder": "創業者",
+        "engineer": "エンジニア",
+        "collaboration": "コラボレーション",
+        "other": "その他"
+      },
+      "submit": "メッセージを送信",
+      "submitting": "送信中…",
+      "success": "ありがとうございます！メッセージを送りました。すぐにお返事します。",
+      "errorGeneric": "問題が発生しました。再試行するか、直接メールしてください。",
+      "errorRateLimit": "この IP からのメッセージが多すぎます。後で再試行してください。",
+      "errorValidation": "ハイライトされたフィールドを修正してください。",
+      "honeypot": "このフィールドは空欄のまま",
+      "consent": "送信することにより、ご連絡を受けることに同意します。",
+      "required": "必須",
+      "invalidEmail": "有効なメールアドレスを入力してください。",
+      "tooShort": "短すぎます — もう少し詳細を追加してください。",
+      "tooLong": "長すぎます — メッセージを短くしてください。",
+      "charactersRemaining": "残り {count} 文字",
+      "successHeading": "メッセージを送信しました。",
+      "successBody": "ご連絡ありがとうございます — できるだけ早くご返事します。緊急の場合は直接メールしてください。",
+      "sendAnother": "もう一通送る",
+      "honeypotLabel": "このフィールドには入力しないでください",
+      "namePlaceholderShort": "山田 太郎",
+      "emailPlaceholderShort": "you@company.com",
+      "companyPlaceholderShort": "任意",
+      "subjectPlaceholderShort": "… のパフォーマンスエンジニアリング職",
+      "messagePlaceholderShort": "役割、プロジェクト、または話したい内容について数行。",
+      "iAmA": "私は…",
+      "roleAriaLabel": "役割",
+      "formNote": "レート制限とサーバー検証で保護されています。",
+      "networkError": "ネットワークエラー。再試行するか、直接メールしてください。",
+      "genericServerError": "問題が発生しました。直接メールでご連絡ください。"
+    }
+  },
+  "contactCta": {
+    "eyebrow": "/ お話しましょう",
+    "heading": "スケールし、性能を発揮し、考えるシステムを作りましょう。",
+    "subheading": "パフォーマンスエンジニアリング、AI インフラ、開発者ツール、EDA、バックエンド、影響力のあるソフトウェアロールについてオープンです。",
+    "cta": "会話を始める",
+    "downloadResume": "履歴書をダウンロード",
+    "linkedinHandle": "/in/ayushyadav",
+    "githubHandle": "@blackphoenix42",
+    "resumeValue": "PDF"
+  },
+  "feeds": {
+    "title": "ライブフィード",
+    "description": "Medium、YouTube、GitHub の最新投稿と活動。",
+    "heading": "ライブフィード",
+    "subheading": "Medium、YouTube、GitHub の最新情報。",
+    "medium": "Medium",
+    "youtube": "YouTube",
+    "github": "GitHub",
+    "openSource": "元の投稿を開く",
+    "noPosts": "最近の投稿はまだありません。",
+    "viewAll": "すべて表示",
+    "watchOn": "YouTube で視聴",
+    "readOn": "Medium で読む",
+    "pageTitle": "フィード · ライブアクティビティ",
+    "pageDescription": "ライブアクティビティフィード — Medium の最新投稿、YouTube の動画、最近の GitHub アクティビティを毎時更新。",
+    "tag": "/ フィード",
+    "pageHeading": "ライブアクティビティ",
+    "pageIntro": "パブリックに作業している場所からのライブシグナル — 最近の Medium 投稿、YouTube アップロード、GitHub イベント。サーバーサイドで RSS / 公開 API から取得し、エッジで 1 時間キャッシュ。"
+  },
+  "lab": {
+    "title": "ラボ",
+    "description": "コンセプトラボ、実験、進行中の作業。",
+    "heading": "ラボ",
+    "subheading": "実験、プロトタイプ、小さな研究。"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動しました。",
+    "heading": "404 — ページが見つかりません",
+    "subheading": "お探しのページは存在しないか、移動しました。",
+    "cta": "ホームへ戻る"
+  },
+  "metrics": {
+    "eyebrow": "インパクト · 検証済み",
+    "heading": "測定可能なエンジニアリング成果",
+    "context": "ケイデンス · 2022〜現在",
+    "items": {
+      "throughput": {
+        "label": "シミュレーションスループット",
+        "detail": "Xcelium Logic Simulator の大規模顧客ワークロードでの改善。"
+      },
+      "rtl": {
+        "label": "RTL 変換ランタイム",
+        "detail": "Apple、Google、Samsung、NVIDIA の設計での Xform Engine の向上。"
+      },
+      "rca": {
+        "label": "デバッグ RCA 時間",
+        "detail": "Top-N プロファイリングと構造化診断ライブラリによる削減。"
+      },
+      "tezos": {
+        "label": "Tezos アワード",
+        "detail": "Tezos 上の分散型ゲームアプリ拡張のための助成金。"
+      },
+      "algorithms": {
+        "label": "アルゴリズム",
+        "detail": "AlgoLens のインタラクティブなステップ可視化。"
+      },
+      "leetcode": {
+        "label": "LeetCode 世界",
+        "detail": "Knight 階級 · Codeforces Master · CodeChef 6 つ星 (AIR 29)。"
+      }
+    }
+  },
+  "techMarquee": {
+    "heading": "出荷に使う技術"
+  },
+  "quotes": {
+    "label": "引用",
+    "items": {
+      "abelson": "プログラムは人が読むために書かれるべきであり、機械が実行するのは付随的なものだ。",
+      "knuth": "早すぎる最適化は諸悪の根源である。",
+      "dijkstra": "信頼性のためには簡潔さが前提となる。",
+      "carmack": "集中した懸命な仕事こそが成功の本当の鍵だ。"
+    }
+  },
+  "projects": {
+    "categories": {
+      "ai-eda": "AI × EDA × 開発者ツール",
+      "systems-performance": "システムパフォーマンス",
+      "developer-tools": "開発者ツール",
+      "product": "プロダクトエンジニアリング",
+      "fullstack": "フルスタック",
+      "ml": "機械学習",
+      "blockchain": "ブロックチェーン"
+    },
+    "items": {
+      "xmai": {
+        "title": "XMAI — エージェント AI プロファイラ",
+        "tagline": "複雑なシミュレーションアーティファクトを実行可能な最適化ガイダンスに変換する AI 支援プロファイラ。",
+        "category": "AI × EDA × 開発者ツール"
+      },
+      "xcelium-optimization": {
+        "title": "Xcelium Logic Simulator — パフォーマンスエンジニアリング",
+        "tagline": "大規模実ワークロードで測定可能なスループット改善をもたらす低レベル最適化作業。",
+        "category": "システムパフォーマンス"
+      },
+      "algolens": {
+        "title": "AlgoLens — アルゴリズム可視化",
+        "tagline": "60+ のアルゴリズムのためのインタラクティブなステップ可視化。",
+        "category": "開発者ツール"
+      },
+      "postureiq": {
+        "title": "PostureIQ",
+        "tagline": "コンピュータビジョンを使用したリアルタイム姿勢検出とフィードバック。",
+        "category": "プロダクトエンジニアリング"
+      },
+      "track-person-app": {
+        "title": "Track Person App",
+        "tagline": "マルチカメラ連携とオーバーレイによるライブ人物追跡。",
+        "category": "プロダクトエンジニアリング"
+      },
+      "smart-brain": {
+        "title": "Smart Brain",
+        "tagline": "フルスタック TypeScript バックエンドを備えた Clarifai 上の顔検出 Web アプリ。",
+        "category": "フルスタック"
+      },
+      "tezos-premier-league": {
+        "title": "Tezos Premier League",
+        "tagline": "NFT ベースの選手で構成される Tezos 上の分散型ファンタジーサッカーアプリ。",
+        "category": "ブロックチェーン"
+      }
+    }
+  }
+}

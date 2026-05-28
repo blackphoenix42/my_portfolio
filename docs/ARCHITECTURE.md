@@ -45,10 +45,43 @@ docs/                 Project documentation (this folder)
 
 ## Rendering strategy
 
-- **Static (SSG)** for content pages: `/`, `/about`, `/work`, `/work/[slug]`, `/skills`,
-  `/experience`, `/competitive-programming`, `/contact`.
+- **Static (SSG)** for content pages across all 6 locales: `/`, `/about`, `/work`,
+  `/work/[slug]`, `/skills`, `/experience`, `/competitive-programming`, `/contact`,
+  `/feeds`, `/lab` — each pre-rendered per locale (`/`, `/hi`, `/ja`, `/sa`, `/zh`, `/ru`).
 - **Dynamic (edge)** for `/api/contact` and `/opengraph-image` only.
 - **Incremental revalidation**: `export const revalidate = 3600` on the home page.
+
+## Internationalization
+
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Proxy as Next.js Proxy (src/proxy.ts)
+    participant App as App Router (/[locale]/...)
+    participant Req as i18n/request.ts
+    participant FS as messages/*.json
+
+    Browser->>Proxy: GET /work
+    Proxy->>Proxy: detect locale from URL prefix → cookie → Accept-Language
+    Proxy->>App: rewrite to /{locale}/work
+    App->>Req: getRequestConfig()
+    Req->>FS: load en.json (base)
+    Req->>FS: load {locale}.json (overlay)
+    Req->>Req: deepMerge(base, overlay)
+    Req-->>App: { locale, messages }
+    App-->>Browser: SSR HTML with <html lang={locale}>
+```
+
+Key files:
+
+- `src/i18n/routing.ts` — locale list, default, `localePrefix: "as-needed"`, detection.
+- `src/i18n/navigation.ts` — locale-aware `Link`, `useRouter`, `usePathname`.
+- `src/i18n/request.ts` — message loader with deep-merge English fallback.
+- `src/proxy.ts` — next-intl middleware (renamed to `proxy` per Next 16).
+- `messages/{en,hi,ja,sa,zh,ru}.json` — translated UI strings; `en.json` is the source of truth.
+- `src/components/layout/language-switcher.tsx` — globe icon dropdown in header.
+
+See [ADR-0004](./ADR/0004-i18n-next-intl.md) for the rationale.
 
 ## Performance principles
 

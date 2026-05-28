@@ -6,10 +6,12 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRecruiterMode } from "./recruiter-mode";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const TOAST_MS = 4200;
 
 export function RecruiterToggle() {
+  const t = useTranslations("recruiter");
   const { recruiter, toggle } = useRecruiterMode();
   const [toast, setToast] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -45,7 +47,7 @@ export function RecruiterToggle() {
         type="button"
         onClick={handleClick}
         aria-pressed={recruiter}
-        title={recruiter ? "Exit recruiter mode" : "Enable recruiter mode"}
+        title={recruiter ? t("exit") : t("enable")}
         className={cn(
           "relative inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs transition-all",
           recruiter
@@ -60,15 +62,15 @@ export function RecruiterToggle() {
               <span className="bg-accent-emerald relative inline-flex h-2 w-2 rounded-full" />
             </span>
             <Check className="h-3.5 w-3.5" />
-            <span className="font-medium">Recruiter</span>
+            <span className="font-medium">{t("short")}</span>
             <span className="hidden font-mono text-[10px] tracking-widest uppercase sm:inline">
-              on
+              {t("onShort")}
             </span>
           </>
         ) : (
           <>
             <Briefcase className="h-3.5 w-3.5" />
-            <span>Recruiter</span>
+            <span>{t("short")}</span>
           </>
         )}
       </button>
@@ -92,16 +94,13 @@ export function RecruiterToggle() {
                     <Check className="h-3 w-3" />
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-accent-emerald font-semibold">Recruiter mode enabled</p>
-                    <p className="text-fg-muted mt-1 leading-relaxed">
-                      Optimized for time-pressed reviewers — résumé, impact metrics and contact
-                      bubble to the top.
-                    </p>
+                    <p className="text-accent-emerald font-semibold">{t("toastTitle")}</p>
+                    <p className="text-fg-muted mt-1 leading-relaxed">{t("toastBody")}</p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setToast(false)}
-                    aria-label="Dismiss"
+                    aria-label={t("dismiss")}
                     className="text-fg-subtle hover:bg-bg-sunken hover:text-fg flex-none rounded p-0.5 transition-colors"
                   >
                     <X className="h-3.5 w-3.5" />
