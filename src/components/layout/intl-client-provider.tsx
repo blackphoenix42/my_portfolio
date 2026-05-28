@@ -28,6 +28,12 @@ function useSilenceMissingMessage() {
       ) {
         return;
       }
+      // Drop noise originating from browser extensions (e.g. MetaMask
+      // inpage.js injecting a <script> tag triggers a React warning that
+      // has nothing to do with our app code).
+      if (args.some((a) => typeof a === "string" && a.includes("chrome-extension://"))) {
+        return;
+      }
       original.apply(console, args as Parameters<typeof console.error>);
     };
     return () => {
