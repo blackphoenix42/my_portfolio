@@ -44,6 +44,31 @@ describe("formatRelative", () => {
   it("formats years", () => {
     expect(formatRelative(new Date(Date.now() - 400 * 86_400_000).toISOString())).toMatch(/y ago/);
   });
+  it("uses Intl.RelativeTimeFormat when a locale is provided (seconds)", () => {
+    const out = formatRelative(new Date(Date.now() - 5_000).toISOString(), "en");
+    expect(typeof out).toBe("string");
+    expect(out.length).toBeGreaterThan(0);
+    expect(out).not.toMatch(/^\d+s ago$/);
+  });
+  it("localizes minutes/hours/days/months/years branches", () => {
+    const now = Date.now();
+    const cases = [
+      now - 5 * 60_000,
+      now - 3 * 3600_000,
+      now - 3 * 86_400_000,
+      now - 60 * 86_400_000,
+      now - 400 * 86_400_000,
+    ];
+    for (const t of cases) {
+      const out = formatRelative(new Date(t).toISOString(), "en");
+      expect(typeof out).toBe("string");
+      expect(out.length).toBeGreaterThan(0);
+    }
+  });
+  it("falls back to default format on invalid locale tag", () => {
+    const out = formatRelative(new Date(Date.now() - 5_000).toISOString(), "not-a-locale!");
+    expect(out).toMatch(/^\d+s ago$/);
+  });
 });
 
 describe("fetchMediumFeed", () => {
