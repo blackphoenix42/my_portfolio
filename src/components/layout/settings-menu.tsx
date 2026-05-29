@@ -17,12 +17,38 @@ import { useTheme } from "next-themes";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
+import { CountryFlag } from "@/components/contact/country-flag";
 
 const THEMES = [
   { id: "phoenix", icon: Flame },
   { id: "dark", icon: Moon },
   { id: "light", icon: Sun },
 ] as const;
+
+// Map each supported locale to the ISO-3166 country whose flag best
+// represents it. Sanskrit (`sa`) is a liturgical/classical Indian language
+// with no country of its own — India is the closest cultural anchor.
+const LOCALE_FLAGS: Record<Locale, string> = {
+  en: "GB",
+  hi: "IN",
+  ja: "JP",
+  sa: "IN",
+  zh: "CN",
+  ru: "RU",
+};
+
+function LocaleFlag({ locale, className }: { locale: Locale; className?: string }) {
+  return (
+    <span
+      className={cn(
+        "inline-flex h-3.5 w-5 shrink-0 overflow-hidden rounded-xs shadow-sm",
+        className,
+      )}
+    >
+      <CountryFlag iso={LOCALE_FLAGS[locale]} className="h-full w-full object-cover" />
+    </span>
+  );
+}
 
 /**
  * Consolidated header overflow menu. The header used to ship four discrete
@@ -122,7 +148,8 @@ export function SettingsMenu() {
               <Globe className="h-3.5 w-3.5" />
               {tSettings("language")}
             </span>
-            <span className="text-fg-subtle inline-flex items-center gap-1 text-[10px]">
+            <span className="text-fg-subtle inline-flex items-center gap-1.5 text-[10px]">
+              <LocaleFlag locale={locale} />
               {tLang("names." + locale)}
               <ChevronRight className="h-3 w-3" />
             </span>
@@ -205,7 +232,10 @@ export function SettingsMenu() {
               onClick={() => switchLocale(l)}
               className="text-fg-muted hover:bg-bg-sunken hover:text-fg flex w-full items-center justify-between gap-2 rounded px-2 py-2 text-left text-xs"
             >
-              <span>{tLang("names." + l)}</span>
+              <span className="inline-flex items-center gap-2">
+                <LocaleFlag locale={l} />
+                {tLang("names." + l)}
+              </span>
               {l === locale && <Check className="text-accent-cyan h-3.5 w-3.5" aria-hidden />}
             </button>
           ))}
