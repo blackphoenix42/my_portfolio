@@ -52,7 +52,7 @@ export function QuoteCard({
 
   return (
     <figure
-      className={`my-10 rounded-xl border ${accent} relative px-5 py-5 sm:px-7 sm:py-6`}
+      className={`my-10 rounded-xl border ${accent} relative min-h-34 px-5 py-5 sm:min-h-30 sm:px-7 sm:py-6`}
       aria-label="Programming quote"
     >
       <QuoteIcon className="text-fg-subtle/50 absolute top-3 left-3 h-4 w-4" aria-hidden />

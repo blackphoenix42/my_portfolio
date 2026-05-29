@@ -19,6 +19,10 @@
     "a11y": "cross-env NODE_OPTIONS=--disable-warning=DEP0205 playwright test tests/a11y.spec.ts --project=chromium",
     "test:e2e:build": "next build && npm run test:e2e",
     "a11y:build": "next build && npm run a11y",
+    "lhci": "lhci autorun",
+    "lhci:collect": "lhci collect",
+    "lhci:assert": "lhci assert",
+    "lhci:audit": "next build && lhci autorun",
     "adr": "node scripts/adr-new.mjs",
     "prepare": "husky"
   },
@@ -53,6 +57,7 @@
     "@commitlint/cli": "21.0.1",
     "@commitlint/config-conventional": "21.0.1",
     "@eslint/eslintrc": "3.3.5",
+    "@lhci/cli": "^0.15.0",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "4.3.0",
     "@testing-library/dom": "10.4.1",
@@ -86,5 +91,14 @@
     "next": {
       "postcss": "^8.5.15"
     }
-  }
+  },
+  "browserslist": [
+    "Chrome >= 109",
+    "Edge >= 109",
+    "Firefox >= 115",
+    "Safari >= 16.4",
+    "iOS >= 16.4",
+    "not dead",
+    "not op_mini all"
+  ]
 }

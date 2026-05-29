@@ -63,6 +63,18 @@ const nextConfig = {
           { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
         ],
       },
+      {
+        // Static assets in /public/assets/** are content-addressed by us
+        // (filenames don't change once published). One-year immutable cache
+        // means certificate previews are fetched once per browser per year.
+        source: "/assets/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      {
+        // Self-hosted fonts — same story, never rewritten in place.
+        source: "/fonts/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
     ];
   },
 };

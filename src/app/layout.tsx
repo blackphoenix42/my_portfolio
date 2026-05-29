@@ -11,17 +11,17 @@ import { routing } from "@/i18n/routing";
 // are committed to the repo so the build never reaches out to Google Fonts
 // (GDPR-safe, deterministic across CI / corporate proxies / offline boxes).
 // To refresh the files, re-download from rsms.me/inter and JetBrains/JetBrainsMono.
+//
+// We deliberately ship only the upright Inter variable axis — italics are
+// not used anywhere in the UI today, and InterVariable-Italic alone is
+// ~380 KiB on the wire. If italics are reintroduced, drop the file back
+// into /public/fonts/ and add a second `src` entry with `style: "italic"`.
 const fontSans = localFont({
   src: [
     {
       path: "../../public/fonts/InterVariable.woff2",
       weight: "100 900",
       style: "normal",
-    },
-    {
-      path: "../../public/fonts/InterVariable-Italic.woff2",
-      weight: "100 900",
-      style: "italic",
     },
   ],
   display: "swap",

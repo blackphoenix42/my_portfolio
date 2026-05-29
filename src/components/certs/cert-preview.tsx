@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { FileText, ExternalLink } from "lucide-react";
 
 export type CertPreviewProps = {
@@ -17,12 +18,81 @@ function isPdf(href: string) {
   return /\.pdf($|\?)/i.test(href);
 }
 
+// Hrefs the user has already scrolled past in this SPA session. Combined with
+// the immutable Cache-Control on /assets/** (see next.config.mjs), this means
+// the second time a card scrolls into view we mount it eagerly and the
+// browser cache satisfies the request instantly.
+const seenPreviews = new Set<string>();
+const SESSION_KEY = "cert-preview-seen-v1";
+
+function loadSessionSeen(): void {
+  if (typeof window === "undefined" || seenPreviews.size > 0) return;
+  try {
+    const raw = window.sessionStorage.getItem(SESSION_KEY);
+    if (!raw) return;
+    const parsed: unknown = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      for (const item of parsed) {
+        if (typeof item === "string") seenPreviews.add(item);
+      }
+    }
+  } catch {
+    // sessionStorage may be unavailable (private mode, CSP); best-effort.
+  }
+}
+
+function persistSessionSeen(href: string): void {
+  if (typeof window === "undefined") return;
+  seenPreviews.add(href);
+  try {
+    window.sessionStorage.setItem(SESSION_KEY, JSON.stringify([...seenPreviews]));
+  } catch {
+    // Quota or unavailable — ignore.
+  }
+}
+
 export function CertPreview({ href, label, kind, className, compact = false }: CertPreviewProps) {
   const resolved = kind ?? (isPdf(href) ? "pdf" : "image");
   const height = compact ? "h-32" : "h-44";
+  const ref = useRef<HTMLAnchorElement | null>(null);
+
+  // Defer the heavy <Image>/<object> render until the card scrolls near the
+  // viewport, so the initial paint of the about page stays cheap. Eager-mount
+  // on second visit (session cache) — the HTTP cache makes it free.
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    loadSessionSeen();
+    if (seenPreviews.has(href)) {
+      setMounted(true);
+      return;
+    }
+    const node = ref.current;
+    if (!node) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setMounted(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setMounted(true);
+            persistSessionSeen(href);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: "300px 0px", threshold: 0.01 },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, [href]);
 
   return (
     <a
+      ref={ref}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -35,7 +105,11 @@ export function CertPreview({ href, label, kind, className, compact = false }: C
       <div
         className={`relative ${height} w-full overflow-hidden bg-[radial-gradient(ellipse_at_top_left,hsl(var(--accent-amber)/0.10),transparent_60%),radial-gradient(ellipse_at_bottom_right,hsl(var(--accent-violet)/0.10),transparent_60%)]`}
       >
-        {resolved === "image" ? (
+        {!mounted ? (
+          <div className="text-fg-subtle grid h-full w-full place-items-center" aria-hidden="true">
+            <FileText className="h-6 w-6 opacity-60" />
+          </div>
+        ) : resolved === "image" ? (
           <Image
             src={href}
             alt={label}
