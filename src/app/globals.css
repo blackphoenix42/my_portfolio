@@ -16,8 +16,18 @@
     --accent-emerald: 152 76% 55%;
     --accent-amber: 38 95% 62%;
     --ring: 187 96% 60%;
-    --font-sans: "Inter", system-ui, sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    /* Font stacks — Inter / JetBrains Mono are tried first (installed locally
+       or shipped via `next/font/local` if you add the .woff2 files), then a
+       solid system stack that looks excellent on every OS without a network
+       fetch. */
+    --font-sans:
+      var(--font-sans-loaded, "Inter"), "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    --font-mono:
+      var(--font-mono-loaded, "JetBrains Mono"), "JetBrains Mono Variable", ui-monospace,
+      SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      monospace;
   }
 
   /* `.dark` is the dark palette, applied when next-themes adds `class="dark"`
@@ -84,9 +94,18 @@
   body {
     background-color: hsl(var(--bg));
     color: hsl(var(--fg));
+    font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv01", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+  }
+
+  code,
+  pre,
+  kbd,
+  samp,
+  .font-mono {
+    font-family: var(--font-mono);
   }
 
   /* Themed scrollbars — slim, accent thumb, theme-aware via CSS vars */
@@ -145,6 +164,49 @@
     background-color: hsl(var(--accent-cyan) / 0.35);
     color: hsl(var(--fg));
   }
+
+  /* Browser autofill blue background — kill it everywhere.
+     Chromium / WebKit inject a light blue background and dark text colour
+     into autofilled inputs that ignore the normal `background` property.
+     The trick is a giant inset `box-shadow` painted in the surface colour,
+     plus `-webkit-text-fill-color` to keep our foreground colour. Also
+     triggers on the second autofill ("re-select from saved values"), which
+     uses the `:autofill` standard pseudo-class. We target every input /
+     textarea / select on the site so dropdown-style autofills are covered. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  textarea:-webkit-autofill:active,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus,
+  select:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px hsl(var(--bg-elev)) inset !important;
+    -webkit-text-fill-color: hsl(var(--fg)) !important;
+    caret-color: hsl(var(--fg));
+    /* The 9999s transition keeps Chrome from re-applying the yellow tint
+       when the field is re-focused or the saved-values dropdown re-fires. */
+    transition:
+      background-color 9999s ease-out 0s,
+      color 9999s ease-out 0s;
+  }
+  /* The standard `:autofill` pseudo (Chrome 116+, Safari 16+) is what fires
+     when the user picks a previously typed value from the dropdown — the
+     `-webkit-autofill` selector alone misses this case. */
+  input:autofill,
+  textarea:autofill,
+  select:autofill {
+    box-shadow: 0 0 0 1000px hsl(var(--bg-elev)) inset !important;
+    -webkit-text-fill-color: hsl(var(--fg)) !important;
+    color: hsl(var(--fg)) !important;
+    caret-color: hsl(var(--fg));
+  }
+  /* Firefox uses a different colour for autofill (the `field` keyword), but
+     it respects normal `background-color`, so the existing input bg wins. */
 
   @media (prefers-reduced-motion: reduce) {
     *,

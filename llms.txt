@@ -1,9 +1,11 @@
 # Ayush Yadav — Portfolio
 
 > Personal portfolio for Ayush Yadav (R&D Software Engineer II, Cadence Design Systems).
-> Built with Next.js 16 App Router, React 19, TypeScript 6 strict, Tailwind CSS 4,
-> next-intl 4 (six locales at one URL), Zod 4, Resend, Vitest, Playwright. Proprietary
-> license — viewable for personal study; do not copy, fork-publish, or train ML models on.
+> Deployed at https://binaryphoenix.vercel.app. Built with Next.js 16 App Router,
+> React 19, TypeScript 6 strict, Tailwind CSS 4, next-intl 4 (six locales at one URL),
+> Zod 4, Resend (with attachments), Vitest, Playwright, plus Vercel Web Analytics +
+> Speed Insights (both cookie-less). Proprietary license — viewable for personal study;
+> do not copy, fork-publish, or train ML models on.
 
 This `llms.txt` follows the [llmstxt.org](https://llmstxt.org/) convention: a curated
 index of the most useful files for language models exploring this repository. Read the
@@ -51,7 +53,10 @@ project entry-points first, then drill into the categories below.
 - [src/app/api/contact/route.ts](src/app/api/contact/route.ts): Contact API — Zod + rate-limit + Resend.
 - [src/app/sitemap.ts](src/app/sitemap.ts): One URL per route (URLs are locale-agnostic).
 - [src/app/robots.ts](src/app/robots.ts): Robots policy.
+- [src/app/manifest.ts](src/app/manifest.ts): Web App Manifest (PWA install metadata).
 - [src/app/opengraph-image.tsx](src/app/opengraph-image.tsx): Edge OG image generator.
+- [src/app/[locale]/privacy/page.tsx](src/app/%5Blocale%5D/privacy/page.tsx): Translated privacy policy page.
+- [src/app/[locale]/not-found.tsx](src/app/%5Blocale%5D/not-found.tsx): Improved 404 with suggestions + ASCII phoenix.
 - [src/proxy.ts](src/proxy.ts): next-intl proxy (Next 16's middleware rename).
 
 ## i18n
@@ -63,12 +68,20 @@ project entry-points first, then drill into the categories below.
 
 ## Libraries
 
-- [src/lib/validation.ts](src/lib/validation.ts): Zod schemas (error codes mapped on the client).
-- [src/lib/email.ts](src/lib/email.ts): Resend integration; dev-mode soft-success.
-- [src/lib/rate-limit.ts](src/lib/rate-limit.ts): Token-bucket IP rate limiter.
+- [src/lib/validation.ts](src/lib/validation.ts): Zod 4 schemas (codes mapped to translations on the client; includes Collaborator + Other-specify + attachment limits).
+- [src/lib/email.ts](src/lib/email.ts): Resend integration with attachments + explicit `{ data, error }` surfacing (silent-error fix).
+- [src/lib/rate-limit.ts](src/lib/rate-limit.ts): Token-bucket IP rate limiter (emits `Retry-After` via the route).
 - [src/lib/feeds.ts](src/lib/feeds.ts): Medium / YouTube / GitHub feed adapters.
 - [src/lib/github.ts](src/lib/github.ts): Featured-repos fetcher with curated fallback.
 - [src/lib/utils.ts](src/lib/utils.ts): `cn`, `slugify`, accent-class maps.
+
+## UX surfaces worth knowing
+
+- [src/components/layout/settings-menu.tsx](src/components/layout/settings-menu.tsx): Consolidated header overflow (language + theme + recruiter + shortcuts).
+- [src/components/layout/keyboard-shortcuts.tsx](src/components/layout/keyboard-shortcuts.tsx): Global keymap + `?` help overlay.
+- [src/components/layout/cookie-consent.tsx](src/components/layout/cookie-consent.tsx): Soft cookie notice with privacy link.
+- [src/components/contact/attachment-field.tsx](src/components/contact/attachment-field.tsx): Drag-and-drop file picker.
+- [src/components/projects/project-demo.tsx](src/components/projects/project-demo.tsx): Lazy-loaded per-project demo wrapper.
 
 ## Optional
 

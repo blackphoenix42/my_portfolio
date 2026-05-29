@@ -46,8 +46,12 @@ test.describe("i18n", () => {
   test("language switcher lists all six languages", async ({ page }) => {
     await page.goto("/");
     await page.waitForLoadState("networkidle");
-    const trigger = page.getByRole("button", { name: /language|switch language/i }).first();
-    await trigger.click();
+    // Open the consolidated settings menu, then enter the Language submenu.
+    await page
+      .getByRole("button", { name: /site settings/i })
+      .first()
+      .click();
+    await page.getByRole("menuitem", { name: /language/i }).click();
     for (const name of ["English", "हिन्दी", "日本語", "संस्कृतम्", "中文", "Русский"]) {
       await expect(page.getByRole("menuitemradio", { name, exact: true })).toBeVisible();
     }
@@ -58,8 +62,11 @@ test.describe("i18n", () => {
     await page.waitForLoadState("networkidle");
     const originalPath = new URL(page.url()).pathname;
 
-    const trigger = page.getByRole("button", { name: /language|switch language/i }).first();
-    await trigger.click();
+    await page
+      .getByRole("button", { name: /site settings/i })
+      .first()
+      .click();
+    await page.getByRole("menuitem", { name: /language/i }).click();
     await page.getByRole("menuitemradio", { name: "हिन्दी", exact: true }).click();
 
     // URL should not change, but the page must re-render in Hindi.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cn, formatDate, accentRing, accentText, accentBg } from "@/lib/utils";
+import { cn, formatDate, accentRing, accentText, accentBg, slugify } from "@/lib/utils";
 
 describe("cn", () => {
   it("joins class names", () => {
@@ -30,5 +30,19 @@ describe("accent maps", () => {
       expect(accentText[key]).toBeDefined();
       expect(accentBg[key]).toBeDefined();
     }
+  });
+});
+
+describe("slugify", () => {
+  it("lowercases and replaces non-alphanumeric runs with single dashes", () => {
+    expect(slugify("Hello World")).toBe("hello-world");
+    expect(slugify("  spaced  out  ")).toBe("spaced-out");
+  });
+  it("normalizes en/em dashes", () => {
+    expect(slugify("foo \u2013 bar")).toBe("foo-bar");
+    expect(slugify("foo \u2014 bar")).toBe("foo-bar");
+  });
+  it("strips leading and trailing dashes", () => {
+    expect(slugify("--abc--")).toBe("abc");
   });
 });

@@ -218,6 +218,10 @@ export type EmailFieldProps = {
   error?: string;
   placeholder?: string;
   defaultValue?: string;
+  /** Optional inline hint shown below the input while it is focused. The hint
+   *  is absolutely positioned so it doesn't shift the field's height (which
+   *  would misalign with sibling fields in a grid row). */
+  hint?: React.ReactNode;
 };
 
 export function EmailField({
@@ -227,6 +231,7 @@ export function EmailField({
   error,
   placeholder = "you@example.com",
   defaultValue = "",
+  hint,
 }: EmailFieldProps) {
   const id = `f-${name}`;
   const [value, setValue] = useState(defaultValue);
@@ -254,7 +259,7 @@ export function EmailField({
   }
 
   return (
-    <div className="grid gap-1.5">
+    <div className="relative grid gap-1.5">
       <label
         htmlFor={id}
         className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase"
@@ -297,9 +302,13 @@ export function EmailField({
           required={required}
           placeholder={placeholder}
           autoComplete="email"
+          inputMode="email"
+          autoCapitalize="none"
+          autoCorrect="off"
           spellCheck={false}
           aria-invalid={error ? true : undefined}
           aria-autocomplete="inline"
+          aria-describedby={hint ? `${id}-hint` : undefined}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setFocused(true)}
@@ -328,13 +337,27 @@ export function EmailField({
               }
             }
           }}
-          className="placeholder:text-fg-subtle/60 relative z-20 w-full rounded-md border border-transparent bg-transparent py-2.5 pr-3 pl-10 text-sm outline-none focus:outline-none"
+          className="contact-input placeholder:text-fg-subtle/60 relative z-20 w-full rounded-md border border-transparent bg-transparent py-2.5 pr-3 pl-10 text-sm outline-none focus:outline-none"
         />
       </div>
       {error && (
         <p role="alert" className="text-accent-amber font-mono text-[11px]">
           {error}
         </p>
+      )}
+      {hint && (
+        // Render the hint as an absolutely-positioned tooltip so it never
+        // changes the field's box height (which would misalign with sibling
+        // fields in a `grid-cols-2` row). Only visible while focused.
+        <div
+          aria-hidden={!focused}
+          className={
+            "text-fg-subtle pointer-events-none absolute -bottom-4 left-0 truncate text-[10px] transition-opacity duration-150 " +
+            (focused ? "opacity-100" : "opacity-0")
+          }
+        >
+          <p id={`${id}-hint`}>{hint}</p>
+        </div>
       )}
     </div>
   );

@@ -16,6 +16,9 @@ agent-specific files (`.cursor/rules/`, `.github/copilot-instructions.md`,
    the same URL across all six locales (`en`, `hi`, `ja`, `sa`, `zh`, `ru`). The
    active locale comes from the `NEXT_LOCALE` cookie + `Accept-Language` header.
    Never reintroduce locale prefixes in URLs.
+4. The canonical URL is **`https://binaryphoenix.vercel.app`**. Vercel Web
+   Analytics + Speed Insights are wired in the root layout (cookie-less,
+   GDPR-exempt). The only cookie the app sets is `NEXT_LOCALE`.
 
 ## How to run things
 
@@ -38,27 +41,34 @@ mirrors the bottom half of that locally.
 
 ## Directory cheat-sheet
 
-| Path                                 | What lives there                                                                       |
-| ------------------------------------ | -------------------------------------------------------------------------------------- |
-| `src/app/layout.tsx`                 | Root layout; sets `<html lang>` and global fonts.                                      |
-| `src/app/[locale]/layout.tsx`        | Locale layout; wires next-intl provider, theme, recruiter mode, command menu.          |
-| `src/app/[locale]/**/page.tsx`       | One page per route. Every page must `await params` and call `setRequestLocale`.        |
-| `src/app/api/contact/route.ts`       | POST endpoint — Zod + rate-limit + Resend.                                             |
-| `src/app/icon.jpg`, `apple-icon.jpg` | Phoenix favicon (auto-served by Next).                                                 |
-| `src/app/opengraph-image.tsx`        | Edge-runtime OG image generator.                                                       |
-| `src/app/sitemap.ts`, `robots.ts`    | SEO surfaces.                                                                          |
-| `src/components/`                    | All UI. `layout/`, `hero/`, `projects/`, `diagrams/`, `skills/`, `contact/`, etc.      |
-| `src/content/*.ts`                   | The only source of truth for projects, experience, skills, metrics, profile.           |
-| `src/i18n/routing.ts`                | Locale list, default, prefix mode. **`localePrefix: "never"`** — do not change.        |
-| `src/i18n/navigation.ts`             | Locale-aware `Link`, `useRouter`, `redirect`. Always prefer over `next/*`.             |
-| `src/i18n/request.ts`                | next-intl message loader with English fallback.                                        |
-| `src/lib/`                           | Pure utilities: `validation` (Zod), `rate-limit`, `email` (Resend), `feeds`, `github`. |
-| `src/proxy.ts`                       | next-intl proxy (Next 16's `middleware` rename).                                       |
-| `messages/{en,hi,ja,sa,zh,ru}.json`  | Translated UI strings. `en.json` is the source of truth.                               |
-| `tests/`                             | Playwright e2e. Use `tests/i18n.spec.ts` as a template for locale tests.               |
-| `src/**/__tests__/*.test.ts(x)`      | Vitest unit/component tests. Co-located with code.                                     |
-| `docs/`, `docs/ADR/`                 | Project docs and architecture decision records.                                        |
-| `public/assets/`                     | Static images, logos, certificates, résumé PDF.                                        |
+| Path                                             | What lives there                                                                       |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| `src/app/layout.tsx`                             | Root layout; sets `<html lang>` and global fonts.                                      |
+| `src/app/[locale]/layout.tsx`                    | Locale layout; wires next-intl provider, theme, recruiter mode, command menu.          |
+| `src/app/[locale]/**/page.tsx`                   | One page per route. Every page must `await params` and call `setRequestLocale`.        |
+| `src/app/api/contact/route.ts`                   | POST endpoint — Zod + rate-limit + Resend.                                             |
+| `src/app/icon.jpg`, `apple-icon.jpg`             | Phoenix favicon (auto-served by Next).                                                 |
+| `src/app/opengraph-image.tsx`                    | Edge-runtime OG image generator.                                                       |
+| `src/app/sitemap.ts`, `robots.ts`, `manifest.ts` | SEO surfaces + PWA manifest.                                                           |
+| `src/app/[locale]/privacy/page.tsx`              | Privacy policy page (content lives in `messages/*.json`).                              |
+| `src/components/`                                | All UI. `layout/`, `hero/`, `projects/`, `diagrams/`, `skills/`, `contact/`, etc.      |
+| `src/components/layout/settings-menu.tsx`        | Consolidated header overflow (language + theme + recruiter + shortcuts).               |
+| `src/components/layout/keyboard-shortcuts.tsx`   | `?`-triggered help overlay + global keymap.                                            |
+| `src/components/layout/cookie-consent.tsx`       | Soft, informational cookie banner with privacy link.                                   |
+| `src/components/contact/attachment-field.tsx`    | Drag-and-drop file picker (5 files, 10 MB) with previews.                              |
+| `src/components/projects/demo-slugs.ts`          | Server-safe slug list — which projects have an interactive demo.                       |
+| `src/components/projects/project-demo.tsx`       | Client wrapper that lazy-loads the right demo for a given slug.                        |
+| `src/content/*.ts`                               | The only source of truth for projects, experience, skills, metrics, profile.           |
+| `src/i18n/routing.ts`                            | Locale list, default, prefix mode. **`localePrefix: "never"`** — do not change.        |
+| `src/i18n/navigation.ts`                         | Locale-aware `Link`, `useRouter`, `redirect`. Always prefer over `next/*`.             |
+| `src/i18n/request.ts`                            | next-intl message loader with English fallback.                                        |
+| `src/lib/`                                       | Pure utilities: `validation` (Zod), `rate-limit`, `email` (Resend), `feeds`, `github`. |
+| `src/proxy.ts`                                   | next-intl proxy (Next 16's `middleware` rename).                                       |
+| `messages/{en,hi,ja,sa,zh,ru}.json`              | Translated UI strings. `en.json` is the source of truth.                               |
+| `tests/`                                         | Playwright e2e. Use `tests/i18n.spec.ts` as a template for locale tests.               |
+| `src/**/__tests__/*.test.ts(x)`                  | Vitest unit/component tests. Co-located with code.                                     |
+| `docs/`, `docs/ADR/`                             | Project docs and architecture decision records.                                        |
+| `public/assets/`                                 | Static images, logos, certificates, résumé PDF.                                        |
 
 ## Hard rules
 
@@ -82,6 +92,14 @@ mirrors the bottom half of that locally.
 9. **Coverage gate** (`vitest.config.ts`): `lines >= 90`, `statements >= 90`,
    `functions >= 90`, `branches >= 80` for `src/lib/**` and `email-field.tsx`.
 10. **No new env vars** without an entry in `.env.example` and the README env table.
+11. **No analytics scripts** beyond the existing Vercel Analytics + Speed Insights
+    components in `src/app/layout.tsx`. Both are cookie-less. Adding GA / Plausible /
+    PostHog / Hotjar is a product decision — don't.
+12. **No new cookies.** The site sets exactly one (`NEXT_LOCALE`). Adding a new
+    cookie means the soft consent banner becomes a hard GDPR consent gate.
+13. **Lazy-load anything heavy.** Project demos go through `project-demo.tsx`'s
+    `next/dynamic` wrapper. Use the same pattern for any new framer-motion / canvas /
+    WASM widget.
 
 ## Patterns the codebase prefers
 

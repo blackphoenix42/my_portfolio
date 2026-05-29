@@ -22,7 +22,12 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "html", "json-summary"],
-      include: ["src/lib/**/*.ts", "src/components/contact/email-field.tsx"],
+      include: [
+        "src/lib/**/*.ts",
+        "src/components/contact/email-field.tsx",
+        "src/components/contact/phone-field.tsx",
+        "src/components/contact/attachment-field.tsx",
+      ],
       exclude: ["**/*.test.{ts,tsx}", "**/__tests__/**", "**/*.d.ts"],
       thresholds: {
         lines: 90,

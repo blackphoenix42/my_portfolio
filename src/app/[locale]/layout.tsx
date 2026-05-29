@@ -10,6 +10,8 @@ import { RecruiterModeProvider } from "@/components/layout/recruiter-mode";
 import { RecruiterBanner } from "@/components/layout/recruiter-banner";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { ScrollFab } from "@/components/layout/scroll-fab";
+import { KeyboardShortcuts } from "@/components/layout/keyboard-shortcuts";
+import { CookieConsent } from "@/components/layout/cookie-consent";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/content/profile";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -74,8 +76,10 @@ export default async function LocaleLayout({
           </main>
           <SiteFooter />
           <CommandMenu />
+          <KeyboardShortcuts />
           <MobileActionBar />
           <ScrollFab />
+          <CookieConsent />
         </RecruiterModeProvider>
       </ThemeProvider>
       <script

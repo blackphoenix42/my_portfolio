@@ -1,5 +1,12 @@
 import { ImageResponse } from "next/og";
 
+// Stays on the Edge runtime because Satori (the renderer behind
+// `ImageResponse`) enforces a much stricter CSS subset on the Node runtime
+// — every multi-child `<div>` would need `display: "flex"`. The Edge
+// runtime is the documented home for `next/og` and Vercel still caches the
+// rendered image at the CDN. The "Using edge runtime…" build message is
+// informational: it just notes that this single route can't be statically
+// generated, which is the correct trade-off for a dynamic image.
 export const runtime = "edge";
 export const alt = "Ayush Yadav — Performance Engineering × Agentic AI";
 export const size = { width: 1200, height: 630 };

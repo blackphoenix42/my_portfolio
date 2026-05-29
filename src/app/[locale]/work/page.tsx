@@ -79,7 +79,7 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
             const tagline = tr(p.slug, "tagline", p.tagline);
             const category = tr(p.slug, "category", p.category);
             return (
-              <article key={p.slug} className="card card-hover group overflow-hidden">
+              <article key={p.slug} className="card card-hover group relative overflow-hidden">
                 <div className="border-border bg-bg-sunken/60 relative h-44 overflow-hidden border-b">
                   {Thumb ? (
                     <Thumb />
@@ -93,7 +93,21 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    {/* Stretched link — the inner `<Link>` paints an invisible
+                        pseudo-element across the whole card via `after:absolute
+                        after:inset-0` so any click on the card navigates to
+                        the case study. Inner interactive children stay
+                        clickable because they sit above it (`relative z-10`
+                        or by virtue of being focusable buttons). */}
+                    <Link
+                      href={`/work/${p.slug}`}
+                      className="group-hover:text-accent-cyan transition-colors after:absolute after:inset-0 focus-visible:outline-none"
+                      aria-label={t("readMore") + ": " + title}
+                    >
+                      {title}
+                    </Link>
+                  </h3>
                   <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{tagline}</p>
                   <ul className="mt-4 flex flex-wrap gap-1.5">
                     {p.tags.slice(0, 6).map((tag) => (
@@ -103,12 +117,9 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
                     ))}
                   </ul>
                   <div className="mt-5 flex items-center justify-between">
-                    <Link
-                      href={`/work/${p.slug}`}
-                      className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors"
-                    >
+                    <span className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors">
                       {t("readMore")} <ArrowUpRight className="h-3.5 w-3.5" />
-                    </Link>
+                    </span>
                     {p.status === "professional" && (
                       <span className="chip text-accent-amber">{tCommon("professional")}</span>
                     )}

@@ -6,9 +6,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { SettingsMenu } from "@/components/layout/settings-menu";
 import { RecruiterToggle } from "@/components/layout/recruiter-toggle";
-import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { SITE } from "@/content/profile";
 import { Link, usePathname } from "@/i18n/navigation";
 
@@ -128,13 +127,12 @@ export function SiteHeader() {
             href="/feeds"
             aria-label={t("liveFeedsLabel")}
             title={t("liveFeeds")}
-            className="border-border bg-bg-elev/40 text-fg-muted hover:border-accent-amber/40 hover:text-accent-amber inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
+            className="border-border bg-bg-elev/40 text-fg-muted hover:border-accent-amber/40 hover:text-accent-amber hidden h-9 w-9 items-center justify-center rounded-md border transition-colors sm:inline-flex"
           >
             <Rss className="h-4 w-4" />
           </Link>
-          <LanguageSwitcher />
           <RecruiterToggle />
-          <ThemeToggle />
+          <SettingsMenu />
           <a href={SITE.resumePath} download className="btn-primary hidden text-xs sm:inline-flex">
             {tCommon("resume")}
           </a>

@@ -1,21 +1,110 @@
 import { getTranslations } from "next-intl/server";
+import {
+  ArrowLeft,
+  Briefcase,
+  Code2,
+  Cpu,
+  Layers,
+  Mail,
+  Search,
+  Sparkles,
+  User,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { NotFoundActions } from "@/components/layout/not-found-actions";
+
+const SUGGESTIONS = [
+  { href: "/", icon: Sparkles, key: "home" },
+  { href: "/work", icon: Layers, key: "work" },
+  { href: "/skills", icon: Cpu, key: "skills" },
+  { href: "/experience", icon: Briefcase, key: "experience" },
+  { href: "/about", icon: User, key: "about" },
+  { href: "/competitive-programming", icon: Code2, key: "cp" },
+  { href: "/contact", icon: Mail, key: "contact" },
+] as const;
 
 export default async function NotFound() {
   const t = await getTranslations("notFound");
   const tNav = await getTranslations("nav");
+  const tCommand = await getTranslations("command");
+
   return (
-    <div className="container-tight flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
-      <p className="mono-label">/ 404</p>
-      <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{t("title")}</h1>
-      <p className="text-fg-muted mt-3 max-w-md">{t("subheading")}</p>
-      <div className="mt-6 flex gap-2">
-        <Link href="/" className="btn-primary">
-          {tNav("home")}
-        </Link>
-        <Link href="/work" className="btn-secondary">
-          {tNav("work")}
-        </Link>
+    <div className="container-tight relative grid min-h-[80vh] place-items-center py-20">
+      {/* Decorative ambient glows */}
+      <div
+        aria-hidden
+        className="bg-accent-cyan/10 pointer-events-none absolute top-1/4 left-1/2 -z-10 h-72 w-96 -translate-x-1/2 rounded-full blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="bg-accent-violet/10 pointer-events-none absolute -z-10 h-64 w-80 translate-x-1/3 translate-y-1/4 rounded-full blur-3xl"
+      />
+
+      <div className="grid w-full gap-10 lg:grid-cols-[1fr,360px] lg:items-center">
+        <header className="max-w-xl">
+          <p className="mono-label">{t("tag")}</p>
+          <h1 className="text-display-2 mt-3 font-semibold tracking-tight">
+            <span className="text-accent-cyan inline-block animate-pulse font-mono">404</span>{" "}
+            {t("heading")}
+          </h1>
+          <p className="text-fg-muted mt-4 text-lg">{t("subheading")}</p>
+
+          <NotFoundActions
+            backLabel={t("back")}
+            searchLabel={t("search")}
+            homeLabel={tNav("home")}
+          />
+
+          <p className="text-fg-subtle mt-6 font-mono text-[11px]">
+            <span className="text-accent-emerald">tip</span> ·{" "}
+            <kbd className="border-border bg-bg-sunken rounded border px-1.5 py-0.5">⌘</kbd>{" "}
+            <kbd className="border-border bg-bg-sunken rounded border px-1.5 py-0.5">K</kbd>{" "}
+            {t("kbdHint")}
+          </p>
+
+          <pre
+            aria-label={t("asciiLabel")}
+            className="text-accent-amber/70 mt-10 font-mono text-[9px] leading-tight select-none sm:text-[10px]"
+          >
+            {`        .';:cc;,.
+     'okOOO0KXXNNK00ko;.
+   ;0WMMMMMMMMMMMMMMMWN0o.
+  cNMMMMMMMMMMMMMMMMMMMMM0,
+ .KMMMMMMMMMMMMMMMMMMMMMMMK
+  XMMMMMMMMMMMMMMMMMMMMMMW;
+   ;0WMMMMMMMMMMMMMMMMWXk;
+     ,cdkO0KKKKK0Okdc'
+          ........`}
+          </pre>
+        </header>
+
+        <aside>
+          <p className="mono-label inline-flex items-center gap-2">
+            <Search className="h-3 w-3" />
+            {t("suggestionsLabel")}
+          </p>
+          <ul className="mt-3 grid gap-2">
+            {SUGGESTIONS.map((s) => {
+              const Icon = s.icon;
+              return (
+                <li key={s.href}>
+                  <Link
+                    href={s.href}
+                    className="card card-hover group flex items-center gap-3 p-3 text-sm"
+                  >
+                    <span className="border-border bg-bg-sunken text-fg-muted grid h-8 w-8 place-items-center rounded-md border">
+                      <Icon className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-fg group-hover:text-accent-cyan flex-1">
+                      {tCommand(`items.${s.key === "work" ? "workNav" : s.key}` as never)}
+                    </span>
+                    <ArrowLeft className="text-fg-subtle h-3.5 w-3.5 rotate-180" />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </aside>
       </div>
     </div>
   );

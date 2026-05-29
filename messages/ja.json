@@ -379,6 +379,11 @@
       "namePlaceholder": "フルネーム",
       "email": "メール",
       "emailPlaceholder": "you@example.com",
+      "phone": "電話",
+      "phonePlaceholder": "90 1234 5678",
+      "phoneCountry": "国番号",
+      "phoneSearch": "国を検索…",
+      "phoneNoResults": "一致なし",
       "subject": "件名",
       "subjectPlaceholder": "ご用件は？",
       "message": "メッセージ",
@@ -464,6 +469,70 @@
     "heading": "404 — ページが見つかりません",
     "subheading": "お探しのページは存在しないか、移動しました。",
     "cta": "ホームへ戻る"
+  },
+  "privacy": {
+    "title": "プライバシー",
+    "description": "このサイトが収集するもの、しないもの、メンテナへの連絡方法。",
+    "tag": "/ プライバシー",
+    "heading": "プライバシーポリシー",
+    "lastUpdated": "最終更新: {date}",
+    "intro": "<strong>{site}</strong> は個人ポートフォリオです。プライバシーに関する方針は意図的に最小限です。",
+    "sections": {
+      "collect": {
+        "title": "収集する情報",
+        "logsTitle": "サーバーログ",
+        "logsBody": "ホスティングプラットフォーム (Vercel) は標準的なリクエストログ — IPアドレス、リクエストパス、ユーザーエージェント、応答コード、タイムスタンプ — を運用および不正防止のために記録します。ホストにより短期間保持され、他のデータセットと結合されることはありません。",
+        "contactTitle": "お問い合わせフォーム",
+        "contactBody": "お問い合わせフォーム (<code>/contact</code>) を送信すると、次のフィールドが Resend 経由でメンテナにメール送信されます: 名前、メール、任意の会社名、役割、件名、本文、および添付ファイル。IP はレート制限の適用のために一時的に使用され、保存されません。",
+        "cookiesTitle": "Cookie",
+        "cookiesBody": "Cookie は <code>NEXT_LOCALE</code> の1つだけが設定され、選択した言語を記憶します。分析 Cookie、トラッキングピクセル、第三者広告は一切ありません。",
+        "analyticsTitle": "分析",
+        "analyticsBody": "<strong>Vercel Web Analytics</strong> と <strong>Vercel Speed Insights</strong> が有効です。両者とも Cookie レスで GDPR 対象外: 集計ページビューと Core Web Vitals を毎日再計算される短寿命ハッシュで記録し、個人と紐付けることはありません。"
+      },
+      "donot": {
+        "title": "行わないこと",
+        "items": {
+          "sell": "お客様のデータを販売・共有しません。",
+          "ads": "第三者広告やリマーケティング用ピクセルを読み込みません。",
+          "fingerprint": "フィンガープリンティングやプロファイリング、長期的な識別は行いません。",
+          "fonts": "リモートフォントを埋め込みません (<code>next/font</code> による自前ホスト)。"
+        }
+      },
+      "thirdParty": {
+        "title": "利用中の第三者サービス",
+        "headers": { "service": "サービス", "purpose": "目的", "data": "共有データ" },
+        "rows": {
+          "vercel": {
+            "service": "Vercel",
+            "purpose": "ホスティング + エッジ関数",
+            "data": "リクエストログ"
+          },
+          "resend": {
+            "service": "Resend",
+            "purpose": "お問い合わせメールの送信",
+            "data": "フォーム送信内容 + 添付ファイル"
+          },
+          "vercelAnalytics": {
+            "service": "Vercel Web Analytics + Speed Insights",
+            "purpose": "ページビュー集計、Core Web Vitals",
+            "data": "匿名・Cookieレスの集計のみ"
+          },
+          "github": {
+            "service": "GitHub / LinkedIn 外部リンク",
+            "purpose": "外部プロフィールページ",
+            "data": "クリック時の標準的なブラウザリクエスト"
+          }
+        }
+      },
+      "rights": {
+        "title": "あなたの権利",
+        "body": "お問い合わせフォームから送信したメッセージの削除は、確認メールへの返信またはメンテナへの直接連絡でリクエストできます。"
+      },
+      "contact": {
+        "title": "お問い合わせ",
+        "body": "プライバシーに関するご質問は <link>お問い合わせフォーム</link> またはそこに記載のメールアドレスまで。"
+      }
+    }
   },
   "metrics": {
     "eyebrow": "インパクト · 検証済み",

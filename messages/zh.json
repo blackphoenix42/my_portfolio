@@ -379,6 +379,11 @@
       "namePlaceholder": "您的全名",
       "email": "电子邮件",
       "emailPlaceholder": "you@example.com",
+      "phone": "电话",
+      "phonePlaceholder": "138 0013 8000",
+      "phoneCountry": "国家代码",
+      "phoneSearch": "搜索国家…",
+      "phoneNoResults": "无匹配项",
       "subject": "主题",
       "subjectPlaceholder": "关于什么？",
       "message": "消息",
@@ -464,6 +469,66 @@
     "heading": "404 — 页面未找到",
     "subheading": "您要查找的页面不存在或已移动。",
     "cta": "返回首页"
+  },
+  "privacy": {
+    "title": "隐私",
+    "description": "本站收集什么、不收集什么，以及如何联系维护者。",
+    "tag": "/ 隐私",
+    "heading": "隐私政策",
+    "lastUpdated": "最后更新: {date}",
+    "intro": "<strong>{site}</strong> 是一个个人作品集网站。隐私策略刻意保持最小化。",
+    "sections": {
+      "collect": {
+        "title": "我们收集什么",
+        "logsTitle": "服务器日志",
+        "logsBody": "托管平台 (Vercel) 出于运营和反滥用目的记录标准请求日志 — IP 地址、请求路径、用户代理、响应代码、时间戳。由主机短期保留；不与其他任何数据集关联。",
+        "contactTitle": "联系表单",
+        "contactBody": "当您提交联系表单 (<code>/contact</code>) 时，以下字段会通过 Resend 邮件发送给维护者：姓名、邮箱、可选公司、角色、主题、消息和您选择附加的任何附件。您的 IP 仅用于临时执行速率限制，不予存储。",
+        "cookiesTitle": "Cookie",
+        "cookiesBody": "仅设置一个 Cookie：<code>NEXT_LOCALE</code>，用于记住您选择的语言。没有分析 Cookie，没有跟踪像素，没有第三方广告。",
+        "analyticsTitle": "分析",
+        "analyticsBody": "已启用 <strong>Vercel Web Analytics</strong> 和 <strong>Vercel Speed Insights</strong>。两者均无 Cookie 且符合 GDPR 豁免：使用每天重新计算的短期哈希记录聚合页面浏览和 Core Web Vitals，从不与个人关联。"
+      },
+      "donot": {
+        "title": "我们不做什么",
+        "items": {
+          "sell": "我们不出售或共享您的数据。",
+          "ads": "我们不加载第三方广告或再营销像素。",
+          "fingerprint": "我们不进行指纹识别、画像或构建您的长期身份。",
+          "fonts": "我们不嵌入远程字体 (通过 <code>next/font</code> 自托管)。"
+        }
+      },
+      "thirdParty": {
+        "title": "在用的第三方服务",
+        "headers": { "service": "服务", "purpose": "用途", "data": "共享数据" },
+        "rows": {
+          "vercel": { "service": "Vercel", "purpose": "托管 + 边缘函数", "data": "请求日志" },
+          "resend": {
+            "service": "Resend",
+            "purpose": "发送联系邮件",
+            "data": "您的表单提交 + 附件"
+          },
+          "vercelAnalytics": {
+            "service": "Vercel Web Analytics + Speed Insights",
+            "purpose": "聚合页面浏览，Core Web Vitals",
+            "data": "仅匿名、无 Cookie 的聚合数据"
+          },
+          "github": {
+            "service": "GitHub / LinkedIn 外部链接",
+            "purpose": "外部个人资料页面",
+            "data": "您点击时的标准浏览器请求"
+          }
+        }
+      },
+      "rights": {
+        "title": "您的权利",
+        "body": "您可以通过回复确认邮件或直接联系维护者，请求删除您通过联系表单发送的任何消息。"
+      },
+      "contact": {
+        "title": "联系",
+        "body": "有隐私问题？请使用 <link>联系表单</link> 或发送邮件至其中列出的地址。"
+      }
+    }
   },
   "metrics": {
     "eyebrow": "影响 · 已验证",

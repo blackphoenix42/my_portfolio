@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/feeds",
     "/about",
     "/contact",
+    "/privacy",
   ];
 
   const staticUrls = routes.map((path) => ({

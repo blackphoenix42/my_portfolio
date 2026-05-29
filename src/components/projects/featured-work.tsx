@@ -66,6 +66,7 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
           {items.map((p, i) => {
             const Icon = Icons[p.slug] ?? Cpu;
             const Thumb = Thumbs[p.slug];
+            const title = tr(p.slug, "title", p.title);
             return (
               <motion.article
                 key={p.slug}
@@ -73,7 +74,7 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}
-                className="card card-hover group overflow-hidden"
+                className="card card-hover group relative overflow-hidden"
               >
                 <div className="border-border bg-bg-sunken/60 relative h-44 overflow-hidden border-b">
                   {Thumb ? (
@@ -91,7 +92,18 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-semibold tracking-tight">
-                    {tr(p.slug, "title", p.title)}
+                    {/* The link covers the whole card via the `::before`
+                        pseudo-element (`after:absolute after:inset-0`), so
+                        every safe-area click takes you to the case study,
+                        but the inner `chip` list and the "Read more" affordance
+                        remain individually focusable. */}
+                    <Link
+                      href={`/work/${p.slug}`}
+                      className="group-hover:text-accent-cyan transition-colors after:absolute after:inset-0 focus-visible:outline-none"
+                      aria-label={t("readMore") + ": " + title}
+                    >
+                      {title}
+                    </Link>
                   </h3>
                   <p className="text-fg-muted mt-2 line-clamp-3 text-sm">
                     {tr(p.slug, "tagline", p.tagline)}
@@ -104,12 +116,9 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
                     ))}
                   </ul>
                   <div className="mt-5 flex items-center justify-between">
-                    <Link
-                      href={`/work/${p.slug}`}
-                      className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors"
-                    >
+                    <span className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors">
                       {t("readMore")} <ArrowUpRight className="h-3.5 w-3.5" />
-                    </Link>
+                    </span>
                     {p.status === "professional" && (
                       <span className="chip text-accent-amber">{tCommon("professional")}</span>
                     )}

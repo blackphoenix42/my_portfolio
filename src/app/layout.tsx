@@ -1,20 +1,51 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE } from "@/content/profile";
 import { routing } from "@/i18n/routing";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
+// Self-hosted via `next/font/local` from `public/fonts/`. The .woff2 files
+// are committed to the repo so the build never reaches out to Google Fonts
+// (GDPR-safe, deterministic across CI / corporate proxies / offline boxes).
+// To refresh the files, re-download from rsms.me/inter and JetBrains/JetBrainsMono.
+const fontSans = localFont({
+  src: [
+    {
+      path: "../../public/fonts/InterVariable.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/InterVariable-Italic.woff2",
+      weight: "100 900",
+      style: "italic",
+    },
+  ],
   display: "swap",
+  variable: "--font-sans-loaded",
+  preload: true,
+  fallback: ["system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
 });
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+const fontMono = localFont({
+  src: [
+    {
+      path: "../../public/fonts/JetBrainsMono-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/JetBrainsMono-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+  ],
   display: "swap",
+  variable: "--font-mono-loaded",
+  preload: false,
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
 });
 
 export const viewport: Viewport = {
@@ -65,11 +96,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html
       lang={locale}
       data-scroll-behavior="smooth"
+      className={`${fontSans.variable} ${fontMono.variable}`}
       suppressHydrationWarning
-      className={`${inter.variable} ${jetbrains.variable}`}
     >
+      <head>
+        {/* Pre-connect to image CDNs we hit on /work (GitHub avatars + logo
+            fallbacks). Saves ~150ms on the first repo card paint. */}
+        <link rel="preconnect" href="https://avatars.githubusercontent.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://avatars.githubusercontent.com" />
+        <link rel="dns-prefetch" href="https://logo.clearbit.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+      </head>
       <body className="bg-bg text-fg min-h-dvh antialiased" suppressHydrationWarning>
         {children}
+        {/* Vercel Analytics: cookie-less, GDPR-exempt page-view + custom-event tracking. */}
+        <Analytics />
+        {/* Vercel Speed Insights: real-user Web Vitals (LCP, CLS, INP, TTFB, FCP). */}
+        <SpeedInsights />
       </body>
     </html>
   );

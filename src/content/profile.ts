@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Engineering intelligence into performance-critical systems.",
   description:
     "Ayush Yadav — R&D Software Engineer at Cadence. C++ performance, distributed systems, agentic AI and developer tooling. Production wins on Apple, Google, Samsung and NVIDIA workloads.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ayushyadav.dev",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://binaryphoenix.vercel.app",
   email: "aayush.sang@gmail.com",
   github: "https://github.com/blackphoenix42",
   linkedin: "https://linkedin.com/in/ayushyadav",

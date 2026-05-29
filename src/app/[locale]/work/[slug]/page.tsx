@@ -4,25 +4,11 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getProject, projects } from "@/content/projects";
+import { SITE } from "@/content/profile";
 import { XmaiArchitecture } from "@/components/diagrams/xmai-architecture";
-import { AlgoLensDemo } from "@/components/projects/algolens-demo";
-import { XceliumDemo } from "@/components/projects/xcelium-demo";
-import { TezosBracketDemo } from "@/components/projects/tezos-bracket-demo";
-import { PostureDemo } from "@/components/projects/posture-demo";
-import { XmaiPipelineDemo } from "@/components/projects/xmai-demo";
-import { TrackPersonDemo } from "@/components/projects/track-person-demo";
-import { SmartBrainDemo } from "@/components/projects/smart-brain-demo";
 import { SkillChip } from "@/components/logos/skill-chip";
-
-const DEMO_RENDERERS: Record<string, () => React.ReactElement> = {
-  xmai: () => <XmaiPipelineDemo />,
-  algolens: () => <AlgoLensDemo />,
-  "xcelium-optimization": () => <XceliumDemo />,
-  "tezos-premier-league": () => <TezosBracketDemo />,
-  postureiq: () => <PostureDemo />,
-  "track-person-app": () => <TrackPersonDemo />,
-  "smart-brain": () => <SmartBrainDemo />,
-};
+import { ProjectDemo } from "@/components/projects/project-demo";
+import { hasDemo } from "@/components/projects/demo-slugs";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -43,10 +29,25 @@ export async function generateMetadata({
   const taglineKey = `items.${slug}.tagline` as const;
   if (tProjects.has(titleKey)) title = tProjects(titleKey);
   if (tProjects.has(taglineKey)) description = tProjects(taglineKey);
+  const canonical = `${SITE.url.replace(/\/$/, "")}/work/${slug}`;
   return {
     title,
     description,
-    openGraph: { title, description },
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: canonical,
+      siteName: SITE.name,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/opengraph-image"],
+    },
   };
 }
 
@@ -82,8 +83,40 @@ export default async function ProjectPage({
   const challenge = tr("challenge", project.challenge);
   const summary = tr("summary", project.summary);
 
+  const base = SITE.url.replace(/\/$/, "");
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: SITE.name, item: base },
+      { "@type": "ListItem", position: 2, name: t("pageTitle"), item: `${base}/work` },
+      { "@type": "ListItem", position: 3, name: title, item: `${base}/work/${slug}` },
+    ],
+  };
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: title,
+    headline: title,
+    abstract: tagline,
+    description: summary,
+    keywords: project.tags.join(", "),
+    creator: { "@type": "Person", name: SITE.name, url: SITE.url },
+    url: `${base}/work/${slug}`,
+    inLanguage: locale,
+    about: project.stack,
+  };
+
   return (
     <article className="container-tight py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       <Link
         href="/work"
         className="text-fg-muted hover:text-fg inline-flex items-center gap-1 text-sm"
@@ -125,13 +158,15 @@ export default async function ProjectPage({
         </section>
       )}
 
-      {DEMO_RENDERERS[project.slug] && (
+      {hasDemo(project.slug) && (
         <section className="mt-12">
           <h2 className="section-title">{t("demoTitle")}</h2>
           {demoSubtitle(project.slug) && (
             <p className="text-fg-muted mt-2 text-sm">{demoSubtitle(project.slug)}</p>
           )}
-          <div className="mt-6">{DEMO_RENDERERS[project.slug]!()}</div>
+          <div className="mt-6">
+            <ProjectDemo slug={project.slug} />
+          </div>
         </section>
       )}
 

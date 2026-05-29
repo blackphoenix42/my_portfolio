@@ -8,6 +8,7 @@
     "resume": "Résumé",
     "viewMore": "View more",
     "readMore": "Read more",
+    "back": "Back",
     "viewFullExperience": "View full experience",
     "allWork": "All work",
     "loading": "Loading…",
@@ -34,7 +35,8 @@
     "code": "Code",
     "demo": "Demo",
     "year": "Year",
-    "present": "Present"
+    "present": "Present",
+    "privacy": "Privacy"
   },
   "nav": {
     "home": "Home",
@@ -59,7 +61,8 @@
     "builtWith": "Built with",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",
     "copyright": "© {year} {name}",
-    "tagline": "Engineering intelligence into performance-critical systems."
+    "tagline": "Engineering intelligence into performance-critical systems.",
+    "stackAriaLabel": "Technologies this site is built with"
   },
   "language": {
     "label": "Language",
@@ -100,6 +103,52 @@
   "scroll": {
     "toTop": "Scroll to top",
     "toBottom": "Scroll to bottom"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "subtitle": "Press <kbd>?</kbd> any time to reopen this list.",
+    "openLabel": "Open keyboard shortcuts (press ?)",
+    "close": "Close",
+    "groups": {
+      "global": "Global",
+      "navigation": "Navigation",
+      "actions": "Actions",
+      "menus": "Menus"
+    },
+    "items": {
+      "palette": "Open command palette",
+      "search": "Focus search",
+      "help": "Show this help",
+      "escape": "Close menus / overlays",
+      "nextSection": "Jump to next section",
+      "prevSection": "Jump to previous section",
+      "home": "Go home",
+      "work": "Go to work",
+      "skills": "Go to skills",
+      "contact": "Go to contact",
+      "experience": "Go to experience",
+      "about": "Go to about",
+      "theme": "Cycle theme",
+      "recruiter": "Toggle recruiter mode",
+      "language": "Open language picker",
+      "copyEmail": "Copy email address",
+      "downloadResume": "Download résumé",
+      "arrows": "Navigate within a menu"
+    }
+  },
+  "consent": {
+    "title": "Cookies & language",
+    "body": "I use a single cookie (<code>NEXT_LOCALE</code>) to remember the language you picked. No analytics cookies, no tracking pixels.",
+    "accept": "Got it",
+    "privacy": "Privacy policy",
+    "dismissAriaLabel": "Dismiss cookie notice"
+  },
+  "settings": {
+    "menuLabel": "Site settings",
+    "openLabel": "Open site settings",
+    "language": "Language",
+    "theme": "Theme",
+    "shortcuts": "Keyboard shortcuts"
   },
   "recruiterBanner": {
     "modeOn": "Recruiter mode · on",
@@ -380,6 +429,11 @@
       "namePlaceholder": "Your full name",
       "email": "Email",
       "emailPlaceholder": "you@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "555 123 4567",
+      "phoneCountry": "Country code",
+      "phoneSearch": "Search countries…",
+      "phoneNoResults": "No matches",
       "subject": "Subject",
       "subjectPlaceholder": "What's this about?",
       "message": "Message",
@@ -392,9 +446,12 @@
         "hiringManager": "Hiring Manager",
         "founder": "Founder",
         "engineer": "Engineer",
-        "collaboration": "Collaboration",
+        "collaborator": "Collaborator",
         "other": "Other"
       },
+      "otherRoleLabel": "Specify your role",
+      "otherRolePlaceholder": "e.g. Investor, Journalist, Conference organizer…",
+      "emailHint": "Tip: start typing a domain and press <kbd>Tab</kbd> to autocomplete.",
       "submit": "Send message",
       "submitting": "Sending…",
       "success": "Thanks! Your message is on its way. I'll get back to you soon.",
@@ -432,7 +489,26 @@
         "subjectShort": "Subject is too short.",
         "subjectLong": "Subject is too long.",
         "messageShort": "Please write at least 20 characters.",
-        "messageLong": "Please shorten your message."
+        "messageLong": "Please shorten your message.",
+        "otherRoleRequired": "Please specify your role.",
+        "otherRoleLong": "Role description is too long.",
+        "phoneInvalid": "Please enter a valid phone number.",
+        "phoneLong": "Phone number is too long."
+      },
+      "attachments": {
+        "label": "Attachments",
+        "dropPrompt": "Drag and drop, or <browse>click to browse</browse>",
+        "dropOverlayTitle": "Drop files to attach",
+        "hint": "Up to {maxFiles} files, {maxMb} MB total. PDF, images, DOCX, TXT, or MD.",
+        "remove": "Remove {filename}",
+        "tooMany": "You can attach up to {max} files.",
+        "tooLarge": "Total attachment size must be under {maxMb} MB.",
+        "unsupported": "“{filename}” isn’t a supported type.",
+        "totalSize": "{used} / {max} MB"
+      },
+      "rateLimit": {
+        "title": "Slow down a bit",
+        "body": "You’ve sent {limit} messages in the last minute. Please retry in {seconds} second{plural}."
       }
     }
   },
@@ -474,9 +550,83 @@
   "notFound": {
     "title": "Page not found",
     "description": "The page you're looking for doesn't exist or has moved.",
-    "heading": "404 — Page not found",
-    "subheading": "The page you're looking for doesn't exist or has moved.",
+    "tag": "/ 404",
+    "heading": "Lost in the codebase?",
+    "subheading": "The page you're looking for doesn't exist, was renamed, or never did. Try one of the routes below \u2014 or use the command palette (\u2318K / Ctrl+K).",
+    "suggestionsLabel": "Try one of these",
+    "search": "Open command palette",
+    "back": "Go back",
+    "asciiLabel": "ASCII art of a 404 phoenix",
+    "kbdHint": "to jump anywhere on the site",
     "cta": "Back home"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "description": "What this site stores, what it doesn\u2019t, and how to contact the maintainer.",
+    "tag": "/ privacy",
+    "heading": "Privacy",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "<strong>{site}</strong> is a personal portfolio. The privacy posture is intentionally minimal.",
+    "sections": {
+      "collect": {
+        "title": "What we collect",
+        "logsTitle": "Server logs",
+        "logsBody": "The hosting platform (Vercel) records standard request logs \u2014 IP address, request path, user-agent, response code, timestamp \u2014 for operational and abuse-prevention purposes. Retained briefly by the host; never joined with any other dataset.",
+        "contactTitle": "Contact form",
+        "contactBody": "When you submit the contact form (<code>/contact</code>), the following fields are sent to the maintainer by email via Resend: name, email, optional company, role context, subject, message, and any attachments you choose to include. Your IP is used transiently to enforce a rate limit and is not stored.",
+        "cookiesTitle": "Cookies",
+        "cookiesBody": "Exactly one cookie is set: <code>NEXT_LOCALE</code>, which remembers the language you picked. No analytics cookies, no tracking pixels, no third-party advertising.",
+        "analyticsTitle": "Analytics",
+        "analyticsBody": "<strong>Vercel Web Analytics</strong> and <strong>Vercel Speed Insights</strong> are enabled. Both are cookie-less and GDPR-exempt: they record aggregate page views and Core Web Vitals using a short-lived hash that\u2019s recomputed daily and never linked back to an individual."
+      },
+      "donot": {
+        "title": "What we do not do",
+        "items": {
+          "sell": "We do not sell or share your data.",
+          "ads": "We do not load third-party advertising or remarketing pixels.",
+          "fingerprint": "We do not fingerprint, profile, or build a long-term identity for you.",
+          "fonts": "We do not embed remote fonts (Google Fonts is self-hosted via <code>next/font</code>)."
+        }
+      },
+      "thirdParty": {
+        "title": "Third-party services in use",
+        "headers": {
+          "service": "Service",
+          "purpose": "Purpose",
+          "data": "Data shared"
+        },
+        "rows": {
+          "vercel": {
+            "service": "Vercel",
+            "purpose": "Hosting + edge functions",
+            "data": "Request logs"
+          },
+          "resend": {
+            "service": "Resend",
+            "purpose": "Sending the contact email",
+            "data": "Your form submission + attachments"
+          },
+          "vercelAnalytics": {
+            "service": "Vercel Web Analytics + Speed Insights",
+            "purpose": "Aggregate page views, Core Web Vitals",
+            "data": "Anonymous, cookie-less aggregates only"
+          },
+          "github": {
+            "service": "GitHub / LinkedIn outbound links",
+            "purpose": "External profile pages",
+            "data": "Standard browser request when you click"
+          }
+        }
+      },
+      "rights": {
+        "title": "Your rights",
+        "body": "You can request deletion of any message you\u2019ve sent via the contact form by replying to the acknowledgement email or contacting the maintainer directly."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "Questions about privacy? Use the <link>contact form</link> or email the address listed there."
+      }
+    }
   },
   "metrics": {
     "eyebrow": "Impact · verified",
