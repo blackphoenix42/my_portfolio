@@ -340,11 +340,13 @@ export function EmailField({
           className="contact-input placeholder:text-fg-subtle/60 relative z-20 w-full rounded-md border border-transparent bg-transparent py-2.5 pr-3 pl-10 text-sm outline-none focus:outline-none"
         />
       </div>
-      {error && (
-        <p role="alert" className="text-accent-amber font-mono text-[11px]">
-          {error}
-        </p>
-      )}
+      <p
+        role="alert"
+        aria-live="polite"
+        className="text-accent-amber min-h-4 font-mono text-[11px]"
+      >
+        {error}
+      </p>
       {hint && (
         // Render the hint as an absolutely-positioned tooltip so it never
         // changes the field's box height (which would misalign with sibling

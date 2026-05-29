@@ -375,7 +375,7 @@ export function ContactForm() {
                   aria-invalid={errors.otherRole ? true : undefined}
                   className="contact-input border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full rounded-md border px-3 py-2.5 text-sm transition-colors outline-none focus:ring-2"
                 />
-                {errors.otherRole && <FieldError message={errors.otherRole} />}
+                <FieldError message={errors.otherRole ?? ""} />
               </div>
             )}
           </fieldset>
@@ -422,7 +422,7 @@ export function ContactForm() {
                 className="contact-input border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full resize-y rounded-md border py-2.5 pr-3 pl-10 text-sm transition-colors outline-none focus:ring-2"
               />
             </div>
-            {errors.message && <FieldError message={errors.message} />}
+            <FieldError message={errors.message ?? ""} />
           </div>
 
           <AttachmentField files={files} onChange={setFiles} disabled={status === "submitting"} />
@@ -522,16 +522,27 @@ function Field({
           }
         />
       </div>
-      {error && <FieldError message={error} />}
+      <FieldError message={error ?? ""} />
     </div>
   );
 }
 
 function FieldError({ message }: { message: string }) {
+  // The wrapper is always rendered with a reserved height; the message only
+  // shows when present. This avoids a CLS spike when validation errors flip
+  // on after blur, which is the dominant CLS source on /contact.
   return (
-    <p role="alert" className="text-accent-amber flex items-center gap-1 font-mono text-[11px]">
-      <AlertCircle className="h-3 w-3" />
-      {message}
+    <p
+      role="alert"
+      aria-live="polite"
+      className="text-accent-amber flex min-h-4 items-center gap-1 font-mono text-[11px]"
+    >
+      {message && (
+        <>
+          <AlertCircle className="h-3 w-3" />
+          {message}
+        </>
+      )}
     </p>
   );
 }

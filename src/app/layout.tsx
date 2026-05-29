@@ -27,6 +27,9 @@ const fontSans = localFont({
   display: "swap",
   variable: "--font-sans-loaded",
   preload: true,
+  // Generate a size-adjusted Arial fallback so the swap from system font to
+  // Inter doesn't shift text metrics (the biggest source of font-driven CLS).
+  adjustFontFallback: "Arial",
   fallback: ["system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
 });
 const fontMono = localFont({
