@@ -10,6 +10,7 @@ import { SettingsMenu } from "@/components/layout/settings-menu";
 import { RecruiterToggle } from "@/components/layout/recruiter-toggle";
 import { SITE } from "@/content/profile";
 import { Link, usePathname } from "@/i18n/navigation";
+import { GreetingChip } from "./greeting-chip";
 
 const NAV = [
   { href: "/", labelKey: "home" },
@@ -80,6 +81,7 @@ export function SiteHeader() {
             <span className="text-fg text-sm font-semibold tracking-tight">{SITE.name}</span>
           </span>
         </Link>
+        <GreetingChip />
 
         <nav aria-label={t("primary")} className="hidden md:block">
           <ul className="relative flex items-center gap-0.5">
@@ -182,7 +184,7 @@ export function SiteHeader() {
                           href={item.href}
                           onClick={() => setOpen(false)}
                           className={cn(
-                            "flex min-h-[44px] items-center justify-between rounded-md border px-3 py-2 text-sm transition-colors",
+                            "flex min-h-11 items-center justify-between rounded-md border px-3 py-2 text-sm transition-colors",
                             active
                               ? "border-accent-cyan/40 bg-accent-cyan/10 text-fg"
                               : "border-border/60 bg-bg-sunken/40 text-fg-muted hover:border-accent-cyan/30 hover:text-fg",

@@ -57,6 +57,12 @@ single canonical URL.
   rate limit with countdown, Resend delivery, full error surfacing.
 - 🍪 **Soft cookie banner** — informational only; `NEXT_LOCALE` is the only
   cookie. Vercel Analytics + Speed Insights are cookie-less and GDPR-exempt.
+- 👋 **Local-time greeting chip** — a cloud icon next to the brand name pops a
+  tiny card that greets visitors in their language based on _their_ local
+  time-of-day bucket (morning / afternoon / evening / night), thanks them for
+  visiting, and invites them to explore the portfolio. Computed entirely in
+  the browser, with no visible clock, no IP geolocation, no extra cookie,
+  dismissible, and shown once per session.
 - 🔍 **SEO** — Person + BreadcrumbList + CreativeWork JSON-LD, dynamic OG image,
   sitemap, robots, web app manifest.
 - ♿ **WCAG 2.1 AA** — keyboard nav, skip link, focus-visible, `aria-current`,

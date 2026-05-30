@@ -55,6 +55,16 @@
   "header": {
     "ariaLogoHome": "{name} — मुख्यपृष्ठम्"
   },
+  "greeting": {
+    "ariaLabel": "स्थानीयम् अभिवादनम्: {greeting}",
+    "closeLabel": "अभिवादनं पिधेहि",
+    "morning": "सुप्रभातम्, स्वागतम्!",
+    "afternoon": "शुभमध्याह्नम्, भवतः आगमनं हर्षदं!",
+    "evening": "शुभसायम्, सुखेन पश्यतु!",
+    "night": "रात्र्यन्वेषक, स्वागतम्!",
+    "tagline": "भवतः आगमनं प्रीतिकरम्। कार्याणि, प्रयोगाः, कौशलं च पश्यतु।",
+    "exploreCta": "पोर्टफोलियो पश्यतु"
+  },
   "footer": {
     "builtWith": "निर्मितम्",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel इत्येतैः",

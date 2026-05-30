@@ -57,6 +57,16 @@
   "header": {
     "ariaLogoHome": "{name} — Home"
   },
+  "greeting": {
+    "ariaLabel": "Local greeting: {greeting}",
+    "closeLabel": "Dismiss greeting",
+    "morning": "Good morning, welcome in!",
+    "afternoon": "Good afternoon, glad you're here!",
+    "evening": "Good evening, settle in!",
+    "night": "Night explorer, welcome!",
+    "tagline": "Happy to have you here. Explore the work, experiments, and craft.",
+    "exploreCta": "Explore the portfolio"
+  },
   "footer": {
     "builtWith": "Built with",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",

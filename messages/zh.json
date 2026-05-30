@@ -55,6 +55,16 @@
   "header": {
     "ariaLogoHome": "{name} — 首页"
   },
+  "greeting": {
+    "ariaLabel": "本地问候：{greeting}",
+    "closeLabel": "关闭问候",
+    "morning": "早上好，欢迎来逛！",
+    "afternoon": "下午好，很高兴你来了！",
+    "evening": "晚上好，慢慢探索！",
+    "night": "夜间探索者，欢迎！",
+    "tagline": "很高兴你来这里。去看看作品、实验和技术细节吧。",
+    "exploreCta": "探索作品集"
+  },
   "footer": {
     "builtWith": "构建技术",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",

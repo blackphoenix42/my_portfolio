@@ -55,6 +55,16 @@
   "header": {
     "ariaLogoHome": "{name} — होम"
   },
+  "greeting": {
+    "ariaLabel": "स्थानीय अभिवादन: {greeting}",
+    "closeLabel": "अभिवादन बंद करें",
+    "morning": "सुप्रभात, आपका स्वागत है!",
+    "afternoon": "नमस्कार, आपको यहाँ देखकर खुशी हुई!",
+    "evening": "शुभ संध्या, आराम से देखिए!",
+    "night": "रात के खोजी, स्वागत है!",
+    "tagline": "आपका आना अच्छा लगा। काम, प्रयोग और कौशल देखें।",
+    "exploreCta": "पोर्टफोलियो देखें"
+  },
   "footer": {
     "builtWith": "बनाया गया",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel से",

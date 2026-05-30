@@ -42,6 +42,7 @@ src/
     rate-limit.ts     In-memory IP rate limiting
     feeds.ts          RSS/Atom helpers
     github.ts         GitHub API helpers
+    greeting.ts       Local time-of-day bucket for the header greeting chip
     utils.ts          Misc helpers (cn, formatters)
   proxy.ts            next-intl middleware (Next 16 renamed `middleware → proxy`)
 public/               Static assets (images, certificates, favicons)
@@ -95,6 +96,18 @@ Key files:
   `router.replace(pathname, { locale })` + `router.refresh()` to swap content in place.
 
 See [ADR-0004](./ADR/0004-i18n-next-intl.md) for the rationale.
+
+## Client-local greeting
+
+The header includes a small cloud-icon greeting chip beside the brand name. It computes only a
+coarse time-of-day bucket (`morning`, `afternoon`, `evening`, `night`) from the visitor's browser
+clock, then renders a translated welcome/explore message from `messages/*.json`.
+
+The chip is intentionally client-only: it does not use IP geolocation, does not send timezone data
+to the server, does not display the visitor's clock, and does not create cookies. It auto-opens once
+per browser session using `sessionStorage` and remains manually accessible from the header.
+
+See [ADR-0005](./ADR/0005-client-local-greeting.md) for the rationale.
 
 ## Performance principles
 

@@ -55,6 +55,16 @@
   "header": {
     "ariaLogoHome": "{name} — Главная"
   },
+  "greeting": {
+    "ariaLabel": "Местное приветствие: {greeting}",
+    "closeLabel": "Закрыть приветствие",
+    "morning": "Доброе утро, добро пожаловать!",
+    "afternoon": "Добрый день, рад вас видеть!",
+    "evening": "Добрый вечер, располагайтесь!",
+    "night": "Ночной исследователь, добро пожаловать!",
+    "tagline": "Рад, что вы здесь. Исследуйте работы, эксперименты и инженерные детали.",
+    "exploreCta": "Изучить портфолио"
+  },
   "footer": {
     "builtWith": "Создано с",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",

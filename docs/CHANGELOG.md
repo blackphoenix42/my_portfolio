@@ -8,6 +8,13 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Added
 
+- **Local-time greeting chip** — small cloud-icon button next to the brand
+  name in the header. Pops a localized "Good morning / afternoon / evening /
+  night" card that welcomes visitors and invites them to explore the
+  portfolio. The time-of-day bucket is computed entirely in the browser, with
+  no visible clock, no IP geolocation, and no extra cookie. Auto-opens once per
+  session via `sessionStorage`, dismissible with click-outside / `Esc`, fully
+  translated across all six locales and gated on `useReducedMotion()`.
 - **Vercel Web Analytics + Speed Insights** wired into the root layout. Both
   are cookie-less and GDPR-exempt; they report page views and real-user
   Core Web Vitals from production.

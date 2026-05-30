@@ -54,6 +54,13 @@ GPU-expensive on mobile.
 
 `.chip` — small mono pill used for tags, status indicators, etc.
 
+### Header greeting chip
+
+The brand row may include a compact cloud-icon chip that opens a small localized greeting popover.
+Keep the trigger icon-only, keyboard reachable, and visually quieter than primary navigation. The
+popover should feel like a lightweight welcome: one greeting line, one short explore invitation, and
+one clear CTA. Do not show the visitor's exact local time in the UI.
+
 ### Form inputs
 
 - Always pair with a mono uppercase label.
