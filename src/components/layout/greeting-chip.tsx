@@ -10,7 +10,6 @@ import { getGreetingBucket, type GreetingBucket } from "@/lib/greeting";
 
 const AUTO_OPEN_DELAY_MS = 900;
 const AUTO_CLOSE_DELAY_MS = 7000;
-const SESSION_FLAG = "greeting-seen-v1";
 
 const ICON_BY_BUCKET: Record<GreetingBucket, typeof Sun> = {
   morning: Sunrise,
@@ -36,7 +35,7 @@ const ACCENT_BY_BUCKET: Record<GreetingBucket, string> = {
 
 /**
  * Small cloud-icon button rendered next to the brand name in the header.
- * On click, or once per session automatically, it pops a friendly card
+ * On click, or automatically on visit, it pops a friendly card
  * that greets the visitor in their language based on _their_ local clock
  * (computed entirely in the browser, never sent anywhere) and invites them
  * to explore the site.
@@ -51,28 +50,13 @@ export function GreetingChip() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const autoCloseTimer = useRef<number | null>(null);
 
-  // Mount-only: snapshot the visitor's local time-of-day bucket and
-  // auto-open the popover on their first visit of the session.
+  // Mount-only: snapshot local time and auto-open the popover on every visit.
   useEffect(() => {
     setMounted(true);
     setBucket(getGreetingBucket(new Date().getHours()));
 
-    let alreadySeen = false;
-    try {
-      alreadySeen = sessionStorage.getItem(SESSION_FLAG) === "1";
-    } catch {
-      /* sessionStorage unavailable - treat as fresh visit */
-    }
-
-    if (alreadySeen) return;
-
     const openId = window.setTimeout(() => {
       setOpen(true);
-      try {
-        sessionStorage.setItem(SESSION_FLAG, "1");
-      } catch {
-        /* ignore */
-      }
       autoCloseTimer.current = window.setTimeout(() => setOpen(false), AUTO_CLOSE_DELAY_MS);
     }, AUTO_OPEN_DELAY_MS);
 
@@ -155,7 +139,6 @@ export function GreetingChip() {
                 gradient,
               )}
             />
-
             <button
               type="button"
               onClick={() => setOpen(false)}

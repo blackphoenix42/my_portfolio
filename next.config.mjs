@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // Content Security Policy — restrictive baseline tuned for Next.js App Router.
 // `'unsafe-inline'` and `'unsafe-eval'` are needed for the React/Next runtime
 // (RSC payloads, framer-motion style injection, dev HMR). External hosts are
-// limited to what the app actually fetches: GitHub avatars for the workbench,
+// limited to what the app actually fetches: GitHub avatars for the workbench.
 // YouTube/Medium/GitHub feed fetches happen server-side so they don't need
 // `connect-src` exposure.
 const isDev = process.env.NODE_ENV !== "production";

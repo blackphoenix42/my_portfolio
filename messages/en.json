@@ -742,6 +742,8 @@
   },
   "quotes": {
     "label": "Quote",
+    "ariaLabel": "Programming quote",
+    "refreshesEvery": "Wait {seconds}s for a new motivational or funny quote",
     "items": {
       "abelson": "Programs must be written for people to read, and only incidentally for machines to execute.",
       "knuth": "Premature optimization is the root of all evil.",

@@ -576,6 +576,8 @@
   },
   "quotes": {
     "label": "引用",
+    "ariaLabel": "编程引用",
+    "refreshesEvery": "等 {seconds} 秒，换一句励志或有趣的引用",
     "items": {
       "abelson": "程序应该为人阅读而写，机器执行只是顺带。",
       "knuth": "过早优化是万恶之源。",

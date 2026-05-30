@@ -50,6 +50,12 @@ GPU-expensive on mobile.
 - `.btn-secondary` — bordered, transparent. Common action.
 - `.btn-ghost` — invisible until hover. Tertiary action.
 
+### Header utility order
+
+Keep header utilities ordered by visitor intent: Search, Live feeds, Recruiter mode, Settings,
+Resume. Search and live status help exploration; recruiter and settings are mode controls; résumé is
+the final high-intent CTA on the far right.
+
 ### Chips
 
 `.chip` — small mono pill used for tags, status indicators, etc.
@@ -59,7 +65,13 @@ GPU-expensive on mobile.
 The brand row may include a compact cloud-icon chip that opens a small localized greeting popover.
 Keep the trigger icon-only, keyboard reachable, and visually quieter than primary navigation. The
 popover should feel like a lightweight welcome: one greeting line, one short explore invitation, and
-one clear CTA. Do not show the visitor's exact local time in the UI.
+one clear CTA. Do not show the visitor's exact local time in the UI, and do not add weather or
+location-permission prompts to the greeting.
+
+### Quote card
+
+The motivational / funny quote card may rotate automatically every 30 seconds. Phrase the cadence as
+a quiet invitation to wait for the next quote, not as mechanical status text.
 
 ### Form inputs
 

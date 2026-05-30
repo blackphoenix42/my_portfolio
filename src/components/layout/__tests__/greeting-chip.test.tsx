@@ -32,7 +32,6 @@ function renderChip() {
 
 describe("<GreetingChip />", () => {
   beforeEach(() => {
-    sessionStorage.clear();
     vi.useFakeTimers({ shouldAdvanceTime: true });
     // Pin to 08:30 local so the morning bucket is exercised.
     const fixed = new Date();
@@ -41,8 +40,10 @@ describe("<GreetingChip />", () => {
   });
 
   afterEach(() => {
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+    Object.defineProperty(navigator, "geolocation", { configurable: true, value: undefined });
     vi.useRealTimers();
-    sessionStorage.clear();
   });
 
   it("renders a toggle button with the localized greeting in its aria-label", async () => {
@@ -51,28 +52,16 @@ describe("<GreetingChip />", () => {
     expect(button).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("auto-opens once per session and marks sessionStorage", async () => {
+  it("auto-opens on every visit", async () => {
     renderChip();
     await screen.findByRole("button", { name: /good morning/i });
     await act(async () => {
       await vi.advanceTimersByTimeAsync(1000);
     });
     expect(screen.getByRole("dialog")).toBeInTheDocument();
-    expect(sessionStorage.getItem("greeting-seen-v1")).toBe("1");
-  });
-
-  it("does not auto-open when the session flag is already set", async () => {
-    sessionStorage.setItem("greeting-seen-v1", "1");
-    renderChip();
-    await screen.findByRole("button", { name: /good morning/i });
-    await act(async () => {
-      await vi.advanceTimersByTimeAsync(2000);
-    });
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
   it("toggles the popover when the button is clicked", async () => {
-    sessionStorage.setItem("greeting-seen-v1", "1");
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     renderChip();
     const button = await screen.findByRole("button", { name: /good morning/i });
@@ -86,12 +75,12 @@ describe("<GreetingChip />", () => {
     );
     expect(screen.queryByText(/where you are/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/thanks for stopping by/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/weather/i)).not.toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: /dismiss greeting/i }));
     await waitFor(() => expect(button).toHaveAttribute("aria-expanded", "false"));
   });
 
   it("closes when Escape is pressed", async () => {
-    sessionStorage.setItem("greeting-seen-v1", "1");
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     renderChip();
     const button = await screen.findByRole("button", { name: /good morning/i });
@@ -99,5 +88,26 @@ describe("<GreetingChip />", () => {
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     await user.keyboard("{Escape}");
     await waitFor(() => expect(button).toHaveAttribute("aria-expanded", "false"));
+  });
+
+  it("does not request geolocation or render weather ambience", async () => {
+    const getCurrentPosition = vi.fn();
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    Object.defineProperty(navigator, "geolocation", {
+      configurable: true,
+      value: { getCurrentPosition },
+    });
+
+    renderChip();
+
+    await screen.findByRole("button", { name: /good morning/i });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1000);
+    });
+    expect(getCurrentPosition).not.toHaveBeenCalled();
+    await waitFor(() => expect(fetchMock).not.toHaveBeenCalled());
+    expect(screen.queryByTestId("weather-ambient")).not.toBeInTheDocument();
+    expect(screen.queryByText(/weather/i)).not.toBeInTheDocument();
   });
 });

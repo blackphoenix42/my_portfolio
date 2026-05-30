@@ -24,11 +24,14 @@ collection of timezone data.
 
 Compute a coarse time-of-day bucket (`morning`, `afternoon`, `evening`, `night`) entirely in the
 browser from `Date#getHours()`. Render the greeting as a client component next to the brand name,
-translate all visible copy through `messages/*.json`, and store only a `sessionStorage` flag so the
-popover auto-opens once per browser session.
+translate all visible copy through `messages/*.json`. The popover auto-opens on each visit and
+remains manually accessible from the header.
 
 The UI will not display the visitor's exact local time. It will show a friendly greeting, a short
 welcome/explore line, and a CTA to the portfolio work page.
+
+Weather-specific personalization was removed in
+[ADR-0007](./0007-remove-weather-greeting.md).
 
 ## Consequences
 
@@ -46,8 +49,8 @@ welcome/explore line, and a CTA to the portfolio work page.
 
 ### Neutral
 
-- `sessionStorage` is used only to avoid repeated auto-open behavior during one browser session.
-- The greeting chip remains manually accessible even after the auto-open flag is set.
+- No browser storage is needed for the greeting itself.
+- The greeting chip remains manually accessible after the automatic visit-time opening.
 
 ## Alternatives considered
 

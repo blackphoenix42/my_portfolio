@@ -52,6 +52,9 @@ single canonical URL.
   PostureIQ live rep-quality, Track-Person waypoint route, Smart-Brain vision
   inference — all lazy-loaded and translated.
 - 🔧 **GitHub workbench** — live REST-API data with a resilient hand-curated fallback.
+- 💬 **Rotating quote card** — motivational / funny programming quotes rotate
+  every 30 seconds, with a subtle "wait 30s" caption so the motion never feels
+  mysterious.
 - 📨 **Contact form** — Zod 4 validation, drag-and-drop attachments (5 files,
   10 MB, PDF/images/DOCX/TXT/MD), inline email-domain autocomplete, honeypot,
   rate limit with countdown, Resend delivery, full error surfacing.
@@ -59,10 +62,9 @@ single canonical URL.
   cookie. Vercel Analytics + Speed Insights are cookie-less and GDPR-exempt.
 - 👋 **Local-time greeting chip** — a cloud icon next to the brand name pops a
   tiny card that greets visitors in their language based on _their_ local
-  time-of-day bucket (morning / afternoon / evening / night), thanks them for
-  visiting, and invites them to explore the portfolio. Computed entirely in
-  the browser, with no visible clock, no IP geolocation, no extra cookie,
-  dismissible, and shown once per session.
+  time-of-day bucket (morning / afternoon / evening / night), welcomes them, and
+  invites them to explore the portfolio. No visible clock, no weather lookup, no
+  geolocation permission, no IP geolocation, and no extra cookie.
 - 🔍 **SEO** — Person + BreadcrumbList + CreativeWork JSON-LD, dynamic OG image,
   sitemap, robots, web app manifest.
 - ♿ **WCAG 2.1 AA** — keyboard nav, skip link, focus-visible, `aria-current`,

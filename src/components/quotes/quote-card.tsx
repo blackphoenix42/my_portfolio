@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Quote as QuoteIcon } from "lucide-react";
+import { Quote as QuoteIcon, RefreshCcw } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { quotes, type Quote } from "@/content/quotes";
 
 type Placement = "hero" | "about" | "contact" | "footer";
@@ -10,7 +11,8 @@ function pickIndex(): number {
   return Math.floor(Math.random() * quotes.length);
 }
 
-const CYCLE_MS = 30_000;
+const REFRESH_SECONDS = 30;
+const CYCLE_MS = REFRESH_SECONDS * 1000;
 
 export function QuoteCard({
   placement = "about",
@@ -19,6 +21,7 @@ export function QuoteCard({
   placement?: Placement;
   showTone?: boolean;
 }) {
+  const t = useTranslations("quotes");
   const [idx, setIdx] = useState<number>(0);
   const [mounted, setMounted] = useState(false);
 
@@ -53,7 +56,7 @@ export function QuoteCard({
   return (
     <figure
       className={`my-10 rounded-xl border ${accent} relative min-h-34 px-5 py-5 sm:min-h-30 sm:px-7 sm:py-6`}
-      aria-label="Programming quote"
+      aria-label={t("ariaLabel")}
     >
       <QuoteIcon className="text-fg-subtle/50 absolute top-3 left-3 h-4 w-4" aria-hidden />
       <blockquote className="text-fg pl-6 text-sm leading-relaxed sm:text-base">
@@ -72,6 +75,10 @@ export function QuoteCard({
               </span>
             </>
           )}
+        </span>
+        <span className="text-fg-muted inline-flex shrink-0 items-center gap-1 text-[10px] tracking-normal normal-case">
+          <RefreshCcw className="h-3 w-3" aria-hidden />
+          {t("refreshesEvery", { seconds: REFRESH_SECONDS })}
         </span>
       </figcaption>
     </figure>

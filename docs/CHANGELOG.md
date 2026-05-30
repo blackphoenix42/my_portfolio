@@ -8,13 +8,20 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Added
 
+- **Quote refresh hint** — the rotating motivational / funny quote card now
+  includes a subtle localized "wait 30s for a new motivational or funny quote"
+  caption and a focused component test for the timer behavior.
+- **Weather/geolocation removal** — removed the experimental greeting weather
+  path, Open-Meteo client fetch, browser location prompt, weather utility/tests,
+  privacy table row, and `geolocation=(self)` permission. ADR-0007 records the
+  removal decision.
 - **Local-time greeting chip** — small cloud-icon button next to the brand
   name in the header. Pops a localized "Good morning / afternoon / evening /
   night" card that welcomes visitors and invites them to explore the
   portfolio. The time-of-day bucket is computed entirely in the browser, with
-  no visible clock, no IP geolocation, and no extra cookie. Auto-opens once per
-  session via `sessionStorage`, dismissible with click-outside / `Esc`, fully
-  translated across all six locales and gated on `useReducedMotion()`.
+  no visible clock, no IP geolocation, and no extra cookie. Auto-opens on visit,
+  dismissible with click-outside / `Esc`, fully translated across all six
+  locales and gated on `useReducedMotion()`.
 - **Vercel Web Analytics + Speed Insights** wired into the root layout. Both
   are cookie-less and GDPR-exempt; they report page views and real-user
   Core Web Vitals from production.

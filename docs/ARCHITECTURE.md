@@ -103,11 +103,12 @@ The header includes a small cloud-icon greeting chip beside the brand name. It c
 coarse time-of-day bucket (`morning`, `afternoon`, `evening`, `night`) from the visitor's browser
 clock, then renders a translated welcome/explore message from `messages/*.json`.
 
-The chip is intentionally client-only: it does not use IP geolocation, does not send timezone data
-to the server, does not display the visitor's clock, and does not create cookies. It auto-opens once
-per browser session using `sessionStorage` and remains manually accessible from the header.
+The time-of-day greeting is client-only: it does not use IP geolocation, does not send timezone data
+to the server, does not display the visitor's clock, and does not create cookies. It auto-opens on
+visit and remains manually accessible from the header.
 
 See [ADR-0005](./ADR/0005-client-local-greeting.md) for the rationale.
+See [ADR-0007](./ADR/0007-remove-weather-greeting.md) for the weather/geolocation removal decision.
 
 ## Performance principles
 
