@@ -72,7 +72,7 @@
     "autoprefixer": "^10.5.0",
     "axe-core": "4.11.4",
     "cross-env": "10.1.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.4.1",
     "eslint-config-next": "16.2.6",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "9.1.7",
