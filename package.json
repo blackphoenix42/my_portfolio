@@ -55,7 +55,7 @@
   "devDependencies": {
     "@axe-core/playwright": "4.11.3",
     "@commitlint/cli": "21.0.1",
-    "@commitlint/config-conventional": "21.0.1",
+    "@commitlint/config-conventional": "21.0.2",
     "@eslint/eslintrc": "3.3.5",
     "@lhci/cli": "^0.15.0",
     "@playwright/test": "^1.60.0",
