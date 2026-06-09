@@ -137,6 +137,8 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
       <section aria-label={t("workbenchAria")}>
         <GithubWorkbench repos={repos} />
       </section>
+      {/* Haiku 3 of 3 — "becomes a phoenix" */}
+      <span hidden aria-hidden data-haiku="work" />
     </div>
   );
 }

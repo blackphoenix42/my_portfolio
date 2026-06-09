@@ -1,4 +1,28 @@
 import { ImageResponse } from "next/og";
+import qrcode from "qrcode-generator";
+
+/**
+ * Render the matrix-rain QR egg into the OG card. The QR encodes a deep
+ * link into the trophy room with a marker query (`?via=og`) so that scanning
+ * it from a social preview unlocks the `og-qr-scan` easter egg.
+ */
+function buildQrCells(text: string): { cells: boolean[][]; size: number } {
+  // High error-correction ("H", ~30% recovery) so the code still scans from a
+  // compressed social thumbnail or at an angle.
+  const qr = qrcode(0, "H");
+  qr.addData(text);
+  qr.make();
+  const size = qr.getModuleCount();
+  const cells: boolean[][] = [];
+  for (let r = 0; r < size; r++) {
+    const row: boolean[] = [];
+    for (let c = 0; c < size; c++) {
+      row.push(qr.isDark(r, c));
+    }
+    cells.push(row);
+  }
+  return { cells, size };
+}
 
 // Stays on the Edge runtime because Satori (the renderer behind
 // `ImageResponse`) enforces a much stricter CSS subset on the Node runtime
@@ -13,6 +37,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpengraphImage() {
+  const { cells, size: qrSize } = buildQrCells("https://binaryphoenix.vercel.app/secret?via=og");
+  const cellPx = 4;
   return new ImageResponse(
     <div
       style={{
@@ -78,7 +104,51 @@ export default async function OpengraphImage() {
         }}
       >
         <span>github.com/blackphoenix42</span>
-        <span>ayushyadav.dev</span>
+        <span style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              gap: 4,
+              color: "#9fb0c9",
+            }}
+          >
+            <span style={{ fontSize: 18 }}>ayushyadav.dev</span>
+            <span style={{ fontSize: 14, color: "#22d3ee" }}>🜂 scan → /secret</span>
+          </span>
+          {/* High-contrast QR on a white card with a real quiet zone so phone
+              cameras lock on instantly (cyan-on-dark looked nice but rarely
+              scanned). */}
+          <span
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              background: "#ffffff",
+              padding: 12,
+              borderRadius: 12,
+              boxShadow: "0 0 0 1px rgba(159,176,201,0.25)",
+            }}
+            aria-hidden
+          >
+            {cells.map((row, r) => (
+              <span key={r} style={{ display: "flex" }}>
+                {row.map((on, c) => (
+                  <span
+                    key={c}
+                    style={{
+                      width: cellPx,
+                      height: cellPx,
+                      background: on ? "#0b1020" : "#ffffff",
+                      display: "flex",
+                    }}
+                  />
+                ))}
+              </span>
+            ))}
+            <span style={{ height: 0, width: qrSize * cellPx, display: "flex" }} />
+          </span>
+        </span>
       </div>
     </div>,
     { ...size },

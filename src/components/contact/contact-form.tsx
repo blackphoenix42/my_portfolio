@@ -15,6 +15,7 @@ import {
   UploadCloud,
 } from "lucide-react";
 import { contactSchema, ROLES, type ContactInput } from "@/lib/validation";
+import { companyFromEmail } from "@/lib/company-from-email";
 import { EmailField } from "@/components/contact/email-field";
 import { PhoneField } from "@/components/contact/phone-field";
 import { AttachmentField, mergeAttachments } from "@/components/contact/attachment-field";
@@ -41,11 +42,23 @@ export function ContactForm() {
   const [retrySeconds, setRetrySeconds] = useState(0);
   const [role, setRole] = useState<ContactInput["role"]>("Recruiter");
   const [otherRole, setOtherRole] = useState("");
+  const [company, setCompany] = useState("");
+  // Once the visitor edits the company field by hand, stop auto-filling it
+  // from the email domain — their input always wins.
+  const [companyEdited, setCompanyEdited] = useState(false);
   const [message, setMessage] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [pageDragActive, setPageDragActive] = useState(false);
   const [dropError, setDropError] = useState<string | null>(null);
   const otherRef = useRef<HTMLInputElement>(null);
+
+  // Auto-fill the company from the email domain (e.g. jane@acme.com → "Acme"),
+  // unless the visitor has already typed a company by hand. Free/personal
+  // providers (gmail, outlook, …) and unusable addresses leave it blank.
+  function handleEmailChange(email: string) {
+    if (companyEdited) return;
+    setCompany(companyFromEmail(email) ?? "");
+  }
 
   // Focus the "specify" field as soon as the user picks "Other".
   useEffect(() => {
@@ -213,6 +226,8 @@ export function ContactForm() {
       setMessage("");
       setFiles([]);
       setOtherRole("");
+      setCompany("");
+      setCompanyEdited(false);
       (e.target as HTMLFormElement).reset();
     } catch {
       setServerError(t("networkError"));
@@ -303,6 +318,7 @@ export function ContactForm() {
               name="email"
               placeholder={t("emailPlaceholderShort")}
               error={errors.email}
+              onValueChange={handleEmailChange}
               required
               hint={
                 <span className="inline-flex items-center gap-1 whitespace-nowrap">
@@ -327,6 +343,11 @@ export function ContactForm() {
               placeholder={t("companyPlaceholderShort")}
               error={errors.company}
               autoComplete="organization"
+              value={company}
+              onChange={(v) => {
+                setCompany(v);
+                setCompanyEdited(true);
+              }}
             />
             <PhoneField label={t("phone")} name="phone" error={errors.phone} />
           </div>
@@ -481,6 +502,8 @@ function Field({
   placeholder,
   autoComplete,
   inputMode,
+  value,
+  onChange,
 }: {
   label: string;
   name: string;
@@ -491,8 +514,13 @@ function Field({
   placeholder?: string;
   autoComplete?: string;
   inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+  /** When provided, the field becomes controlled (used for the autofilled
+   *  company field). Otherwise it stays uncontrolled and is read via FormData. */
+  value?: string;
+  onChange?: (value: string) => void;
 }) {
   const id = `f-${name}`;
+  const controlled = value !== undefined;
   return (
     <div className="grid gap-1.5">
       <label
@@ -515,6 +543,12 @@ function Field({
           placeholder={placeholder}
           autoComplete={autoComplete}
           inputMode={inputMode}
+          {...(controlled
+            ? {
+                value,
+                onChange: (e: React.ChangeEvent<HTMLInputElement>) => onChange?.(e.target.value),
+              }
+            : {})}
           aria-invalid={error ? true : undefined}
           className={
             "contact-input border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full rounded-md border py-2.5 pr-3 text-sm transition-colors outline-none focus:ring-2 " +

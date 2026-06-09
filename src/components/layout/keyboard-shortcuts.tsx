@@ -5,10 +5,13 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Keyboard, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
+import { useRouter, Link } from "@/i18n/navigation";
 import { SITE } from "@/content/profile";
 import { useRecruiterMode } from "@/components/layout/recruiter-mode";
 import { useTheme } from "next-themes";
+import { useEggs } from "@/components/eggs/egg-provider";
+import { isAnyOverlayOpen } from "@/components/eggs/overlay-state";
+import { TOTAL_EGGS } from "@/lib/eggs";
 
 // Shortcuts that are visible in the help overlay. The first column is the
 // translation key under `shortcuts.items.*`; the second is the human-readable
@@ -74,9 +77,11 @@ function getSections(): HTMLElement[] {
 
 export function KeyboardShortcuts() {
   const t = useTranslations("shortcuts");
+  const tEggs = useTranslations("eggs");
   const router = useRouter();
   const { toggle: toggleRecruiter } = useRecruiterMode();
   const { theme, setTheme } = useTheme();
+  const { progress } = useEggs();
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pendingPrefix = useRef<string | null>(null);
@@ -138,6 +143,10 @@ export function KeyboardShortcuts() {
     };
 
     const handler = (e: KeyboardEvent) => {
+      // While a fullscreen egg overlay (matrix / terminal) is open, ignore all
+      // page shortcuts — otherwise typing inside it cycles themes, toggles
+      // recruiter mode, navigates, etc.
+      if (isAnyOverlayOpen()) return;
       // Allow custom open events to bypass focus checks.
       if (e.key === "Escape") {
         clearPrefix();
@@ -288,10 +297,23 @@ export function KeyboardShortcuts() {
                 </section>
               ))}
             </div>
-            <footer className="border-border bg-bg-sunken/40 text-fg-subtle border-t px-5 py-3 font-mono text-[10px]">
-              {t.rich("subtitle", {
-                kbd: (chunks) => <Kbd>{chunks as string}</Kbd>,
-              })}
+            <footer className="border-border bg-bg-sunken/40 text-fg-subtle flex items-center justify-between gap-3 border-t px-5 py-3 font-mono text-[10px]">
+              <span>
+                {t.rich("subtitle", {
+                  kbd: (chunks) => <Kbd>{chunks as string}</Kbd>,
+                })}
+              </span>
+              <Link
+                href="/secret"
+                className="text-accent-amber hover:text-accent-cyan inline-flex items-center gap-1"
+                title={tEggs("shortcutsCounter.title")}
+              >
+                🜂{" "}
+                {tEggs("shortcutsCounter.label", {
+                  found: progress.unlocked.length,
+                  total: TOTAL_EGGS,
+                })}
+              </Link>
             </footer>
           </motion.div>
         </motion.div>

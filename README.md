@@ -169,6 +169,19 @@ Press `?` anywhere to see the full list. Highlights:
 | `d`             | Download résumé         |
 | `Esc`           | Close menus / overlays  |
 
+## ✨ Easter eggs
+
+The site hides **22 small surprises** across 5 tiers of escalating obscurity —
+from a styled console banner and a `?`-help overlay counter, through the
+Konami code, a `phoenix-shell` terminal overlay, matrix-rain, a Chrome-dino-style
+mini-game on the 404 page (with high scores for Phoenix Runner and an
+unlockable Feather Catch mode), three hidden pages (`/secret`, `/phoenix`,
+`/credits`), an OG-image QR code that deep-links to the trophy room, all the
+way to a completionist reward. Visit [`/secret`](https://binaryphoenix.vercel.app/secret)
+to see the trophy room — every unlock is stored in a single `localStorage`
+key (no new cookie, no analytics). The full catalogue and trigger list is in
+[`docs/EGGS.md`](docs/EGGS.md). Decision record in [`docs/ADR/0008-easter-eggs.md`](docs/ADR/0008-easter-eggs.md).
+
 ## 📨 Contact form
 
 The contact pipeline does a surprising amount of work for a portfolio:
@@ -282,7 +295,8 @@ src/
     [locale]/         # All user-facing routes under here
     api/contact/      # Multipart POST endpoint (Zod + rate-limit + Resend)
     opengraph-image.tsx
-    sitemap.ts / robots.ts / manifest.ts
+    sitemap.ts / manifest.ts
+    robots.txt/ , humans.txt/   # route handlers (humans.txt unlocks an egg in-browser)
   components/         # Layout, hero, projects, contact, etc.
   content/            # Typed content modules
   i18n/               # routing, navigation, request config (next-intl)

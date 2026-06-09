@@ -12,6 +12,14 @@ import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { ScrollFab } from "@/components/layout/scroll-fab";
 import { KeyboardShortcuts } from "@/components/layout/keyboard-shortcuts";
 import { CookieConsent } from "@/components/layout/cookie-consent";
+import { EggProvider } from "@/components/eggs/egg-provider";
+import { ConsoleBanner } from "@/components/eggs/console-banner";
+import { GlobalListeners } from "@/components/eggs/global-listeners";
+import { TerminalMode } from "@/components/eggs/terminal-mode";
+import { MatrixRain } from "@/components/eggs/matrix-rain";
+import { EggToast } from "@/components/eggs/egg-toast";
+import { EggUnlockBurst } from "@/components/eggs/egg-unlock-burst";
+import { HaikuRecorder, SelectionWatcher } from "@/components/eggs/watchers";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/content/profile";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -68,19 +76,30 @@ export default async function LocaleLayout({
         enableSystem={false}
         themes={["light", "dark", "phoenix"]}
       >
-        <RecruiterModeProvider>
-          <SiteHeader />
-          <RecruiterBanner />
-          <main id="main" tabIndex={-1}>
-            {children}
-          </main>
-          <SiteFooter />
-          <CommandMenu />
-          <KeyboardShortcuts />
-          <MobileActionBar />
-          <ScrollFab />
-          <CookieConsent />
-        </RecruiterModeProvider>
+        <EggProvider>
+          <RecruiterModeProvider>
+            <SiteHeader />
+            <RecruiterBanner />
+            <main id="main" tabIndex={-1}>
+              {children}
+            </main>
+            <SiteFooter />
+            <CommandMenu />
+            <KeyboardShortcuts />
+            <MobileActionBar />
+            <ScrollFab />
+            <CookieConsent />
+            {/* Easter-egg layer (lazy / passive). Adds no chrome unless triggered. */}
+            <ConsoleBanner />
+            <GlobalListeners />
+            <TerminalMode />
+            <MatrixRain />
+            <HaikuRecorder />
+            <SelectionWatcher />
+            <EggToast />
+            <EggUnlockBurst />
+          </RecruiterModeProvider>
+        </EggProvider>
       </ThemeProvider>
       <script
         type="application/ld+json"

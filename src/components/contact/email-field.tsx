@@ -222,6 +222,10 @@ export type EmailFieldProps = {
    *  is absolutely positioned so it doesn't shift the field's height (which
    *  would misalign with sibling fields in a grid row). */
   hint?: React.ReactNode;
+  /** Notified whenever the field's value changes (typing or accepting the
+   *  ghost suggestion). Lets the parent form derive things like the company
+   *  name from the email domain. */
+  onValueChange?: (value: string) => void;
 };
 
 export function EmailField({
@@ -232,11 +236,17 @@ export function EmailField({
   placeholder = "you@example.com",
   defaultValue = "",
   hint,
+  onValueChange,
 }: EmailFieldProps) {
   const id = `f-${name}`;
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValueState] = useState(defaultValue);
   const [focused, setFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  function setValue(next: string) {
+    setValueState(next);
+    onValueChange?.(next);
+  }
 
   const suggestion = useMemo(() => getSuggestion(value), [value]);
   const showGhost = focused && !!suggestion;

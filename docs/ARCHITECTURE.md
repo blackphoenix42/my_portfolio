@@ -32,7 +32,8 @@ src/
     api/contact/      Node-runtime route — validates + sends email via Resend
     [locale]/         Locale-aware routes (page.tsx files for each section)
     opengraph-image.tsx  Edge-runtime OG image generator
-    sitemap.ts / robots.ts
+    sitemap.ts           SEO sitemap
+    robots.txt/ , humans.txt/  Route handlers (content-negotiated text/HTML)
   components/         Reusable UI: hero, projects, contact, layout, …
   content/            Static content (projects, experience, skills, profile)
   i18n/               Locale routing, navigation, request config (next-intl)

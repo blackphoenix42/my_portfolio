@@ -2,12 +2,25 @@
 
 import { Command } from "cmdk";
 import { useEffect, useRef, useState } from "react";
-import { Search, Briefcase, Code2, Mail, FileDown, User, Cpu, Layers, Beaker } from "lucide-react";
+import {
+  Search,
+  Briefcase,
+  Code2,
+  Mail,
+  FileDown,
+  User,
+  Cpu,
+  Layers,
+  Beaker,
+  TerminalSquare,
+  Sparkles,
+} from "lucide-react";
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
+import { isAnyOverlayOpen } from "@/components/eggs/overlay-state";
 
 const NAV_ITEMS = [
   { id: "home", key: "home", icon: User, href: "/" },
@@ -34,6 +47,8 @@ export function CommandMenu() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        // Don't pop the palette under a fullscreen egg overlay.
+        if (isAnyOverlayOpen()) return;
         e.preventDefault();
         setOpen((v) => !v);
       }
@@ -157,6 +172,33 @@ export function CommandMenu() {
               >
                 <Github className="text-fg-subtle h-4 w-4" />
                 {t("openGitHub")}
+              </Command.Item>
+              <Command.Item
+                onSelect={() => {
+                  setOpen(false);
+                  window.dispatchEvent(new CustomEvent("open-terminal-mode"));
+                }}
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+              >
+                <TerminalSquare className="text-fg-subtle h-4 w-4" />
+                {t("openTerminal")}
+              </Command.Item>
+              <Command.Item
+                onSelect={() => {
+                  setOpen(false);
+                  window.dispatchEvent(new CustomEvent("open-matrix-rain"));
+                }}
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+              >
+                <Sparkles className="text-fg-subtle h-4 w-4" />
+                {t("openMatrix")}
+              </Command.Item>
+              <Command.Item
+                onSelect={() => go("/secret")}
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+              >
+                <Sparkles className="text-fg-subtle h-4 w-4" />
+                {t("openSecret")}
               </Command.Item>
             </Command.Group>
           </Command.List>

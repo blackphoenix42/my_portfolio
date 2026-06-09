@@ -83,6 +83,20 @@ export function Hero() {
             </motion.span>
           </div>
 
+          {/* CSS-only egg: invisible until selected. The text reads
+              "phoenix · rise · /secret" — selecting it unlocks an egg via
+              `SelectionWatcher`. Marked aria-hidden so it doesn't pollute the
+              accessibility tree. */}
+          <p
+            aria-hidden
+            data-selection-egg
+            className="selection:text-accent-cyan selection:bg-bg-sunken mt-3 font-mono text-[10px] text-transparent select-text"
+          >
+            phoenix · rise · /secret
+          </p>
+          {/* Haiku 1 of 3 — comment-trail egg: "from quiet ashes" */}
+          <span hidden aria-hidden data-haiku="home" />
+
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link href="/work" className="btn-primary">
               {t("primaryCta")} <ArrowRight className="h-4 w-4" />

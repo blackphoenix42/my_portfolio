@@ -41,34 +41,34 @@ mirrors the bottom half of that locally.
 
 ## Directory cheat-sheet
 
-| Path                                             | What lives there                                                                       |
-| ------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| `src/app/layout.tsx`                             | Root layout; sets `<html lang>` and global fonts.                                      |
-| `src/app/[locale]/layout.tsx`                    | Locale layout; wires next-intl provider, theme, recruiter mode, command menu.          |
-| `src/app/[locale]/**/page.tsx`                   | One page per route. Every page must `await params` and call `setRequestLocale`.        |
-| `src/app/api/contact/route.ts`                   | POST endpoint — Zod + rate-limit + Resend.                                             |
-| `src/app/icon.jpg`, `apple-icon.jpg`             | Phoenix favicon (auto-served by Next).                                                 |
-| `src/app/opengraph-image.tsx`                    | Edge-runtime OG image generator.                                                       |
-| `src/app/sitemap.ts`, `robots.ts`, `manifest.ts` | SEO surfaces + PWA manifest.                                                           |
-| `src/app/[locale]/privacy/page.tsx`              | Privacy policy page (content lives in `messages/*.json`).                              |
-| `src/components/`                                | All UI. `layout/`, `hero/`, `projects/`, `diagrams/`, `skills/`, `contact/`, etc.      |
-| `src/components/layout/settings-menu.tsx`        | Consolidated header overflow (language + theme + recruiter + shortcuts).               |
-| `src/components/layout/keyboard-shortcuts.tsx`   | `?`-triggered help overlay + global keymap.                                            |
-| `src/components/layout/cookie-consent.tsx`       | Soft, informational cookie banner with privacy link.                                   |
-| `src/components/contact/attachment-field.tsx`    | Drag-and-drop file picker (5 files, 10 MB) with previews.                              |
-| `src/components/projects/demo-slugs.ts`          | Server-safe slug list — which projects have an interactive demo.                       |
-| `src/components/projects/project-demo.tsx`       | Client wrapper that lazy-loads the right demo for a given slug.                        |
-| `src/content/*.ts`                               | The only source of truth for projects, experience, skills, metrics, profile.           |
-| `src/i18n/routing.ts`                            | Locale list, default, prefix mode. **`localePrefix: "never"`** — do not change.        |
-| `src/i18n/navigation.ts`                         | Locale-aware `Link`, `useRouter`, `redirect`. Always prefer over `next/*`.             |
-| `src/i18n/request.ts`                            | next-intl message loader with English fallback.                                        |
-| `src/lib/`                                       | Pure utilities: `validation` (Zod), `rate-limit`, `email` (Resend), `feeds`, `github`. |
-| `src/proxy.ts`                                   | next-intl proxy (Next 16's `middleware` rename).                                       |
-| `messages/{en,hi,ja,sa,zh,ru}.json`              | Translated UI strings. `en.json` is the source of truth.                               |
-| `tests/`                                         | Playwright e2e. Use `tests/i18n.spec.ts` as a template for locale tests.               |
-| `src/**/__tests__/*.test.ts(x)`                  | Vitest unit/component tests. Co-located with code.                                     |
-| `docs/`, `docs/ADR/`                             | Project docs and architecture decision records.                                        |
-| `public/assets/`                                 | Static images, logos, certificates, résumé PDF.                                        |
+| Path                                                                              | What lives there                                                                                                                        |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/app/layout.tsx`                                                              | Root layout; sets `<html lang>` and global fonts.                                                                                       |
+| `src/app/[locale]/layout.tsx`                                                     | Locale layout; wires next-intl provider, theme, recruiter mode, command menu.                                                           |
+| `src/app/[locale]/**/page.tsx`                                                    | One page per route. Every page must `await params` and call `setRequestLocale`.                                                         |
+| `src/app/api/contact/route.ts`                                                    | POST endpoint — Zod + rate-limit + Resend.                                                                                              |
+| `src/app/icon.jpg`, `apple-icon.jpg`                                              | Phoenix favicon (auto-served by Next).                                                                                                  |
+| `src/app/opengraph-image.tsx`                                                     | Edge-runtime OG image generator.                                                                                                        |
+| `src/app/sitemap.ts`, `robots.txt/route.ts`, `humans.txt/route.ts`, `manifest.ts` | SEO surfaces + PWA manifest. `humans.txt` content-negotiates (text for bots, HTML+egg for browsers); `robots.txt` is always plain text. |
+| `src/app/[locale]/privacy/page.tsx`                                               | Privacy policy page (content lives in `messages/*.json`).                                                                               |
+| `src/components/`                                                                 | All UI. `layout/`, `hero/`, `projects/`, `diagrams/`, `skills/`, `contact/`, etc.                                                       |
+| `src/components/layout/settings-menu.tsx`                                         | Consolidated header overflow (language + theme + recruiter + shortcuts).                                                                |
+| `src/components/layout/keyboard-shortcuts.tsx`                                    | `?`-triggered help overlay + global keymap.                                                                                             |
+| `src/components/layout/cookie-consent.tsx`                                        | Soft, informational cookie banner with privacy link.                                                                                    |
+| `src/components/contact/attachment-field.tsx`                                     | Drag-and-drop file picker (5 files, 10 MB) with previews.                                                                               |
+| `src/components/projects/demo-slugs.ts`                                           | Server-safe slug list — which projects have an interactive demo.                                                                        |
+| `src/components/projects/project-demo.tsx`                                        | Client wrapper that lazy-loads the right demo for a given slug.                                                                         |
+| `src/content/*.ts`                                                                | The only source of truth for projects, experience, skills, metrics, profile.                                                            |
+| `src/i18n/routing.ts`                                                             | Locale list, default, prefix mode. **`localePrefix: "never"`** — do not change.                                                         |
+| `src/i18n/navigation.ts`                                                          | Locale-aware `Link`, `useRouter`, `redirect`. Always prefer over `next/*`.                                                              |
+| `src/i18n/request.ts`                                                             | next-intl message loader with English fallback.                                                                                         |
+| `src/lib/`                                                                        | Pure utilities: `validation` (Zod), `rate-limit`, `email` (Resend), `feeds`, `github`.                                                  |
+| `src/proxy.ts`                                                                    | next-intl proxy (Next 16's `middleware` rename).                                                                                        |
+| `messages/{en,hi,ja,sa,zh,ru}.json`                                               | Translated UI strings. `en.json` is the source of truth.                                                                                |
+| `tests/`                                                                          | Playwright e2e. Use `tests/i18n.spec.ts` as a template for locale tests.                                                                |
+| `src/**/__tests__/*.test.ts(x)`                                                   | Vitest unit/component tests. Co-located with code.                                                                                      |
+| `docs/`, `docs/ADR/`                                                              | Project docs and architecture decision records.                                                                                         |
+| `public/assets/`                                                                  | Static images, logos, certificates, résumé PDF.                                                                                         |
 
 ## Hard rules
 

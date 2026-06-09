@@ -181,6 +181,9 @@
     "work": "Work",
     "openGitHub": "Open GitHub",
     "openLinkedIn": "Open LinkedIn",
+    "openTerminal": "Open Terminal mode",
+    "openMatrix": "Open Matrix rain",
+    "openSecret": "Open Secret room",
     "downloadResume": "Download Résumé",
     "copyEmail": "Copy Email",
     "switchLanguage": "Switch language",
@@ -561,18 +564,45 @@
     "title": "Page not found",
     "description": "The page you're looking for doesn't exist or has moved.",
     "tag": "/ 404",
-    "heading": "Lost in the codebase?",
-    "subheading": "The page you're looking for doesn't exist, was renamed, or never did. Try one of the routes below \u2014 or use the command palette (\u2318K / Ctrl+K).",
+    "heading": "Page Lost in the Ashes",
+    "subheading": "Guide the phoenix through the ruins and rise again — or take one of the routes below.",
     "suggestionsLabel": "Try one of these",
     "search": "Open command palette",
     "back": "Go back",
     "asciiLabel": "ASCII art of a 404 phoenix",
     "kbdHint": "to jump anywhere on the site",
-    "cta": "Back home"
+    "cta": "Back home",
+    "game": {
+      "title": "Phoenix Run",
+      "canvasLabel": "Phoenix Run — endless runner game canvas",
+      "idleTitle": "Phoenix Run",
+      "idleHint": "Flap through a volcanic world, dodge the ruins, and collect golden feathers. Tap or press Space to begin.",
+      "play": "Play",
+      "best": "Best · {score}",
+      "paused": "Paused",
+      "resume": "Resume",
+      "gameOver": "Lost to the ashes",
+      "newHigh": "new high score!",
+      "feathers": "{count, plural, one {# golden feather} other {# golden feathers}}",
+      "restart": "Restart",
+      "goHome": "Go Home",
+      "dive": "Dive",
+      "controls": "Space/↑/W flap · ↓/S dive · P pause · R restart · F fullscreen · tap to flap, swipe down to dive",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "reducedMotion": "Reduced motion is on — the runner uses motion, so play only if you're comfortable.",
+      "ms500": "The Flame Awakens",
+      "ms1000": "Phoenix Rebirth Unlocked",
+      "ms2000": "Inferno Mode Activated",
+      "ms5000": "Legendary Phoenix",
+      "rebirth": "Reborn from the ashes!"
+    }
   },
   "privacy": {
     "title": "Privacy",
-    "description": "What this site stores, what it doesn\u2019t, and how to contact the maintainer.",
+    "description": "What this site stores, what it doesn’t, and how to contact the maintainer.",
     "tag": "/ privacy",
     "heading": "Privacy",
     "lastUpdated": "Last updated: {date}",
@@ -581,13 +611,13 @@
       "collect": {
         "title": "What we collect",
         "logsTitle": "Server logs",
-        "logsBody": "The hosting platform (Vercel) records standard request logs \u2014 IP address, request path, user-agent, response code, timestamp \u2014 for operational and abuse-prevention purposes. Retained briefly by the host; never joined with any other dataset.",
+        "logsBody": "The hosting platform (Vercel) records standard request logs — IP address, request path, user-agent, response code, timestamp — for operational and abuse-prevention purposes. Retained briefly by the host; never joined with any other dataset.",
         "contactTitle": "Contact form",
         "contactBody": "When you submit the contact form (<code>/contact</code>), the following fields are sent to the maintainer by email via Resend: name, email, optional company, role context, subject, message, and any attachments you choose to include. Your IP is used transiently to enforce a rate limit and is not stored.",
         "cookiesTitle": "Cookies",
         "cookiesBody": "Exactly one cookie is set: <code>NEXT_LOCALE</code>, which remembers the language you picked. No analytics cookies, no tracking pixels, no third-party advertising.",
         "analyticsTitle": "Analytics",
-        "analyticsBody": "<strong>Vercel Web Analytics</strong> and <strong>Vercel Speed Insights</strong> are enabled. Both are cookie-less and GDPR-exempt: they record aggregate page views and Core Web Vitals using a short-lived hash that\u2019s recomputed daily and never linked back to an individual."
+        "analyticsBody": "<strong>Vercel Web Analytics</strong> and <strong>Vercel Speed Insights</strong> are enabled. Both are cookie-less and GDPR-exempt: they record aggregate page views and Core Web Vitals using a short-lived hash that’s recomputed daily and never linked back to an individual."
       },
       "donot": {
         "title": "What we do not do",
@@ -630,7 +660,7 @@
       },
       "rights": {
         "title": "Your rights",
-        "body": "You can request deletion of any message you\u2019ve sent via the contact form by replying to the acknowledgement email or contacting the maintainer directly."
+        "body": "You can request deletion of any message you’ve sent via the contact form by replying to the acknowledgement email or contacting the maintainer directly."
       },
       "contact": {
         "title": "Contact",
@@ -1202,10 +1232,22 @@
     }
   },
   "languagesData": {
-    "english": { "name": "English", "level": "Native or bilingual" },
-    "hindi": { "name": "Hindi", "level": "Native or bilingual" },
-    "japanese": { "name": "Japanese", "level": "Elementary proficiency" },
-    "sanskrit": { "name": "Sanskrit", "level": "Limited working proficiency" }
+    "english": {
+      "name": "English",
+      "level": "Native or bilingual"
+    },
+    "hindi": {
+      "name": "Hindi",
+      "level": "Native or bilingual"
+    },
+    "japanese": {
+      "name": "Japanese",
+      "level": "Elementary proficiency"
+    },
+    "sanskrit": {
+      "name": "Sanskrit",
+      "level": "Limited working proficiency"
+    }
   },
   "certsData": {
     "google-cloud-30-days-completion": "Google Cloud — 30 Days Completion",
@@ -1233,5 +1275,199 @@
     "web-chat-using-react": "Web Chat using React",
     "yaml": "YAML",
     "seo": "SEO"
+  },
+  "eggs": {
+    "toast": {
+      "title": "Easter egg unlocked",
+      "totalShort": "22"
+    },
+    "shortcutsCounter": {
+      "label": "Secrets {found}/{total}",
+      "title": "Open the trophy room"
+    },
+    "matrix": {
+      "title": "Matrix rain",
+      "close": "Close",
+      "hint": "Click, press ESC, or type \"matrix\" to exit"
+    },
+    "terminal": {
+      "title": "phoenix-shell",
+      "close": "Close terminal",
+      "inputLabel": "Terminal input",
+      "greet": "Welcome to phoenix-shell, {name}.",
+      "greetHint": "Type \"help\" to list commands. \"exit\" to leave.",
+      "help": "Commands:\n  help            — this message\n  whoami          — about the maintainer\n  skills          — list skill clusters\n  projects        — featured projects\n  projects --list — every project slug\n  contact         — open /contact\n  cv | resume     — download résumé\n  theme [name]    — switch theme (light, dark, phoenix)\n  ls              — directory listing\n  cat about.md    — print a short bio\n  pwd             — print working directory\n  date            — current local time\n  echo [text]     — print text\n  history         — recent commands\n  neofetch        — system splash\n  sudo            — try it.\n  secrets         — open trophy room\n  clear           — clear the screen\n  exit            — close the terminal (Esc)\n\n  Tip: press Tab to autocomplete, ↑/↓ for history.",
+      "projectsHint": "Featured (use 'projects --list' for the full set):",
+      "themeSet": "Theme set to {theme}.",
+      "themeUsage": "Usage: theme [light|dark|phoenix]",
+      "opening": "Opening {what}…",
+      "unknown": "phoenix: {cmd}: command not found. Try `help`.",
+      "footerHint": "Tab ⇥ autocomplete · ↑↓ history · click to type",
+      "footerCmds": "Esc to exit"
+    },
+    "dino": {
+      "titleRunner": "Phoenix Runner",
+      "titleFeather": "Feather Catch",
+      "score": "Score",
+      "start": "Start",
+      "retry": "Retry",
+      "controls": "Space/↑ jump · ↓ duck · P pause · Tap canvas to jump",
+      "gameOver": "Game over · score {score}",
+      "newHigh": "new high score!",
+      "switchToFeather": "Switch to Feather Catch",
+      "switchToRunner": "Switch to Phoenix Runner",
+      "canvasLabel": "Phoenix runner game canvas",
+      "reducedMotion": "Reduced motion is enabled — the mini-game is paused. Disable it to play Phoenix Runner.",
+      "unlockHint": "Score 25 to unlock Feather Catch · score 42 to claim the egg"
+    },
+    "phoenixPage": {
+      "heading": "Phoenix.",
+      "body": "Codename for the brand and palette of this site. A bird that burns and rises — a reminder that the best engineering work is iterative, that failure is data, and that rebuilds are how systems get faster.",
+      "quote": "“What is essential is invisible to the eye.” — Saint-Exupéry",
+      "trophyCta": "Open the trophy room",
+      "homeCta": "Back to home"
+    },
+    "creditsPage": {
+      "tag": "Built on the shoulders of giants",
+      "heading": "Credits",
+      "body": "This site stands on a stack of incredible open-source work. Thank you to every maintainer below — and to the many transitive dependencies you don't see.",
+      "found": "🜂 you found the credits room",
+      "trophyCta": "See the trophy room"
+    },
+    "trophy": {
+      "tag": "Trophy room",
+      "heading": "You found the secret room.",
+      "subheading": "A catalogue of small surprises hidden across the site. Locked entries show a vague clue; unlocked ones reveal how you found them.",
+      "progress": "{found} of {total} found",
+      "scoreLine": "Phoenix Run high: {dino} · Golden feathers: {feather}",
+      "share": "Copy share link",
+      "copied": "Copied!",
+      "reset": "Reset progress",
+      "resetConfirm": "Reset all easter-egg progress on this device?",
+      "friendLabel": "Shared progress preview",
+      "friendHeading": "Someone shared their progress: {count}/{total} found",
+      "friendSubheading": "Their high scores: run {dino} · feathers {feather}. Yours stay yours — opening this link doesn't unlock anything.",
+      "tier": "Tier {tier}",
+      "locked": "???",
+      "lockedClue": "Keep exploring — type, click, scroll, switch.",
+      "completeLabel": "Completionist reward",
+      "completeHeading": "Every egg, found.",
+      "completeBody": "That's all of them. Thanks for taking the long way around — it means a lot. If you'd like to say hi, the inbox is open.",
+      "completeMailSubject": "I found them all 🜂",
+      "completeMailBody": "Hi Ayush,\n\nI found every easter egg on the portfolio. Just wanted to say hi.\n\n— a fellow traveller",
+      "completeMailCta": "Say hi"
+    },
+    "catalogue": {
+      "console-banner": {
+        "title": "Console toolkit",
+        "hint": "Opened the devtools console and called help() / phoenix() / hire() / cv() / secrets().",
+        "clue": "Developers know where to look first."
+      },
+      "html-comment": {
+        "title": "View-source explorer",
+        "hint": "Found the phoenix HTML comment trail in the page source.",
+        "clue": "Ctrl+U is a fine pastime."
+      },
+      "humans-txt": {
+        "title": "humans.txt reader",
+        "hint": "You read /humans.txt — the old-school manifest.",
+        "clue": "There's a file just for humans."
+      },
+      "robots-txt": {
+        "title": "robots.txt reader",
+        "hint": "You opened /robots.txt — what the crawlers see.",
+        "clue": "And another, just for robots."
+      },
+      "dino-score-5": {
+        "title": "Phoenix Run — 500",
+        "hint": "Soared past score 500 in Phoenix Run on the 404 page.",
+        "clue": "Get lost on purpose, then fly. The flame awakens at five hundred."
+      },
+      "feather-score-5": {
+        "title": "Golden Feather × 5",
+        "hint": "Collected five golden feathers in a single Phoenix Run.",
+        "clue": "Some power-ups are worth chasing. Gather a handful of feathers."
+      },
+      "konami": {
+        "title": "Konami initiate",
+        "hint": "Entered the classic ↑↑↓↓←→←→BA sequence.",
+        "clue": "Some sequences are written into muscle memory."
+      },
+      "terminal-mode": {
+        "title": "phoenix-shell",
+        "hint": "Opened the terminal overlay — type \"terminal\" anywhere.",
+        "clue": "Speak the word and a shell appears."
+      },
+      "phoenix-type": {
+        "title": "Speak its name",
+        "hint": "Typed \"phoenix\" anywhere on the page.",
+        "clue": "Names have power."
+      },
+      "logo-shift-click": {
+        "title": "Hidden phoenix theme",
+        "hint": "Held Shift and clicked the logo five times to summon the phoenix theme.",
+        "clue": "The crest does not mind being clicked."
+      },
+      "sanskrit-locale": {
+        "title": "संस्कृतम् reader",
+        "hint": "Switched the site to Sanskrit — a liturgical, classical language at home with phoenix imagery.",
+        "clue": "Six tongues are spoken here."
+      },
+      "polyglot": {
+        "title": "Polyglot",
+        "hint": "Visited the site in all six supported languages.",
+        "clue": "Try every flag in the menu."
+      },
+      "theme-cycler": {
+        "title": "Colour theorist",
+        "hint": "Cycled through all three themes within two seconds — the 't' key is quick.",
+        "clue": "Hammer the theme key."
+      },
+      "devtools-open": {
+        "title": "Devtools spotted",
+        "hint": "Opened the browser devtools — respect.",
+        "clue": "We see you in the inspector."
+      },
+      "phoenix-route": {
+        "title": "/phoenix visitor",
+        "hint": "Found the hidden /phoenix route, where the codename is explained.",
+        "clue": "Type the codename in the address bar."
+      },
+      "credits-route": {
+        "title": "/credits visitor",
+        "hint": "Found the hidden /credits route — a thank-you to the open-source giants.",
+        "clue": "Every site stands on shoulders."
+      },
+      "haiku-trail": {
+        "title": "Haiku trail",
+        "hint": "Found the three-line haiku hidden across home, about and work.",
+        "clue": "Three pages, three lines, one ember."
+      },
+      "css-selection": {
+        "title": "Invisible ink",
+        "hint": "Selected the invisible line under the hero tagline — \"phoenix · rise · /secret\".",
+        "clue": "Some text is only visible when selected."
+      },
+      "matrix-rain": {
+        "title": "Down the matrix",
+        "hint": "Summoned the matrix-rain overlay — type \"matrix\" anywhere.",
+        "clue": "Green, falling, familiar."
+      },
+      "og-qr-scan": {
+        "title": "OG QR scanner",
+        "hint": "Spotted (or scanned) the tiny QR code in the social preview image.",
+        "clue": "Look at the share preview, not the page."
+      },
+      "trophy-room-visit": {
+        "title": "Trophy room",
+        "hint": "You found the trophy room itself.",
+        "clue": "Some secrets are about the room they live in."
+      },
+      "completionist": {
+        "title": "Completionist",
+        "hint": "Every single egg found. You really did go the long way around.",
+        "clue": "Find everything else first."
+      }
+    }
   }
 }

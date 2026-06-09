@@ -37,6 +37,8 @@ describe("<GreetingChip />", () => {
     const fixed = new Date();
     fixed.setHours(8, 30, 0, 0);
     vi.setSystemTime(fixed);
+    // The chip now remembers the time-of-day window it greeted; start clean.
+    window.localStorage.clear();
   });
 
   afterEach(() => {
@@ -52,13 +54,32 @@ describe("<GreetingChip />", () => {
     expect(button).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("auto-opens on every visit", async () => {
+  it("auto-opens the first time in a time-of-day window", async () => {
     renderChip();
     await screen.findByRole("button", { name: /good morning/i });
     await act(async () => {
       await vi.advanceTimersByTimeAsync(1000);
     });
     expect(screen.getByRole("dialog")).toBeInTheDocument();
+  });
+
+  it("stays closed on a repeat visit in the same window", async () => {
+    // First visit greets and records the window.
+    const first = renderChip();
+    await screen.findByRole("button", { name: /good morning/i });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1000);
+    });
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+    first.unmount();
+
+    // Second visit in the same window must not auto-open.
+    renderChip();
+    await screen.findByRole("button", { name: /good morning/i });
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1000);
+    });
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
   it("toggles the popover when the button is clicked", async () => {

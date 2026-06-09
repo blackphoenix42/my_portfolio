@@ -149,7 +149,10 @@
       "cp": "競技プログラミング",
       "roadmap": "ロードマップ",
       "contact": "お問い合わせ"
-    }
+    },
+    "openTerminal": "ターミナルモードを開く",
+    "openMatrix": "マトリックスを開く",
+    "openSecret": "秘密の部屋を開く"
   },
   "mobileActionBar": {
     "contact": "お問い合わせ",
@@ -510,7 +513,11 @@
       },
       "thirdParty": {
         "title": "利用中の第三者サービス",
-        "headers": { "service": "サービス", "purpose": "目的", "data": "共有データ" },
+        "headers": {
+          "service": "サービス",
+          "purpose": "目的",
+          "data": "共有データ"
+        },
         "rows": {
           "vercel": {
             "service": "Vercel",
@@ -635,6 +642,86 @@
         "tagline": "NFT ベースの選手で構成される Tezos 上の分散型ファンタジーサッカーアプリ。",
         "category": "ブロックチェーン"
       }
+    }
+  },
+  "eggs": {
+    "toast": {
+      "title": "イースターエッグを発見",
+      "totalShort": "22"
+    },
+    "shortcutsCounter": {
+      "label": "秘密 {found}/{total}",
+      "title": "トロフィールームを開く"
+    },
+    "matrix": {
+      "title": "マトリックスレイン",
+      "close": "閉じる",
+      "hint": "クリック · ESC · もう一度 \"matrix\" 入力で終了"
+    },
+    "terminal": {
+      "title": "phoenix-shell",
+      "close": "ターミナルを閉じる",
+      "inputLabel": "ターミナル入力",
+      "greet": "phoenix-shell へようこそ、{name} さん。",
+      "greetHint": "コマンド一覧は \"help\"。終了は \"exit\"。",
+      "help": "Commands:\n  help, whoami, skills, projects, projects --list,\n  contact, cv, theme [light|dark|phoenix], ls, cat about.md,\n  date, echo [text], history, neofetch, sudo, secrets, clear, exit",
+      "projectsHint": "注目プロジェクト (全件は `projects --list`):",
+      "themeSet": "テーマを {theme} に変更しました。",
+      "themeUsage": "使い方: theme [light|dark|phoenix]",
+      "opening": "{what} を開いています…",
+      "unknown": "phoenix: {cmd}: コマンドが見つかりません。`help` を試してください。"
+    },
+    "dino": {
+      "titleRunner": "フェニックスランナー",
+      "titleFeather": "フェザーキャッチ",
+      "score": "スコア",
+      "start": "スタート",
+      "retry": "リトライ",
+      "controls": "Space/↑ ジャンプ · ↓ かがむ · P 一時停止 · タップでジャンプ",
+      "gameOver": "ゲームオーバー · スコア {score}",
+      "newHigh": "新記録！",
+      "switchToFeather": "フェザーキャッチへ",
+      "switchToRunner": "フェニックスランナーへ",
+      "canvasLabel": "フェニックスランナーのキャンバス",
+      "reducedMotion": "アニメーション削減モードのためミニゲームは停止しています。",
+      "unlockHint": "25点でフェザーキャッチ解放 · 42点でエッグ獲得"
+    },
+    "phoenixPage": {
+      "heading": "フェニックス。",
+      "body": "本サイトのコードネーム。灰から立ち上がる鳥 — 工学は反復であるという暗示。",
+      "quote": "「本当に大切なものは目には見えない。」— Saint-Exupéry",
+      "trophyCta": "トロフィールームを開く",
+      "homeCta": "ホームへ戻る"
+    },
+    "creditsPage": {
+      "tag": "巨人の肩の上に",
+      "heading": "クレジット",
+      "body": "本サイトは多くのオープンソースプロジェクトに支えられています。すべてのメンテナに感謝。",
+      "found": "🜂 クレジットルームを発見",
+      "trophyCta": "トロフィールームへ"
+    },
+    "trophy": {
+      "tag": "トロフィールーム",
+      "heading": "秘密の部屋を見つけました。",
+      "subheading": "サイト内に隠された小さな仕掛けの一覧。",
+      "progress": "{found} / {total} 発見",
+      "scoreLine": "フェニックスランナー最高: {dino} · フェザーキャッチ最高: {feather}",
+      "share": "シェアリンクをコピー",
+      "copied": "コピーしました！",
+      "reset": "進捗をリセット",
+      "resetConfirm": "このデバイスのイースターエッグ進捗をすべてリセットしますか？",
+      "friendLabel": "共有された進捗",
+      "friendHeading": "誰かが進捗を共有: {count}/{total}",
+      "friendSubheading": "ハイスコア: ランナー {dino} · フェザー {feather}。あなたの進捗には影響しません。",
+      "tier": "ティア {tier}",
+      "locked": "???",
+      "lockedClue": "もう少し探してみて — 入力・クリック・スクロール・切り替え。",
+      "completeLabel": "コンプリート報酬",
+      "completeHeading": "すべて見つけました。",
+      "completeBody": "全部です。遠回りしてくれてありがとう。",
+      "completeMailSubject": "全部見つけました 🜂",
+      "completeMailBody": "Ayush さん、\n\nポートフォリオのイースターエッグを全部見つけました。\n\n— 旅人より",
+      "completeMailCta": "挨拶する"
     }
   }
 }

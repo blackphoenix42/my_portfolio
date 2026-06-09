@@ -149,7 +149,10 @@
       "cp": "Спортивное программирование",
       "roadmap": "Дорожная карта",
       "contact": "Контакты"
-    }
+    },
+    "openTerminal": "Открыть терминал",
+    "openMatrix": "Открыть матричный дождь",
+    "openSecret": "Открыть секретную комнату"
   },
   "mobileActionBar": {
     "contact": "Связь",
@@ -510,7 +513,11 @@
       },
       "thirdParty": {
         "title": "Используемые сторонние сервисы",
-        "headers": { "service": "Сервис", "purpose": "Назначение", "data": "Передаваемые данные" },
+        "headers": {
+          "service": "Сервис",
+          "purpose": "Назначение",
+          "data": "Передаваемые данные"
+        },
         "rows": {
           "vercel": {
             "service": "Vercel",
@@ -635,6 +642,86 @@
         "tagline": "Децентрализованная фэнтези-футбольная платформа на Tezos с NFT-составами.",
         "category": "Блокчейн"
       }
+    }
+  },
+  "eggs": {
+    "toast": {
+      "title": "Пасхалка открыта",
+      "totalShort": "22"
+    },
+    "shortcutsCounter": {
+      "label": "Секреты {found}/{total}",
+      "title": "Открыть зал трофеев"
+    },
+    "matrix": {
+      "title": "Матричный дождь",
+      "close": "Закрыть",
+      "hint": "Клик, ESC или снова введите \"matrix\", чтобы выйти"
+    },
+    "terminal": {
+      "title": "phoenix-shell",
+      "close": "Закрыть терминал",
+      "inputLabel": "Ввод терминала",
+      "greet": "Добро пожаловать в phoenix-shell, {name}.",
+      "greetHint": "Команды — \"help\". Выход — \"exit\".",
+      "help": "Commands:\n  help, whoami, skills, projects, projects --list,\n  contact, cv, theme [light|dark|phoenix], ls, cat about.md,\n  date, echo [text], history, neofetch, sudo, secrets, clear, exit",
+      "projectsHint": "Избранные проекты (полный список — `projects --list`):",
+      "themeSet": "Тема установлена: {theme}.",
+      "themeUsage": "Использование: theme [light|dark|phoenix]",
+      "opening": "Открываю {what}…",
+      "unknown": "phoenix: {cmd}: команда не найдена. Попробуйте `help`."
+    },
+    "dino": {
+      "titleRunner": "Феникс-раннер",
+      "titleFeather": "Ловец перьев",
+      "score": "Счёт",
+      "start": "Старт",
+      "retry": "Заново",
+      "controls": "Space/↑ прыжок · ↓ присесть · P пауза · Тап по полю — прыжок",
+      "gameOver": "Игра окончена · счёт {score}",
+      "newHigh": "новый рекорд!",
+      "switchToFeather": "Перейти к Ловцу перьев",
+      "switchToRunner": "Перейти к Феникс-раннеру",
+      "canvasLabel": "Холст Феникс-раннера",
+      "reducedMotion": "Включён режим уменьшенной анимации — мини-игра остановлена.",
+      "unlockHint": "25 очков — открыть Ловца перьев · 42 — забрать яйцо"
+    },
+    "phoenixPage": {
+      "heading": "Феникс.",
+      "body": "Кодовое имя сайта. Птица, которая сгорает и возрождается — напоминание, что лучшая инженерия итеративна.",
+      "quote": "«Самое важное невидимо для глаз.» — Saint-Exupéry",
+      "trophyCta": "Открыть зал трофеев",
+      "homeCta": "На главную"
+    },
+    "creditsPage": {
+      "tag": "На плечах гигантов",
+      "heading": "Благодарности",
+      "body": "Сайт построен на стеке потрясающих open-source проектов. Спасибо каждому мейнтейнеру.",
+      "found": "🜂 вы нашли комнату благодарностей",
+      "trophyCta": "Открыть зал трофеев"
+    },
+    "trophy": {
+      "tag": "Зал трофеев",
+      "heading": "Вы нашли секретную комнату.",
+      "subheading": "Каталог маленьких сюрпризов, спрятанных по сайту.",
+      "progress": "Найдено {found} из {total}",
+      "scoreLine": "Феникс-раннер рекорд: {dino} · Ловец перьев рекорд: {feather}",
+      "share": "Скопировать ссылку",
+      "copied": "Скопировано!",
+      "reset": "Сбросить прогресс",
+      "resetConfirm": "Сбросить весь прогресс пасхалок на этом устройстве?",
+      "friendLabel": "Прогресс друга",
+      "friendHeading": "Кто-то поделился прогрессом: {count}/{total}",
+      "friendSubheading": "Их рекорды: раннер {dino} · перья {feather}. Ваш прогресс не меняется.",
+      "tier": "Уровень {tier}",
+      "locked": "???",
+      "lockedClue": "Продолжайте искать — печатайте, кликайте, прокручивайте, переключайте.",
+      "completeLabel": "Награда коллекционеру",
+      "completeHeading": "Всё найдено.",
+      "completeBody": "Это все. Спасибо, что прошли долгий путь.",
+      "completeMailSubject": "Я нашёл их все 🜂",
+      "completeMailBody": "Привет, Ayush,\n\nЯ нашёл все пасхалки в портфолио.\n\n— попутчик",
+      "completeMailCta": "Поздороваться"
     }
   }
 }

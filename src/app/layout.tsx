@@ -111,6 +111,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="dns-prefetch" href="https://www.google.com" />
       </head>
       <body className="bg-bg text-fg min-h-dvh antialiased" suppressHydrationWarning>
+        {/* 🜂 You found one. Try `help()` in this console, or the Konami code
+            on the page. Trail of three haikus hidden across the site; if you
+            collect them all, /secret holds a trophy room. — phoenix */}
         {children}
         {/* Vercel Analytics: cookie-less, GDPR-exempt page-view + custom-event tracking. */}
         <Analytics />

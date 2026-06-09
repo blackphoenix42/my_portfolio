@@ -149,7 +149,10 @@
       "cp": "स्पर्धात्मकप्रोग्रामिङ्गम्",
       "roadmap": "मार्गचित्रम्",
       "contact": "सम्पर्कः"
-    }
+    },
+    "openTerminal": "टर्मिनल-विधिं उद्घाटयतु",
+    "openMatrix": "मैट्रिक्स-वृष्टिं उद्घाटयतु",
+    "openSecret": "गुप्तकक्षं उद्घाटयतु"
   },
   "mobileActionBar": {
     "contact": "सम्पर्कः",
@@ -510,7 +513,11 @@
       },
       "thirdParty": {
         "title": "उपयोगे तृतीय-पक्ष-सेवाः",
-        "headers": { "service": "सेवा", "purpose": "उद्देश्यम्", "data": "सहभाजितः दत्तांशः" },
+        "headers": {
+          "service": "सेवा",
+          "purpose": "उद्देश्यम्",
+          "data": "सहभाजितः दत्तांशः"
+        },
         "rows": {
           "vercel": {
             "service": "Vercel",
@@ -635,6 +642,86 @@
         "tagline": "Tezos उपरि NFT-आधारितैः समूहैः विकेन्द्रीकृतः कल्पनाकन्दुक-मञ्चः।",
         "category": "Blockchain"
       }
+    }
+  },
+  "eggs": {
+    "toast": {
+      "title": "गुप्तरत्नं प्राप्तम्",
+      "totalShort": "22"
+    },
+    "shortcutsCounter": {
+      "label": "रहस्यानि {found}/{total}",
+      "title": "जय-कक्षं उद्घाटयतु"
+    },
+    "matrix": {
+      "title": "मैट्रिक्स वर्षा",
+      "close": "पिधानम्",
+      "hint": "स्पर्शः, ESC, अथवा पुनः \"matrix\" लेखनेन निर्गच्छतु"
+    },
+    "terminal": {
+      "title": "phoenix-shell",
+      "close": "टर्मिनलं पिदध्यात्",
+      "inputLabel": "टर्मिनल-आदेशः",
+      "greet": "phoenix-shell मध्ये स्वागतम्, {name}।",
+      "greetHint": "आदेशसूचीं द्रष्टुं \"help\" लिखतु। निर्गन्तुं \"exit\"।",
+      "help": "Commands:\n  help, whoami, skills, projects, projects --list,\n  contact, cv, theme [light|dark|phoenix], ls, cat about.md,\n  date, echo [text], history, neofetch, sudo, secrets, clear, exit",
+      "projectsHint": "मुख्यपरियोजनाः (सम्पूर्णसूच्यर्थं `projects --list`):",
+      "themeSet": "रङ्गयोजना {theme} इति स्थापिता।",
+      "themeUsage": "विधिः: theme [light|dark|phoenix]",
+      "opening": "{what} उद्घाट्यते…",
+      "unknown": "phoenix: {cmd}: आदेशः न प्राप्तः। `help` प्रयत्नताम्।"
+    },
+    "dino": {
+      "titleRunner": "फ़ीनिक्स धावकः",
+      "titleFeather": "पिच्छ-ग्रहणम्",
+      "score": "अङ्काः",
+      "start": "आरम्भयतु",
+      "retry": "पुनः",
+      "controls": "Space/↑ उल्लम्फनम् · ↓ नमनम् · P विरामः · स्पर्शेन उल्लम्फनम्",
+      "gameOver": "क्रीडा समाप्ता · अङ्काः {score}",
+      "newHigh": "नवीनः उच्चाङ्कः!",
+      "switchToFeather": "पिच्छ-ग्रहणम् इति परिवर्तय",
+      "switchToRunner": "फ़ीनिक्स धावकम् इति परिवर्तय",
+      "canvasLabel": "फ़ीनिक्स धावक-पटः",
+      "reducedMotion": "गतिः न्यूनीकृता अस्ति — मिनी-क्रीडा विरामे।",
+      "unlockHint": "25 अङ्केषु पिच्छ-ग्रहणम् उद्घाट्यते · 42 अङ्केषु अण्डकं लभ्यते"
+    },
+    "phoenixPage": {
+      "heading": "फ़ीनिक्स।",
+      "body": "अस्य पुटस्थलस्य कूट-नाम। भस्मनः पुनः उत्थानशीलः पक्षी — पुनरावृत्तिः एव श्रेष्ठा अभियान्त्रिकी।",
+      "quote": "“आँखों के लिए जो आवश्यक है वह अदृश्य है।” — Saint-Exupéry",
+      "trophyCta": "जय-कक्षं उद्घाटयतु",
+      "homeCta": "मुख्यपृष्ठं प्रति"
+    },
+    "creditsPage": {
+      "tag": "महतां स्कन्धेषु",
+      "heading": "साधुवादाः",
+      "body": "इदं पुटस्थलं बहूनां मुक्तस्रोत-परियोजनानां श्रमे प्रतिष्ठितम्। सर्वेभ्यः धन्यवादाः।",
+      "found": "🜂 भवता साधुवाद-कक्षः प्राप्तः",
+      "trophyCta": "जय-कक्षं द्रष्टुम्"
+    },
+    "trophy": {
+      "tag": "जय-कक्षः",
+      "heading": "भवता गुप्तकक्षः प्राप्तः।",
+      "subheading": "अस्मिन् पुटस्थले गोप्यानि लघुविस्मयानि।",
+      "progress": "{found} / {total} प्राप्तानि",
+      "scoreLine": "फ़ीनिक्स धावक-उच्चाङ्कः: {dino} · पिच्छ-ग्रहण-उच्चाङ्कः: {feather}",
+      "share": "साझा-लिङ्कं प्रतिलिखतु",
+      "copied": "प्रतिलिखितम्!",
+      "reset": "प्रगतिं पुनः स्थापयतु",
+      "resetConfirm": "अस्मिन् यन्त्रे सर्वा गुप्तरत्न-प्रगतिः पुनः स्थाप्यताम्?",
+      "friendLabel": "साझा-प्रगति-पूर्वावलोकनम्",
+      "friendHeading": "केनचित् साझा कृता: {count}/{total}",
+      "friendSubheading": "तेषाम् उच्चाङ्काः: धावकः {dino} · पिच्छम् {feather}। भवतः प्रगतिः अप्रभाविता।",
+      "tier": "स्तरः {tier}",
+      "locked": "???",
+      "lockedClue": "अन्वेषणं कुरुतु — लिखतु, नोदयतु, सञ्चालयतु, परिवर्तयतु।",
+      "completeLabel": "सम्पूर्णवादि-पुरस्कारः",
+      "completeHeading": "सर्वाणि रत्नानि प्राप्तानि।",
+      "completeBody": "सर्वम् प्राप्तम्। दीर्घमार्गं स्वीकृत्य धन्यवादाः।",
+      "completeMailSubject": "मया सर्वाणि प्राप्तानि 🜂",
+      "completeMailBody": "नमो आयुष,\n\nमया पोर्टफोलियो-पुटस्थले सर्वाणि गुप्तरत्नानि प्राप्तानि।\n\n— सहयात्री",
+      "completeMailCta": "नमस्कारं वदतु"
     }
   }
 }

@@ -8,6 +8,49 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Added
 
+- **Easter-egg layer (22 eggs across 5 tiers)** — a discoverable second
+  reading of the site. Includes **Phoenix Run**, a Chrome-dino-style
+  endless runner on the 404 page (flaming phoenix, parallax volcanic world,
+  power-ups, Phoenix Rebirth, Inferno Mode, score milestones, audio, and
+  fullscreen; crossing **500** unlocks the score egg and collecting **five
+  golden feathers** unlocks the feather egg, both with persistent high
+  scores), a retro `phoenix-shell` terminal overlay with history (↑/↓),
+  Tab autocompletion, click-to-type, ESC-to-close, and 10+ commands
+  (`help`, `theme`, `ls`, `cat`, `pwd`, `date`, `echo`, `history`,
+  `neofetch`, `sudo`, `projects --list`), a full-screen
+  matrix-rain overlay with brighter cyan leading characters and a "MATRIX"
+  glyph, hidden `/phoenix` and `/credits` routes, a trophy room at
+  `/secret` with shareable progress URLs, a sculpted gradient console
+  banner with `help()` / `phoenix()` / `hire()` / `cv()` / `humans()` /
+  `robots()` / `secrets()` globals (all return strings so the REPL never
+  prints `undefined`), per-egg full-screen unlock bursts (rings, confetti,
+  embers, color wash, spiral, glitch — palette + variant chosen by egg
+  id), the Konami code, typed-word triggers (`phoenix`, `matrix`,
+  `terminal`), a Sanskrit-locale egg, a polyglot egg for visiting all six
+  languages, a theme-cycler egg, devtools-open detection, a three-page
+  haiku trail, a CSS `::selection` reveal under the hero, an OG-image QR
+  code that deep-links to the trophy room, a `humans-txt` egg (visit
+  `/humans.txt` in a browser or call `humans()`), a `robots-txt` egg (call
+  `robots()` — `/robots.txt` carries a small ASCII greeting alongside the
+  directives but stays plain text for crawlers), and a completionist reward.
+  Global keyboard listeners back off whenever an overlay (terminal,
+  matrix) is open so typing inside them no longer cycles themes / fires
+  Konami. All progress lives in a single `localStorage` key (no new
+  cookies, no analytics). Animations gate on `useReducedMotion()`. UI
+  strings are translated across all six locales (en, hi, ja, sa, zh, ru).
+  See `docs/EGGS.md` for the full catalogue and ADR-0008 for the decision
+  record.
+- **Contact: company autofill from email domain** — typing a work email
+  (e.g. `jane@acme.com`) now pre-fills the Company field ("Acme"), with a
+  small curated map for well-known brands (Google, Meta, NVIDIA, …). Free /
+  personal providers (gmail, outlook, proton, …) and unusable addresses
+  leave it blank, and anything the visitor types by hand always wins. Logic
+  is a pure, unit-tested `src/lib/company-from-email.ts`.
+- **Certificate previews preload + cache** — the About page now warms the
+  browser HTTP cache for every certificate asset during idle time after load
+  (staggered, Data-Saver-aware), so the PDF/image previews are ready before a
+  card scrolls into view. Pairs with the existing immutable `/assets/**`
+  caching for instant repeat visits.
 - **Quote refresh hint** — the rotating motivational / funny quote card now
   includes a subtle localized "wait 30s for a new motivational or funny quote"
   caption and a focused component test for the timer behavior.
@@ -19,9 +62,10 @@ All notable changes to this project are documented here. Format loosely follows
   name in the header. Pops a localized "Good morning / afternoon / evening /
   night" card that welcomes visitors and invites them to explore the
   portfolio. The time-of-day bucket is computed entirely in the browser, with
-  no visible clock, no IP geolocation, and no extra cookie. Auto-opens on visit,
-  dismissible with click-outside / `Esc`, fully translated across all six
-  locales and gated on `useReducedMotion()`.
+  no visible clock, no IP geolocation, and no extra cookie. Auto-opens once per time-of-day
+  window per day (remembered in a single `localStorage` key, so revisits in
+  the same window stay quiet), dismissible with click-outside / `Esc`, fully
+  translated across all six locales and gated on `useReducedMotion()`.
 - **Vercel Web Analytics + Speed Insights** wired into the root layout. Both
   are cookie-less and GDPR-exempt; they report page views and real-user
   Core Web Vitals from production.
@@ -62,6 +106,37 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Changed
 
+- **404 mini-game rebuilt as Phoenix Run** — the old Chrome-dino runner +
+  Feather Catch mode are replaced by a single polished endless runner: a
+  flaming phoenix (canvas gradients, animated wing-flaps, fire trail, ember
+  particles) over a parallax volcanic world with lava spikes, ravens,
+  meteors, pillars, fire rings, and lava rocks; flame-shield / golden-feather
+  / phoenix-burst / slow-time / double-score power-ups; a one-charge Phoenix
+  Rebirth at 1000; Inferno Mode at 2000; score milestones; screen shake;
+  Web-Audio sound effects with a mute toggle; fullscreen + responsive
+  canvas; and mobile tap/swipe controls. Up/Down no longer scroll the page
+  mid-run, and the game claims `overlay-state` while active so page
+  shortcuts stay dormant. The 404 heading is retitled "Page Lost in the
+  Ashes" with a "Go Home" action.
+- **Terminal overlay upgraded** — click anywhere to focus the prompt, **Tab**
+  autocompletes commands and arguments (with an ambiguous-match list), a new
+  `pwd` command, the `neofetch` splash now renders the shared phoenix ASCII,
+  and a footer shows the key hints.
+- **OG-image QR hardened** — switched to high error-correction, larger
+  modules, and dark-on-white with a real quiet zone (cyan-on-dark looked nice
+  but rarely scanned), plus a "scan → /secret" caption.
+- **Matrix-rain overlay reworked** — richer rendering (trailing heads with a
+  cyan glow, CRT vignette + scanlines, DPR-aware canvas), the visible close
+  button is gone, and it now closes on **ESC, a click anywhere, or by
+  re-typing `matrix`**. Localized hint updated across all six locales.
+- **`/humans.txt` is now content-negotiated** — crawlers and curl still get
+  the plain-text manifest; a real browser navigation gets a small styled HTML
+  page whose inline script reliably unlocks the `humans-txt` egg (the old
+  referrer trick rarely fired). `/robots.txt` stays plain text for every
+  client, so its egg remains console-only (`robots()`).
+- **Unified phoenix mark** — one refined, original phoenix ASCII
+  (`src/components/eggs/phoenix-art.ts`) is now shared by the devtools console
+  banner and the 404 page (rendered with a gradient text fill).
 - **`SITE.url` switched to `https://binaryphoenix.vercel.app`** (the live
   deployment). All canonical URLs, OG metadata, sitemap, manifest, and JSON-LD
   follow.
@@ -91,6 +166,10 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Fixed
 
+- **Page shortcuts no longer fire under egg overlays** — the keyboard-shortcut
+  layer and the ⌘K command palette now respect `overlay-state`, so typing
+  inside the matrix/terminal overlay can't cycle the theme (`t`), toggle
+  recruiter mode (`r`), or navigate behind it.
 - **Resend silent-error bug** — `resend.emails.send()` returns `{ data, error }`
   and does not throw on API-level errors (unverified domain, invalid sender,
   etc.). The wrapper now surfaces the error so failures don't become silent

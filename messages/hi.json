@@ -150,7 +150,10 @@
       "cp": "प्रतिस्पर्धात्मक प्रोग्रामिंग",
       "roadmap": "रोडमैप",
       "contact": "संपर्क"
-    }
+    },
+    "openTerminal": "टर्मिनल मोड खोलें",
+    "openMatrix": "मैट्रिक्स रेन खोलें",
+    "openSecret": "गुप्त कक्ष खोलें"
   },
   "mobileActionBar": {
     "contact": "संपर्क",
@@ -511,7 +514,11 @@
       },
       "thirdParty": {
         "title": "उपयोग में तृतीय-पक्ष सेवाएँ",
-        "headers": { "service": "सेवा", "purpose": "उद्देश्य", "data": "साझा डेटा" },
+        "headers": {
+          "service": "सेवा",
+          "purpose": "उद्देश्य",
+          "data": "साझा डेटा"
+        },
         "rows": {
           "vercel": {
             "service": "Vercel",
@@ -1043,10 +1050,22 @@
     }
   },
   "languagesData": {
-    "english": { "name": "अंग्रेज़ी", "level": "मूल या द्विभाषी" },
-    "hindi": { "name": "हिन्दी", "level": "मूल या द्विभाषी" },
-    "japanese": { "name": "जापानी", "level": "प्रारंभिक प्रवीणता" },
-    "sanskrit": { "name": "संस्कृत", "level": "सीमित कार्यशील प्रवीणता" }
+    "english": {
+      "name": "अंग्रेज़ी",
+      "level": "मूल या द्विभाषी"
+    },
+    "hindi": {
+      "name": "हिन्दी",
+      "level": "मूल या द्विभाषी"
+    },
+    "japanese": {
+      "name": "जापानी",
+      "level": "प्रारंभिक प्रवीणता"
+    },
+    "sanskrit": {
+      "name": "संस्कृत",
+      "level": "सीमित कार्यशील प्रवीणता"
+    }
   },
   "certsData": {
     "google-cloud-30-days-completion": "Google Cloud — 30 Days पूर्णता",
@@ -1074,5 +1093,85 @@
     "web-chat-using-react": "React का उपयोग करते हुए वेब चैट",
     "yaml": "YAML",
     "seo": "SEO"
+  },
+  "eggs": {
+    "toast": {
+      "title": "ईस्टर एग खुला",
+      "totalShort": "22"
+    },
+    "shortcutsCounter": {
+      "label": "रहस्य {found}/{total}",
+      "title": "ट्रॉफी कक्ष खोलें"
+    },
+    "matrix": {
+      "title": "मैट्रिक्स रेन",
+      "close": "बंद करें",
+      "hint": "क्लिक, ESC, या दोबारा \"matrix\" टाइप करके बंद करें"
+    },
+    "terminal": {
+      "title": "phoenix-shell",
+      "close": "टर्मिनल बंद करें",
+      "inputLabel": "टर्मिनल इनपुट",
+      "greet": "phoenix-shell में स्वागत है, {name}.",
+      "greetHint": "कमांड्स देखने के लिए \"help\" टाइप करें। निकलने के लिए \"exit\"।",
+      "help": "Commands:\n  help, whoami, skills, projects, projects --list,\n  contact, cv, theme [light|dark|phoenix], ls, cat about.md,\n  date, echo [text], history, neofetch, sudo, secrets, clear, exit",
+      "projectsHint": "मुख्य प्रोजेक्ट्स (पूरी सूची के लिए `projects --list`):",
+      "themeSet": "थीम {theme} पर सेट हुई।",
+      "themeUsage": "उपयोग: theme [light|dark|phoenix]",
+      "opening": "{what} खोला जा रहा है…",
+      "unknown": "phoenix: {cmd}: कमांड नहीं मिली। `help` आज़माएँ।"
+    },
+    "dino": {
+      "titleRunner": "फ़ीनिक्स रनर",
+      "titleFeather": "फ़ेदर कैच",
+      "score": "स्कोर",
+      "start": "शुरू करें",
+      "retry": "फिर से",
+      "controls": "Space/↑ कूदें · ↓ झुकें · P रोकें · टैप करके कूदें",
+      "gameOver": "खेल समाप्त · स्कोर {score}",
+      "newHigh": "नया उच्च स्कोर!",
+      "switchToFeather": "फ़ेदर कैच में जाएँ",
+      "switchToRunner": "फ़ीनिक्स रनर में जाएँ",
+      "canvasLabel": "फ़ीनिक्स रनर कैनवस",
+      "reducedMotion": "Reduced motion चालू है — मिनी-गेम रोक दिया गया।",
+      "unlockHint": "25 स्कोर पर फ़ेदर कैच अनलॉक · 42 स्कोर पर एग पाएँ"
+    },
+    "phoenixPage": {
+      "heading": "फ़ीनिक्स।",
+      "body": "यह साइट का कोडनेम है। जलकर फिर उठने वाला पक्षी — एक याद कि अच्छी इंजीनियरिंग पुनरावृत्ति में होती है।",
+      "quote": "“असली चीज़ें आँखों से नहीं दिखतीं।” — Saint-Exupéry",
+      "trophyCta": "ट्रॉफी कक्ष खोलें",
+      "homeCta": "मुख्यपृष्ठ"
+    },
+    "creditsPage": {
+      "tag": "जिनके कंधों पर खड़ी है",
+      "heading": "श्रेय",
+      "body": "यह साइट अनेक open-source मेन्टेनर्स की मेहनत पर खड़ी है — सभी का धन्यवाद।",
+      "found": "🜂 आपने श्रेय कक्ष ढूँढ लिया",
+      "trophyCta": "ट्रॉफी कक्ष देखें"
+    },
+    "trophy": {
+      "tag": "ट्रॉफी कक्ष",
+      "heading": "आपने गुप्त कक्ष ढूँढ लिया।",
+      "subheading": "साइट में छिपी छोटी-छोटी आश्चर्यजनक चीज़ों का संग्रह।",
+      "progress": "{found} / {total} मिले",
+      "scoreLine": "फ़ीनिक्स रनर: {dino} · फ़ेदर कैच: {feather}",
+      "share": "शेयर लिंक कॉपी करें",
+      "copied": "कॉपी हो गया!",
+      "reset": "प्रगति रीसेट करें",
+      "resetConfirm": "इस डिवाइस पर सारी ईस्टर-एग प्रगति मिटाएँ?",
+      "friendLabel": "साझा प्रगति",
+      "friendHeading": "किसी ने अपनी प्रगति साझा की: {count}/{total}",
+      "friendSubheading": "उनके उच्च स्कोर: रनर {dino} · फ़ेदर {feather}। आपकी प्रगति अप्रभावित है।",
+      "tier": "स्तर {tier}",
+      "locked": "???",
+      "lockedClue": "खोजते रहें — टाइप करें, क्लिक करें, स्क्रॉल करें, स्विच करें।",
+      "completeLabel": "सम्पूर्णतावादी पुरस्कार",
+      "completeHeading": "हर अंडा मिल गया।",
+      "completeBody": "यह सब हो गए। लम्बा रास्ता लेने के लिए धन्यवाद — यह बहुत मायने रखता है।",
+      "completeMailSubject": "मुझे सब मिल गए 🜂",
+      "completeMailBody": "नमस्ते आयुष,\n\nमुझे पोर्टफोलियो के सारे ईस्टर एग मिल गए।\n\n— एक साथी यात्री",
+      "completeMailCta": "नमस्ते कहें"
+    }
   }
 }

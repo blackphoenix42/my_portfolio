@@ -11,6 +11,30 @@ import { getGreetingBucket, type GreetingBucket } from "@/lib/greeting";
 const AUTO_OPEN_DELAY_MS = 900;
 const AUTO_CLOSE_DELAY_MS = 7000;
 
+// We auto-open the greeting at most once per time-of-day window per day, then
+// remember it so revisits during the same window stay quiet (the chip is still
+// clickable on demand). Key shape: `YYYY-MM-DD:<bucket>`.
+const SEEN_KEY = "phoenix:greeting:v1";
+
+function todayMarker(bucket: GreetingBucket, now: Date): string {
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, "0");
+  const d = String(now.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}:${bucket}`;
+}
+
+/** @returns true if we should auto-open for this marker (and records it). */
+function shouldAutoOpen(marker: string): boolean {
+  try {
+    if (window.localStorage.getItem(SEEN_KEY) === marker) return false;
+    window.localStorage.setItem(SEEN_KEY, marker);
+  } catch {
+    // localStorage unavailable (private mode / blocked) — fall back to
+    // auto-opening this session rather than suppressing the greeting entirely.
+  }
+  return true;
+}
+
 const ICON_BY_BUCKET: Record<GreetingBucket, typeof Sun> = {
   morning: Sunrise,
   afternoon: Sun,
@@ -50,10 +74,15 @@ export function GreetingChip() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const autoCloseTimer = useRef<number | null>(null);
 
-  // Mount-only: snapshot local time and auto-open the popover on every visit.
+  // Mount-only: snapshot local time and auto-open the popover the first time
+  // the visitor lands in a given time-of-day window each day.
   useEffect(() => {
     setMounted(true);
-    setBucket(getGreetingBucket(new Date().getHours()));
+    const now = new Date();
+    const currentBucket = getGreetingBucket(now.getHours());
+    setBucket(currentBucket);
+
+    if (!shouldAutoOpen(todayMarker(currentBucket, now))) return;
 
     const openId = window.setTimeout(() => {
       setOpen(true);

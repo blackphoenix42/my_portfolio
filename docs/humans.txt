@@ -1,6 +1,6 @@
 /* TEAM */
 Maintainer: Ayush Yadav
-Site: https://ayushyadav.dev
+Site: https://binaryphoenix.vercel.app
 GitHub: @blackphoenix42
 LinkedIn: linkedin.com/in/ayushyadav
 
@@ -17,3 +17,12 @@ Last update: 2026
 Standards: HTML5, CSS3, ES2022
 Components: Next.js 16, React 19, TypeScript 6, Tailwind CSS 4, next-intl 4
 Software: VS Code, GitHub
+
+/* SECRETS */
+🜂 You found the humans.txt file.
+That counts as an easter egg — when you head back to the site, your trophy
+room at /secret will quietly mark it as unlocked. Twenty-one more are hidden
+across the site: keyboard shortcuts, typed words ("matrix", "sudo"…), themes,
+locales, hidden routes (/credits, /secret, /phoenix), a 404 mini-game,
+the browser devtools console (try `help()` there), and even /robots.txt.
+The full catalogue lives in docs/EGGS.md (in the source repository).

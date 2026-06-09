@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { AboutSection } from "@/components/about-section";
 import { honors, languages } from "@/content/extras";
 import { CertPreview } from "@/components/certs/cert-preview";
+import { CertPreloader } from "@/components/certs/cert-preloader";
 import { slugify } from "@/lib/utils";
 import {
   Award,
@@ -230,6 +231,9 @@ const certCategories: CertCategory[] = [
   },
 ];
 
+// Flat list of every certificate asset, warmed in the background on page load.
+const certHrefs: string[] = certCategories.flatMap((cat) => cat.items.map((it) => it.href));
+
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -372,6 +376,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       <section className="section border-border/60 border-t" aria-label={t("certsAriaLabel")}>
+        <CertPreloader hrefs={certHrefs} />
         <div className="container-tight">
           <header className="mb-8">
             <p className="mono-label inline-flex items-center gap-2">
@@ -420,6 +425,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </p>
         </div>
       </section>
+      {/* Haiku 2 of 3 — "a single feather" */}
+      <span hidden aria-hidden data-haiku="about" />
     </div>
   );
 }

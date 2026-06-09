@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { NotFoundActions } from "@/components/layout/not-found-actions";
+import { PhoenixRun } from "@/components/eggs/phoenix-run";
+import { PHOENIX_BANNER } from "@/components/eggs/phoenix-art";
 
 const SUGGESTIONS = [
   { href: "/", icon: Sparkles, key: "home" },
@@ -64,17 +66,9 @@ export default async function NotFound() {
 
           <pre
             aria-label={t("asciiLabel")}
-            className="text-accent-amber/70 mt-10 font-mono text-[9px] leading-tight select-none sm:text-[10px]"
+            className="mt-10 bg-gradient-to-b from-amber-200 via-orange-500 to-red-700 bg-clip-text font-mono text-[9px] leading-tight font-semibold text-transparent select-none sm:text-[10px]"
           >
-            {`        .';:cc;,.
-     'okOOO0KXXNNK00ko;.
-   ;0WMMMMMMMMMMMMMMMWN0o.
-  cNMMMMMMMMMMMMMMMMMMMMM0,
- .KMMMMMMMMMMMMMMMMMMMMMMMK
-  XMMMMMMMMMMMMMMMMMMMMMMW;
-   ;0WMMMMMMMMMMMMMMMMWXk;
-     ,cdkO0KKKKK0Okdc'
-          ........`}
+            {PHOENIX_BANNER.join("\n")}
           </pre>
         </header>
 
@@ -106,6 +100,11 @@ export default async function NotFound() {
           </ul>
         </aside>
       </div>
+
+      {/* Easter-egg: Phoenix Run endless runner. Doubles as a 404 distraction;
+          score ≥ 500 unlocks `dino-score-5`, and collecting five golden
+          feathers unlocks `feather-score-5`. */}
+      <PhoenixRun />
     </div>
   );
 }

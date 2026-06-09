@@ -149,7 +149,10 @@
       "cp": "算法竞赛",
       "roadmap": "路线图",
       "contact": "联系"
-    }
+    },
+    "openTerminal": "打开终端模式",
+    "openMatrix": "打开矩阵雨",
+    "openSecret": "进入秘密房间"
   },
   "mobileActionBar": {
     "contact": "联系",
@@ -510,9 +513,17 @@
       },
       "thirdParty": {
         "title": "在用的第三方服务",
-        "headers": { "service": "服务", "purpose": "用途", "data": "共享数据" },
+        "headers": {
+          "service": "服务",
+          "purpose": "用途",
+          "data": "共享数据"
+        },
         "rows": {
-          "vercel": { "service": "Vercel", "purpose": "托管 + 边缘函数", "data": "请求日志" },
+          "vercel": {
+            "service": "Vercel",
+            "purpose": "托管 + 边缘函数",
+            "data": "请求日志"
+          },
           "resend": {
             "service": "Resend",
             "purpose": "发送联系邮件",
@@ -631,6 +642,86 @@
         "tagline": "Tezos 上基于 NFT 阵容的去中心化梦幻足球平台。",
         "category": "区块链"
       }
+    }
+  },
+  "eggs": {
+    "toast": {
+      "title": "解锁彩蛋",
+      "totalShort": "22"
+    },
+    "shortcutsCounter": {
+      "label": "秘密 {found}/{total}",
+      "title": "打开奖杯室"
+    },
+    "matrix": {
+      "title": "矩阵雨",
+      "close": "关闭",
+      "hint": "点击、按 ESC，或再次输入 \"matrix\" 退出"
+    },
+    "terminal": {
+      "title": "phoenix-shell",
+      "close": "关闭终端",
+      "inputLabel": "终端输入",
+      "greet": "欢迎来到 phoenix-shell，{name}。",
+      "greetHint": "输入 \"help\" 查看命令；\"exit\" 退出。",
+      "help": "Commands:\n  help, whoami, skills, projects, projects --list,\n  contact, cv, theme [light|dark|phoenix], ls, cat about.md,\n  date, echo [text], history, neofetch, sudo, secrets, clear, exit",
+      "projectsHint": "精选项目（完整列表使用 `projects --list`):",
+      "themeSet": "主题已切换为 {theme}。",
+      "themeUsage": "用法：theme [light|dark|phoenix]",
+      "opening": "正在打开 {what}…",
+      "unknown": "phoenix: {cmd}: 未找到命令。请尝试 `help`。"
+    },
+    "dino": {
+      "titleRunner": "凤凰跑酷",
+      "titleFeather": "羽毛接力",
+      "score": "得分",
+      "start": "开始",
+      "retry": "重试",
+      "controls": "Space/↑ 跳跃 · ↓ 下蹲 · P 暂停 · 点击画布跳跃",
+      "gameOver": "游戏结束 · 得分 {score}",
+      "newHigh": "新纪录！",
+      "switchToFeather": "切换至羽毛接力",
+      "switchToRunner": "切换至凤凰跑酷",
+      "canvasLabel": "凤凰跑酷画布",
+      "reducedMotion": "已启用减少动效模式 — 小游戏已暂停。",
+      "unlockHint": "得分 25 解锁羽毛接力 · 得分 42 领取彩蛋"
+    },
+    "phoenixPage": {
+      "heading": "凤凰。",
+      "body": "本站的代号。从灰烬中重生的鸟 — 提醒我们最好的工程是迭代出来的。",
+      "quote": "「真正重要的东西，眼睛是看不到的。」— Saint-Exupéry",
+      "trophyCta": "打开奖杯室",
+      "homeCta": "返回首页"
+    },
+    "creditsPage": {
+      "tag": "站在巨人的肩膀上",
+      "heading": "致谢",
+      "body": "本站建立在大量开源项目之上，向所有维护者致敬。",
+      "found": "🜂 你找到了致谢室",
+      "trophyCta": "查看奖杯室"
+    },
+    "trophy": {
+      "tag": "奖杯室",
+      "heading": "你找到了秘密房间。",
+      "subheading": "站内隐藏的小惊喜清单。",
+      "progress": "已找到 {found} / {total}",
+      "scoreLine": "凤凰跑酷最高分：{dino} · 羽毛接力最高分：{feather}",
+      "share": "复制分享链接",
+      "copied": "已复制！",
+      "reset": "重置进度",
+      "resetConfirm": "重置该设备上的所有彩蛋进度？",
+      "friendLabel": "共享进度预览",
+      "friendHeading": "有人分享了进度：{count}/{total}",
+      "friendSubheading": "他们的最高分：跑酷 {dino} · 羽毛 {feather}。你的进度保持不变。",
+      "tier": "第 {tier} 层",
+      "locked": "???",
+      "lockedClue": "继续探索 — 输入、点击、滚动、切换。",
+      "completeLabel": "全收集奖励",
+      "completeHeading": "全部找到了。",
+      "completeBody": "全找齐了。感谢你绕了远路。",
+      "completeMailSubject": "我全部找到了 🜂",
+      "completeMailBody": "你好 Ayush，\n\n我找到了作品集的所有彩蛋。\n\n— 一位同行者",
+      "completeMailCta": "打个招呼"
     }
   }
 }
