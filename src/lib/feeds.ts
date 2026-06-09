@@ -49,7 +49,9 @@ async function safeFetch(url: string, init?: RequestInit) {
   try {
     const res = await fetch(url, {
       ...init,
-      next: { revalidate: 3600 },
+      // 30-minute ISR window — fresh enough that new posts / pushes surface
+      // promptly without hammering the unauthenticated GitHub rate limit.
+      next: { revalidate: 1800 },
       headers: { "User-Agent": "Portfolio-RSS/1.0", ...(init?.headers ?? {}) },
     });
     if (!res.ok) return null;
@@ -113,6 +115,9 @@ type GhEvent = {
     ref?: string;
     ref_type?: string;
     action?: string;
+    // GitHub reports the push size here; the `commits` array can be empty or
+    // truncated in the public events feed, so `size` is the reliable count.
+    size?: number;
     pull_request?: { html_url?: string; title?: string };
     issue?: { html_url?: string; title?: string };
     commits?: { message: string; sha: string }[];
@@ -135,10 +140,14 @@ export async function fetchGithubActivity(user: string, limit = 4): Promise<Feed
     if (!repo) continue;
     const repoUrl = `https://github.com/${repo}`;
     if (ev.type === "PushEvent") {
-      const n = ev.payload.commits?.length ?? 0;
+      const n = ev.payload.size ?? ev.payload.commits?.length ?? 0;
       const first = ev.payload.commits?.[0]?.message?.split("\n")[0]?.slice(0, 80);
+      const branch = ev.payload.ref?.replace(/^refs\/heads\//, "");
       out.push({
-        title: `Pushed ${n} commit${n === 1 ? "" : "s"} to ${repo}`,
+        title:
+          n > 0
+            ? `Pushed ${n} commit${n === 1 ? "" : "s"} to ${repo}`
+            : `Pushed to ${repo}${branch ? ` (${branch})` : ""}`,
         url: repoUrl,
         date: ev.created_at,
         excerpt: first,

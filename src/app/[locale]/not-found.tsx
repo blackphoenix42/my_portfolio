@@ -14,6 +14,8 @@ import { Link } from "@/i18n/navigation";
 import { NotFoundActions } from "@/components/layout/not-found-actions";
 import { PhoenixRun } from "@/components/eggs/phoenix-run";
 import { PHOENIX_BANNER } from "@/components/eggs/phoenix-art";
+import { QrTag } from "@/components/eggs/qr-tag";
+import { SITE } from "@/content/profile";
 
 const SUGGESTIONS = [
   { href: "/", icon: Sparkles, key: "home" },
@@ -66,7 +68,7 @@ export default async function NotFound() {
 
           <pre
             aria-label={t("asciiLabel")}
-            className="mt-10 bg-gradient-to-b from-amber-200 via-orange-500 to-red-700 bg-clip-text font-mono text-[9px] leading-tight font-semibold text-transparent select-none sm:text-[10px]"
+            className="mt-10 max-w-full overflow-x-auto bg-gradient-to-b from-amber-200 via-orange-500 to-red-700 bg-clip-text font-mono text-[5px] leading-tight font-semibold text-transparent select-none sm:text-[7px] md:text-[9px]"
           >
             {PHOENIX_BANNER.join("\n")}
           </pre>
@@ -98,6 +100,21 @@ export default async function NotFound() {
               );
             })}
           </ul>
+
+          {/* Scan-to-continue QR instead of yet another link — open the site
+              on a phone (or just keep one nearby for the share preview). */}
+          <div className="card mt-4 flex items-center gap-4 p-4">
+            <QrTag
+              value={SITE.url}
+              size={92}
+              label={t("qrLabel")}
+              className="shrink-0 rounded-md"
+            />
+            <div className="min-w-0">
+              <p className="text-fg text-sm font-medium">{t("qrTitle")}</p>
+              <p className="text-fg-muted mt-1 text-xs">{t("qrCaption")}</p>
+            </div>
+          </div>
         </aside>
       </div>
 

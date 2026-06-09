@@ -18,6 +18,7 @@ import { useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
   Flame,
+  HelpCircle,
   Home,
   Maximize2,
   Minimize2,
@@ -160,6 +161,7 @@ export function PhoenixRun() {
   const [status, setStatus] = useState<Status>("idle");
   const [muted, setMuted] = useState(false);
   const [isFs, setIsFs] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   const [feathersRun, setFeathersRun] = useState(0);
   const highScore = progress.dinoHighScore;
@@ -667,6 +669,12 @@ export function PhoenixRun() {
     setStatus((s) => (s === "running" ? "paused" : s === "paused" ? "running" : s));
   }, []);
 
+  const openHelp = useCallback(() => {
+    // Pause an in-progress run so the player doesn't crash while reading.
+    setStatus((s) => (s === "running" ? "paused" : s));
+    setHelpOpen(true);
+  }, []);
+
   const toggleFullscreen = useCallback(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -740,6 +748,24 @@ export function PhoenixRun() {
           <Flame className="text-accent-amber h-3.5 w-3.5" /> {t("title")}
         </p>
         <div className="flex items-center gap-1.5">
+          {status === "running" && (
+            <button
+              type="button"
+              onClick={togglePause}
+              aria-label={t("pause")}
+              className="border-border bg-bg-elev/60 text-fg-muted hover:text-fg grid h-7 w-7 place-items-center rounded-md border"
+            >
+              <Pause className="h-3.5 w-3.5" />
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={openHelp}
+            aria-label={t("help.open")}
+            className="border-border bg-bg-elev/60 text-fg-muted hover:text-fg grid h-7 w-7 place-items-center rounded-md border"
+          >
+            <HelpCircle className="h-3.5 w-3.5" />
+          </button>
           <button
             type="button"
             onClick={() => setMuted((m) => !m)}
@@ -845,6 +871,94 @@ export function PhoenixRun() {
             >
               {t("dive")}
             </button>
+          </div>
+        )}
+
+        {/* How to play & settings */}
+        {helpOpen && (
+          <div
+            className="absolute inset-0 z-20 overflow-y-auto bg-black/80 p-5 backdrop-blur-sm"
+            role="dialog"
+            aria-label={t("help.title")}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setHelpOpen(false);
+            }}
+          >
+            <div className="mx-auto max-w-md space-y-4 text-left">
+              <div className="flex items-center justify-between">
+                <h3 className="text-fg inline-flex items-center gap-2 text-base font-semibold">
+                  <HelpCircle className="text-accent-amber h-4 w-4" /> {t("help.title")}
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setHelpOpen(false)}
+                  className="btn-secondary px-2.5 py-1 text-xs"
+                >
+                  {t("help.close")}
+                </button>
+              </div>
+
+              <p className="text-fg-muted text-sm">{t("help.goal")}</p>
+
+              <div>
+                <p className="text-fg text-xs font-semibold tracking-wider uppercase">
+                  {t("help.controlsTitle")}
+                </p>
+                <pre className="text-fg-muted mt-1 font-mono text-[11px] whitespace-pre-wrap">
+                  {t("help.controlsBody")}
+                </pre>
+              </div>
+
+              <div>
+                <p className="text-fg text-xs font-semibold tracking-wider uppercase">
+                  {t("help.powerupsTitle")}
+                </p>
+                <pre className="text-fg-muted mt-1 font-mono text-[11px] whitespace-pre-wrap">
+                  {t("help.powerupsBody")}
+                </pre>
+              </div>
+
+              <div>
+                <p className="text-fg text-xs font-semibold tracking-wider uppercase">
+                  {t("help.mechanicsTitle")}
+                </p>
+                <pre className="text-fg-muted mt-1 font-mono text-[11px] whitespace-pre-wrap">
+                  {t("help.mechanicsBody")}
+                </pre>
+              </div>
+
+              <div className="border-border/60 border-t pt-3">
+                <p className="text-fg text-xs font-semibold tracking-wider uppercase">
+                  {t("help.settingsTitle")}
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setMuted((m) => !m)}
+                    className="btn-secondary inline-flex items-center gap-1.5 px-3 py-1.5 text-xs"
+                  >
+                    {muted ? (
+                      <VolumeX className="h-3.5 w-3.5" />
+                    ) : (
+                      <Volume2 className="h-3.5 w-3.5" />
+                    )}
+                    {t("help.sound", { state: muted ? t("help.off") : t("help.on") })}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={toggleFullscreen}
+                    className="btn-secondary inline-flex items-center gap-1.5 px-3 py-1.5 text-xs"
+                  >
+                    {isFs ? (
+                      <Minimize2 className="h-3.5 w-3.5" />
+                    ) : (
+                      <Maximize2 className="h-3.5 w-3.5" />
+                    )}
+                    {isFs ? t("exitFullscreen") : t("fullscreen")}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>

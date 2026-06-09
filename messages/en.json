@@ -572,8 +572,12 @@
     "asciiLabel": "ASCII art of a 404 phoenix",
     "kbdHint": "to jump anywhere on the site",
     "cta": "Back home",
+    "qrLabel": "QR code linking to the site home page",
+    "qrTitle": "Continue on your phone",
+    "qrCaption": "Scan to open this site on another device.",
     "game": {
       "title": "Phoenix Run",
+      "pause": "Pause",
       "canvasLabel": "Phoenix Run — endless runner game canvas",
       "idleTitle": "Phoenix Run",
       "idleHint": "Flap through a volcanic world, dodge the ruins, and collect golden feathers. Tap or press Space to begin.",
@@ -597,7 +601,23 @@
       "ms1000": "Phoenix Rebirth Unlocked",
       "ms2000": "Inferno Mode Activated",
       "ms5000": "Legendary Phoenix",
-      "rebirth": "Reborn from the ashes!"
+      "rebirth": "Reborn from the ashes!",
+      "help": {
+        "open": "How to play",
+        "title": "How to play",
+        "close": "Close",
+        "goal": "Guide the flaming phoenix through a volcanic world. Flap to stay airborne, dodge every obstacle, grab power-ups, and survive as long as you can — the longer you fly, the faster it gets.",
+        "controlsTitle": "Controls",
+        "controlsBody": "Space / ↑ / W   flap upward\n↓ / S           dive / quick drop\nP               pause / resume\nR               restart\nF               fullscreen\nTap             flap (mobile)\nSwipe down      dive (mobile)",
+        "powerupsTitle": "Power-ups",
+        "powerupsBody": "⛨ Flame Shield   absorbs one hit\n✦ Golden Feather  bonus score (collect 5 for an egg)\n✸ Phoenix Burst   clears nearby obstacles\n◷ Slow Time       slows the world briefly\n×2 Double Score   temporary score multiplier",
+        "mechanicsTitle": "Mechanics",
+        "mechanicsBody": "Rebirth — at 1000 you bank one revive; a fatal hit instead reignites you and clears the area.\nInferno Mode — at 2000 the world darkens, speeds up, and scores multiply.\nMilestones — 500, 1000, 2000, 5000 each mark a new chapter.",
+        "settingsTitle": "Settings",
+        "sound": "Sound: {state}",
+        "on": "on",
+        "off": "off"
+      }
     }
   },
   "privacy": {

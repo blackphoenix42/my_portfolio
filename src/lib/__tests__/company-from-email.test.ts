@@ -29,6 +29,13 @@ describe("companyFromEmail", () => {
     expect(companyFromEmail("x@aws.amazon.com")).toBe("Amazon Web Services");
   });
 
+  it("uses full company names for EDA / semiconductor domains", () => {
+    expect(companyFromEmail("eng@cadence.com")).toBe("Cadence Design Systems");
+    expect(companyFromEmail("eng@synopsys.com")).toBe("Synopsys");
+    expect(companyFromEmail("eng@ti.com")).toBe("Texas Instruments");
+    expect(companyFromEmail("eng@micron.com")).toBe("Micron Technology");
+  });
+
   it("derives and title-cases unknown corporate domains", () => {
     expect(companyFromEmail("jane@acme.com")).toBe("Acme");
     expect(companyFromEmail("jane@tech-corp.io")).toBe("Tech Corp");

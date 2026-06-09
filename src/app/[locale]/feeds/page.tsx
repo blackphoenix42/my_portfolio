@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t("pageTitle"), description: t("pageDescription") };
 }
 
-export const revalidate = 3600;
+export const revalidate = 1800;
 
 export default async function FeedsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

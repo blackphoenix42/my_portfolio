@@ -66,7 +66,7 @@ export default async function OpengraphImage() {
       >
         <span
           style={{
-            display: "inline-block",
+            display: "flex",
             width: 10,
             height: 10,
             borderRadius: 999,
@@ -77,17 +77,28 @@ export default async function OpengraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
         <div style={{ fontSize: 36, fontWeight: 500, color: "#9fb0c9" }}>Ayush Yadav</div>
-        <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.025em" }}>
-          Performance Engineering ×<br />
-          <span
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            fontSize: 76,
+            fontWeight: 700,
+            lineHeight: 1.05,
+            letterSpacing: "-0.025em",
+          }}
+        >
+          <div style={{ display: "flex" }}>Performance Engineering ×</div>
+          <div
             style={{
+              display: "flex",
               background: "linear-gradient(90deg,#22d3ee,#a78bfa,#34d399)",
+              backgroundClip: "text",
               WebkitBackgroundClip: "text",
               color: "transparent",
             }}
           >
             Agentic AI
-          </span>
+          </div>
         </div>
         <div style={{ fontSize: 26, color: "#a9b8d1", maxWidth: 980 }}>
           C++ performance, EDA simulation, LLM/RAG tooling and interactive developer products.

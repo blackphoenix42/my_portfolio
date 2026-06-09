@@ -250,20 +250,19 @@ export function TerminalMode() {
           }
           break;
         case "neofetch": {
-          const info = [
-            "phoenix@portfolio",
-            "─────────────────",
-            `Host:   ${SITE.name}`,
-            "OS:     binaryphoenix.vercel.app",
-            "Shell:  phoenix-shell 1.0",
-            "Theme:  phoenix · dark · light",
-            "Stack:  Next.js 16 · React 19 · TS 6",
-            "Uptime: since 2025",
-          ];
-          PHOENIX_BANNER.forEach((line, i) => {
-            const meta = info[i] ?? "";
-            next.push({ kind: i === 0 ? "ok" : "out", text: meta ? `${line}   ${meta}` : line });
-          });
+          // The phoenix art is too wide to sit beside the info table, so print
+          // it first, then the system info underneath.
+          for (const line of PHOENIX_BANNER) next.push({ kind: "out", text: line });
+          next.push(
+            { kind: "ok", text: "phoenix@portfolio" },
+            { kind: "out", text: "─────────────────" },
+            { kind: "out", text: `Host:   ${SITE.name}` },
+            { kind: "out", text: "OS:     binaryphoenix.vercel.app" },
+            { kind: "out", text: "Shell:  phoenix-shell 1.0" },
+            { kind: "out", text: "Theme:  phoenix · dark · light" },
+            { kind: "out", text: "Stack:  Next.js 16 · React 19 · TS 6" },
+            { kind: "out", text: "Uptime: since 2025" },
+          );
           break;
         }
         case "pwd":

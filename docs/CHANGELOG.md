@@ -134,9 +134,25 @@ All notable changes to this project are documented here. Format loosely follows
   page whose inline script reliably unlocks the `humans-txt` egg (the old
   referrer trick rarely fired). `/robots.txt` stays plain text for every
   client, so its egg remains console-only (`robots()`).
-- **Unified phoenix mark** — one refined, original phoenix ASCII
+- **Unified phoenix mark** — one phoenix ASCII
   (`src/components/eggs/phoenix-art.ts`) is now shared by the devtools console
-  banner and the 404 page (rendered with a gradient text fill).
+  banner, the 404 page (gradient text fill), and the terminal `neofetch`. The
+  art is third-party ASCII that keeps its original "M J P" artist signature
+  intact (reproduced at the owner's request — see the file header).
+- **Phoenix Run gains in-game help & settings** — a `?` button (and a header
+  pause button) opens a "How to play" panel covering the goal, full control
+  map, power-up legend, and mechanics (Rebirth / Inferno / milestones), with a
+  Settings row for sound + fullscreen. Opening it pauses an in-progress run.
+- **404 page shows a scan-to-continue QR** — instead of yet another text link,
+  the suggestions card now includes a crisp server-rendered SVG QR
+  (`src/components/eggs/qr-tag.tsx`) that points at the site home so a lost
+  visitor can hop to their phone.
+- **Contact autofill uses full company names** — the email-domain → company map
+  now resolves EDA / semiconductor employers to their proper names (e.g.
+  `cadence.com` → "Cadence Design Systems", `ti.com` → "Texas Instruments")
+  rather than a naive title-case.
+- **Live feeds refresh faster** — the Medium / YouTube / GitHub ISR window
+  dropped from 60 → 30 minutes so new activity surfaces sooner.
 - **`SITE.url` switched to `https://binaryphoenix.vercel.app`** (the live
   deployment). All canonical URLs, OG metadata, sitemap, manifest, and JSON-LD
   follow.
@@ -166,6 +182,15 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Fixed
 
+- **`/opengraph-image` 404** — the next-intl proxy matcher caught the
+  extensionless metadata-image route and rewrote it into the `[locale]` tree,
+  where it hit the catch-all and returned the 404 page instead of the PNG. The
+  route is now excluded from the matcher, so `/opengraph-image` serves the
+  share image directly (and link unfurlers can read it).
+- **GitHub feed "Pushed 0 commits"** — the public events API can return an
+  empty/truncated `commits` array; the activity feed now reads `payload.size`
+  for the count and falls back to a branch-aware "Pushed to …" label so it
+  never claims zero commits.
 - **Page shortcuts no longer fire under egg overlays** — the keyboard-shortcut
   layer and the ⌘K command palette now respect `overlay-state`, so typing
   inside the matrix/terminal overlay can't cycle the theme (`t`), toggle
