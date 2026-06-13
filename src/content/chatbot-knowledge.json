@@ -1,0 +1,88 @@
+{
+  "chunks": [
+    {
+      "id": "about-role",
+      "source": "About",
+      "title": "Who is Ayush Yadav?",
+      "text": "Ayush Yadav is an R&D Software Engineer II at Cadence Design Systems. He works on performance-critical systems, C++ performance engineering, distributed systems, agentic AI and developer tooling, with production wins on Apple, Google, Samsung and NVIDIA workloads."
+    },
+    {
+      "id": "about-focus",
+      "source": "About",
+      "title": "What does Ayush focus on?",
+      "text": "Ayush cares about end-to-end ownership: from low-level profiling and distributed-system design to polished, accessible product surfaces. His engineering principle is profile first — optimization without measurement is folklore."
+    },
+    {
+      "id": "xmai",
+      "source": "Projects · XMAI",
+      "title": "XMAI — Agentic AI Profiler",
+      "text": "XMAI is an AI-assisted EDA profiler that turns large-scale simulation artifacts into optimization guidance. It combines retrieval-augmented generation, tool-enabled agents and graph-compatible RTL representations across CLI, TUI, GUI and an MCP server, cutting debug root-cause-analysis time by roughly 40%."
+    },
+    {
+      "id": "xcelium",
+      "source": "Projects · Xcelium",
+      "title": "Xcelium performance engineering",
+      "text": "On Cadence's Xcelium logic simulator, Ayush did profiling-driven C++ optimization delivering +18 to 19% simulation throughput and +13 to 14% RTL transform runtime, validated on Apple, Google, Samsung and NVIDIA designs. He built a reusable Top-N profiling library presented at the Cadence India Conference."
+    },
+    {
+      "id": "algolens",
+      "source": "Projects · AlgoLens",
+      "title": "AlgoLens — interactive DSA platform",
+      "text": "AlgoLens is an open-source interactive algorithm visualizer supporting 60+ algorithms with deterministic step-through replay, in-browser FFmpeg-WASM video export, GenAI explanations and multi-modal search, held to WCAG 2.1 AA with Playwright, Sentry and CI quality gates."
+    },
+    {
+      "id": "postureiq",
+      "source": "Projects · PostureIQ",
+      "title": "PostureIQ — real-time ML posture analysis",
+      "text": "PostureIQ is a 60 FPS computer-vision coaching system using MediaPipe/BlazePose pose estimation with Kalman filtering, confidence gating and rep-quality scoring around range of motion, tempo and symmetry, reaching over 95% accuracy."
+    },
+    {
+      "id": "tezos",
+      "source": "Projects · Tezos Premier League",
+      "title": "Tezos Premier League",
+      "text": "Tezos Premier League is a decentralized PvP gaming project and NFT marketplace on the Tezos blockchain, built with SmartPy, Taquito and IPFS. It was recognized with a $10,000 award for continued development."
+    },
+    {
+      "id": "other-projects",
+      "source": "Projects",
+      "title": "Other projects",
+      "text": "Other projects include Track Person App, a React Native movement-tracking app backed by MongoDB, and Smart Brain, a full-stack face-detection app integrating the Clarifai API with an Express and React surface."
+    },
+    {
+      "id": "skills",
+      "source": "Skills",
+      "title": "What are Ayush's skills?",
+      "text": "Ayush's core stack is C++ and Python for performance and systems work, plus TypeScript, React and Next.js for product surfaces. He works with LLMs, RAG, embeddings, vector databases, profiling tools like Valgrind and AddressSanitizer, and developer tooling."
+    },
+    {
+      "id": "competitive-programming",
+      "source": "Competitive Programming",
+      "title": "Competitive programming",
+      "text": "Ayush stays sharp through competitive programming across LeetCode, Codeforces, CodeChef and HackerRank, keeping data-structures and algorithms fundamentals fast and reliable."
+    },
+    {
+      "id": "now",
+      "source": "Now",
+      "title": "What is Ayush doing now?",
+      "text": "Right now Ayush is doing R&D performance work on the Xcelium simulator, building the XMAI agentic profiler, and learning more about retrieval-augmented generation, distributed systems and vector databases at production scale."
+    },
+    {
+      "id": "system-design",
+      "source": "System Design",
+      "title": "System design",
+      "text": "The portfolio includes interactive system-design whiteboards covering a URL shortener, a rate limiter and a job scheduler, with log analytics, a simulation regression dashboard and waveform compression sketched as coming soon."
+    },
+    {
+      "id": "contact",
+      "source": "Contact",
+      "title": "How to contact Ayush",
+      "text": "You can reach Ayush by email at aayush.sang@gmail.com, or connect on GitHub and LinkedIn. He is open to conversations about software engineering roles in C++ performance, distributed systems and AI tooling. Use the contact page to send a message."
+    },
+    {
+      "id": "hire",
+      "source": "Hiring",
+      "title": "Is Ayush open to roles?",
+      "text": "Ayush is open to software engineering opportunities involving C++ performance, distributed systems and AI developer tooling. Enable Recruiter Mode on the site for a hiring-focused summary, or download his résumé and reach out via the contact page."
+    }
+  ]
+}

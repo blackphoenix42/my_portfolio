@@ -10,6 +10,8 @@ const ROUTES = [
   "/skills",
   "/competitive-programming",
   "/contact",
+  "/now",
+  "/system-design",
 ];
 
 for (const route of ROUTES) {

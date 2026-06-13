@@ -22,13 +22,19 @@ burst animation plays (palette + shape vary per egg, gated on
 `useReducedMotion()`), and the keyboard-shortcuts overlay shows a live
 `Secrets X/22` counter that links to the trophy room.
 
-While a fullscreen overlay (terminal, matrix) is open — or while **Phoenix
-Run** is being played — the global key listeners, the page keyboard
-shortcuts, and the ⌘K command palette all back off via
+While a fullscreen overlay (terminal, matrix, commit-rain, boot) is open — or
+while **Phoenix Run** is being played — the global key listeners, the page
+keyboard shortcuts, and the ⌘K command palette all back off via
 [`overlay-state.ts`](../src/components/eggs/overlay-state.ts) — so typing
 "matrix" or pressing `t` inside the overlay can't cycle the theme, and the
 game's Space/↑/↓ keys never scroll the page or fire other shortcuts behind
 it.
+
+**Hidden extras (not counted in the 22).** A once-per-session hacker-style
+**boot sequence** plays on first load (skippable; skipped under reduced
+motion), and a decorative **commit rain** overlay can be summoned from the
+terminal (`commits` / `rain`) or the command menu. These are flair, not
+tracked eggs, so the trophy count stays at 22.
 
 > **Static text files can't run JS.** `/humans.txt` is therefore served by a
 > route handler that content-negotiates: a plain-text manifest for crawlers
@@ -49,12 +55,12 @@ it.
 
 ## Tier 2 — keyboard / interaction
 
-| ID                 | How to trigger                                                                                                                                                                                                                                                  |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `konami`           | Type **↑ ↑ ↓ ↓ ← → ← → B A** anywhere on the page. The phoenix takes flight across your viewport.                                                                                                                                                               |
-| `terminal-mode`    | Type **`terminal`** anywhere — a retro phoenix-shell overlay opens (also in the Command Menu, ⌘K). Click to focus, **Tab** autocompletes; supports `help`, `theme`, `ls`, `cat`, `pwd`, `date`, `echo`, `history` (↑/↓), `neofetch`, `sudo`. **Esc** closes it. |
-| `phoenix-type`     | Type **`phoenix`** anywhere.                                                                                                                                                                                                                                    |
-| `logo-shift-click` | Hold **Shift** and click the header logo five times. The hidden **phoenix** theme activates.                                                                                                                                                                    |
+| ID                 | How to trigger                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `konami`           | Type **↑ ↑ ↓ ↓ ← → ← → B A** anywhere on the page. The phoenix takes flight across your viewport.                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `terminal-mode`    | Type **`terminal`** anywhere — a retro phoenix-shell overlay opens (also in the Command Menu, ⌘K). Click to focus, **Tab** autocompletes; supports `help`, `theme`, `ls` (`-a`), `cat` (incl. `.hidden-impact`), `pwd`, `date`, `echo`, `history` (↑/↓), `neofetch`, `sudo`, an interactive `vim` sub-mode (`:q` to leave), and hidden verbs (`hire ayush`, `coffee`, `bug`, `binary`, `fortune`, `ascii`, `matrix`, `commits`, `boss`, `neon`, `glitch`, `party`, `download resume`). **Esc** closes it. |
+| `phoenix-type`     | Type **`phoenix`** anywhere.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `logo-shift-click` | Hold **Shift** and click the header logo five times. The hidden **phoenix** theme activates.                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ## Tier 3 — content / locale
 

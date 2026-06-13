@@ -1,44 +1,15 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { projects } from "@/content/projects";
-import {
-  XmaiPipeline,
-  FlamegraphMini,
-  AlgoMini,
-  ChainBracket,
-  PostureMini,
-  TrackMini,
-  BrainMini,
-} from "@/components/diagrams/case-study-thumbs";
+import { WorkGrid, type WorkCard } from "@/components/projects/work-grid";
 import { GithubWorkbench } from "@/components/github/github-workbench";
 import { fetchFeaturedRepos } from "@/lib/github";
+import { availableQuirkyTags } from "@/lib/quirky-tags";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("work");
   return { title: t("title"), description: t("description") };
 }
-
-const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
-  xmai: Cpu,
-  "xcelium-optimization": Activity,
-  algolens: Layers,
-  postureiq: Activity,
-  "track-person-app": Layers,
-  "smart-brain": Cpu,
-  "tezos-premier-league": Coins,
-};
-
-const Thumbs: Record<string, () => React.ReactElement> = {
-  xmai: () => <XmaiPipeline />,
-  "xcelium-optimization": () => <FlamegraphMini />,
-  algolens: () => <AlgoMini />,
-  postureiq: () => <PostureMini />,
-  "track-person-app": () => <TrackMini />,
-  "smart-brain": () => <BrainMini />,
-  "tezos-premier-league": () => <ChainBracket />,
-};
 
 export const revalidate = 3600;
 
@@ -48,12 +19,29 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
   const t = await getTranslations("work");
   const tCommon = await getTranslations("common");
   const tProjects = await getTranslations("projects");
+  const tQuirky = await getTranslations("quirkyTags");
   const repos = await fetchFeaturedRepos();
 
   const tr = (slug: string, key: string, fallback: string) => {
     const path = `items.${slug}.${key}` as never;
     return tProjects.has(path) ? (tProjects(path) as string) : fallback;
   };
+
+  const cards: WorkCard[] = projects.map((p) => ({
+    slug: p.slug,
+    title: tr(p.slug, "title", p.title),
+    tagline: tr(p.slug, "tagline", p.tagline),
+    category: tr(p.slug, "category", p.category),
+    tags: p.tags.slice(0, 6),
+    status: p.status,
+    quirkyTags: [...(p.quirkyTags ?? [])],
+  }));
+
+  // Translate only the quirky-tag labels actually present in the data.
+  const quirkyLabels: Record<string, string> = {};
+  for (const tag of availableQuirkyTags(projects)) {
+    quirkyLabels[tag] = tQuirky(`labels.${tag}` as never);
+  }
 
   return (
     <div className="container-tight py-20">
@@ -71,67 +59,17 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
           </div>
         </header>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((p) => {
-            const Icon = Icons[p.slug] ?? Cpu;
-            const Thumb = Thumbs[p.slug];
-            const title = tr(p.slug, "title", p.title);
-            const tagline = tr(p.slug, "tagline", p.tagline);
-            const category = tr(p.slug, "category", p.category);
-            return (
-              <article key={p.slug} className="card card-hover group relative overflow-hidden">
-                <div className="border-border bg-bg-sunken/60 relative h-44 overflow-hidden border-b">
-                  {Thumb ? (
-                    <Thumb />
-                  ) : (
-                    <div className="absolute inset-0 grid place-items-center">
-                      <Icon className="text-accent-cyan/70 h-14 w-14" />
-                    </div>
-                  )}
-                  <div className="border-border bg-bg-elev/80 text-fg-muted absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border px-2.5 py-1 font-mono text-[10px] backdrop-blur">
-                    <Icon className="h-3 w-3" /> {category}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold tracking-tight">
-                    {/* Stretched link — the inner `<Link>` paints an invisible
-                        pseudo-element across the whole card via `after:absolute
-                        after:inset-0` so any click on the card navigates to
-                        the case study. Inner interactive children stay
-                        clickable because they sit above it (`relative z-10`
-                        or by virtue of being focusable buttons). */}
-                    <Link
-                      href={`/work/${p.slug}`}
-                      className="group-hover:text-accent-cyan transition-colors after:absolute after:inset-0 focus-visible:outline-none"
-                      aria-label={t("readMore") + ": " + title}
-                    >
-                      {title}
-                    </Link>
-                  </h3>
-                  <p className="text-fg-muted mt-2 line-clamp-3 text-sm">{tagline}</p>
-                  <ul className="mt-4 flex flex-wrap gap-1.5">
-                    {p.tags.slice(0, 6).map((tag) => (
-                      <li key={tag} className="chip">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-5 flex items-center justify-between">
-                    <span className="text-accent-cyan group-hover:text-fg inline-flex items-center gap-1 text-sm font-medium transition-colors">
-                      {t("readMore")} <ArrowUpRight className="h-3.5 w-3.5" />
-                    </span>
-                    {p.status === "professional" && (
-                      <span className="chip text-accent-amber">{tCommon("professional")}</span>
-                    )}
-                    {p.status === "open-source" && (
-                      <span className="chip text-accent-emerald">{tCommon("openSource")}</span>
-                    )}
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+        <WorkGrid
+          cards={cards}
+          labels={{
+            readMore: t("readMore"),
+            professional: tCommon("professional"),
+            openSource: tCommon("openSource"),
+            filter: tQuirky("filterLabel"),
+          }}
+          quirkyLabels={quirkyLabels}
+          allLabel={tQuirky("all")}
+        />
       </section>
 
       <section aria-label={t("workbenchAria")}>

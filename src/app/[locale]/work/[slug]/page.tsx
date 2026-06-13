@@ -5,10 +5,12 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getProject, projects } from "@/content/projects";
 import { SITE } from "@/content/profile";
-import { XmaiArchitecture } from "@/components/diagrams/xmai-architecture";
+import { ProjectArchitecture } from "@/components/diagrams/project-architecture";
+import { hasArchitectureDiagram } from "@/components/diagrams/diagram-slugs";
 import { SkillChip } from "@/components/logos/skill-chip";
 import { ProjectDemo } from "@/components/projects/project-demo";
 import { hasDemo } from "@/components/projects/demo-slugs";
+import { EngineerAware } from "@/components/layout/engineer-aware";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -63,6 +65,7 @@ export default async function ProjectPage({
 
   const t = await getTranslations("work");
   const tProjects = await getTranslations("projects");
+  const tEng = await getTranslations("engineer");
   const tr = (key: string, fallback: string) => {
     const path = `items.${slug}.${key}` as never;
     return tProjects.has(path) ? (tProjects(path) as string) : fallback;
@@ -148,14 +151,64 @@ export default async function ProjectPage({
         ))}
       </section>
 
-      {project.slug === "xmai" && (
+      {hasArchitectureDiagram(project.slug) && (
         <section className="mt-12">
           <h2 className="section-title">{t("architectureTitle")}</h2>
           <p className="text-fg-subtle mt-2 text-sm">{t("architectureNote")}</p>
           <div className="card mt-6 p-6">
-            <XmaiArchitecture />
+            <ProjectArchitecture slug={project.slug} />
           </div>
         </section>
+      )}
+
+      {project.engineering && (
+        <EngineerAware
+          full={null}
+          engineer={
+            <section className="border-accent-cyan/30 bg-accent-cyan/5 mt-12 rounded-2xl border border-dashed p-6 sm:p-8">
+              <p className="text-accent-cyan font-mono text-[11px] tracking-widest uppercase">
+                {tEng("bannerModeOn")}
+              </p>
+              <h2 className="section-title mt-2">{tEng("sectionWriteup")}</h2>
+              <div className="mt-6 grid gap-8 lg:grid-cols-3">
+                {project.engineering.algorithms && project.engineering.algorithms.length > 0 && (
+                  <div>
+                    <h3 className="mono-label mb-3">{tEng("sectionAlgorithms")}</h3>
+                    <ul className="space-y-3">
+                      {project.engineering.algorithms.map((a) => (
+                        <li key={a.name} className="card p-4">
+                          <p className="text-fg text-sm font-semibold">{a.name}</p>
+                          <p className="text-fg-muted mt-1 text-sm">{a.note}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {project.engineering.performance && project.engineering.performance.length > 0 && (
+                  <div>
+                    <h3 className="mono-label mb-3">{tEng("sectionPerformance")}</h3>
+                    <ul className="text-fg-muted list-disc space-y-2 pl-4 text-sm">
+                      {project.engineering.performance.map((p, i) => (
+                        <li key={i}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {project.engineering.writeup && project.engineering.writeup.length > 0 && (
+                  <div>
+                    <h3 className="mono-label mb-3">{tEng("sectionWriteup")}</h3>
+                    <div className="text-fg-muted space-y-3 text-sm">
+                      {project.engineering.writeup.map((w, i) => (
+                        <p key={i}>{w}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+              <p className="text-fg-subtle mt-6 font-mono text-[11px]">{tEng("draftNotice")}</p>
+            </section>
+          }
+        />
       )}
 
       {hasDemo(project.slug) && (

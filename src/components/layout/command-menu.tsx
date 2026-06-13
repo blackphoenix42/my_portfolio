@@ -14,6 +14,10 @@ import {
   Beaker,
   TerminalSquare,
   Sparkles,
+  Compass,
+  Network,
+  Bot,
+  GitCommitHorizontal,
 } from "lucide-react";
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
@@ -29,6 +33,8 @@ const NAV_ITEMS = [
   { id: "skills", key: "skills", icon: Cpu, href: "/skills" },
   { id: "experience", key: "experience", icon: Briefcase, href: "/experience" },
   { id: "cp", key: "cp", icon: Code2, href: "/competitive-programming" },
+  { id: "system-design", key: "systemDesign", icon: Network, href: "/system-design" },
+  { id: "now", key: "now", icon: Compass, href: "/now" },
   { id: "lab", key: "roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
   { id: "contact", key: "contact", icon: Mail, href: "/contact" },
 ] as const;
@@ -176,12 +182,32 @@ export function CommandMenu() {
               <Command.Item
                 onSelect={() => {
                   setOpen(false);
+                  window.dispatchEvent(new CustomEvent("open-ask-portfolio"));
+                }}
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+              >
+                <Bot className="text-fg-subtle h-4 w-4" />
+                {t("askPortfolio")}
+              </Command.Item>
+              <Command.Item
+                onSelect={() => {
+                  setOpen(false);
                   window.dispatchEvent(new CustomEvent("open-terminal-mode"));
                 }}
                 className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
               >
                 <TerminalSquare className="text-fg-subtle h-4 w-4" />
                 {t("openTerminal")}
+              </Command.Item>
+              <Command.Item
+                onSelect={() => {
+                  setOpen(false);
+                  window.dispatchEvent(new CustomEvent("open-contribution-rain"));
+                }}
+                className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+              >
+                <GitCommitHorizontal className="text-fg-subtle h-4 w-4" />
+                {t("openCommitRain")}
               </Command.Item>
               <Command.Item
                 onSelect={() => {

@@ -9,13 +9,17 @@ export default defineConfig({
     baseURL: "http://localhost:3000",
     trace: "on-first-retry",
     // Pre-dismiss the cookie banner so it never intercepts clicks in tests
-    // that aren't specifically about the banner itself.
+    // that aren't specifically about the banner itself. The boot overlay is
+    // disabled via its own flag so it never intercepts clicks/keys either.
     storageState: {
       cookies: [],
       origins: [
         {
           origin: "http://localhost:3000",
-          localStorage: [{ name: "cookie-consent-v1", value: "1" }],
+          localStorage: [
+            { name: "cookie-consent-v1", value: "1" },
+            { name: "phoenix:boot:disabled", value: "1" },
+          ],
         },
       ],
     },

@@ -43,6 +43,8 @@
     "skills": "技能",
     "experience": "经历",
     "craft": "工艺",
+    "now": "近况",
+    "systemDesign": "系统设计",
     "contact": "联系",
     "openCommandMenu": "打开命令菜单",
     "openMenu": "打开菜单",
@@ -470,6 +472,197 @@
     "pageHeading": "实时活动",
     "pageIntro": "我公开工作之处的实时信号 — 最近的 Medium 帖子、YouTube 上传和 GitHub 事件。在服务器端从 RSS / 公开 API 拉取，在边缘缓存一小时。"
   },
+  "engineer": {
+    "label": "工程师模式",
+    "on": "工程师模式开启",
+    "off": "工程师模式关闭",
+    "toggleLabel": "切换工程师模式",
+    "exit": "退出工程师模式",
+    "enable": "开启工程师模式",
+    "short": "工程师",
+    "onShort": "开启",
+    "toastTitle": "已开启工程师模式",
+    "toastBody": "展示深度内容——架构图、算法、性能权衡与技术解析。",
+    "dismiss": "关闭",
+    "bannerModeOn": "工程师模式 · 开启",
+    "bannerSummary": "正在展示架构图、算法和性能深入分析。关闭以查看标准视图。",
+    "bannerSystemDesign": "系统设计",
+    "bannerDeepDives": "深入解析",
+    "bannerGithub": "GitHub",
+    "bannerAlgorithms": "算法",
+    "exitAria": "退出工程师模式",
+    "sectionArchitecture": "架构",
+    "sectionAlgorithms": "算法与数据结构",
+    "sectionPerformance": "性能工程",
+    "sectionWriteup": "技术深入解析",
+    "homeHeading": "工程师视图",
+    "homeIntro": "架构、算法与性能——招聘者略读、工程师细读的部分。",
+    "draftNotice": "技术笔记基于公开的项目事实撰写，正在持续完善。",
+    "perfTag": "/ 性能",
+    "perfTitle": "以剖析为驱动的性能优化",
+    "perfIntro": "先测量，再优化。来自剖析与 RTL 转换工作的代表性吞吐量提升。",
+    "sysTag": "/ 系统设计",
+    "sysTitle": "面向规模的设计",
+    "sysIntro": "请求经过负载均衡器、服务层与缓存/数据库扇出——大多数可扩展系统的主干。",
+    "viewSystemDesign": "查看系统设计"
+  },
+  "now": {
+    "pageTitle": "近况",
+    "pageDescription": "Ayush Yadav 当前的专注方向——当下的工作、学习、构建与阅读。",
+    "tag": "/ 近况",
+    "pageHeading": "我现在在做什么",
+    "pageIntro": "我当前关注点的快照——此刻专注的项目、想法与习惯。灵感来自 Derek Sivers 的 /now 运动。",
+    "updatedLabel": "最后更新于 {date}",
+    "inspiredBy": "这是一个 <a>now 页面</a>——我当前专注方向的快照，会随情况变化而更新。",
+    "sectionTitles": {
+      "focus": "当前专注",
+      "learning": "正在学习",
+      "building": "正在构建",
+      "reading": "正在阅读",
+      "sharpening": "持续打磨"
+    },
+    "sections": {
+      "focus": {
+        "0": "在 Cadence 做研发软件工程——Xcelium 逻辑仿真器的性能工作。",
+        "1": "构建 XMAI——一个将仿真产物转化为优化建议的智能体式 AI 剖析器。",
+        "2": "磨练 C++ 性能直觉：剖析、热点路径分析与低风险优化。"
+      },
+      "learning": {
+        "0": "面向开发者工具的检索增强生成 (RAG) 与智能体编排模式。",
+        "1": "分布式系统设计——一致性、分区与背压权衡。",
+        "2": "生产规模的向量数据库与嵌入流水线。"
+      },
+      "building": {
+        "0": "这个作品集——工程师模式、系统设计白板栏目，以及本地的 Ask-My-Portfolio 助手。",
+        "1": "AlgoLens——一个交互式 DSA 可视化工具（开源）。"
+      },
+      "reading": {
+        "0": "关于 LLM 工具使用与智能体可靠性的论文和文章。",
+        "1": "经典的系统性能文献（先测量的文化）。"
+      },
+      "sharpening": {
+        "0": "竞技编程——让 DSA 基础保持快速与敏锐。",
+        "1": "多写作：把调试故事变成可分享的笔记。"
+      }
+    }
+  },
+  "quirkyTags": {
+    "filterLabel": "筛选",
+    "all": "全部",
+    "labels": {
+      "favorite": "最喜爱的项目",
+      "late-night": "深夜灵感",
+      "hardest-bug": "最难的 Bug",
+      "most-fun": "最有趣",
+      "open-source": "开源",
+      "research": "研究",
+      "ai": "AI",
+      "systems": "系统"
+    }
+  },
+  "systemDesign": {
+    "pageTitle": "系统设计",
+    "pageDescription": "交互式系统设计白板——短链接、限流器、任务调度器等。",
+    "tag": "/ 系统设计",
+    "pageHeading": "系统设计白板",
+    "pageIntro": "经典系统设计问题的交互式讲解——需求、组件，以及真正重要的权衡。部分完全可交互，其余为草图，敬请期待。",
+    "jumpTo": "跳转到某个系统",
+    "interactive": "可交互",
+    "comingSoon": "交互版即将推出",
+    "requirements": "需求",
+    "components": "组件",
+    "tradeoffs": "权衡",
+    "urlShortener": {
+      "writePath": "写入路径",
+      "readPath": "读取路径",
+      "longUrl": "长 URL",
+      "shortUrl": "短 URL",
+      "client": "客户端",
+      "api": "API",
+      "keygen": "键生成",
+      "store": "KV 存储",
+      "cache": "缓存",
+      "redirect": "301 / 302"
+    },
+    "rateLimiter": {
+      "sendRequest": "发送请求",
+      "refillNote": "每 {ms} 毫秒补充 1 个令牌",
+      "bucket": "令牌桶 · {count}/{capacity}",
+      "recent": "最近的响应",
+      "empty": "还没有请求——点击发送。",
+      "allowed": "允许",
+      "blocked": "拦截"
+    },
+    "jobScheduler": {
+      "enqueue": "加入任务",
+      "pause": "暂停",
+      "resume": "继续",
+      "workers": "{count} 个工作线程",
+      "queued": "排队中",
+      "running": "运行中",
+      "done": "完成",
+      "failed": "失败",
+      "retryNote": "失败的任务会以退避策略重试，随后进入死信队列。"
+    },
+    "systems": {
+      "url-shortener": {
+        "title": "短链接服务",
+        "tagline": "将长 URL 映射为短码并大规模重定向（bit.ly 风格）。"
+      },
+      "rate-limiter": {
+        "title": "限流器",
+        "tagline": "通过限制每个客户端的请求速率保护服务。"
+      },
+      "job-scheduler": {
+        "title": "任务调度器",
+        "tagline": "可靠地运行任务——即时、延迟或周期性。"
+      },
+      "log-analytics": {
+        "title": "日志分析系统",
+        "tagline": "摄取、索引并查询海量日志。"
+      },
+      "sim-regression-dashboard": {
+        "title": "仿真回归看板",
+        "tagline": "跟踪每晚仿真运行的通过/失败趋势。"
+      },
+      "waveform-compression": {
+        "title": "波形压缩系统",
+        "tagline": "压缩数字仿真波形以便存储与快速回放。"
+      }
+    }
+  },
+  "chatbot": {
+    "open": "向我的作品集提问",
+    "title": "向我的作品集提问",
+    "subtitle": "本地 · 抽取式 · 无追踪",
+    "close": "关闭助手",
+    "intro": "询问我的工作、技能或经历。答案均来自本站的真实内容。",
+    "placeholder": "输入问题…",
+    "send": "发送",
+    "loading": "正在加载知识库——请稍后再试。",
+    "noAnswer": "我在站内没有找到相关内容。可以问问我的项目、技能、经历或联系方式。",
+    "error": "知识库加载失败。请稍后再试。",
+    "sourcesLabel": "来源",
+    "disclaimer": "完全在你的浏览器中运行。答案抽取自真实站点内容（英文）。",
+    "suggestions": {
+      "q0": "Ayush 在 Cadence 做什么？",
+      "q1": "介绍一下 XMAI 项目。",
+      "q2": "Ayush 最强的技能是什么？",
+      "q3": "如何联系 Ayush？"
+    }
+  },
+  "audio": {
+    "introTitle": "语音介绍",
+    "introSubtitle": "30 秒的问候",
+    "comingSoon": "语音介绍即将推出",
+    "play": "播放语音介绍",
+    "pause": "暂停语音介绍",
+    "transcriptToggle": "文字稿",
+    "transcript": "你好，我是 Ayush Yadav——一名专注于 C++ 性能、分布式系统和智能体式 AI 工具的研发软件工程师。感谢到访；欢迎浏览我的作品与实验。",
+    "sfxLabel": "音效",
+    "on": "开",
+    "off": "关"
+  },
   "lab": {
     "title": "实验室",
     "description": "概念实验室、实验和进行中的工作。",
@@ -657,6 +850,23 @@
       "title": "矩阵雨",
       "close": "关闭",
       "hint": "点击、按 ESC，或再次输入 \"matrix\" 退出"
+    },
+    "commitRain": {
+      "label": "正在让提交下起雨…"
+    },
+    "boot": {
+      "title": "AyushOS 启动序列",
+      "skip": "跳过",
+      "banner": "    _                 _      ___  ____\n   / \\  _   _ _   _ ___| |__  / _ \\/ ___|\n  / _ \\| | | | | | / __| '_ \\| | | \\___ \\\n / ___ \\ |_| | |_| \\__ \\ | | | |_| |___) |\n/_/   \\_\\__, |\\__,_|___/_| |_|\\___/|____/\n        |___/",
+      "lines": [
+        "正在初始化 AyushOS v1.0…",
+        "正在挂载 /projects … 完成",
+        "正在加载 C++ 性能模块 … 完成",
+        "正在启动 agentic-ai 守护进程 … 完成",
+        "正在启动 phoenix-shell … 完成",
+        "正在校准咖啡余量 … 最佳",
+        "欢迎登船。按任意键继续。"
+      ]
     },
     "terminal": {
       "title": "phoenix-shell",

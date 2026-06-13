@@ -75,6 +75,14 @@ export function GlobalListeners() {
     };
   }, [unlock]);
 
+  // Allow other surfaces (e.g. the terminal `phoenix` command) to summon the
+  // phoenix flight animation via a window event.
+  useEffect(() => {
+    const onFlight = () => setShowFlight(true);
+    window.addEventListener("open-phoenix-flight", onFlight);
+    return () => window.removeEventListener("open-phoenix-flight", onFlight);
+  }, []);
+
   // Logo-shift-click: 5x shift+click on the brand link toggles phoenix theme +
   // dispatches an egg-burst so the user sees a visible reward.
   const clickCount = useRef(0);

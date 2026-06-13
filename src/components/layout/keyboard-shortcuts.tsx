@@ -8,10 +8,12 @@ import { useTranslations } from "next-intl";
 import { useRouter, Link } from "@/i18n/navigation";
 import { SITE } from "@/content/profile";
 import { useRecruiterMode } from "@/components/layout/recruiter-mode";
+import { useEngineerMode } from "@/components/layout/engineer-mode";
 import { useTheme } from "next-themes";
 import { useEggs } from "@/components/eggs/egg-provider";
 import { isAnyOverlayOpen } from "@/components/eggs/overlay-state";
 import { TOTAL_EGGS } from "@/lib/eggs";
+import { playSfx } from "@/components/audio/sfx";
 
 // Shortcuts that are visible in the help overlay. The first column is the
 // translation key under `shortcuts.items.*`; the second is the human-readable
@@ -35,6 +37,7 @@ const SHORTCUT_GROUPS = [
       { key: "skills", combo: "g then s" },
       { key: "experience", combo: "g then e" },
       { key: "about", combo: "g then a" },
+      { key: "now", combo: "g then n" },
       { key: "contact", combo: "g then c" },
       { key: "nextSection", combo: "j" },
       { key: "prevSection", combo: "k" },
@@ -45,6 +48,7 @@ const SHORTCUT_GROUPS = [
     items: [
       { key: "theme", combo: "t" },
       { key: "recruiter", combo: "r" },
+      { key: "engineer", combo: "n" },
       { key: "language", combo: "l" },
       { key: "copyEmail", combo: "e" },
       { key: "downloadResume", combo: "d" },
@@ -80,6 +84,7 @@ export function KeyboardShortcuts() {
   const tEggs = useTranslations("eggs");
   const router = useRouter();
   const { toggle: toggleRecruiter } = useRecruiterMode();
+  const { toggle: toggleEngineer, setEngineer } = useEngineerMode();
   const { theme, setTheme } = useTheme();
   const { progress } = useEggs();
   const [open, setOpen] = useState(false);
@@ -95,6 +100,12 @@ export function KeyboardShortcuts() {
     setTheme(next);
   }, [theme, setTheme]);
 
+  // Audience modes are mutually exclusive — enabling one disables the other.
+  const handleRecruiter = useCallback(() => {
+    setEngineer(false);
+    toggleRecruiter();
+  }, [setEngineer, toggleRecruiter]);
+
   const copyEmail = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(SITE.email);
@@ -104,6 +115,7 @@ export function KeyboardShortcuts() {
   }, []);
 
   const downloadResume = useCallback(() => {
+    playSfx("confirm");
     const a = document.createElement("a");
     a.href = SITE.resumePath;
     a.download = "";
@@ -167,6 +179,7 @@ export function KeyboardShortcuts() {
           s: "/skills",
           e: "/experience",
           a: "/about",
+          n: "/now",
           c: "/contact",
         };
         const target = map[e.key.toLowerCase()];
@@ -207,7 +220,11 @@ export function KeyboardShortcuts() {
           break;
         case "r":
           e.preventDefault();
-          toggleRecruiter();
+          handleRecruiter();
+          break;
+        case "n":
+          e.preventDefault();
+          toggleEngineer();
           break;
         case "l":
           e.preventDefault();
@@ -237,7 +254,8 @@ export function KeyboardShortcuts() {
     focusSearch,
     scrollToSection,
     cycleTheme,
-    toggleRecruiter,
+    handleRecruiter,
+    toggleEngineer,
     openLanguagePicker,
     copyEmail,
     downloadResume,

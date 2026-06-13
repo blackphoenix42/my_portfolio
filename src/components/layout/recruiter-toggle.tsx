@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRecruiterMode } from "./recruiter-mode";
+import { useEngineerMode } from "./engineer-mode";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -13,6 +14,7 @@ const TOAST_MS = 4200;
 export function RecruiterToggle() {
   const t = useTranslations("recruiter");
   const { recruiter, toggle } = useRecruiterMode();
+  const { setEngineer } = useEngineerMode();
   const [toast, setToast] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -26,6 +28,8 @@ export function RecruiterToggle() {
 
   const handleClick = () => {
     if (!recruiter) {
+      // Audience modes are mutually exclusive — enabling recruiter turns off engineer.
+      setEngineer(false);
       const seen = typeof window !== "undefined" && localStorage.getItem("recruiter-toast-seen");
       if (!seen) {
         setToast(true);

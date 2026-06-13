@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useEggs } from "./egg-provider";
 import { setOverlayOpen } from "./overlay-state";
+import { playSfx } from "@/components/audio/sfx";
 
 /**
  * Fullscreen "Matrix"-style rain overlay. Pure canvas, motion-gated.
@@ -23,7 +24,10 @@ export function MatrixRain() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onOpen = () => setOpen(true);
+    const onOpen = () => {
+      setOpen(true);
+      playSfx("whoosh");
+    };
     window.addEventListener("open-matrix-rain", onOpen);
     return () => window.removeEventListener("open-matrix-rain", onOpen);
   }, []);

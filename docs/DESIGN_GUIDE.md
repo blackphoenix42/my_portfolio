@@ -88,6 +88,20 @@ a quiet invitation to wait for the next quote, not as mechanical status text.
 - Default easing: `ease-out` short (200ms) for hover; `ease-in-out` longer (500–900ms) for
   entrance / data viz.
 
+### Audience modes & flair
+
+- **Engineer Mode** uses the `accent-cyan` token (Recruiter Mode uses
+  `accent-amber`); the two are mutually exclusive. Deep-tech sections only render
+  when Engineer Mode is on.
+- The **glitch name** (header brand) and the once-per-session **boot sequence**
+  both run only with motion enabled and are fully skippable; under reduced motion
+  the boot sequence is skipped entirely.
+- **Sound effects** are off by default, synthesized via the Web Audio API
+  (`src/components/audio/sfx.ts`), and globally muteable from Settings. Never
+  autoplay audio; the voice-intro player is click-to-play with a transcript.
+- Temporary terminal visual modes (`data-fx="glitch|neon|boss|minimal"` on
+  `<html>`) auto-revert after a few seconds and are decorative only.
+
 ## Accessibility
 
 - Target contrast: WCAG **AA** minimum, **AAA** for body text where possible.

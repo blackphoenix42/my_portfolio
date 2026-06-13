@@ -8,6 +8,8 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { CommandMenu } from "@/components/layout/command-menu";
 import { RecruiterModeProvider } from "@/components/layout/recruiter-mode";
 import { RecruiterBanner } from "@/components/layout/recruiter-banner";
+import { EngineerModeProvider } from "@/components/layout/engineer-mode";
+import { EngineerBanner } from "@/components/layout/engineer-banner";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { ScrollFab } from "@/components/layout/scroll-fab";
 import { KeyboardShortcuts } from "@/components/layout/keyboard-shortcuts";
@@ -17,9 +19,12 @@ import { ConsoleBanner } from "@/components/eggs/console-banner";
 import { GlobalListeners } from "@/components/eggs/global-listeners";
 import { TerminalMode } from "@/components/eggs/terminal-mode";
 import { MatrixRain } from "@/components/eggs/matrix-rain";
+import { ContributionRain } from "@/components/eggs/contribution-rain";
+import { BootSequence } from "@/components/eggs/boot-sequence";
 import { EggToast } from "@/components/eggs/egg-toast";
 import { EggUnlockBurst } from "@/components/eggs/egg-unlock-burst";
 import { HaikuRecorder, SelectionWatcher } from "@/components/eggs/watchers";
+import { AskPortfolioLauncher } from "@/components/chatbot/ask-portfolio-launcher";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/content/profile";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -78,26 +83,32 @@ export default async function LocaleLayout({
       >
         <EggProvider>
           <RecruiterModeProvider>
-            <SiteHeader />
-            <RecruiterBanner />
-            <main id="main" tabIndex={-1}>
-              {children}
-            </main>
-            <SiteFooter />
-            <CommandMenu />
-            <KeyboardShortcuts />
-            <MobileActionBar />
-            <ScrollFab />
-            <CookieConsent />
-            {/* Easter-egg layer (lazy / passive). Adds no chrome unless triggered. */}
-            <ConsoleBanner />
-            <GlobalListeners />
-            <TerminalMode />
-            <MatrixRain />
-            <HaikuRecorder />
-            <SelectionWatcher />
-            <EggToast />
-            <EggUnlockBurst />
+            <EngineerModeProvider>
+              <SiteHeader />
+              <RecruiterBanner />
+              <EngineerBanner />
+              <main id="main" tabIndex={-1}>
+                {children}
+              </main>
+              <SiteFooter />
+              <CommandMenu />
+              <KeyboardShortcuts />
+              <MobileActionBar />
+              <ScrollFab />
+              <CookieConsent />
+              {/* Easter-egg layer (lazy / passive). Adds no chrome unless triggered. */}
+              <ConsoleBanner />
+              <GlobalListeners />
+              <TerminalMode />
+              <MatrixRain />
+              <ContributionRain />
+              <BootSequence />
+              <HaikuRecorder />
+              <SelectionWatcher />
+              <EggToast />
+              <EggUnlockBurst />
+              <AskPortfolioLauncher />
+            </EngineerModeProvider>
           </RecruiterModeProvider>
         </EggProvider>
       </ThemeProvider>

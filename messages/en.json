@@ -45,6 +45,8 @@
     "skills": "Skills",
     "experience": "Experience",
     "craft": "Craft",
+    "now": "Now",
+    "systemDesign": "System Design",
     "contact": "Contact",
     "openCommandMenu": "Open command menu",
     "openMenu": "Open menu",
@@ -110,6 +112,40 @@
     "toastBody": "Optimized for time-pressed reviewers — résumé, impact metrics and contact bubble to the top.",
     "dismiss": "Dismiss"
   },
+  "engineer": {
+    "label": "Engineer mode",
+    "on": "Engineer mode on",
+    "off": "Engineer mode off",
+    "toggleLabel": "Toggle engineer mode",
+    "exit": "Exit engineer mode",
+    "enable": "Enable engineer mode",
+    "short": "Engineer",
+    "onShort": "on",
+    "toastTitle": "Engineer mode enabled",
+    "toastBody": "Surfacing the deep stuff — architecture diagrams, algorithms, performance trade-offs and technical write-ups.",
+    "dismiss": "Dismiss",
+    "bannerModeOn": "Engineer mode · on",
+    "bannerSummary": "Showing architecture diagrams, algorithms and performance deep-dives. Toggle off for the standard view.",
+    "bannerSystemDesign": "System design",
+    "bannerDeepDives": "Deep dives",
+    "bannerGithub": "GitHub",
+    "bannerAlgorithms": "Algorithms",
+    "exitAria": "Exit engineer mode",
+    "sectionArchitecture": "Architecture",
+    "sectionAlgorithms": "Algorithms & data structures",
+    "sectionPerformance": "Performance engineering",
+    "sectionWriteup": "Technical deep-dive",
+    "homeHeading": "Engineer view",
+    "homeIntro": "Architecture, algorithms and performance — the parts recruiters skim and engineers read.",
+    "draftNotice": "Technical notes are drafted from public project facts and are being refined.",
+    "perfTag": "/ performance",
+    "perfTitle": "Profiling-driven performance",
+    "perfIntro": "Measure first, then optimize. Representative throughput gains from profiling and RTL transformation work.",
+    "sysTag": "/ system design",
+    "sysTitle": "Designing for scale",
+    "sysIntro": "Request flow through a load balancer, service tier and cache/DB fan-out — the backbone of most scalable systems.",
+    "viewSystemDesign": "Explore system design"
+  },
   "scroll": {
     "toTop": "Scroll to top",
     "toBottom": "Scroll to bottom"
@@ -138,8 +174,10 @@
       "contact": "Go to contact",
       "experience": "Go to experience",
       "about": "Go to about",
+      "now": "Go to now",
       "theme": "Cycle theme",
       "recruiter": "Toggle recruiter mode",
+      "engineer": "Toggle engineer mode",
       "language": "Open language picker",
       "copyEmail": "Copy email address",
       "downloadResume": "Download résumé",
@@ -184,6 +222,8 @@
     "openTerminal": "Open Terminal mode",
     "openMatrix": "Open Matrix rain",
     "openSecret": "Open Secret room",
+    "askPortfolio": "Ask my portfolio",
+    "openCommitRain": "Commit rain",
     "downloadResume": "Download Résumé",
     "copyEmail": "Copy Email",
     "switchLanguage": "Switch language",
@@ -200,6 +240,8 @@
       "skills": "Skills",
       "experience": "Experience",
       "cp": "Competitive Programming",
+      "systemDesign": "System Design",
+      "now": "Now",
       "roadmap": "Roadmap",
       "contact": "Contact"
     }
@@ -553,6 +595,163 @@
     "tag": "/ feeds",
     "pageHeading": "Live activity",
     "pageIntro": "Live signals from where I work in public — recent Medium posts, YouTube uploads and GitHub events. Pulled server-side from RSS / public APIs and cached at the edge for an hour."
+  },
+  "now": {
+    "pageTitle": "Now",
+    "pageDescription": "What Ayush Yadav is focused on right now — current work, learning, building and reading.",
+    "tag": "/ now",
+    "pageHeading": "What I'm doing now",
+    "pageIntro": "A snapshot of where my attention is — the projects, ideas and habits I'm focused on at the moment. Inspired by Derek Sivers' /now movement.",
+    "updatedLabel": "Last updated {date}",
+    "inspiredBy": "This is a <a>now page</a> — a snapshot of my current focus that I refresh as things change.",
+    "sectionTitles": {
+      "focus": "Current focus",
+      "learning": "Learning",
+      "building": "Building",
+      "reading": "Reading",
+      "sharpening": "Sharpening"
+    },
+    "sections": {
+      "focus": {
+        "0": "R&D software engineering at Cadence — performance work on the Xcelium logic simulator.",
+        "1": "Building XMAI, an agentic AI profiler that turns simulation artifacts into optimization guidance.",
+        "2": "Sharpening C++ performance instincts: profiling, hot-path analysis and low-risk optimization."
+      },
+      "learning": {
+        "0": "Retrieval-augmented generation and agent orchestration patterns for developer tooling.",
+        "1": "Distributed systems design — consistency, partitioning and back-pressure trade-offs.",
+        "2": "Vector databases and embedding pipelines at production scale."
+      },
+      "building": {
+        "0": "This portfolio — an Engineer Mode, a system-design whiteboard section and a local Ask-My-Portfolio assistant.",
+        "1": "AlgoLens — an interactive DSA visualizer (open source)."
+      },
+      "reading": {
+        "0": "Papers and write-ups on LLM tool use and agent reliability.",
+        "1": "Classic systems-performance literature (measure-first culture)."
+      },
+      "sharpening": {
+        "0": "Competitive programming — keeping DSA fundamentals fast and sharp.",
+        "1": "Writing more: turning debugging war-stories into shareable notes."
+      }
+    }
+  },
+  "quirkyTags": {
+    "filterLabel": "Filter",
+    "all": "All",
+    "labels": {
+      "favorite": "Favorite projects",
+      "late-night": "Late-night ideas",
+      "hardest-bug": "Hardest bugs",
+      "most-fun": "Most fun",
+      "open-source": "Open source",
+      "research": "Research",
+      "ai": "AI",
+      "systems": "Systems"
+    }
+  },
+  "systemDesign": {
+    "pageTitle": "System Design",
+    "pageDescription": "Interactive system-design whiteboards — URL shortener, rate limiter, job scheduler and more.",
+    "tag": "/ system design",
+    "pageHeading": "System design whiteboards",
+    "pageIntro": "Interactive walkthroughs of classic system-design problems — requirements, components and the trade-offs that actually matter. Some are fully interactive; others are sketched and coming soon.",
+    "jumpTo": "Jump to a system",
+    "interactive": "Interactive",
+    "comingSoon": "Interactive coming soon",
+    "requirements": "Requirements",
+    "components": "Components",
+    "tradeoffs": "Trade-offs",
+    "urlShortener": {
+      "writePath": "Write path",
+      "readPath": "Read path",
+      "longUrl": "Long URL",
+      "shortUrl": "Short URL",
+      "client": "Client",
+      "api": "API",
+      "keygen": "Key gen",
+      "store": "KV store",
+      "cache": "Cache",
+      "redirect": "301 / 302"
+    },
+    "rateLimiter": {
+      "sendRequest": "Send request",
+      "refillNote": "Refills 1 token every {ms} ms",
+      "bucket": "Token bucket · {count}/{capacity}",
+      "recent": "Recent responses",
+      "empty": "No requests yet — hit send.",
+      "allowed": "allowed",
+      "blocked": "blocked"
+    },
+    "jobScheduler": {
+      "enqueue": "Enqueue job",
+      "pause": "Pause",
+      "resume": "Resume",
+      "workers": "{count} workers",
+      "queued": "Queued",
+      "running": "Running",
+      "done": "Done",
+      "failed": "Failed",
+      "retryNote": "Failed jobs would retry with backoff, then move to a dead-letter queue."
+    },
+    "systems": {
+      "url-shortener": {
+        "title": "URL Shortener",
+        "tagline": "Map long URLs to short codes and redirect at scale (bit.ly-style)."
+      },
+      "rate-limiter": {
+        "title": "Rate Limiter",
+        "tagline": "Protect services by capping request rate per client."
+      },
+      "job-scheduler": {
+        "title": "Job Scheduler",
+        "tagline": "Run tasks reliably — now, delayed or recurring."
+      },
+      "log-analytics": {
+        "title": "Log Analytics System",
+        "tagline": "Ingest, index and query high-volume logs."
+      },
+      "sim-regression-dashboard": {
+        "title": "Simulation Regression Dashboard",
+        "tagline": "Track pass/fail trends across nightly simulation runs."
+      },
+      "waveform-compression": {
+        "title": "Waveform Compression System",
+        "tagline": "Compress digital simulation waveforms for storage and fast replay."
+      }
+    }
+  },
+  "chatbot": {
+    "open": "Ask my portfolio",
+    "title": "Ask my portfolio",
+    "subtitle": "Local · extractive · no tracking",
+    "close": "Close assistant",
+    "intro": "Ask about my work, skills or experience. Answers are pulled from real content on this site.",
+    "placeholder": "Ask a question…",
+    "send": "Send",
+    "loading": "Loading the knowledge base — try again in a moment.",
+    "noAnswer": "I couldn't find that on the site. Try asking about my projects, skills, experience or how to get in touch.",
+    "error": "The knowledge base failed to load. Please try again later.",
+    "sourcesLabel": "Sources",
+    "disclaimer": "Runs fully in your browser. Answers are extracted from real site content (English).",
+    "suggestions": {
+      "q0": "What does Ayush do at Cadence?",
+      "q1": "Tell me about the XMAI project.",
+      "q2": "What are Ayush's strongest skills?",
+      "q3": "How can I contact Ayush?"
+    }
+  },
+  "audio": {
+    "introTitle": "Voice intro",
+    "introSubtitle": "A 30-second hello",
+    "comingSoon": "Voice intro coming soon",
+    "play": "Play voice intro",
+    "pause": "Pause voice intro",
+    "transcriptToggle": "Transcript",
+    "transcript": "Hi, I'm Ayush Yadav — an R&D software engineer focused on C++ performance, distributed systems and agentic AI tooling. Thanks for stopping by; have a look around the work and the experiments.",
+    "sfxLabel": "Sound effects",
+    "on": "On",
+    "off": "Off"
   },
   "lab": {
     "title": "Lab",
@@ -1310,20 +1509,98 @@
       "close": "Close",
       "hint": "Click, press ESC, or type \"matrix\" to exit"
     },
+    "commitRain": {
+      "label": "Making it rain commits…"
+    },
+    "boot": {
+      "title": "AyushOS boot sequence",
+      "skip": "Skip",
+      "banner": "    _                 _      ___  ____\n   / \\  _   _ _   _ ___| |__  / _ \\/ ___|\n  / _ \\| | | | | | / __| '_ \\| | | \\___ \\\n / ___ \\ |_| | |_| \\__ \\ | | | |_| |___) |\n/_/   \\_\\__, |\\__,_|___/_| |_|\\___/|____/\n        |___/",
+      "lines": [
+        "Initializing AyushOS v1.0…",
+        "Mounting /projects … done",
+        "Loading C++ performance modules … done",
+        "Starting agentic-ai daemon … done",
+        "Spinning up phoenix-shell … done",
+        "Calibrating coffee levels … optimal",
+        "Welcome aboard. Press any key to continue."
+      ]
+    },
     "terminal": {
       "title": "phoenix-shell",
       "close": "Close terminal",
       "inputLabel": "Terminal input",
       "greet": "Welcome to phoenix-shell, {name}.",
       "greetHint": "Type \"help\" to list commands. \"exit\" to leave.",
-      "help": "Commands:\n  help            — this message\n  whoami          — about the maintainer\n  skills          — list skill clusters\n  projects        — featured projects\n  projects --list — every project slug\n  contact         — open /contact\n  cv | resume     — download résumé\n  theme [name]    — switch theme (light, dark, phoenix)\n  ls              — directory listing\n  cat about.md    — print a short bio\n  pwd             — print working directory\n  date            — current local time\n  echo [text]     — print text\n  history         — recent commands\n  neofetch        — system splash\n  sudo            — try it.\n  secrets         — open trophy room\n  clear           — clear the screen\n  exit            — close the terminal (Esc)\n\n  Tip: press Tab to autocomplete, ↑/↓ for history.",
+      "help": "Commands:\n  help            — this message\n  whoami          — about the maintainer\n  skills          — list skill clusters\n  projects        — featured projects\n  projects --list — every project slug\n  contact         — open /contact\n  cv | resume     — download résumé\n  theme [name]    — switch theme (light, dark, phoenix)\n  ls              — directory listing\n  cat about.md    — print a short bio\n  pwd             — print working directory\n  date            — current local time\n  echo [text]     — print text\n  history         — recent commands\n  neofetch        — system splash\n  matrix          — enter the matrix\n  hire ayush      — start the hiring pipeline\n  vim             — open the editor (you know the drill)\n  commits         — make it rain commits\n  sudo            — try it.\n  secrets         — open trophy room\n  clear           — clear the screen\n  exit            — close the terminal (Esc)\n\n  Tip: press Tab to autocomplete, ↑/↓ for history. Some commands are hidden. 🜂",
       "projectsHint": "Featured (use 'projects --list' for the full set):",
       "themeSet": "Theme set to {theme}.",
       "themeUsage": "Usage: theme [light|dark|phoenix]",
       "opening": "Opening {what}…",
-      "unknown": "phoenix: {cmd}: command not found. Try `help`.",
+      "unknown": "phoenix: {cmd}: command not found.\nTry: help / projects / resume / matrix / hire ayush",
       "footerHint": "Tab ⇥ autocomplete · ↑↓ history · click to type",
-      "footerCmds": "Esc to exit"
+      "footerCmds": "Esc to exit",
+      "vim": {
+        "enter": "Opening {file} in vim. (Good luck.)",
+        "hint": "-- INSERT --  Type away. To quit: :q  (or :wq, :q!)",
+        "exit": "Left vim. You escaped — most people never do. 🜂"
+      },
+      "hire": {
+        "0": "▸ Initiating hiring pipeline for Ayush Yadav…",
+        "1": "  [1/3] Resume screen ......... PASS",
+        "2": "  [2/3] Tech + system design .. STRONG HIRE",
+        "3": "  [3/3] Offer stage → opening /contact so you can reach out."
+      },
+      "fx": {
+        "boss": "Boss mode: clean résumé view engaged (auto-reverts shortly).",
+        "minimal": "Minimal mode engaged. Less is more (temporarily).",
+        "neon": "Neon mode engaged. Cyberpunk vibes, briefly.",
+        "glitch": "G̷l̷i̷t̷c̷h̷ mode engaged. Reality may wobble.",
+        "party": "🎉 Party mode! Enjoy it while it lasts.",
+        "commits": "Making it rain commits…",
+        "phoenix": "🜂 The phoenix takes flight."
+      },
+      "cd": {
+        "secret": "cd: entering /secret … nice. Type `secrets` for the trophy room.",
+        "generic": "cd: {dir}: this is a simulated filesystem — nothing to see here."
+      },
+      "download": {
+        "usage": "Usage: download resume [--ats|--eda|--sde]",
+        "variant": "Note: the '{variant}' résumé variant is coming soon — downloading the default for now."
+      },
+      "hiddenImpact": {
+        "0": "🜂 .hidden-impact",
+        "1": "Profiling-driven C++ wins: +18–19% simulation throughput, ~40% faster RCA.",
+        "2": "Validated on Apple, Google, Samsung and NVIDIA workloads."
+      },
+      "cmd": {
+        "coffee": "☕ brewing... done. Engineer fuel restored to 100%.",
+        "bug": "🐛 It's not a bug, it's an undocumented feature. (Filed as WONTFIX.)",
+        "nvidia": "GPUs go brrr. Validated simulator wins on NVIDIA workloads. 🟩",
+        "cadence": "Cadence Design Systems — where Ayush does R&D on the Xcelium simulator + XMAI.",
+        "leetcode": "Sharpening DSA daily. Profile:",
+        "binaryUsage": "Usage: binary <text>  — encodes text to 8-bit binary.",
+        "konami": "↑ ↑ ↓ ↓ ← → ← → B A — you already know the cheat code. 30 lives granted. 🜂",
+        "secret": "🜂 You found a hidden command. Type `secrets` for the trophy room.",
+        "fortyTwo": "42 — the answer to life, the universe, and most failing test cases.",
+        "easteregg": "🥚 You found an easter egg about easter eggs. Very meta.",
+        "achievement": "🏆 Achievement unlocked: typed a command nobody asked for.",
+        "crash": "Segmentation fault (core dumped). ...just kidding. Everything's fine.",
+        "panic": "kernel panic — not syncing: phoenix is fine, actually. Have a coffee. ☕",
+        "undefined": "undefined is not a function. (But you are not undefined. You matter.)",
+        "rmrf": "Nice try. This terminal is read-only — your filesystem is safe. 🛡️",
+        "hello": "👋 Hello there! Type `help` to see what I can do."
+      },
+      "fortunes": [
+        "Profile first. Optimization without measurement is folklore.",
+        "Premature optimization is the root of all evil — but so is never measuring.",
+        "There are only two hard things: cache invalidation and naming things.",
+        "It works on my machine is not a deployment strategy.",
+        "The best code is no code. The second best is well-tested code.",
+        "A failing test is a gift. A flaky test is a curse.",
+        "Make it work, make it right, make it fast — in that order.",
+        "Every system is a distributed system if you add enough latency."
+      ]
     },
     "dino": {
       "titleRunner": "Phoenix Runner",

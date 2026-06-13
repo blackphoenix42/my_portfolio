@@ -371,3 +371,123 @@
     will-change: auto;
   }
 }
+
+/* Glitch name — RGB-split flicker on load + nav hover. Decorative only; the
+   GlitchName component renders the plain name under reduced-motion. */
+.glitch-name {
+  position: relative;
+  display: inline-block;
+}
+.glitch-name::before,
+.glitch-name::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  clip-path: inset(0 0 0 0);
+}
+.glitch-name--active::before {
+  opacity: 0.9;
+  color: hsl(var(--accent-cyan));
+  animation: glitchShift 0.62s steps(2, end) 1;
+  left: -1px;
+}
+.glitch-name--active::after {
+  opacity: 0.9;
+  color: hsl(var(--accent-violet));
+  animation: glitchShift 0.62s steps(2, end) reverse 1;
+  left: 1px;
+}
+@keyframes glitchShift {
+  0% {
+    transform: translate(0, 0);
+    clip-path: inset(0 0 70% 0);
+  }
+  20% {
+    transform: translate(-2px, 1px);
+    clip-path: inset(40% 0 20% 0);
+  }
+  40% {
+    transform: translate(2px, -1px);
+    clip-path: inset(10% 0 60% 0);
+  }
+  60% {
+    transform: translate(-1px, 1px);
+    clip-path: inset(60% 0 5% 0);
+  }
+  80% {
+    transform: translate(1px, 0);
+    clip-path: inset(20% 0 40% 0);
+  }
+  100% {
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glitch-name::before,
+  .glitch-name::after {
+    display: none;
+  }
+}
+
+/* Temporary terminal-triggered visual modes. Toggled as data attributes on
+   <html> and auto-reverted by the terminal; all decorative + reduced-motion
+   safe (animations are short / suppressed globally under reduced-motion). */
+html[data-fx="glitch"] #main {
+  animation: fxGlitch 0.18s steps(2, end) 6;
+}
+@keyframes fxGlitch {
+  0% {
+    transform: translate(0, 0);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: translate(-3px, 1px);
+    filter: hue-rotate(40deg);
+  }
+  50% {
+    transform: translate(3px, -2px);
+    filter: hue-rotate(-30deg);
+  }
+  75% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(20deg);
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+html[data-fx="neon"] {
+  --accent-cyan: 187 100% 60%;
+  --accent-violet: 300 100% 65%;
+  --accent-emerald: 150 100% 55%;
+  --accent-amber: 320 100% 62%;
+  --ring: 300 100% 65%;
+}
+html[data-fx="neon"] #main {
+  text-shadow: 0 0 6px hsl(var(--accent-violet) / 0.45);
+}
+html[data-fx="neon"] .card,
+html[data-fx="neon"] .card-glass {
+  box-shadow:
+    0 0 0 1px hsl(var(--accent-violet) / 0.4),
+    0 0 24px -6px hsl(var(--accent-cyan) / 0.5);
+}
+
+html[data-fx="minimal"] [data-fx-hide],
+html[data-fx="boss"] [data-fx-hide] {
+  display: none !important;
+}
+html[data-fx="minimal"] #main {
+  filter: grayscale(0.4) contrast(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-fx="glitch"] #main {
+    animation: none;
+  }
+}

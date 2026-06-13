@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Github, Linkedin } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { Link } from "@/i18n/navigation";
+import { IntroPlayer } from "@/components/audio/intro-player";
 
 const PRINCIPLE_KEYS = ["profile", "gap", "trust", "performance"] as const;
 const PRINCIPLE_DOTS: Record<(typeof PRINCIPLE_KEYS)[number], string> = {
@@ -48,6 +49,7 @@ export function AboutSection() {
                 })}
               </p>
               <p>{t("bio2")}</p>
+              <IntroPlayer className="pt-1" />
             </div>
           </div>
         </div>

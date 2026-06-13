@@ -8,6 +8,12 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // limited to what the app actually fetches: GitHub avatars for the workbench.
 // YouTube/Medium/GitHub feed fetches happen server-side so they don't need
 // `connect-src` exposure.
+//
+// Note on "Ask my portfolio": the in-browser chatbot uses a pure-JavaScript
+// TF-IDF lexical index (see src/lib/chatbot/*). It does NOT use WebAssembly or
+// transformers.js, so the CSP intentionally does NOT include
+// `'wasm-unsafe-eval'`. The only runtime fetch it adds is a same-origin GET of
+// /chatbot/corpus.json, already covered by `connect-src 'self'`.
 const isDev = process.env.NODE_ENV !== "production";
 const csp = [
   "default-src 'self'",
@@ -74,6 +80,15 @@ const nextConfig = {
         // Self-hosted fonts — same story, never rewritten in place.
         source: "/fonts/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      {
+        // Chatbot corpus is regenerated on every build under a stable filename,
+        // so it must NOT be `immutable` (content changes per deploy). Cache it
+        // briefly and revalidate in the background so content edits propagate.
+        source: "/chatbot/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=600, stale-while-revalidate=86400" },
+        ],
       },
     ];
   },

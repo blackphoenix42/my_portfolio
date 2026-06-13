@@ -8,6 +8,43 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Added
 
+- **Engineer Mode** — an audience toggle (header pill, `n` shortcut, command
+  menu) that mirrors Recruiter Mode and is mutually exclusive with it. When on,
+  case-study pages reveal deep-tech sections (architecture diagram, algorithms &
+  data structures, performance engineering, technical write-up) sourced from
+  real public project facts, and the home page swaps in an engineer-first view.
+  State persists in `localStorage` (no new cookie). New `engineer.*` i18n
+  namespace across all six locales. See ADR-0009.
+- **`/now` page** — a Derek-Sivers-style snapshot of current focus, learning,
+  building, reading and sharpening, driven by `src/content/now.ts` and the new
+  `now.*` i18n namespace. Linked from nav, footer, command menu, sitemap and the
+  `g n` shortcut.
+- **`/system-design` whiteboards** — interactive walkthroughs of classic
+  problems (URL shortener, rate limiter, job scheduler) plus three sketched
+  "coming soon" boards, lazy-loaded through a dynamic registry. Content lives in
+  `src/content/system-design.ts`; new home diagrams (performance + system
+  design) and the `systemDesign.*` namespace. See ADR-0011.
+- **"Ask my portfolio" assistant** — a fully client-side chatbot that answers
+  from real site content using a dependency-free TF-IDF lexical index (no
+  WebAssembly, no model download, no network calls, no tracking). The corpus is
+  precomputed at build time (`scripts/build-chatbot-index.mjs` →
+  `public/chatbot/corpus.json`) from a curated `src/content/chatbot-knowledge.json`.
+  New `chatbot.*` namespace. See ADR-0010.
+- **Quirky project filters** — chip filters on `/work` (favourites, late-night
+  ideas, hardest bugs, most fun, open source, research, AI, systems) backed by a
+  pure, unit-tested `src/lib/quirky-tags.ts` and the `quirkyTags.*` namespace.
+- **Personality & flair** — a glitch effect on the header brand name
+  (reduced-motion safe), a once-per-session hacker-style **boot sequence**
+  overlay (skippable, reduced-motion safe), a decorative **commit rain** overlay
+  (terminal `commits` / command menu), a synthesized Web-Audio **sound-effects
+  engine** with a global mute toggle in settings, and a **voice-intro player**
+  scaffold with transcript fallback.
+- **Terminal expansion** — `phoenix-shell` gains an interactive `vim` sub-mode,
+  hidden commands (`hire ayush`, `coffee`, `bug`, `binary`, `fortune`, `ascii`,
+  `matrix`, `commits`, `boss`, `neon`, `glitch`, `party`, `download resume`,
+  `cd`, `ls -a`, `cat .hidden-impact`, and more), tab-completion for the new
+  verbs, and sound effects. Pure command output lives in a unit-tested
+  `src/lib/terminal/commands.ts`.
 - **Easter-egg layer (22 eggs across 5 tiers)** — a discoverable second
   reading of the site. Includes **Phoenix Run**, a Chrome-dino-style
   endless runner on the 404 page (flaming phoenix, parallax volcanic world,
@@ -222,6 +259,12 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Security
 
+- **Chatbot keeps the CSP strict** — "Ask my portfolio" uses a pure-JavaScript
+  TF-IDF index instead of transformers.js/WebAssembly, so no `'wasm-unsafe-eval'`
+  was added to `script-src`. Its only runtime fetch is a same-origin GET of
+  `/chatbot/corpus.json`, already covered by `connect-src 'self'`. The corpus is
+  served with a short, revalidating cache (not `immutable`, since it changes per
+  deploy). See ADR-0010.
 - **Content-Security-Policy** header added (`default-src 'self'` with explicit
   allow-list for GitHub avatars, Clearbit, Google s2 favicons).
 - `npm audit` re-enabled locally so contributors see advisories on install.

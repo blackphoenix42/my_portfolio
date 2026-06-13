@@ -34,8 +34,18 @@ src/
     opengraph-image.tsx  Edge-runtime OG image generator
     sitemap.ts           SEO sitemap
     robots.txt/ , humans.txt/  Route handlers (content-negotiated text/HTML)
+    [locale]/now/          /now — current-focus snapshot
+    [locale]/system-design/ /system-design — interactive whiteboards
   components/         Reusable UI: hero, projects, contact, layout, …
+    audio/              SFX engine + voice-intro player
+    chatbot/            Client-side "Ask my portfolio" assistant
+    system-design/      Interactive + static whiteboards (dynamic registry)
+    diagrams/           Project architecture + home diagrams
   content/            Static content (projects, experience, skills, profile)
+    now.ts              /now page content
+    system-design.ts    System-design topics
+    chatbot-knowledge.json  Curated chatbot corpus source
+    commit-rain.ts      Commit-rain flavour text
   i18n/               Locale routing, navigation, request config (next-intl)
   lib/                Pure server / shared logic
     validation.ts     Zod schemas (codes mapped to translations on the client)
@@ -44,6 +54,9 @@ src/
     feeds.ts          RSS/Atom helpers
     github.ts         GitHub API helpers
     greeting.ts       Local time-of-day bucket for the header greeting chip
+    quirky-tags.ts    Quirky project tag registry + filter helpers
+    terminal/commands.ts  Pure phoenix-shell text-command output
+    chatbot/          TF-IDF embed + retrieval (dependency-free)
     utils.ts          Misc helpers (cn, formatters)
   proxy.ts            next-intl middleware (Next 16 renamed `middleware → proxy`)
 public/               Static assets (images, certificates, favicons)

@@ -61,7 +61,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} | Performance Engineer, Agentic AI & R&D Software Engineer`,
+    default: `${SITE.name}`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,

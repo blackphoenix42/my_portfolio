@@ -11,10 +11,14 @@ import { clusters } from "@/content/skills";
 import { useEggs } from "./egg-provider";
 import { setOverlayOpen } from "./overlay-state";
 import { PHOENIX_BANNER } from "./phoenix-art";
+import { runTextCommand, type TerminalLine } from "@/lib/terminal/commands";
+import { playSfx } from "@/components/audio/sfx";
 
-type Line = { kind: "in" | "out" | "err" | "ok"; text: string };
+type Line = TerminalLine;
 
-// Tab-completion vocabularies.
+// Tab-completion vocabularies. Only PUBLIC commands are listed; the hidden
+// easter-egg commands (coffee, fortune, binary, …) still execute but are not
+// surfaced via tab-completion or `help`.
 const COMMANDS = [
   "help",
   "whoami",
@@ -31,14 +35,22 @@ const COMMANDS = [
   "echo",
   "history",
   "neofetch",
+  "matrix",
+  "hire",
+  "vim",
+  "commits",
   "sudo",
   "secrets",
   "clear",
   "exit",
 ];
+
+// Temporary, auto-reverting visual effects toggled via <html data-fx="…">.
+const FX_DURATION_MS = 6000;
 const FILES = [
   "about.md",
   ".secret",
+  ".hidden-impact",
   "resume.pdf",
   "projects/",
   "skills/",
@@ -102,8 +114,26 @@ export function TerminalMode() {
   const [lines, setLines] = useState<Line[]>([]);
   const [history, setHistory] = useState<string[]>([]);
   const [histIdx, setHistIdx] = useState<number>(-1);
+  const [vim, setVim] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const fxTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Apply a temporary, auto-reverting visual effect to the page.
+  const applyFx = useCallback((mode: string) => {
+    if (typeof document === "undefined") return;
+    document.documentElement.dataset.fx = mode;
+    if (fxTimer.current) clearTimeout(fxTimer.current);
+    fxTimer.current = setTimeout(() => {
+      delete document.documentElement.dataset.fx;
+    }, FX_DURATION_MS);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (fxTimer.current) clearTimeout(fxTimer.current);
+    };
+  }, []);
 
   const greeting = useMemo<Line[]>(
     () => [
@@ -154,6 +184,21 @@ export function TerminalMode() {
     (raw: string) => {
       const cmd = raw.trim();
       if (!cmd) return;
+      playSfx("blip");
+
+      // Interactive vim sub-mode — capture input until :q / :q! / :wq.
+      if (vim) {
+        const vline: Line[] = [{ kind: "in", text: `~ ${cmd}` }];
+        if (cmd === ":q" || cmd === ":q!" || cmd === ":wq") {
+          setVim(false);
+          vline.push({ kind: "ok", text: t("vim.exit") });
+        } else {
+          vline.push({ kind: "out", text: cmd });
+        }
+        setLines((prev) => [...prev, ...vline]);
+        return;
+      }
+
       const [head, ...args] = cmd.split(/\s+/);
       const next: Line[] = [{ kind: "in", text: `phoenix $ ${cmd}` }];
       setHistory((prev) => [...prev, cmd].slice(-50));
@@ -212,12 +257,27 @@ export function TerminalMode() {
           }
           break;
         }
-        case "ls":
+        case "ls": {
+          const all = args.some((a) => a.startsWith("-") && a.includes("a"));
           next.push({
             kind: "out",
-            text: "about.md  projects/  skills/  experience/  contact/  resume.pdf  .secret",
+            text: all
+              ? ".  ..  .secret  .hidden-impact  about.md  projects/  skills/  experience/  contact/  resume.pdf"
+              : "about.md  projects/  skills/  experience/  contact/  resume.pdf",
           });
           break;
+        }
+        case "cd": {
+          const dir = (args[0] ?? "").toLowerCase();
+          if (dir === "secret" || dir === ".secret") {
+            next.push({ kind: "ok", text: t("cd.secret") });
+          } else if (!dir || dir === "~" || dir === "/home/phoenix") {
+            next.push({ kind: "out", text: "/home/phoenix" });
+          } else {
+            next.push({ kind: "out", text: t("cd.generic", { dir }) });
+          }
+          break;
+        }
         case "cat": {
           const target = (args[0] ?? "").toLowerCase();
           if (target === "about.md") {
@@ -233,6 +293,12 @@ export function TerminalMode() {
               kind: "ok",
               text: "🜂 you found a secret. type `secrets` to see the trophy room.",
             });
+          } else if (target === ".hidden-impact") {
+            next.push(
+              { kind: "ok", text: t("hiddenImpact.0") },
+              { kind: "out", text: t("hiddenImpact.1") },
+              { kind: "out", text: t("hiddenImpact.2") },
+            );
           } else {
             next.push({ kind: "err", text: `cat: ${target || "missing operand"}: no such file` });
           }
@@ -279,18 +345,96 @@ export function TerminalMode() {
           setOpen(false);
           router.push("/secret");
           break;
+        case "vim":
+        case "vi":
+        case "nvim": {
+          setVim(true);
+          const file = args[0] ?? "scratch.txt";
+          next.push(
+            { kind: "ok", text: t("vim.enter", { file }) },
+            { kind: "out", text: t("vim.hint") },
+          );
+          break;
+        }
+        case "hire":
+          next.push(
+            { kind: "ok", text: t("hire.0") },
+            { kind: "out", text: t("hire.1") },
+            { kind: "out", text: t("hire.2") },
+            { kind: "ok", text: t("hire.3") },
+          );
+          playSfx("confirm");
+          setOpen(false);
+          router.push("/contact");
+          break;
+        case "boss":
+          applyFx("boss");
+          next.push({ kind: "ok", text: t("fx.boss") });
+          break;
+        case "minimal":
+          applyFx("minimal");
+          next.push({ kind: "ok", text: t("fx.minimal") });
+          break;
+        case "neon":
+          applyFx("neon");
+          next.push({ kind: "ok", text: t("fx.neon") });
+          break;
+        case "glitch":
+          applyFx("glitch");
+          next.push({ kind: "ok", text: t("fx.glitch") });
+          break;
+        case "party":
+          applyFx("neon");
+          next.push({ kind: "ok", text: t("fx.party") });
+          break;
+        case "rain":
+        case "commits":
+          next.push({ kind: "ok", text: t("fx.commits") });
+          window.dispatchEvent(new CustomEvent("open-contribution-rain"));
+          break;
+        case "matrix":
+          next.push({ kind: "ok", text: t("opening", { what: "matrix" }) });
+          setOpen(false);
+          window.dispatchEvent(new CustomEvent("open-matrix-rain"));
+          break;
+        case "phoenix":
+          next.push({ kind: "ok", text: t("fx.phoenix") });
+          window.dispatchEvent(new CustomEvent("open-phoenix-flight"));
+          break;
+        case "download": {
+          if ((args[0] ?? "").toLowerCase() === "resume") {
+            const variant = (args[1] ?? "").replace(/^--/, "");
+            next.push({ kind: "ok", text: t("opening", { what: SITE.resumePath }) });
+            if (variant) next.push({ kind: "out", text: t("download.variant", { variant }) });
+            window.open(SITE.resumePath, "_blank", "noopener");
+          } else {
+            next.push({ kind: "err", text: t("download.usage") });
+          }
+          break;
+        }
         case "clear":
           setLines(greeting);
           return;
         case "exit":
           setOpen(false);
           return;
-        default:
-          next.push({ kind: "err", text: t("unknown", { cmd: head ?? "" }) });
+        default: {
+          const textLines = runTextCommand(head ?? "", args, {
+            t: (k, v) => t(k as never, v as never) as string,
+            art: [...PHOENIX_BANNER],
+            fortunes: (t.raw("fortunes" as never) as string[]) ?? [],
+            links: { leetcode: SITE.leetcode },
+          });
+          if (textLines && textLines.length > 0) {
+            next.push(...textLines);
+          } else {
+            next.push({ kind: "err", text: t("unknown", { cmd: head ?? "" }) });
+          }
+        }
       }
       setLines((prev) => [...prev, ...next]);
     },
-    [t, router, setTheme, greeting, history],
+    [t, router, setTheme, greeting, history, vim, applyFx],
   );
 
   if (!open) return null;

@@ -42,6 +42,23 @@ single canonical URL.
   and Russian (Русский) without the URL ever changing.
 - 🧑‍💼 **Recruiter Mode** — condensed Impact → Experience → Projects → Skills →
   Contact composition, toggled from the header.
+- 🛠 **Engineer Mode** — a mutually-exclusive counterpart to Recruiter Mode
+  (`n` shortcut) that reveals architecture diagrams, algorithms, performance
+  trade-offs and technical write-ups on case studies and the home page.
+- 📐 **System-design whiteboards** (`/system-design`) — interactive walkthroughs
+  (URL shortener, rate limiter, job scheduler) plus sketched "coming soon"
+  boards, lazy-loaded via a dynamic registry.
+- 🤖 **"Ask my portfolio"** — a fully client-side assistant that answers from
+  real site content using a dependency-free TF-IDF lexical index (no model
+  download, no WebAssembly, no network calls, no tracking).
+- 🗓 **`/now` page** — a Derek-Sivers-style snapshot of current focus, learning,
+  building and reading.
+- 🏷 **Quirky project filters** — chip filters on `/work` (favourites,
+  late-night ideas, hardest bugs, most fun, open source, research, AI, systems).
+- 🎛 **Personality flair** — header name glitch, a once-per-session boot
+  sequence, decorative commit rain, a Web-Audio sound-effects engine with a
+  global mute, and an expanded `phoenix-shell` (interactive `vim`, hidden
+  commands) — all reduced-motion safe.
 - ⌨️ **Command palette** (⌘K / Ctrl+K) + a full **keyboard-shortcut layer**
   (`?` for help, `g h`/`g w`/`g s`/…, `t` theme, `r` recruiter, `l` language,
   `e` email, `d` résumé, `j/k` jump section).

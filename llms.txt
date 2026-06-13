@@ -29,6 +29,10 @@ project entry-points first, then drill into the categories below.
 - [docs/ADR/0002-nextjs-app-router.md](docs/ADR/0002-nextjs-app-router.md): Next.js 16 + TypeScript + Tailwind.
 - [docs/ADR/0003-testing-vitest-playwright.md](docs/ADR/0003-testing-vitest-playwright.md): Two-tier test pyramid.
 - [docs/ADR/0004-i18n-next-intl.md](docs/ADR/0004-i18n-next-intl.md): next-intl + `localePrefix: "never"`.
+- [docs/ADR/0008-easter-eggs.md](docs/ADR/0008-easter-eggs.md): Easter-egg layer design.
+- [docs/ADR/0009-audience-modes.md](docs/ADR/0009-audience-modes.md): Recruiter & Engineer audience modes.
+- [docs/ADR/0010-lexical-chatbot.md](docs/ADR/0010-lexical-chatbot.md): Client-side TF-IDF "Ask my portfolio" + CSP.
+- [docs/ADR/0011-system-design-whiteboards.md](docs/ADR/0011-system-design-whiteboards.md): System-design whiteboards via a dynamic registry.
 
 ## Source of truth (content)
 
@@ -47,9 +51,11 @@ project entry-points first, then drill into the categories below.
 
 - [src/app/layout.tsx](src/app/layout.tsx): Root layout, fonts, `<html lang>`.
 - [src/app/[locale]/layout.tsx](src/app/%5Blocale%5D/layout.tsx): Locale layout, theme, providers, JSON-LD.
-- [src/app/[locale]/page.tsx](src/app/%5Blocale%5D/page.tsx): Home page composition (recruiter-aware).
-- [src/app/[locale]/work/page.tsx](src/app/%5Blocale%5D/work/page.tsx): Work index with GitHub workbench.
-- [src/app/[locale]/work/[slug]/page.tsx](src/app/%5Blocale%5D/work/%5Bslug%5D/page.tsx): Project case-study template.
+- [src/app/[locale]/page.tsx](src/app/%5Blocale%5D/page.tsx): Home page composition (recruiter-aware + engineer-aware).
+- [src/app/[locale]/work/page.tsx](src/app/%5Blocale%5D/work/page.tsx): Work index with GitHub workbench + quirky-tag filters.
+- [src/app/[locale]/work/[slug]/page.tsx](src/app/%5Blocale%5D/work/%5Bslug%5D/page.tsx): Project case-study template (reveals engineering deep-dives in Engineer Mode).
+- [src/app/[locale]/now/page.tsx](src/app/%5Blocale%5D/now/page.tsx): `/now` page — current focus snapshot.
+- [src/app/[locale]/system-design/page.tsx](src/app/%5Blocale%5D/system-design/page.tsx): System-design whiteboards.
 - [src/app/api/contact/route.ts](src/app/api/contact/route.ts): Contact API — Zod + rate-limit + Resend.
 - [src/app/sitemap.ts](src/app/sitemap.ts): One URL per route (URLs are locale-agnostic).
 - [src/app/robots.ts](src/app/robots.ts): Robots policy.
@@ -74,6 +80,10 @@ project entry-points first, then drill into the categories below.
 - [src/lib/feeds.ts](src/lib/feeds.ts): Medium / YouTube / GitHub feed adapters.
 - [src/lib/github.ts](src/lib/github.ts): Featured-repos fetcher with curated fallback.
 - [src/lib/utils.ts](src/lib/utils.ts): `cn`, `slugify`, accent-class maps.
+- [src/lib/quirky-tags.ts](src/lib/quirky-tags.ts): Quirky project tag registry + pure filter helpers.
+- [src/lib/terminal/commands.ts](src/lib/terminal/commands.ts): Pure phoenix-shell text-command output.
+- [src/lib/chatbot/embed.ts](src/lib/chatbot/embed.ts): Dependency-free TF-IDF tokenizer + weighting.
+- [src/lib/chatbot/retrieval.ts](src/lib/chatbot/retrieval.ts): Cosine-similarity ranking for the chatbot.
 
 ## UX surfaces worth knowing
 
@@ -82,6 +92,10 @@ project entry-points first, then drill into the categories below.
 - [src/components/layout/cookie-consent.tsx](src/components/layout/cookie-consent.tsx): Soft cookie notice with privacy link.
 - [src/components/contact/attachment-field.tsx](src/components/contact/attachment-field.tsx): Drag-and-drop file picker.
 - [src/components/projects/project-demo.tsx](src/components/projects/project-demo.tsx): Lazy-loaded per-project demo wrapper.
+- [src/components/layout/engineer-mode.tsx](src/components/layout/engineer-mode.tsx): Engineer Mode context (mutually exclusive with Recruiter Mode).
+- [src/components/system-design/system-whiteboard.tsx](src/components/system-design/system-whiteboard.tsx): Dynamic registry that lazy-loads interactive/static whiteboards.
+- [src/components/chatbot/ask-portfolio.tsx](src/components/chatbot/ask-portfolio.tsx): Client-side "Ask my portfolio" assistant UI.
+- [src/components/audio/sfx.ts](src/components/audio/sfx.ts): Web-Audio sound-effects engine with global mute.
 
 ## Optional
 

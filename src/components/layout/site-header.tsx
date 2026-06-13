@@ -8,6 +8,8 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { SettingsMenu } from "@/components/layout/settings-menu";
 import { RecruiterToggle } from "@/components/layout/recruiter-toggle";
+import { EngineerToggle } from "@/components/layout/engineer-toggle";
+import { GlitchName } from "@/components/layout/glitch-name";
 import { SITE } from "@/content/profile";
 import { Link, usePathname } from "@/i18n/navigation";
 import { GreetingChip } from "./greeting-chip";
@@ -19,6 +21,7 @@ const NAV = [
   { href: "/skills", labelKey: "skills" },
   { href: "/experience", labelKey: "experience" },
   { href: "/competitive-programming", labelKey: "craft" },
+  { href: "/now", labelKey: "now" },
   { href: "/contact", labelKey: "contact" },
 ] as const;
 
@@ -34,6 +37,7 @@ export function SiteHeader() {
   const tHeader = useTranslations("header");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navHover, setNavHover] = useState(false);
   const reduce = useReducedMotion();
 
   useEffect(() => {
@@ -78,12 +82,21 @@ export function SiteHeader() {
         >
           <Logo />
           <span className="flex flex-col leading-none">
-            <span className="text-fg text-sm font-semibold tracking-tight">{SITE.name}</span>
+            <GlitchName
+              name={SITE.name}
+              glitch={navHover}
+              className="text-fg text-sm font-semibold tracking-tight"
+            />
           </span>
         </Link>
         <GreetingChip />
 
-        <nav aria-label={t("primary")} className="hidden md:block">
+        <nav
+          aria-label={t("primary")}
+          className="hidden md:block"
+          onMouseEnter={() => setNavHover(true)}
+          onMouseLeave={() => setNavHover(false)}
+        >
           <ul className="relative flex items-center gap-0.5">
             {NAV.map((item) => {
               const active = isActive(pathname, item.href);
@@ -134,6 +147,7 @@ export function SiteHeader() {
             <Rss className="h-4 w-4" />
           </Link>
           <RecruiterToggle />
+          <EngineerToggle />
           <SettingsMenu />
           <a href={SITE.resumePath} download className="btn-primary hidden text-xs sm:inline-flex">
             {tCommon("resume")}

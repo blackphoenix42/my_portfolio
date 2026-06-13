@@ -11,6 +11,8 @@ import {
   Keyboard,
   ChevronRight,
   ChevronLeft,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { useTheme } from "next-themes";
@@ -18,6 +20,7 @@ import { useRouter, usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { CountryFlag } from "@/components/contact/country-flag";
+import { isSfxMuted, toggleSfxMuted, playSfx } from "@/components/audio/sfx";
 
 const THEMES = [
   { id: "phoenix", icon: Flame },
@@ -61,8 +64,17 @@ export function SettingsMenu() {
   const tLang = useTranslations("language");
   const tTheme = useTranslations("theme");
   const tCommon = useTranslations("common");
+  const tAudio = useTranslations("audio");
   const [open, setOpen] = useState<null | "root" | "language">(null);
+  const [muted, setMuted] = useState(true);
   const root = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMuted(isSfxMuted());
+    const onChange = () => setMuted(isSfxMuted());
+    window.addEventListener("sfx-muted-change", onChange);
+    return () => window.removeEventListener("sfx-muted-change", onChange);
+  }, []);
 
   const locale = useLocale() as Locale;
   const router = useRouter();
@@ -184,6 +196,34 @@ export function SettingsMenu() {
               })}
             </div>
           </div>
+
+          {/* Sound effects toggle */}
+          <button
+            type="button"
+            role="menuitemcheckbox"
+            aria-checked={!muted}
+            onClick={() => {
+              const next = toggleSfxMuted();
+              setMuted(next);
+              if (!next) playSfx("confirm");
+            }}
+            className="text-fg-muted hover:bg-bg-sunken hover:text-fg mt-1 flex w-full items-center justify-between gap-3 rounded-md px-2 py-2 text-left text-xs"
+          >
+            <span className="inline-flex items-center gap-2">
+              {muted ? <VolumeX className="h-3.5 w-3.5" /> : <Volume2 className="h-3.5 w-3.5" />}
+              {tAudio("sfxLabel")}
+            </span>
+            <span
+              className={cn(
+                "rounded-full border px-2 py-0.5 font-mono text-[10px]",
+                muted
+                  ? "border-border text-fg-subtle"
+                  : "border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan",
+              )}
+            >
+              {muted ? tAudio("off") : tAudio("on")}
+            </span>
+          </button>
 
           {/* Keyboard shortcuts */}
           <button

@@ -43,6 +43,8 @@
     "skills": "スキル",
     "experience": "経歴",
     "craft": "クラフト",
+    "now": "Now",
+    "systemDesign": "システム設計",
     "contact": "お問い合わせ",
     "openCommandMenu": "コマンドメニューを開く",
     "openMenu": "メニューを開く",
@@ -470,6 +472,197 @@
     "pageHeading": "ライブアクティビティ",
     "pageIntro": "パブリックに作業している場所からのライブシグナル — 最近の Medium 投稿、YouTube アップロード、GitHub イベント。サーバーサイドで RSS / 公開 API から取得し、エッジで 1 時間キャッシュ。"
   },
+  "engineer": {
+    "label": "エンジニアモード",
+    "on": "エンジニアモード オン",
+    "off": "エンジニアモード オフ",
+    "toggleLabel": "エンジニアモードを切り替え",
+    "exit": "エンジニアモードを終了",
+    "enable": "エンジニアモードを有効化",
+    "short": "エンジニア",
+    "onShort": "オン",
+    "toastTitle": "エンジニアモードを有効化しました",
+    "toastBody": "深い技術情報を表示します — アーキテクチャ図、アルゴリズム、性能トレードオフ、技術解説。",
+    "dismiss": "閉じる",
+    "bannerModeOn": "エンジニアモード · オン",
+    "bannerSummary": "アーキテクチャ図、アルゴリズム、性能の詳細を表示中。通常表示に戻すにはオフにしてください。",
+    "bannerSystemDesign": "システム設計",
+    "bannerDeepDives": "ディープダイブ",
+    "bannerGithub": "GitHub",
+    "bannerAlgorithms": "アルゴリズム",
+    "exitAria": "エンジニアモードを終了",
+    "sectionArchitecture": "アーキテクチャ",
+    "sectionAlgorithms": "アルゴリズムとデータ構造",
+    "sectionPerformance": "性能エンジニアリング",
+    "sectionWriteup": "技術ディープダイブ",
+    "homeHeading": "エンジニア表示",
+    "homeIntro": "アーキテクチャ、アルゴリズム、性能 — 採用担当者が流し読みし、エンジニアが熟読する部分。",
+    "draftNotice": "技術ノートは公開済みのプロジェクト事実から作成され、随時改良しています。",
+    "perfTag": "/ 性能",
+    "perfTitle": "プロファイリング駆動の性能改善",
+    "perfIntro": "まず計測し、それから最適化する。プロファイリングと RTL 変換作業による代表的なスループット向上。",
+    "sysTag": "/ システム設計",
+    "sysTitle": "スケールを見据えた設計",
+    "sysIntro": "ロードバランサー、サービス層、キャッシュ/DB ファンアウトを通るリクエストフロー — 多くのスケーラブルなシステムの背骨。",
+    "viewSystemDesign": "システム設計を見る"
+  },
+  "now": {
+    "pageTitle": "Now",
+    "pageDescription": "Ayush Yadav が今取り組んでいること — 現在の仕事、学習、開発、読書。",
+    "tag": "/ now",
+    "pageHeading": "いま取り組んでいること",
+    "pageIntro": "いま関心を向けている対象のスナップショット — 集中しているプロジェクト、アイデア、習慣。Derek Sivers の /now ムーブメントに着想を得ています。",
+    "updatedLabel": "最終更新 {date}",
+    "inspiredBy": "これは <a>now ページ</a> です — 状況の変化に合わせて更新する、現在のフォーカスのスナップショットです。",
+    "sectionTitles": {
+      "focus": "現在のフォーカス",
+      "learning": "学習中",
+      "building": "開発中",
+      "reading": "読書中",
+      "sharpening": "鍛錬中"
+    },
+    "sections": {
+      "focus": {
+        "0": "Cadence での R&D ソフトウェアエンジニアリング — Xcelium 論理シミュレーターの性能改善。",
+        "1": "XMAI を開発中 — シミュレーション成果物を最適化の指針に変えるエージェント型 AI プロファイラー。",
+        "2": "C++ 性能の勘を磨く: プロファイリング、ホットパス分析、低リスクな最適化。"
+      },
+      "learning": {
+        "0": "開発者ツール向けの検索拡張生成 (RAG) とエージェントオーケストレーションのパターン。",
+        "1": "分散システム設計 — 一貫性、パーティショニング、バックプレッシャーのトレードオフ。",
+        "2": "本番規模のベクトルデータベースと埋め込みパイプライン。"
+      },
+      "building": {
+        "0": "このポートフォリオ — エンジニアモード、システム設計のホワイトボード、ローカルな Ask-My-Portfolio アシスタント。",
+        "1": "AlgoLens — インタラクティブな DSA ビジュアライザー (オープンソース)。"
+      },
+      "reading": {
+        "0": "LLM のツール利用とエージェントの信頼性に関する論文や解説。",
+        "1": "古典的なシステム性能の文献 (まず計測する文化)。"
+      },
+      "sharpening": {
+        "0": "競技プログラミング — DSA の基礎を速く鋭く保つ。",
+        "1": "もっと書く: デバッグの武勇伝を共有できるノートに変える。"
+      }
+    }
+  },
+  "quirkyTags": {
+    "filterLabel": "フィルター",
+    "all": "すべて",
+    "labels": {
+      "favorite": "お気に入りプロジェクト",
+      "late-night": "深夜のアイデア",
+      "hardest-bug": "最難関のバグ",
+      "most-fun": "一番楽しい",
+      "open-source": "オープンソース",
+      "research": "研究",
+      "ai": "AI",
+      "systems": "システム"
+    }
+  },
+  "systemDesign": {
+    "pageTitle": "システム設計",
+    "pageDescription": "インタラクティブなシステム設計ホワイトボード — URL 短縮、レートリミッター、ジョブスケジューラーなど。",
+    "tag": "/ システム設計",
+    "pageHeading": "システム設計ホワイトボード",
+    "pageIntro": "古典的なシステム設計問題のインタラクティブな解説 — 要件、コンポーネント、そして本当に重要なトレードオフ。一部は完全にインタラクティブで、その他はスケッチで近日公開予定です。",
+    "jumpTo": "システムへ移動",
+    "interactive": "インタラクティブ",
+    "comingSoon": "インタラクティブ版は近日公開",
+    "requirements": "要件",
+    "components": "コンポーネント",
+    "tradeoffs": "トレードオフ",
+    "urlShortener": {
+      "writePath": "書き込みパス",
+      "readPath": "読み取りパス",
+      "longUrl": "長い URL",
+      "shortUrl": "短い URL",
+      "client": "クライアント",
+      "api": "API",
+      "keygen": "キー生成",
+      "store": "KV ストア",
+      "cache": "キャッシュ",
+      "redirect": "301 / 302"
+    },
+    "rateLimiter": {
+      "sendRequest": "リクエスト送信",
+      "refillNote": "{ms} ms ごとに 1 トークン補充",
+      "bucket": "トークンバケット · {count}/{capacity}",
+      "recent": "最近の応答",
+      "empty": "まだリクエストがありません — 送信してください。",
+      "allowed": "許可",
+      "blocked": "拒否"
+    },
+    "jobScheduler": {
+      "enqueue": "ジョブを追加",
+      "pause": "一時停止",
+      "resume": "再開",
+      "workers": "{count} ワーカー",
+      "queued": "待機中",
+      "running": "実行中",
+      "done": "完了",
+      "failed": "失敗",
+      "retryNote": "失敗したジョブはバックオフ付きで再試行し、その後デッドレターキューへ移動します。"
+    },
+    "systems": {
+      "url-shortener": {
+        "title": "URL 短縮サービス",
+        "tagline": "長い URL を短いコードに対応付け、大規模にリダイレクト (bit.ly 方式)。"
+      },
+      "rate-limiter": {
+        "title": "レートリミッター",
+        "tagline": "クライアントごとのリクエスト速度を制限してサービスを保護。"
+      },
+      "job-scheduler": {
+        "title": "ジョブスケジューラー",
+        "tagline": "タスクを確実に実行 — 即時、遅延、定期。"
+      },
+      "log-analytics": {
+        "title": "ログ分析システム",
+        "tagline": "大量のログを取り込み、インデックス化し、クエリする。"
+      },
+      "sim-regression-dashboard": {
+        "title": "シミュレーション回帰ダッシュボード",
+        "tagline": "夜間シミュレーション実行の合否トレンドを追跡。"
+      },
+      "waveform-compression": {
+        "title": "波形圧縮システム",
+        "tagline": "ストレージと高速リプレイのためにデジタルシミュレーション波形を圧縮。"
+      }
+    }
+  },
+  "chatbot": {
+    "open": "ポートフォリオに質問",
+    "title": "ポートフォリオに質問",
+    "subtitle": "ローカル · 抽出型 · トラッキングなし",
+    "close": "アシスタントを閉じる",
+    "intro": "私の仕事、スキル、経歴について質問してください。回答はこのサイトの実際のコンテンツから抽出されます。",
+    "placeholder": "質問を入力…",
+    "send": "送信",
+    "loading": "ナレッジベースを読み込み中 — 少し待って再試行してください。",
+    "noAnswer": "サイト内で見つかりませんでした。プロジェクト、スキル、経歴、連絡方法について質問してみてください。",
+    "error": "ナレッジベースの読み込みに失敗しました。後でもう一度お試しください。",
+    "sourcesLabel": "出典",
+    "disclaimer": "完全にブラウザー内で動作します。回答は実際のサイトコンテンツ (英語) から抽出されます。",
+    "suggestions": {
+      "q0": "Ayush は Cadence で何をしていますか?",
+      "q1": "XMAI プロジェクトについて教えて。",
+      "q2": "Ayush の最も強いスキルは?",
+      "q3": "Ayush に連絡するには?"
+    }
+  },
+  "audio": {
+    "introTitle": "音声紹介",
+    "introSubtitle": "30 秒のごあいさつ",
+    "comingSoon": "音声紹介は近日公開",
+    "play": "音声紹介を再生",
+    "pause": "音声紹介を一時停止",
+    "transcriptToggle": "文字起こし",
+    "transcript": "こんにちは、Ayush Yadav です — C++ 性能、分散システム、エージェント型 AI ツールに注力する R&D ソフトウェアエンジニアです。お立ち寄りいただきありがとうございます。作品や実験をぜひご覧ください。",
+    "sfxLabel": "効果音",
+    "on": "オン",
+    "off": "オフ"
+  },
   "lab": {
     "title": "ラボ",
     "description": "コンセプトラボ、実験、進行中の作業。",
@@ -657,6 +850,23 @@
       "title": "マトリックスレイン",
       "close": "閉じる",
       "hint": "クリック · ESC · もう一度 \"matrix\" 入力で終了"
+    },
+    "commitRain": {
+      "label": "コミットの雨を降らせています…"
+    },
+    "boot": {
+      "title": "AyushOS 起動シーケンス",
+      "skip": "スキップ",
+      "banner": "    _                 _      ___  ____\n   / \\  _   _ _   _ ___| |__  / _ \\/ ___|\n  / _ \\| | | | | | / __| '_ \\| | | \\___ \\\n / ___ \\ |_| | |_| \\__ \\ | | | |_| |___) |\n/_/   \\_\\__, |\\__,_|___/_| |_|\\___/|____/\n        |___/",
+      "lines": [
+        "AyushOS v1.0 を初期化中…",
+        "/projects をマウント … 完了",
+        "C++ 性能モジュールを読み込み中 … 完了",
+        "agentic-ai デーモンを起動中 … 完了",
+        "phoenix-shell を起動中 … 完了",
+        "コーヒー残量を調整中 … 最適",
+        "ようこそ。任意のキーで続行します。"
+      ]
     },
     "terminal": {
       "title": "phoenix-shell",

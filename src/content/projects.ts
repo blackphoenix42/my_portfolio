@@ -1,3 +1,16 @@
+import type { QuirkyTag } from "@/lib/quirky-tags";
+
+// Engineer Mode deep-tech block. Surfaced only when Engineer Mode is enabled.
+// NOTE: drafted from each project's public `approach`/`impact` facts — no
+// proprietary code and no literal source. Refine the wording as desired.
+export type ProjectEngineering = {
+  /** Whether a slug-keyed architecture whiteboard exists (see diagram-slugs.ts). */
+  architecture?: boolean;
+  algorithms?: { name: string; note: string }[];
+  performance?: string[];
+  writeup?: string[];
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -7,12 +20,15 @@ export type Project = {
   status: "professional" | "open-source" | "concept";
   cover?: string;
   tags: string[];
+  /** Playful, subjective filter dimensions (see src/lib/quirky-tags.ts). */
+  quirkyTags?: QuirkyTag[];
   summary: string;
   problem: string;
   challenge: string;
   approach: string[];
   impact: { label: string; value: string }[];
   stack: string[];
+  engineering?: ProjectEngineering;
   links?: { label: string; href: string }[];
   related?: string[];
 };
@@ -27,6 +43,7 @@ export const projects: Project[] = [
     categories: ["AI", "Systems"],
     status: "professional",
     tags: ["LLMs", "RAG", "MCP", "C++", "Embeddings", "EDA", "Agents"],
+    quirkyTags: ["favorite", "hardest-bug", "research", "ai"],
     summary:
       "XMAI is an AI-assisted EDA profiler designed to accelerate failure analysis and runtime optimization for large-scale simulation workloads. It combines retrieval-augmented generation, tool-enabled agents and graph-compatible RTL representations into a coherent diagnostic experience.",
     problem:
@@ -46,6 +63,32 @@ export const projects: Project[] = [
       { label: "Domain", value: "Large SoC simulations" },
     ],
     stack: ["C++", "Python", "LLMs", "RAG", "MCP", "Vector DB", "Cadence JEDAI"],
+    engineering: {
+      architecture: true,
+      algorithms: [
+        {
+          name: "Vector similarity retrieval (RAG)",
+          note: "Approximate nearest-neighbour search over embedded design context, signals and runtime traces surfaces the most relevant artifacts for a given hotspot before any LLM is invoked.",
+        },
+        {
+          name: "Agent prompt routing",
+          note: "A routing layer dispatches hotspot triage, recommendation synthesis and explainability to separate tool-enabled agent prompts.",
+        },
+        {
+          name: "Canonical event/signal modeling",
+          note: "Heterogeneous simulation logs and artifacts are normalized into one event/signal schema so retrieval and reasoning operate on a single representation.",
+        },
+      ],
+      performance: [
+        "~40% reduction in debug root-cause-analysis time on large SoC simulations.",
+        "Auto-analyze-on-failure removes manual artifact correlation from the critical path.",
+        "Embeddings are precomputed and indexed so retrieval stays interactive at simulation scale.",
+      ],
+      writeup: [
+        "XMAI treats failure analysis as a retrieval problem first and a reasoning problem second: artifacts are parsed into a canonical model, embedded and indexed before any LLM runs, which keeps agents grounded in real signals instead of free-associating.",
+        "CLI, TUI, GUI and the MCP server share one core, so the diagnostic experience is consistent whether a human or another tool drives it.",
+      ],
+    },
     related: ["xcelium-optimization", "algolens"],
   },
   {
@@ -57,6 +100,7 @@ export const projects: Project[] = [
     categories: ["Systems"],
     status: "professional",
     tags: ["C++", "Profiling", "Runtime", "Simulation", "SystemVerilog"],
+    quirkyTags: ["favorite", "hardest-bug", "systems"],
     summary:
       "A multi-quarter performance engineering effort on Cadence's Xcelium logic simulator, focused on profiling-driven optimization, RTL transformations and structured diagnostics for production customer workloads.",
     problem:
@@ -76,6 +120,28 @@ export const projects: Project[] = [
       { label: "Customer-impacting", value: "Multi-million-$ Samsung deal" },
     ],
     stack: ["C++", "SystemVerilog", "Valgrind", "AddressSanitizer", "Perforce"],
+    engineering: {
+      algorithms: [
+        {
+          name: "Top-N hotspot profiling",
+          note: "A reusable C++ performance-analysis library ranks the hottest call paths so optimization effort targets the highest-leverage code (presented at Cadence India Conference).",
+        },
+        {
+          name: "RTL transformation passes",
+          note: "The Xform Engine reshapes designs into more simulator-friendly forms before execution.",
+        },
+      ],
+      performance: [
+        "+18–19% simulation throughput on representative customer workloads.",
+        "+13–14% RTL transform runtime improvement.",
+        "Hotspots isolated with Valgrind, AddressSanitizer and runtime profilers; changes kept small and low-risk for production.",
+        "Validated against Apple, Google, Samsung and NVIDIA designs.",
+      ],
+      writeup: [
+        "Performance work on an industrial simulator is dominated by measurement discipline: a structured Top-N profiling library made hot paths visible and repeatable so every change could be attributed to a concrete win.",
+        "Optimizations shipped as small, low-risk C++ changes validated on representative real-world designs rather than micro-benchmarks.",
+      ],
+    },
     related: ["xmai"],
   },
   {
@@ -87,6 +153,7 @@ export const projects: Project[] = [
     categories: ["Frontend", "AI"],
     status: "open-source",
     tags: ["TypeScript", "React", "Canvas", "Accessibility", "GenAI", "FFmpeg-WASM"],
+    quirkyTags: ["late-night", "most-fun", "open-source", "ai"],
     summary:
       "AlgoLens is an interactive algorithm visualizer supporting 60+ algorithms with real-time step-through, deterministic replay, FFmpeg-WASM export, GenAI explanations and rich search.",
     problem:
@@ -107,6 +174,30 @@ export const projects: Project[] = [
       { label: "Engineering", value: "Sentry · Playwright · Percy · CI" },
     ],
     stack: ["TypeScript", "React", "Canvas", "FFmpeg-WASM", "Playwright", "Storybook", "Sentry"],
+    engineering: {
+      algorithms: [
+        {
+          name: "Step-based execution model",
+          note: "Every algorithm emits a uniform stream of inspectable steps, enabling deterministic replay and scrubbing across 60+ algorithms.",
+        },
+        {
+          name: "Deterministic replay",
+          note: "Given the same input and seed, a run reproduces exactly — essential for teaching and reliable video export.",
+        },
+        {
+          name: "Multi-modal search",
+          note: "Exact, fuzzy, phonetic and semantic search over the algorithm catalogue for fast discovery.",
+        },
+      ],
+      performance: [
+        "Canvas renderers with reduced-motion-aware animations keep visualizations GPU-friendly.",
+        "In-browser FFmpeg-WASM export avoids any server round-trip for video.",
+        "Held to WCAG 2.1 AA with Sentry, Web Vitals, Playwright and CI quality gates.",
+      ],
+      writeup: [
+        "The unifying idea is a single step model: by forcing every algorithm to express itself as a sequence of inspectable steps, replay, export and AI explanations all become generic features instead of per-algorithm work.",
+      ],
+    },
     links: [{ label: "GitHub", href: "https://github.com/blackphoenix42/algolens" }],
     related: ["xmai", "postureiq"],
   },
@@ -119,6 +210,7 @@ export const projects: Project[] = [
     categories: ["AI", "Frontend"],
     status: "open-source",
     tags: ["Python", "OpenCV", "MediaPipe", "BlazePose", "NumPy", "Kalman"],
+    quirkyTags: ["most-fun", "ai"],
     summary:
       "PostureIQ is an ML-powered posture and form-coaching system built around real-time pose estimation, temporal smoothing, confidence gating and rep-quality scoring for exercise feedback.",
     problem:
@@ -138,6 +230,30 @@ export const projects: Project[] = [
       { label: "Quality", value: "pytest · golden traces · CLI" },
     ],
     stack: ["Python", "OpenCV", "MediaPipe", "BlazePose", "NumPy", "pytest"],
+    engineering: {
+      algorithms: [
+        {
+          name: "Pose estimation (BlazePose)",
+          note: "Real-time landmark inference from the webcam feed via MediaPipe/BlazePose.",
+        },
+        {
+          name: "Kalman filtering & temporal smoothing",
+          note: "Noisy per-frame landmarks are stabilized so coaching feedback doesn't jitter or fire false corrections.",
+        },
+        {
+          name: "Rep-quality scoring",
+          note: "Range-of-motion, tempo and symmetry are combined into a single actionable form score.",
+        },
+      ],
+      performance: [
+        "60 FPS capture → infer → render loop.",
+        ">95% reported accuracy with confidence gating and adaptive thresholds.",
+        "FPS, latency and error telemetry instrumented for repeatable analysis.",
+      ],
+      writeup: [
+        "The hard part of pose coaching isn't detection but trust: confidence gating, Kalman smoothing and 3D landmark checks turn noisy per-frame estimates into stable, actionable feedback.",
+      ],
+    },
     related: ["algolens"],
   },
   {
@@ -149,6 +265,7 @@ export const projects: Project[] = [
     categories: ["Frontend"],
     status: "open-source",
     tags: ["React Native", "MongoDB", "NoSQL", "Tracking", "Visualization"],
+    quirkyTags: ["late-night", "systems"],
     summary:
       "A mobile-first tracking and visualization project that stores movement events in MongoDB and renders location history for inspection.",
     problem:
@@ -165,6 +282,24 @@ export const projects: Project[] = [
       { label: "Storage", value: "MongoDB" },
     ],
     stack: ["React Native", "MongoDB", "JavaScript", "NoSQL"],
+    engineering: {
+      algorithms: [
+        {
+          name: "Movement-history data modeling",
+          note: "Location samples are modeled in MongoDB for flexible movement-trail queries.",
+        },
+        {
+          name: "Trail replay",
+          note: "Recorded sessions are replayed as visual paths for inspection and spot-checking.",
+        },
+      ],
+      performance: [
+        "Lightweight mobile surface focused on capture and replay rather than a heavyweight GIS stack.",
+      ],
+      writeup: [
+        "The design keeps the data model simple — location events in a flexible NoSQL schema — so movement history can be captured, stored and replayed without GIS overhead.",
+      ],
+    },
   },
   {
     slug: "smart-brain",
@@ -175,6 +310,7 @@ export const projects: Project[] = [
     categories: ["AI", "Frontend"],
     status: "open-source",
     tags: ["React", "Express", "Clarifai API", "JavaScript", "Node.js"],
+    quirkyTags: ["most-fun", "open-source", "ai"],
     summary:
       "Smart Brain is a full-stack application that sends image URLs to Clarifai, receives face-detection predictions and renders bounding boxes in a React interface.",
     problem:
@@ -191,6 +327,20 @@ export const projects: Project[] = [
       { label: "Stack", value: "React · Express" },
     ],
     stack: ["React", "Express", "Node.js", "Clarifai API", "JavaScript"],
+    engineering: {
+      algorithms: [
+        {
+          name: "Bounding-box rendering",
+          note: "Clarifai face predictions are normalized and drawn as overlays on the source image.",
+        },
+      ],
+      performance: [
+        "A clean Express boundary keeps the React frontend responsive while isolating the ML API.",
+      ],
+      writeup: [
+        "API integration details sit behind an Express boundary so the presentation layer stays simple and the third-party ML dependency can change without touching the UI.",
+      ],
+    },
   },
   {
     slug: "tezos-premier-league",
@@ -201,6 +351,7 @@ export const projects: Project[] = [
     categories: ["Blockchain", "Frontend"],
     status: "open-source",
     tags: ["Tezos", "Smart Contracts", "React", "Web3", "NFT", "IPFS"],
+    quirkyTags: ["late-night", "most-fun", "open-source"],
     summary:
       "A blockchain-based PvP gaming project and NFT marketplace on the Tezos network. The work was selected for a $10,000 award to support continued development.",
     problem:
@@ -219,6 +370,25 @@ export const projects: Project[] = [
       { label: "Ecosystem", value: "Tezos blockchain" },
     ],
     stack: ["React", "Tezos", "SmartPy", "Taquito", "Pinata/IPFS", "ECDSA"],
+    engineering: {
+      algorithms: [
+        {
+          name: "Bracket gameplay flows",
+          note: "PvP gameplay is modeled as bracket-style progressions backed by on-chain state.",
+        },
+        {
+          name: "Resilient contract-call patterns",
+          note: "Rate-limited RPC handling and safer key flows wrap wallet interactions for a smoother player experience.",
+        },
+      ],
+      performance: [
+        "IPFS/Pinata for NFT metadata keeps on-chain payloads small.",
+        "Rate-limited RPC and resilient contract calls smooth play on a non-EVM chain.",
+      ],
+      writeup: [
+        "The engineering challenge was hiding chain complexity: game mechanics map onto Tezos primitives (SmartPy contracts, Taquito, IPFS) while the React frontend presents a familiar game UX.",
+      ],
+    },
     links: [{ label: "GitHub", href: "https://github.com/blackphoenix42/tpl-frontend" }],
   },
 ];

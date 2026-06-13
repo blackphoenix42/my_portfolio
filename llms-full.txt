@@ -52,6 +52,19 @@ without prior written permission.
    (`InView` wrapper) or finalizes instantly when `prefers-reduced-motion` is set.
 7. **Security headers.** CSP, HSTS preload (2 years), COOP same-origin, CORP
    same-origin, restrictive Permissions-Policy. See `next.config.mjs`.
+8. **Audience modes.** Recruiter Mode and Engineer Mode are mutually-exclusive,
+   `localStorage`-backed React contexts that re-compose server-rendered sections
+   client-side (no new cookie). Engineer Mode reveals architecture/algorithms/
+   performance/write-up sections. See `docs/ADR/0009-audience-modes.md`.
+9. **Chatbot is lexical, not neural.** "Ask my portfolio" uses a dependency-free
+   TF-IDF index (`src/lib/chatbot/*`) over a curated corpus built at
+   `prebuild` time into `public/chatbot/corpus.json`. No WebAssembly, so the CSP
+   needs no `'wasm-unsafe-eval'`; no model download, no network, no tracking. See
+   `docs/ADR/0010-lexical-chatbot.md`.
+10. **System-design whiteboards.** `/system-design` renders topics from
+    `src/content/system-design.ts` through a dynamic registry that lazy-loads
+    interactive boards or a static "coming soon" fallback. See
+    `docs/ADR/0011-system-design-whiteboards.md`.
 
 ## Directory map
 

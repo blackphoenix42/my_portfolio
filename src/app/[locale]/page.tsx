@@ -7,6 +7,10 @@ import { CPCommandCenter } from "@/components/competitive-programming/cp-command
 import { AboutSection } from "@/components/about-section";
 import { ContactCTA } from "@/components/contact/contact-cta";
 import { RecruiterAware } from "@/components/layout/recruiter-aware";
+import { EngineerAware } from "@/components/layout/engineer-aware";
+import { EngineerHomeIntro } from "@/components/layout/engineer-home-intro";
+import { PerformanceDiagram } from "@/components/diagrams/performance-diagram";
+import { SystemDesignDiagram } from "@/components/diagrams/system-design-diagram";
 import { TechMarquee } from "@/components/logos/tech-marquee";
 
 export const revalidate = 3600;
@@ -26,14 +30,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </div>
       <MetricsStrip />
       <TechMarquee />
-      <RecruiterAware
-        recruiter={
+      <EngineerAware
+        engineer={
           <>
+            <EngineerHomeIntro />
             <div className={lazy}>
-              <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
+              <PerformanceDiagram />
+            </div>
+            <div className={lazy}>
+              <SystemDesignDiagram />
             </div>
             <div className={lazy}>
               <FeaturedWork limit={4} />
+            </div>
+            <div className={lazy}>
+              <CPCommandCenter />
+            </div>
+            <div className={lazy}>
+              <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
             </div>
             <div className={lazy}>
               <ContactCTA />
@@ -41,20 +55,37 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </>
         }
         full={
-          <>
-            <div className={lazy}>
-              <FeaturedWork limit={2} />
-            </div>
-            <div className={lazy}>
-              <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
-            </div>
-            <div className={lazy}>
-              <CPCommandCenter />
-            </div>
-            <div className={lazy}>
-              <ContactCTA />
-            </div>
-          </>
+          <RecruiterAware
+            recruiter={
+              <>
+                <div className={lazy}>
+                  <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
+                </div>
+                <div className={lazy}>
+                  <FeaturedWork limit={4} />
+                </div>
+                <div className={lazy}>
+                  <ContactCTA />
+                </div>
+              </>
+            }
+            full={
+              <>
+                <div className={lazy}>
+                  <FeaturedWork limit={2} />
+                </div>
+                <div className={lazy}>
+                  <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
+                </div>
+                <div className={lazy}>
+                  <CPCommandCenter />
+                </div>
+                <div className={lazy}>
+                  <ContactCTA />
+                </div>
+              </>
+            }
+          />
         }
       />
     </>
