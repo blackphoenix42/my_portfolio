@@ -73,7 +73,7 @@
     "autoprefixer": "^10.5.0",
     "axe-core": "4.11.4",
     "cross-env": "10.1.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.7.0",
     "eslint-config-next": "16.2.6",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "9.1.7",
@@ -81,10 +81,10 @@
     "lint-staged": "17.0.5",
     "markdownlint-cli2": "0.22.1",
     "postcss": "8.5.15",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "prettier": "^3.9.5",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.7"
   },
   "overrides": {
