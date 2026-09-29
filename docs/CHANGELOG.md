@@ -151,7 +151,8 @@ All notable changes to this project are documented here. Format loosely follows
   (shared `diagram-kit.tsx`, translated labels under `architecture.*`) and an
   animated thumbnail; MAESTRO also gets an interactive conductor demo with
   human approval gates. Experience, `/now`, honors, skills, hero diagram and
-  the chatbot corpus are updated to match, across all six locales.
+  the chatbot corpus are updated to match, across all six locales. The old
+  `/work/xmai` URL permanently redirects to `/work/maestro`.
 - **404 mini-game rebuilt as Phoenix Run** — the old Chrome-dino runner +
   Feather Catch mode are replaced by a single polished endless runner: a
   flaming phoenix (canvas gradients, animated wing-flaps, fire trail, ember

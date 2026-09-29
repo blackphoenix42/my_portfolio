@@ -46,6 +46,12 @@ const nextConfig = {
       { protocol: "https", hostname: "raw.githubusercontent.com" },
     ],
   },
+  async redirects() {
+    return [
+      // XMAI was superseded by MAESTRO; keep previously shared links working.
+      { source: "/work/xmai", destination: "/work/maestro", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
