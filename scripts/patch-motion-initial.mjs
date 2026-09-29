@@ -3,7 +3,7 @@ import fs from "node:fs";
 const files = [
   "src/components/diagrams/case-study-thumbs.tsx",
   "src/components/diagrams/roadmap-diagram.tsx",
-  "src/components/diagrams/xmai-architecture.tsx",
+  "src/components/diagrams/diagram-kit.tsx",
 ];
 
 let total = 0;
@@ -19,7 +19,12 @@ for (const f of files) {
     let tag = m[0];
     const hasInitial = /\binitial\s*=/.test(tag);
     const hasAnimate = /\banimate\s*=/.test(tag);
-    if (!hasInitial && hasAnimate) {
+    // initial={false} blocks the mount animation, so a looping keyframe
+    // animation would never start — leave those elements untouched.
+    const rest = src.slice(m.index);
+    const end = rest.search(/\/>|<\/motion\./);
+    const loops = /repeat:\s*Infinity/.test(end === -1 ? rest : rest.slice(0, end));
+    if (!hasInitial && hasAnimate && !loops) {
       tag = tag.replace(/^(<motion\.[A-Za-z]+)/, "$1 initial={false}");
       count++;
     }

@@ -1,11 +1,25 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowUpRight, Cpu, Layers, Activity, Coins, Filter } from "lucide-react";
+import {
+  ArrowUpRight,
+  Cpu,
+  Layers,
+  Activity,
+  Coins,
+  Filter,
+  Workflow,
+  Bot,
+  ListChecks,
+  GitMerge,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
-  XmaiPipeline,
+  MaestroConductor,
+  XceliumAgentsMini,
+  RegressionTriageMini,
+  PerforceReplayMini,
   FlamegraphMini,
   AlgoMini,
   ChainBracket,
@@ -31,7 +45,10 @@ export type WorkCard = {
 };
 
 const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
-  xmai: Cpu,
+  maestro: Workflow,
+  "xcelium-ai-agents": Bot,
+  "regression-triage": ListChecks,
+  "perforce-replay": GitMerge,
   "xcelium-optimization": Activity,
   algolens: Layers,
   postureiq: Activity,
@@ -41,7 +58,10 @@ const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const Thumbs: Record<string, () => React.ReactElement> = {
-  xmai: () => <XmaiPipeline />,
+  maestro: () => <MaestroConductor />,
+  "xcelium-ai-agents": () => <XceliumAgentsMini />,
+  "regression-triage": () => <RegressionTriageMini />,
+  "perforce-replay": () => <PerforceReplayMini />,
   "xcelium-optimization": () => <FlamegraphMini />,
   algolens: () => <AlgoMini />,
   postureiq: () => <PostureMini />,

@@ -6,9 +6,9 @@ license.
 
 ## Custom-built (all original)
 
-- Hero diagram (`src/components/hero/hero-visualization.tsx`) — animated profiler → RAG/MCP → agent → RTL graph.
-- Case-study thumbnails (`src/components/diagrams/case-study-thumbs.tsx`) — pipeline, flamegraph, sorting bars, bracket.
-- XMAI conceptual architecture (`src/components/diagrams/xmai-architecture.tsx`).
+- Hero diagram (`src/components/hero/hero-visualization.tsx`) — animated tickets → knowledge/MCP → conductor & agents → RTL recode / verified fix graph.
+- Case-study thumbnails (`src/components/diagrams/case-study-thumbs.tsx`) — conductor arc, agent pipeline, failure clustering, stream replay, flamegraph, sorting bars, bracket.
+- Project architecture whiteboards (`src/components/diagrams/*-architecture.tsx`) — MAESTRO, Xcelium AI agents, regression triage and Perforce replay, built on `diagram-kit.tsx`.
 - Roadmap diagram (`src/components/diagrams/roadmap-diagram.tsx`).
 - AlgoLens micro-demo (`src/components/projects/algolens-demo.tsx`) and all other
   project demos under `src/components/projects/*-demo.tsx`.

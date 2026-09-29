@@ -32,7 +32,7 @@ test.describe("Engineer Mode", () => {
 
     // State persists across a full navigation; the case study now exposes the
     // technical deep-dive that is hidden in the default view.
-    await page.goto("/work/xmai");
+    await page.goto("/work/maestro");
     await expect(page.getByRole("heading", { name: "Technical deep-dive", level: 2 })).toBeVisible({
       timeout: 15_000,
     });

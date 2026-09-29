@@ -7,6 +7,8 @@ coverage
 playwright-report
 test-results
 public/assets
+# Generated minified by scripts/build-chatbot-index.mjs on every prebuild.
+public/chatbot/corpus.json
 package-lock.json
 pnpm-lock.yaml
 yarn.lock

@@ -6,7 +6,7 @@
 // date whenever you revise this page.
 export const NOW = {
   // ISO date the page was last meaningfully updated.
-  updated: "2026-06-13",
+  updated: "2026-09-27",
   location: "India",
   /**
    * Each section maps to an i18n group under the `now` namespace. The `items`
@@ -18,7 +18,7 @@ export const NOW = {
       // What I'm spending most working hours on right now.
       items: [
         "R&D software engineering at Cadence — performance work on the Xcelium logic simulator.",
-        "Building XMAI, an agentic AI profiler that turns simulation artifacts into optimization guidance.",
+        "Building multi-agent AI systems — MAESTRO for end-to-end ticket resolution and ChipStack Xcelium agents for simulation performance and memory optimization.",
         "Sharpening C++ performance instincts: profiling, hot-path analysis and low-risk optimization.",
       ],
     },

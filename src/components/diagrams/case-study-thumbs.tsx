@@ -15,60 +15,315 @@ const FG_M = "hsl(var(--fg-muted))";
 const FG = "hsl(var(--fg))";
 
 /* -------------------------------------------------------------------------- */
-/*  XMAI — hero-style flow with named stages                                   */
+/*  MAESTRO — conductor, 10 agents on an arc, 5 human gates on the score       */
 /* -------------------------------------------------------------------------- */
-export function XmaiPipeline() {
+export function MaestroConductor() {
   const reduce = useReducedMotion();
-  const nodes = [
-    { x: 60, label: "artifacts", c: A },
-    { x: 180, label: "retrieve", c: A },
-    { x: 300, label: "agent", c: V },
-    { x: 420, label: "rtl", c: E },
+  // Rounded: Node and browser Math.cos/sin can differ in the last digit, which breaks hydration.
+  const round = (v: number) => Math.round(v * 100) / 100;
+  const agents = Array.from({ length: 10 }, (_, i) => {
+    const angle = Math.PI * (0.08 + (0.84 * i) / 9);
+    return { x: round(240 - Math.cos(angle) * 150), y: round(140 - Math.sin(angle) * 92) };
+  });
+  const gates = [118, 190, 262, 334, 406];
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        maestro · conductor → 10 agents · 5 gates
+      </text>
+      {agents.map((a, i) => (
+        <line key={`l${i}`} x1={240} y1={140} x2={a.x} y2={a.y} stroke={BD} strokeWidth="1" />
+      ))}
+      {agents.map((a, i) => (
+        <motion.circle
+          key={`a${i}`}
+          cx={a.x}
+          cy={a.y}
+          r="9"
+          fill={BG}
+          stroke={i === 9 ? V : A}
+          strokeWidth="1.5"
+          initial={{ opacity: 1 }}
+          animate={reduce ? undefined : { opacity: [1, 0.45, 1] }}
+          transition={{ duration: 5, repeat: Infinity, delay: i * 0.5 }}
+        />
+      ))}
+      <circle cx={240} cy={140} r="20" fill={BG} stroke={V} strokeWidth="1.8" />
+      <text
+        x={240}
+        y={144}
+        textAnchor="middle"
+        style={{ fontSize: 10, fontWeight: 600, fill: FG, fontFamily: "var(--font-mono)" }}
+      >
+        ♪
+      </text>
+      <line x1="60" y1="182" x2="420" y2="182" stroke={BD} />
+      {gates.map((x) => (
+        <path
+          key={x}
+          d={`M ${x} 176 L ${x + 6} 182 L ${x} 188 L ${x - 6} 182 Z`}
+          fill={M}
+          stroke={BG}
+          strokeWidth="1"
+        />
+      ))}
+      {!reduce && (
+        <motion.circle
+          r="4"
+          cy={182}
+          fill={E}
+          initial={{ cx: 60, opacity: 0 }}
+          animate={{ cx: [60, 420], opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+        />
+      )}
+      <text
+        x="424"
+        y="196"
+        textAnchor="end"
+        style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+      >
+        intake → release
+      </text>
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  XCELIUM AGENTS — deterministic-first pipeline, before/after bars           */
+/* -------------------------------------------------------------------------- */
+export function XceliumAgentsMini() {
+  const reduce = useReducedMotion();
+  const stages = [
+    { x: 70, label: "profile", c: A },
+    { x: 170, label: "parse·py", c: E },
+    { x: 270, label: "agents", c: V },
+    { x: 370, label: "verify", c: E },
   ];
   return (
     <svg viewBox="0 0 480 200" className="h-full w-full">
-      <defs>
-        <linearGradient id="xm-edge" x1="0" x2="1">
-          <stop offset="0%" stopColor={A} stopOpacity="0" />
-          <stop offset="50%" stopColor={V} stopOpacity="0.9" />
-          <stop offset="100%" stopColor={E} stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <line x1="60" y1="100" x2="420" y2="100" stroke="url(#xm-edge)" strokeWidth="1.5" />
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        xcelium agents · deterministic-first · 1.93×
+      </text>
+      <line x1="70" y1="70" x2="370" y2="70" stroke={BD} strokeWidth="1.5" />
       {!reduce && (
         <motion.circle
-          initial={false}
           r="4"
+          cy={70}
           fill={V}
-          cy={100}
-          animate={{ cx: [60, 420], opacity: [0, 1, 1, 0] }}
+          initial={{ cx: 70, opacity: 0 }}
+          animate={{ cx: [70, 370], opacity: [0, 1, 1, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
         />
       )}
-      {nodes.map((n, i) => (
-        <g key={n.label} transform={`translate(${n.x},100)`}>
-          <motion.circle
-            initial={false}
-            r="22"
-            fill={BG}
-            stroke={n.c}
-            strokeWidth="1.5"
-            animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
-            transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.3 }}
-            style={{ transformOrigin: "center" }}
-          />
-          <circle r="5" fill={n.c} />
+      {stages.map((s) => (
+        <g key={s.label} transform={`translate(${s.x},70)`}>
+          <rect x="-38" y="-14" width="76" height="28" rx="6" fill={BG} stroke={s.c} />
           <text
-            y="44"
+            y="4"
             textAnchor="middle"
-            style={{ fontSize: 11, fill: FG_M, fontFamily: "var(--font-mono)" }}
+            style={{ fontSize: 10, fill: FG_M, fontFamily: "var(--font-mono)" }}
           >
-            {n.label}
+            {s.label}
           </text>
         </g>
       ))}
-      <text x="60" y="32" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
-        xmai · profiler → retrieval → agent → rtl
+      <g transform="translate(70,118)">
+        <text y="10" style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+          before
+        </text>
+        <rect x="50" y="0" width="300" height="12" rx="2" fill={BG_S} stroke={BD} />
+        <rect x="50" y="0" width="300" height="12" rx="2" fill={M} opacity="0.7" />
+        <text x="356" y="10" style={{ fontSize: 9, fill: FG_M, fontFamily: "var(--font-mono)" }}>
+          148.3 s
+        </text>
+        <text y="36" style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+          after
+        </text>
+        <rect x="50" y="26" width="300" height="12" rx="2" fill={BG_S} stroke={BD} />
+        <motion.rect
+          x="50"
+          y="26"
+          height="12"
+          rx="2"
+          fill={E}
+          initial={{ width: 155 }}
+          animate={reduce ? undefined : { width: [300, 155, 155] }}
+          transition={{ duration: 3, repeat: Infinity, repeatDelay: 1.5, times: [0, 0.5, 1] }}
+        />
+        <text x="356" y="36" style={{ fontSize: 9, fill: E, fontFamily: "var(--font-mono)" }}>
+          76.8 s
+        </text>
+      </g>
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  REGRESSION TRIAGE — failures cluster, class gate splits regold vs RCA      */
+/* -------------------------------------------------------------------------- */
+export function RegressionTriageMini() {
+  const reduce = useReducedMotion();
+  const gates = [
+    { y: 58, label: "diff", c: E },
+    { y: 108, label: "crash", c: M },
+    { y: 158, label: "tool err", c: V },
+  ];
+  // [x, y, gate index]
+  const dots: [number, number, number][] = [
+    [48, 64, 0],
+    [72, 92, 1],
+    [58, 128, 0],
+    [92, 60, 0],
+    [100, 116, 2],
+    [80, 150, 0],
+    [120, 84, 1],
+    [44, 100, 0],
+    [116, 146, 0],
+    [136, 118, 2],
+  ];
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        regold · 2,120 failures → clusters → class gate
+      </text>
+      {dots.map(([x, y, g], i) => {
+        const gate = gates[g] ?? gates[0]!;
+        const tx = 236 + (i % 3) * 10;
+        const ty = gate.y - 4 + (i % 2) * 8;
+        return (
+          <motion.circle
+            key={i}
+            r="4"
+            fill={gate.c}
+            initial={{ cx: x, cy: y }}
+            animate={reduce ? undefined : { cx: [x, tx, tx, x], cy: [y, ty, ty, y] }}
+            transition={{ duration: 5, repeat: Infinity, times: [0, 0.35, 0.8, 1] }}
+          />
+        );
+      })}
+      {gates.map((g) => (
+        <g key={g.label}>
+          <rect
+            x="220"
+            y={g.y - 15}
+            width="60"
+            height="30"
+            rx="6"
+            fill="none"
+            stroke={g.c}
+            strokeDasharray="3 3"
+          />
+          <text
+            x="250"
+            y={g.y + 25}
+            textAnchor="middle"
+            style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+          >
+            {g.label}
+          </text>
+        </g>
+      ))}
+      <path d="M 284 58 L 350 58" stroke={E} strokeWidth="1.5" />
+      <path d="M 284 108 L 350 133" stroke={M} strokeWidth="1.5" strokeDasharray="4 3" />
+      <path d="M 284 158 L 350 133" stroke={V} strokeWidth="1.5" strokeDasharray="4 3" />
+      <g>
+        <rect x="352" y="42" width="92" height="32" rx="6" fill={BG} stroke={E} />
+        <text
+          x="398"
+          y="62"
+          textAnchor="middle"
+          style={{ fontSize: 10, fill: FG, fontFamily: "var(--font-mono)" }}
+        >
+          regold ✓
+        </text>
+        <rect x="352" y="117" width="92" height="32" rx="6" fill={BG} stroke={M} />
+        <text
+          x="398"
+          y="137"
+          textAnchor="middle"
+          style={{ fontSize: 10, fill: FG, fontFamily: "var(--font-mono)" }}
+        >
+          → RCA
+        </text>
+      </g>
+    </svg>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  PERFORCE REPLAY — changelists hop from dev stream onto a release stream    */
+/* -------------------------------------------------------------------------- */
+export function PerforceReplayMini() {
+  const reduce = useReducedMotion();
+  const cls = [140, 250, 350];
+  return (
+    <svg viewBox="0 0 480 200" className="h-full w-full">
+      <defs>
+        <marker id="p4-arrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill={V} />
+        </marker>
+      </defs>
+      <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        p4 replay · CLs → release · touched paths only
+      </text>
+      <line x1="60" y1="70" x2="440" y2="70" stroke={A} strokeWidth="2" />
+      <line x1="60" y1="150" x2="440" y2="150" stroke={E} strokeWidth="2" />
+      <text
+        x="56"
+        y="74"
+        textAnchor="end"
+        style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+      >
+        dev
+      </text>
+      <text
+        x="56"
+        y="154"
+        textAnchor="end"
+        style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+      >
+        rel
+      </text>
+      {cls.map((x, i) => (
+        <g key={x}>
+          <circle cx={x} cy={70} r="7" fill={BG} stroke={A} strokeWidth="1.5" />
+          <text
+            x={x}
+            y={56}
+            textAnchor="middle"
+            style={{ fontSize: 9, fill: FG_M, fontFamily: "var(--font-mono)" }}
+          >
+            cl{i + 1}
+          </text>
+          <motion.path
+            d={`M ${x} 78 C ${x + 10} 110, ${x + 30} 115, ${x + 40} 142`}
+            stroke={V}
+            strokeWidth="1.5"
+            fill="none"
+            markerEnd="url(#p4-arrow)"
+            initial={{ pathLength: 1, opacity: 1 }}
+            animate={reduce ? undefined : { pathLength: [0, 1, 1], opacity: [0, 1, 1] }}
+            transition={{ duration: 4.5, repeat: Infinity, delay: i * 0.7, times: [0, 0.3, 1] }}
+          />
+          <motion.circle
+            cx={x + 40}
+            cy={150}
+            r="7"
+            fill={E}
+            initial={{ opacity: 1 }}
+            animate={reduce ? undefined : { opacity: [0, 0, 1, 1] }}
+            transition={{
+              duration: 4.5,
+              repeat: Infinity,
+              delay: i * 0.7,
+              times: [0, 0.3, 0.4, 1],
+            }}
+          />
+        </g>
+      ))}
+      <text x="60" y="186" style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}>
+        ascending order · one resolve · declined files named
       </text>
     </svg>
   );
@@ -112,7 +367,7 @@ export function FlamegraphMini() {
         <circle cx="29" cy="60" r="6" fill={M} />
         <path d="M 18 80 Q 29 70 40 80 L 40 90 L 18 90 Z" fill={V} />
         <motion.g
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={reduce ? undefined : { opacity: [0, 1, 1, 0], y: [0, -6, -6, -10] }}
           transition={{ duration: 3, repeat: Infinity, times: [0, 0.2, 0.7, 1] }}
         >
@@ -151,7 +406,6 @@ export function FlamegraphMini() {
           transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 1 }}
         />
         <motion.circle
-          initial={false}
           cx={395}
           cy={42}
           r="6"
@@ -294,28 +548,28 @@ export function PostureMini() {
       <g transform="translate(205,0)">
         {/* head */}
         <motion.circle
-          initial={false}
           cx="60"
           r="11"
           fill={BG}
           stroke={A}
           strokeWidth="1.8"
+          initial={{ cy: 56 }}
           animate={reduce ? undefined : { cy: [56, 92, 56] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
-          initial={false}
           cx="60"
           r="2"
           fill={A}
+          initial={{ cy: 56 }}
           animate={reduce ? undefined : { cy: [56, 92, 56] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         {/* spine (head → hips); slight forward lean at bottom */}
         <motion.line
-          initial={false}
           stroke={V}
           strokeWidth="3"
+          initial={{ x1: 60, y1: 67, x2: 60, y2: 120 }}
           animate={
             reduce
               ? undefined
@@ -330,9 +584,9 @@ export function PostureMini() {
         />
         {/* arms: hang at sides → swing forward for balance at bottom */}
         <motion.line
-          initial={false}
           stroke={E}
           strokeWidth="2.5"
+          initial={{ x1: 60, y1: 80, x2: 42, y2: 108 }}
           animate={
             reduce
               ? undefined
@@ -346,9 +600,9 @@ export function PostureMini() {
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.line
-          initial={false}
           stroke={E}
           strokeWidth="2.5"
+          initial={{ x1: 60, y1: 80, x2: 78, y2: 108 }}
           animate={
             reduce
               ? undefined
@@ -363,9 +617,9 @@ export function PostureMini() {
         />
         {/* pelvis line */}
         <motion.line
-          initial={false}
           stroke={A}
           strokeWidth="2.5"
+          initial={{ y1: 120, y2: 120 }}
           animate={
             reduce
               ? undefined
@@ -380,9 +634,9 @@ export function PostureMini() {
         />
         {/* upper leg L (hip → knee) — knee moves outward & forward at bottom */}
         <motion.line
-          initial={false}
           stroke={M}
           strokeWidth="2.5"
+          initial={{ x1: 46, y1: 120, x2: 40, y2: 150 }}
           animate={
             reduce
               ? undefined
@@ -397,9 +651,9 @@ export function PostureMini() {
         />
         {/* upper leg R */}
         <motion.line
-          initial={false}
           stroke={M}
           strokeWidth="2.5"
+          initial={{ x1: 74, y1: 120, x2: 80, y2: 150 }}
           animate={
             reduce
               ? undefined
@@ -414,9 +668,9 @@ export function PostureMini() {
         />
         {/* lower leg L (knee → ankle) — ankle planted */}
         <motion.line
-          initial={false}
           stroke={M}
           strokeWidth="2.5"
+          initial={{ x1: 40, y1: 150, x2: 38, y2: 178 }}
           animate={
             reduce
               ? undefined
@@ -431,9 +685,9 @@ export function PostureMini() {
         />
         {/* lower leg R */}
         <motion.line
-          initial={false}
           stroke={M}
           strokeWidth="2.5"
+          initial={{ x1: 80, y1: 150, x2: 82, y2: 178 }}
           animate={
             reduce
               ? undefined
@@ -451,32 +705,32 @@ export function PostureMini() {
         <line x1="74" y1="178" x2="90" y2="178" stroke={A} strokeWidth="3" />
         {/* pose-estimation landmarks — track the moving knees + hips */}
         <motion.circle
-          initial={false}
           r="2.6"
           fill={E}
+          initial={{ cx: 40, cy: 150 }}
           animate={reduce ? undefined : { cx: [40, 26, 40], cy: [150, 158, 150] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
-          initial={false}
           r="2.6"
           fill={E}
+          initial={{ cx: 80, cy: 150 }}
           animate={reduce ? undefined : { cx: [80, 94, 80], cy: [150, 158, 150] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
-          initial={false}
           cx="46"
           r="2.6"
           fill={E}
+          initial={{ cy: 120 }}
           animate={reduce ? undefined : { cy: [120, 146, 120] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.circle
-          initial={false}
           cx="74"
           r="2.6"
           fill={E}
+          initial={{ cy: 120 }}
           animate={reduce ? undefined : { cy: [120, 146, 120] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -585,11 +839,11 @@ export function TrackMini() {
       </g>
       {!reduce && (
         <motion.circle
-          initial={false}
           r="8"
           fill={V}
           stroke={BG_S}
           strokeWidth="2"
+          initial={{ cx: pts[0]![0], cy: pts[0]![1] }}
           animate={{ cx: pts.map((p) => p[0]), cy: pts.map((p) => p[1]) }}
           transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
         />
@@ -631,7 +885,6 @@ export function BrainMini() {
       <rect x="40" y="36" width="240" height="144" rx="6" fill={BG_S} stroke={BD} />
       <g clipPath="url(#cam-clip)">
         <motion.circle
-          initial={false}
           cx="160"
           cy="108"
           r="48"
@@ -641,31 +894,28 @@ export function BrainMini() {
           style={{ transformOrigin: "160px 108px" }}
         />
         <motion.ellipse
-          initial={false}
           cx="142"
           cy="100"
           rx="3"
-          ry="4"
           fill={FG}
+          initial={{ ry: 4 }}
           animate={reduce ? undefined : { ry: [4, 0.5, 4, 4] }}
           transition={{ duration: 3, repeat: Infinity, times: [0, 0.1, 0.2, 1] }}
         />
         <motion.ellipse
-          initial={false}
           cx="178"
           cy="100"
           rx="3"
-          ry="4"
           fill={FG}
+          initial={{ ry: 4 }}
           animate={reduce ? undefined : { ry: [4, 0.5, 4, 4] }}
           transition={{ duration: 3, repeat: Infinity, times: [0, 0.1, 0.2, 1] }}
         />
         <motion.path
-          initial={false}
-          d="M 146 124 Q 160 134 174 124"
           stroke={FG}
           strokeWidth="2"
           fill="none"
+          initial={{ d: "M 146 124 Q 160 134 174 124" }}
           animate={
             reduce
               ? undefined
@@ -680,16 +930,15 @@ export function BrainMini() {
           transition={{ duration: 2.4, repeat: Infinity }}
         />
         <motion.rect
-          initial={false}
           x="108"
           y="58"
-          width="104"
           height="104"
           rx="4"
           fill="none"
           stroke={E}
           strokeWidth="2"
-          animate={reduce ? undefined : { x: [108, 106, 108], width: [104, 108, 104] }}
+          initial={{ width: 104 }}
+          animate={reduce ? undefined : { x: [0, -2, 0], width: [104, 108, 104] }}
           transition={{ duration: 1.6, repeat: Infinity }}
         />
         <text x="112" y="52" style={{ fontSize: 10, fill: E, fontFamily: "var(--font-mono)" }}>
@@ -697,7 +946,6 @@ export function BrainMini() {
         </text>
         {!reduce && (
           <motion.rect
-            initial={false}
             x="40"
             width="240"
             height="6"
@@ -721,7 +969,6 @@ export function BrainMini() {
         </text>
         <circle cx="399" cy="110" r="14" fill={V} opacity="0.18" />
         <motion.circle
-          initial={false}
           cx="399"
           cy="110"
           r="8"
@@ -804,11 +1051,11 @@ export function ChainBracket() {
             <rect x={c.x + 6} y={c.y + 6} width="80" height="28" rx="3" fill={c.c} opacity="0.25" />
             {[0, 1, 2, 3, 4].map((j) => (
               <motion.circle
-                initial={false}
                 key={j}
                 cx={c.x + 14 + j * 14}
                 cy={c.y + 20}
                 fill={c.c}
+                initial={{ r: j === 2 ? 5 : 3, opacity: j === 2 ? 0.9 : 0.5 }}
                 animate={
                   reduce
                     ? undefined

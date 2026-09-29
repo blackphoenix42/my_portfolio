@@ -17,9 +17,24 @@ const loader = (factory: () => Promise<{ default: ComponentType }>) =>
   });
 
 const DIAGRAMS: Record<(typeof DIAGRAM_SLUGS)[number], ComponentType> = {
-  xmai: loader(() =>
-    import("@/components/diagrams/xmai-architecture").then((m) => ({
-      default: m.XmaiArchitecture,
+  maestro: loader(() =>
+    import("@/components/diagrams/maestro-architecture").then((m) => ({
+      default: m.MaestroArchitecture,
+    })),
+  ),
+  "xcelium-ai-agents": loader(() =>
+    import("@/components/diagrams/xcelium-agents-architecture").then((m) => ({
+      default: m.XceliumAgentsArchitecture,
+    })),
+  ),
+  "regression-triage": loader(() =>
+    import("@/components/diagrams/regression-triage-architecture").then((m) => ({
+      default: m.RegressionTriageArchitecture,
+    })),
+  ),
+  "perforce-replay": loader(() =>
+    import("@/components/diagrams/perforce-replay-architecture").then((m) => ({
+      default: m.PerforceReplayArchitecture,
     })),
   ),
 };

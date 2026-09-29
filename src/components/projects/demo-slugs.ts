@@ -2,7 +2,7 @@
 // Exported as a plain module (no "use client") so server components can
 // import `DEMO_SLUGS` / `hasDemo` without crossing the RSC boundary.
 export const DEMO_SLUGS = [
-  "xmai",
+  "maestro",
   "algolens",
   "xcelium-optimization",
   "tezos-premier-league",

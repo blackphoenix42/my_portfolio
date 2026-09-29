@@ -23,6 +23,6 @@ test("primary navigation works", async ({ page }) => {
 });
 
 test("project detail loads", async ({ page }) => {
-  await page.goto("/work/xmai");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("XMAI");
+  await page.goto("/work/maestro");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("MAESTRO");
 });

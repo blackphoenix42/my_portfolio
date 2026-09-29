@@ -13,6 +13,15 @@ export type Honor = {
 
 export const honors: Honor[] = [
   {
+    title: "MAESTRO — Selected for Trade Secret Protection",
+    org: "Cadence Design Systems",
+    date: "2026",
+    detail:
+      "MAESTRO, a multi-agent platform for end-to-end engineering-ticket resolution, was recognized as proprietary IP and selected for trade-secret protection.",
+    icon: ShieldCheck,
+    accent: "violet",
+  },
+  {
     title: "$10,000 Tezos Blockchain Grant",
     org: "Tezos India · Game Geeks",
     date: "Dec 2021",

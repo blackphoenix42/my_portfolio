@@ -175,9 +175,19 @@
       "leetcode": "LeetCode 世界"
     },
     "visualization": {
-      "panelLabel": "xmai · プロファイラ · ライブ",
-      "flow": "アーティファクト → 検索 → エージェント → rtl",
-      "throughputUp": "↑ スループット"
+      "panelLabel": "maestro · エージェント · ライブ",
+      "flow": "チケット → エージェント → 修正 → 検証",
+      "throughputUp": "↑ スループット",
+      "aria": "アニメーション図: チケットとプロファイラーデータがナレッジと MCP ツールを経てコンダクターとエージェントへ流れ、RTL リコード、スループット向上、検証済みの修正を生み出す。",
+      "nodes": {
+        "src": "チケット",
+        "rag": "ナレッジ",
+        "mcp": "MCP",
+        "agent": "コンダクター · エージェント",
+        "rtl": "RTL リコード",
+        "hot": "スループット 18–19%",
+        "out": "検証済み修正"
+      }
     }
   },
   "home": {
@@ -318,7 +328,7 @@
     "linksHeading": "リンク",
     "relatedHeading": "関連作品",
     "demoSubtitle": {
-      "xmai": "シミュレートされた retrieve → embed → agent パイプラインにプロンプトを試す。",
+      "maestro": "シミュレートされたチケットをコンダクターに通し、各人間ゲートを承認しながら、失敗したテストが根本原因分析に戻る様子を確認。",
       "algolens": "AlgoLens 実行モデルのミニ可視化。",
       "xcelium-optimization": "スライダーをドラッグして RTL/ランタイム最適化でプロファイルが縮むのを確認。",
       "tezos-premier-league": "再生をクリックして決定論的なオンチェーン PvP ブラケットをシミュレート。",
@@ -411,7 +421,7 @@
         "hiringManager": "採用マネージャー",
         "founder": "創業者",
         "engineer": "エンジニア",
-        "collaboration": "コラボレーション",
+        "collaborator": "コラボレーター",
         "other": "その他"
       },
       "submit": "メッセージを送信",
@@ -524,7 +534,7 @@
     "sections": {
       "focus": {
         "0": "Cadence での R&D ソフトウェアエンジニアリング — Xcelium 論理シミュレーターの性能改善。",
-        "1": "XMAI を開発中 — シミュレーション成果物を最適化の指針に変えるエージェント型 AI プロファイラー。",
+        "1": "マルチエージェント AI システムを開発中 — チケットをエンドツーエンドで解決する MAESTRO と、シミュレーションの性能・メモリ最適化を行う ChipStack Xcelium エージェント。",
         "2": "C++ 性能の勘を磨く: プロファイリング、ホットパス分析、低リスクな最適化。"
       },
       "learning": {
@@ -646,7 +656,7 @@
     "disclaimer": "完全にブラウザー内で動作します。回答は実際のサイトコンテンツ (英語) から抽出されます。",
     "suggestions": {
       "q0": "Ayush は Cadence で何をしていますか?",
-      "q1": "XMAI プロジェクトについて教えて。",
+      "q1": "MAESTRO プロジェクトについて教えて。",
       "q2": "Ayush の最も強いスキルは?",
       "q3": "Ayush に連絡するには?"
     }
@@ -800,10 +810,25 @@
       "blockchain": "ブロックチェーン"
     },
     "items": {
-      "xmai": {
-        "title": "XMAI — エージェント AI プロファイラ",
-        "tagline": "複雑なシミュレーションアーティファクトを実行可能な最適化ガイダンスに変換する AI 支援プロファイラ。",
-        "category": "AI × EDA × 開発者ツール"
+      "maestro": {
+        "title": "MAESTRO — マルチエージェント・チケット解決",
+        "tagline": "チケット 1 件を入力に、本番品質の修正を出力 — コンダクターと 10 の AI エージェントがエンジニアリングチケットを受付からリリースまで運び、リスクの高いゲートには必ず人間が入る。",
+        "category": "エージェント AI × エンジニアリングワークフロー"
+      },
+      "xcelium-ai-agents": {
+        "title": "ChipStack Xcelium AI エージェント — 性能とメモリ",
+        "tagline": "Xcelium シミュレーションをプロファイルし、実行時間とメモリのボトルネックを診断して、修正を適用・検証するマルチエージェント LLM ワークフロー。",
+        "category": "エージェント AI × EDA パフォーマンス"
+      },
+      "regression-triage": {
+        "title": "Xcelium 回帰トリアージ & リゴールドシステム",
+        "tagline": "数千件の回帰失敗を、安全で検証済みのアクション（リゴールド、フィルタ、ウェイブ、エスカレーション）に変える約 16K 行のシステム。",
+        "category": "開発者ツール × 自動化"
+      },
+      "perforce-replay": {
+        "title": "クロスストリーム Perforce リプレイ",
+        "tagline": "複数チェンジリストの修正を 1 コマンドで任意のリリースストリームへバックポート — 同期するのはそのチェンジリストが触れるパスだけ。",
+        "category": "開発者ツール × リリースエンジニアリング"
       },
       "xcelium-optimization": {
         "title": "Xcelium Logic Simulator — パフォーマンスエンジニアリング",
@@ -811,29 +836,29 @@
         "category": "システムパフォーマンス"
       },
       "algolens": {
-        "title": "AlgoLens — アルゴリズム可視化",
-        "tagline": "60+ のアルゴリズムのためのインタラクティブなステップ可視化。",
-        "category": "開発者ツール"
+        "title": "AlgoLens — インタラクティブ DSA プラットフォーム",
+        "tagline": "アルゴリズムを観察し、再生し、理解できるようにするインタラクティブな環境。",
+        "category": "教育 × ビジュアルコンピューティング × 生成 AI"
       },
       "postureiq": {
-        "title": "PostureIQ",
-        "tagline": "コンピュータビジョンを使用したリアルタイム姿勢検出とフィードバック。",
-        "category": "プロダクトエンジニアリング"
+        "title": "PostureIQ — リアルタイム ML 姿勢分析",
+        "tagline": "決定論的なフィードバックループでエクササイズのフォームを採点する、60 FPS のコンピュータビジョン・コーチングシステム。",
+        "category": "コンピュータビジョン × ML プロダクト"
       },
       "track-person-app": {
-        "title": "Track Person App",
-        "tagline": "マルチカメラ連携とオーバーレイによるライブ人物追跡。",
-        "category": "プロダクトエンジニアリング"
+        "title": "Track Person App — 移動トラッキングと可視化",
+        "tagline": "人物の位置の軌跡を記録・可視化する React Native の移動トラッキングアプリ。",
+        "category": "モバイル × データ可視化"
       },
       "smart-brain": {
-        "title": "Smart Brain",
-        "tagline": "フルスタック TypeScript バックエンドを備えた Clarifai 上の顔検出 Web アプリ。",
-        "category": "フルスタック"
+        "title": "Smart Brain — 顔検出アプリ",
+        "tagline": "Clarifai の推論を Express/React のプロダクト UI と統合したフルスタック顔検出アプリ。",
+        "category": "フルスタック × コンピュータビジョン"
       },
       "tezos-premier-league": {
-        "title": "Tezos Premier League",
-        "tagline": "NFT ベースの選手で構成される Tezos 上の分散型ファンタジーサッカーアプリ。",
-        "category": "ブロックチェーン"
+        "title": "Tezos Premier League — 分散型ゲーミング",
+        "tagline": "さらなる開発に向けて $10,000 のアワードを受けた分散型ゲーミングの取り組み。",
+        "category": "Web3 × プロダクトエンジニアリング"
       }
     }
   },

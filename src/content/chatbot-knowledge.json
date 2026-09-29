@@ -13,10 +13,22 @@
       "text": "Ayush cares about end-to-end ownership: from low-level profiling and distributed-system design to polished, accessible product surfaces. His engineering principle is profile first — optimization without measurement is folklore."
     },
     {
-      "id": "xmai",
-      "source": "Projects · XMAI",
-      "title": "XMAI — Agentic AI Profiler",
-      "text": "XMAI is an AI-assisted EDA profiler that turns large-scale simulation artifacts into optimization guidance. It combines retrieval-augmented generation, tool-enabled agents and graph-compatible RTL representations across CLI, TUI, GUI and an MCP server, cutting debug root-cause-analysis time by roughly 40%."
+      "id": "maestro",
+      "source": "Projects · MAESTRO",
+      "title": "MAESTRO — Multi-Agent Ticket Resolution",
+      "text": "MAESTRO is a portable multi-agent platform Ayush built at Cadence: a conductor orchestrates 10 specialist AI agents across a 20-phase, human-gated workflow that carries an Xcelium engineering ticket from intake and root-cause analysis through fix, validation, review, regression and release. Measured across 22 Jiras, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%, and it was selected for trade-secret protection."
+    },
+    {
+      "id": "xcelium-agents",
+      "source": "Projects · ChipStack Xcelium AI Agents",
+      "title": "ChipStack Xcelium AI agents for performance and memory",
+      "text": "For Cadence ChipStack AI, Ayush built multi-agent Python workflows on the OpenAI Agents SDK that profile Xcelium simulations and apply and verify performance and memory fixes, achieving a 31.3% simulation speedup on a validated benchmark. A deterministic-first re-architecture cut end-to-end runtime from 148.3 s to 76.8 s (1.93x) and analysis from 71.1 s to 18.0 s (3.9x). He also built the shared agent framework with typed state, checkpoint and resume, structured outputs and fallback recovery, plus a YAML-driven LLM-as-judge regression framework."
+    },
+    {
+      "id": "regression-tooling",
+      "source": "Projects · Regression & Perforce tooling",
+      "title": "Regression triage and Perforce replay tooling",
+      "text": "Ayush built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and LLM review to automate triage, regolds, waivers and verification; it processed 2,120 failures across 79 runs, 73% of them in runs by other engineers. He also built cross-stream Perforce replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-changelist backports across release branches."
     },
     {
       "id": "xcelium",
@@ -64,7 +76,7 @@
       "id": "now",
       "source": "Now",
       "title": "What is Ayush doing now?",
-      "text": "Right now Ayush is doing R&D performance work on the Xcelium simulator, building the XMAI agentic profiler, and learning more about retrieval-augmented generation, distributed systems and vector databases at production scale."
+      "text": "Right now Ayush is doing R&D performance work on the Xcelium simulator, building multi-agent AI systems such as MAESTRO and the ChipStack Xcelium agents, and learning more about retrieval-augmented generation, distributed systems and vector databases at production scale."
     },
     {
       "id": "system-design",

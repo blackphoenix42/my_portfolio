@@ -1,13 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Cpu, Layers, Activity, Coins } from "lucide-react";
+import {
+  ArrowUpRight,
+  Cpu,
+  Layers,
+  Activity,
+  Coins,
+  Workflow,
+  Bot,
+  ListChecks,
+  GitMerge,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { projects } from "@/content/projects";
 import { InView } from "@/components/layout/in-view";
 import { Link } from "@/i18n/navigation";
 import {
-  XmaiPipeline,
+  MaestroConductor,
+  XceliumAgentsMini,
+  RegressionTriageMini,
+  PerforceReplayMini,
   FlamegraphMini,
   AlgoMini,
   ChainBracket,
@@ -17,7 +30,10 @@ import {
 } from "@/components/diagrams/case-study-thumbs";
 
 const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
-  xmai: Cpu,
+  maestro: Workflow,
+  "xcelium-ai-agents": Bot,
+  "regression-triage": ListChecks,
+  "perforce-replay": GitMerge,
   "xcelium-optimization": Activity,
   algolens: Layers,
   postureiq: Activity,
@@ -27,7 +43,10 @@ const Icons: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const Thumbs: Record<string, () => React.ReactElement> = {
-  xmai: () => <XmaiPipeline />,
+  maestro: () => <MaestroConductor />,
+  "xcelium-ai-agents": () => <XceliumAgentsMini />,
+  "regression-triage": () => <RegressionTriageMini />,
+  "perforce-replay": () => <PerforceReplayMini />,
   "xcelium-optimization": () => <FlamegraphMini />,
   algolens: () => <AlgoMini />,
   postureiq: () => <PostureMini />,

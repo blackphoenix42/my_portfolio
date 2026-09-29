@@ -9,8 +9,9 @@
 
 Personal portfolio for **Ayush Yadav** (R&D Software Engineer II, Cadence Design
 Systems, Noida). Showcases performance-engineering work on the Xcelium logic
-simulator, the XMAI agentic profiler, the AlgoLens algorithm visualizer, and a
-handful of open-source / competitive-programming projects.
+simulator, the MAESTRO multi-agent ticket-resolution platform, the ChipStack
+Xcelium AI agents, regression and Perforce tooling, the AlgoLens algorithm
+visualizer, and a handful of open-source / competitive-programming projects.
 
 License is **proprietary** — see `LICENSE`. Viewing for personal study is allowed;
 copying, fork-and-publishing, or training ML models on the source is **not** allowed
@@ -105,7 +106,7 @@ src/
     skills/                  # SkillsExplorer + EngineeringSpectrum
     competitive-programming/ # CPCommandCenter
     feeds/                   # ActivityFeeds (server component)
-    diagrams/                # XMAI architecture, case-study thumbs, roadmap diagram
+    diagrams/                # Project architecture whiteboards, case-study thumbs, roadmap diagram
     metrics/                 # Homepage MetricsStrip
     quotes/                  # Quote cycler for the footer
     logos/                   # TechMarquee + monochrome tech glyphs + SkillChip

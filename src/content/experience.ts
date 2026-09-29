@@ -21,13 +21,19 @@ export const experiences: Experience[] = [
     start: "Jul 2022",
     end: "Present",
     summary:
-      "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, distributed-workload analysis and AI-assisted developer tooling.",
+      "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, multi-agent AI systems and developer tooling for regression and release workflows.",
     highlights: [
       {
-        title: "XMAI — Agentic AI Profiler",
+        title: "MAESTRO — Multi-Agent Ticket Resolution",
         detail:
-          "Built an AI-assisted EDA profiler using LLMs, RAG, vector embeddings, MCP and Cadence JEDAI to accelerate failure analysis and optimization workflows.",
-        tags: ["LLMs", "RAG", "MCP", "Embeddings", "C++"],
+          "Built MAESTRO, a portable multi-agent platform with a conductor orchestrating 10 AI agents across a 20-phase human-gated workflow; measured across 22 Jiras, it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection.",
+        tags: ["Multi-Agent", "LLMs", "MCP", "Orchestration"],
+      },
+      {
+        title: "ChipStack Xcelium AI Agents",
+        detail:
+          "Built multi-agent performance and memory optimization workflows on the OpenAI Agents SDK, achieving a 31.3% simulation speedup on a validated benchmark; a deterministic-first re-architecture made runs 1.93× faster end to end and analysis 3.9× faster.",
+        tags: ["Python", "OpenAI Agents SDK", "LLM Evaluation"],
       },
       {
         title: "Xcelium Logic Simulator Optimization",
@@ -46,6 +52,24 @@ export const experiences: Experience[] = [
         detail:
           "Built reusable C++ diagnostics APIs and a structured-log pipeline across Compile, Elab and Sim; added Top-N profiling, graph-based attribution and Fenwick counters, reducing RCA time by ~40%.",
         tags: ["C++", "Library Design", "Diagnostics"],
+      },
+      {
+        title: "Regression Triage & Regold System",
+        detail:
+          "Built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and JEDAI LLM review to automate triage, regolds, waivers and verification; processed 2,120 failures across 79 runs, 73% of them in runs by other engineers.",
+        tags: ["Bash", "Python", "TF-IDF", "Automation"],
+      },
+      {
+        title: "Cross-Stream Perforce Replay",
+        detail:
+          "Built replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-CL backports across Xcelium release branches.",
+        tags: ["Perforce", "Bash", "Release Engineering"],
+      },
+      {
+        title: "MCP Servers for Engineering Tools",
+        detail:
+          "Wrote 10 Model Context Protocol servers — including a 50-tool time-travel-debugger bridge and code-review, build and LLM-gateway servers — connecting GitHub Copilot, Cursor and Claude Code to EDA and engineering systems.",
+        tags: ["MCP", "Python", "Developer Tooling"],
       },
       {
         title: "Corporate VP / MD Recognition",

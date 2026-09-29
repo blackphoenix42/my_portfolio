@@ -188,6 +188,7 @@ export function SmartBrainDemo() {
                   x2="100"
                   stroke="hsl(var(--accent-emerald))"
                   strokeWidth="0.4"
+                  initial={{ y1: 0, y2: 0 }}
                   animate={{ y1: [0, 60], y2: [0, 60] }}
                   transition={{ duration: 1.1, ease: "linear" }}
                 />

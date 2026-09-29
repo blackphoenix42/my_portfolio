@@ -35,61 +35,147 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "xmai",
-    title: "XMAI — Agentic AI Profiler",
+    slug: "maestro",
+    title: "MAESTRO — Multi-Agent Ticket Resolution",
     tagline:
-      "An AI-assisted profiler that transforms complex simulation artifacts into actionable optimization guidance.",
-    category: "AI × EDA × Developer Tooling",
+      "One ticket in, a production-ready fix out — a conductor and 10 AI agents carry an engineering ticket from intake to release, with humans at every risky gate.",
+    category: "Agentic AI × Engineering Workflow",
     categories: ["AI", "Systems"],
     status: "professional",
-    tags: ["LLMs", "RAG", "MCP", "C++", "Embeddings", "EDA", "Agents"],
-    quirkyTags: ["favorite", "hardest-bug", "research", "ai"],
+    tags: ["Multi-Agent", "LLMs", "MCP", "Orchestration", "Human-in-the-loop", "EDA"],
+    quirkyTags: ["favorite", "research", "ai"],
     summary:
-      "XMAI is an AI-assisted EDA profiler designed to accelerate failure analysis and runtime optimization for large-scale simulation workloads. It combines retrieval-augmented generation, tool-enabled agents and graph-compatible RTL representations into a coherent diagnostic experience.",
+      "MAESTRO (Multi-Agent Engineering System for Ticket Resolution & Orchestration) is a portable, IDE-agnostic multi-agent platform for Xcelium engineering tickets. A conductor drives a 20-phase, human-gated workflow and delegates each phase to one of 10 specialist agents — from intake and root-cause analysis through validation, review, regression and release. Measured across 22 Jiras, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026.",
     problem:
-      "Engineers analyzing large SoC simulations spend significant time correlating logs, profiles and RTL artifacts to localize bottlenecks. The signal is buried across heterogeneous sources, and root-cause analysis is slow.",
+      "Resolving a simulator ticket is a manual relay across R&D, validation and documentation. Evidence is scattered across the issue tracker, email, logs, specs, source control, code review and tribal knowledge, and every handoff re-gathers context the previous person already had. Under pressure steps get skipped, and important-but-not-critical tickets age in the backlog.",
     challenge:
-      "Build a profiler that ingests simulation artifacts at scale, retrieves the most relevant context, reasons about hotspots using LLMs, and emits trustworthy RTL-level optimization recommendations — across CLI, TUI, GUI and MCP server interfaces.",
+      "Turn the whole ticket lifecycle into one coordinated, trustworthy workflow: keep a single source of truth across 20 phases, ground every conclusion in real evidence, keep engineers in control at the risky steps, and stay cheap enough to run on every ticket — inside whichever IDE the engineer already uses.",
     approach: [
-      "Parse simulation logs and structured artifacts into a canonical event/signal model.",
-      "Generate embeddings for design context, signals and runtime traces; index in a vector store for retrieval.",
-      "Orchestrate tool-enabled agents with prompt routing for hotspot triage, recommendation synthesis and explainability.",
-      "Expose surfaces via CLI, TUI, GUI and a Model Context Protocol (MCP) server with an auto-analyze-on-failure workflow.",
-      "Contribute composable building blocks to ChipStack AI — C++ APIs, JEDAI embedding-upload flows and agent primitives.",
+      "Designed a conductor that owns the 20-phase flow and delegates each phase to one of 10 specialist agents: intake, triage, debug/RCA, fix, validation, docs, review, regression, release and a cross-cutting memory agent.",
+      "Kept one shared analysis document as the source of truth: every phase reads and writes it, so context is captured once and a run can resume exactly where it stopped.",
+      "Grounded the agents knowledge-first: an offline knowledge base is searched before anything goes online, and every resolved ticket is written back so the next run starts warm.",
+      "Wired engineering systems in through MCP servers and scripts — issue tracking, source control, code review and a time-travel debugger that rewinds a recorded failure to the exact bad write instead of guessing forward from logs.",
+      "Added five human approval gates and handed hours-long steps such as builds and regressions to the engineer, so nothing ships without sign-off and no model time is spent idling.",
+      "Kept it cheap by design: the smallest capable model per phase, with mechanical steps scripted at zero LLM tokens — runs in Cursor, Claude Code or GitHub Copilot.",
     ],
     impact: [
-      { label: "Debug RCA time", value: "~40% reduction" },
-      { label: "Workflow surfaces", value: "CLI · TUI · GUI · MCP" },
-      { label: "Domain", value: "Large SoC simulations" },
+      { label: "Ticket resolution", value: "45% faster" },
+      { label: "Root-cause analysis", value: "55% faster" },
+      { label: "Workflow", value: "20 phases · 5 gates" },
+      { label: "IP status", value: "Trade secret" },
     ],
-    stack: ["C++", "Python", "LLMs", "RAG", "MCP", "Vector DB", "Cadence JEDAI"],
+    stack: ["LLMs", "AI Agents", "MCP", "Python", "Bash", "Jira", "Perforce", "Undo/UDB"],
     engineering: {
       architecture: true,
       algorithms: [
         {
-          name: "Vector similarity retrieval (RAG)",
-          note: "Approximate nearest-neighbour search over embedded design context, signals and runtime traces surfaces the most relevant artifacts for a given hotspot before any LLM is invoked.",
+          name: "Conductor-led phase routing",
+          note: "One conductor owns routing across 20 phases and forks on classification — defects take a logs-first root-cause path, enhancements take a requirements-and-design path.",
         },
         {
-          name: "Agent prompt routing",
-          note: "A routing layer dispatches hotspot triage, recommendation synthesis and explainability to separate tool-enabled agent prompts.",
+          name: "Document-as-state resumption",
+          note: "The shared analysis document is the run's state, so any session can pick up exactly where the previous one stopped instead of replaying a chat history.",
         },
         {
-          name: "Canonical event/signal modeling",
-          note: "Heterogeneous simulation logs and artifacts are normalized into one event/signal schema so retrieval and reasoning operate on a single representation.",
+          name: "Time-travel root-cause analysis",
+          note: "A recorded failing run is rewound to the instruction that wrote the bad value, so RCA works backwards from the effect rather than guessing forward from logs.",
+        },
+        {
+          name: "Self-healing validation loop",
+          note: "A failing validation test routes the ticket back to debug (defects) or design (enhancements); nothing advances on a red test.",
         },
       ],
       performance: [
-        "~40% reduction in debug root-cause-analysis time on large SoC simulations.",
-        "Auto-analyze-on-failure removes manual artifact correlation from the critical path.",
-        "Embeddings are precomputed and indexed so retrieval stays interactive at simulation scale.",
+        "45% faster ticket resolution and 55% faster root-cause analysis, measured across 22 Jiras.",
+        "Smallest capable model per phase; mechanical steps such as formatting, diffs and regression analysis run as scripts at zero LLM tokens.",
+        "Builds and regressions are handed to the engineer behind a gate, so the model never waits hours on a build.",
       ],
       writeup: [
-        "XMAI treats failure analysis as a retrieval problem first and a reasoning problem second: artifacts are parsed into a canonical model, embedded and indexed before any LLM runs, which keeps agents grounded in real signals instead of free-associating.",
-        "CLI, TUI, GUI and the MCP server share one core, so the diagnostic experience is consistent whether a human or another tool drives it.",
+        "MAESTRO treats a ticket as a symphony rather than a prompt: the conductor never does the work itself — it sequences specialists, enforces the gates and keeps one score, the shared analysis document, that every agent plays from.",
+        "Trust comes from constraints rather than instructions: root-cause fixes only, five human approval gates, and verify-don't-guess — every conclusion is checked against real evidence before the next phase starts.",
       ],
     },
-    related: ["xcelium-optimization", "algolens"],
+    related: ["xcelium-ai-agents", "regression-triage"],
+  },
+  {
+    slug: "xcelium-ai-agents",
+    title: "ChipStack Xcelium AI Agents — Performance & Memory",
+    tagline:
+      "Multi-agent LLM workflows that profile Xcelium simulations, diagnose runtime and memory bottlenecks, and apply and verify the fixes.",
+    category: "Agentic AI × EDA Performance",
+    categories: ["AI", "Systems"],
+    status: "professional",
+    tags: [
+      "Python",
+      "OpenAI Agents SDK",
+      "Multi-Agent",
+      "LLM Evaluation",
+      "Xcelium",
+      "SystemVerilog",
+    ],
+    quirkyTags: ["favorite", "hardest-bug", "ai", "systems"],
+    summary:
+      "A multi-agent LLM system for Cadence ChipStack AI that profiles Xcelium SystemVerilog simulations, diagnoses runtime and memory bottlenecks, and recommends, applies and verifies fixes — compiler flags, RTL recodes, garbage-collection and memory tuning — from an interactive terminal UI. It spans a performance agent, a memory agent, a shared workflow framework and a regression framework: ~37K lines of Python and 650+ tests.",
+    problem:
+      "Simulation performance and memory work is expert-heavy: engineers read profiler output, correlate hotspots with RTL, choose flags or recodes, then re-run and compare. Early agent versions routed every mechanical step through LLM tool calls, which made them slow — and let reports quote numbers the parser never produced.",
+    challenge:
+      "Build agents that go from profiler data to a verified fix with no manual steps, while staying fast, grounded in parsed data, resumable across sessions and testable even though no two runs are identical.",
+    approach: [
+      "Built an 8-agent performance pipeline — intake, planning, a parallel compiler-flag audit / hardware clustering / pattern extraction, a 3-tier RTL recode, apply, then re-run and compare.",
+      "Built the memory agent: heap snapshots and call-stack profiling, peak detection, shared-library attribution with C++ demangling, RTL file-and-line citations, and garbage-collection experiments with before/after comparison.",
+      "Re-architected both agents deterministic-first: intake, simulation runs and profile parsing moved out of LLM tool loops into Python, keeping the model for reasoning and fallback.",
+      "Architected a shared framework on the OpenAI Agents SDK: graph-based orchestration of agent nodes, schema-versioned state with checkpoint/resume, strict structured outputs, recovery from malformed JSON and per-node fallback routing.",
+      "Eliminated hallucinated figures by rendering report numbers in Python and giving the reporting agents no tools, so every number traces back to parsed profile data.",
+      "Designed a proof-of-concept regression framework that drives the real terminal UI over a pseudo-terminal: one YAML entry per testcase, and a checklist-based LLM judge that compares each report with a reviewed golden.",
+    ],
+    impact: [
+      { label: "Simulation speedup", value: "31.3%" },
+      { label: "End-to-end run", value: "1.93× faster" },
+      { label: "Analysis phase", value: "3.9× faster" },
+      { label: "Codebase", value: "~37K lines · 650+ tests" },
+    ],
+    stack: [
+      "Python",
+      "OpenAI Agents SDK",
+      "Pydantic",
+      "Jinja2",
+      "pytest",
+      "YAML",
+      "Xcelium",
+      "SystemVerilog",
+    ],
+    engineering: {
+      architecture: true,
+      algorithms: [
+        {
+          name: "3-tier RTL recode",
+          note: "A deterministic pattern-database match runs first, then a spec-driven LLM recode from a pluggable optimization registry, then a general LLM fallback — each tier only runs when the one before cannot help.",
+        },
+        {
+          name: "Hardware-type hotspot clustering",
+          note: "Hotspots are grouped by hardware element type so one recode propagates to every peer in the cluster.",
+        },
+        {
+          name: "Truncated-JSON recovery",
+          note: "A LIFO bracket stack completes cut-off LLM output, 7+ observed wrapper formats are unwrapped, and a repair pass runs before any corrective retry.",
+        },
+        {
+          name: "Checklist LLM-as-judge",
+          note: "Instead of asking for a similarity score, the judge answers five narrow yes/no questions; the score is the fraction answered yes, so it is repeatable and names exactly what regressed.",
+        },
+      ],
+      performance: [
+        "31.3% simulation speedup on a validated benchmark run.",
+        "Deterministic-first rework, measured on a benchmark design: end-to-end 148.3 s → 76.8 s (1.93×) and analysis 71.1 s → 18.0 s (3.9×, five model turns → one).",
+        "First prompt in under 3 ms instead of ~47 s, by asking intake questions in Python before any model turn.",
+        "Judge input compacted by 71% through path normalization and JSON truncation.",
+      ],
+      writeup: [
+        "The memory analysis step took 71 s, but the parsing inside it took 84 ms — the rest was the model deciding to call tools and retyping data between them. Running the parsing in Python and giving the analyser zero tools made it 3.9× faster and hallucination-proof: an agent with no tools cannot fetch a number that isn't in the parsed data.",
+        "Exact comparison fails every run of a non-deterministic agent, and a holistic similarity prompt still scores a regressed report around 90%. A five-question checklist judge scored a planted regression at 60% and named exactly the two corrupted aspects.",
+      ],
+    },
+    related: ["maestro", "xcelium-optimization"],
   },
   {
     slug: "xcelium-optimization",
@@ -142,7 +228,7 @@ export const projects: Project[] = [
         "Optimizations shipped as small, low-risk C++ changes validated on representative real-world designs rather than micro-benchmarks.",
       ],
     },
-    related: ["xmai"],
+    related: ["xcelium-ai-agents", "regression-triage"],
   },
   {
     slug: "algolens",
@@ -199,7 +285,122 @@ export const projects: Project[] = [
       ],
     },
     links: [{ label: "GitHub", href: "https://github.com/blackphoenix42/algolens" }],
-    related: ["xmai", "postureiq"],
+    related: ["postureiq", "maestro"],
+  },
+  {
+    slug: "regression-triage",
+    title: "Xcelium Regression Triage & Regold System",
+    tagline:
+      "A ~16K-line system that turns thousands of regression failures into safe, verified actions — regold, filter, waive or escalate.",
+    category: "Developer Tooling × Automation",
+    categories: ["Systems", "AI"],
+    status: "professional",
+    tags: ["Bash", "Python", "TF-IDF", "Clustering", "LLM Review", "Perforce"],
+    quirkyTags: ["hardest-bug", "systems"],
+    summary:
+      "After a simulator change, regression campaigns return hundreds to thousands of failing test/mode combinations, and each one needs a decision. This ~16K-line system automates triage, regolds, waivers and verification using rule-based classification, TF-IDF clustering, historical learning and an optional LLM review. It has processed 2,120 failures across 79 runs — 73% of them in runs by other engineers.",
+    problem:
+      "Every failing test needs one of several actions: update the golden file, add a diff filter, ignore or waive it, repair the workspace, or escalate. The evidence changes from run to run (addresses, PIDs, timestamps, paths), one root cause produces dozens of near-identical failures, and a wrong regold silently blinds the suite to a real defect.",
+    challenge:
+      "Automate the decision safely: recognise the same fault across runs, never let a crash or tool error become the new golden, handle modes that compare against different golden files, verify every change per mode and learn from past campaigns — while staying resumable and undoable.",
+    approach: [
+      "Normalised regression and nightly failure lists into test, bank and mode sets, then re-ran each mode in parallel with per-file locks, dry-run, resume and undo.",
+      "Canonicalised evidence into run-stable signatures by masking addresses, numbers, paths, PIDs and timestamps, so repeats of one fault share a fingerprint.",
+      "Categorised every failure with rules, a weighted vote over recent runs and saved human corrections, then grouped similar failures with TF-IDF and agglomerative clustering.",
+      "Gated disposition by class: only diff-class failures can ever reach a golden file — crashes, timeouts and tool errors always go to root-cause analysis.",
+      "Verified every regold with a per-mode rerun, and emitted diff filters, IGNORE files or waivers where a regold was not the right answer.",
+      "Added an optional LLM review (JEDAI) that checks each diff against the pending code change and flags tests that must not be regolded — advisory only, it can never relax the gate.",
+    ],
+    impact: [
+      { label: "Failures processed", value: "2,120" },
+      { label: "Regression runs", value: "79" },
+      { label: "Run by other engineers", value: "73%" },
+      { label: "Codebase", value: "~16K lines" },
+    ],
+    stack: ["Bash", "Python", "scikit-learn", "Perforce", "LLMs", "Xcelium"],
+    engineering: {
+      architecture: true,
+      algorithms: [
+        {
+          name: "Run-stable failure signatures",
+          note: "Error text, diff lines and backtraces are masked and hashed separately, so two copies of the same fault land on the same fingerprint even when addresses and timestamps differ.",
+        },
+        {
+          name: "Precedence-ordered categorisation",
+          note: "A live human correction beats saved corrections, which beat a weighted historical vote, which beats the rule-based class.",
+        },
+        {
+          name: "Within-class TF-IDF clustering",
+          note: "Failures are clustered only inside their class — strictest for crashes — so one root cause is reviewed once instead of dozens of times.",
+        },
+      ],
+      performance: [
+        "2,120 failures handled across 79 runs; 73% of them in runs by engineers other than the author.",
+        "148 crash and tool-error failures kept away from golden files by the class gate.",
+        "Parallel execution sized to CPU and memory, with per-testcase and per-golden-file locks.",
+      ],
+      writeup: [
+        "Mistakes here are lopsided: accepting a real regression as golden blinds the suite to that defect for good, while refusing a valid change only costs time. So a deterministic control plane stays in charge, and the LLM is strictly an advisor.",
+      ],
+    },
+    related: ["perforce-replay", "maestro"],
+  },
+  {
+    slug: "perforce-replay",
+    title: "Cross-Stream Perforce Replay",
+    tagline:
+      "Backport a multi-changelist fix to any release stream in one command — syncing only the paths those changelists touch.",
+    category: "Developer Tooling × Release Engineering",
+    categories: ["Systems"],
+    status: "professional",
+    tags: ["Perforce", "Bash", "Release Engineering", "Backports", "Automation"],
+    quirkyTags: ["systems"],
+    summary:
+      "A fix on the development stream usually has to be reproduced on every supported release stream, often as several changelists — the source change, its regolds and a new test. This tooling derives each changelist's source stream, selectively syncs only the paths the changelists touch, merges them in order and reports exactly which files still need a manual resolve, automating multi-CL backports across Xcelium release branches.",
+    problem:
+      "Backports were done by hand, one changelist at a time, in hand-prepared workspaces. Partial client views meant missing paths surfaced one failure at a time, a full sync was too expensive, the origin stream of each changelist was often unknown, and auto-resolve reported one aggregate status that hid the files it declined to merge.",
+    challenge:
+      "Derive every operand from changelist metadata — the origin stream, which paths must exist in the workspace, and the merge order — so the engineer supplies only changelist numbers and a target branch.",
+    approach: [
+      "Detected the source stream of every changelist from its files, so one run can mix changelists from different streams, and printed the map before merging.",
+      "Built the sync plan from only the files and directories those changelists touch, instead of syncing the whole tree.",
+      "Repaired workspace faults automatically — extending the client view for out-of-view paths and recovering clobbered writable files — then retried.",
+      "Merged changelists in ascending order, each from its own stream at its own revision, so any failure points at exactly one changelist.",
+      "Ran a single auto-resolve at the end and listed the declined files for manual resolve; nothing is ever submitted automatically.",
+      "Optionally created a disposable target workspace with only the project configuration synced, and reported the teardown command.",
+    ],
+    impact: [
+      { label: "Input", value: "CL numbers + target" },
+      { label: "Sync scope", value: "Touched paths only" },
+      { label: "Mixed-origin CLs", value: "Supported" },
+      { label: "Tooling", value: "~1.6K lines" },
+    ],
+    stack: ["Perforce", "Bash", "csh", "Linux"],
+    engineering: {
+      architecture: true,
+      algorithms: [
+        {
+          name: "Changelist-derived working set",
+          note: "The paths that must exist in the workspace are derived from the changelists themselves rather than declared up front in a client view.",
+        },
+        {
+          name: "Ordered point-in-time integration",
+          note: "Changelists merge in ascending order, each from its own origin stream at exactly its own revision, so unrelated work in between is never carried across.",
+        },
+        {
+          name: "Resolve partitioning",
+          note: "One auto-resolve after all merges, split into 'merged cleanly' and 'declined', so the files that need a human are always named.",
+        },
+      ],
+      performance: [
+        "A recorded run replayed two changelists — six source files, a new three-file testcase and 32 golden files — to a release stream in one call, and named the 32 files that needed a manual resolve.",
+        "Only changelist-touched paths are synced, so a replay never pays for a full-tree sync.",
+      ],
+      writeup: [
+        "Most backport tooling reads a path and throws away everything else. Here the path, the operation, the origin stream and the changelist number together define the working copy that has to exist before the merge can even start.",
+      ],
+    },
+    related: ["regression-triage", "xcelium-optimization"],
   },
   {
     slug: "postureiq",

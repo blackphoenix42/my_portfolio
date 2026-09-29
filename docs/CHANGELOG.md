@@ -143,6 +143,15 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Changed
 
+- **Case studies refreshed from current work.** The XMAI project, its demo and
+  its diagram are replaced by four professional case studies: **MAESTRO**
+  (multi-agent ticket resolution), **ChipStack Xcelium AI agents** (performance
+  and memory), the **Xcelium regression triage & regold system** and
+  **cross-stream Perforce replay**. Each has an architecture whiteboard
+  (shared `diagram-kit.tsx`, translated labels under `architecture.*`) and an
+  animated thumbnail; MAESTRO also gets an interactive conductor demo with
+  human approval gates. Experience, `/now`, honors, skills, hero diagram and
+  the chatbot corpus are updated to match, across all six locales.
 - **404 mini-game rebuilt as Phoenix Run** — the old Chrome-dino runner +
   Feather Catch mode are replaced by a single polished endless runner: a
   flaming phoenix (canvas gradients, animated wing-flaps, fire trail, ember
@@ -219,6 +228,27 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Fixed
 
+- **Looping thumbnail and diagram animations were frozen** — `initial={false}`
+  blocks framer-motion's mount animation, so every `repeat: Infinity` keyframe
+  loop (case-study thumbnails, architecture lane packets, system-design
+  packets) sat on its last frame and the packets stayed invisible. Loops now
+  start on mount, each animated element carries a resting-frame attribute for
+  SSR and reduced motion, and `scripts/patch-motion-initial.mjs` skips loops.
+- **`/work` hydration mismatch** — the MAESTRO thumbnail's trig-derived agent
+  positions differed in the last digit between Node and the browser; they are
+  now rounded.
+- **MAESTRO demo scroll-jacking** — the log used `scrollIntoView`, which also
+  scrolled the page back to the demo on every step; only the log panel scrolls
+  now, and log placeholders re-translate on a language switch.
+- **i18n drift** — the contact "Collaborator" role and the Hindi `/lab`
+  concepts intro used keys the code never reads, so they fell back to English;
+  `binary` in the terminal egg printed its raw key because `<text>` parsed as
+  an ICU tag; five legacy case studies (AlgoLens, PostureIQ, Track Person,
+  Smart Brain, Tezos Premier League) showed titles and taglines that
+  contradicted their content of record in every locale; the hero diagram's
+  node labels and accessible name are now translated.
+- **`format:check` failing after every build** — the generated
+  `public/chatbot/corpus.json` is now in `.prettierignore`.
 - **`/opengraph-image` 404** — the next-intl proxy matcher caught the
   extensionless metadata-image route and rewrote it into the `[locale]` tree,
   where it hit the catch-all and returned the 404 page instead of the PNG. The

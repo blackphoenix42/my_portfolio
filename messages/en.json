@@ -265,9 +265,19 @@
       "leetcode": "LeetCode global"
     },
     "visualization": {
-      "panelLabel": "xmai · profiler · live",
-      "flow": "artifacts → retrieval → agent → rtl",
-      "throughputUp": "↑ throughput"
+      "panelLabel": "maestro · agents · live",
+      "flow": "ticket → agents → fix → verify",
+      "throughputUp": "↑ throughput",
+      "aria": "Animated diagram: tickets and profiler data flowing through knowledge and MCP tools into a conductor and its agents, producing RTL recodes, throughput gains and verified fixes.",
+      "nodes": {
+        "src": "Tickets",
+        "rag": "Knowledge",
+        "mcp": "MCP",
+        "agent": "Conductor · Agents",
+        "rtl": "RTL Recode",
+        "hot": "18–19% Throughput",
+        "out": "Verified Fix"
+      }
     }
   },
   "home": {
@@ -408,7 +418,7 @@
     "linksHeading": "Links",
     "relatedHeading": "Related work",
     "demoSubtitle": {
-      "xmai": "Try a prompt against the simulated retrieve → embed → agent pipeline.",
+      "maestro": "Run a simulated ticket through the conductor — approve each human gate and watch a failing test loop back to root-cause analysis.",
       "algolens": "A miniature visualizer of the AlgoLens execution model.",
       "xcelium-optimization": "Drag the slider to see profiles compress as RTL/runtime optimizations land.",
       "tezos-premier-league": "Click play to simulate a deterministic on-chain PvP bracket.",
@@ -614,7 +624,7 @@
     "sections": {
       "focus": {
         "0": "R&D software engineering at Cadence — performance work on the Xcelium logic simulator.",
-        "1": "Building XMAI, an agentic AI profiler that turns simulation artifacts into optimization guidance.",
+        "1": "Building multi-agent AI systems — MAESTRO for end-to-end ticket resolution and ChipStack Xcelium agents for simulation performance and memory optimization.",
         "2": "Sharpening C++ performance instincts: profiling, hot-path analysis and low-risk optimization."
       },
       "learning": {
@@ -736,7 +746,7 @@
     "disclaimer": "Runs fully in your browser. Answers are extracted from real site content (English).",
     "suggestions": {
       "q0": "What does Ayush do at Cadence?",
-      "q1": "Tell me about the XMAI project.",
+      "q1": "Tell me about the MAESTRO project.",
       "q2": "What are Ayush's strongest skills?",
       "q3": "How can I contact Ayush?"
     }
@@ -942,10 +952,49 @@
       "explore": "Explore full AlgoLens →",
       "barLabel": "Bar value {value}"
     },
-    "xmai": {
-      "title": "xmai · agent shell · simulated",
-      "subtitle": "rag · gpt-4 · profiler tool",
-      "loading": "retrieving traces · embedding · calling agent…"
+    "maestro": {
+      "title": "maestro · conductor · simulated",
+      "subtitle": "10 agents · 20 phases · 5 gates",
+      "stagesLabel": "Workflow stages",
+      "gateMarker": "Human approval gate",
+      "docLabel": "Shared analysis document",
+      "empty": "Pick a ticket type and press Run. The conductor walks the phases and stops at every human gate.",
+      "kindLabel": "Ticket type",
+      "defect": "Defect",
+      "enhancement": "Enhancement",
+      "failOnce": "Fail validation once",
+      "run": "Run ticket",
+      "pause": "Pause",
+      "resume": "Resume",
+      "again": "Run again",
+      "approve": "Approve gate",
+      "reset": "Reset",
+      "note": "Illustrative — stages and gates mirror the real workflow; the ticket and its log are synthetic.",
+      "stages": {
+        "intake": "intake",
+        "rca": "debug · RCA",
+        "design": "design",
+        "fix": "fix",
+        "validate": "validate",
+        "review": "review",
+        "regress": "regression",
+        "release": "release"
+      },
+      "log": {
+        "start": "conductor · {kind} ticket received",
+        "intake": "intake · ticket parsed and classified; knowledge base searched offline first",
+        "rca": "debug · failing run recorded and rewound to the write that produced the bad value",
+        "design": "design · requirements and design options written to the analysis doc",
+        "fix": "fix · root-cause patch drafted — no symptom-only workarounds",
+        "validate": "validate · targeted tests green on the fixed build",
+        "validateFail": "validate · test red → routed back to {stage} (self-healing loop)",
+        "review": "review · diff and analysis doc packaged for code review",
+        "regress": "regression · run by the engineer; results analysed by script at zero LLM tokens",
+        "release": "release · docs, release notes and knowledge base updated",
+        "gate": "gate · waiting for engineer approval",
+        "approved": "gate · approved by engineer",
+        "done": "resolved · the analysis doc is the full audit trail"
+      }
     },
     "xcelium": {
       "title": "xcelium · runtime profile",
@@ -1000,6 +1049,90 @@
       "carmack": "Focused, hard work is the real key to success."
     }
   },
+  "architecture": {
+    "maestro": {
+      "aria": "MAESTRO architecture: a conductor routes a ticket through seven stages of a 20-phase workflow with five human approval gates, sharing one analysis document, a knowledge base and MCP tools.",
+      "entry": "Jira ticket / CCR",
+      "conductor": "Conductor",
+      "conductorSub": "routes 20 phases",
+      "loop": "red test → back to debug (self-healing)",
+      "stages": {
+        "intake": "Intake\n& triage",
+        "rca": "Debug\n& RCA",
+        "fix": "Fix",
+        "validate": "Validate",
+        "review": "Docs &\nreview",
+        "regress": "Regression",
+        "release": "Release"
+      },
+      "state": "Shared analysis document — single source of truth, resumable from any phase",
+      "kb": "Knowledge base",
+      "kbSub": "offline first · written back",
+      "tools": "MCP servers & scripts",
+      "toolsSub": "issues · p4 · review · Undo",
+      "gate": "human approval gate"
+    },
+    "xcelium-ai-agents": {
+      "aria": "Xcelium AI agents architecture: a planner routes between a deterministic Python lane (intake, simulation runner, profile parser, report) and an LLM reasoning lane (analyse, recode, apply), with a checklist LLM judge comparing reports against a golden.",
+      "laneDeterministic": "deterministic Python — runs before any model turn",
+      "laneLlm": "LLM reasoning — findings arrive as data",
+      "tui": "ChipStack TUI",
+      "tuiSub": "engineer prompt",
+      "planner": "Planner node",
+      "plannerSub": "routes between phases",
+      "intake": "Python intake",
+      "runner": "Sim runner",
+      "parser": "Profile parser",
+      "report": "Python report",
+      "analyse": "Analyse",
+      "recode": "3-tier recode",
+      "apply": "Apply + backup",
+      "rerun": "re-run & compare",
+      "judge": "Checklist judge",
+      "judgeSub": "5 yes/no questions",
+      "golden": "vs. golden report",
+      "framework": "Shared workflow framework — graph orchestration · checkpointed typed state · strict outputs · JSON recovery · fallbacks"
+    },
+    "regression-triage": {
+      "aria": "Regression triage architecture: failure lists are rerun, fingerprinted, categorised and clustered; a class gate with advisory LLM review sends diffs to regold and other failures to filters or root-cause analysis, then verifies per mode and feeds a learning store.",
+      "stages": {
+        "lists": "Failure lists",
+        "rerun": "Parallel rerun",
+        "signatures": "Signatures\n(masked hashes)",
+        "categorise": "Categorise\nrules + vote",
+        "cluster": "TF-IDF\nclustering"
+      },
+      "review": "LLM review\n(advisory)",
+      "gate": "Class gate",
+      "rca": "Root-cause analysis",
+      "rcaSub": "crash · timeout · tool error",
+      "filter": "Filter / waive",
+      "filterSub": "IGNORE · waiver",
+      "regold": "Regold",
+      "regoldSub": "diff class only",
+      "verify": "Per-mode verify",
+      "learning": "Learning store",
+      "learningSub": "outcomes written back",
+      "feedback": "history feeds the vote"
+    },
+    "perforce-replay": {
+      "aria": "Perforce replay architecture: changelist numbers and a target branch drive stream derivation, ordering, a plan of touched paths, selective sync with fault repair, ordered merges and a single auto-resolve split into merged and declined files.",
+      "input": "CL numbers + target",
+      "stages": {
+        "streams": "Derive source\nstreams",
+        "order": "Sort CLs\nascending",
+        "plan": "Plan touched\npaths",
+        "materialise": "Selective sync\n+ view repair",
+        "merge": "Merge each CL\nat its revision",
+        "resolve": "Single\nauto-resolve"
+      },
+      "merged": "Merged cleanly",
+      "declined": "Declined files\nnamed",
+      "client": "Disposable client",
+      "clientSub": "optional · config-only sync",
+      "noSubmit": "nothing is submitted automatically — the engineer reviews and submits"
+    }
+  },
   "projects": {
     "categories": {
       "ai-eda": "AI × EDA × Developer Tooling",
@@ -1011,19 +1144,36 @@
       "blockchain": "Blockchain"
     },
     "items": {
-      "xmai": {
-        "title": "XMAI — Agentic AI Profiler",
-        "tagline": "An AI-assisted profiler that transforms complex simulation artifacts into actionable optimization guidance.",
-        "category": "AI × EDA × Developer Tooling",
-        "summary": "XMAI is an AI-assisted EDA profiler designed to accelerate failure analysis and runtime optimization for large-scale simulation workloads. It combines retrieval-augmented generation, tool-enabled agents and graph-compatible RTL representations into a coherent diagnostic experience.",
-        "problem": "Engineers analyzing large SoC simulations spend significant time correlating logs, profiles and RTL artifacts to localize bottlenecks. The signal is buried across heterogeneous sources, and root-cause analysis is slow.",
-        "challenge": "Build a profiler that ingests simulation artifacts at scale, retrieves the most relevant context, reasons about hotspots using LLMs, and emits trustworthy RTL-level optimization recommendations — across CLI, TUI, GUI and MCP server interfaces.",
+      "maestro": {
+        "title": "MAESTRO — Multi-Agent Ticket Resolution",
+        "tagline": "One ticket in, a production-ready fix out — a conductor and 10 AI agents carry an engineering ticket from intake to release, with humans at every risky gate.",
+        "category": "Agentic AI × Engineering Workflow",
+        "summary": "MAESTRO (Multi-Agent Engineering System for Ticket Resolution & Orchestration) is a portable, IDE-agnostic multi-agent platform for Xcelium engineering tickets. A conductor drives a 20-phase, human-gated workflow and delegates each phase to one of 10 specialist agents — from intake and root-cause analysis through validation, review, regression and release. Measured across 22 Jiras, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026.",
+        "problem": "Resolving a simulator ticket is a manual relay across R&D, validation and documentation. Evidence is scattered across the issue tracker, email, logs, specs, source control, code review and tribal knowledge, and every handoff re-gathers context the previous person already had. Under pressure steps get skipped, and important-but-not-critical tickets age in the backlog.",
+        "challenge": "Turn the whole ticket lifecycle into one coordinated, trustworthy workflow: keep a single source of truth across 20 phases, ground every conclusion in real evidence, keep engineers in control at the risky steps, and stay cheap enough to run on every ticket — inside whichever IDE the engineer already uses.",
         "approach": {
-          "0": "Parse simulation logs and structured artifacts into a canonical event/signal model.",
-          "1": "Generate embeddings for design context, signals and runtime traces; index in a vector store for retrieval.",
-          "2": "Orchestrate tool-enabled agents with prompt routing for hotspot triage, recommendation synthesis and explainability.",
-          "3": "Expose surfaces via CLI, TUI, GUI and a Model Context Protocol (MCP) server with an auto-analyze-on-failure workflow.",
-          "4": "Contribute composable building blocks to ChipStack AI — C++ APIs, JEDAI embedding-upload flows and agent primitives."
+          "0": "Designed a conductor that owns the 20-phase flow and delegates each phase to one of 10 specialist agents: intake, triage, debug/RCA, fix, validation, docs, review, regression, release and a cross-cutting memory agent.",
+          "1": "Kept one shared analysis document as the source of truth: every phase reads and writes it, so context is captured once and a run can resume exactly where it stopped.",
+          "2": "Grounded the agents knowledge-first: an offline knowledge base is searched before anything goes online, and every resolved ticket is written back so the next run starts warm.",
+          "3": "Wired engineering systems in through MCP servers and scripts — issue tracking, source control, code review and a time-travel debugger that rewinds a recorded failure to the exact bad write instead of guessing forward from logs.",
+          "4": "Added five human approval gates and handed hours-long steps such as builds and regressions to the engineer, so nothing ships without sign-off and no model time is spent idling.",
+          "5": "Kept it cheap by design: the smallest capable model per phase, with mechanical steps scripted at zero LLM tokens — runs in Cursor, Claude Code or GitHub Copilot."
+        }
+      },
+      "xcelium-ai-agents": {
+        "title": "ChipStack Xcelium AI Agents — Performance & Memory",
+        "tagline": "Multi-agent LLM workflows that profile Xcelium simulations, diagnose runtime and memory bottlenecks, and apply and verify the fixes.",
+        "category": "Agentic AI × EDA Performance",
+        "summary": "A multi-agent LLM system for Cadence ChipStack AI that profiles Xcelium SystemVerilog simulations, diagnoses runtime and memory bottlenecks, and recommends, applies and verifies fixes — compiler flags, RTL recodes, garbage-collection and memory tuning — from an interactive terminal UI. It spans a performance agent, a memory agent, a shared workflow framework and a regression framework: ~37K lines of Python and 650+ tests.",
+        "problem": "Simulation performance and memory work is expert-heavy: engineers read profiler output, correlate hotspots with RTL, choose flags or recodes, then re-run and compare. Early agent versions routed every mechanical step through LLM tool calls, which made them slow — and let reports quote numbers the parser never produced.",
+        "challenge": "Build agents that go from profiler data to a verified fix with no manual steps, while staying fast, grounded in parsed data, resumable across sessions and testable even though no two runs are identical.",
+        "approach": {
+          "0": "Built an 8-agent performance pipeline — intake, planning, a parallel compiler-flag audit / hardware clustering / pattern extraction, a 3-tier RTL recode, apply, then re-run and compare.",
+          "1": "Built the memory agent: heap snapshots and call-stack profiling, peak detection, shared-library attribution with C++ demangling, RTL file-and-line citations, and garbage-collection experiments with before/after comparison.",
+          "2": "Re-architected both agents deterministic-first: intake, simulation runs and profile parsing moved out of LLM tool loops into Python, keeping the model for reasoning and fallback.",
+          "3": "Architected a shared framework on the OpenAI Agents SDK: graph-based orchestration of agent nodes, schema-versioned state with checkpoint/resume, strict structured outputs, recovery from malformed JSON and per-node fallback routing.",
+          "4": "Eliminated hallucinated figures by rendering report numbers in Python and giving the reporting agents no tools, so every number traces back to parsed profile data.",
+          "5": "Designed a proof-of-concept regression framework that drives the real terminal UI over a pseudo-terminal: one YAML entry per testcase, and a checklist-based LLM judge that compares each report with a reviewed golden."
         }
       },
       "xcelium-optimization": {
@@ -1041,9 +1191,9 @@
         }
       },
       "algolens": {
-        "title": "AlgoLens — Algorithm Visualizer",
-        "tagline": "Interactive, step-by-step visualizations for 60+ algorithms with rich controls and explanations.",
-        "category": "Developer Tooling",
+        "title": "AlgoLens — Interactive DSA Platform",
+        "tagline": "An interactive environment where algorithms become inspectable, replayable and understandable.",
+        "category": "Education × Visual Computing × GenAI",
         "summary": "AlgoLens is an interactive algorithm visualizer supporting 60+ algorithms with real-time step-through, deterministic replay, FFmpeg-WASM export, GenAI explanations and rich search.",
         "problem": "Algorithm learning resources tend to be static. Understanding behavior under different inputs, replaying state and exporting visuals for teaching are awkward at best.",
         "challenge": "Build a fluid, accessible, GPU-friendly visualization engine that handles 60+ algorithms with a unified step model, deterministic replay, video export and AI-assisted understanding — held to product-grade quality bars.",
@@ -1056,10 +1206,42 @@
           "5": "Hardened with WCAG 2.1 AA, Sentry, Web Vitals, Playwright, Storybook, Percy and CI quality gates."
         }
       },
+      "regression-triage": {
+        "title": "Xcelium Regression Triage & Regold System",
+        "tagline": "A ~16K-line system that turns thousands of regression failures into safe, verified actions — regold, filter, waive or escalate.",
+        "category": "Developer Tooling × Automation",
+        "summary": "After a simulator change, regression campaigns return hundreds to thousands of failing test/mode combinations, and each one needs a decision. This ~16K-line system automates triage, regolds, waivers and verification using rule-based classification, TF-IDF clustering, historical learning and an optional LLM review. It has processed 2,120 failures across 79 runs — 73% of them in runs by other engineers.",
+        "problem": "Every failing test needs one of several actions: update the golden file, add a diff filter, ignore or waive it, repair the workspace, or escalate. The evidence changes from run to run (addresses, PIDs, timestamps, paths), one root cause produces dozens of near-identical failures, and a wrong regold silently blinds the suite to a real defect.",
+        "challenge": "Automate the decision safely: recognise the same fault across runs, never let a crash or tool error become the new golden, handle modes that compare against different golden files, verify every change per mode and learn from past campaigns — while staying resumable and undoable.",
+        "approach": {
+          "0": "Normalised regression and nightly failure lists into test, bank and mode sets, then re-ran each mode in parallel with per-file locks, dry-run, resume and undo.",
+          "1": "Canonicalised evidence into run-stable signatures by masking addresses, numbers, paths, PIDs and timestamps, so repeats of one fault share a fingerprint.",
+          "2": "Categorised every failure with rules, a weighted vote over recent runs and saved human corrections, then grouped similar failures with TF-IDF and agglomerative clustering.",
+          "3": "Gated disposition by class: only diff-class failures can ever reach a golden file — crashes, timeouts and tool errors always go to root-cause analysis.",
+          "4": "Verified every regold with a per-mode rerun, and emitted diff filters, IGNORE files or waivers where a regold was not the right answer.",
+          "5": "Added an optional LLM review (JEDAI) that checks each diff against the pending code change and flags tests that must not be regolded — advisory only, it can never relax the gate."
+        }
+      },
+      "perforce-replay": {
+        "title": "Cross-Stream Perforce Replay",
+        "tagline": "Backport a multi-changelist fix to any release stream in one command — syncing only the paths those changelists touch.",
+        "category": "Developer Tooling × Release Engineering",
+        "summary": "A fix on the development stream usually has to be reproduced on every supported release stream, often as several changelists — the source change, its regolds and a new test. This tooling derives each changelist's source stream, selectively syncs only the paths the changelists touch, merges them in order and reports exactly which files still need a manual resolve, automating multi-CL backports across Xcelium release branches.",
+        "problem": "Backports were done by hand, one changelist at a time, in hand-prepared workspaces. Partial client views meant missing paths surfaced one failure at a time, a full sync was too expensive, the origin stream of each changelist was often unknown, and auto-resolve reported one aggregate status that hid the files it declined to merge.",
+        "challenge": "Derive every operand from changelist metadata — the origin stream, which paths must exist in the workspace, and the merge order — so the engineer supplies only changelist numbers and a target branch.",
+        "approach": {
+          "0": "Detected the source stream of every changelist from its files, so one run can mix changelists from different streams, and printed the map before merging.",
+          "1": "Built the sync plan from only the files and directories those changelists touch, instead of syncing the whole tree.",
+          "2": "Repaired workspace faults automatically — extending the client view for out-of-view paths and recovering clobbered writable files — then retried.",
+          "3": "Merged changelists in ascending order, each from its own stream at its own revision, so any failure points at exactly one changelist.",
+          "4": "Ran a single auto-resolve at the end and listed the declined files for manual resolve; nothing is ever submitted automatically.",
+          "5": "Optionally created a disposable target workspace with only the project configuration synced, and reported the teardown command."
+        }
+      },
       "postureiq": {
-        "title": "PostureIQ",
-        "tagline": "Real-time posture detection and feedback using computer vision.",
-        "category": "Product Engineering",
+        "title": "PostureIQ — Real-Time ML Posture Analysis",
+        "tagline": "A 60 FPS computer-vision coaching system that scores exercise form with deterministic feedback loops.",
+        "category": "Computer Vision × ML Product",
         "summary": "PostureIQ is an ML-powered posture and form-coaching system built around real-time pose estimation, temporal smoothing, confidence gating and rep-quality scoring for exercise feedback.",
         "problem": "Exercise-form feedback is usually delayed, subjective or dependent on a trainer being present. A useful assistant needs to infer pose continuously and provide clear feedback without jitter or false positives.",
         "challenge": "Maintain real-time capture, inference and rendering while making noisy pose landmarks stable enough for actionable coaching and automated quality scoring.",
@@ -1072,9 +1254,9 @@
         }
       },
       "track-person-app": {
-        "title": "Track Person App",
-        "tagline": "Live person tracking with multi-camera coordination and overlays.",
-        "category": "Product Engineering",
+        "title": "Track Person App — Movement Tracking & Visualization",
+        "tagline": "A React Native movement-tracking app for capturing and visualizing person-location trails.",
+        "category": "Mobile × Data Visualization",
         "summary": "A mobile-first tracking and visualization project that stores movement events in MongoDB and renders location history for inspection.",
         "problem": "Movement data is hard to reason about from raw coordinates alone; users need a visual trail and a clean data model for location events.",
         "challenge": "Design a lightweight mobile interface and persistence model that can capture, store and replay movement history without turning the app into a heavyweight GIS tool.",
@@ -1085,9 +1267,9 @@
         }
       },
       "smart-brain": {
-        "title": "Smart Brain",
-        "tagline": "Face-detection web app built on Clarifai with a full-stack TypeScript backend.",
-        "category": "Full-stack",
+        "title": "Smart Brain — Face Detection App",
+        "tagline": "A full-stack face-detection app integrating Clarifai inference with an Express/React product surface.",
+        "category": "Full-Stack × Computer Vision",
         "summary": "Smart Brain is a full-stack application that sends image URLs to Clarifai, receives face-detection predictions and renders bounding boxes in a React interface.",
         "problem": "Computer-vision APIs are powerful but abstract; a useful learning project needs to make the request/response loop visible and interactive.",
         "challenge": "Integrate a third-party ML API with a clean backend boundary while keeping the frontend responsive and easy to understand.",
@@ -1098,9 +1280,9 @@
         }
       },
       "tezos-premier-league": {
-        "title": "Tezos Premier League",
-        "tagline": "Decentralized fantasy football platform on Tezos with NFT-based rosters.",
-        "category": "Blockchain",
+        "title": "Tezos Premier League — Decentralized Gaming",
+        "tagline": "A decentralized gaming initiative recognized with a $10,000 award for further development.",
+        "category": "Web3 × Product Engineering",
         "summary": "A blockchain-based PvP gaming project and NFT marketplace on the Tezos network. The work was selected for a $10,000 award to support continued development.",
         "problem": "Designing engaging on-chain gaming experiences while keeping the user experience approachable on a non-EVM ecosystem.",
         "challenge": "Translate game mechanics into Tezos primitives and deliver a usable frontend that hides chain complexity from players.",
@@ -1118,25 +1300,41 @@
     "cadence-design-systems": {
       "role": "R&D Software Engineer II",
       "location": "Noida, India",
-      "summary": "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, distributed-workload analysis and AI-assisted developer tooling.",
+      "summary": "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, multi-agent AI systems and developer tooling for regression and release workflows.",
       "highlights": {
         "0": {
-          "title": "XMAI — Agentic AI Profiler",
-          "detail": "Built an AI-assisted EDA profiler using LLMs, RAG, vector embeddings, MCP and Cadence JEDAI to accelerate failure analysis and optimization workflows."
+          "title": "MAESTRO — Multi-Agent Ticket Resolution",
+          "detail": "Built MAESTRO, a portable multi-agent platform with a conductor orchestrating 10 AI agents across a 20-phase human-gated workflow; measured across 22 Jiras, it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection."
         },
         "1": {
+          "title": "ChipStack Xcelium AI Agents",
+          "detail": "Built multi-agent performance and memory optimization workflows on the OpenAI Agents SDK, achieving a 31.3% simulation speedup on a validated benchmark; a deterministic-first re-architecture made runs 1.93× faster end to end and analysis 3.9× faster."
+        },
+        "2": {
           "title": "Xcelium Logic Simulator Optimization",
           "detail": "Engineered low-level C++ and simulator-architecture optimizations that improved overall throughput by 18–19% on large customer workloads and helped secure a strategic Samsung performance win."
         },
-        "2": {
+        "3": {
           "title": "Xform Engine RTL Transformations",
           "detail": "Implemented RTL transformations in the Xform Engine, delivering 13–14% cumulative parsing/runtime gains across designs from Apple, Google, Samsung and NVIDIA."
         },
-        "3": {
+        "4": {
           "title": "Performance-Analysis Library",
           "detail": "Built reusable C++ diagnostics APIs and a structured-log pipeline across Compile, Elab and Sim; added Top-N profiling, graph-based attribution and Fenwick counters, reducing RCA time by ~40%."
         },
-        "4": {
+        "5": {
+          "title": "Regression Triage & Regold System",
+          "detail": "Built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and JEDAI LLM review to automate triage, regolds, waivers and verification; processed 2,120 failures across 79 runs, 73% of them in runs by other engineers."
+        },
+        "6": {
+          "title": "Cross-Stream Perforce Replay",
+          "detail": "Built replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-CL backports across Xcelium release branches."
+        },
+        "7": {
+          "title": "MCP Servers for Engineering Tools",
+          "detail": "Wrote 10 Model Context Protocol servers — including a 50-tool time-travel-debugger bridge and code-review, build and LLM-gateway servers — connecting GitHub Copilot, Cursor and Claude Code to EDA and engineering systems."
+        },
+        "8": {
           "title": "Corporate VP / MD Recognition",
           "detail": "Presented performance findings at Cadence India Conference and received multiple awards, Corporate VP recognition and All-Hands spotlighting for Samsung-deal performance work."
         }
@@ -1409,6 +1607,11 @@
     }
   },
   "honorsData": {
+    "maestro-selected-for-trade-secret-protection": {
+      "title": "MAESTRO — Selected for Trade Secret Protection",
+      "org": "Cadence Design Systems",
+      "detail": "MAESTRO, a multi-agent platform for end-to-end engineering-ticket resolution, was recognized as proprietary IP and selected for trade-secret protection."
+    },
     "10-000-tezos-blockchain-grant": {
       "title": "$10,000 Tezos Blockchain Grant",
       "org": "Tezos India · Game Geeks",
@@ -1577,9 +1780,9 @@
         "coffee": "☕ brewing... done. Engineer fuel restored to 100%.",
         "bug": "🐛 It's not a bug, it's an undocumented feature. (Filed as WONTFIX.)",
         "nvidia": "GPUs go brrr. Validated simulator wins on NVIDIA workloads. 🟩",
-        "cadence": "Cadence Design Systems — where Ayush does R&D on the Xcelium simulator + XMAI.",
+        "cadence": "Cadence Design Systems — where Ayush does R&D on the Xcelium simulator and builds multi-agent AI like MAESTRO.",
         "leetcode": "Sharpening DSA daily. Profile:",
-        "binaryUsage": "Usage: binary <text>  — encodes text to 8-bit binary.",
+        "binaryUsage": "Usage: binary '<text>'  — encodes text to 8-bit binary.",
         "konami": "↑ ↑ ↓ ↓ ← → ← → B A — you already know the cheat code. 30 lives granted. 🜂",
         "secret": "🜂 You found a hidden command. Type `secrets` for the trophy room.",
         "fortyTwo": "42 — the answer to life, the universe, and most failing test cases.",

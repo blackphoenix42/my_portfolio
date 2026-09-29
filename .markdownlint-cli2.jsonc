@@ -1,0 +1,5 @@
+// markdownlint-cli2 options. Rules stay in .markdownlint.json.
+{
+  // Skip gitignored notes so local-only files can't fail the pre-push gate.
+  "gitignore": true,
+}

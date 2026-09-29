@@ -36,8 +36,8 @@ single canonical URL.
 
 ## ✨ Highlights
 
-- 🎬 **Cinematic hero** — custom SVG/Framer Motion profiler → RTL → embeddings flow.
-- 🌍 **Six locales, one URL** — `localePrefix: "never"` means `/work/xmai` renders
+- 🎬 **Cinematic hero** — custom SVG/Framer Motion tickets → agents → RTL recode → verified-fix flow.
+- 🌍 **Six locales, one URL** — `localePrefix: "never"` means `/work/maestro` renders
   in English, Hindi (हिन्दी), Japanese (日本語), Sanskrit (संस्कृतम्), Chinese (中文),
   and Russian (Русский) without the URL ever changing.
 - 🧑‍💼 **Recruiter Mode** — condensed Impact → Experience → Projects → Skills →
@@ -64,7 +64,9 @@ single canonical URL.
   `e` email, `d` résumé, `j/k` jump section).
 - 🎨 **Three themes** — Phoenix (default), Dark, Light — with proper CSS-variable
   tokens and `prefers-reduced-motion` everywhere.
-- 🧪 **Premium case studies** — XMAI architecture diagram, AlgoLens
+- 🧪 **Premium case studies** — architecture whiteboards for MAESTRO, the
+  Xcelium AI agents, regression triage and Perforce replay; a MAESTRO
+  conductor demo with human approval gates, AlgoLens
   interactive bubble-sort, Xcelium throughput slider, Tezos bracket simulator,
   PostureIQ live rep-quality, Track-Person waypoint route, Smart-Brain vision
   inference — all lazy-loaded and translated.

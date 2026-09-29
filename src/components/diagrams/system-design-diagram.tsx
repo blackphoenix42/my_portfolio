@@ -65,7 +65,7 @@ export function SystemDesignDiagram() {
                   key={`p-${i}`}
                   r="3.5"
                   fill={V}
-                  initial={false}
+                  initial={{ cx: na.x, cy: na.y, opacity: 0 }}
                   animate={{ cx: [na.x, nb.x], cy: [na.y, nb.y], opacity: [0, 1, 1, 0] }}
                   transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.4, ease: "linear" }}
                 />

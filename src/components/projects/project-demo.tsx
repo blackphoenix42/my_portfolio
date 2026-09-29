@@ -23,8 +23,8 @@ const loader = (factory: () => Promise<{ default: ComponentType }>) =>
   });
 
 const DEMOS: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
-  xmai: loader(() =>
-    import("@/components/projects/xmai-demo").then((m) => ({ default: m.XmaiPipelineDemo })),
+  maestro: loader(() =>
+    import("@/components/projects/maestro-demo").then((m) => ({ default: m.MaestroDemo })),
   ),
   algolens: loader(() =>
     import("@/components/projects/algolens-demo").then((m) => ({ default: m.AlgoLensDemo })),

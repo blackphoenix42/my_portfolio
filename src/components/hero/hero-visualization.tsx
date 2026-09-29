@@ -1,18 +1,19 @@
 "use client";
 
 import { useReducedMotion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type Node = { id: string; x: number; y: number; label: string; accent: string };
+type Node = { id: string; x: number; y: number; accent: string };
 
 const NODES: Node[] = [
-  { id: "src", x: 60, y: 200, label: "Simulation Artifacts", accent: "hsl(var(--accent-cyan))" },
-  { id: "rag", x: 220, y: 110, label: "RAG", accent: "hsl(var(--accent-violet))" },
-  { id: "mcp", x: 220, y: 290, label: "MCP", accent: "hsl(var(--accent-emerald))" },
-  { id: "agent", x: 380, y: 200, label: "Agent · Tools", accent: "hsl(var(--accent-cyan))" },
-  { id: "rtl", x: 540, y: 110, label: "RTL Transform", accent: "hsl(var(--accent-amber))" },
-  { id: "hot", x: 540, y: 290, label: "18–19% Throughput", accent: "hsl(var(--accent-emerald))" },
-  { id: "out", x: 700, y: 200, label: "Recommendations", accent: "hsl(var(--accent-violet))" },
+  { id: "src", x: 60, y: 200, accent: "hsl(var(--accent-cyan))" },
+  { id: "rag", x: 220, y: 110, accent: "hsl(var(--accent-violet))" },
+  { id: "mcp", x: 220, y: 290, accent: "hsl(var(--accent-emerald))" },
+  { id: "agent", x: 380, y: 200, accent: "hsl(var(--accent-cyan))" },
+  { id: "rtl", x: 540, y: 110, accent: "hsl(var(--accent-amber))" },
+  { id: "hot", x: 540, y: 290, accent: "hsl(var(--accent-emerald))" },
+  { id: "out", x: 700, y: 200, accent: "hsl(var(--accent-violet))" },
 ];
 
 const EDGES: [string, string][] = [
@@ -27,6 +28,7 @@ const EDGES: [string, string][] = [
 ];
 
 export function HeroVisualization() {
+  const t = useTranslations("hero.visualization");
   const reduce = useReducedMotion();
   const nodesById = useMemo(() => Object.fromEntries(NODES.map((n) => [n.id, n])), []);
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -50,7 +52,7 @@ export function HeroVisualization() {
       viewBox="0 0 780 400"
       className="h-full w-full"
       role="img"
-      aria-label="Animated diagram: simulation artifacts flowing through RAG, MCP and agent layers into RTL recommendations."
+      aria-label={t("aria")}
     >
       <defs>
         <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
@@ -145,7 +147,7 @@ export function HeroVisualization() {
               className="fill-current font-mono"
               style={{ fontSize: 16, fontWeight: 600, fill: "hsl(var(--fg))" }}
             >
-              {n.label}
+              {t(`nodes.${n.id}`)}
             </text>
           </g>
         ))}

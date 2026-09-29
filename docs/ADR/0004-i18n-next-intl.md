@@ -29,7 +29,7 @@ Locales chosen: `en` (default), `hi`, `ja`, `sa` (Sanskrit), `zh`, `ru`.
 Use **next-intl 4** with:
 
 - `localePrefix: "never"` — **the URL never carries a locale segment**. Every page lives
-  at a single canonical path (`/about`, `/work/xmai`, …) and the rendered content swaps
+  at a single canonical path (`/about`, `/work/maestro`, …) and the rendered content swaps
   based on the resolved locale. This avoids duplicate URLs and gives the user a stable
   bookmark/share story regardless of language.
 - `localeDetection: true` — `NEXT_LOCALE` cookie wins, then `Accept-Language`, then default.
@@ -56,7 +56,7 @@ Use **next-intl 4** with:
 - Silent English fallback means adding new keys never breaks non-English locales.
 - A11y improved: `lang` attribute matches the active locale.
 - Native Next 16 ergonomics: typed locale routes, `setRequestLocale` for static rendering.
-- Users can share `/work/xmai` with anyone in the world; the visitor gets it in their
+- Users can share `/work/maestro` with anyone in the world; the visitor gets it in their
   preferred language without needing to swap the URL.
 
 ### Negative
