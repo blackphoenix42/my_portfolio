@@ -5,6 +5,8 @@ export type Chunk = {
   source: string;
   title: string;
   text: string;
+  /** Internal route the chunk was derived from, when known. */
+  href?: string;
   vector: SparseVector;
 };
 

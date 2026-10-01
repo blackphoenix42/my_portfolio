@@ -62,7 +62,7 @@ export function QuoteCard({
       <blockquote className="text-fg pl-6 text-sm leading-relaxed sm:text-base">
         <span suppressHydrationWarning>{mounted ? q.text : fallback.text}</span>
       </blockquote>
-      <figcaption className="text-fg-subtle mt-3 flex items-center justify-between gap-3 pl-6 font-mono text-[11px] tracking-wider uppercase">
+      <figcaption className="text-fg-subtle mt-3 flex flex-wrap items-center justify-between gap-3 pl-6 font-mono text-[11px] tracking-wider uppercase">
         <span suppressHydrationWarning>
           — {mounted ? q.author : fallback.author}
           {showTone && (
@@ -76,8 +76,8 @@ export function QuoteCard({
             </>
           )}
         </span>
-        <span className="text-fg-muted inline-flex shrink-0 items-center gap-1 text-[10px] tracking-normal normal-case">
-          <RefreshCcw className="h-3 w-3" aria-hidden />
+        <span className="text-fg-muted inline-flex max-w-full items-center gap-1 text-[10px] tracking-normal normal-case">
+          <RefreshCcw className="h-3 w-3 shrink-0" aria-hidden />
           {t("refreshesEvery", { seconds: REFRESH_SECONDS })}
         </span>
       </figcaption>

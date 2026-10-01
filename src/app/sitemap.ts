@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
 import { SITE } from "@/content/profile";
+import { systemDesigns } from "@/content/system-design";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, "");
@@ -27,5 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/work/${p.slug}`,
     lastModified: now,
   }));
-  return [...staticUrls, ...projectUrls];
+  const designUrls = systemDesigns.map((s) => ({
+    url: `${base}/system-design/${s.slug}`,
+    lastModified: now,
+  }));
+  return [...staticUrls, ...projectUrls, ...designUrls];
 }

@@ -31,5 +31,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  // Next.js adds both type directories above; stale dev validators must not
+  // participate in builds or standalone typechecks. Keep .next/types checked.
+  "exclude": ["node_modules", ".next/dev"]
 }

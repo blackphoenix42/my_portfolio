@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { AskPortfolioLauncher } from "@/components/chatbot/ask-portfolio-launcher";
 
 export function ScrollFab() {
   const t = useTranslations("scroll");
@@ -28,7 +29,8 @@ export function ScrollFab() {
   const showBottom = pct < 0.7;
 
   return (
-    <div className="pointer-events-none fixed right-4 bottom-6 z-40 flex flex-col gap-2 sm:right-6 sm:bottom-8">
+    <div className="pointer-events-none fixed right-4 bottom-24 z-[70] flex flex-col gap-2 sm:right-6 md:bottom-8">
+      <AskPortfolioLauncher />
       {showTop && (
         <button
           type="button"

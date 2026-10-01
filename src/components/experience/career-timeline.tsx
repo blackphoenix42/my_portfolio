@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { experiences, type Experience } from "@/content/experience";
@@ -26,6 +26,7 @@ export function CareerTimeline({
 }: CareerTimelineProps = {}) {
   const t = useTranslations("experience");
   const tData = useTranslations("experienceData");
+  const reduce = useReducedMotion();
   const td = (slug: string, key: string, fallback: string) => {
     const path = `${slug}.${key}` as never;
     return tData.has(path) ? tData(path) : fallback;
@@ -52,26 +53,36 @@ export function CareerTimeline({
         </header>
 
         <div className="space-y-16">
-          {items.map((exp) => {
-            const slug = slugify(exp.company);
+          {items.map((exp, index) => {
+            const slug = exp.id ?? slugify(exp.company);
+            const continuation = index > 0 && items[index - 1]?.company === exp.company;
             return (
-              <article key={exp.company} className="grid gap-8 lg:grid-cols-12">
+              <article
+                key={slug}
+                className="grid gap-8 lg:grid-cols-12"
+                aria-label={`${exp.company} — ${td(slug, "role", exp.role)}`}
+              >
                 <header className="lg:col-span-4">
-                  <div className="flex items-center gap-3">
-                    <CompanyLogo
-                      name={exp.company}
-                      className="border-border bg-bg-elev h-10 w-10 rounded-md border p-1"
-                    />
-                    <div>
-                      <p className="text-accent-cyan font-mono text-xs">
-                        {exp.start} — {exp.end}
-                      </p>
-                      <h3 className="mt-1 text-2xl leading-tight font-semibold tracking-tight">
-                        {exp.company}
-                      </h3>
+                  {!continuation && (
+                    <div className="flex items-center gap-3">
+                      <CompanyLogo
+                        name={exp.company}
+                        className="border-border bg-bg-elev h-10 w-10 rounded-md border p-1"
+                      />
+                      <div>
+                        <h3 className="mt-1 text-2xl leading-tight font-semibold tracking-tight">
+                          {exp.company}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                  <p className="text-fg-muted mt-2">{td(slug, "role", exp.role)}</p>
+                  )}
+                  {continuation && <p className="mono-label">{t("previousRole")}</p>}
+                  <h3 className="text-fg mt-3 text-lg font-semibold">
+                    {td(slug, "role", exp.role)}
+                  </h3>
+                  <p className="text-accent-cyan mt-1 font-mono text-xs">
+                    {exp.start} — {exp.end === "Present" ? t("present") : exp.end}
+                  </p>
                   <p className="text-fg-subtle mt-1 font-mono text-xs">
                     {td(slug, "location", exp.location)}
                   </p>
@@ -97,7 +108,7 @@ export function CareerTimeline({
                   {exp.highlights.map((h, i) => (
                     <motion.li
                       key={h.title}
-                      initial={{ opacity: 0, x: 12 }}
+                      initial={reduce ? false : { opacity: 0, x: 12 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.45, delay: i * 0.05 }}

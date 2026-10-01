@@ -13,6 +13,8 @@ import {
   ChevronLeft,
   Volume2,
   VolumeX,
+  Bot,
+  TerminalSquare,
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { useTheme } from "next-themes";
@@ -21,6 +23,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { CountryFlag } from "@/components/contact/country-flag";
 import { isSfxMuted, toggleSfxMuted, playSfx } from "@/components/audio/sfx";
+import { useEngineerMode } from "./engineer-mode";
 
 const THEMES = [
   { id: "phoenix", icon: Flame },
@@ -65,6 +68,8 @@ export function SettingsMenu() {
   const tTheme = useTranslations("theme");
   const tCommon = useTranslations("common");
   const tAudio = useTranslations("audio");
+  const tEngineer = useTranslations("engineer");
+  const { engineer, toggle: toggleEngineer } = useEngineerMode();
   const [open, setOpen] = useState<null | "root" | "language">(null);
   const [muted, setMuted] = useState(true);
   const root = useRef<HTMLDivElement>(null);
@@ -196,6 +201,32 @@ export function SettingsMenu() {
               })}
             </div>
           </div>
+
+          <button
+            type="button"
+            role="menuitemcheckbox"
+            aria-checked={engineer}
+            onClick={toggleEngineer}
+            className="text-fg-muted hover:bg-bg-sunken hover:text-fg mt-1 flex w-full items-center justify-between gap-3 rounded-md px-2 py-2 text-left text-xs"
+          >
+            <span className="inline-flex items-center gap-2">
+              <TerminalSquare className="h-3.5 w-3.5" />
+              {tEngineer("label")}
+            </span>
+            <span>{tAudio(engineer ? "on" : "off")}</span>
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => {
+              setOpen(null);
+              window.dispatchEvent(new CustomEvent("open-chat-settings"));
+            }}
+            className="text-fg-muted hover:bg-bg-sunken hover:text-fg flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-xs"
+          >
+            <Bot className="h-3.5 w-3.5" />
+            {tSettings("chatbot")}
+          </button>
 
           {/* Sound effects toggle */}
           <button

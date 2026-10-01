@@ -13,6 +13,24 @@ export type Honor = {
 
 export const honors: Honor[] = [
   {
+    title: "Samsung Performance Win — Corporate VP Recognition",
+    org: "Cadence Design Systems",
+    date: "2022–2026",
+    detail:
+      "Benchmarking and distributed performance analysis contributed to a multi-million dollar Samsung deal. Recognized by the Corporate VP and spotlighted in an All-Hands meeting for the performance wins.",
+    icon: Award,
+    accent: "amber",
+  },
+  {
+    title: "Cadence India Conference — Performance Diagnostics",
+    org: "Cadence Design Systems",
+    date: "2022–2026",
+    detail:
+      "Presented technical findings that drove adoption of diagnostic libraries, reducing root-cause analysis time by ~40% through flag analysis and log parsing.",
+    icon: Trophy,
+    accent: "cyan",
+  },
+  {
     title: "MAESTRO — Selected for Trade Secret Protection",
     org: "Cadence Design Systems",
     date: "2026",

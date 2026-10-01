@@ -2,16 +2,22 @@
 
 import dynamic from "next/dynamic";
 import type { ComponentType } from "react";
+import { useTranslations } from "next-intl";
+
+function LoadingWhiteboard() {
+  const t = useTranslations("systemDesign");
+  return (
+    <div className="text-fg-subtle grid h-40 place-items-center font-mono text-xs" role="status">
+      {t("loading")}
+    </div>
+  );
+}
 
 // Lazy-load each whiteboard so a route only ships the diagram it renders.
 const loader = (factory: () => Promise<{ default: ComponentType }>) =>
   dynamic(factory, {
     ssr: false,
-    loading: () => (
-      <div className="text-fg-subtle grid h-40 place-items-center font-mono text-xs" aria-hidden>
-        loading whiteboard…
-      </div>
-    ),
+    loading: LoadingWhiteboard,
   });
 
 const staticLoader = (slug: string) =>
@@ -24,11 +30,7 @@ const staticLoader = (slug: string) =>
       }),
     {
       ssr: false,
-      loading: () => (
-        <div className="text-fg-subtle grid h-40 place-items-center font-mono text-xs" aria-hidden>
-          loading whiteboard…
-        </div>
-      ),
+      loading: LoadingWhiteboard,
     },
   );
 

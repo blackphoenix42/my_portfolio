@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 // without forcing a per-request render.
 export const revalidate = 604_800;
 
-const THIRD_PARTY_ROWS = ["vercel", "resend", "vercelAnalytics", "github"] as const;
+const THIRD_PARTY_ROWS = ["vercel", "resend", "vercelAnalytics", "github", "huggingface"] as const;
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -32,7 +32,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
         </p>
         <h1 className="text-display-2 mt-2 font-semibold tracking-tight">{t("heading")}</h1>
         <p className="text-fg-subtle mt-3 font-mono text-xs">
-          {t("lastUpdated", { date: "May 2026" })}
+          {t("lastUpdated", { date: "September 2026" })}
         </p>
         <p className="text-fg-muted mt-4">
           {t.rich("intro", {
@@ -69,6 +69,16 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             <dt className="text-fg text-sm font-semibold">{t("sections.collect.contactTitle")}</dt>
             <dd className="mt-2 text-sm leading-relaxed">
               {t.rich("sections.collect.contactBody", {
+                code: (chunks) => (
+                  <code className="bg-bg-sunken rounded px-1 font-mono text-[11px]">{chunks}</code>
+                ),
+              })}
+            </dd>
+          </div>
+          <div className="md:col-span-2">
+            <dt className="text-fg text-sm font-semibold">{t("sections.collect.aiTitle")}</dt>
+            <dd className="mt-2 text-sm leading-relaxed">
+              {t.rich("sections.collect.aiBody", {
                 code: (chunks) => (
                   <code className="bg-bg-sunken rounded px-1 font-mono text-[11px]">{chunks}</code>
                 ),

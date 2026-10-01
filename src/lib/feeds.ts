@@ -49,9 +49,10 @@ async function safeFetch(url: string, init?: RequestInit) {
   try {
     const res = await fetch(url, {
       ...init,
-      // 30-minute ISR window — fresh enough that new posts / pushes surface
+      // 15-minute ISR window — fresh enough that new posts / pushes surface
       // promptly without hammering the unauthenticated GitHub rate limit.
-      next: { revalidate: 1800 },
+      next: { revalidate: 900 },
+      signal: AbortSignal.timeout(8000),
       headers: { "User-Agent": "Portfolio-RSS/1.0", ...(init?.headers ?? {}) },
     });
     if (!res.ok) return null;
@@ -125,13 +126,23 @@ type GhEvent = {
 };
 
 export async function fetchGithubActivity(user: string, limit = 4): Promise<FeedItem[]> {
-  const json = await safeFetch(`https://api.github.com/users/${user}/events/public`);
-  if (!json) return [];
+  const headers: Record<string, string> = { Accept: "application/vnd.github+json" };
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const json = await safeFetch(
+    `https://api.github.com/users/${encodeURIComponent(user)}/events/public?per_page=100`,
+    { headers },
+  );
+  if (!json) return fetchGithubAtom(user, limit);
   let events: GhEvent[] = [];
   try {
-    events = JSON.parse(json) as GhEvent[];
+    const parsed: unknown = JSON.parse(json);
+    if (!Array.isArray(parsed)) return fetchGithubAtom(user, limit);
+    events = parsed.filter(
+      (e): e is GhEvent =>
+        !!e && typeof e === "object" && typeof e.type === "string" && !!e.payload,
+    );
   } catch {
-    return [];
+    return fetchGithubAtom(user, limit);
   }
   const out: FeedItem[] = [];
   for (const ev of events) {
@@ -184,7 +195,25 @@ export async function fetchGithubActivity(user: string, limit = 4): Promise<Feed
       });
     }
   }
-  return take(out, limit);
+  return out.length ? take(out, limit) : fetchGithubAtom(user, limit);
+}
+
+/** Public Atom feed keeps the panel useful when the REST API is rate-limited. */
+async function fetchGithubAtom(user: string, limit: number): Promise<FeedItem[]> {
+  const xml = await safeFetch(`https://github.com/${encodeURIComponent(user)}.atom`);
+  if (!xml) return [];
+  const items: FeedItem[] = [];
+  for (const entry of xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
+    const block = entry[1] ?? "";
+    const title = block.match(/<title(?:\s[^>]*)?>([\s\S]*?)<\/title>/)?.[1];
+    const link = block.match(/<link[^>]+href="([^"]+)"/)?.[1];
+    const date = block.match(/<updated>([^<]+)<\/updated>/)?.[1];
+    const url = link ? decode(link) : "";
+    if (title && /^https:\/\/github\.com\//.test(url))
+      items.push({ title: stripHtml(title), url, date });
+    if (items.length >= limit) break;
+  }
+  return items;
 }
 
 export function formatRelative(iso?: string, locale?: string): string {

@@ -152,6 +152,36 @@ describe("fetchYouTubeFeed", () => {
 });
 
 describe("fetchGithubActivity", () => {
+  it("uses authenticated REST and falls back to Atom on rate limiting", async () => {
+    vi.stubEnv("GITHUB_TOKEN", "test-token");
+    const requests: { url: string; init?: RequestInit }[] = [];
+    mockFetch(async (url, init) => {
+      requests.push({ url, init });
+      return url.includes("api.github.com")
+        ? new Response("rate limited", { status: 403 })
+        : new Response(
+            '<feed><entry><title>Updated &amp; tested</title><link href="https://github.com/u/repo"/><updated>2026-10-01T00:00:00Z</updated></entry></feed>',
+          );
+    });
+    expect(await fetchGithubActivity("u")).toEqual([
+      { title: "Updated & tested", url: "https://github.com/u/repo", date: "2026-10-01T00:00:00Z" },
+    ]);
+    expect(requests[0]!.url).toContain("per_page=100");
+    expect(requests[0]!.init?.headers).toMatchObject({ Authorization: "Bearer test-token" });
+    expect(requests[1]!.init?.headers).not.toHaveProperty("Authorization");
+    vi.unstubAllEnvs();
+  });
+  it("handles API error objects and refuses unsafe Atom links", async () => {
+    mockFetch(
+      async (url) =>
+        new Response(
+          url.includes("api.github.com")
+            ? JSON.stringify({ message: "error" })
+            : '<feed><entry><title>x</title><link href="javascript:alert(1)"/></entry></feed>',
+        ),
+    );
+    expect(await fetchGithubActivity("u")).toEqual([]);
+  });
   afterEach(() => {
     vi.unstubAllGlobals();
   });

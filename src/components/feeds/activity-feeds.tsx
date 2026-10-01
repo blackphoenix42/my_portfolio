@@ -15,6 +15,7 @@ type FeedPanel = {
   icon: typeof PenTool;
   accent: string;
   cta: { label: string; href: string };
+  xml: string;
   items: FeedItem[];
   empty: string;
 };
@@ -31,6 +32,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
   const panels: FeedPanel[] = [
     {
       key: "medium",
+      xml: "https://medium.com/feed/@binaryphoenix01",
       label: t("medium.label"),
       icon: PenTool,
       accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
@@ -40,6 +42,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
     },
     {
       key: "youtube",
+      xml: "https://www.youtube.com/feeds/videos.xml?channel_id=UCcINlOM-rC1_8yiRGH_iFBg",
       label: t("youtube.label"),
       icon: Youtube,
       accent: "text-accent-violet border-accent-violet/30 bg-accent-violet/5",
@@ -52,6 +55,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
     },
     {
       key: "github",
+      xml: "https://github.com/blackphoenix42.atom",
       label: t("github.label"),
       icon: Github,
       accent: "text-accent-cyan border-accent-cyan/30 bg-accent-cyan/5",
@@ -123,10 +127,20 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
                 >
                   {p.cta.label} <ArrowUpRight className="h-3 w-3" />
                 </a>
+                <a
+                  href={p.xml}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fg-subtle hover:text-accent-cyan mt-3 inline-flex items-center gap-1 text-xs"
+                >
+                  <Rss className="h-3 w-3" />
+                  {t("openXml")}
+                </a>
               </div>
             );
           })}
         </div>
+        <p className="text-fg-subtle mt-5 text-xs">{t("refreshNote")}</p>
       </div>
     </section>
   );

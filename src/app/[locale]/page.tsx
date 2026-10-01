@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { SITE } from "@/content/profile";
 import { Hero } from "@/components/hero/hero";
 import { MetricsStrip } from "@/components/metrics/metrics-strip";
 import { FeaturedWork } from "@/components/projects/featured-work";
@@ -12,8 +14,14 @@ import { EngineerHomeIntro } from "@/components/layout/engineer-home-intro";
 import { PerformanceDiagram } from "@/components/diagrams/performance-diagram";
 import { SystemDesignDiagram } from "@/components/diagrams/system-design-diagram";
 import { TechMarquee } from "@/components/logos/tech-marquee";
+import { DesignGallery } from "@/components/system-design/design-gallery";
 
 export const revalidate = 3600;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("home");
+  return { title: { absolute: t("metaTitle", { name: SITE.name }) } };
+}
 
 const lazy = "lazy-section";
 
@@ -30,6 +38,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </div>
       <MetricsStrip />
       <TechMarquee />
+      <div className={lazy}>
+        <DesignGallery limit={2} home />
+      </div>
       <EngineerAware
         engineer={
           <>

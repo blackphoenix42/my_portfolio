@@ -32,6 +32,7 @@ project entry-points first, then drill into the categories below.
 - [docs/ADR/0008-easter-eggs.md](docs/ADR/0008-easter-eggs.md): Easter-egg layer design.
 - [docs/ADR/0009-audience-modes.md](docs/ADR/0009-audience-modes.md): Recruiter & Engineer audience modes.
 - [docs/ADR/0010-lexical-chatbot.md](docs/ADR/0010-lexical-chatbot.md): Client-side TF-IDF "Ask my portfolio" + CSP.
+- [docs/ADR/0012-on-device-llm.md](docs/ADR/0012-on-device-llm.md): Opt-in on-device LLM (WebLLM) over the same retrieval.
 - [docs/ADR/0011-system-design-whiteboards.md](docs/ADR/0011-system-design-whiteboards.md): System-design whiteboards via a dynamic registry.
 
 ## Source of truth (content)
@@ -93,8 +94,9 @@ project entry-points first, then drill into the categories below.
 - [src/components/contact/attachment-field.tsx](src/components/contact/attachment-field.tsx): Drag-and-drop file picker.
 - [src/components/projects/project-demo.tsx](src/components/projects/project-demo.tsx): Lazy-loaded per-project demo wrapper.
 - [src/components/layout/engineer-mode.tsx](src/components/layout/engineer-mode.tsx): Engineer Mode context (mutually exclusive with Recruiter Mode).
-- [src/components/system-design/system-whiteboard.tsx](src/components/system-design/system-whiteboard.tsx): Dynamic registry that lazy-loads interactive/static whiteboards.
-- [src/components/chatbot/ask-portfolio.tsx](src/components/chatbot/ask-portfolio.tsx): Client-side "Ask my portfolio" assistant UI.
+- [src/components/system-design/system-whiteboard.tsx](src/components/system-design/system-whiteboard.tsx): Dynamic registry that lazy-loads interactive demos and step-through whiteboards.
+- [src/components/chatbot/ask-portfolio.tsx](src/components/chatbot/ask-portfolio.tsx): Client-side "Ask Ayush" assistant UI with independent conversations.
+- [docs/PORTFOLIO_UPDATE_NOTES.md](docs/PORTFOLIO_UPDATE_NOTES.md): Latest content changes, recording instructions, latency guidance and proposed server/API migration.
 - [src/components/audio/sfx.ts](src/components/audio/sfx.ts): Web-Audio sound-effects engine with global mute.
 
 ## Optional

@@ -38,8 +38,8 @@ src/
     [locale]/system-design/ /system-design — interactive whiteboards
   components/         Reusable UI: hero, projects, contact, layout, …
     audio/              SFX engine + voice-intro player
-    chatbot/            Client-side "Ask my portfolio" assistant
-    system-design/      Interactive + static whiteboards (dynamic registry)
+    chatbot/            "Ask Ayush" panel + on-device LLM worker (ADR-0012)
+    system-design/      Interactive demos + step-through whiteboards (dynamic registry)
     diagrams/           Project architecture + home diagrams
   content/            Static content (projects, experience, skills, profile)
     now.ts              /now page content
@@ -56,7 +56,7 @@ src/
     greeting.ts       Local time-of-day bucket for the header greeting chip
     quirky-tags.ts    Quirky project tag registry + filter helpers
     terminal/commands.ts  Pure phoenix-shell text-command output
-    chatbot/          TF-IDF embed + retrieval (dependency-free)
+    chatbot/          TF-IDF retrieval, content ingestion, LLM prompt/capability helpers
     utils.ts          Misc helpers (cn, formatters)
   proxy.ts            next-intl middleware (Next 16 renamed `middleware → proxy`)
 public/               Static assets (images, certificates, favicons)
@@ -154,3 +154,41 @@ See [ADR-0007](./ADR/0007-remove-weather-greeting.md) for the weather/geolocatio
 - `npm run build` → `.next/`
 - `npm start` → production server on port 3000.
 - Recommended host: Vercel (auto image optimization, edge functions).
+
+## Assistant runtime
+
+The scroll controls own the assistant launcher so it stays above both arrows on every
+viewport. Opening it lazily loads the panel and its generated corpus together; quick
+answers need no separate corpus request. `use-local-llm.ts` connects persisted settings,
+device capabilities, and lazy GPU/CPU engines. GPU inference runs in a WebLLM worker;
+CPU inference runs in wllama's worker with GPU layers explicitly disabled.
+`predev`/`prebuild` copy the locked wllama WASM into `public/wllama/`.
+
+Settings default to quick answers and expose device recommendations, answer length,
+context depth, CPU usage and optional two-minute memory retention. Without cross-origin
+isolation CPU inference uses one thread. Switching engines releases the old runtime;
+download/generation failures fall back to bundled quick answers. See ADR-0012.
+
+Ask Ayush settings can also be opened by Site settings via `open-chat-settings`;
+the same lazy panel owns both entry points, avoiding a second engine instance.
+Independent transcripts live in tab-scoped session storage. Each chat has its own
+context boundary, validated by `src/lib/chatbot/sessions.ts`. Deleting models
+releases the runtimes, persists quick mode and clears both engine caches. See
+[ADR-0013](ADR/0013-session-scoped-ask-ayush-conversations.md).
+
+## Work and planning navigation
+
+`/work` renders expandable top-four projects, expandable top-four system designs,
+then Public Workbench. `/system-design/[slug]` defines six detail
+routes with a lazy demo and HLD/LLD/decision tabs. The homepage previews two designs.
+`/competitive-programming` combines CP, the reusable `NowSection` and the 2027
+roadmap under Practice & Plans. `/now` remains available for existing links.
+All URLs remain locale-prefix-free. Engineer Mode is visit-scoped and starts off.
+
+## Automatic public feeds
+
+Medium, YouTube and GitHub are fetched in parallel with a 15-minute Next.js cache
+and an eight-second upstream timeout. GitHub uses the existing optional token and
+falls back to its public Atom feed. `scripts/check-feeds.mjs` exercises the same
+fetchers. A scheduled GitHub workflow checks sources and warms `/feeds` twice hourly;
+data is fetched automatically and never maintained as checked-in activity entries.

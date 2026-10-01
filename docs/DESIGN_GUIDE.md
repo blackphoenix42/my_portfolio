@@ -104,6 +104,16 @@ a quiet invitation to wait for the next quote, not as mechanical status text.
 
 ## Accessibility
 
+Work uses matching project and system-design card grids, showing four cards per
+section with explicit expansion controls. Design details use keyboard-accessible
+tabs for demos, high-level architecture, implementation notes and trade-offs.
+Skills separates technical filters from applied engineering filters; selected
+applied groups show tool chips and project links, without extra write-ups.
+
+Ask Ayush keeps the conversation selector and context/transcript controls above
+the message list. Settings have one shared panel, reached from the assistant or
+Site settings. Engineer Mode lives in Site settings and starts disabled.
+
 - Target contrast: WCAG **AA** minimum, **AAA** for body text where possible.
 - All interactive controls keyboard-reachable; visible focus ring always.
 - Mono / decorative text is decorative only — never relied on alone to convey meaning.

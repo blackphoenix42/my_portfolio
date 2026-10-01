@@ -1,7 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+
+const subscribe = () => () => {};
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
+
+function useThumbnailReducedMotion() {
+  const reduce = useReducedMotion();
+  const hydrated = useSyncExternalStore(subscribe, clientSnapshot, serverSnapshot);
+  // Render the same static SVG on the server and during initial hydration.
+  return !hydrated || reduce;
+}
 
 const A = "hsl(var(--accent-cyan))";
 const V = "hsl(var(--accent-violet))";
@@ -18,7 +29,7 @@ const FG = "hsl(var(--fg))";
 /*  MAESTRO — conductor, 10 agents on an arc, 5 human gates on the score       */
 /* -------------------------------------------------------------------------- */
 export function MaestroConductor() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   // Rounded: Node and browser Math.cos/sin can differ in the last digit, which breaks hydration.
   const round = (v: number) => Math.round(v * 100) / 100;
   const agents = Array.from({ length: 10 }, (_, i) => {
@@ -93,7 +104,7 @@ export function MaestroConductor() {
 /*  XCELIUM AGENTS — deterministic-first pipeline, before/after bars           */
 /* -------------------------------------------------------------------------- */
 export function XceliumAgentsMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const stages = [
     { x: 70, label: "profile", c: A },
     { x: 170, label: "parse·py", c: E },
@@ -163,7 +174,7 @@ export function XceliumAgentsMini() {
 /*  REGRESSION TRIAGE — failures cluster, class gate splits regold vs RCA      */
 /* -------------------------------------------------------------------------- */
 export function RegressionTriageMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const gates = [
     { y: 58, label: "diff", c: E },
     { y: 108, label: "crash", c: M },
@@ -255,7 +266,7 @@ export function RegressionTriageMini() {
 /*  PERFORCE REPLAY — changelists hop from dev stream onto a release stream    */
 /* -------------------------------------------------------------------------- */
 export function PerforceReplayMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const cls = [140, 250, 350];
   return (
     <svg viewBox="0 0 480 200" className="h-full w-full">
@@ -333,7 +344,7 @@ export function PerforceReplayMini() {
 /*  XCELIUM — developer @ screen, throughput surges                            */
 /* -------------------------------------------------------------------------- */
 export function FlamegraphMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const pts = [
     [110, 130],
     [150, 128],
@@ -434,7 +445,7 @@ export function FlamegraphMini() {
 /*  ALGOLENS — bubble-sort live array                                          */
 /* -------------------------------------------------------------------------- */
 export function AlgoMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const initial = [35, 80, 50, 110, 70, 30, 95, 55, 75, 45];
   const [bars, setBars] = useState(initial);
   const [swap, setSwap] = useState(0);
@@ -525,7 +536,7 @@ export function AlgoMini() {
 /*  POSTUREIQ — exercise figure + pose overlay + coaching                      */
 /* -------------------------------------------------------------------------- */
 export function PostureMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const [reps, setReps] = useState(12);
   const [form, setForm] = useState(92);
 
@@ -791,7 +802,7 @@ export function PostureMini() {
 /*  TRACK PERSON — stylized map with route + live person                       */
 /* -------------------------------------------------------------------------- */
 export function TrackMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const pts: [number, number][] = [
     [70, 150],
     [120, 130],
@@ -862,7 +873,7 @@ export function TrackMini() {
 /*  SMART BRAIN — animated face + scanning detection                           */
 /* -------------------------------------------------------------------------- */
 export function BrainMini() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   return (
     <svg viewBox="0 0 480 200" className="h-full w-full">
       <defs>
@@ -994,7 +1005,7 @@ export function BrainMini() {
 /*  TEZOS — Steam-style marketplace grid                                       */
 /* -------------------------------------------------------------------------- */
 export function ChainBracket() {
-  const reduce = useReducedMotion();
+  const reduce = useThumbnailReducedMotion();
   const cards = [
     { x: 50, y: 50, c: A, label: "phx_arena" },
     { x: 158, y: 50, c: V, label: "chain_quest" },

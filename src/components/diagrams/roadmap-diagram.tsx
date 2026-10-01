@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { concepts } from "@/content/concepts";
+import { useTranslations } from "next-intl";
 
 const statusColor: Record<string, string> = {
   design: "hsl(var(--accent-amber))",
@@ -9,28 +10,30 @@ const statusColor: Record<string, string> = {
   "in-development": "hsl(var(--accent-emerald))",
 };
 
-const QUARTERS = ["Q2 2026", "Q3 2026", "Q4 2026", "Q1 2027"];
+const QUARTERS = ["Q1 2027", "Q2 2027", "Q3 2027", "Q4 2027"];
 
 export function RoadmapDiagram() {
   const reduce = useReducedMotion();
+  const t = useTranslations("roadmap");
 
   return (
     <div className="card overflow-hidden p-5 sm:p-6">
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <p className="mono-label">/ roadmap diagram</p>
-          <h3 className="text-fg mt-1 text-base font-semibold">Delivery timeline</h3>
+          <p className="mono-label">{t("tag")}</p>
+          <h3 className="text-fg mt-1 text-base font-semibold">{t("heading")}</h3>
         </div>
         <ul className="hidden gap-3 sm:flex">
           {Object.entries(statusColor).map(([k, v]) => (
             <li key={k} className="text-fg-muted flex items-center gap-1.5 font-mono text-[10px]">
-              <span className="h-2 w-2 rounded-full" style={{ background: v }} /> {k}
+              <span className="h-2 w-2 rounded-full" style={{ background: v }} /> {t(`status.${k}`)}
             </li>
           ))}
         </ul>
       </div>
 
-      <svg viewBox="0 0 880 260" className="h-auto w-full" role="img" aria-label="Roadmap diagram">
+      <p className="text-fg-subtle mb-4 text-xs">{t("note")}</p>
+      <svg viewBox="0 0 960 260" className="h-auto w-full" role="img" aria-label={t("heading")}>
         <defs>
           <linearGradient id="rd-axis" x1="0" x2="1">
             <stop offset="0%" stopColor="hsl(var(--accent-cyan))" stopOpacity="0" />
@@ -81,7 +84,7 @@ export function RoadmapDiagram() {
             fontFamily: "var(--font-mono)",
           }}
         >
-          now
+          {t("planning")}
         </text>
 
         {/* concept lanes */}
@@ -89,10 +92,10 @@ export function RoadmapDiagram() {
           const lane = 60 + i * 56;
           // map ETA → x range
           const map: Record<string, [number, number]> = {
-            "Q2 2026": [160, 280],
-            "Q3 2026": [280, 513],
-            "Q4 2026": [513, 746],
-            "Q1 2027": [746, 840],
+            "Q1 2027": [160, 280],
+            "Q2 2027": [280, 513],
+            "Q3 2027": [513, 746],
+            "Q4 2027": [746, 840],
           };
           const range: [number, number] = (c.eta && map[c.eta]) || [280, 513];
           const x1 = range[0];

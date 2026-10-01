@@ -22,7 +22,7 @@ export const concepts: Concept[] = [
     accent: "cyan",
     repo: "https://github.com/blackphoenix42/tracemind",
     status: "design",
-    eta: "Q3 2026",
+    eta: "Q2 2027",
   },
   {
     slug: "silicongraph",
@@ -35,7 +35,7 @@ export const concepts: Concept[] = [
     accent: "violet",
     repo: "https://github.com/blackphoenix42/silicongraph",
     status: "prototyping",
-    eta: "Q4 2026",
+    eta: "Q3 2027",
   },
   {
     slug: "infralens",
@@ -48,6 +48,6 @@ export const concepts: Concept[] = [
     accent: "emerald",
     repo: "https://github.com/blackphoenix42/infralens",
     status: "in-development",
-    eta: "Q2 2026",
+    eta: "Q1 2027",
   },
 ];

@@ -1,5 +1,5 @@
 export type Metric = {
-  id: "throughput" | "rtl" | "rca" | "tezos" | "algorithms" | "leetcode";
+  id: "throughput" | "rtl" | "rca" | "ticketResolution" | "agentSpeedup" | "regression";
   value: string;
   /** English fallback label. Components prefer the i18n key `metrics.items.{id}.label`. */
   label: string;
@@ -19,8 +19,9 @@ export const metrics: Metric[] = [
   {
     id: "rtl",
     value: "13–14%",
-    label: "RTL transform runtime",
-    detail: "Xform Engine gains on designs from Apple, Google, Samsung, NVIDIA.",
+    label: "RTL parsing speedup",
+    detail:
+      "Cumulative Xform Engine parsing gains across Apple, Google, Samsung and NVIDIA designs.",
     accent: "violet",
   },
   {
@@ -31,24 +32,24 @@ export const metrics: Metric[] = [
     accent: "emerald",
   },
   {
-    id: "tezos",
-    value: "$10K",
-    label: "Tezos award",
-    detail: "Grant to expand a decentralized gaming application on Tezos.",
+    id: "ticketResolution",
+    value: "45%",
+    label: "Faster ticket resolution",
+    detail: "MAESTRO, measured across 22 Jira tickets; RCA time reduced by 55%.",
     accent: "amber",
   },
   {
-    id: "algorithms",
-    value: "60+",
-    label: "Algorithms",
-    detail: "Interactive, step-throughable visualizations in AlgoLens.",
+    id: "agentSpeedup",
+    value: "31.3%",
+    label: "AI-assisted simulation speedup",
+    detail: "Xcelium optimization agents on a validated benchmark; results are workload-specific.",
     accent: "cyan",
   },
   {
-    id: "leetcode",
-    value: "Top 1%",
-    label: "LeetCode global",
-    detail: "Knight tier · Codeforces Master · CodeChef 6-Star (AIR 29).",
+    id: "regression",
+    value: "2,120",
+    label: "Regression failures processed",
+    detail: "Across 79 runs; 73% of failures were processed in runs by other engineers.",
     accent: "violet",
   },
 ];

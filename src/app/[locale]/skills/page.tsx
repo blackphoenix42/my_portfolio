@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { EngineeringSpectrum } from "@/components/skills/engineering-spectrum";
 import { SkillsExplorer } from "@/components/skills/skills-explorer";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,9 +19,6 @@ export default async function SkillsPage({ params }: { params: Promise<{ locale:
         <p className="text-fg-muted mt-3 max-w-2xl">{t("pageIntro")}</p>
       </header>
       <SkillsExplorer />
-      <section className="border-border/60 border-t">
-        <EngineeringSpectrum hideHeader />
-      </section>
     </div>
   );
 }

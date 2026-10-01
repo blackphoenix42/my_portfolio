@@ -45,14 +45,26 @@ single canonical URL.
 - 🛠 **Engineer Mode** — a mutually-exclusive counterpart to Recruiter Mode
   (`n` shortcut) that reveals architecture diagrams, algorithms, performance
   trade-offs and technical write-ups on case studies and the home page.
-- 📐 **System-design whiteboards** (`/system-design`) — interactive walkthroughs
-  (URL shortener, rate limiter, job scheduler) plus sketched "coming soon"
-  boards, lazy-loaded via a dynamic registry.
-- 🤖 **"Ask my portfolio"** — a fully client-side assistant that answers from
-  real site content using a dependency-free TF-IDF lexical index (no model
-  download, no WebAssembly, no network calls, no tracking).
-- 🗓 **`/now` page** — a Derek-Sivers-style snapshot of current focus, learning,
-  building and reading.
+- 📐 **System-design whiteboards** — expandable previews in Work and dedicated
+  `/system-design/[slug]` pages with lazy demos, HLD, LLD and trade-offs.
+- 🤖 **Ask Ayush** — a client-side assistant grounded in real site
+  content. Quick answers come from a dependency-free TF-IDF index that is
+  rebuilt from `src/content` on every build and bundled with the lazy chat panel.
+  The launcher sits above the scroll arrows. Assistant settings offer quick
+  answers (AI off), device GPU (Llama 3.2 1B via WebLLM), or CPU
+  (Qwen2.5 0.5B via wllama). Device recommendations explain speed, memory and
+  battery trade-offs; answer length, context and memory retention are adjustable.
+  Questions stay in the browser. AI download or runtime failures return to
+  quick answers without technical error banners (ADR-0012). Independent chats
+  persist in the tab session; context and transcripts can be cleared separately.
+  Model downloads can be removed in settings, also accessible from Site settings.
+- 🗓 **Practice & Plans** — competitive programming, current focus and a 2027
+  roadmap on `/competitive-programming`; `/now` remains available for existing links.
+- 📡 **Automatic feeds** — Medium, YouTube and GitHub refresh with a 15-minute
+  cache, GitHub Atom fallback, XML links and a scheduled source-check/warm workflow.
+  Run `npm run feeds:check` to inspect current upstream results.
+- 📝 **[Update notes and server/API plan](docs/PORTFOLIO_UPDATE_NOTES.md)** —
+  recording location, chatbot performance, backend migration, sound and navbar effects.
 - 🏷 **Quirky project filters** — chip filters on `/work` (favourites,
   late-night ideas, hardest bugs, most fun, open source, research, AI, systems).
 - 🎛 **Personality flair** — header name glitch, a once-per-session boot
@@ -329,7 +341,7 @@ docs/                 # Architecture, ADRs, design guide, policy docs
 
 ## 📦 Replace these assets before launch
 
-- `public/assets/resume/Resume.pdf` — replace placeholder with the real résumé.
+- `public/assets/resume/Ayush_Yadav_Resume_2026-10.pdf` — current résumé; `SITE.resumePath` is used by every download link. The legacy `Resume.pdf` also contains this revision.
 - Optional: add brand SVG logos under `public/assets/logos/` (kept light intentionally).
 
 ## 🛠 Scripts

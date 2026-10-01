@@ -2,9 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test("homepage renders core hero content", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "performance-critical systems",
-  );
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("faster systems");
   await expect(page.getByRole("link", { name: /View Projects/i })).toBeVisible();
 });
 

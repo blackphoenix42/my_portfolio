@@ -6,6 +6,23 @@ All notable changes to this project are documented here. Format loosely follows
 
 ## [Unreleased]
 
+### Changed — October 2026 portfolio update
+
+- Renamed the assistant to Ask Ayush; added independent session chats, context and
+  transcript clearing, model-cache removal, shared settings entry points and smaller
+  generation budgets with a first-token fallback.
+- Updated the résumé, introduction, principles, metrics, recognition and Cadence
+  role progression using owner-supplied facts.
+- Added expandable Work previews and dedicated system-design detail tabs; merged
+  applied engineering into Skills filters and current focus into Practice & Plans
+  with 2027 roadmap targets. Engineer Mode now starts off and is in Site settings.
+- Improved automatic feed fetching with authenticated GitHub requests, Atom fallback,
+  XML links and a scheduled check/warm workflow.
+- Fixed mobile quote wrapping and reduced-motion hydration in project thumbnails
+  and the navbar name, found during the updated layout review.
+- Documented recording instructions, interaction effects and the proposed server
+  migration in [Portfolio update notes](PORTFOLIO_UPDATE_NOTES.md).
+
 ### Added
 
 - **Engineer Mode** — an audience toggle (header pill, `n` shortcut, command
@@ -30,6 +47,19 @@ All notable changes to this project are documented here. Format loosely follows
   precomputed at build time (`scripts/build-chatbot-index.mjs` →
   `public/chatbot/corpus.json`) from a curated `src/content/chatbot-knowledge.json`.
   New `chatbot.*` namespace. See ADR-0010.
+- **On-device AI for "Ask my portfolio"** — assistant settings offer GPU
+  (Llama 3.2 1B/WebLLM), CPU (Qwen2.5 0.5B/wllama), and AI off. Includes
+  device recommendations, download sizes, measured speed, answer length,
+  context depth and memory controls with performance guidance. The launcher
+  sits above the scroll arrows on desktop and mobile. The corpus ships with
+  the lazy panel; AI failures keep quick answers available without error
+  banners. GPU executable artifacts are pinned and SRI-verified; the CPU
+  runtime is served locally from the locked dependency. See ADR-0012.
+- **Chatbot corpus learns from the site** — `scripts/build-chatbot-index.mjs`
+  now derives chunks from `src/content/*.ts` (projects, experience, skills,
+  `/now`, system design, honors, ratings) via `src/lib/chatbot/ingest.ts`, runs
+  on `predev` as well as `prebuild`, and shares the tokenizer with
+  `src/lib/chatbot/embed.ts` instead of duplicating it.
 - **Quirky project filters** — chip filters on `/work` (favourites, late-night
   ideas, hardest bugs, most fun, open source, research, AI, systems) backed by a
   pure, unit-tested `src/lib/quirky-tags.ts` and the `quirkyTags.*` namespace.
@@ -229,6 +259,20 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Fixed
 
+- Exclude cached Next.js development validators from TypeScript checks so stale
+  route types cannot break production builds on Windows. Production route types
+  and application code remain checked.
+- **Home page title** — the root default title became just the name; the home
+  page now sets a localized, descriptive title (`home.metaTitle`).
+- **"Ask my portfolio" accessibility** — the panel no longer claims
+  `aria-modal` without trapping focus. It is a non-modal dialog: Escape closes
+  it only while focus is inside it, and focus returns to the launcher.
+- **Untranslated strings from the MAESTRO/case-study update** — the new
+  project, experience, honors, MAESTRO demo, diagram descriptions, terminal and
+  chatbot strings are now translated in hi, ja, ru, sa and zh. SVG diagram
+  labels intentionally stay English.
+- **Terminal `download resume --<variant>` note** printed a literal
+  `{variant}`, because `'{…}'` is an ICU escape. It now uses typographic quotes.
 - **Looping thumbnail and diagram animations were frozen** — `initial={false}`
   blocks framer-motion's mount animation, so every `repeat: Infinity` keyframe
   loop (case-study thumbnails, architecture lane packets, system-design
@@ -290,6 +334,12 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Security
 
+- **CSP relaxed for opt-in on-device AI** — `script-src` adds
+  `'wasm-unsafe-eval'` (WebAssembly compilation only, not JS `eval`), and
+  `connect-src` adds Hugging Face (`huggingface.co`, `*.huggingface.co`,
+  `*.hf.co`) and `raw.githubusercontent.com`. The model repo and WASM library are
+  pinned to immutable commits, and the config, tokenizer and WASM are
+  SRI-verified. See ADR-0012.
 - **Chatbot keeps the CSP strict** — "Ask my portfolio" uses a pure-JavaScript
   TF-IDF index instead of transformers.js/WebAssembly, so no `'wasm-unsafe-eval'`
   was added to `script-src`. Its only runtime fetch is a same-origin GET of

@@ -18,7 +18,6 @@ const BUILT_WITH: { name: TechName; label: string }[] = [
 export function SiteFooter() {
   const t = useTranslations("footer");
   const tCommon = useTranslations("common");
-  const tNav = useTranslations("nav");
   return (
     <footer className="border-border/70 bg-bg-sunken/40 border-t">
       <div className="container-tight pt-10">
@@ -113,12 +112,6 @@ export function SiteFooter() {
           </span>
         </span>
         <span className="flex flex-wrap items-center gap-3">
-          <Link href="/now" className="hover:text-fg underline-offset-4 hover:underline">
-            {tNav("now")}
-          </Link>
-          <Link href="/system-design" className="hover:text-fg underline-offset-4 hover:underline">
-            {tNav("systemDesign")}
-          </Link>
           <Link href="/privacy" className="hover:text-fg underline-offset-4 hover:underline">
             {tCommon("privacy")}
           </Link>

@@ -5,6 +5,7 @@ import { WorkGrid, type WorkCard } from "@/components/projects/work-grid";
 import { GithubWorkbench } from "@/components/github/github-workbench";
 import { fetchFeaturedRepos } from "@/lib/github";
 import { availableQuirkyTags } from "@/lib/quirky-tags";
+import { DesignGallery } from "@/components/system-design/design-gallery";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("work");
@@ -66,12 +67,17 @@ export default async function WorkIndexPage({ params }: { params: Promise<{ loca
             professional: tCommon("professional"),
             openSource: tCommon("openSource"),
             filter: tQuirky("filterLabel"),
+            seeMore: t("seeMore"),
+            seeLess: t("seeLess"),
           }}
           quirkyLabels={quirkyLabels}
           allLabel={tQuirky("all")}
         />
       </section>
 
+      <div id="system-design" className="scroll-mt-24">
+        <DesignGallery />
+      </div>
       <section aria-label={t("workbenchAria")}>
         <GithubWorkbench repos={repos} />
       </section>

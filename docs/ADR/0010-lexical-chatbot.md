@@ -2,13 +2,17 @@
 id: 0010
 title: Client-side "Ask my portfolio" via TF-IDF lexical search
 date: 2026-06-13
-status: Accepted
+status: Accepted (amended by ADR-0012)
 owners:
   - "@blackphoenix42"
 tags: [ai, search, security, performance]
 ---
 
 # 0010 — Client-side "Ask my portfolio" via TF-IDF lexical search
+
+> **Amended by [ADR-0012](0012-on-device-llm.md):** retrieval below is still
+> used, and now also feeds an optional, opt-in on-device LLM. That ADR relaxes
+> the CSP described here.
 
 ## Context
 
@@ -36,15 +40,15 @@ entirely in plain JavaScript:
 - `src/content/chatbot-knowledge.json` — a curated corpus of public facts.
 - `scripts/build-chatbot-index.mjs` — precomputes `public/chatbot/corpus.json`
   at build time (wired into `prebuild`).
-- `src/components/chatbot/ask-portfolio*.tsx` — lazy-loaded UI that fetches the
-  corpus once and returns extractive answers with sources.
+- `src/components/chatbot/ask-portfolio*.tsx` — lazy-loaded UI that bundles the
+  generated corpus and returns extractive answers with sources.
 
 ## Consequences
 
 ### Positive
 
-- **CSP stays strict** — no WebAssembly, so no `'wasm-unsafe-eval'`. The only
-  runtime fetch is a same-origin GET of `/chatbot/corpus.json`.
+- **Retrieval stays local** — the corpus ships with the lazy chat panel.
+  Optional AI uses WebAssembly under the CSP described in ADR-0012.
 - **Tiny + offline** — kilobytes of JSON instead of a model download; works with
   no network after first load.
 - **Content integrity** — answers are extractive from a curated corpus, so the

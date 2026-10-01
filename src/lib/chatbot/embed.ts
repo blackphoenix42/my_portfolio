@@ -4,10 +4,11 @@
 // browser, we use a classic TF–IDF sparse vector model. It is deterministic,
 // dependency-free, runs identically in Node (the build step) and the browser
 // (query time), needs no network and therefore no CSP relaxation. Retrieval is
-// extractive — answers are always real content chunks, never generated text.
+// extractive; the optional on-device LLM (ADR-0012) only rephrases what it finds.
 //
-// IMPORTANT: the tokenizer here must stay in sync with the one in
-// scripts/build-chatbot-index.mjs (a unit test pins the expected tokens).
+// IMPORTANT: scripts/build-chatbot-index.mjs imports this file (via Node type
+// stripping) so build-time and query-time tokenization can never drift. Keep it
+// free of runtime imports.
 
 export const STOPWORDS = new Set([
   "the",
@@ -61,6 +62,26 @@ export const STOPWORDS = new Set([
   "should",
   "about",
   "tell",
+  // Conversational filler that otherwise matches random chunks.
+  "use",
+  "used",
+  "using",
+  "did",
+  "has",
+  "have",
+  "had",
+  "he",
+  "his",
+  "him",
+  "there",
+  "here",
+  "hi",
+  "hello",
+  "hey",
+  "thanks",
+  "thank",
+  "please",
+  "know",
 ]);
 
 export type SparseVector = Record<string, number>;

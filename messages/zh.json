@@ -42,7 +42,6 @@
     "work": "作品",
     "skills": "技能",
     "experience": "经历",
-    "craft": "工艺",
     "now": "近况",
     "systemDesign": "系统设计",
     "contact": "联系",
@@ -52,7 +51,8 @@
     "navigate": "导航",
     "liveFeeds": "实时动态",
     "liveFeedsLabel": "实时动态 (Medium、YouTube、GitHub)",
-    "primary": "主导航"
+    "primary": "主导航",
+    "craft": "实践与计划"
   },
   "header": {
     "ariaLogoHome": "{name} — 首页"
@@ -109,8 +109,6 @@
     "dismiss": "关闭"
   },
   "recruiterBanner": {
-    "modeOn": "招聘者模式已开启",
-    "summary": "{role} · {location} · 面向招聘者的精简视图",
     "resume": "简历",
     "linkedin": "LinkedIn",
     "email": "邮箱",
@@ -148,13 +146,16 @@
       "workNav": "作品",
       "skills": "技能",
       "experience": "经历",
-      "cp": "算法竞赛",
       "roadmap": "路线图",
-      "contact": "联系"
+      "contact": "联系",
+      "systemDesign": "系统设计",
+      "now": "近况"
     },
     "openTerminal": "打开终端模式",
     "openMatrix": "打开矩阵雨",
-    "openSecret": "进入秘密房间"
+    "openSecret": "进入秘密房间",
+    "openCommitRain": "提交雨",
+    "askPortfolio": "Ask Ayush"
   },
   "mobileActionBar": {
     "contact": "联系",
@@ -165,8 +166,6 @@
   },
   "hero": {
     "statusLabel": "{role} @ {company}",
-    "headline": "我设计 <strong>性能关键型系统</strong>和 <strong>AI 驱动的开发者工具</strong>。",
-    "subhead": "C++ 性能工程、分布式系统、智能 AI 工作流和开发者工具 — 大规模交付，生产环境中度量，端到端拥有。",
     "primaryCta": "查看项目",
     "secondaryCta": "查看经历",
     "impactStrip": {
@@ -192,32 +191,12 @@
   },
   "home": {
     "title": "首页",
-    "description": "性能工程、智能 AI 和研发软件工程。"
+    "description": "性能工程、智能 AI 和研发软件工程。",
+    "metaTitle": "{name} | 性能工程师、智能体 AI 与研发软件工程师"
   },
   "aboutSection": {
     "eyebrow": "/ 关于",
     "heading": "简要介绍",
-    "bio1": "我是 <strong>{name}</strong>，一名在规模化场景中交付性能关键型系统和 AI 辅助开发者工具的软件工程师。在 {company}，我的 C++ 和运行时工作已在 Apple、Google、Samsung 和 NVIDIA 运行的生产工作负载上带来可衡量的成果。",
-    "bio2": "我关心端到端的所有权 — 从低层分析和分布式系统设计，到精致、可访问的产品界面。工作之外，我交付开源工具，指导工程师，通过算法竞赛保持锐度。",
-    "principlesEyebrow": "实践中的工程原则",
-    "principles": {
-      "profile": {
-        "title": "先分析。",
-        "body": "没有度量的优化是民间传说。"
-      },
-      "gap": {
-        "title": "缩小差距",
-        "body": "在意图与可观测性之间。"
-      },
-      "trust": {
-        "title": "为信任而设计：",
-        "body": "确定性、可访问、测试充分。"
-      },
-      "performance": {
-        "title": "将性能视为",
-        "body": "一等公民的产品特性。"
-      }
-    },
     "getInTouch": "联系"
   },
   "about": {
@@ -265,7 +244,6 @@
     "honorsTag": "/ 荣誉",
     "honorsAriaLabel": "荣誉与认可",
     "honorsTitle": "荣誉与认可",
-    "honorsIntro": "我引以为安的奖项、奖学金和認定。",
     "languagesTag": "/ 语言",
     "languagesAriaLabel": "口语语言",
     "languagesTitle": "工作语言",
@@ -335,7 +313,9 @@
       "postureiq": "带信心门控的实时模拟动作质量。",
       "track-person-app": "在风格化地图上动画路线 — 播放 / 暂停 / 重置。",
       "smart-brain": "尝试不同场景；模拟检测器显示边界框和置信度。"
-    }
+    },
+    "seeMore": "查看更多项目",
+    "seeLess": "显示前四项"
   },
   "skills": {
     "title": "技能",
@@ -347,8 +327,7 @@
     "pageTitle": "技能 · 工程兵器库",
     "pageDescription": "可筛选的技能探索器以及跨越性能、智能系统、后端、产品与基础设施的能力簇。",
     "tag": "/ 技能",
-    "pageHeading": "工程兵器库",
-    "pageIntro": "按类别筛选单项技能，或向下滚动查看能力簇以及它们如何映射到实际项目。"
+    "pageHeading": "工程兵器库"
   },
   "experience": {
     "title": "经历",
@@ -356,7 +335,6 @@
     "heading": "职业时间线",
     "subheading": "工作过的地方和交付的成果。",
     "eyebrow": "/ 经历",
-    "present": "至今",
     "certificate": "证书",
     "years": "{count, plural, other {# 年}}",
     "months": "{count, plural, other {# 个月}}",
@@ -383,15 +361,9 @@
       "peakRating": "最高评级"
     },
     "tagline": "句柄和实时评级在各平台独立更新 — 点击磁贴以核实。",
-    "pageTitle": "手艺 · 算法竞赛与路线图",
-    "pageDescription": "在 CodeChef、Codeforces、LeetCode 和 HackerRank 上多年的算法竞赛 — 以及我接下来要构建的东西的工程路线图。",
-    "craftTag": "/ 手艺",
-    "pageHeading": "算法竞赛",
-    "pageIntro": "在主要平台持续解题 — 打磨数据结构、算法以及在性能工程中获得回报的那种有纪律的思考。",
     "roadmapAria": "工程路线图",
     "roadmapTag": "/ 路线图",
-    "roadmapHeading": "接下来要构建的",
-    "roadmapIntro": "正在设计中的产品概念 — 我想交付的下一组系统。"
+    "roadmapHeading": "接下来要构建的"
   },
   "contact": {
     "title": "联系",
@@ -543,7 +515,6 @@
         "2": "生产规模的向量数据库与嵌入流水线。"
       },
       "building": {
-        "0": "这个作品集——工程师模式、系统设计白板栏目，以及本地的 Ask-My-Portfolio 助手。",
         "1": "AlgoLens——一个交互式 DSA 可视化工具（开源）。"
       },
       "reading": {
@@ -575,7 +546,6 @@
     "pageDescription": "交互式系统设计白板——短链接、限流器、任务调度器等。",
     "tag": "/ 系统设计",
     "pageHeading": "系统设计白板",
-    "pageIntro": "经典系统设计问题的交互式讲解——需求、组件，以及真正重要的权衡。部分完全可交互，其余为草图，敬请期待。",
     "jumpTo": "跳转到某个系统",
     "interactive": "可交互",
     "comingSoon": "交互版即将推出",
@@ -642,16 +612,11 @@
     }
   },
   "chatbot": {
-    "open": "向我的作品集提问",
-    "title": "向我的作品集提问",
     "subtitle": "本地 · 抽取式 · 无追踪",
     "close": "关闭助手",
-    "intro": "询问我的工作、技能或经历。答案均来自本站的真实内容。",
     "placeholder": "输入问题…",
     "send": "发送",
-    "loading": "正在加载知识库——请稍后再试。",
     "noAnswer": "我在站内没有找到相关内容。可以问问我的项目、技能、经历或联系方式。",
-    "error": "知识库加载失败。请稍后再试。",
     "sourcesLabel": "来源",
     "disclaimer": "完全在你的浏览器中运行。答案抽取自真实站点内容（英文）。",
     "suggestions": {
@@ -659,6 +624,27 @@
       "q1": "介绍一下 MAESTRO 项目。",
       "q2": "Ayush 最强的技能是什么？",
       "q3": "如何联系 Ayush？"
+    },
+    "ai": {
+      "subtitle": "本地 AI · 无追踪",
+      "badge": "AI",
+      "loadingHint": "在模型就绪之前，快速回答仍可正常使用。",
+      "progressLabel": "模型下载进度",
+      "thinking": "思考中…",
+      "stop": "停止生成",
+      "disclaimer": "AI 回答由你的设备根据本站内容生成，可能包含错误。请核对所附来源。"
+    },
+    "title": "Ask Ayush",
+    "open": "Ask Ayush",
+    "chats": {
+      "new": "新建聊天",
+      "select": "选择聊天",
+      "clearContext": "清除上下文",
+      "clearChat": "清空聊天",
+      "delete": "删除聊天"
+    },
+    "settings": {
+      "removeModels": "删除已下载模型"
     }
   },
   "audio": {
@@ -668,7 +654,6 @@
     "play": "播放语音介绍",
     "pause": "暂停语音介绍",
     "transcriptToggle": "文字稿",
-    "transcript": "你好，我是 Ayush Yadav——一名专注于 C++ 性能、分布式系统和智能体式 AI 工具的研发软件工程师。感谢到访；欢迎浏览我的作品与实验。",
     "sfxLabel": "音效",
     "on": "开",
     "off": "关"
@@ -703,7 +688,8 @@
         "cookiesTitle": "Cookie",
         "cookiesBody": "仅设置一个 Cookie：<code>NEXT_LOCALE</code>，用于记住您选择的语言。没有分析 Cookie，没有跟踪像素，没有第三方广告。",
         "analyticsTitle": "分析",
-        "analyticsBody": "已启用 <strong>Vercel Web Analytics</strong> 和 <strong>Vercel Speed Insights</strong>。两者均无 Cookie 且符合 GDPR 豁免：使用每天重新计算的短期哈希记录聚合页面浏览和 Core Web Vitals，从不与个人关联。"
+        "analyticsBody": "已启用 <strong>Vercel Web Analytics</strong> 和 <strong>Vercel Speed Insights</strong>。两者均无 Cookie 且符合 GDPR 豁免：使用每天重新计算的短期哈希记录聚合页面浏览和 Core Web Vitals，从不与个人关联。",
+        "aiTitle": "本地 AI（可选）"
       },
       "donot": {
         "title": "我们不做什么",
@@ -741,6 +727,11 @@
             "service": "GitHub / LinkedIn 外部链接",
             "purpose": "外部个人资料页面",
             "data": "您点击时的标准浏览器请求"
+          },
+          "huggingface": {
+            "service": "Hugging Face + GitHub（仅在您开启 AI 时）",
+            "purpose": "一次性下载本地 AI 模型",
+            "data": "标准下载请求；绝不包含您的问题"
           }
         }
       },
@@ -755,22 +746,7 @@
     }
   },
   "metrics": {
-    "eyebrow": "影响 · 已验证",
-    "heading": "可衡量的工程成果",
-    "context": "节奏 · 2022—至今",
     "items": {
-      "throughput": {
-        "label": "模拟吞吐量",
-        "detail": "在 Xcelium Logic Simulator 大型客户工作负载上的改进。"
-      },
-      "rtl": {
-        "label": "RTL 变换运行时",
-        "detail": "在 Apple、Google、Samsung、NVIDIA 设计上的 Xform Engine 提升。"
-      },
-      "rca": {
-        "label": "调试 RCA 时间",
-        "detail": "通过 Top-N 分析和结构化诊断库带来的减少。"
-      },
       "tezos": {
         "label": "Tezos 奖项",
         "detail": "扩展 Tezos 上去中心化游戏应用的资助。"
@@ -813,22 +789,66 @@
       "maestro": {
         "title": "MAESTRO — 多智能体工单解决系统",
         "tagline": "输入一个工单，输出可上线的修复——一个指挥器与 10 个 AI 智能体把工程工单从受理带到发布，每个高风险关卡都由人把关。",
-        "category": "智能体 AI × 工程工作流"
+        "category": "智能体 AI × 工程工作流",
+        "summary": "MAESTRO（Multi-Agent Engineering System for Ticket Resolution & Orchestration，即“面向工单解决与编排的多智能体工程系统”）是一个可移植、与 IDE 无关的多智能体平台，用于处理 Xcelium 工程工单。指挥器驱动一个 20 阶段、由人工把关的工作流，并将每个阶段委派给 10 个专业智能体之一——从受理和根因分析，到验证、评审、回归和发布。在 22 个 Jira 工单上的实测表明，它将工单解决时间缩短了 45%，根因分析时间缩短了 55%。与 Mindsmiths 团队为 Cadence AI Buildathon 2026 共同打造。",
+        "problem": "解决一个仿真器工单，是研发、验证和文档团队之间的一场手工接力。证据分散在问题跟踪系统、邮件、日志、规格说明、源代码管理、代码评审和团队的隐性经验中，每一次交接都要重新收集上一个人早已掌握的上下文。压力之下步骤会被跳过，而那些重要但非紧急的工单则在积压队列中越放越久。",
+        "challenge": "把整个工单生命周期变成一个协调一致、值得信赖的工作流：在 20 个阶段中保持唯一的事实来源，让每个结论都基于真实证据，在高风险步骤上让工程师始终掌控，并且成本足够低、可以用于每一个工单——而且就运行在工程师已经在用的 IDE 里。",
+        "approach": {
+          "0": "设计了一个掌管 20 阶段流程的指挥器，并将每个阶段委派给 10 个专业智能体之一：受理、分诊、调试/RCA、修复、验证、文档、评审、回归、发布，以及一个贯穿全程的记忆智能体。",
+          "1": "以一份共享分析文档作为唯一事实来源：每个阶段都读写它，因此上下文只需采集一次，运行也能从中断处精确恢复。",
+          "2": "让智能体以知识为先：在进行任何联网操作之前先检索离线知识库，并将每个已解决的工单写回，让下一次运行从“热启动”开始。",
+          "3": "通过 MCP 服务器和脚本接入工程系统——问题跟踪、源代码管理、代码评审，以及一个时间旅行调试器：它将录制下来的失败回退到确切的那次错误写入，而不是从日志出发向前猜测。",
+          "4": "加入五道人工审批关卡，并把构建、回归等耗时数小时的步骤交给工程师执行，因此未经签核的内容绝不会发布，也不会浪费模型时间空等。",
+          "5": "从设计上控制成本：每个阶段使用能胜任的最小模型，机械性步骤由脚本完成、LLM token 消耗为零——可在 Cursor、Claude Code 或 GitHub Copilot 中运行。"
+        }
       },
       "xcelium-ai-agents": {
         "title": "ChipStack Xcelium AI 智能体 — 性能与内存",
         "tagline": "多智能体 LLM 工作流：剖析 Xcelium 仿真、诊断运行时间与内存瓶颈，并应用和验证修复。",
-        "category": "智能体 AI × EDA 性能"
+        "category": "智能体 AI × EDA 性能",
+        "summary": "一个面向 Cadence ChipStack AI 的多智能体 LLM 系统：对 Xcelium SystemVerilog 仿真进行剖析，诊断运行时间和内存瓶颈，并通过交互式终端 UI 推荐、应用和验证修复——包括编译器选项、RTL 重写、垃圾回收和内存调优。它涵盖一个性能智能体、一个内存智能体、一个共享工作流框架和一个回归框架：约 37K 行 Python 代码和 650+ 个测试。",
+        "problem": "仿真性能与内存优化工作高度依赖专家：工程师需要阅读剖析器输出，将热点与 RTL 关联起来，选择编译选项或重写方案，然后重新运行并比较。早期的智能体版本让每个机械性步骤都经由 LLM 工具调用完成，这不仅拖慢了速度，还让报告引用了解析器从未产出的数字。",
+        "challenge": "构建能从剖析数据直达经过验证的修复、全程无需人工步骤的智能体，同时做到速度快、以解析数据为依据、可跨会话恢复，并且在任意两次运行都不相同的情况下依然可测试。",
+        "approach": {
+          "0": "构建了一个 8 智能体性能流水线——受理、规划、并行的编译选项审计 / 硬件聚类 / 模式提取、3 层 RTL 重写、应用，然后重新运行并比较。",
+          "1": "构建了内存智能体：堆快照与调用栈剖析、峰值检测、结合 C++ 符号还原（demangling）的共享库归因、RTL 文件与行号引用，以及带前后对比的垃圾回收实验。",
+          "2": "将两个智能体重构为确定性优先：受理、仿真运行和剖析数据解析从 LLM 工具循环中移出、改由 Python 完成，模型只保留用于推理和兜底。",
+          "3": "基于 OpenAI Agents SDK 设计了共享框架：基于图的智能体节点编排、带 schema 版本并支持检查点/恢复的状态、严格的结构化输出、从格式错误的 JSON 中恢复，以及逐节点的回退路由。",
+          "4": "通过在 Python 中渲染报告中的数字、且不给报告智能体提供任何工具，消除了幻觉数字，使每个数字都能追溯到解析后的剖析数据。",
+          "5": "设计了一个概念验证回归框架，通过伪终端驱动真实的终端 UI：每个测试用例对应一条 YAML 条目，并由一个基于检查清单的 LLM 裁判将每份报告与经过审核的 golden 参考进行比较。"
+        }
       },
       "regression-triage": {
         "title": "Xcelium 回归分诊与 Regold 系统",
         "tagline": "约 16K 行的系统，把成千上万的回归失败转化为安全、经过验证的操作——regold、过滤、豁免或升级。",
-        "category": "开发者工具 × 自动化"
+        "category": "开发者工具 × 自动化",
+        "summary": "仿真器改动之后，回归批次会返回成百上千个失败的测试/模式组合，每一个都需要做出决策。这个约 16K 行的系统利用基于规则的分类、TF-IDF 聚类、历史学习以及可选的 LLM 评审，自动完成分诊、regold、豁免和验证。它已在 79 次运行中处理了 2,120 个失败——其中 73% 来自其他工程师的运行。",
+        "problem": "每个失败的测试都需要以下几种处理之一：更新 golden 文件、添加差异过滤器、忽略或豁免、修复工作区，或者升级处理。证据在每次运行之间都会变化（地址、PID、时间戳、路径），同一个根因会产生几十个几乎相同的失败，而一次错误的 regold 会让测试套件悄无声息地对真实缺陷视而不见。",
+        "challenge": "安全地自动化决策：跨运行识别同一故障，绝不让崩溃或工具错误成为新的 golden，处理与不同 golden 文件比对的各种模式，逐模式验证每一项变更，并从过去的回归批次中学习——同时保持可恢复、可撤销。",
+        "approach": {
+          "0": "将回归和夜间失败列表规范化为测试、bank 和模式集合，然后以按文件加锁、支持试运行、恢复和撤销的方式，并行重跑每个模式。",
+          "1": "通过屏蔽地址、数字、路径、PID 和时间戳，将证据规范化为跨运行稳定的签名，使同一故障的重复出现共享同一个指纹。",
+          "2": "结合规则、对近期运行的加权投票以及已保存的人工更正，对每个失败进行分类，再使用 TF-IDF 和凝聚层次聚类将相似的失败归组。",
+          "3": "按类别把关处置方式：只有差异类失败才可能进入 golden 文件——崩溃、超时和工具错误一律转交根因分析。",
+          "4": "对每次 regold 都按模式重跑验证；在 regold 并非正确解法时，则生成差异过滤器、IGNORE 文件或豁免。",
+          "5": "加入可选的 LLM 评审（JEDAI），将每个差异与待提交的代码变更进行比对，并标记出不得 regold 的测试——仅供参考，它永远无法放宽关卡。"
+        }
       },
       "perforce-replay": {
         "title": "跨流 Perforce 重放",
         "tagline": "一条命令把多变更列表的修复回移到任意发布流——只同步这些变更列表涉及的路径。",
-        "category": "开发者工具 × 发布工程"
+        "category": "开发者工具 × 发布工程",
+        "summary": "开发流上的修复通常需要在每一个受支持的发布流上重现，而且往往涉及多个变更列表——源代码改动、相应的 regold 以及一个新测试。该工具会推导出每个变更列表的源流，只选择性同步这些变更列表涉及的路径，按顺序合并，并准确报告哪些文件仍需手动解决，从而自动完成跨 Xcelium 发布分支的多 CL 回移。",
+        "problem": "回移过去都是手工完成的：在手工准备的工作区里，一次处理一个变更列表。不完整的客户端视图意味着缺失的路径只会在失败时逐个暴露；完整同步代价太高；每个变更列表的来源流常常不明；而自动解决只报告一个汇总状态，掩盖了它拒绝合并的文件。",
+        "challenge": "从变更列表元数据推导出每一个操作数——来源流、工作区中必须存在哪些路径，以及合并顺序——让工程师只需提供变更列表编号和目标分支。",
+        "approach": {
+          "0": "根据每个变更列表的文件检测其源流，使一次运行可以混合来自不同流的变更列表，并在合并前打印出映射关系。",
+          "1": "只基于这些变更列表涉及的文件和目录构建同步计划，而不是同步整棵目录树。",
+          "2": "自动修复工作区故障——为视图之外的路径扩展客户端视图、恢复被覆盖的可写文件——然后重试。",
+          "3": "按升序合并变更列表，每个都从各自的流、以各自的修订版本合并，因此任何失败都能精确定位到某一个变更列表。",
+          "4": "在最后只执行一次自动解决，并列出被拒绝的文件以供手动解决；任何内容都不会被自动提交。",
+          "5": "可选地创建一个一次性目标工作区，只同步项目配置，并报告对应的清理命令。"
+        }
       },
       "xcelium-optimization": {
         "title": "Xcelium Logic Simulator — 性能工程",
@@ -899,12 +919,73 @@
       "inputLabel": "终端输入",
       "greet": "欢迎来到 phoenix-shell，{name}。",
       "greetHint": "输入 \"help\" 查看命令；\"exit\" 退出。",
-      "help": "Commands:\n  help, whoami, skills, projects, projects --list,\n  contact, cv, theme [light|dark|phoenix], ls, cat about.md,\n  date, echo [text], history, neofetch, sudo, secrets, clear, exit",
+      "help": "命令：\n  help            — 显示本帮助\n  whoami          — 关于维护者\n  skills          — 列出技能簇\n  projects        — 精选项目\n  projects --list — 所有项目的 slug\n  contact         — 打开 /contact\n  cv | resume     — 下载简历\n  theme [name]    — 切换主题（light、dark、phoenix）\n  ls              — 列出目录内容\n  cat about.md    — 打印简短介绍\n  pwd             — 打印当前工作目录\n  date            — 当前本地时间\n  echo [text]     — 打印文本\n  history         — 最近的命令\n  neofetch        — 系统信息展示\n  matrix          — 进入矩阵\n  hire ayush      — 启动招聘流程\n  vim             — 打开编辑器（你懂的）\n  commits         — 让提交下起雨\n  sudo            — 试试看。\n  secrets         — 打开奖杯室\n  clear           — 清屏\n  exit            — 关闭终端（Esc）\n\n  提示：按 Tab 自动补全，↑/↓ 浏览历史。有些命令是隐藏的。🜂",
       "projectsHint": "精选项目（完整列表使用 `projects --list`):",
       "themeSet": "主题已切换为 {theme}。",
       "themeUsage": "用法：theme [light|dark|phoenix]",
       "opening": "正在打开 {what}…",
-      "unknown": "phoenix: {cmd}: 未找到命令。请尝试 `help`。"
+      "unknown": "phoenix: {cmd}: 未找到命令。\n试试：help / projects / resume / matrix / hire ayush",
+      "vim": {
+        "enter": "正在用 vim 打开 {file}。（祝你好运。）",
+        "hint": "-- INSERT --  尽管输入吧。要退出：:q  （或 :wq、:q!）",
+        "exit": "已离开 vim。你逃出来了——大多数人永远做不到。🜂"
+      },
+      "hire": {
+        "0": "▸ 正在为 Ayush Yadav 启动招聘流程…",
+        "1": "  [1/3] 简历筛选 .............. 通过",
+        "2": "  [2/3] 技术 + 系统设计 ....... 强烈建议录用",
+        "3": "  [3/3] Offer 阶段 → 正在打开 /contact，方便你联系。"
+      },
+      "fx": {
+        "boss": "老板模式：已切换为简洁的简历视图（稍后自动恢复）。",
+        "minimal": "极简模式已开启。少即是多（暂时）。",
+        "neon": "霓虹模式已开启。短暂感受一下赛博朋克氛围。",
+        "glitch": "故̷障̷模式已开启。现实可能会摇晃。",
+        "party": "🎉 派对模式！趁它还在，尽情享受吧。",
+        "commits": "正在让提交下起雨…",
+        "phoenix": "🜂 凤凰展翅高飞。"
+      },
+      "cd": {
+        "secret": "cd: 正在进入 /secret … 不错。输入 `secrets` 进入奖杯室。",
+        "generic": "cd: {dir}: 这是一个模拟的文件系统——这里没什么可看的。"
+      },
+      "download": {
+        "usage": "用法：download resume [--ats|--eda|--sde]",
+        "variant": "注意：“{variant}”版本的简历即将推出——暂时先下载默认版本。"
+      },
+      "hiddenImpact": {
+        "0": "🜂 .hidden-impact",
+        "1": "剖析驱动的 C++ 优化成果：仿真吞吐量 +18–19%，RCA 提速约 40%。",
+        "2": "已在 Apple、Google、Samsung 和 NVIDIA 的工作负载上验证。"
+      },
+      "cmd": {
+        "coffee": "☕ 冲泡中... 完成。工程师燃料已恢复至 100%。",
+        "bug": "🐛 这不是 bug，是没写进文档的功能。（已标记为 WONTFIX。）",
+        "nvidia": "GPU 呼呼狂转。仿真器优化成果已在 NVIDIA 工作负载上得到验证。🟩",
+        "cadence": "Cadence Design Systems——Ayush 在这里从事 Xcelium 仿真器的研发，并构建像 MAESTRO 这样的多智能体 AI。",
+        "leetcode": "每天打磨 DSA。个人主页：",
+        "binaryUsage": "用法：binary '<text>'  — 将文本编码为 8 位二进制。",
+        "konami": "↑ ↑ ↓ ↓ ← → ← → B A——你早就知道这个秘籍了。赠送 30 条命。🜂",
+        "secret": "🜂 你发现了一个隐藏命令。输入 `secrets` 进入奖杯室。",
+        "fortyTwo": "42——生命、宇宙以及大多数失败测试用例的答案。",
+        "easteregg": "🥚 你发现了一个关于彩蛋的彩蛋。非常 meta。",
+        "achievement": "🏆 成就解锁：输入了一个没人要求的命令。",
+        "crash": "Segmentation fault (core dumped). ……开玩笑的。一切正常。",
+        "panic": "kernel panic — not syncing：其实 phoenix 好得很。来杯咖啡吧。☕",
+        "undefined": "undefined is not a function。（但你不是 undefined。你很重要。）",
+        "rmrf": "想得美。这个终端是只读的——你的文件系统很安全。🛡️",
+        "hello": "👋 你好！输入 `help` 看看我能做什么。"
+      },
+      "fortunes": [
+        "先剖析。没有度量的优化是民间传说。",
+        "过早优化是万恶之源——但从不度量也是。",
+        "世上只有两件难事：缓存失效和给东西命名。",
+        "“在我机器上能跑”不是一种部署策略。",
+        "最好的代码是没有代码。其次是经过充分测试的代码。",
+        "失败的测试是一份礼物。时好时坏的测试是一个诅咒。",
+        "先让它能用，再让它正确，最后让它更快——按这个顺序。",
+        "只要延迟足够高，任何系统都是分布式系统。"
+      ]
     },
     "dino": {
       "titleRunner": "凤凰跑酷",
@@ -958,5 +1039,112 @@
       "completeMailBody": "你好 Ayush，\n\n我找到了作品集的所有彩蛋。\n\n— 一位同行者",
       "completeMailCta": "打个招呼"
     }
+  },
+  "shortcuts": {
+    "items": {
+      "now": "前往近况",
+      "engineer": "切换工程师模式"
+    }
+  },
+  "demos": {
+    "maestro": {
+      "title": "maestro · 指挥器 · 模拟",
+      "subtitle": "10 个智能体 · 20 个阶段 · 5 道关卡",
+      "stagesLabel": "工作流环节",
+      "gateMarker": "人工审批关卡",
+      "docLabel": "共享分析文档",
+      "empty": "选择工单类型并点击运行。指挥器会逐一走过各个阶段，并在每道人工关卡处停下。",
+      "kindLabel": "工单类型",
+      "defect": "缺陷",
+      "enhancement": "增强",
+      "failOnce": "让验证失败一次",
+      "run": "运行工单",
+      "pause": "暂停",
+      "resume": "继续",
+      "again": "再次运行",
+      "approve": "批准关卡",
+      "reset": "重置",
+      "note": "示意演示——环节与关卡对应真实的工作流；工单及其日志为合成数据。",
+      "stages": {
+        "intake": "受理",
+        "rca": "调试 · RCA",
+        "design": "设计",
+        "fix": "修复",
+        "validate": "验证",
+        "review": "评审",
+        "regress": "回归",
+        "release": "发布"
+      },
+      "log": {
+        "start": "指挥器 · 已收到 {kind} 工单",
+        "intake": "受理 · 工单已解析并分类；优先离线检索知识库",
+        "rca": "调试 · 已录制失败的运行，并回退到产生错误值的那次写入",
+        "design": "设计 · 需求和设计方案已写入分析文档",
+        "fix": "修复 · 已起草根因补丁——不做只治标的变通方案",
+        "validate": "验证 · 针对性测试在修复后的构建上全部通过",
+        "validateFail": "验证 · 测试失败 → 退回 {stage}（自愈循环）",
+        "review": "评审 · 差异与分析文档已打包，提交代码评审",
+        "regress": "回归 · 由工程师运行；结果由脚本分析，LLM token 消耗为零",
+        "release": "发布 · 文档、发行说明和知识库已更新",
+        "gate": "关卡 · 等待工程师批准",
+        "approved": "关卡 · 工程师已批准",
+        "done": "已解决 · 分析文档即完整的审计轨迹"
+      }
+    }
+  },
+  "architecture": {
+    "maestro": {
+      "aria": "MAESTRO 架构：指挥器引导工单依次经过一个 20 阶段工作流中的七个环节，途中设有五道人工审批关卡，各环节共享一份分析文档、一个知识库和 MCP 工具。"
+    },
+    "xcelium-ai-agents": {
+      "aria": "Xcelium AI 智能体架构：规划器在两条通道之间进行路由——一条是确定性的 Python 通道（受理、仿真运行器、剖析数据解析器、报告），另一条是 LLM 推理通道（分析、重写、应用）；另有一个基于检查清单的 LLM 裁判，将报告与 golden 参考进行比较。"
+    },
+    "regression-triage": {
+      "aria": "回归分诊架构：失败列表经过重跑、指纹化、分类和聚类；一个带有建议性 LLM 评审的类别关卡将差异类失败送去 regold，将其他失败送去过滤器或根因分析，随后按模式逐一验证，并将结果写入学习库。"
+    },
+    "perforce-replay": {
+      "aria": "Perforce 重放架构：由变更列表编号和目标分支驱动流推导、排序、生成涉及路径的计划、带故障修复的选择性同步、按序合并，最后执行一次自动解决，并将文件分为已合并和被拒绝两类。"
+    }
+  },
+  "experienceData": {
+    "cadence-design-systems": {
+      "highlights": {
+        "5": {
+          "title": "回归分诊与 Regold 系统",
+          "detail": "构建了一个约 16K 行的 Xcelium 回归系统，利用基于规则的分类、TF-IDF 聚类、历史学习和 JEDAI LLM 评审，自动完成分诊、regold、豁免和验证；已在 79 次运行中处理了 2,120 个失败，其中 73% 来自其他工程师的运行。"
+        },
+        "6": {
+          "title": "跨流 Perforce 重放",
+          "detail": "构建了重放工具，可推导出每个变更列表的源流，并只选择性同步其涉及的路径，从而自动完成跨 Xcelium 发布分支的多 CL 回移。"
+        },
+        "7": {
+          "title": "面向工程工具的 MCP 服务器",
+          "detail": "编写了 10 个 Model Context Protocol 服务器——包括一个含 50 个工具的时间旅行调试器桥接服务器，以及代码评审、构建和 LLM 网关服务器——将 GitHub Copilot、Cursor 和 Claude Code 连接到 EDA 与工程系统。"
+        },
+        "8": {
+          "title": "公司副总裁 / 董事总经理表彰",
+          "detail": "在 Cadence India Conference 上发表性能研究成果，并凭借 Samsung 合作项目中的性能工作获得多个奖项、公司副总裁表彰，以及全员大会上的重点表彰。"
+        }
+      }
+    }
+  },
+  "honorsData": {
+    "maestro-selected-for-trade-secret-protection": {
+      "title": "MAESTRO——入选商业秘密保护",
+      "org": "Cadence Design Systems",
+      "detail": "MAESTRO 是一个用于端到端工程工单解决的多智能体平台，被认定为专有知识产权，并入选商业秘密保护。"
+    }
+  },
+  "settings": {
+    "chatbot": "Ask Ayush 设置"
+  },
+  "skillsExplorer": {
+    "groups": {
+      "technical": "技术分类",
+      "applied": "工程应用"
+    }
+  },
+  "liveFeeds": {
+    "openXml": "打开 XML 订阅源"
   }
 }

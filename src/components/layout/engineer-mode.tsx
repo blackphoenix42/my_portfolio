@@ -15,13 +15,7 @@ export function EngineerModeProvider({ children }: { children: React.ReactNode }
   const { setRecruiter } = useRecruiterMode();
 
   useEffect(() => {
-    const stored = localStorage.getItem("engineer-mode");
-    if (stored === "1") setEngineerState(true);
-  }, []);
-
-  useEffect(() => {
     document.documentElement.dataset.engineer = engineer ? "1" : "0";
-    localStorage.setItem("engineer-mode", engineer ? "1" : "0");
   }, [engineer]);
 
   const setEngineer = useCallback(

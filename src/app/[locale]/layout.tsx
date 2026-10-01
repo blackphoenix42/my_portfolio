@@ -24,7 +24,6 @@ import { BootSequence } from "@/components/eggs/boot-sequence";
 import { EggToast } from "@/components/eggs/egg-toast";
 import { EggUnlockBurst } from "@/components/eggs/egg-unlock-burst";
 import { HaikuRecorder, SelectionWatcher } from "@/components/eggs/watchers";
-import { AskPortfolioLauncher } from "@/components/chatbot/ask-portfolio-launcher";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/content/profile";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -107,7 +106,6 @@ export default async function LocaleLayout({
               <SelectionWatcher />
               <EggToast />
               <EggUnlockBurst />
-              <AskPortfolioLauncher />
             </EngineerModeProvider>
           </RecruiterModeProvider>
         </EggProvider>

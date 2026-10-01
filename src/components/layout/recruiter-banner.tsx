@@ -1,11 +1,10 @@
 "use client";
 
-import { Download, Mail, MessageSquare, X } from "lucide-react";
-import { Linkedin } from "@/components/icons/brand";
+import { Download, Mail, X } from "lucide-react";
+import { Github, Linkedin } from "@/components/icons/brand";
 import { useRecruiterMode } from "./recruiter-mode";
 import { SITE } from "@/content/profile";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 
 export function RecruiterBanner() {
   const t = useTranslations("recruiterBanner");
@@ -17,9 +16,10 @@ export function RecruiterBanner() {
         <span className="text-accent-emerald font-mono text-[10px] tracking-widest uppercase">
           {t("modeOn")}
         </span>
-        <span className="text-fg-muted hidden sm:inline">
+        <span className="text-fg-muted">
           {t("summary", { role: SITE.role, location: SITE.location })}
         </span>
+        <p className="text-fg-muted w-full">{t("impact")}</p>
         <div className="ml-auto flex items-center gap-2">
           <a
             href={SITE.resumePath}
@@ -28,6 +28,15 @@ export function RecruiterBanner() {
             className="border-accent-emerald/40 bg-bg-elev text-fg hover:border-accent-emerald inline-flex items-center gap-1 rounded-md border px-2 py-1"
           >
             <Download className="h-3 w-3" /> {t("resume")}
+          </a>
+          <a
+            href={SITE.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-border text-fg-muted hover:text-fg inline-flex items-center gap-1 rounded-md border px-2 py-1"
+          >
+            <Github className="h-3 w-3" />
+            {t("github")}
           </a>
           <a
             href={SITE.linkedin}
@@ -43,12 +52,6 @@ export function RecruiterBanner() {
           >
             <Mail className="h-3 w-3" /> {t("email")}
           </a>
-          <Link
-            href="/contact"
-            className="border-accent-emerald/40 bg-accent-emerald/10 text-accent-emerald hover:bg-accent-emerald/20 inline-flex items-center gap-1 rounded-md border px-2 py-1"
-          >
-            <MessageSquare className="h-3 w-3" /> {t("contact")}
-          </Link>
           <button
             type="button"
             onClick={() => setRecruiter(false)}

@@ -22,6 +22,7 @@ import {
 import { Github } from "@/components/icons/brand";
 import { SITE } from "@/content/profile";
 import { projects } from "@/content/projects";
+import { systemDesigns } from "@/content/system-design";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { isAnyOverlayOpen } from "@/components/eggs/overlay-state";
@@ -34,7 +35,7 @@ const NAV_ITEMS = [
   { id: "experience", key: "experience", icon: Briefcase, href: "/experience" },
   { id: "cp", key: "cp", icon: Code2, href: "/competitive-programming" },
   { id: "system-design", key: "systemDesign", icon: Network, href: "/system-design" },
-  { id: "now", key: "now", icon: Compass, href: "/now" },
+  { id: "now", key: "now", icon: Compass, href: "/competitive-programming#now" },
   { id: "lab", key: "roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
   { id: "contact", key: "contact", icon: Mail, href: "/contact" },
 ] as const;
@@ -42,6 +43,7 @@ const NAV_ITEMS = [
 export function CommandMenu() {
   const t = useTranslations("command");
   const tProjects = useTranslations("projects");
+  const tDesign = useTranslations("systemDesign");
   const trProject = (slug: string, fallback: string) => {
     const path = `items.${slug}.title` as never;
     return tProjects.has(path) ? tProjects(path) : fallback;
@@ -134,7 +136,7 @@ export function CommandMenu() {
               heading={t("work")}
               className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:tracking-widest [&_[cmdk-group-heading]]:uppercase"
             >
-              {projects.map((p) => (
+              {projects.slice(0, 4).map((p) => (
                 <Command.Item
                   key={p.slug}
                   onSelect={() => go(`/work/${p.slug}`)}
@@ -142,6 +144,21 @@ export function CommandMenu() {
                 >
                   <Layers className="text-fg-subtle h-4 w-4" />
                   <span>{trProject(p.slug, p.title)}</span>
+                </Command.Item>
+              ))}
+            </Command.Group>
+            <Command.Group
+              heading={tDesign("pageHeading")}
+              className="[&_[cmdk-group-heading]]:text-fg-subtle px-1 py-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-2 [&_[cmdk-group-heading]]:text-xs"
+            >
+              {systemDesigns.slice(0, 4).map((s) => (
+                <Command.Item
+                  key={s.slug}
+                  onSelect={() => go(`/system-design/${s.slug}`)}
+                  className="aria-selected:bg-bg-sunken aria-selected:text-fg flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm"
+                >
+                  <Network className="text-fg-subtle h-4 w-4" />
+                  <span>{tDesign(`systems.${s.slug}.title`)}</span>
                 </Command.Item>
               ))}
             </Command.Group>

@@ -38,6 +38,27 @@ are enabled in the root layout. Both are **cookie-less** and exempt from GDPR co
 aggregate page views and Core Web Vitals using a short-lived hash that's recomputed daily and
 never linked back to an individual visitor.
 
+### On-device AI (optional)
+
+Choosing GPU or CPU in the assistant settings opts into a model download from Hugging Face:
+Llama 3.2 1B (~705 MB) for GPU, or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a
+pinned WebAssembly library from GitHub; the CPU runtime is served by this site. These hosts
+see standard download requests (IP address, user-agent). Questions and answers are processed
+on the device and never sent to these hosts.
+
+Downloaded models are cached in the browser. `localStorage` key `phoenix:chat:settings`
+stores preferences and measured engine speeds. A saved AI choice resumes when the panel is
+reopened. Turning AI off releases runtime memory; clearing this site's data also removes
+preferences and cached models. No cookies are added.
+
+Ask Ayush stores up to 20 independent chats (100 messages each) in this tab’s
+`sessionStorage` under `phoenix:chat:sessions`. Closing the panel and reloading retain
+these chats; browser session restoration may also retain them. Clear context excludes
+earlier messages from future answers without erasing the transcript. Clear chat erases
+the selected transcript and its context; Delete chat removes a conversation. Remove
+downloaded models clears model caches without erasing chats. Clearing site data erases
+these local records. Conversations are never used for training.
+
 ## What we do not do
 
 - We do not sell or share your data.
@@ -47,13 +68,14 @@ never linked back to an individual visitor.
 
 ## Third-party services in use
 
-| Service                            | Purpose                            | Data shared                                |
-| ---------------------------------- | ---------------------------------- | ------------------------------------------ |
-| Vercel                             | Hosting + edge functions           | Request logs                               |
-| [Resend](https://resend.com)       | Sending the contact-form email     | Your form submission + attachments         |
-| Vercel Web Analytics               | Aggregate page-view metrics        | Anonymous, cookie-less aggregates only     |
-| Vercel Speed Insights              | Real-user Core Web Vitals (LCP, …) | Anonymous, cookie-less performance samples |
-| GitHub / LinkedIn (outbound links) | External profile pages             | Standard browser request when you click    |
+| Service                                  | Purpose                              | Data shared                                     |
+| ---------------------------------------- | ------------------------------------ | ----------------------------------------------- |
+| Vercel                                   | Hosting + edge functions             | Request logs                                    |
+| [Resend](https://resend.com)             | Sending the contact-form email       | Your form submission + attachments              |
+| Vercel Web Analytics                     | Aggregate page-view metrics          | Anonymous, cookie-less aggregates only          |
+| Vercel Speed Insights                    | Real-user Core Web Vitals (LCP, …)   | Anonymous, cookie-less performance samples      |
+| GitHub / LinkedIn (outbound links)       | External profile pages               | Standard browser request when you click         |
+| Hugging Face + GitHub (only if AI is on) | One-time download of on-device model | Standard download request; never your questions |
 
 ## Your rights
 

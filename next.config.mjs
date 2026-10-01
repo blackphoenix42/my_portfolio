@@ -9,22 +9,25 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 // YouTube/Medium/GitHub feed fetches happen server-side so they don't need
 // `connect-src` exposure.
 //
-// Note on "Ask my portfolio": the in-browser chatbot uses a pure-JavaScript
-// TF-IDF lexical index (see src/lib/chatbot/*). It does NOT use WebAssembly or
-// transformers.js, so the CSP intentionally does NOT include
-// `'wasm-unsafe-eval'`. The only runtime fetch it adds is a same-origin GET of
-// /chatbot/corpus.json, already covered by `connect-src 'self'`.
+// Note on "Ask my portfolio": retrieval is a pure-JavaScript TF-IDF index over
+// a generated corpus bundled with the lazy panel. Optional local AI (ADR-0012)
+// is opt-in and needs two relaxations: `'wasm-unsafe-eval'` to compile the
+// WebLLM WebAssembly runtime (it does not allow JS eval), and `connect-src`
+// access to Hugging Face (model weights, redirected to *.hf.co) plus
+// raw.githubusercontent.com (the model's WASM library). Every executable
+// GPU artifact is pinned and SRI-verified in src/lib/chatbot/llm.ts. The CPU
+// WASM runtime is served same-origin from the locked wllama npm dependency.
 const isDev = process.env.NODE_ENV !== "production";
 const csp = [
   "default-src 'self'",
   // Scripts: inline + eval needed for Next.js dev tooling; production keeps
   // 'unsafe-inline' for the Next.js bootstrap script. A future hardening pass
   // can move to nonces via the Next.js `unstable_setHeaders` API.
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://avatars.githubusercontent.com https://raw.githubusercontent.com https://logo.clearbit.com https://www.google.com",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://huggingface.co https://*.huggingface.co https://*.hf.co https://raw.githubusercontent.com",
   "frame-src 'self'",
   "object-src 'self'",
   "base-uri 'self'",

@@ -75,13 +75,23 @@ export function WorkGrid({
   labels,
   quirkyLabels,
   allLabel,
+  initialLimit = 4,
 }: {
   cards: WorkCard[];
-  labels: { readMore: string; professional: string; openSource: string; filter: string };
+  labels: {
+    readMore: string;
+    professional: string;
+    openSource: string;
+    filter: string;
+    seeMore: string;
+    seeLess: string;
+  };
   quirkyLabels: Record<string, string>;
   allLabel: string;
+  initialLimit?: number;
 }) {
   const [active, setActive] = useState<QuirkyFilter>(ALL_QUIRKY_FILTER);
+  const [expanded, setExpanded] = useState(false);
   const tags = useMemo(() => availableQuirkyTags(cards), [cards]);
   const visible = useMemo(() => filterByQuirkyTag(cards, active), [cards, active]);
 
@@ -111,7 +121,7 @@ export function WorkGrid({
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {visible.map((p) => {
+        {(expanded ? visible : visible.slice(0, initialLimit)).map((p) => {
           const Icon = Icons[p.slug] ?? Cpu;
           const Thumb = Thumbs[p.slug];
           return (
@@ -162,6 +172,16 @@ export function WorkGrid({
           );
         })}
       </div>
+      {visible.length > initialLimit && (
+        <button
+          type="button"
+          className="btn-secondary mt-6 text-sm"
+          aria-expanded={expanded}
+          onClick={() => setExpanded((v) => !v)}
+        >
+          {expanded ? labels.seeLess : labels.seeMore}
+        </button>
+      )}
     </>
   );
 }

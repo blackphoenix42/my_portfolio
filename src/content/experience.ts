@@ -1,4 +1,5 @@
 export type Experience = {
+  id?: string;
   company: string;
   role: string;
   location: string;
@@ -15,13 +16,14 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    id: "cadence-engineer-ii",
     company: "Cadence Design Systems",
     role: "R&D Software Engineer II",
-    location: "Noida, India",
-    start: "Jul 2022",
+    location: "Noida, India · Hybrid",
+    start: "Jan 2026",
     end: "Present",
     summary:
-      "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, multi-agent AI systems and developer tooling for regression and release workflows.",
+      "Building AI-driven engineering infrastructure for Xcelium: ticket resolution, simulation optimization, regression intelligence and release automation.",
     highlights: [
       {
         title: "MAESTRO — Multi-Agent Ticket Resolution",
@@ -32,26 +34,14 @@ export const experiences: Experience[] = [
       {
         title: "ChipStack Xcelium AI Agents",
         detail:
-          "Built multi-agent performance and memory optimization workflows on the OpenAI Agents SDK, achieving a 31.3% simulation speedup on a validated benchmark; a deterministic-first re-architecture made runs 1.93× faster end to end and analysis 3.9× faster.",
-        tags: ["Python", "OpenAI Agents SDK", "LLM Evaluation"],
+          "Developed performance and memory optimization agents using Python, OpenAI Agents SDK and RAG to profile simulations, identify bottlenecks, and recommend, apply and verify optimizations; achieved 31.3% simulation speedup on a validated benchmark.",
+        tags: ["Python", "OpenAI Agents SDK", "RAG", "LLM Evaluation"],
       },
       {
-        title: "Xcelium Logic Simulator Optimization",
+        title: "Deterministic-First Agent Workflows",
         detail:
-          "Engineered low-level C++ and simulator-architecture optimizations that improved overall throughput by 18–19% on large customer workloads and helped secure a strategic Samsung performance win.",
-        tags: ["C++", "Profiling", "Runtime"],
-      },
-      {
-        title: "Xform Engine RTL Transformations",
-        detail:
-          "Implemented RTL transformations in the Xform Engine, delivering 13–14% cumulative parsing/runtime gains across designs from Apple, Google, Samsung and NVIDIA.",
-        tags: ["RTL", "Compilers", "SystemVerilog"],
-      },
-      {
-        title: "Performance-Analysis Library",
-        detail:
-          "Built reusable C++ diagnostics APIs and a structured-log pipeline across Compile, Elab and Sim; added Top-N profiling, graph-based attribution and Fenwick counters, reducing RCA time by ~40%.",
-        tags: ["C++", "Library Design", "Diagnostics"],
+          "Re-architected agent workflows as a deterministic-first Python pipeline, cutting end-to-end execution from 148.3s to 76.8s and analysis from 71.1s to 18.0s on a benchmark design.",
+        tags: ["Python", "Performance", "Workflow Orchestration"],
       },
       {
         title: "Regression Triage & Regold System",
@@ -72,10 +62,46 @@ export const experiences: Experience[] = [
         tags: ["MCP", "Python", "Developer Tooling"],
       },
       {
-        title: "Corporate VP / MD Recognition",
+        title: "Reusable Engineering Infrastructure",
         detail:
-          "Presented performance findings at Cadence India Conference and received multiple awards, Corporate VP recognition and All-Hands spotlighting for Samsung-deal performance work.",
-        tags: ["Impact", "Recognition"],
+          "Designed graph-based workflow orchestration, checkpoint/resume, structured outputs, failure recovery, LLM-as-judge regression testing and developer automation tooling.",
+        tags: ["Pydantic", "YAML", "Checkpoint/Resume", "LLM-as-Judge"],
+      },
+    ],
+  },
+  {
+    id: "cadence-engineer",
+    company: "Cadence Design Systems",
+    role: "R&D Software Engineer",
+    location: "Noida, India · On-site",
+    start: "Jul 2022",
+    end: "Jan 2026",
+    summary:
+      "Low-level C++ optimization, RTL transformations and distributed performance analysis for Xcelium Logic Simulator.",
+    highlights: [
+      {
+        title: "Xcelium Throughput & Samsung Performance Win",
+        detail:
+          "Engineered low-level C++ optimizations and scalable simulator architecture, improving throughput by 18–19% on large-scale distributed workloads. Led benchmarking and distributed performance analysis that contributed to a multi-million dollar Samsung deal.",
+        tags: ["C", "C++", "Profiling", "Linux"],
+      },
+      {
+        title: "Xform Engine RTL Transformations",
+        detail:
+          "Implemented RTL transformations delivering 13–14% cumulative parsing speedups and improved simulation performance for Apple, Google, Samsung and NVIDIA workloads.",
+        tags: ["SystemVerilog", "RTL", "Compilers"],
+      },
+      {
+        title: "Diagnostics & Cadence India Conference",
+        detail:
+          "Presented technical findings at Cadence India Conference, driving adoption of diagnostic libraries that reduced root-cause analysis time by ~40% through flag analysis and log parsing.",
+        tags: ["Python", "Bash", "GNU / Undo Debugger", "Valgrind", "Sun Studio", "ASAN"],
+      },
+      {
+        title: "Corporate VP Recognition & All-Hands Spotlight",
+        detail:
+          "Received multiple awards for technical leadership and innovation, including Corporate VP recognition and an All-Hands spotlight for driving Samsung-deal performance wins.",
+        tags: ["Performance Engineering", "Perforce", "Jira"],
       },
     ],
   },

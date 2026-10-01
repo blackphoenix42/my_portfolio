@@ -1,0 +1,25 @@
+name: Refresh public feeds
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".node-version"
+      - name: Check all three upstream feeds
+        run: node scripts/check-feeds.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Warm the deployed feed page and trigger expired ISR
+        run: curl --fail --silent --show-error --retry 2 --max-time 60 --output /dev/null https://binaryphoenix.vercel.app/feeds

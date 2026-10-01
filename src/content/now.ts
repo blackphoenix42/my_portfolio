@@ -6,7 +6,7 @@
 // date whenever you revise this page.
 export const NOW = {
   // ISO date the page was last meaningfully updated.
-  updated: "2026-09-27",
+  updated: "2026-10-01",
   location: "India",
   /**
    * Each section maps to an i18n group under the `now` namespace. The `items`
@@ -34,7 +34,7 @@ export const NOW = {
     {
       id: "building",
       items: [
-        "This portfolio — an Engineer Mode, a system-design whiteboard section and a local Ask-My-Portfolio assistant.",
+        "This portfolio — system-design whiteboards and Ask Ayush with independent conversations and optional on-device AI.",
         "AlgoLens — an interactive DSA visualizer (open source).",
       ],
     },

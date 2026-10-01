@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
   Cpu,
@@ -56,6 +56,7 @@ const Thumbs: Record<string, () => React.ReactElement> = {
 };
 
 export function FeaturedWork({ limit }: { limit?: number } = {}) {
+  const reduce = useReducedMotion();
   const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
   const t = useTranslations("work");
   const tCommon = useTranslations("common");
@@ -89,7 +90,7 @@ export function FeaturedWork({ limit }: { limit?: number } = {}) {
             return (
               <motion.article
                 key={p.slug}
-                initial={{ opacity: 0, y: 16 }}
+                initial={reduce ? false : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.55, delay: i * 0.08 }}

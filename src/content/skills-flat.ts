@@ -107,7 +107,7 @@ export const flatSkillCategories: FlatCategory[] = [
     ],
   },
   {
-    id: "security",
+    id: "reliability-security",
     label: "Reliability & Security",
     accent: "amber",
     skills: [

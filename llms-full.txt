@@ -53,18 +53,24 @@ without prior written permission.
    (`InView` wrapper) or finalizes instantly when `prefers-reduced-motion` is set.
 7. **Security headers.** CSP, HSTS preload (2 years), COOP same-origin, CORP
    same-origin, restrictive Permissions-Policy. See `next.config.mjs`.
-8. **Audience modes.** Recruiter Mode and Engineer Mode are mutually-exclusive,
-   `localStorage`-backed React contexts that re-compose server-rendered sections
-   client-side (no new cookie). Engineer Mode reveals architecture/algorithms/
+8. **Audience modes.** Recruiter Mode and Engineer Mode are mutually-exclusive
+   React contexts that re-compose server-rendered sections client-side (no new
+   cookie). Recruiter Mode is persisted; Engineer Mode starts off on each full load
+   and can be enabled in Site settings. It reveals architecture/algorithms/
    performance/write-up sections. See `docs/ADR/0009-audience-modes.md`.
-9. **Chatbot is lexical, not neural.** "Ask my portfolio" uses a dependency-free
-   TF-IDF index (`src/lib/chatbot/*`) over a curated corpus built at
-   `prebuild` time into `public/chatbot/corpus.json`. No WebAssembly, so the CSP
-   needs no `'wasm-unsafe-eval'`; no model download, no network, no tracking. See
-   `docs/ADR/0010-lexical-chatbot.md`.
-10. **System-design whiteboards.** `/system-design` renders topics from
-    `src/content/system-design.ts` through a dynamic registry that lazy-loads
-    interactive boards or a static "coming soon" fallback. See
+9. **Chatbot is retrieval-first, LLM optional.** "Ask Ayush" retrieves
+   from a TF-IDF index (`src/lib/chatbot/*`) rebuilt from `src/content` at
+   `predev`/`prebuild` time into `public/chatbot/corpus.json`. Visitors can opt
+   in to GPU Llama 3.2 1B (WebLLM) or CPU Qwen2.5 0.5B (wllama) that rephrases
+   only the retrieved facts. GPU code is SRI-verified; CPU code is self-hosted,
+   and questions never leave the browser. See `docs/ADR/0010-lexical-chatbot.md`
+   and `docs/ADR/0012-on-device-llm.md`. Independent conversations are tab-scoped
+   in sessionStorage with separate clear-context and clear-chat controls
+   (ADR-0013). Settings also offer model-cache removal.
+10. **System-design whiteboards.** Work previews four expandable designs;
+    `/system-design/[slug]` renders each topic from `src/content/system-design.ts`
+    with HLD, LLD and decision tabs. A dynamic registry lazy-loads interactive
+    demos and step-through architecture explorers. See
     `docs/ADR/0011-system-design-whiteboards.md`.
 
 ## Directory map

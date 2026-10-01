@@ -1,100 +1,32 @@
 // Precompute the "Ask my portfolio" retrieval corpus.
 //
-// Reads the curated knowledge chunks (real, public facts) and writes
+// Combines the curated knowledge chunks with chunks derived automatically from
+// src/content/*.ts (projects, experience, skills, /now, system design, honors),
+// so the assistant picks up new site content on every build. Writes
 // public/chatbot/corpus.json with per-chunk L2-normalized TF–IDF vectors plus
 // the global idf map. Fully deterministic, no network, no model download.
 //
-// IMPORTANT: the tokenizer below must stay in sync with src/lib/chatbot/embed.ts
-// (there is a unit test pinning the expected tokens).
+// Content modules and the tokenizer are imported as TypeScript via Node's
+// built-in type stripping (Node >= 22.18), so they must only use erasable
+// syntax. Sharing src/lib/chatbot/embed.ts keeps build-time and query-time
+// tokenization identical.
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { tokenize, termFrequencies, weightAndNormalize } from "../src/lib/chatbot/embed.ts";
+import { buildSiteChunks } from "../src/lib/chatbot/ingest.ts";
+import { SITE } from "../src/content/profile.ts";
+import { projects } from "../src/content/projects.ts";
+import { experiences, internships, educationHistory } from "../src/content/experience.ts";
+import { clusters } from "../src/content/skills.ts";
+import { competitive } from "../src/content/achievements.ts";
+import { honors, languages } from "../src/content/extras.ts";
+import { NOW } from "../src/content/now.ts";
+import { systemDesigns } from "../src/content/system-design.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-
-const STOPWORDS = new Set([
-  "the",
-  "a",
-  "an",
-  "and",
-  "or",
-  "but",
-  "of",
-  "to",
-  "in",
-  "on",
-  "for",
-  "with",
-  "is",
-  "are",
-  "was",
-  "were",
-  "be",
-  "been",
-  "as",
-  "at",
-  "by",
-  "it",
-  "its",
-  "this",
-  "that",
-  "these",
-  "those",
-  "from",
-  "into",
-  "you",
-  "your",
-  "i",
-  "me",
-  "my",
-  "we",
-  "our",
-  "do",
-  "does",
-  "how",
-  "what",
-  "which",
-  "who",
-  "when",
-  "where",
-  "why",
-  "can",
-  "could",
-  "would",
-  "should",
-  "about",
-  "tell",
-]);
-
-function tokenize(text) {
-  const matches = text.toLowerCase().match(/[a-z0-9+#]+/g);
-  if (!matches) return [];
-  return matches.filter((tok) => tok.length >= 2 && !STOPWORDS.has(tok));
-}
-
-function termFrequencies(tokens) {
-  const tf = new Map();
-  for (const tok of tokens) tf.set(tok, (tf.get(tok) ?? 0) + 1);
-  return tf;
-}
-
-function weightAndNormalize(tf, idf) {
-  const weighted = {};
-  let sumSq = 0;
-  for (const [term, count] of tf.entries()) {
-    const w = idf[term];
-    if (!w) continue;
-    const value = (1 + Math.log(count)) * w;
-    weighted[term] = value;
-    sumSq += value * value;
-  }
-  if (sumSq === 0) return weighted;
-  const norm = Math.sqrt(sumSq);
-  for (const term of Object.keys(weighted)) weighted[term] = weighted[term] / norm;
-  return weighted;
-}
 
 function round(vec) {
   const out = {};
@@ -102,9 +34,33 @@ function round(vec) {
   return out;
 }
 
+async function loadSiteChunks() {
+  const en = JSON.parse(await readFile(join(ROOT, "messages/en.json"), "utf8"));
+  return buildSiteChunks({
+    site: SITE,
+    projects,
+    experiences,
+    internships,
+    education: educationHistory,
+    skills: clusters,
+    competitive,
+    honors,
+    languages,
+    now: NOW,
+    nowTitles: en.now?.sectionTitles ?? {},
+    systemDesigns,
+  });
+}
+
 async function main() {
   const raw = await readFile(join(ROOT, "src/content/chatbot-knowledge.json"), "utf8");
-  const { chunks } = JSON.parse(raw);
+  const curated = JSON.parse(raw).chunks;
+  const chunks = [...curated, ...(await loadSiteChunks())];
+  const ids = new Set();
+  for (const c of chunks) {
+    if (ids.has(c.id)) throw new Error(`duplicate chunk id: ${c.id}`);
+    ids.add(c.id);
+  }
 
   const docTokens = chunks.map((c) => tokenize(`${c.title} ${c.text}`));
   const N = chunks.length;
@@ -124,6 +80,7 @@ async function main() {
     source: c.source,
     title: c.title,
     text: c.text,
+    ...(c.href ? { href: c.href } : {}),
     vector: round(weightAndNormalize(termFrequencies(docTokens[i]), idf)),
   }));
 

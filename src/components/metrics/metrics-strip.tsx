@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { metrics } from "@/content/metrics";
@@ -8,6 +8,7 @@ import { accentText } from "@/lib/utils";
 
 export function MetricsStrip() {
   const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
   const inView = useInView(ref, { once: true, margin: "-10%" });
   const t = useTranslations("metrics");
   return (
@@ -26,7 +27,7 @@ export function MetricsStrip() {
           {metrics.map((m, i) => (
             <motion.article
               key={m.id}
-              initial={{ opacity: 0, y: 12 }}
+              initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               className="card card-hover p-4"

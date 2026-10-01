@@ -76,10 +76,20 @@ export function AboutSection() {
               <a href={`mailto:${SITE.email}`} className="btn-ghost text-xs">
                 <Mail className="h-3.5 w-3.5" /> {tCommon("email")}
               </a>
-              <a href={SITE.github} className="btn-ghost text-xs">
+              <a
+                href={SITE.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost text-xs"
+              >
                 <Github className="h-3.5 w-3.5" /> {tCommon("github")}
               </a>
-              <a href={SITE.linkedin} className="btn-ghost text-xs">
+              <a
+                href={SITE.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost text-xs"
+              >
                 <Linkedin className="h-3.5 w-3.5" /> {tCommon("linkedin")}
               </a>
             </div>

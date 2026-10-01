@@ -37,14 +37,10 @@ export function GlitchName({
     return () => clearTimeout(id);
   }, [glitch, reduce]);
 
-  if (reduce) {
-    return <span className={className}>{name}</span>;
-  }
-
   return (
     <span
       data-text={name}
-      className={cn("glitch-name", active && "glitch-name--active", className)}
+      className={cn("glitch-name", active && !reduce && "glitch-name--active", className)}
     >
       {name}
     </span>
