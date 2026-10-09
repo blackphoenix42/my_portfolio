@@ -5,6 +5,7 @@ import {
   fetchMediumFeed,
   fetchYouTubeFeed,
   fetchGithubActivity,
+  fetchRecentCommitMessages,
   formatRelative,
 } from "@/lib/feeds";
 
@@ -277,5 +278,118 @@ describe("fetchGithubActivity", () => {
     mockFetch(async () => new Response(JSON.stringify(events), { status: 200 }));
     const out = await fetchGithubActivity("u");
     expect(out[0]!.title).toMatch(/1 commit\b/);
+  });
+});
+
+describe("fetchRecentCommitMessages", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
+  });
+
+  it("merges Events + Search results and skips merge/wip noise", async () => {
+    vi.stubEnv("GITHUB_TOKEN", "tok");
+    mockFetch(async (url) => {
+      if (url.includes("/events/public")) {
+        return new Response(
+          JSON.stringify([
+            {
+              type: "PushEvent",
+              created_at: "2026-10-01T00:00:00Z",
+              repo: { name: "u/r" },
+              payload: {
+                commits: [
+                  { message: "feat: rain\nbody", sha: "abcdef012345" },
+                  { message: "Merge branch x", sha: "deadbeef" },
+                  { message: "wip: ignore", sha: "cafebabe" },
+                ],
+              },
+            },
+            {
+              type: "WatchEvent",
+              created_at: "2026-10-01T00:00:00Z",
+              repo: { name: "u/r" },
+              payload: {},
+            },
+          ]),
+        );
+      }
+      if (url.includes("/search/commits")) {
+        return new Response(
+          JSON.stringify({
+            items: [
+              {
+                sha: "111111122222",
+                commit: { message: "feat: search hit" },
+                repository: { full_name: "u/r2" },
+              },
+              {
+                sha: "abcdef012345",
+                commit: { message: "feat: rain" },
+                repository: { full_name: "u/r" },
+              },
+            ],
+          }),
+        );
+      }
+      return new Response("", { status: 404 });
+    });
+
+    const out = await fetchRecentCommitMessages("u", { limit: 10, window: "month" });
+    expect(out.map((line) => line.message)).toEqual(["feat: rain", "feat: search hit"]);
+    expect(out[0]!.sha).toBe("abcdef0");
+    expect(out[1]!.repo).toBe("u/r2");
+  });
+
+  it("accepts a numeric limit shorthand and falls back to Atom", async () => {
+    mockFetch(async (url) => {
+      if (url.includes("api.github.com")) return new Response("", { status: 403 });
+      return new Response(
+        `<feed>
+          <entry><title>blackphoenix42 pushed to repo</title></entry>
+          <entry><title>Opened a pull request</title></entry>
+          <entry><title>blackphoenix42 created a commit</title></entry>
+        </feed>`,
+      );
+    });
+    const out = await fetchRecentCommitMessages("blackphoenix42", 2);
+    expect(out).toHaveLength(2);
+    expect(out[0]!.message).toMatch(/push/i);
+    expect(out[0]!.sha).toMatch(/^[0-9a-f]{7}$/);
+  });
+
+  it("requests extra Search pages for year windows", async () => {
+    const urls: string[] = [];
+    mockFetch(async (url) => {
+      urls.push(url);
+      if (url.includes("/events/public")) {
+        return new Response(JSON.stringify([]));
+      }
+      if (url.includes("/search/commits")) {
+        const page = new URL(url).searchParams.get("page");
+        if (page === "1") {
+          return new Response(
+            JSON.stringify({
+              items: [{ sha: "aaaaaaaa", commit: { message: "year one" } }],
+            }),
+          );
+        }
+        return new Response(
+          JSON.stringify({
+            items: [{ sha: "bbbbbbbb", commit: { message: "year two" } }],
+          }),
+        );
+      }
+      return new Response("", { status: 404 });
+    });
+
+    const out = await fetchRecentCommitMessages("u", { limit: 5, window: "year" });
+    expect(out.map((line) => line.message)).toEqual(["year one", "year two"]);
+    expect(urls.filter((u) => u.includes("/search/commits"))).toHaveLength(2);
+  });
+
+  it("returns [] when every upstream source fails", async () => {
+    mockFetch(async () => new Response("", { status: 500 }));
+    expect(await fetchRecentCommitMessages("u", { window: "week" })).toEqual([]);
   });
 });
