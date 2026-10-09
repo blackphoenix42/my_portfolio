@@ -34,7 +34,9 @@
     "code": "कोड",
     "demo": "डेमो",
     "year": "वर्ष",
-    "present": "वर्तमान"
+    "present": "वर्तमान",
+    "back": "Back",
+    "privacy": "Privacy"
   },
   "nav": {
     "home": "होम",
@@ -52,7 +54,7 @@
     "liveFeeds": "लाइव फ़ीड",
     "liveFeedsLabel": "लाइव फ़ीड (Medium, YouTube, GitHub)",
     "primary": "प्राथमिक नेविगेशन",
-    "craft": "अभ्यास और योजनाएँ"
+    "craft": "अभी"
   },
   "header": {
     "ariaLogoHome": "{name} — होम"
@@ -71,7 +73,8 @@
     "builtWith": "बनाया गया",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel से",
     "copyright": "© {year} {name}",
-    "tagline": "प्रदर्शन-महत्वपूर्ण सिस्टम में इंजीनियरिंग बुद्धिमत्ता।"
+    "tagline": "प्रदर्शन-महत्वपूर्ण सिस्टम में इंजीनियरिंग बुद्धिमत्ता।",
+    "stackAriaLabel": "Technologies this site is built with"
   },
   "language": {
     "label": "भाषा",
@@ -118,7 +121,11 @@
     "linkedin": "LinkedIn",
     "email": "ईमेल",
     "contact": "संपर्क",
-    "exitAria": "रिक्रूटर मोड बंद करें"
+    "exitAria": "रिक्रूटर मोड बंद करें",
+    "modeOn": "Recruiter mode · ON",
+    "summary": "{role} · {location} · Open to software engineering roles in C++ systems, performance engineering & AI tooling.",
+    "impact": "Building performance-critical developer infrastructure with production impact across Apple, Google, Samsung & NVIDIA workloads.",
+    "github": "GitHub"
   },
   "command": {
     "title": "कमांड मेन्यू",
@@ -150,7 +157,8 @@
       "roadmap": "रोडमैप",
       "contact": "संपर्क",
       "systemDesign": "सिस्टम डिज़ाइन",
-      "now": "अभी"
+      "now": "अभी",
+      "cp": "Now · CP & Roadmap"
     },
     "openTerminal": "टर्मिनल मोड खोलें",
     "openMatrix": "मैट्रिक्स रेन खोलें",
@@ -188,6 +196,14 @@
         "hot": "18–19% थ्रूपुट",
         "out": "सत्यापित फ़िक्स"
       }
+    },
+    "headline": "I build <strong>faster systems</strong> and <strong>AI tools that help engineers ship</strong>.",
+    "subhead": "R&D Software Engineer II at Cadence. 4.5+ years building high-performance C++, Python automation and reliable AI workflows — from Xcelium and RTL optimization to developer infrastructure.",
+    "taglines": {
+      "0": "Performance-critical C++ × distributed systems × agentic AI.",
+      "1": "Production wins on Apple, Google, Samsung and NVIDIA workloads.",
+      "2": "From low-level profiling to AI-assisted developer tooling at scale.",
+      "3": "Owning problems end-to-end — measure, design, ship, operate."
     }
   },
   "home": {
@@ -198,7 +214,28 @@
   "aboutSection": {
     "eyebrow": "/ परिचय",
     "heading": "संक्षिप्त परिचय",
-    "getInTouch": "संपर्क करें"
+    "getInTouch": "संपर्क करें",
+    "bio1": "I’m <strong>{name}</strong>, an R&D Software Engineer II with <strong>4.5+ years of experience</strong> in C++, Python and AI-driven automation. At {company}, I work on Xcelium and large-scale RTL optimization for Apple, Google, Samsung and NVIDIA workloads.",
+    "bio2": "My work connects low-level systems performance with engineering productivity: profiling simulators, building multi-agent assistive tooling (including trade-secret work such as MAESTRO), and automating regression and release workflows. I enjoy problems at the intersection of software, performance and hardware.",
+    "principlesEyebrow": "How I build reliable systems",
+    "principles": {
+      "profile": {
+        "title": "Measure before optimizing.",
+        "body": "Use profiles, reproducible benchmarks and workload-specific evidence."
+      },
+      "gap": {
+        "title": "Make the routine deterministic.",
+        "body": "Use explicit pipelines for repeatable work and AI where reasoning adds value."
+      },
+      "trust": {
+        "title": "Keep people in control.",
+        "body": "Design review gates, structured outputs, checkpoints and recovery into agent workflows."
+      },
+      "performance": {
+        "title": "Verify the whole change.",
+        "body": "Check correctness, performance and regression behavior before calling an optimization done."
+      }
+    }
   },
   "about": {
     "title": "परिचय",
@@ -264,7 +301,8 @@
       "forage": "Forage",
       "niit": "NIIT",
       "udemy": "Udemy"
-    }
+    },
+    "honorsIntro": "Recognition for performance work contributing to a multi-million dollar Samsung deal, proprietary AI engineering IP, conference contributions and earlier grants and competition wins."
   },
   "work": {
     "title": "कार्य",
@@ -307,7 +345,7 @@
     "linksHeading": "लिंक",
     "relatedHeading": "संबंधित कार्य",
     "demoSubtitle": {
-      "maestro": "कंडक्टर के ज़रिए एक सिम्युलेटेड टिकट चलाएँ — हर मानव गेट को स्वीकृत करें और देखें कि विफल टेस्ट कैसे रूट-कॉज़ विश्लेषण पर वापस लौटता है।",
+      "maestro": "Interactive workflow walkthrough omitted — MAESTRO is trade-secret protected.",
       "algolens": "AlgoLens निष्पादन मॉडल का एक लघु विज़ुअलाइज़र।",
       "xcelium-optimization": "स्लाइडर को खींचें ताकि देख सकें कि RTL/रनटाइम अनुकूलन के साथ प्रोफ़ाइल कैसे संकुचित होती है।",
       "tezos-premier-league": "डिटरमिनिस्टिक ऑन-चेन PvP ब्रैकेट का सिमुलेशन करने के लिए प्ले क्लिक करें।",
@@ -328,7 +366,8 @@
     "pageTitle": "कौशल · इंजीनियरिंग शस्त्रागार",
     "pageDescription": "फ़िल्टर-योग्य कौशल एक्सप्लोरर तथा परफ़ॉर्मेंस, बुद्धिमान सिस्टम, बैकएंड, प्रोडक्ट और अवसंरचना तक फैले क्षमता समूह।",
     "tag": "/ कौशल",
-    "pageHeading": "इंजीनियरिंग शस्त्रागार"
+    "pageHeading": "इंजीनियरिंग शस्त्रागार",
+    "pageIntro": "Explore technical tools and the engineering areas where I apply them."
   },
   "experience": {
     "title": "अनुभव",
@@ -345,7 +384,9 @@
     "internshipsTitle": "इंटर्नशिप और फ़ेलोशिप",
     "internshipsAria": "इंटर्नशिप और फ़ेलोशिप समयरेखा",
     "educationHeading": "शिक्षा",
-    "score": "स्कोर:"
+    "score": "स्कोर:",
+    "present": "Present",
+    "previousRole": "Previous role at Cadence"
   },
   "competitiveProgramming": {
     "title": "प्रतियोगी प्रोग्रामिंग",
@@ -364,7 +405,27 @@
     "tagline": "हैंडल और लाइव रेटिंग प्रत्येक प्लेटफ़ॉर्म पर स्वतंत्र रूप से अपडेट होते हैं — सत्यापित करने के लिए टाइल पर क्लिक करें।",
     "roadmapAria": "इंजीनियरिंग रोडमैप",
     "roadmapTag": "/ रोडमैप",
-    "roadmapHeading": "मैं आगे क्या बना रहा हूँ"
+    "roadmapHeading": "मैं आगे क्या बना रहा हूँ",
+    "pageTitle": "Now · CP & Roadmap",
+    "pageDescription": "Competitive programming, current engineering focus and an incremental plan for the 2027 roadmap.",
+    "craftTag": "/ now",
+    "pageHeading": "What I’m doing now.",
+    "pageIntro": "Competitive programming, current focus, and the learning and small releases that shape my next systems.",
+    "roadmapIntro": "2027 targets for the next set of systems. The approach is incremental: learn the core concepts, build a narrow working slice, then validate it before expanding.",
+    "approach": {
+      "learn": {
+        "title": "Learn with a concrete problem",
+        "body": "Study queues and backpressure for InfraLens, OpenTelemetry and storage for TraceMind, and graph algorithms and WebAssembly for SiliconGraph. Use focused exercises to test each idea."
+      },
+      "build": {
+        "title": "Ship a small working slice",
+        "body": "Start with one traffic path, one trace investigation or one RTL graph. Add capabilities incrementally, keeping each step inspectable and useful on its own."
+      },
+      "validate": {
+        "title": "Measure, test and iterate",
+        "body": "Create repeatable fixtures, check failure behavior, compare performance and write down trade-offs. Use Q4 2027 for integration, documentation and feedback after the initial targets."
+      }
+    }
   },
   "contact": {
     "title": "संपर्क",
@@ -423,7 +484,41 @@
       "roleAriaLabel": "भूमिका",
       "formNote": "दर सीमा और सर्वर सत्यापन द्वारा संरक्षित।",
       "networkError": "नेटवर्क त्रुटि। कृपया पुनः प्रयास करें या सीधे ईमेल करें।",
-      "genericServerError": "कुछ गड़बड़ हो गई। कृपया मुझे सीधे ईमेल करें।"
+      "genericServerError": "कुछ गड़बड़ हो गई। कृपया मुझे सीधे ईमेल करें।",
+      "otherRoleLabel": "Specify your role",
+      "otherRolePlaceholder": "e.g. Investor, Journalist, Conference organizer…",
+      "emailHint": "Tip: start typing a domain and press <kbd>Tab</kbd> to autocomplete.",
+      "errors": {
+        "nameShort": "Name is too short.",
+        "nameLong": "Name is too long.",
+        "emailInvalid": "Please enter a valid email address.",
+        "emailLong": "Email is too long.",
+        "companyLong": "Company is too long.",
+        "roleInvalid": "Pick one of the listed roles.",
+        "subjectShort": "Subject is too short.",
+        "subjectLong": "Subject is too long.",
+        "messageShort": "Please write at least 20 characters.",
+        "messageLong": "Please shorten your message.",
+        "otherRoleRequired": "Please specify your role.",
+        "otherRoleLong": "Role description is too long.",
+        "phoneInvalid": "Please enter a valid phone number.",
+        "phoneLong": "Phone number is too long."
+      },
+      "attachments": {
+        "label": "Attachments",
+        "dropPrompt": "Drag and drop, or <browse>click to browse</browse>",
+        "dropOverlayTitle": "Drop files to attach",
+        "hint": "Up to {maxFiles} files, {maxMb} MB total. PDF, images, DOCX, TXT, or MD.",
+        "remove": "Remove {filename}",
+        "tooMany": "You can attach up to {max} files.",
+        "tooLarge": "Total attachment size must be under {maxMb} MB.",
+        "unsupported": "“{filename}” isn’t a supported type.",
+        "totalSize": "{used} / {max} MB"
+      },
+      "rateLimit": {
+        "title": "Slow down a bit",
+        "body": "You’ve sent {limit} messages in the last minute. Please retry in {seconds} second{plural}."
+      }
     }
   },
   "contactCta": {
@@ -516,6 +611,7 @@
         "2": "प्रोडक्शन स्केल पर वेक्टर डेटाबेस और एम्बेडिंग पाइपलाइन।"
       },
       "building": {
+        "0": "This portfolio — system-design whiteboards and Ask Ayush with independent conversations and optional on-device AI.",
         "1": "AlgoLens — एक इंटरैक्टिव DSA विज़ुअलाइज़र (ओपन सोर्स)।"
       },
       "reading": {
@@ -588,29 +684,415 @@
     "systems": {
       "url-shortener": {
         "title": "URL शॉर्टनर",
-        "tagline": "लंबे URL को छोटे कोड में मैप करें और स्केल पर रीडायरेक्ट करें (bit.ly जैसा)।"
+        "tagline": "लंबे URL को छोटे कोड में मैप करें और स्केल पर रीडायरेक्ट करें (bit.ly जैसा)।",
+        "requirements": {
+          "0": "Generate a unique short code per long URL.",
+          "1": "Redirect short → long with very low latency.",
+          "2": "Handle a very high read:write ratio (reads ≫ writes).",
+          "3": "Optional analytics, expiry and custom aliases.",
+          "4": "Async click analytics that never adds latency to redirects; at-least-once event delivery.",
+          "5": "Abuse controls: destination allowlist/HTTPS, rate limits on create, malware URL denylist hooks."
+        },
+        "components": {
+          "0": {
+            "name": "API service",
+            "role": "Validates input, creates or looks up mappings."
+          },
+          "1": {
+            "name": "Key generation",
+            "role": "Base62 of an auto-increment id or hash, collision-checked."
+          },
+          "2": {
+            "name": "KV store / DB",
+            "role": "code → long-URL mapping, sharded by code."
+          },
+          "3": {
+            "name": "Cache (Redis)",
+            "role": "Hot short-codes for sub-millisecond redirects."
+          },
+          "4": {
+            "name": "CDN / edge",
+            "role": "Caches redirects close to users."
+          },
+          "5": {
+            "name": "ID allocator",
+            "role": "Snowflake/range-reserved counters → Base62; avoids central hot lock per request."
+          },
+          "6": {
+            "name": "Redis cache",
+            "role": "code → destination (+ expiry); TTL ≤ link expiry; negative-cache 404 briefly."
+          },
+          "7": {
+            "name": "Links DB",
+            "role": "Sharded primary for mappings; unique(code), unique(alias) where present."
+          },
+          "8": {
+            "name": "Analytics bus",
+            "role": "Kafka/Pulsar topic for redirect events; workers aggregate offline."
+          }
+        },
+        "tradeoffs": {
+          "0": "301 (permanent, cacheable, loses analytics) vs 302 (temporary, countable).",
+          "1": "Hashing (stateless, collisions) vs counter+Base62 (coordination, no collisions).",
+          "2": "A read-through cache adds complexity but is essential at this read ratio.",
+          "3": "Global single table vs shard-by-code-prefix (scale vs cross-shard admin queries).",
+          "4": "Strong uniqueness on alias (correct) vs eventual uniqueness (faster writes, repair jobs)."
+        },
+        "lld": {
+          "dataModel": "Link(code PRIMARY KEY, destination, owner_id, created_at, expires_at). A unique index on code arbitrates alias collisions. Cache entries carry a TTL bounded by link expiry.",
+          "api": "POST /links accepts a destination and optional alias, returning the code. GET /:code resolves it and returns a redirect. Invalid URLs return 400; alias collisions return 409; expired or missing links return 404.",
+          "execution": "Validate HTTP/HTTPS destinations, allocate a Base62 code, insert with a uniqueness constraint and retry collisions. Reads consult the cache, then the durable store, then populate the cache. Emit analytics asynchronously after the redirect decision.",
+          "pseudocode": "function resolve(code):\n  url = cache.get(code) ?? links.get(code)\n  if url is missing or expired: return notFound\n  cache.set(code, url, ttlUntilExpiry(url))\n  emitAsync(\"redirect\", code)\n  return redirect(url)",
+          "failures": "Cache loss falls back to the database with bounded concurrency. Expired links never outlive their cache TTL. Rate limits and destination validation constrain abusive writes; asynchronous analytics must not delay redirects."
+        }
       },
       "rate-limiter": {
         "title": "रेट लिमिटर",
-        "tagline": "प्रति क्लाइंट रिक्वेस्ट दर सीमित कर सेवाओं की रक्षा करें।"
+        "tagline": "प्रति क्लाइंट रिक्वेस्ट दर सीमित कर सेवाओं की रक्षा करें।",
+        "requirements": {
+          "0": "Limit N requests per window per key (user / IP / API key).",
+          "1": "Low latency with a clear fail-open or fail-closed policy.",
+          "2": "Work across many app servers consistently.",
+          "3": "Return 429 with a Retry-After hint.",
+          "4": "Configurable fail-open vs fail-closed per route class when the store is unavailable.",
+          "5": "Observability: allow/deny rates, hot keys, and shadow mode for policy rollouts."
+        },
+        "components": {
+          "0": {
+            "name": "Limiter middleware",
+            "role": "Checks and decrements quota before handling."
+          },
+          "1": {
+            "name": "Counter store (Redis)",
+            "role": "Atomic counters/tokens keyed by client + window."
+          },
+          "2": {
+            "name": "Algorithm",
+            "role": "Token bucket, sliding-window log or fixed window."
+          },
+          "3": {
+            "name": "Policy",
+            "role": "Per-tier limits and burst allowance."
+          },
+          "4": {
+            "name": "Lua / atomic op",
+            "role": "Refill + consume in one round-trip; avoids race between GET/SET."
+          },
+          "5": {
+            "name": "Local shedder",
+            "role": "Optional process-local token cache for fail-open soft limits."
+          },
+          "6": {
+            "name": "Metrics",
+            "role": "Export allow/deny, latency, and Redis errors for SLO burn alerts."
+          },
+          "7": {
+            "name": "Admin API",
+            "role": "CRUD policies, purge keys, and emergency global brakes."
+          }
+        },
+        "tradeoffs": {
+          "0": "Fixed window (cheap, boundary bursts) vs sliding window (accurate, costlier).",
+          "1": "Token bucket allows bursts; leaky bucket smooths output.",
+          "2": "Local in-memory (fast, per-node) vs centralized (consistent, network hop).",
+          "3": "Fail-open (availability) vs fail-closed (cost/security) when Redis times out.",
+          "4": "Sync check on every request vs async/optimistic + reconcile (risk of overshoot)."
+        },
+        "lld": {
+          "dataModel": "Bucket(key, tokens, last_refill_ms, capacity, refill_rate). Store expiring keys in Redis. Derive the key from the authenticated principal or a trusted proxy's client address.",
+          "api": "check(key, cost, now) returns allowed, remaining and retry_after. Middleware returns HTTP 429 and Retry-After when quota is exhausted. Costs and policy are server controlled.",
+          "execution": "Use one atomic Redis operation to refill up to capacity, test request cost, consume tokens and update the timestamp. Use a shared clock policy; clamp negative elapsed time. Expire idle buckets to bound storage.",
+          "pseudocode": "function allow(key, cost, now):\n  bucket = loadOrCreate(key)\n  bucket.tokens = min(capacity, bucket.tokens + elapsed(bucket, now) * refillRate)\n  if bucket.tokens < cost: return reject(retryAfter(bucket))\n  bucket.tokens -= cost\n  saveAtomically(bucket)\n  return allow",
+          "failures": "Choose fail-open for availability-sensitive traffic and fail-closed for expensive or security-sensitive endpoints. Account for clock skew, hot keys and retries; per-process counters cannot enforce a global quota across replicas."
+        }
       },
       "job-scheduler": {
         "title": "जॉब शेड्यूलर",
-        "tagline": "कार्यों को विश्वसनीय रूप से चलाएँ — अभी, विलंबित या आवर्ती।"
+        "tagline": "कार्यों को विश्वसनीय रूप से चलाएँ — अभी, विलंबित या आवर्ती।",
+        "requirements": {
+          "0": "Enqueue jobs with priority and a run-at time.",
+          "1": "At-least-once execution with retries and backoff.",
+          "2": "Scale workers horizontally.",
+          "3": "Visibility into pending, running, failed and done jobs.",
+          "4": "Operational visibility: queued/running/failed, attempt history, payload refs.",
+          "5": "Dead-letter after N attempts with operator replay and poison isolation."
+        },
+        "components": {
+          "0": {
+            "name": "Queue / broker",
+            "role": "Durable job queue (SQS / Kafka / DB table)."
+          },
+          "1": {
+            "name": "Scheduler",
+            "role": "Moves due delayed/cron jobs into the ready queue."
+          },
+          "2": {
+            "name": "Workers",
+            "role": "Pull jobs, execute, ack or retry."
+          },
+          "3": {
+            "name": "Dead-letter queue",
+            "role": "Captures jobs that exhaust retries."
+          },
+          "4": {
+            "name": "Store",
+            "role": "Job state, idempotency keys and results."
+          },
+          "5": {
+            "name": "Payload object store",
+            "role": "Large blobs off the hot row; immutable per enqueue version."
+          },
+          "6": {
+            "name": "DLQ",
+            "role": "Holds exhausted jobs; separate consumer for ops replay."
+          },
+          "7": {
+            "name": "Cron expander",
+            "role": "Materializes next fire times without thundering herds."
+          },
+          "8": {
+            "name": "Ops console",
+            "role": "Cancel, requeue, inspect attempts, and pause lanes."
+          }
+        },
+        "tradeoffs": {
+          "0": "At-least-once + idempotency (simple, needs dedupe) vs exactly-once (hard).",
+          "1": "Push vs pull worker models.",
+          "2": "Priority queues vs FIFO fairness.",
+          "3": "Per-tenant queues (isolation) vs shared lanes (efficiency, noisy-neighbor risk).",
+          "4": "Keep payloads in-row (simple) vs object store (scale, extra failure domain)."
+        },
+        "lld": {
+          "dataModel": "Job(id, idempotency_key UNIQUE, payload_ref, run_at, priority, attempts, lease_owner, lease_until, status). Keep large payloads in object storage and transitions in a durable record.",
+          "api": "POST /jobs enqueues idempotently; GET /jobs/:id reads status; POST /jobs/:id/cancel requests cooperative cancellation. Workers claim a lease, heartbeat it and acknowledge completion with their lease token.",
+          "execution": "The scheduler moves due jobs to a ready queue. A worker atomically leases a job, performs an idempotent side effect, then acknowledges. Retry transient failures with exponential backoff and jitter; exhausted jobs enter a dead-letter queue.",
+          "pseudocode": "while workerIsRunning:\n  job = queue.claimWithLease()\n  if job is missing: wait()\n  else if performIdempotently(job): acknowledge(job)\n  else if job.attempts < maxAttempts: retryLater(job, backoff(job))\n  else: deadLetter(job)",
+          "failures": "Worker crashes release work after lease expiry. Fencing tokens prevent an expired worker from acknowledging a reassigned job. Duplicate deliveries are expected, so business effects need their own idempotency boundary."
+        }
       },
       "log-analytics": {
         "title": "लॉग एनालिटिक्स सिस्टम",
-        "tagline": "उच्च-मात्रा लॉग को इनजेस्ट, इंडेक्स और क्वेरी करें।"
+        "tagline": "उच्च-मात्रा लॉग को इनजेस्ट, इंडेक्स और क्वेरी करें।",
+        "requirements": {
+          "0": "Ingest millions of events per second.",
+          "1": "Full-text and structured search.",
+          "2": "Time-windowed aggregations and dashboards.",
+          "3": "Retention tiers and archival.",
+          "4": "Tenant isolation on every query path; redact PII fields at ingest when configured.",
+          "5": "Exactly-once-ish processing via event_id dedupe + offset commit after durable write."
+        },
+        "components": {
+          "0": {
+            "name": "Collectors / agents",
+            "role": "Ship logs from hosts."
+          },
+          "1": {
+            "name": "Ingest pipeline (Kafka)",
+            "role": "Buffer with back-pressure."
+          },
+          "2": {
+            "name": "Index (Elasticsearch)",
+            "role": "Searchable inverted index."
+          },
+          "3": {
+            "name": "Object storage",
+            "role": "Cheap cold / archival tier."
+          },
+          "4": {
+            "name": "Query / dashboard",
+            "role": "Search and visualize."
+          },
+          "5": {
+            "name": "Cold object store",
+            "role": "Compressed originals / Parquet for rehydrate and audit."
+          },
+          "6": {
+            "name": "Query API",
+            "role": "Tenant-scoped search + aggregations with timeouts and cursors."
+          },
+          "7": {
+            "name": "Compactor / tierer",
+            "role": "Rolls shards warm→cold; enforces retention deletes."
+          },
+          "8": {
+            "name": "Quarantine topic",
+            "role": "Poison/schema-invalid events for offline repair."
+          }
+        },
+        "tradeoffs": {
+          "0": "Index everything (fast queries, costly) vs sample / schema-on-read.",
+          "1": "Hot / warm / cold tiering for cost control.",
+          "2": "Shared cluster (efficiency) vs per-tenant indexes (isolation, cost).",
+          "3": "Sync ack to agent after Kafka (durability) vs after index (higher latency).",
+          "4": "Wide events (debuggable) vs strict schemas (predictable cost/perf)."
+        },
+        "lld": {
+          "dataModel": "Event(event_id, tenant_id, timestamp, service, severity, trace_id, body). Partition the ingest stream by tenant and service, and index time-bounded shards. Store compressed originals in object storage.",
+          "api": "POST /events accepts bounded batches with event IDs. GET /search takes a tenant, time range, query and cursor. GET /aggregations returns bounded time buckets. Every query is scoped to the caller's tenant.",
+          "execution": "Collectors batch and compress events. The broker durably buffers them; consumers validate schemas, redact configured fields and bulk-index documents. Commit offsets only after durable processing; event IDs deduplicate replays.",
+          "pseudocode": "for batch in broker.consume():\n  events = validateAndRedact(batch)\n  unique = discardKnownEventIds(events)\n  index.bulkWrite(unique)\n  archive.write(unique)\n  broker.commit(batch.offset)",
+          "failures": "Backpressure slows collectors or spills to bounded local buffers. Poison events go to a quarantine stream. Apply retention policies consistently to indexes and archives; prohibit unbounded wildcard queries that overload the cluster."
+        }
       },
       "sim-regression-dashboard": {
         "title": "सिम्युलेशन रिग्रेशन डैशबोर्ड",
-        "tagline": "नाइटली सिम्युलेशन रन में पास/फेल रुझान ट्रैक करें।"
+        "tagline": "नाइटली सिम्युलेशन रन में पास/फेल रुझान ट्रैक करें।",
+        "requirements": {
+          "0": "Ingest results from thousands of regression tests.",
+          "1": "Separate new failures from flaky and known failures.",
+          "2": "Trend pass-rate over time with per-test history.",
+          "3": "Drill into logs and artifacts of a failure.",
+          "4": "Owner routing + SLA clocks for open signatures without paging on flakes.",
+          "5": "History APIs for a test_id across branches with pagination."
+        },
+        "components": {
+          "0": {
+            "name": "Run ingest",
+            "role": "Parse results from CI / sim farm."
+          },
+          "1": {
+            "name": "Results DB",
+            "role": "Per-test, per-run status and metadata."
+          },
+          "2": {
+            "name": "Flake detector",
+            "role": "Classifies intermittent failures."
+          },
+          "3": {
+            "name": "Dashboard",
+            "role": "Trends, diffs and owners."
+          },
+          "4": {
+            "name": "Artifact store",
+            "role": "Logs and waveforms linked per failure."
+          },
+          "5": {
+            "name": "Flake classifier",
+            "role": "Rule-based (and optional ML-suggested) intermittent detection."
+          },
+          "6": {
+            "name": "Artifact store",
+            "role": "Logs, FSDB/VCD pointers; lifecycle independent of status."
+          },
+          "7": {
+            "name": "Diff service",
+            "role": "Compares run vs baseline; computes introduced/resolved sets."
+          },
+          "8": {
+            "name": "Dashboard UI",
+            "role": "Trends, owners, waive flows, deep-links into artifacts."
+          }
+        },
+        "tradeoffs": {
+          "0": "Store all artifacts (debuggable, large) vs fetch on demand.",
+          "1": "Real-time vs batch aggregation.",
+          "2": "Sync classification at ingest vs batch overnight (freshness vs cost).",
+          "3": "Mutable waive state (ops-friendly) vs immutable event log (forensics).",
+          "4": "Per-branch baselines (accurate) vs trunk-only (simpler, noisier)."
+        },
+        "lld": {
+          "dataModel": "Run(run_id, revision, branch, started_at), Result(run_id, test_id, attempt, status, signature, artifact_ref), and Failure(signature, first_seen, owner, classification). Use stable test IDs across runs.",
+          "api": "POST /runs creates an idempotent run; PUT /runs/:id/results upserts batches. GET /runs/:id/diff compares a baseline. GET /tests/:id/history returns results and artifact links with pagination.",
+          "execution": "Normalize runner output, group failures by signature, compare against the baseline and retain raw evidence. Keep rule-based classification reproducible; record optional LLM suggestions separately for human review.",
+          "pseudocode": "for result in incomingResults:\n  normalized = normalize(result)\n  signature = fingerprint(normalized)\n  classification = classifyAgainstBaseline(signature)\n  saveResult(normalized, signature, classification)\nupdateRunSummary()",
+          "failures": "Incomplete runs remain explicitly incomplete. Retry ingestion without duplicating results. Distinguish flaky tests from new deterministic failures; missing artifacts must not erase recorded test status."
+        }
       },
       "waveform-compression": {
         "title": "वेवफ़ॉर्म कम्प्रेशन सिस्टम",
-        "tagline": "स्टोरेज और तेज़ रीप्ले के लिए डिजिटल सिम्युलेशन वेवफ़ॉर्म कम्प्रेस करें।"
+        "tagline": "स्टोरेज और तेज़ रीप्ले के लिए डिजिटल सिम्युलेशन वेवफ़ॉर्म कम्प्रेस करें।",
+        "requirements": {
+          "0": "Compress huge value-change dumps (VCD/FSDB-style).",
+          "1": "Random-access replay at any time point.",
+          "2": "Lossless for digital signals.",
+          "3": "Fast writes during simulation.",
+          "4": "Dictionary reuse across chunks; versioned format with checksums.",
+          "5": "Compression ratio targets depend on activity; measure, don’t promise a constant."
+        },
+        "components": {
+          "0": {
+            "name": "Value-change capture",
+            "role": "Records signal transitions, not samples."
+          },
+          "1": {
+            "name": "Delta + RLE encoding",
+            "role": "Stores changes and run-lengths."
+          },
+          "2": {
+            "name": "Dictionary / bit-packing",
+            "role": "Packs enum / bus values tightly."
+          },
+          "3": {
+            "name": "Chunked index",
+            "role": "Time-indexed blocks for seeking."
+          },
+          "4": {
+            "name": "Reader",
+            "role": "Decompresses windows on demand."
+          },
+          "5": {
+            "name": "Sparse time index",
+            "role": "Maps time ranges → file offsets for seek."
+          },
+          "6": {
+            "name": "Object / file store",
+            "role": "Durable chunk bytes; immutability after seal."
+          },
+          "7": {
+            "name": "Replay reader",
+            "role": "Loads snapshot + replays deltas for requested window."
+          },
+          "8": {
+            "name": "Format verifier",
+            "role": "Offline round-trip tests and version migration tools."
+          }
+        },
+        "tradeoffs": {
+          "0": "Event-based (compact for sparse activity) vs sampled.",
+          "1": "Bigger blocks compress better but slow random access.",
+          "2": "Shared global dictionary (ratio) vs per-chunk (parallelism, simpler recovery).",
+          "3": "Sync index publish with seal (readers never see holes) vs async (higher write FPS).",
+          "4": "Single-file layout (simple) vs multi-file shards (parallel dump from many scopes)."
+        },
+        "lld": {
+          "dataModel": "Signal dictionary maps IDs to widths and types. Independently compressed chunks contain a time range, an initial state snapshot, delta timestamps, value changes and a checksum. A sparse index maps time ranges to file offsets.",
+          "api": "append(signal_id, time, value) records a transition; flush() seals a chunk; read(signals, start, end) seeks to the nearest snapshot and replays deltas. The reader validates format version and checksums.",
+          "execution": "Capture only transitions, encode timestamp deltas, pack repeated values and compress bounded chunks. Publish index entries after chunk durability. Random access loads one starting snapshot and only the necessary subsequent blocks.",
+          "pseudocode": "function append(signal, time, value):\n  if value != lastValue(signal):\n    chunk.add(delta(time), signal, value)\n  if chunk.isFull():\n    offset = writeCompressed(chunk)\n    index.add(chunk.timeRange, offset)\n    chunk.resetWithSnapshot()",
+          "failures": "Recover a partially written file by scanning committed chunks. Preserve all four-state digital values and same-time ordering. Test round-trip equality; compression ratios and seek latency depend on workload and chunk size."
+        }
       }
-    }
+    },
+    "pageIntro": "System-design whiteboards I’ve built: working browser demos, architecture, implementation notes and trade-offs.",
+    "galleryIntro": "Whiteboards I’ve built to make system behavior tangible — explore each demo, its architecture and implementation decisions.",
+    "galleryContents": "Demo · HLD · LLD · Trade-offs",
+    "openDesign": "Open whiteboard",
+    "filter": "Filter",
+    "all": "All",
+    "uml": "Architecture (UML)",
+    "seeMore": "See more whiteboards",
+    "seeLess": "Show top four",
+    "detailTabs": "Whiteboard views",
+    "tabs": {
+      "demo": "Architecture demo",
+      "hld": "High-level design",
+      "lld": "Low-level design",
+      "decisions": "Trade-offs & failures"
+    },
+    "demoScope": "Built for this portfolio: an interactive reference demo. Infrastructure components are simulated in the browser.",
+    "lldLabels": {
+      "dataModel": "Data model",
+      "api": "API contracts",
+      "execution": "Execution & consistency",
+      "pseudocode": "Pseudocode"
+    },
+    "failureModes": "Failure modes & recovery",
+    "backToWork": "← Back to Work",
+    "pipelineStep": "Stage {current} of {total}",
+    "nextStep": "Next stage",
+    "restart": "Restart walkthrough",
+    "loading": "Loading whiteboard…",
+    "umlCaption": "Deployment-style component diagram · solid = sync path · dashed = async / degraded"
   },
   "chatbot": {
     "subtitle": "लोकल · एक्सट्रैक्टिव · कोई ट्रैकिंग नहीं",
@@ -642,11 +1124,84 @@
       "select": "चैट चुनें",
       "clearContext": "संदर्भ साफ़ करें",
       "clearChat": "चैट साफ़ करें",
-      "delete": "चैट हटाएँ"
+      "delete": "चैट हटाएँ",
+      "untitled": "Chat {number}",
+      "contextCleared": "Context cleared. Earlier messages remain visible and will not inform new answers.",
+      "chatCleared": "Chat and its context cleared.",
+      "serverUnavailable": "Server AI is unavailable, so Quick answers are active."
     },
     "settings": {
-      "removeModels": "डाउनलोड किए मॉडल हटाएँ"
-    }
+      "removeModels": "डाउनलोड किए मॉडल हटाएँ",
+      "title": "Assistant settings",
+      "open": "Open assistant settings",
+      "back": "Back to chat",
+      "intro": "Choose how answers run on this device. Quick answers work immediately. Selecting GPU or CPU enables local AI and starts the download shown below.",
+      "engineLabel": "Answer mode",
+      "engines": {
+        "quick": {
+          "label": "Quick answers · AI off",
+          "help": "Fastest and lightest. Quotes portfolio content directly, with no model download or AI memory use."
+        },
+        "server": {
+          "label": "Server AI · no download",
+          "help": "Generates a grounded answer through this site's server when enabled. Your question and recent chat context leave this device; Quick answers are used if the service is unavailable."
+        },
+        "gpu": {
+          "label": "Device GPU",
+          "help": "Usually the fastest AI option on a supported GPU. Uses graphics memory and more battery; other graphics-heavy apps may slow down."
+        },
+        "cpu": {
+          "label": "Device CPU",
+          "help": "Works without a GPU using a smaller model. Usually slower and less detailed; uses system memory and can increase heat and battery use. Single-threaded browsers can take minutes per answer."
+        }
+      },
+      "download": "{model} · about {size} MB on first use. Downloaded models are cached in this browser.",
+      "checking": "Checking device support…",
+      "unavailable": {
+        "noWebGpu": "GPU AI is unavailable in this browser. CPU or quick answers are available.",
+        "softwareGpu": "A hardware GPU is not available to this browser. Use CPU or quick answers.",
+        "lowMemory": "Quick answers are recommended with less than 4 GB of reported device memory.",
+        "saveData": "Quick answers stay on while Data Saver is enabled."
+      },
+      "speed": "Last measured generation speed: about {speed} tokens/s.",
+      "recommended": "Recommended for this device",
+      "recommendations": {
+        "gpuFast": "Your GPU is fast. Short, focused answers with the model kept ready give the quickest experience. You can request more detail when needed.",
+        "gpu": "Your GPU can run local AI. Start with short, focused answers and keep the model ready between chats.",
+        "cpu": "CPU with short answers and focused context is a suitable option here. GPU is usually faster when available.",
+        "slow": "The last measured AI speed was low. Quick answers are recommended; you can still choose an AI engine.",
+        "noAi": "Quick answers are recommended for responsiveness and battery life. You can try an available AI engine.",
+        "saveData": "Use quick answers to avoid model downloads while Data Saver is on."
+      },
+      "apply": "Use recommended settings",
+      "applyHint": "Choosing an AI recommendation starts its model download.",
+      "lengthLabel": "AI answer length",
+      "short": "Short",
+      "detailed": "Detailed",
+      "lengthHelp": "Short replies generate fewer tokens and finish sooner. Detailed replies take longer on this device.",
+      "contextLabel": "AI context",
+      "focused": "Focused",
+      "thorough": "Thorough",
+      "contextHelp": "Focused context starts answers sooner. Thorough context includes more source material, but uses more memory and processing time.",
+      "cpuLabel": "CPU usage",
+      "balanced": "Balanced",
+      "max": "Maximum",
+      "cpuHelp": "Balanced leaves more capacity for the page. Maximum may generate faster but increases heat, battery use, and competition with other apps.",
+      "singleThread": "This page uses one CPU thread, so replies can take minutes. Both usage levels run at the same speed here; quick answers are recommended for responsiveness.",
+      "keepLoaded": "Keep AI ready briefly after closing",
+      "keepLoadedHelp": "Keeps the model in memory for up to two minutes for faster reopening. Off frees memory on close. Downloaded files stay cached either way.",
+      "cancel": "Cancel download",
+      "turnOff": "Turn AI off",
+      "active": "Active: {engine}",
+      "fallback": "Quick answers are active. You can choose another mode in settings.",
+      "warmup": "Warming up and measuring speed…",
+      "loading": "Preparing local AI… {percent}%",
+      "removingModels": "Removing models…",
+      "removeHelp": "Deletes this site’s GPU and CPU model downloads and switches to quick answers. Your chats stay available.",
+      "modelsRemoved": "Downloaded models removed. Quick answers are active.",
+      "removeError": "Some model files could not be removed. Close other Ask Ayush tabs and retry. Quick answers remain active."
+    },
+    "intro": "Ask about my work, skills or experience. Each chat has its own context. Chats stay in this browser tab for this session."
   },
   "audio": {
     "introTitle": "वॉइस परिचय",
@@ -657,7 +1212,8 @@
     "transcriptToggle": "ट्रांसक्रिप्ट",
     "sfxLabel": "ध्वनि प्रभाव",
     "on": "चालू",
-    "off": "बंद"
+    "off": "बंद",
+    "transcript": "Hey, I’m Ayush Yadav! 👋 An R&D Software Engineer at Cadence with over four and a half years of experience building high-performance systems in C++ and Python. 💻\n\nI work on Xcelium, RTL optimization, and AI-powered developer tools, helping boost simulation throughput by up to nineteen percent. 🚀 Basically, I make software faster so progress bars get less screen time. 😄\nHave a look around, explore my projects, and see what I’ve been building. 🔍 If you’re hiring, want to collaborate, or just want more details, drop me a message! 📬\n\nI promise I won’t ask you to reverse a linked list just to say hello! 😉"
   },
   "lab": {
     "title": "लैब",
@@ -670,7 +1226,60 @@
     "description": "आप जो पृष्ठ ढूँढ रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।",
     "heading": "404 — पृष्ठ नहीं मिला",
     "subheading": "आप जो पृष्ठ ढूँढ रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।",
-    "cta": "होम वापस"
+    "cta": "होम वापस",
+    "tag": "/ 404",
+    "suggestionsLabel": "Try one of these",
+    "search": "Open command palette",
+    "back": "Go back",
+    "asciiLabel": "ASCII art of a 404 phoenix",
+    "kbdHint": "to jump anywhere on the site",
+    "qrLabel": "QR code linking to the site home page",
+    "qrTitle": "Continue on your phone",
+    "qrCaption": "Scan to open this site on another device.",
+    "game": {
+      "title": "Phoenix Run",
+      "pause": "Pause",
+      "canvasLabel": "Phoenix Run — endless runner game canvas",
+      "idleTitle": "Phoenix Run",
+      "idleHint": "Flap through a volcanic world, dodge the ruins, and collect golden feathers. Tap or press Space to begin.",
+      "play": "Play",
+      "best": "Best · {score}",
+      "paused": "Paused",
+      "resume": "Resume",
+      "gameOver": "Lost to the ashes",
+      "newHigh": "new high score!",
+      "feathers": "{count, plural, one {# golden feather} other {# golden feathers}}",
+      "restart": "Restart",
+      "goHome": "Go Home",
+      "dive": "Dive",
+      "controls": "Space/↑/W flap · ↓/S dive · P pause · R restart · F fullscreen · tap to flap, swipe down to dive",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "fullscreen": "Fullscreen",
+      "exitFullscreen": "Exit fullscreen",
+      "reducedMotion": "Reduced motion is on — the runner uses motion, so play only if you're comfortable.",
+      "ms500": "The Flame Awakens",
+      "ms1000": "Phoenix Rebirth Unlocked",
+      "ms2000": "Inferno Mode Activated",
+      "ms5000": "Legendary Phoenix",
+      "rebirth": "Reborn from the ashes!",
+      "help": {
+        "open": "How to play",
+        "title": "How to play",
+        "close": "Close",
+        "goal": "Guide the flaming phoenix through a volcanic world. Flap to stay airborne, dodge every obstacle, grab power-ups, and survive as long as you can — the longer you fly, the faster it gets.",
+        "controlsTitle": "Controls",
+        "controlsBody": "Space / ↑ / W   flap upward\n↓ / S           dive / quick drop\nP               pause / resume\nR               restart\nF               fullscreen\nTap             flap (mobile)\nSwipe down      dive (mobile)",
+        "powerupsTitle": "Power-ups",
+        "powerupsBody": "⛨ Flame Shield   absorbs one hit\n✦ Golden Feather  bonus score (collect 5 for an egg)\n✸ Phoenix Burst   clears nearby obstacles\n◷ Slow Time       slows the world briefly\n×2 Double Score   temporary score multiplier",
+        "mechanicsTitle": "Mechanics",
+        "mechanicsBody": "Rebirth — at 1000 you bank one revive; a fatal hit instead reignites you and clears the area.\nInferno Mode — at 2000 the world darkens, speeds up, and scores multiply.\nMilestones — 500, 1000, 2000, 5000 each mark a new chapter.",
+        "settingsTitle": "Settings",
+        "sound": "Sound: {state}",
+        "on": "on",
+        "off": "off"
+      }
+    }
   },
   "privacy": {
     "title": "गोपनीयता",
@@ -690,7 +1299,10 @@
         "cookiesBody": "केवल एक कुकी सेट होती है: <code>NEXT_LOCALE</code>, जो आपकी चुनी भाषा याद रखती है। कोई विश्लेषण कुकी, ट्रैकिंग पिक्सेल या तृतीय-पक्ष विज्ञापन नहीं।",
         "analyticsTitle": "विश्लेषण",
         "analyticsBody": "<strong>Vercel Web Analytics</strong> और <strong>Vercel Speed Insights</strong> सक्षम हैं। दोनों कुकी-रहित और GDPR-मुक्त हैं।",
-        "aiTitle": "ऑन-डिवाइस AI (वैकल्पिक)"
+        "aiTitle": "ऑन-डिवाइस AI (वैकल्पिक)",
+        "aiBody": "Choosing GPU or CPU in Ask Ayush settings downloads a model from Hugging Face: Llama 3.2 1B (~705 MB) for GPU or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a pinned WebAssembly library from GitHub; the CPU runtime comes from this site. Download hosts see standard requests, including IP address and user-agent. Questions and answers stay on your device. Chats and their separate context boundaries are saved in this tab’s session storage under <code>phoenix:chat:sessions</code>, so closing the assistant or reloading does not erase them. Browser session restoration may retain this data. Clear chat erases the selected transcript and context; Clear context keeps its transcript but excludes earlier messages from future answers; Delete chat removes the selected conversation. <code>phoenix:chat:settings</code> stores preferences and measured speeds in local storage. Turning AI off frees runtime memory. Remove downloaded models clears this site’s model caches and switches AI off; it keeps your chats. Clearing this site’s browser data removes settings and chats as well. No new cookies are set.",
+        "aiServerTitle": "Server AI (optional, off by default)",
+        "aiServerBody": "A future <strong>Server</strong> engine in Ask Ayush settings can send your question and a short recent-chat context to this site’s <code>/api/chat</code> endpoint, which may call a managed inference provider. That path is disabled unless the maintainer explicitly enables it. When disabled, selecting Server falls back to quick answers. When enabled, questions leave your device; prefer Quick answers or on-device AI if you want processing to stay local. No new cookies are set for chat."
       },
       "donot": {
         "title": "हम क्या नहीं करते",
@@ -759,8 +1371,35 @@
       "leetcode": {
         "label": "LeetCode वैश्विक",
         "detail": "Knight स्तर · Codeforces Master · CodeChef 6-स्टार (AIR 29)।"
+      },
+      "throughput": {
+        "label": "Simulation throughput",
+        "detail": "Improvement on large customer workloads in Xcelium Logic Simulator."
+      },
+      "rtl": {
+        "label": "RTL parsing speedup",
+        "detail": "Cumulative Xform Engine parsing gains across Apple, Google, Samsung and NVIDIA designs."
+      },
+      "rca": {
+        "label": "Debug RCA time",
+        "detail": "Reduction via Top-N profiling and structured diagnostics library."
+      },
+      "ticketResolution": {
+        "label": "Faster ticket resolution",
+        "detail": "MAESTRO, measured on an internal evaluation sample; RCA time reduced by 55%."
+      },
+      "agentSpeedup": {
+        "label": "AI-assisted simulation speedup",
+        "detail": "Xcelium optimization agents on a validated benchmark; results are workload-specific."
+      },
+      "regression": {
+        "label": "Regression failures processed",
+        "detail": "Across 79 runs; 73% of failures were processed in runs by other engineers."
       }
-    }
+    },
+    "eyebrow": "Engineering impact",
+    "heading": "Performance gains. Engineering time reclaimed.",
+    "context": "Cadence · systems & AI tooling"
   },
   "techMarquee": {
     "heading": "मैं जिन तकनीकों के साथ शिप करता हूँ"
@@ -788,19 +1427,17 @@
     },
     "items": {
       "maestro": {
-        "title": "MAESTRO — मल्टी-एजेंट टिकट समाधान",
-        "tagline": "एक टिकट अंदर, प्रोडक्शन-रेडी फ़िक्स बाहर — एक कंडक्टर और 10 AI एजेंट किसी इंजीनियरिंग टिकट को इनटेक से रिलीज़ तक ले जाते हैं, और हर जोखिम भरे गेट पर इंसान मौजूद रहते हैं।",
-        "category": "एजेंटिक AI × इंजीनियरिंग वर्कफ़्लो",
-        "summary": "MAESTRO (Multi-Agent Engineering System for Ticket Resolution & Orchestration) Xcelium इंजीनियरिंग टिकटों के लिए एक पोर्टेबल, IDE-स्वतंत्र मल्टी-एजेंट प्लेटफ़ॉर्म है। एक कंडक्टर 20-चरणीय, मानव-गेटेड वर्कफ़्लो चलाता है और हर चरण 10 विशेषज्ञ एजेंटों में से किसी एक को सौंपता है — इनटेक और रूट-कॉज़ विश्लेषण से लेकर वैलिडेशन, रिव्यू, रिग्रेशन और रिलीज़ तक। 22 Jira पर मापे जाने पर, इसने टिकट-समाधान समय 45% और रूट-कॉज़-विश्लेषण समय 55% घटाया। Cadence AI Buildathon 2026 के लिए टीम Mindsmiths के साथ बनाया गया।",
-        "problem": "सिमुलेटर टिकट हल करना R&D, वैलिडेशन और डॉक्यूमेंटेशन के बीच एक मैनुअल रिले है। सबूत इश्यू ट्रैकर, ईमेल, लॉग, स्पेक, सोर्स कंट्रोल, कोड रिव्यू और अनौपचारिक ज्ञान में बिखरे होते हैं, और हर हैंडऑफ़ पर वह संदर्भ दोबारा जुटाया जाता है जो पिछले व्यक्ति के पास पहले से था। दबाव में कदम छूट जाते हैं, और महत्वपूर्ण-पर-गैर-आपातकालीन टिकट बैकलॉग में पुराने होते जाते हैं।",
-        "challenge": "पूरे टिकट जीवनचक्र को एक समन्वित, भरोसेमंद वर्कफ़्लो में बदलना: 20 चरणों में सत्य का एक ही स्रोत रखना, हर निष्कर्ष को वास्तविक सबूत पर आधारित करना, जोखिम भरे कदमों पर इंजीनियरों को नियंत्रण में रखना, और इतना किफ़ायती रहना कि हर टिकट पर चल सके — उसी IDE के भीतर जिसे इंजीनियर पहले से इस्तेमाल करता है।",
+        "title": "MAESTRO — Multi-Agent Ticket Resolution",
+        "tagline": "A Cadence multi-agent system that helps engineers resolve simulation tickets end-to-end — with people in control at the high-risk steps.",
+        "category": "Agentic AI × Engineering Workflow",
+        "summary": "MAESTRO is a Cadence multi-agent platform for engineering-ticket resolution on Xcelium workflows. It coordinates specialist AI agents under human oversight so tickets move from triage toward a verified fix with clearer handoffs and less repeated context-gathering. Measured on an internal evaluation set, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026 and selected for trade-secret protection — implementation details stay internal.",
+        "problem": "Simulator tickets often bounce across R&D, validation and documentation. Context lives in many places, handoffs re-gather the same evidence, and under pressure important steps get skipped while backlog items age.",
+        "challenge": "Coordinate agent assistance across a ticket’s lifecycle without giving up engineer control, without inventing unsupported conclusions, and without publishing proprietary workflow internals.",
         "approach": {
-          "0": "एक कंडक्टर डिज़ाइन किया जो 20-चरणीय प्रवाह का स्वामी है और हर चरण 10 विशेषज्ञ एजेंटों में से किसी एक को सौंपता है: इनटेक, ट्राइएज, डीबग/RCA, फ़िक्स, वैलिडेशन, डॉक्स, रिव्यू, रिग्रेशन, रिलीज़ और एक क्रॉस-कटिंग मेमोरी एजेंट।",
-          "1": "एक साझा विश्लेषण दस्तावेज़ को सत्य का स्रोत रखा: हर चरण उसे पढ़ता और लिखता है, इसलिए संदर्भ एक बार दर्ज होता है और रन ठीक वहीं से फिर शुरू हो सकता है जहाँ रुका था।",
-          "2": "एजेंटों को ज्ञान-प्रथम आधार दिया: कुछ भी ऑनलाइन जाने से पहले ऑफ़लाइन नॉलेज बेस खोजा जाता है, और हर हल हुआ टिकट वापस लिखा जाता है ताकि अगला रन तैयार जानकारी के साथ शुरू हो।",
-          "3": "इंजीनियरिंग सिस्टम को MCP सर्वर और स्क्रिप्ट के ज़रिए जोड़ा — इश्यू ट्रैकिंग, सोर्स कंट्रोल, कोड रिव्यू और एक टाइम-ट्रैवल डीबगर जो रिकॉर्ड की गई विफलता को लॉग से आगे अनुमान लगाने के बजाय ठीक उस गलत राइट तक रिवाइंड करता है।",
-          "4": "पाँच मानव अनुमोदन गेट जोड़े और बिल्ड व रिग्रेशन जैसे घंटों लंबे कदम इंजीनियर को सौंपे, ताकि बिना स्वीकृति कुछ भी शिप न हो और मॉडल का समय खाली इंतज़ार में न जाए।",
-          "5": "डिज़ाइन से ही किफ़ायती रखा: हर चरण के लिए सबसे छोटा सक्षम मॉडल, और यांत्रिक कदम शून्य LLM टोकन पर स्क्रिप्टेड — Cursor, Claude Code या GitHub Copilot में चलता है।"
+          "0": "Framed the product as orchestration plus human gates: agents propose and gather evidence; engineers approve risky transitions.",
+          "1": "Optimized for grounded answers — conclusions tied to retrieved engineering evidence rather than free-form speculation.",
+          "2": "Designed for everyday IDE use so the assistive flow meets engineers where they already work.",
+          "3": "Measured outcomes on an internal ticket sample and treated the system as proprietary Cadence IP after Buildathon recognition."
         }
       },
       "xcelium-ai-agents": {
@@ -946,8 +1583,8 @@
       "summary": "Xcelium लॉजिक सिमुलेटर पर प्रदर्शन R&D — निम्न-स्तरीय C++ अनुकूलन, EDA डायग्नोस्टिक्स, मल्टी-एजेंट AI सिस्टम और रिग्रेशन व रिलीज़ वर्कफ़्लो के लिए डेवलपर टूलिंग का संयोजन।",
       "highlights": {
         "0": {
-          "title": "MAESTRO — मल्टी-एजेंट टिकट समाधान",
-          "detail": "MAESTRO बनाया — एक पोर्टेबल मल्टी-एजेंट प्लेटफ़ॉर्म जिसमें एक कंडक्टर 20-चरणीय मानव-गेटेड वर्कफ़्लो में 10 AI एजेंटों का संचालन करता है; 22 Jira पर मापे जाने पर इसने टिकट-समाधान समय 45% और RCA समय 55% घटाया। ट्रेड-सीक्रेट सुरक्षा के लिए चयनित।"
+          "title": "MAESTRO — Multi-Agent Ticket Resolution",
+          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
         },
         "1": {
           "title": "ChipStack Xcelium AI एजेंट",
@@ -975,7 +1612,7 @@
         },
         "7": {
           "title": "इंजीनियरिंग टूल्स के लिए MCP सर्वर",
-          "detail": "10 Model Context Protocol सर्वर लिखे — जिनमें 50-टूल वाला टाइम-ट्रैवल-डीबगर ब्रिज और कोड-रिव्यू, बिल्ड और LLM-गेटवे सर्वर शामिल हैं — जो GitHub Copilot, Cursor और Claude Code को EDA और इंजीनियरिंग सिस्टम से जोड़ते हैं।"
+          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
         },
         "8": {
           "title": "कॉर्पोरेट VP / MD मान्यता",
@@ -1121,6 +1758,64 @@
           "detail": "स्कूल का Force Fest, Digilogous, BVEST और Virtual Fiesta सहित कई अंतर-विद्यालय प्रोग्रामिंग और तकनीकी आयोजनों में प्रतिनिधित्व किया — पोडियम स्थान जीते।"
         }
       }
+    },
+    "cadence-engineer-ii": {
+      "role": "R&D Software Engineer II",
+      "location": "Noida, India · Hybrid",
+      "summary": "Building AI-driven engineering infrastructure for Xcelium: ticket resolution, simulation optimization, regression intelligence and release automation.",
+      "highlights": {
+        "0": {
+          "title": "MAESTRO — Multi-Agent Ticket Resolution",
+          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+        },
+        "1": {
+          "title": "ChipStack Xcelium AI Agents",
+          "detail": "Developed performance and memory optimization agents using Python, OpenAI Agents SDK and RAG to profile simulations, identify bottlenecks, and recommend, apply and verify optimizations; achieved 31.3% simulation speedup on a validated benchmark."
+        },
+        "2": {
+          "title": "Deterministic-First Agent Workflows",
+          "detail": "Re-architected agent workflows as a deterministic-first Python pipeline, cutting end-to-end execution from 148.3s to 76.8s and analysis from 71.1s to 18.0s on a benchmark design."
+        },
+        "3": {
+          "title": "Regression Triage & Regold System",
+          "detail": "Built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and JEDAI LLM review to automate triage, regolds, waivers and verification; processed 2,120 failures across 79 runs, 73% of them in runs by other engineers."
+        },
+        "4": {
+          "title": "Cross-Stream Perforce Replay",
+          "detail": "Built replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-CL backports across Xcelium release branches."
+        },
+        "5": {
+          "title": "MCP Servers for Engineering Tools",
+          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
+        },
+        "6": {
+          "title": "Reusable Engineering Infrastructure",
+          "detail": "Designed graph-based workflow orchestration, checkpoint/resume, structured outputs, failure recovery, LLM-as-judge regression testing and developer automation tooling."
+        }
+      }
+    },
+    "cadence-engineer": {
+      "role": "R&D Software Engineer",
+      "location": "Noida, India · On-site",
+      "summary": "Low-level C++ optimization, RTL transformations and distributed performance analysis for Xcelium Logic Simulator.",
+      "highlights": {
+        "0": {
+          "title": "Xcelium Throughput & Samsung Performance Win",
+          "detail": "Engineered low-level C++ optimizations and scalable simulator architecture, improving throughput by 18–19% on large-scale distributed workloads. Led benchmarking and distributed performance analysis that contributed to a multi-million dollar Samsung deal."
+        },
+        "1": {
+          "title": "Xform Engine RTL Transformations",
+          "detail": "Implemented RTL transformations delivering 13–14% cumulative parsing speedups and improved simulation performance for Apple, Google, Samsung and NVIDIA workloads."
+        },
+        "2": {
+          "title": "Diagnostics & Cadence India Conference",
+          "detail": "Presented technical findings at Cadence India Conference, driving adoption of diagnostic libraries that reduced root-cause analysis time by ~40% through flag analysis and log parsing."
+        },
+        "3": {
+          "title": "Corporate VP Recognition & All-Hands Spotlight",
+          "detail": "Received multiple awards for technical leadership and innovation, including Corporate VP recognition and an All-Hands spotlight for driving Samsung-deal performance wins."
+        }
+      }
     }
   },
   "concepts": {
@@ -1189,7 +1884,8 @@
       "cta": "github.com/blackphoenix42",
       "empty": "जब फ़ीड उपलब्ध होगा, हाल की गतिविधि यहाँ दिखाई देगी।"
     },
-    "openXml": "XML फ़ीड खोलें"
+    "openXml": "XML फ़ीड खोलें",
+    "refreshNote": "Fetched automatically from Medium, YouTube and GitHub with a 15-minute cache. GitHub activity may appear later because its public event feed is delayed."
   },
   "engineeringSpectrum": {
     "ariaLabel": "इंजीनियरिंग स्पेक्ट्रम",
@@ -1251,6 +1947,20 @@
     "groups": {
       "technical": "तकनीकी श्रेणियाँ",
       "applied": "अनुप्रयुक्त इंजीनियरिंग"
+    },
+    "intro": "Choose a technical category or an applied engineering area to see its tools and related work.",
+    "stageAria": "Design snap stage",
+    "stageIdle": "design snap · pick a category",
+    "stageTitle": "design snap · {label}",
+    "fragPrev": "Previous fragment",
+    "fragNext": "Next fragment",
+    "frags": {
+      "flame": "Hot-path flame strip (illustrative)",
+      "latency": "Latency histogram sketch",
+      "logs": "Log highlighter / RCA trail",
+      "pipeline": "Ingest → act → ack pipeline",
+      "stack": "Stack layers · app → metal",
+      "retrieve": "Prompt → retrieve → answer rail"
     }
   },
   "honorsData": {
@@ -1298,6 +2008,18 @@
       "title": "NIIT IT Wizard — Excellent",
       "org": "NIIT",
       "detail": "NIIT के IT Wizard राष्ट्रीय कार्यक्रम में 'Excellent' स्तर पर मान्यता प्राप्त।"
+    },
+    "samsung-performance-win-corporate-vp-recognition": {
+      "title": "Samsung Performance Win — Corporate VP Recognition",
+      "org": "Cadence Design Systems",
+      "date": "2022–2026",
+      "detail": "Benchmarking and distributed performance analysis contributed to a multi-million dollar Samsung deal. Recognized by the Corporate VP and spotlighted in an All-Hands meeting for the performance wins."
+    },
+    "cadence-india-conference-performance-diagnostics": {
+      "title": "Cadence India Conference — Performance Diagnostics",
+      "org": "Cadence Design Systems",
+      "date": "2022–2026",
+      "detail": "Presented technical findings that drove adoption of diagnostic libraries, reducing root-cause analysis time by ~40% through flag analysis and log parsing."
     }
   },
   "languagesData": {
@@ -1360,7 +2082,10 @@
       "hint": "क्लिक, ESC, या दोबारा \"matrix\" टाइप करके बंद करें"
     },
     "commitRain": {
-      "label": "कमिट्स की बारिश हो रही है…"
+      "label": "कमिट्स की बारिश हो रही है…",
+      "dismissHint": "Click or Esc to close",
+      "close": "Close",
+      "count": "{count} commits"
     },
     "boot": {
       "title": "AyushOS बूट क्रम",
@@ -1448,7 +2173,9 @@
         "विफल टेस्ट एक तोहफ़ा है। फ़्लेकी टेस्ट एक अभिशाप।",
         "पहले चलने लायक बनाएँ, फिर सही, फिर तेज़ — इसी क्रम में।",
         "पर्याप्त लेटेंसी जोड़ दें, तो हर सिस्टम एक डिस्ट्रिब्यूटेड सिस्टम है।"
-      ]
+      ],
+      "footerHint": "Tab ⇥ autocomplete · ↑↓ history · click to type",
+      "footerCmds": "Esc to exit"
     },
     "dino": {
       "titleRunner": "फ़ीनिक्स रनर",
@@ -1501,75 +2228,377 @@
       "completeMailSubject": "मुझे सब मिल गए 🜂",
       "completeMailBody": "नमस्ते आयुष,\n\nमुझे पोर्टफोलियो के सारे ईस्टर एग मिल गए।\n\n— एक साथी यात्री",
       "completeMailCta": "नमस्ते कहें"
+    },
+    "catalogue": {
+      "console-banner": {
+        "title": "Console toolkit",
+        "hint": "Opened the devtools console and called help() / phoenix() / hire() / cv() / secrets().",
+        "clue": "Developers know where to look first."
+      },
+      "html-comment": {
+        "title": "View-source explorer",
+        "hint": "Found the phoenix HTML comment trail in the page source.",
+        "clue": "Ctrl+U is a fine pastime."
+      },
+      "humans-txt": {
+        "title": "humans.txt reader",
+        "hint": "You read /humans.txt — the old-school manifest.",
+        "clue": "There's a file just for humans."
+      },
+      "robots-txt": {
+        "title": "robots.txt reader",
+        "hint": "You opened /robots.txt — what the crawlers see.",
+        "clue": "And another, just for robots."
+      },
+      "dino-score-5": {
+        "title": "Phoenix Run — 500",
+        "hint": "Soared past score 500 in Phoenix Run on the 404 page.",
+        "clue": "Get lost on purpose, then fly. The flame awakens at five hundred."
+      },
+      "feather-score-5": {
+        "title": "Golden Feather × 5",
+        "hint": "Collected five golden feathers in a single Phoenix Run.",
+        "clue": "Some power-ups are worth chasing. Gather a handful of feathers."
+      },
+      "konami": {
+        "title": "Konami initiate",
+        "hint": "Entered the classic ↑↑↓↓←→←→BA sequence.",
+        "clue": "Some sequences are written into muscle memory."
+      },
+      "terminal-mode": {
+        "title": "phoenix-shell",
+        "hint": "Opened the terminal overlay — type \"terminal\" anywhere.",
+        "clue": "Speak the word and a shell appears."
+      },
+      "phoenix-type": {
+        "title": "Speak its name",
+        "hint": "Typed \"phoenix\" anywhere on the page.",
+        "clue": "Names have power."
+      },
+      "logo-shift-click": {
+        "title": "Hidden phoenix theme",
+        "hint": "Held Shift and clicked the logo five times to summon the phoenix theme.",
+        "clue": "The crest does not mind being clicked."
+      },
+      "sanskrit-locale": {
+        "title": "संस्कृतम् reader",
+        "hint": "Switched the site to Sanskrit — a liturgical, classical language at home with phoenix imagery.",
+        "clue": "Six tongues are spoken here."
+      },
+      "polyglot": {
+        "title": "Polyglot",
+        "hint": "Visited the site in all six supported languages.",
+        "clue": "Try every flag in the menu."
+      },
+      "theme-cycler": {
+        "title": "Colour theorist",
+        "hint": "Cycled through all three themes within two seconds — the 't' key is quick.",
+        "clue": "Hammer the theme key."
+      },
+      "devtools-open": {
+        "title": "Devtools spotted",
+        "hint": "Opened the browser devtools — respect.",
+        "clue": "We see you in the inspector."
+      },
+      "phoenix-route": {
+        "title": "/phoenix visitor",
+        "hint": "Found the hidden /phoenix route, where the codename is explained.",
+        "clue": "Type the codename in the address bar."
+      },
+      "credits-route": {
+        "title": "/credits visitor",
+        "hint": "Found the hidden /credits route — a thank-you to the open-source giants.",
+        "clue": "Every site stands on shoulders."
+      },
+      "haiku-trail": {
+        "title": "Haiku trail",
+        "hint": "Found the three-line haiku hidden across home, about and work.",
+        "clue": "Three pages, three lines, one ember."
+      },
+      "css-selection": {
+        "title": "Invisible ink",
+        "hint": "Selected the invisible line under the hero tagline — \"phoenix · rise · /secret\".",
+        "clue": "Some text is only visible when selected."
+      },
+      "matrix-rain": {
+        "title": "Down the matrix",
+        "hint": "Summoned the matrix-rain overlay — type \"matrix\" anywhere.",
+        "clue": "Green, falling, familiar."
+      },
+      "og-qr-scan": {
+        "title": "OG QR scanner",
+        "hint": "Spotted (or scanned) the tiny QR code in the social preview image.",
+        "clue": "Look at the share preview, not the page."
+      },
+      "trophy-room-visit": {
+        "title": "Trophy room",
+        "hint": "You found the trophy room itself.",
+        "clue": "Some secrets are about the room they live in."
+      },
+      "completionist": {
+        "title": "Completionist",
+        "hint": "Every single egg found. You really did go the long way around.",
+        "clue": "Find everything else first."
+      }
     }
   },
   "shortcuts": {
     "items": {
       "now": "अभी पेज पर जाएँ",
-      "engineer": "इंजीनियर मोड टॉगल करें"
+      "engineer": "इंजीनियर मोड टॉगल करें",
+      "palette": "Open command palette",
+      "search": "Focus search",
+      "help": "Show this help",
+      "escape": "Close menus / overlays",
+      "nextSection": "Jump to next section",
+      "prevSection": "Jump to previous section",
+      "home": "Go home",
+      "work": "Go to work",
+      "skills": "Go to skills",
+      "contact": "Go to contact",
+      "experience": "Go to experience",
+      "about": "Go to about",
+      "theme": "Cycle theme",
+      "recruiter": "Toggle recruiter mode",
+      "language": "Open language picker",
+      "copyEmail": "Copy email address",
+      "downloadResume": "Download résumé",
+      "arrows": "Navigate within a menu"
+    },
+    "title": "Keyboard shortcuts",
+    "subtitle": "Press <kbd>?</kbd> any time to reopen this list.",
+    "openLabel": "Open keyboard shortcuts (press ?)",
+    "close": "Close",
+    "groups": {
+      "global": "Global",
+      "navigation": "Navigation",
+      "actions": "Actions",
+      "menus": "Menus"
     }
   },
   "demos": {
     "maestro": {
-      "title": "maestro · कंडक्टर · सिम्युलेटेड",
-      "subtitle": "10 एजेंट · 20 चरण · 5 गेट",
-      "stagesLabel": "वर्कफ़्लो स्टेज",
-      "gateMarker": "मानव अनुमोदन गेट",
-      "docLabel": "साझा विश्लेषण दस्तावेज़",
-      "empty": "कोई टिकट प्रकार चुनें और “चलाएँ” दबाएँ। कंडक्टर सभी चरणों से गुज़रता है और हर मानव गेट पर रुकता है।",
-      "kindLabel": "टिकट प्रकार",
-      "defect": "दोष",
-      "enhancement": "संवर्धन",
-      "failOnce": "वैलिडेशन एक बार विफल करें",
-      "run": "टिकट चलाएँ",
-      "pause": "रोकें",
-      "resume": "जारी रखें",
-      "again": "फिर से चलाएँ",
-      "approve": "गेट अनुमोदित करें",
-      "reset": "रीसेट करें",
-      "note": "उदाहरणात्मक — स्टेज और गेट वास्तविक वर्कफ़्लो को दर्शाते हैं; टिकट और उसका लॉग कृत्रिम हैं।",
+      "title": "maestro · omitted",
+      "subtitle": "trade secret — demo not published",
+      "stagesLabel": "Workflow stages",
+      "gateMarker": "Human approval gate",
+      "docLabel": "Session log",
+      "empty": "The interactive MAESTRO walkthrough is not published because the system is trade-secret protected.",
+      "kindLabel": "Ticket type",
+      "defect": "Defect",
+      "enhancement": "Enhancement",
+      "failOnce": "Fail validation once",
+      "run": "Unavailable",
+      "pause": "Pause",
+      "resume": "Resume",
+      "again": "Unavailable",
+      "approve": "Unavailable",
+      "reset": "Reset",
+      "note": "Omitted for IP protection — not a map of the production workflow.",
       "stages": {
-        "intake": "इनटेक",
-        "rca": "डीबग · RCA",
-        "design": "डिज़ाइन",
-        "fix": "फ़िक्स",
-        "validate": "वैलिडेशन",
-        "review": "रिव्यू",
-        "regress": "रिग्रेशन",
-        "release": "रिलीज़"
+        "intake": "—",
+        "rca": "—",
+        "design": "—",
+        "fix": "—",
+        "validate": "—",
+        "review": "—",
+        "regress": "—",
+        "release": "—"
       },
       "log": {
-        "start": "कंडक्टर · {kind} टिकट प्राप्त हुआ",
-        "intake": "इनटेक · टिकट पार्स और वर्गीकृत किया गया; पहले ऑफ़लाइन नॉलेज बेस खोजा गया",
-        "rca": "डीबग · विफल रन रिकॉर्ड किया गया और उस राइट तक रिवाइंड किया गया जिसने गलत मान उत्पन्न किया",
-        "design": "डिज़ाइन · आवश्यकताएँ और डिज़ाइन विकल्प विश्लेषण दस्तावेज़ में लिखे गए",
-        "fix": "फ़िक्स · रूट-कॉज़ पैच तैयार किया गया — केवल लक्षण छिपाने वाले वर्कअराउंड नहीं",
-        "validate": "वैलिडेशन · फ़िक्स किए गए बिल्ड पर लक्षित टेस्ट ग्रीन",
-        "validateFail": "वैलिडेशन · टेस्ट रेड → {stage} पर वापस भेजा गया (सेल्फ़-हीलिंग लूप)",
-        "review": "रिव्यू · डिफ़ और विश्लेषण दस्तावेज़ कोड रिव्यू के लिए पैकेज किए गए",
-        "regress": "रिग्रेशन · इंजीनियर द्वारा चलाया गया; परिणामों का विश्लेषण स्क्रिप्ट द्वारा शून्य LLM टोकन पर",
-        "release": "रिलीज़ · डॉक्स, रिलीज़ नोट्स और नॉलेज बेस अपडेट किए गए",
-        "gate": "गेट · इंजीनियर के अनुमोदन की प्रतीक्षा",
-        "approved": "गेट · इंजीनियर द्वारा अनुमोदित",
-        "done": "हल · विश्लेषण दस्तावेज़ ही पूरा ऑडिट ट्रेल है"
+        "start": "demo unavailable",
+        "intake": "—",
+        "rca": "—",
+        "design": "—",
+        "fix": "—",
+        "validate": "—",
+        "validateFail": "—",
+        "review": "—",
+        "regress": "—",
+        "release": "—",
+        "gate": "—",
+        "approved": "—",
+        "done": "—"
       }
+    },
+    "common": {
+      "play": "Play",
+      "pause": "Pause",
+      "reset": "Reset",
+      "stepBack": "Step back",
+      "stepForward": "Step forward",
+      "tryPrompt": "Try a prompt",
+      "trySample": "Try a sample",
+      "rerun": "rerun",
+      "illustrative": "Illustrative — pipeline mirrors the real flow, but responses are canned."
+    },
+    "algolens": {
+      "title": "algolens · bubble-sort · deterministic",
+      "step": "step {current} / {total}",
+      "pseudocode": "Pseudocode",
+      "time": "Time",
+      "space": "Space",
+      "explore": "Explore full AlgoLens →",
+      "barLabel": "Bar value {value}"
+    },
+    "xcelium": {
+      "title": "xcelium · runtime profile",
+      "throughputGain": "{pct}% throughput gain",
+      "workloadMix": "workload mix",
+      "before": "before",
+      "after": "after",
+      "mixAriaLabel": "Before / after mix",
+      "note": "Illustrative: bars compress from the \"before\" profile to the optimized \"after\" profile as you drag the slider."
+    },
+    "tezos": {
+      "title": "tpl · pvp bracket · deterministic sim",
+      "round": "round {current} / {total}",
+      "play": "Play bracket",
+      "championLabel": "champion",
+      "roundLabel": "round {n}",
+      "note": "Illustrative on-chain bracket — winners are derived deterministically (no real wallet)."
+    },
+    "posture": {
+      "title": "postureiq · live rep · simulated",
+      "tracking": "● tracking",
+      "lowConfidence": "○ low confidence",
+      "formScore": "FORM SCORE",
+      "repsConf": "REPS · CONF",
+      "note": "form-score(t) with confidence gate — peaks count when above threshold"
+    },
+    "track": {
+      "title": "track-person · live route · simulated",
+      "inZone": "● in-zone",
+      "distance": "DISTANCE",
+      "waypoint": "WAYPOINT"
+    },
+    "smart": {
+      "title": "smart-brain · vision inference · simulated",
+      "scanning": "scanning…",
+      "ready": "ready",
+      "inferenceLog": "Inference log",
+      "waitingForInput": "waiting for input…",
+      "detections": "Detections",
+      "rerunAriaLabel": "Re-run inference",
+      "sampleObj": "{count} obj"
     }
   },
   "architecture": {
     "maestro": {
-      "aria": "MAESTRO आर्किटेक्चर: एक कंडक्टर किसी टिकट को 20-चरणीय वर्कफ़्लो की सात स्टेज से होकर ले जाता है, जिसमें पाँच मानव अनुमोदन गेट हैं; सभी स्टेज एक ही विश्लेषण दस्तावेज़, एक नॉलेज बेस और MCP टूल्स साझा करती हैं।"
+      "aria": "MAESTRO architecture diagram omitted because the system is trade-secret protected.",
+      "entry": "Ticket",
+      "conductor": "Orchestration",
+      "conductorSub": "human-gated",
+      "loop": "review loop",
+      "stages": {
+        "intake": "Triage",
+        "rca": "Investigate",
+        "fix": "Propose",
+        "validate": "Validate",
+        "review": "Review",
+        "regress": "Verify",
+        "release": "Close"
+      },
+      "state": "Confidential — not published",
+      "kb": "Knowledge",
+      "kbSub": "internal",
+      "tools": "Integrations",
+      "toolsSub": "internal",
+      "gate": "human oversight"
     },
     "xcelium-ai-agents": {
-      "aria": "Xcelium AI एजेंट आर्किटेक्चर: एक प्लानर एक डिटर्मिनिस्टिक Python लेन (इनटेक, सिमुलेशन रनर, प्रोफ़ाइल पार्सर, रिपोर्ट) और एक LLM रीज़निंग लेन (विश्लेषण, रीकोड, अप्लाई) के बीच रूट करता है, और एक चेकलिस्ट-आधारित LLM जज रिपोर्टों की तुलना एक गोल्डन से करता है।"
+      "aria": "Xcelium AI एजेंट आर्किटेक्चर: एक प्लानर एक डिटर्मिनिस्टिक Python लेन (इनटेक, सिमुलेशन रनर, प्रोफ़ाइल पार्सर, रिपोर्ट) और एक LLM रीज़निंग लेन (विश्लेषण, रीकोड, अप्लाई) के बीच रूट करता है, और एक चेकलिस्ट-आधारित LLM जज रिपोर्टों की तुलना एक गोल्डन से करता है।",
+      "laneDeterministic": "deterministic Python — runs before any model turn",
+      "laneLlm": "LLM reasoning — findings arrive as data",
+      "tui": "ChipStack TUI",
+      "tuiSub": "engineer prompt",
+      "planner": "Planner node",
+      "plannerSub": "routes between phases",
+      "intake": "Python intake",
+      "runner": "Sim runner",
+      "parser": "Profile parser",
+      "report": "Python report",
+      "analyse": "Analyse",
+      "recode": "3-tier recode",
+      "apply": "Apply + backup",
+      "rerun": "re-run & compare",
+      "judge": "Checklist judge",
+      "judgeSub": "5 yes/no questions",
+      "golden": "vs. golden report",
+      "framework": "Shared workflow framework — graph orchestration · checkpointed typed state · strict outputs · JSON recovery · fallbacks"
     },
     "regression-triage": {
-      "aria": "रिग्रेशन ट्राइएज आर्किटेक्चर: विफलता सूचियाँ दोबारा चलाई जाती हैं, फ़िंगरप्रिंट की जाती हैं, वर्गीकृत और क्लस्टर की जाती हैं; सलाहकारी LLM समीक्षा वाला एक वर्ग गेट डिफ़ को रीगोल्ड की ओर और अन्य विफलताओं को फ़िल्टर या रूट-कॉज़ विश्लेषण की ओर भेजता है, फिर प्रति मोड सत्यापन करता है और एक लर्निंग स्टोर को डेटा देता है।"
+      "aria": "रिग्रेशन ट्राइएज आर्किटेक्चर: विफलता सूचियाँ दोबारा चलाई जाती हैं, फ़िंगरप्रिंट की जाती हैं, वर्गीकृत और क्लस्टर की जाती हैं; सलाहकारी LLM समीक्षा वाला एक वर्ग गेट डिफ़ को रीगोल्ड की ओर और अन्य विफलताओं को फ़िल्टर या रूट-कॉज़ विश्लेषण की ओर भेजता है, फिर प्रति मोड सत्यापन करता है और एक लर्निंग स्टोर को डेटा देता है।",
+      "stages": {
+        "lists": "Failure lists",
+        "rerun": "Parallel rerun",
+        "signatures": "Signatures\n(masked hashes)",
+        "categorise": "Categorise\nrules + vote",
+        "cluster": "TF-IDF\nclustering"
+      },
+      "review": "LLM review\n(advisory)",
+      "gate": "Class gate",
+      "rca": "Root-cause analysis",
+      "rcaSub": "crash · timeout · tool error",
+      "filter": "Filter / waive",
+      "filterSub": "IGNORE · waiver",
+      "regold": "Regold",
+      "regoldSub": "diff class only",
+      "verify": "Per-mode verify",
+      "learning": "Learning store",
+      "learningSub": "outcomes written back",
+      "feedback": "history feeds the vote"
     },
     "perforce-replay": {
-      "aria": "Perforce रीप्ले आर्किटेक्चर: चेंजलिस्ट नंबर और एक टारगेट ब्रांच से स्ट्रीम निर्धारण, क्रम-निर्धारण, छुए गए पाथ की योजना, खराबी-सुधार के साथ चयनात्मक सिंक, क्रमबद्ध मर्ज और एक ही ऑटो-रिज़ॉल्व संचालित होते हैं, जिसका परिणाम मर्ज की गई और अस्वीकृत फ़ाइलों में बँट जाता है।"
+      "aria": "Perforce रीप्ले आर्किटेक्चर: चेंजलिस्ट नंबर और एक टारगेट ब्रांच से स्ट्रीम निर्धारण, क्रम-निर्धारण, छुए गए पाथ की योजना, खराबी-सुधार के साथ चयनात्मक सिंक, क्रमबद्ध मर्ज और एक ही ऑटो-रिज़ॉल्व संचालित होते हैं, जिसका परिणाम मर्ज की गई और अस्वीकृत फ़ाइलों में बँट जाता है।",
+      "input": "CL numbers + target",
+      "stages": {
+        "streams": "Derive source\nstreams",
+        "order": "Sort CLs\nascending",
+        "plan": "Plan touched\npaths",
+        "materialise": "Selective sync\n+ view repair",
+        "merge": "Merge each CL\nat its revision",
+        "resolve": "Single\nauto-resolve"
+      },
+      "merged": "Merged cleanly",
+      "declined": "Declined files\nnamed",
+      "client": "Disposable client",
+      "clientSub": "optional · config-only sync",
+      "noSubmit": "nothing is submitted automatically — the engineer reviews and submits"
     }
   },
   "settings": {
-    "chatbot": "Ask Ayush सेटिंग्स"
+    "chatbot": "Ask Ayush सेटिंग्स",
+    "menuLabel": "Site settings",
+    "openLabel": "Open site settings",
+    "language": "Language",
+    "theme": "Theme",
+    "shortcuts": "Keyboard shortcuts",
+    "commitRain": "Commit rain",
+    "commitRainHelp": "Which public GitHub commits feed the decorative rain.",
+    "commitRainWindows": {
+      "week": "This week",
+      "month": "This month",
+      "year": "This year",
+      "all": "All time"
+    }
+  },
+  "consent": {
+    "title": "Cookies & language",
+    "body": "I use a single cookie (<code>NEXT_LOCALE</code>) to remember the language you picked. No analytics cookies, no tracking pixels.",
+    "accept": "Got it",
+    "privacy": "Privacy policy",
+    "dismissAriaLabel": "Dismiss cookie notice"
+  },
+  "roadmap": {
+    "tag": "/ 2027 roadmap",
+    "heading": "Delivery timeline · 2027",
+    "planning": "plan",
+    "note": "Target quarters, not release commitments. Scope will evolve through learning, prototypes and validation.",
+    "status": {
+      "design": "Design",
+      "prototyping": "Prototyping",
+      "in-development": "In development"
+    }
   }
 }

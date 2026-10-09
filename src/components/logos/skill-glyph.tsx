@@ -43,16 +43,26 @@ import {
   Vault,
   Fingerprint,
   Boxes,
+  MemoryStick,
+  Undo2,
+  Binary,
+  Users,
+  Sparkles,
+  ListChecks,
+  ClipboardCheck,
+  Microscope,
   type LucideIcon,
 } from "lucide-react";
 
-// Curated mapping of every skill in the spectrum to a distinguishing glyph.
-// Real brand SVGs (TECH_ICONS) take precedence in the consumer — this is the fallback.
+// Curated mapping for skills without a brand SVG in TECH_ICONS.
 export const SKILL_GLYPHS: Record<string, LucideIcon> = {
   Profiling: Activity,
+  "Memory Profiling": MemoryStick,
   Valgrind: Bug,
   AddressSanitizer: ShieldAlert,
   GDB: Terminal,
+  "Undo/UDB": Undo2,
+  Xcelium: Binary,
   SystemVerilog: CircuitBoard,
   RTL: CircuitBoard,
   Bash: SquareTerminal,
@@ -61,12 +71,17 @@ export const SKILL_GLYPHS: Record<string, LucideIcon> = {
   RAG: SearchIcon,
   "Vector Embeddings": Network,
   "AI Agents": Bot,
+  "Multi-Agent Systems": Users,
+  "OpenAI Agents SDK": Sparkles,
   MCP: Plug,
+  "Structured Outputs": ListChecks,
+  "LLM Evaluation": ClipboardCheck,
   "Computer Vision": Eye,
   "Deep Learning": Layers,
   gRPC: Cable,
   WebSockets: Radio,
   Micronaut: Rocket,
+  OpenAPI: FileJson,
   "Redux Toolkit": RefreshCcw,
   "RTK Query": Database,
   "React Native": Smartphone,
@@ -89,14 +104,23 @@ export const SKILL_GLYPHS: Record<string, LucideIcon> = {
   JWT: Key,
   CSP: Shield,
   "Rate Limiting": Timer,
-  OpenAPI: FileJson,
   SLOs: Target,
   "Secret Management": Vault,
   ECDSA: Fingerprint,
+  Express: Rocket,
+  Terraform: Boxes,
+  "VS Code": SquareTerminal,
+  Nginx: CloudCog,
+  RabbitMQ: Radio,
+  Prometheus: Gauge,
+  Grafana: BarChart3,
+  Jest: TestTube,
+  Vitest: TestTube,
+  pytest: Microscope,
+  Postman: Cable,
+  CMake: Boxes,
 };
 
-// Fallback when nothing is mapped — a deterministic accent box (avoids initials).
 export function SkillFallbackGlyph({ className }: { className?: string }) {
-  const C = Boxes;
-  return <C className={className} />;
+  return <Boxes className={className} />;
 }

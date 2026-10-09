@@ -35,7 +35,7 @@ export const metrics: Metric[] = [
     id: "ticketResolution",
     value: "45%",
     label: "Faster ticket resolution",
-    detail: "MAESTRO, measured across 22 Jira tickets; RCA time reduced by 55%.",
+    detail: "MAESTRO, measured on an internal evaluation sample; RCA time reduced by 55%.",
     accent: "amber",
   },
   {

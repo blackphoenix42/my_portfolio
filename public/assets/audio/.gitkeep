@@ -1,2 +1,0 @@
-# Drop the real voice intro here as `intro.mp3` (the IntroPlayer references it).
-# Until then the player degrades gracefully to a "coming soon" state.

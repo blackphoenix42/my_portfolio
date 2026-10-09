@@ -2,7 +2,7 @@
 // Mirrors src/components/projects/demo-slugs.ts so the case-study page can stay
 // a server component and decide whether to render <ProjectArchitecture />.
 export const DIAGRAM_SLUGS = [
-  "maestro",
+  // MAESTRO architecture whiteboard omitted — system is trade-secret protected.
   "xcelium-ai-agents",
   "regression-triage",
   "perforce-replay",

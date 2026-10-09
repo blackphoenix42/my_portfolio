@@ -32,7 +32,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
   const panels: FeedPanel[] = [
     {
       key: "medium",
-      xml: "https://medium.com/feed/@binaryphoenix01",
+      xml: "/feeds/medium.xml",
       label: t("medium.label"),
       icon: PenTool,
       accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
@@ -42,7 +42,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
     },
     {
       key: "youtube",
-      xml: "https://www.youtube.com/feeds/videos.xml?channel_id=UCcINlOM-rC1_8yiRGH_iFBg",
+      xml: "/feeds/youtube.xml",
       label: t("youtube.label"),
       icon: Youtube,
       accent: "text-accent-violet border-accent-violet/30 bg-accent-violet/5",
@@ -55,7 +55,7 @@ export async function ActivityFeeds({ hideHeader = false }: { hideHeader?: boole
     },
     {
       key: "github",
-      xml: "https://github.com/blackphoenix42.atom",
+      xml: "/feeds/github.atom",
       label: t("github.label"),
       icon: Github,
       accent: "text-accent-cyan border-accent-cyan/30 bg-accent-cyan/5",

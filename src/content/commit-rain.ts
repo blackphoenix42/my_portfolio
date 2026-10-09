@@ -1,6 +1,5 @@
-// Curated, decorative commit messages for the "commit rain" overlay. Purely
-// cosmetic flavour text (general engineering work, no real repo data, no API).
-// Randomized on every run so the rain looks different each time.
+// Curated, decorative commit messages for the "commit rain" overlay when GitHub
+// is unavailable. Real rain uses public commits from `/api/commits` (newest first).
 export const COMMIT_MESSAGES = [
   "optimize simulation log parser",
   "fix flaky regression failure",
@@ -34,6 +33,51 @@ export const COMMIT_MESSAGES = [
   "ship it 🚀",
 ];
 
+export type CommitDropLine = { message: string; sha: string };
+
+/** Stagger between successive drops (ms). */
+export const COMMIT_RAIN_STAGGER_MS = 160;
+/** Approximate fall duration (ms). */
+export const COMMIT_RAIN_FALL_MS = 5200;
+
+/**
+ * Sequence every commit newest-first (API order preserved). Each line rains
+ * once — no random resampling / repeats.
+ */
+export function sequenceCommitDrops(
+  lines: CommitDropLine[] = [],
+  rng: () => number = Math.random,
+): CommitDropLine[] {
+  const usable = lines.filter((line) => line.message.trim());
+  const source =
+    usable.length > 0
+      ? usable
+      : COMMIT_MESSAGES.map((message) => ({ message, sha: fakeHash(rng) }));
+  return source.map((line) => ({
+    message: line.message.trim().slice(0, 80),
+    sha: line.sha.slice(0, 7) || fakeHash(rng),
+  }));
+}
+
+/**
+ * Pick decorative drops from recent public commits when available, then use the
+ * curated pool to keep the overlay populated during GitHub outages.
+ * @deprecated Prefer sequenceCommitDrops for full-run rain.
+ */
+export function pickCommitDrops(
+  count: number,
+  lines: CommitDropLine[] = [],
+  rng: () => number = Math.random,
+): CommitDropLine[] {
+  const sequenced = sequenceCommitDrops(lines, rng);
+  if (sequenced.length === 0) return [];
+  const out: CommitDropLine[] = [];
+  for (let i = 0; i < count; i++) {
+    out.push(sequenced[i % sequenced.length]!);
+  }
+  return out;
+}
+
 /** Return a randomized list of `count` commit messages (with repeats allowed). */
 export function pickCommits(count: number, rng: () => number = Math.random): string[] {
   const out: string[] = [];
@@ -50,4 +94,10 @@ export function fakeHash(rng: () => number = Math.random): string {
     .toString(16)
     .padStart(7, "0")
     .slice(0, 7);
+}
+
+/** Total overlay lifetime until the last drop finishes falling. */
+export function commitRainDurationMs(dropCount: number): number {
+  if (dropCount <= 0) return 0;
+  return (dropCount - 1) * COMMIT_RAIN_STAGGER_MS + COMMIT_RAIN_FALL_MS + 400;
 }

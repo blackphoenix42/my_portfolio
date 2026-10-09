@@ -1,8 +1,9 @@
 // Assistant settings and device-based recommendations (ADR-0012). Pure so it
 // can be unit-tested; the panel persists settings in localStorage.
 
-export type Engine = "quick" | "gpu" | "cpu";
-export type AiEngine = Exclude<Engine, "quick">;
+export type Engine = "quick" | "server" | "gpu" | "cpu";
+/** Engines that download and execute a model in the visitor's browser. */
+export type AiEngine = Exclude<Engine, "quick" | "server">;
 export type AnswerLength = "short" | "detailed";
 export type ContextDepth = "focused" | "thorough";
 export type CpuUsage = "balanced" | "max";
@@ -20,7 +21,7 @@ export type ChatSettings = {
 
 export const SETTINGS_KEY = "phoenix:chat:settings";
 
-export const ENGINES = ["quick", "gpu", "cpu"] as const satisfies readonly Engine[];
+export const ENGINES = ["quick", "server", "gpu", "cpu"] as const satisfies readonly Engine[];
 const LENGTHS = ["short", "detailed"] as const satisfies readonly AnswerLength[];
 const CONTEXTS = ["focused", "thorough"] as const satisfies readonly ContextDepth[];
 const CPU_USAGES = ["balanced", "max"] as const satisfies readonly CpuUsage[];

@@ -70,10 +70,13 @@ export function AskPortfolio({
       chats: previous.chats.map((c) => (c.id === chatId ? updateChat(c, update(c.messages)) : c)),
     }));
   };
-  const [chatNotice, setChatNotice] = useState<"contextCleared" | "chatCleared" | null>(null);
+  const [chatNotice, setChatNotice] = useState<
+    "contextCleared" | "chatCleared" | "serverUnavailable" | null
+  >(null);
   const [generating, setGenerating] = useState(false);
   const mounted = useRef(false);
   const messagesRef = useRef<Message[]>([]);
+  const serverAbort = useRef<AbortController | null>(null);
   const nextId = useRef(
     Math.max(0, ...sessions.chats.flatMap((c) => c.messages.map((m) => m.id + 1))),
   );
@@ -221,11 +224,86 @@ export function AskPortfolio({
     }
   };
 
+  const askServer = async (query: string, data: Corpus) => {
+    const userId = nextId.current++;
+    const botId = nextId.current++;
+    const controller = new AbortController();
+    serverAbort.current = controller;
+    setMessages((prev) => [
+      ...prev,
+      { id: userId, role: "user", text: query },
+      { id: botId, role: "bot", mode: "ai", text: "", streaming: true },
+    ]);
+    setGenerating(true);
+    let text = "";
+    let sources: Source[] = [];
+    const patch = (next: Partial<Message>) => {
+      if (mounted.current)
+        setMessages((prev) =>
+          prev.map((message) => (message.id === botId ? { ...message, ...next } : message)),
+        );
+    };
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          chatId: activeChat.id,
+          message: query,
+          history: toHistory(messagesRef.current.slice(activeChat.contextStart)),
+          locale: document.documentElement.lang,
+          length: llm.settings.length,
+        }),
+      });
+      if (!response.ok || !response.body) throw new Error("unavailable");
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const events = buffer.split(/\r?\n\r?\n/);
+        buffer = events.pop() ?? "";
+        for (const item of events) {
+          const kind = item.match(/^event:\s*(.+)$/m)?.[1];
+          const raw = item.match(/^data:\s*(.+)$/m)?.[1];
+          if (!kind || !raw) continue;
+          const payload = JSON.parse(raw) as { delta?: string; sources?: Source[] };
+          if (kind === "sources" && payload.sources) {
+            sources = payload.sources;
+            patch({ sources });
+          } else if (kind === "delta" && payload.delta) {
+            text += payload.delta;
+            patch({ text });
+          } else if (kind === "error") {
+            throw new Error("unavailable");
+          }
+        }
+      }
+      if (text.trim()) patch({ text, sources, streaming: false });
+      else throw new Error("emptyResponse");
+    } catch {
+      if (!mounted.current || controller.signal.aborted) return;
+      patch({ ...lexicalAnswer(query, botId, data), streaming: false });
+      llm.update({ engine: "quick" });
+      setChatNotice("serverUnavailable");
+    } finally {
+      if (serverAbort.current === controller) serverAbort.current = null;
+      if (mounted.current) setGenerating(false);
+    }
+  };
+
   const ask = (raw: string) => {
     const query = raw.trim();
     if (!query || generating) return;
     setInput("");
     setChatNotice(null);
+    if (llm.settings.engine === "server") {
+      void askServer(query, corpus);
+      return;
+    }
     if (llm.state.status === "ready") {
       void askAi(query, corpus);
       return;
@@ -235,7 +313,7 @@ export function AskPortfolio({
     setMessages((prev) => [...prev, userMsg, botMsg]);
   };
 
-  const aiReady = llm.state.status === "ready";
+  const aiReady = llm.state.status === "ready" || llm.settings.engine === "server";
 
   return (
     <motion.div
@@ -476,7 +554,10 @@ export function AskPortfolio({
             {generating ? (
               <button
                 type="button"
-                onClick={() => llm.runtime.current?.interrupt()}
+                onClick={() => {
+                  serverAbort.current?.abort();
+                  llm.runtime.current?.interrupt();
+                }}
                 aria-label={t("ai.stop")}
                 title={t("ai.stop")}
                 className="btn-ghost px-3 py-2"

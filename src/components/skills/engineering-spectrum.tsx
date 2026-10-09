@@ -6,16 +6,8 @@ import { useTranslations } from "next-intl";
 import { clusters } from "@/content/skills";
 import { projects } from "@/content/projects";
 import { accentText, cn } from "@/lib/utils";
-import { TECH_ICONS } from "@/components/logos/tech-icons";
-import { SKILL_GLYPHS, SkillFallbackGlyph } from "@/components/logos/skill-glyph";
+import { SkillChip } from "@/components/logos/skill-chip";
 import { Link } from "@/i18n/navigation";
-
-const accentTile: Record<string, string> = {
-  cyan: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/40",
-  violet: "bg-accent-violet/10 text-accent-violet border-accent-violet/40",
-  emerald: "bg-accent-emerald/10 text-accent-emerald border-accent-emerald/40",
-  amber: "bg-accent-amber/10 text-accent-amber border-accent-amber/40",
-};
 
 export function EngineeringSpectrum({
   hideHeader = false,
@@ -107,38 +99,15 @@ export function EngineeringSpectrum({
                 </div>
                 <p className="text-fg-muted mt-2 text-sm">{tr(c.id, "blurb", c.blurb)}</p>
                 <ul className="mt-4 flex flex-wrap gap-1.5">
-                  {c.skills.map((s) => {
-                    const Icon = (
-                      TECH_ICONS as Record<
-                        string,
-                        (p: { className?: string }) => React.ReactElement
-                      >
-                    )[s.name];
-                    const Glyph = SKILL_GLYPHS[s.name];
-                    return (
-                      <li
-                        key={s.name}
-                        className={cn("chip gap-1.5", s.level === "core" && "border-fg/40 text-fg")}
-                      >
-                        <span
-                          aria-hidden
-                          className={cn(
-                            "inline-grid h-4 w-4 place-items-center rounded-sm border",
-                            accentTile[c.accent],
-                          )}
-                        >
-                          {Icon ? (
-                            <Icon className="h-2.5 w-2.5" />
-                          ) : Glyph ? (
-                            <Glyph className="h-2.5 w-2.5" strokeWidth={2.2} />
-                          ) : (
-                            <SkillFallbackGlyph className="h-2.5 w-2.5" />
-                          )}
-                        </span>
-                        {s.name}
-                      </li>
-                    );
-                  })}
+                  {c.skills.map((s) => (
+                    <li key={s.name}>
+                      <SkillChip
+                        name={s.name}
+                        accent={c.accent}
+                        className={s.level === "core" ? "border-fg/35" : undefined}
+                      />
+                    </li>
+                  ))}
                 </ul>
                 {related.length > 0 && (
                   <div className="border-border/60 mt-4 border-t pt-3">

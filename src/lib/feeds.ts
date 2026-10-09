@@ -1,3 +1,11 @@
+import {
+  DEFAULT_COMMIT_RAIN_WINDOW,
+  isOnOrAfter,
+  parseCommitRainWindow,
+  windowSince,
+  type CommitRainWindow,
+} from "@/lib/commit-rain-window";
+
 // Lightweight RSS / Atom / GitHub events fetchers.
 // All fetches use ISR via next.revalidate. On failure, returns [].
 
@@ -62,8 +70,228 @@ async function safeFetch(url: string, init?: RequestInit) {
   }
 }
 
+/** Canonical upstream feed URLs (allowlisted for same-origin XML proxies). */
+export const FEED_SOURCES = {
+  medium: {
+    upstream: "https://binaryphoenix01.medium.com/feed",
+    contentType: "application/rss+xml; charset=utf-8",
+  },
+  youtube: {
+    upstream: "https://www.youtube.com/feeds/videos.xml?channel_id=UCcINlOM-rC1_8yiRGH_iFBg",
+    contentType: "application/atom+xml; charset=utf-8",
+  },
+  github: {
+    upstream: "https://github.com/blackphoenix42.atom",
+    contentType: "application/atom+xml; charset=utf-8",
+  },
+} as const;
+
+export type FeedSourceKey = keyof typeof FEED_SOURCES;
+
+type GhEvent = {
+  type: string;
+  created_at: string;
+  repo: { name: string };
+  payload: {
+    ref?: string;
+    ref_type?: string;
+    action?: string;
+    // GitHub reports the push size here; the `commits` array can be empty or
+    // truncated in the public events feed, so `size` is the reliable count.
+    size?: number;
+    pull_request?: { html_url?: string; title?: string };
+    issue?: { html_url?: string; title?: string };
+    commits?: { message: string; sha: string }[];
+  };
+};
+
+/** Fetch raw XML for a known feed source (used by `/feeds/*` proxies). */
+export async function fetchRawFeed(source: FeedSourceKey): Promise<string | null> {
+  return safeFetch(FEED_SOURCES[source].upstream);
+}
+
+export type CommitRainLine = { message: string; sha: string; repo?: string };
+
+export type FetchCommitMessagesOptions = {
+  limit?: number;
+  /** week | month | year | all — filters by event/commit timestamp. */
+  window?: CommitRainWindow | string;
+};
+
+/**
+ * Public push commit messages for decorative commit rain.
+ * Merges Events API + Commit Search (Events alone only covers ~90 days), then
+ * Atom. Callers may accumulate results client-side across visits.
+ */
+export async function fetchRecentCommitMessages(
+  user: string,
+  limitOrOpts: number | FetchCommitMessagesOptions = 100,
+): Promise<CommitRainLine[]> {
+  const opts: FetchCommitMessagesOptions =
+    typeof limitOrOpts === "number" ? { limit: limitOrOpts } : (limitOrOpts ?? {});
+  const limit = opts.limit ?? 100;
+  const window = parseCommitRainWindow(opts.window ?? DEFAULT_COMMIT_RAIN_WINDOW);
+  const since = windowSince(window);
+
+  const headers: Record<string, string> = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "Portfolio-RSS/1.0",
+  };
+  const token = process.env.GITHUB_TOKEN;
+  if (token) headers.Authorization = `Bearer ${token}`;
+
+  const fromEvents = await commitMessagesFromEvents(user, limit, since, headers);
+  // Always try Search so year/all (and sparse months) fill beyond the Events window.
+  const fromSearch = await commitMessagesFromSearch(user, limit, since, headers, window);
+  const merged = mergeCommitLines(fromEvents, fromSearch, limit);
+  if (merged.length) return merged;
+  return commitMessagesFromAtom(user, limit);
+}
+
+async function commitMessagesFromEvents(
+  user: string,
+  limit: number,
+  since: Date | null,
+  headers: Record<string, string>,
+): Promise<CommitRainLine[]> {
+  try {
+    const pages = since && since < new Date(Date.now() - 40 * 864e5) ? 3 : 1;
+    const out: CommitRainLine[] = [];
+    const seen = new Set<string>();
+    for (let page = 1; page <= pages; page++) {
+      const res = await fetch(
+        `https://api.github.com/users/${encodeURIComponent(user)}/events/public?per_page=100&page=${page}`,
+        {
+          headers,
+          next: { revalidate: 900 },
+          signal: AbortSignal.timeout(8000),
+        },
+      );
+      if (!res.ok) break;
+      const events = (await res.json()) as GhEvent[];
+      if (!Array.isArray(events) || events.length === 0) break;
+      let pageOlderThanWindow = true;
+      for (const ev of events) {
+        if (isOnOrAfter(ev.created_at, since)) pageOlderThanWindow = false;
+        if (ev.type !== "PushEvent") continue;
+        if (!isOnOrAfter(ev.created_at, since)) continue;
+        for (const c of ev.payload.commits ?? []) {
+          const message = c.message?.split("\n")[0]?.trim().slice(0, 80);
+          if (!message || /^(merge|wip)\b/i.test(message)) continue;
+          const key = `${c.sha}:${message}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          out.push({
+            message,
+            sha: (c.sha ?? "").slice(0, 7) || fakeShortHash(message),
+            repo: ev.repo?.name,
+          });
+          if (out.length >= limit) return out;
+        }
+      }
+      if (pageOlderThanWindow && since) break;
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+type GhCommitSearchItem = {
+  sha?: string;
+  commit?: { message?: string; committer?: { date?: string } };
+  repository?: { full_name?: string };
+};
+
+async function commitMessagesFromSearch(
+  user: string,
+  limit: number,
+  since: Date | null,
+  headers: Record<string, string>,
+  window: CommitRainWindow = "month",
+): Promise<CommitRainLine[]> {
+  try {
+    const dateClause = since ? `+committer-date:>=${since.toISOString().slice(0, 10)}` : "";
+    const q = `author:${user}${dateClause}`;
+    const pages = window === "year" || window === "all" ? 2 : 1;
+    const out: CommitRainLine[] = [];
+    const seen = new Set<string>();
+    for (let page = 1; page <= pages; page++) {
+      const res = await fetch(
+        `https://api.github.com/search/commits?q=${encodeURIComponent(q)}&sort=committer-date&order=desc&per_page=${Math.min(limit, 100)}&page=${page}`,
+        {
+          headers: { ...headers, Accept: "application/vnd.github+json" },
+          next: { revalidate: 900 },
+          signal: AbortSignal.timeout(8000),
+        },
+      );
+      if (!res.ok) break;
+      const json = (await res.json()) as { items?: GhCommitSearchItem[] };
+      const items = Array.isArray(json.items) ? json.items : [];
+      if (items.length === 0) break;
+      for (const item of items) {
+        const message = item.commit?.message?.split("\n")[0]?.trim().slice(0, 80);
+        if (!message || /^(merge|wip)\b/i.test(message)) continue;
+        const sha = (item.sha ?? "").slice(0, 7) || fakeShortHash(message);
+        const key = `${sha}:${message}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push({ message, sha, repo: item.repository?.full_name });
+        if (out.length >= limit) return out;
+      }
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+function mergeCommitLines(
+  a: CommitRainLine[],
+  b: CommitRainLine[],
+  limit: number,
+): CommitRainLine[] {
+  const seen = new Set<string>();
+  const out: CommitRainLine[] = [];
+  for (const line of [...a, ...b]) {
+    const key = `${line.sha}:${line.message}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(line);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+function fakeShortHash(seed: string): string {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return h.toString(16).padStart(7, "0").slice(0, 7);
+}
+
+async function commitMessagesFromAtom(user: string, limit: number): Promise<CommitRainLine[]> {
+  const xml = await safeFetch(`https://github.com/${encodeURIComponent(user)}.atom`);
+  if (!xml) return [];
+  const out: CommitRainLine[] = [];
+  for (const entry of xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
+    const block = entry[1] ?? "";
+    const title = block.match(/<title(?:\s[^>]*)?>([\s\S]*?)<\/title>/)?.[1];
+    if (!title) continue;
+    const text = stripHtml(title).slice(0, 80);
+    if (!text) continue;
+    // Prefer titles that look like push/commit activity.
+    if (!/push|commit/i.test(text) && out.length > 0) continue;
+    out.push({ message: text, sha: fakeShortHash(text) });
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
 export async function fetchMediumFeed(handle: string, limit = 3): Promise<FeedItem[]> {
-  const xml = await safeFetch(`https://medium.com/feed/${handle}`);
+  // Prefer subdomain feed (matches public profile CTA); fall back to medium.com/feed/@handle.
+  const xml =
+    (await safeFetch("https://binaryphoenix01.medium.com/feed")) ??
+    (await safeFetch(`https://medium.com/feed/${handle}`));
   if (!xml) return [];
   const items: FeedItem[] = [];
   const re = /<item>([\s\S]*?)<\/item>/g;
@@ -107,23 +335,6 @@ export async function fetchYouTubeFeed(channelId: string, limit = 3): Promise<Fe
   }
   return items;
 }
-
-type GhEvent = {
-  type: string;
-  created_at: string;
-  repo: { name: string };
-  payload: {
-    ref?: string;
-    ref_type?: string;
-    action?: string;
-    // GitHub reports the push size here; the `commits` array can be empty or
-    // truncated in the public events feed, so `size` is the reliable count.
-    size?: number;
-    pull_request?: { html_url?: string; title?: string };
-    issue?: { html_url?: string; title?: string };
-    commits?: { message: string; sha: string }[];
-  };
-};
 
 export async function fetchGithubActivity(user: string, limit = 4): Promise<FeedItem[]> {
   const headers: Record<string, string> = { Accept: "application/vnd.github+json" };

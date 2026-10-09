@@ -138,14 +138,17 @@ pnpm dev              # http://localhost:3000
 
 See [`.env.example`](.env.example):
 
-| Variable                                       | Purpose                                                              |
-| ---------------------------------------------- | -------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`                         | Canonical site URL for SEO + sitemap + OG.                           |
-| `RESEND_API_KEY`                               | Resend API key for sending contact emails.                           |
-| `CONTACT_TO_EMAIL`                             | Inbox that receives messages (defaults to `aayush.sang@gmail.com`).  |
-| `CONTACT_FROM_EMAIL`                           | Verified sender for Resend (or `onboarding@resend.dev` for testing). |
-| `GITHUB_TOKEN`                                 | Optional — raises GitHub API rate limits for the workbench.          |
-| `NEXT_PUBLIC_SHOW_PHONE` / `NEXT_PUBLIC_PHONE` | Toggle / render a phone number on the contact page.                  |
+| Variable                                                | Purpose                                                              |
+| ------------------------------------------------------- | -------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                                  | Canonical site URL for SEO + sitemap + OG.                           |
+| `RESEND_API_KEY`                                        | Resend API key for sending contact emails.                           |
+| `CONTACT_TO_EMAIL`                                      | Inbox that receives messages (defaults to `aayush.sang@gmail.com`).  |
+| `CONTACT_FROM_EMAIL`                                    | Verified sender for Resend (or `onboarding@resend.dev` for testing). |
+| `GITHUB_TOKEN`                                          | Optional — raises GitHub API rate limits for the workbench + feeds.  |
+| `CHAT_API_ENABLED`                                      | Opt-in server Ask Ayush (`true` only after ADR-0014 acceptance).     |
+| `CHAT_API_KEY` / `CHAT_API_BASE_URL` / `CHAT_API_MODEL` | Server-only managed inference credentials (never `NEXT_PUBLIC_*`).   |
+| `CHAT_DAILY_SPEND_CAP_USD`                              | Soft operational cap documentation for server chat spend.            |
+| `NEXT_PUBLIC_SHOW_PHONE` / `NEXT_PUBLIC_PHONE`          | Toggle / render a phone number on the contact page.                  |
 
 ## 🌍 Internationalization
 

@@ -91,7 +91,7 @@ export function useLocalLlm() {
     const selected = settings.engine;
 
     async function start() {
-      if (selected === "quick" || !device || deleting.current) {
+      if (selected === "quick" || selected === "server" || !device || deleting.current) {
         setState((previous) => (previous.status === "fallback" ? previous : { status: "off" }));
         return;
       }

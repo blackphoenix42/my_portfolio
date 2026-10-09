@@ -50,13 +50,13 @@ export function ChatSettingsPanel({
         <legend className="mb-2 font-semibold">{t("engineLabel")}</legend>
         {ENGINES.map((engine) => {
           const availability =
-            engine === "quick"
+            engine === "quick" || engine === "server"
               ? { ok: true as const }
               : device
                 ? engineAvailability(engine, device)
                 : null;
           const available = availability?.ok === true;
-          const speed = engine === "quick" ? undefined : settings.speeds[engine];
+          const speed = engine === "gpu" || engine === "cpu" ? settings.speeds[engine] : undefined;
           return (
             <label
               key={engine}
@@ -79,7 +79,7 @@ export function ChatSettingsPanel({
               <span id={`chat-${engine}-help`} className="text-fg-muted mt-1 block leading-relaxed">
                 {t(`engines.${engine}.help`)}
               </span>
-              {engine !== "quick" && (
+              {(engine === "gpu" || engine === "cpu") && (
                 <span className="text-fg-subtle mt-1 block">
                   {t("download", {
                     model: engine === "gpu" ? LLM_MODEL_NAME : CPU_MODEL.name,

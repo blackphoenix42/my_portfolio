@@ -17,11 +17,6 @@ const loader = (factory: () => Promise<{ default: ComponentType }>) =>
   });
 
 const DIAGRAMS: Record<(typeof DIAGRAM_SLUGS)[number], ComponentType> = {
-  maestro: loader(() =>
-    import("@/components/diagrams/maestro-architecture").then((m) => ({
-      default: m.MaestroArchitecture,
-    })),
-  ),
   "xcelium-ai-agents": loader(() =>
     import("@/components/diagrams/xcelium-agents-architecture").then((m) => ({
       default: m.XceliumAgentsArchitecture,

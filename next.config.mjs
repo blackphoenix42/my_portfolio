@@ -1,4 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin";
+import { buildAliasRedirects } from "./src/lib/route-aliases.mjs";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
@@ -50,10 +51,9 @@ const nextConfig = {
     ],
   },
   async redirects() {
-    return [
-      // XMAI was superseded by MAESTRO; keep previously shared links working.
-      { source: "/work/xmai", destination: "/work/maestro", permanent: true },
-    ];
+    // Typos / synonyms / short forms → canonical paths (see docs/ENDPOINTS.md).
+    // Includes legacy /work/xmai → /work/maestro via SLUG_ALIASES.
+    return buildAliasRedirects();
   },
   async headers() {
     return [

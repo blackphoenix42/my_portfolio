@@ -10,6 +10,10 @@ tags: [ux, performance, content]
 
 # 0011 — System-design whiteboards as a dynamic registry
 
+> Amendment (2026-10-09): Detail pages now present the demo, HLD, LLD, and
+> decisions as one stacked document rather than client-side tabs. The whiteboard
+> registry remains lazy-loaded; each page also includes a static UML overview.
+
 ## Context
 
 Engineer-oriented visitors (and interviewers) value seeing how someone reasons

@@ -26,24 +26,23 @@ const FG_M = "hsl(var(--fg-muted))";
 const FG = "hsl(var(--fg))";
 
 /* -------------------------------------------------------------------------- */
-/*  MAESTRO — conductor, 10 agents on an arc, 5 human gates on the score       */
+/*  MAESTRO — abstract multi-agent + human oversight (no proprietary counts) */
 /* -------------------------------------------------------------------------- */
 export function MaestroConductor() {
   const reduce = useThumbnailReducedMotion();
-  // Rounded: Node and browser Math.cos/sin can differ in the last digit, which breaks hydration.
   const round = (v: number) => Math.round(v * 100) / 100;
-  const agents = Array.from({ length: 10 }, (_, i) => {
-    const angle = Math.PI * (0.08 + (0.84 * i) / 9);
-    return { x: round(240 - Math.cos(angle) * 150), y: round(140 - Math.sin(angle) * 92) };
+  // Decorative only — not a map of the real agent inventory or gates.
+  const agents = Array.from({ length: 6 }, (_, i) => {
+    const angle = Math.PI * (0.12 + (0.76 * i) / 5);
+    return { x: round(240 - Math.cos(angle) * 140), y: round(130 - Math.sin(angle) * 85) };
   });
-  const gates = [118, 190, 262, 334, 406];
   return (
     <svg viewBox="0 0 480 200" className="h-full w-full">
       <text x="40" y="22" style={{ fontSize: 11, fill: FG_S, fontFamily: "var(--font-mono)" }}>
-        maestro · conductor → 10 agents · 5 gates
+        maestro · multi-agent · human-gated · trade secret
       </text>
       {agents.map((a, i) => (
-        <line key={`l${i}`} x1={240} y1={140} x2={a.x} y2={a.y} stroke={BD} strokeWidth="1" />
+        <line key={`l${i}`} x1={240} y1={130} x2={a.x} y2={a.y} stroke={BD} strokeWidth="1" />
       ))}
       {agents.map((a, i) => (
         <motion.circle
@@ -52,49 +51,30 @@ export function MaestroConductor() {
           cy={a.y}
           r="9"
           fill={BG}
-          stroke={i === 9 ? V : A}
+          stroke={i % 2 === 0 ? A : V}
           strokeWidth="1.5"
           initial={{ opacity: 1 }}
           animate={reduce ? undefined : { opacity: [1, 0.45, 1] }}
           transition={{ duration: 5, repeat: Infinity, delay: i * 0.5 }}
         />
       ))}
-      <circle cx={240} cy={140} r="20" fill={BG} stroke={V} strokeWidth="1.8" />
+      <circle cx={240} cy={130} r="22" fill={BG} stroke={V} strokeWidth="1.8" />
       <text
         x={240}
-        y={144}
+        y={134}
         textAnchor="middle"
         style={{ fontSize: 10, fontWeight: 600, fill: FG, fontFamily: "var(--font-mono)" }}
       >
         ♪
       </text>
-      <line x1="60" y1="182" x2="420" y2="182" stroke={BD} />
-      {gates.map((x) => (
-        <path
-          key={x}
-          d={`M ${x} 176 L ${x + 6} 182 L ${x} 188 L ${x - 6} 182 Z`}
-          fill={M}
-          stroke={BG}
-          strokeWidth="1"
-        />
-      ))}
-      {!reduce && (
-        <motion.circle
-          r="4"
-          cy={182}
-          fill={E}
-          initial={{ cx: 60, opacity: 0 }}
-          animate={{ cx: [60, 420], opacity: [0, 1, 1, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-        />
-      )}
+      <rect x="150" y="168" width="180" height="22" rx="6" fill={BG_S} stroke={M} strokeWidth="1" />
       <text
-        x="424"
-        y="196"
-        textAnchor="end"
-        style={{ fontSize: 9, fill: FG_S, fontFamily: "var(--font-mono)" }}
+        x="240"
+        y="183"
+        textAnchor="middle"
+        style={{ fontSize: 10, fill: FG_M, fontFamily: "var(--font-mono)" }}
       >
-        intake → release
+        engineer in the loop
       </text>
     </svg>
   );

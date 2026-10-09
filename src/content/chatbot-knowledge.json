@@ -16,7 +16,7 @@
       "id": "maestro",
       "source": "Projects · MAESTRO",
       "title": "MAESTRO — Multi-Agent Ticket Resolution",
-      "text": "MAESTRO is a portable multi-agent platform Ayush built at Cadence: a conductor orchestrates 10 specialist AI agents across a 20-phase, human-gated workflow that carries an Xcelium engineering ticket from intake and root-cause analysis through fix, validation, review, regression and release. Measured across 22 Jiras, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%, and it was selected for trade-secret protection."
+      "text": "MAESTRO is a Cadence multi-agent platform Ayush helped build for engineering-ticket resolution on Xcelium workflows, with human oversight at high-risk steps. On an internal evaluation it cut ticket-resolution time by 45% and root-cause-analysis time by 55%, and it was selected for trade-secret protection. Detailed workflow, agent inventories and tooling integrations are confidential and not discussed publicly."
     },
     {
       "id": "xcelium-agents",

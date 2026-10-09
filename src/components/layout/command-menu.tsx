@@ -33,9 +33,9 @@ const NAV_ITEMS = [
   { id: "work", key: "workNav", icon: Layers, href: "/work" },
   { id: "skills", key: "skills", icon: Cpu, href: "/skills" },
   { id: "experience", key: "experience", icon: Briefcase, href: "/experience" },
+  { id: "now", key: "now", icon: Compass, href: "/now" },
   { id: "cp", key: "cp", icon: Code2, href: "/competitive-programming" },
   { id: "system-design", key: "systemDesign", icon: Network, href: "/system-design" },
-  { id: "now", key: "now", icon: Compass, href: "/competitive-programming#now" },
   { id: "lab", key: "roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
   { id: "contact", key: "contact", icon: Mail, href: "/contact" },
 ] as const;

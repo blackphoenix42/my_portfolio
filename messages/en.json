@@ -44,7 +44,7 @@
     "work": "Work",
     "skills": "Skills",
     "experience": "Experience",
-    "craft": "Practice & Plans",
+    "craft": "Now",
     "now": "Now",
     "systemDesign": "System Design",
     "contact": "Contact",
@@ -197,7 +197,15 @@
     "language": "Language",
     "theme": "Theme",
     "shortcuts": "Keyboard shortcuts",
-    "chatbot": "Ask Ayush settings"
+    "chatbot": "Ask Ayush settings",
+    "commitRain": "Commit rain",
+    "commitRainHelp": "Which public GitHub commits feed the decorative rain.",
+    "commitRainWindows": {
+      "week": "This week",
+      "month": "This month",
+      "year": "This year",
+      "all": "All time"
+    }
   },
   "recruiterBanner": {
     "modeOn": "Recruiter mode · ON",
@@ -242,7 +250,7 @@
       "workNav": "Work",
       "skills": "Skills",
       "experience": "Experience",
-      "cp": "Practice & Plans · CP, Now & Roadmap",
+      "cp": "Now · CP & Roadmap",
       "systemDesign": "System Design",
       "now": "Now",
       "roadmap": "Roadmap",
@@ -268,15 +276,15 @@
       "leetcode": "LeetCode global"
     },
     "visualization": {
-      "panelLabel": "maestro · agents · live",
-      "flow": "ticket → agents → fix → verify",
+      "panelLabel": "agents · orchestration · live",
+      "flow": "ticket → agents → review → verify",
       "throughputUp": "↑ throughput",
-      "aria": "Animated diagram: tickets and profiler data flowing through knowledge and MCP tools into a conductor and its agents, producing RTL recodes, throughput gains and verified fixes.",
+      "aria": "Animated diagram: tickets and profiler data flowing through knowledge into orchestrated agents under review, producing verified engineering outcomes.",
       "nodes": {
         "src": "Tickets",
         "rag": "Knowledge",
-        "mcp": "MCP",
-        "agent": "Conductor · Agents",
+        "mcp": "Tools",
+        "agent": "Agents · Review",
         "rtl": "RTL Recode",
         "hot": "18–19% Throughput",
         "out": "Verified Fix"
@@ -298,7 +306,7 @@
     "eyebrow": "/ about",
     "heading": "A brief introduction",
     "bio1": "I’m <strong>{name}</strong>, an R&D Software Engineer II with <strong>4.5+ years of experience</strong> in C++, Python and AI-driven automation. At {company}, I work on Xcelium and large-scale RTL optimization for Apple, Google, Samsung and NVIDIA workloads.",
-    "bio2": "My work connects low-level systems performance with engineering productivity: profiling simulators, building MAESTRO and optimization agents, and automating regression and release workflows. I enjoy problems at the intersection of software, performance and hardware.",
+    "bio2": "My work connects low-level systems performance with engineering productivity: profiling simulators, building multi-agent assistive tooling (including trade-secret work such as MAESTRO), and automating regression and release workflows. I enjoy problems at the intersection of software, performance and hardware.",
     "principlesEyebrow": "How I build reliable systems",
     "principles": {
       "profile": {
@@ -428,7 +436,7 @@
     "linksHeading": "Links",
     "relatedHeading": "Related work",
     "demoSubtitle": {
-      "maestro": "Run a simulated ticket through the conductor — approve each human gate and watch a failing test loop back to root-cause analysis.",
+      "maestro": "Interactive workflow walkthrough omitted — MAESTRO is trade-secret protected.",
       "algolens": "A miniature visualizer of the AlgoLens execution model.",
       "xcelium-optimization": "Drag the slider to see profiles compress as RTL/runtime optimizations land.",
       "tezos-premier-league": "Click play to simulate a deterministic on-chain PvP bracket.",
@@ -446,11 +454,11 @@
     "subheading": "What I use to ship.",
     "categories": "Categories",
     "all": "All",
-    "pageTitle": "Skills · Engineering Arsenal",
-    "pageDescription": "Filterable skills explorer plus capability clusters spanning performance, intelligent systems, backend, product and infrastructure.",
+    "pageTitle": "Skills",
+    "pageDescription": "Focus areas and tools spanning performance engineering, AI systems, backend, product, and infrastructure.",
     "tag": "/ skills",
-    "pageHeading": "Engineering arsenal",
-    "pageIntro": "Explore technical tools and the engineering areas where I apply them."
+    "pageHeading": "Skills",
+    "pageIntro": "Focus areas first — what I ship — then the technical categories behind them."
   },
   "experience": {
     "title": "Experience",
@@ -486,11 +494,11 @@
       "peakRating": "Peak rating"
     },
     "tagline": "Handles & live ratings update independently on each platform — click a tile to verify.",
-    "pageTitle": "Practice & Plans · CP, Now & Roadmap",
+    "pageTitle": "Now · CP & Roadmap",
     "pageDescription": "Competitive programming, current engineering focus and an incremental plan for the 2027 roadmap.",
-    "craftTag": "/ practice & plans",
-    "pageHeading": "Practice today. Build what’s next.",
-    "pageIntro": "Competitive programming, what I’m working on now, and the learning and small releases that shape my next systems.",
+    "craftTag": "/ now",
+    "pageHeading": "What I’m doing now.",
+    "pageIntro": "Competitive programming, current focus, and the learning and small releases that shape my next systems.",
     "roadmapAria": "Engineering roadmap",
     "roadmapTag": "/ roadmap",
     "roadmapHeading": "What I'm building next",
@@ -651,7 +659,7 @@
     "sections": {
       "focus": {
         "0": "R&D software engineering at Cadence — performance work on the Xcelium logic simulator.",
-        "1": "Building multi-agent AI systems — MAESTRO for end-to-end ticket resolution and ChipStack Xcelium agents for simulation performance and memory optimization.",
+        "1": "Building multi-agent AI systems — including MAESTRO (trade-secret ticket assist; details stay internal) and ChipStack Xcelium agents for simulation performance and memory optimization.",
         "2": "Sharpening C++ performance instincts: profiling, hot-path analysis and low-risk optimization."
       },
       "learning": {
@@ -692,7 +700,7 @@
     "pageDescription": "Interactive system-design whiteboards — URL shortener, rate limiter, job scheduler and more.",
     "tag": "/ system design",
     "pageHeading": "System design whiteboards",
-    "pageIntro": "System-design whiteboards I’ve built: working browser demos, architecture, implementation notes and trade-offs.",
+    "pageIntro": "Whiteboards written the way I’d present them in a design review: requirements with SLOs, layered architecture, data models, APIs, failure modes, and executable pseudo-code.",
     "jumpTo": "Jump to a system",
     "interactive": "Interactive",
     "comingSoon": "Interactive coming soon",
@@ -734,259 +742,391 @@
     "systems": {
       "url-shortener": {
         "title": "URL Shortener",
-        "tagline": "Map long URLs to short codes and redirect at scale (bit.ly-style).",
+        "tagline": "Global short-link platform: ~100:1 read/write, p99 redirect < 20 ms at the edge, durable codes with optional aliases.",
         "requirements": {
-          "0": "Generate a unique short code per long URL.",
-          "1": "Redirect short → long with very low latency.",
-          "2": "Handle a very high read:write ratio (reads ≫ writes).",
-          "3": "Optional analytics, expiry and custom aliases."
+          "0": "Allocate globally unique short codes; support custom aliases with conflict detection.",
+          "1": "Redirect hot paths from edge/CDN with p99 < 20 ms in-region; origin path < 50 ms.",
+          "2": "Sustain ~100:1 read:write; target 50k writes/s and 5M redirects/s at peak with linear scale-out.",
+          "3": "TTL/expiry, soft-delete, and owner-scoped admin APIs without blocking the redirect path.",
+          "4": "Async click analytics that never adds latency to redirects; at-least-once event delivery.",
+          "5": "Abuse controls: destination allowlist/HTTPS, rate limits on create, malware URL denylist hooks."
         },
         "components": {
           "0": {
-            "name": "API service",
-            "role": "Validates input, creates or looks up mappings."
+            "name": "Clients",
+            "role": "Browsers, apps, and partners hitting create + redirect URLs."
           },
           "1": {
-            "name": "Key generation",
-            "role": "Base62 of an auto-increment id or hash, collision-checked."
+            "name": "CDN / edge",
+            "role": "Terminates TLS; caches 301/302 responses and shields origin."
           },
           "2": {
-            "name": "KV store / DB",
-            "role": "code → long-URL mapping, sharded by code."
+            "name": "API gateway",
+            "role": "AuthN/Z, WAF, request shaping, and route split write vs redirect."
           },
           "3": {
-            "name": "Cache (Redis)",
-            "role": "Hot short-codes for sub-millisecond redirects."
+            "name": "Write service",
+            "role": "Validates destinations, allocates codes, enforces alias uniqueness."
           },
           "4": {
-            "name": "CDN / edge",
-            "role": "Caches redirects close to users."
+            "name": "Redirect service",
+            "role": "Read-optimized resolver; cache-aside then durable store; emits analytics async."
+          },
+          "5": {
+            "name": "ID allocator",
+            "role": "Snowflake/range-reserved counters → Base62; avoids central hot lock per request."
+          },
+          "6": {
+            "name": "Redis cache",
+            "role": "code → destination (+ expiry); TTL ≤ link expiry; negative-cache 404 briefly."
+          },
+          "7": {
+            "name": "Links DB",
+            "role": "Sharded primary for mappings; unique(code), unique(alias) where present."
+          },
+          "8": {
+            "name": "Analytics bus",
+            "role": "Kafka/Pulsar topic for redirect events; workers aggregate offline."
           }
         },
         "tradeoffs": {
-          "0": "301 (permanent, cacheable, loses analytics) vs 302 (temporary, countable).",
-          "1": "Hashing (stateless, collisions) vs counter+Base62 (coordination, no collisions).",
-          "2": "A read-through cache adds complexity but is essential at this read ratio."
+          "0": "301 (CDN-cacheable, weak per-click analytics) vs 302/307 (countable, more origin load).",
+          "1": "Hash(URL) codes (stateless, collision handling) vs counter+Base62 (coordination, denser codes).",
+          "2": "Cache-aside (simple, stampede risk) vs write-through on create (warmer cache, write amplification).",
+          "3": "Global single table vs shard-by-code-prefix (scale vs cross-shard admin queries).",
+          "4": "Strong uniqueness on alias (correct) vs eventual uniqueness (faster writes, repair jobs)."
         },
         "lld": {
-          "dataModel": "Link(code PRIMARY KEY, destination, owner_id, created_at, expires_at). A unique index on code arbitrates alias collisions. Cache entries carry a TTL bounded by link expiry.",
-          "api": "POST /links accepts a destination and optional alias, returning the code. GET /:code resolves it and returns a redirect. Invalid URLs return 400; alias collisions return 409; expired or missing links return 404.",
-          "execution": "Validate HTTP/HTTPS destinations, allocate a Base62 code, insert with a uniqueness constraint and retry collisions. Reads consult the cache, then the durable store, then populate the cache. Emit analytics asynchronously after the redirect decision.",
-          "failures": "Cache loss falls back to the database with bounded concurrency. Expired links never outlive their cache TTL. Rate limits and destination validation constrain abusive writes; asynchronous analytics must not delay redirects."
+          "dataModel": "Link {\n  code           CHAR(8..12) PK          -- Base62; dense\n  alias          VARCHAR NULL UNIQUE     -- optional vanity\n  destination    TEXT NOT NULL           -- https only after normalize\n  owner_id       UUID NOT NULL\n  created_at     TIMESTAMPTZ\n  expires_at     TIMESTAMPTZ NULL\n  revoked_at     TIMESTAMPTZ NULL\n}\nCache entry: code → {destination, expires_at} with TTL = min(policy, remaining TTL)\nShard key: hash(code) % N  (alias lookup via global unique index or alias→code map)",
+          "api": "POST /v1/links\n  body: { destination, alias?, ttl_sec? }\n  → 201 { code, short_url } | 400 invalid URL | 409 alias taken | 429 create budget\n\nGET /{code}   (public redirect)\n  → 301/302 Location + Cache-Control | 404 | 410 gone\n\nGET /v1/links/{code}   (authz: owner)\n  → metadata without mutating counters\n\nDELETE /v1/links/{code}\n  → soft-revoke; purge cache; 204\n\nAnalytics are NOT on the redirect response path.",
+          "execution": "Create: normalize URL → allocate id range locally → Base62 encode → INSERT with\nconflict retry on code → optionally SET cache → return.\n\nRedirect: CDN hit? serve. Else Redirect service: GET cache → on miss GET primary\n(replica OK if revoked_at is strongly checked on primary for deletes) → SET cache\n→ enqueue {code, ts, ua_hash, edge_pop} → return redirect.\n\nNever await analytics. Negative-cache 404 for ~30s to blunt scans.",
+          "pseudocode": "function create(dest, alias, ttl):\n  dest = normalizeHttps(dest)                    // reject javascript:, data:\n  assertAllowlisted(dest)\n  for attempt in 1..5:\n    code = base62(allocator.next())\n    try: links.insert(code, dest, alias, ttl); break\n    catch UniqueViolation: continue\n  cache.set(code, dest, ttl)\n  return code\n\nfunction resolve(code, prefer301):\n  hit = cache.get(code)\n  if hit == NEGATIVE: return 404\n  row = hit ?? links.get(code)                   // primary if revoked race matters\n  if row is null or row.expired or row.revoked:\n    cache.setNegative(code, 30s); return 404\n  if hit is null: cache.set(code, row, remainingTtl(row))\n  bus.emitAsync(RedirectEvent(code, now()))      // drop on bus full? buffer locally\n  return redirect(row.dest, prefer301 ? 301 : 302)",
+          "failures": "Cache flush → origin with bulkhead + request coalescing (singleflight) per code.\nAllocator exhaustion → take new range from coordination service; don't block forever.\nDB partition outage → fail creates for that shard; redirects may still hit cache/CDN.\nBus down → keep redirecting; spill events to disk buffer with bounded size then sample.\nMalware hit on destination → revoke + purge CDN surrogate keys."
         }
       },
       "rate-limiter": {
-        "title": "Rate Limiter",
-        "tagline": "Protect services by capping request rate per client.",
+        "title": "Distributed Rate Limiter",
+        "tagline": "Multi-tenant quota plane: token-bucket policies, Redis atomicity, and explicit fail-open/closed SLOs.",
         "requirements": {
-          "0": "Limit N requests per window per key (user / IP / API key).",
-          "1": "Low latency with a clear fail-open or fail-closed policy.",
-          "2": "Work across many app servers consistently.",
-          "3": "Return 429 with a Retry-After hint."
+          "0": "Enforce per-key quotas (user, API key, IP, route) with burst + sustained rates.",
+          "1": "Decision path p99 < 5 ms in-region when Redis is healthy; deterministic Retry-After.",
+          "2": "Identical limits across N app replicas — no per-node drift under retry storms.",
+          "3": "Policy tiers (free/pro/internal) loaded without redeploying edge services.",
+          "4": "Configurable fail-open vs fail-closed per route class when the store is unavailable.",
+          "5": "Observability: allow/deny rates, hot keys, and shadow mode for policy rollouts."
         },
         "components": {
           "0": {
-            "name": "Limiter middleware",
-            "role": "Checks and decrements quota before handling."
+            "name": "Caller service",
+            "role": "Business API that must be protected before work starts."
           },
           "1": {
-            "name": "Counter store (Redis)",
-            "role": "Atomic counters/tokens keyed by client + window."
+            "name": "Limiter sidecar / SDK",
+            "role": "Extracts key, cost, and policy id; short-circuits on deny."
           },
           "2": {
-            "name": "Algorithm",
-            "role": "Token bucket, sliding-window log or fixed window."
+            "name": "Policy service",
+            "role": "Serves versioned tier configs; supports shadow evaluate."
           },
           "3": {
-            "name": "Policy",
-            "role": "Per-tier limits and burst allowance."
+            "name": "Redis cluster",
+            "role": "Atomic token buckets / sliding windows; key TTL bounds memory."
+          },
+          "4": {
+            "name": "Lua / atomic op",
+            "role": "Refill + consume in one round-trip; avoids race between GET/SET."
+          },
+          "5": {
+            "name": "Local shedder",
+            "role": "Optional process-local token cache for fail-open soft limits."
+          },
+          "6": {
+            "name": "Metrics",
+            "role": "Export allow/deny, latency, and Redis errors for SLO burn alerts."
+          },
+          "7": {
+            "name": "Admin API",
+            "role": "CRUD policies, purge keys, and emergency global brakes."
           }
         },
         "tradeoffs": {
-          "0": "Fixed window (cheap, boundary bursts) vs sliding window (accurate, costlier).",
-          "1": "Token bucket allows bursts; leaky bucket smooths output.",
-          "2": "Local in-memory (fast, per-node) vs centralized (consistent, network hop)."
+          "0": "Fixed window (cheap, boundary burst) vs sliding log (accurate, heavier memory).",
+          "1": "Token bucket (bursty UX) vs leaky bucket (smooth egress, harsher UX).",
+          "2": "Central Redis (consistent) vs local-only (fast, under-enforces under fan-out).",
+          "3": "Fail-open (availability) vs fail-closed (cost/security) when Redis times out.",
+          "4": "Sync check on every request vs async/optimistic + reconcile (risk of overshoot)."
         },
         "lld": {
-          "dataModel": "Bucket(key, tokens, last_refill_ms, capacity, refill_rate). Store expiring keys in Redis. Derive the key from the authenticated principal or a trusted proxy's client address.",
-          "api": "check(key, cost, now) returns allowed, remaining and retry_after. Middleware returns HTTP 429 and Retry-After when quota is exhausted. Costs and policy are server controlled.",
-          "execution": "Use one atomic Redis operation to refill up to capacity, test request cost, consume tokens and update the timestamp. Use a shared clock policy; clamp negative elapsed time. Expire idle buckets to bound storage.",
-          "failures": "Choose fail-open for availability-sensitive traffic and fail-closed for expensive or security-sensitive endpoints. Account for clock skew, hot keys and retries; per-process counters cannot enforce a global quota across replicas."
+          "dataModel": "Bucket {\n  key            STRING PK     -- e.g. \"tier:pro|user:42|route:search\"\n  tokens         FLOAT\n  last_refill_ms INT8\n  capacity       FLOAT         -- from Policy\n  refill_per_ms  FLOAT\n}\nPolicy {\n  id, version, capacity, refill_per_sec, fail_mode ENUM(open, closed),\n  cost_by_route JSON\n}\nRedis key TTL ≈ time-to-full from empty (bounds cardinality of idle keys).",
+          "api": "check(key, cost, now, policy_id) →\n  { allowed: bool, remaining: float, retry_after_ms: int, policy_version }\n\nHTTP mapping (middleware):\n  allow → continue\n  deny  → 429 + Retry-After: ceil(retry_after_ms/1000)\n           + X-RateLimit-Remaining / X-RateLimit-Limit\n\nAdmin:\n  PUT /v1/policies/{id}  (version bump)\n  POST /v1/buckets/purge { key_prefix }",
+          "execution": "One Redis EVAL/Lua (or native atomic): load bucket → refill by elapsed →\nif tokens < cost then compute retry_after else subtract → persist → return.\n\nClock: use Redis TIME or enforce NTP; clamp negative elapsed to 0.\nShadow mode: compute decision + metrics but always allow.\nHot keys: optional local token cache with periodic reconcile (bounded overshoot).",
+          "pseudocode": "function allow(key, cost, now, policy):\n  // atomic region begins\n  b = redis.hgetall(key) or newBucket(policy)\n  elapsed = max(0, now - b.last_refill_ms)\n  b.tokens = min(policy.capacity, b.tokens + elapsed * policy.refill_per_ms)\n  b.last_refill_ms = now\n  if b.tokens < cost:\n    need = cost - b.tokens\n    retry = ceil(need / policy.refill_per_ms)\n    redis.hset(key, b); redis.pexpire(key, idleTtl(policy))\n    return Deny(retry)\n  b.tokens -= cost\n  redis.hset(key, b); redis.pexpire(key, idleTtl(policy))\n  return Allow(b.tokens)\n  // atomic region ends\n\nfunction gate(req):\n  decision = allow(...)\n  if redisTimeout:\n    return policy.fail_mode == \"open\" ? AllowSoft() : Deny(defaultBackoff)\n  return decision",
+          "failures": "Redis timeout → per-route fail-open (read APIs) or fail-closed (pay/auth).\nClock jump forward → burst of tokens (cap at capacity); jump back → clamp elapsed.\nHot-key concentration → shard key with salt buckets + fair aggregation, or local shedder.\nPolicy rollout bug → shadow mode + version pin; emergency global brake via Admin API.\nRetries without idempotency → amplify cost; clients must honor Retry-After."
         }
       },
       "job-scheduler": {
-        "title": "Job Scheduler",
-        "tagline": "Run tasks reliably — now, delayed or recurring.",
+        "title": "Reliable Job Scheduler",
+        "tagline": "Delayed/cron/priority work with leases, fencing tokens, DLQ, and horizontally scaled workers.",
         "requirements": {
-          "0": "Enqueue jobs with priority and a run-at time.",
-          "1": "At-least-once execution with retries and backoff.",
-          "2": "Scale workers horizontally.",
-          "3": "Visibility into pending, running, failed and done jobs."
+          "0": "Enqueue immediate, delayed, and cron-derived jobs with idempotency keys.",
+          "1": "At-least-once execution; side effects must be safe under duplicate delivery.",
+          "2": "Worker crash recovery via leases + fencing tokens; no double-ack from zombies.",
+          "3": "Priority lanes without starving low-priority traffic forever (aging / fairness).",
+          "4": "Operational visibility: queued/running/failed, attempt history, payload refs.",
+          "5": "Dead-letter after N attempts with operator replay and poison isolation."
         },
         "components": {
           "0": {
-            "name": "Queue / broker",
-            "role": "Durable job queue (SQS / Kafka / DB table)."
+            "name": "Producer API",
+            "role": "Validates enqueue; dedupes on idempotency_key."
           },
           "1": {
             "name": "Scheduler",
-            "role": "Moves due delayed/cron jobs into the ready queue."
+            "role": "Promotes due delayed/cron jobs into ready queues."
           },
           "2": {
-            "name": "Workers",
-            "role": "Pull jobs, execute, ack or retry."
+            "name": "Ready queue",
+            "role": "Durable broker (SQS/Kafka/DB-backed) partitioned by lane."
           },
           "3": {
-            "name": "Dead-letter queue",
-            "role": "Captures jobs that exhaust retries."
+            "name": "Worker pool",
+            "role": "Claims leases, heartbeats, executes handlers, acks or retries."
           },
           "4": {
-            "name": "Store",
-            "role": "Job state, idempotency keys and results."
+            "name": "Job store",
+            "role": "Canonical Job row: status, attempts, lease, payload_ref."
+          },
+          "5": {
+            "name": "Payload object store",
+            "role": "Large blobs off the hot row; immutable per enqueue version."
+          },
+          "6": {
+            "name": "DLQ",
+            "role": "Holds exhausted jobs; separate consumer for ops replay."
+          },
+          "7": {
+            "name": "Cron expander",
+            "role": "Materializes next fire times without thundering herds."
+          },
+          "8": {
+            "name": "Ops console",
+            "role": "Cancel, requeue, inspect attempts, and pause lanes."
           }
         },
         "tradeoffs": {
-          "0": "At-least-once + idempotency (simple, needs dedupe) vs exactly-once (hard).",
-          "1": "Push vs pull worker models.",
-          "2": "Priority queues vs FIFO fairness."
+          "0": "At-least-once + idempotent handlers (practical) vs exactly-once (broker+DB coupling).",
+          "1": "Pull workers (backpressure-friendly) vs push (lower idle latency, harder overload).",
+          "2": "DB-as-queue (transactions) vs dedicated broker (throughput, operational split).",
+          "3": "Per-tenant queues (isolation) vs shared lanes (efficiency, noisy-neighbor risk).",
+          "4": "Keep payloads in-row (simple) vs object store (scale, extra failure domain)."
         },
         "lld": {
-          "dataModel": "Job(id, idempotency_key UNIQUE, payload_ref, run_at, priority, attempts, lease_owner, lease_until, status). Keep large payloads in object storage and transitions in a durable record.",
-          "api": "POST /jobs enqueues idempotently; GET /jobs/:id reads status; POST /jobs/:id/cancel requests cooperative cancellation. Workers claim a lease, heartbeat it and acknowledge completion with their lease token.",
-          "execution": "The scheduler moves due jobs to a ready queue. A worker atomically leases a job, performs an idempotent side effect, then acknowledges. Retry transient failures with exponential backoff and jitter; exhausted jobs enter a dead-letter queue.",
-          "failures": "Worker crashes release work after lease expiry. Fencing tokens prevent an expired worker from acknowledging a reassigned job. Duplicate deliveries are expected, so business effects need their own idempotency boundary."
+          "dataModel": "Job {\n  id, idempotency_key UNIQUE,\n  lane, priority, run_at,\n  status ENUM(scheduled, ready, leased, succeeded, failed, cancelled, dlq),\n  attempts, max_attempts,\n  lease_owner, lease_epoch, lease_until,\n  payload_ref, last_error, created_at, updated_at\n}\nAttempt { job_id, n, started_at, finished_at, worker, error }\nCronSchedule { id, cron, timezone, next_fire_at, paused }",
+          "api": "POST /v1/jobs  { idempotency_key, run_at?, cron?, lane, priority, payload }\n  → 202 { id, status } | 200 existing (same key)\n\nGET  /v1/jobs/{id}\nPOST /v1/jobs/{id}/cancel     → cooperative cancel flag\nPOST /v1/jobs/{id}/requeue    → ops only\n\nWorker protocol:\n  Claim(lease_ms) → job + fencing epoch\n  Heartbeat(id, epoch)\n  Ack(id, epoch) | Nack(id, epoch, error, retry_at?)",
+          "execution": "Scheduler loop: SELECT due scheduled FOR UPDATE SKIP LOCKED → push ready queue\n→ status=ready.\n\nWorker: claim atomically (status ready→leased, set owner/epoch/until) → run handler\n→ Ack only if epoch matches → else discard (fenced).\n\nRetry: attempts++ ; backoff = min(cap, base * 2^attempts + jitter) ; status=scheduled.\nDLQ when attempts >= max; never auto-delete payload refs.",
+          "pseudocode": "function enqueue(cmd):\n  existing = jobs.find(cmd.idempotency_key)\n  if existing: return existing\n  jobs.insert(scheduled_or_ready(cmd))\n  if cmd.run_at <= now: readyQueue.offer(job.id, cmd.priority)\n  return job\n\nfunction workerLoop(workerId):\n  while running:\n    job = readyQueue.claim(workerId, lease_ms) or jobs.claimDue(workerId)\n    if job is null: idleWait(); continue\n    epoch = job.lease_epoch\n    try:\n      while not done(job):\n        heartbeat(job.id, epoch)\n        step = handler(job)                    // must be idempotent\n      if jobs.ack(job.id, epoch): metrics.success++\n    catch transient as e:\n      jobs.nack(job.id, epoch, e, retryAt=now+backoff(job))\n    catch poison as e:\n      jobs.toDlq(job.id, epoch, e)\n\nfunction ack(id, epoch):\n  return UPDATE jobs SET status='succeeded'\n         WHERE id=id AND lease_epoch=epoch AND status='leased'",
+          "failures": "Worker death → lease expiry → another worker claims (at-least-once).\nZombie ack after reassign → fencing epoch mismatch drops the ack.\nBroker outage → scheduled rows still durable in Job store; scheduler catches up.\nPoison payload → DLQ after N; quarantine lane so one tenant can't block others.\nClock skew on run_at → accept small earliness; document TZ for cron in UTC storage."
         }
       },
       "log-analytics": {
-        "title": "Log Analytics System",
-        "tagline": "Ingest, index and query high-volume logs.",
+        "title": "Log Analytics Pipeline",
+        "tagline": "Multi-tenant ingest → stream → hot index + cold archive, with bounded queries and retention.",
         "requirements": {
-          "0": "Ingest millions of events per second.",
-          "1": "Full-text and structured search.",
-          "2": "Time-windowed aggregations and dashboards.",
-          "3": "Retention tiers and archival."
+          "0": "Ingest millions of events/s with backpressure to collectors — no silent drop by default.",
+          "1": "Full-text + structured filters; p95 interactive query < 3 s on hot windows.",
+          "2": "Time-bucket aggregations for dashboards without unbounded cardinality explosions.",
+          "3": "Hot/warm/cold tiers; legal hold and per-tenant retention policies.",
+          "4": "Tenant isolation on every query path; redact PII fields at ingest when configured.",
+          "5": "Exactly-once-ish processing via event_id dedupe + offset commit after durable write."
         },
         "components": {
           "0": {
-            "name": "Collectors / agents",
-            "role": "Ship logs from hosts."
+            "name": "Agents",
+            "role": "Host/sidecar collectors; batch, compress, retry with jitter."
           },
           "1": {
-            "name": "Ingest pipeline (Kafka)",
-            "role": "Buffer with back-pressure."
+            "name": "Ingest gateway",
+            "role": "Auth, schema validate, size limits, per-tenant quotas."
           },
           "2": {
-            "name": "Index (Elasticsearch)",
-            "role": "Searchable inverted index."
+            "name": "Kafka buffer",
+            "role": "Partitioned by tenant/service; absorbs spikes with lag SLOs."
           },
           "3": {
-            "name": "Object storage",
-            "role": "Cheap cold / archival tier."
+            "name": "Stream processors",
+            "role": "Parse, enrich, redact, route to index vs quarantine."
           },
           "4": {
-            "name": "Query / dashboard",
-            "role": "Search and visualize."
+            "name": "Hot index",
+            "role": "Inverted + columnar shards for recent searchable windows."
+          },
+          "5": {
+            "name": "Cold object store",
+            "role": "Compressed originals / Parquet for rehydrate and audit."
+          },
+          "6": {
+            "name": "Query API",
+            "role": "Tenant-scoped search + aggregations with timeouts and cursors."
+          },
+          "7": {
+            "name": "Compactor / tierer",
+            "role": "Rolls shards warm→cold; enforces retention deletes."
+          },
+          "8": {
+            "name": "Quarantine topic",
+            "role": "Poison/schema-invalid events for offline repair."
           }
         },
         "tradeoffs": {
-          "0": "Index everything (fast queries, costly) vs sample / schema-on-read.",
-          "1": "Hot / warm / cold tiering for cost control."
+          "0": "Index-everything (fast UX, $) vs sample/schema-on-read (cheap, weaker search).",
+          "1": "Pull ingest from agents vs push HTTP (ops model vs spike amplification).",
+          "2": "Shared cluster (efficiency) vs per-tenant indexes (isolation, cost).",
+          "3": "Sync ack to agent after Kafka (durability) vs after index (higher latency).",
+          "4": "Wide events (debuggable) vs strict schemas (predictable cost/perf)."
         },
         "lld": {
-          "dataModel": "Event(event_id, tenant_id, timestamp, service, severity, trace_id, body). Partition the ingest stream by tenant and service, and index time-bounded shards. Store compressed originals in object storage.",
-          "api": "POST /events accepts bounded batches with event IDs. GET /search takes a tenant, time range, query and cursor. GET /aggregations returns bounded time buckets. Every query is scoped to the caller's tenant.",
-          "execution": "Collectors batch and compress events. The broker durably buffers them; consumers validate schemas, redact configured fields and bulk-index documents. Commit offsets only after durable processing; event IDs deduplicate replays.",
-          "failures": "Backpressure slows collectors or spills to bounded local buffers. Poison events go to a quarantine stream. Apply retention policies consistently to indexes and archives; prohibit unbounded wildcard queries that overload the cluster."
+          "dataModel": "Event {\n  event_id UUID, tenant_id, ts, service, severity,\n  trace_id?, body JSONB / text, attrs MAP\n}\nKafka key: tenant_id|service  (ordering within partition)\nHot shard: time-bucketed index segment (e.g. 1h) with bloom + postings\nCold: s3://…/tenant/dt=…/part-*.parquet  + manifest\nDedup store: LRU/Bloom of recent event_id per tenant (replay window)",
+          "api": "POST /v1/events          batch ≤ N KiB, requires event_id each\nGET  /v1/search           ?tenant&from&to&q&cursor&limit\nGET  /v1/aggregations     ?tenant&from&to&group_by&interval\n                          hard timeout + max buckets; 400 on high-cardinality group_by\n\nAll reads inject tenant_id from auth context — never from free client input alone.",
+          "execution": "Agent → gateway (auth, quota) → Kafka.\nProcessor: decode → validate schema → redact → dedupe event_id → bulk index hot\n→ put compressed raw to cold → commit offset.\n\nQuery: parse → rewrite with tenant filter → fan-out to relevant hot shards\n(+ cold rehydrate if window demands) → merge → cursor.\n\nCompactor: merge small segments; tier age-out; apply retention deletes to index AND cold.",
+          "pseudocode": "function processPartition(p):\n  for batch in p.poll():\n    out = []\n    for e in batch:\n      e = validate(e)\n      if e is poison: quarantine(e); continue\n      e = redact(e, policy[e.tenant_id])\n      if dedup.seen(e.tenant_id, e.event_id): continue\n      out.append(e)\n    hot.bulkIndex(out)                        // retryable\n    cold.put(compress(out))\n    dedup.remember(out)\n    p.commit(batch.offset)                    // only after durability\n\nfunction search(q):\n  assert q.tenant == auth.tenant\n  plan = pruneShards(q.from, q.to)\n  return merge(deadline=3s, shards.query(plan, q))",
+          "failures": "Kafka lag high → autoscale processors; shed non-critical enrichers first.\nHot index red → serve recent from cold rehydrate (degraded) or fail with 503 + Retry-After.\nPoison storm → quarantine + circuit break tenant ingest quota.\nCardinality bomb on aggregations → reject group_by; require pre-agg metrics path.\nSplit brain retention → single policy worker with fencing; never dual deleters."
         }
       },
       "sim-regression-dashboard": {
-        "title": "Simulation Regression Dashboard",
-        "tagline": "Track pass/fail trends across nightly simulation runs.",
+        "title": "Simulation Regression Control Plane",
+        "tagline": "Nightly/CI sim farms → signature clustering, flake classification, and artifact-backed diffs.",
         "requirements": {
-          "0": "Ingest results from thousands of regression tests.",
-          "1": "Separate new failures from flaky and known failures.",
-          "2": "Trend pass-rate over time with per-test history.",
-          "3": "Drill into logs and artifacts of a failure."
+          "0": "Ingest results from thousands of tests across revisions with idempotent upserts.",
+          "1": "Separate new deterministic fails from flakes and known/waived signatures.",
+          "2": "Baseline diff per run: introduced / resolved / persistent failures.",
+          "3": "Preserve pass/fail even when artifacts are missing; link logs/waves when present.",
+          "4": "Owner routing + SLA clocks for open signatures without paging on flakes.",
+          "5": "History APIs for a test_id across branches with pagination."
         },
         "components": {
           "0": {
-            "name": "Run ingest",
-            "role": "Parse results from CI / sim farm."
+            "name": "CI / sim farm",
+            "role": "Emits run manifests and per-test results."
           },
           "1": {
-            "name": "Results DB",
-            "role": "Per-test, per-run status and metadata."
+            "name": "Ingest API",
+            "role": "Idempotent run create + batched result upserts."
           },
           "2": {
-            "name": "Flake detector",
-            "role": "Classifies intermittent failures."
+            "name": "Normalizer",
+            "role": "Stable test_id mapping; strips ephemeral paths from signatures."
           },
           "3": {
-            "name": "Dashboard",
-            "role": "Trends, diffs and owners."
+            "name": "Results store",
+            "role": "Run/Result/Attempt rows; append-only attempt evidence."
           },
           "4": {
+            "name": "Signature engine",
+            "role": "Fingerprints failures; clusters duplicates across runs."
+          },
+          "5": {
+            "name": "Flake classifier",
+            "role": "Rule-based (and optional ML-suggested) intermittent detection."
+          },
+          "6": {
             "name": "Artifact store",
-            "role": "Logs and waveforms linked per failure."
+            "role": "Logs, FSDB/VCD pointers; lifecycle independent of status."
+          },
+          "7": {
+            "name": "Diff service",
+            "role": "Compares run vs baseline; computes introduced/resolved sets."
+          },
+          "8": {
+            "name": "Dashboard UI",
+            "role": "Trends, owners, waive flows, deep-links into artifacts."
           }
         },
         "tradeoffs": {
-          "0": "Store all artifacts (debuggable, large) vs fetch on demand.",
-          "1": "Real-time vs batch aggregation."
+          "0": "Store all artifacts (debuggable, $) vs on-demand fetch from farm (cheaper, fragile).",
+          "1": "Rule-first flake labels (explainable) vs ML-only (recall, harder audits).",
+          "2": "Sync classification at ingest vs batch overnight (freshness vs cost).",
+          "3": "Mutable waive state (ops-friendly) vs immutable event log (forensics).",
+          "4": "Per-branch baselines (accurate) vs trunk-only (simpler, noisier)."
         },
         "lld": {
-          "dataModel": "Run(run_id, revision, branch, started_at), Result(run_id, test_id, attempt, status, signature, artifact_ref), and Failure(signature, first_seen, owner, classification). Use stable test IDs across runs.",
-          "api": "POST /runs creates an idempotent run; PUT /runs/:id/results upserts batches. GET /runs/:id/diff compares a baseline. GET /tests/:id/history returns results and artifact links with pagination.",
-          "execution": "Normalize runner output, group failures by signature, compare against the baseline and retain raw evidence. Keep rule-based classification reproducible; record optional LLM suggestions separately for human review.",
-          "failures": "Incomplete runs remain explicitly incomplete. Retry ingestion without duplicating results. Distinguish flaky tests from new deterministic failures; missing artifacts must not erase recorded test status."
+          "dataModel": "Run { run_id PK, revision, branch, started_at, completed_at?, baseline_run_id? }\nResult { run_id, test_id, status, signature?, artifact_ref?, PRIMARY(run_id,test_id) }\nAttempt { run_id, test_id, n, status, log_ref, wall_ms }\nFailureSignature {\n  signature PK, first_seen, last_seen, owner, class ENUM(new, known, flake, waived),\n  note\n}\nIdempotency: upsert Result by (run_id, test_id); attempts append-only.",
+          "api": "POST /v1/runs                    { run_id, revision, branch, baseline_run_id? }\nPUT  /v1/runs/{id}/results       batch upsert\nPOST /v1/runs/{id}/complete\nGET  /v1/runs/{id}/diff          → { introduced[], resolved[], persistent[] }\nGET  /v1/tests/{test_id}/history ?branch&cursor\nPOST /v1/signatures/{sig}/waive  { reason, expiry }",
+          "execution": "Ingest normalizes test_id (strip temp dirs) → fingerprint stderr/stdout patterns →\nupsert Result → update FailureSignature aggregates → on complete, Diff vs baseline.\n\nFlake classifier: if signature pass-rate in [ε, 1-ε] over last K runs on branch → flake.\nML suggestions are recorded as side channel; never sole authority for page/waive.\n\nArtifacts written best-effort; Result.status wins if artifact PUT fails.",
+          "pseudocode": "function ingestBatch(run_id, rows):\n  for r in rows:\n    test_id = stabilize(r.test_id)\n    sig = r.status == FAIL ? fingerprint(r) : null\n    results.upsert(run_id, test_id, r.status, sig, r.artifact_ref)\n    attempts.append(...)\n    if sig: signatures.touch(sig, run_id)\n\nfunction complete(run_id):\n  run.markComplete()\n  base = run.baseline_run_id ?? lastGreen(run.branch)\n  diff = compare(run_id, base)                 // set ops on (test_id, sig)\n  for sig in diff.introduced:\n    signatures.classify(sig, rules + flakeModel)\n  publish(DashboardEvent(run_id, diff))\n\nfunction classify(sig):\n  rate = passRate(sig, window=K)\n  if rate is null: return NEW\n  if ε < rate < 1-ε: return FLAKE\n  if signatures.isWaived(sig): return WAIVED\n  return KNOWN_or_NEW",
+          "failures": "Partial farm upload → run stays incomplete; UI badges incompleteness, never greenwash.\nRe-ingest same batch → upserts are idempotent; attempts dedupe on (run,test,n).\nArtifact store outage → keep status; show \"artifact pending\".\nBaseline missing → diff against empty set; label as first-seen run.\nFlake misclass → waive expiry + manual override audit trail."
         }
       },
       "waveform-compression": {
-        "title": "Waveform Compression System",
-        "tagline": "Compress digital simulation waveforms for storage and fast replay.",
+        "title": "Waveform Compression Store",
+        "tagline": "Lossless value-change compression with chunked indexes for random-access replay at sim scale.",
         "requirements": {
-          "0": "Compress huge value-change dumps (VCD/FSDB-style).",
-          "1": "Random-access replay at any time point.",
-          "2": "Lossless for digital signals.",
-          "3": "Fast writes during simulation."
+          "0": "Lossless for 4-state digital (0/1/X/Z); preserve same-time ordering.",
+          "1": "Append path fast enough for live sim dumpers; non-blocking readers.",
+          "2": "Random-access read(signals, t0, t1) without full-file scan.",
+          "3": "Chunk independence: corrupt/partial tail must not poison sealed chunks.",
+          "4": "Dictionary reuse across chunks; versioned format with checksums.",
+          "5": "Compression ratio targets depend on activity; measure, don’t promise a constant."
         },
         "components": {
           "0": {
-            "name": "Value-change capture",
-            "role": "Records signal transitions, not samples."
+            "name": "Sim dump probe",
+            "role": "Streams value-change callbacks from the simulator."
           },
           "1": {
-            "name": "Delta + RLE encoding",
-            "role": "Stores changes and run-lengths."
+            "name": "Capture buffer",
+            "role": "Coalesces transitions; applies backpressure to the probe."
           },
           "2": {
-            "name": "Dictionary / bit-packing",
-            "role": "Packs enum / bus values tightly."
+            "name": "Delta + RLE encoder",
+            "role": "Time deltas, run-lengths, sparse signal updates."
           },
           "3": {
-            "name": "Chunked index",
-            "role": "Time-indexed blocks for seeking."
+            "name": "Dictionary packer",
+            "role": "Maps enums/buses to compact codes; shared per scope."
           },
           "4": {
-            "name": "Reader",
-            "role": "Decompresses windows on demand."
+            "name": "Chunk writer",
+            "role": "Seals compressed blocks with snapshot + checksum."
+          },
+          "5": {
+            "name": "Sparse time index",
+            "role": "Maps time ranges → file offsets for seek."
+          },
+          "6": {
+            "name": "Object / file store",
+            "role": "Durable chunk bytes; immutability after seal."
+          },
+          "7": {
+            "name": "Replay reader",
+            "role": "Loads snapshot + replays deltas for requested window."
+          },
+          "8": {
+            "name": "Format verifier",
+            "role": "Offline round-trip tests and version migration tools."
           }
         },
         "tradeoffs": {
-          "0": "Event-based (compact for sparse activity) vs sampled.",
-          "1": "Bigger blocks compress better but slow random access."
+          "0": "Event-based (great for sparse activity) vs sampled (predictable size, loses X/Z nuance).",
+          "1": "Larger chunks (better ratio) vs smaller (faster seeks, more index entries).",
+          "2": "Shared global dictionary (ratio) vs per-chunk (parallelism, simpler recovery).",
+          "3": "Sync index publish with seal (readers never see holes) vs async (higher write FPS).",
+          "4": "Single-file layout (simple) vs multi-file shards (parallel dump from many scopes)."
         },
         "lld": {
-          "dataModel": "Signal dictionary maps IDs to widths and types. Independently compressed chunks contain a time range, an initial state snapshot, delta timestamps, value changes and a checksum. A sparse index maps time ranges to file offsets.",
-          "api": "append(signal_id, time, value) records a transition; flush() seals a chunk; read(signals, start, end) seeks to the nearest snapshot and replays deltas. The reader validates format version and checksums.",
-          "execution": "Capture only transitions, encode timestamp deltas, pack repeated values and compress bounded chunks. Publish index entries after chunk durability. Random access loads one starting snapshot and only the necessary subsequent blocks.",
-          "failures": "Recover a partially written file by scanning committed chunks. Preserve all four-state digital values and same-time ordering. Test round-trip equality; compression ratios and seek latency depend on workload and chunk size."
+          "dataModel": "File {\n  magic, version, signal_dict_offset, index_offset, checksum_alg\n}\nSignalDict { signal_id → { name, width, encoding } }\nChunk {\n  t_start, t_end, snapshot[],          // full state at t_start for tracked signals\n  deltas[],                            // (dt, signal_id, value_code)*\n  codec, uncompressed_crc, compressed_crc\n}\nIndexEntry { t_start, t_end, file_offset, compressed_len }\nChunks immutable after seal; tail buffer may be incomplete.",
+          "api": "Writer:\n  open(path, signals)\n  append(signal_id, t, value)          // monotonic t per stream\n  flush() → seals chunk + publishes index entry\n  close()\n\nReader:\n  read(signal_ids, t0, t1) → iterator of (t, signal_id, value)\n  validate() → checksum + version checks\n\nErrors: ERR_TIME_ORDER, ERR_UNKNOWN_SIGNAL, ERR_CHECKSUM, ERR_UNSUPPORTED_VERSION",
+          "execution": "Probe pushes transitions into capture buffer.\nEncoder emits time-deltas + RLE for idle signals; dictionary codes 4-state values.\nWhen chunk bytes or time-span thresholds hit: write snapshot prefix, compress block,\nfsync, then append IndexEntry (readers never observe a chunk without index).\n\nRead: binary search index for covering chunk → decompress → seek snapshot →\nreplay deltas until t1; skip signals not requested.",
+          "pseudocode": "function append(sig, t, val):\n  assert t >= last_t\n  if val == last[sig]: return                      // no transition\n  buf.push(Delta(t - anchor, sig, code(val)))\n  last[sig] = val; last_t = t\n  if buf.bytes >= MAX or (t - anchor) >= MAX_SPAN:\n    seal()\n\nfunction seal():\n  chunk = { t_start: anchor, snapshot: last.clone(), deltas: buf }\n  bytes = compress(pack(chunk))\n  crc = crc32(bytes)\n  off = file.append(bytes, crc)                    // durable\n  index.append(anchor, last_t, off, len(bytes))    // after durability\n  buf.clear(); anchor = last_t\n\nfunction read(sigs, t0, t1):\n  for e in index.covering(t0, t1):\n    chunk = decompress(file.slice(e))\n    state = chunk.snapshot\n    yieldTransitions(state, chunk.deltas, sigs, t0, t1)",
+          "failures": "Crash mid-chunk → scanner ignores incomplete tail; last sealed index wins.\nChecksum mismatch → skip chunk + surface gap; never silent corrupt replay.\nClock non-monotonic from probe → reject append; sim must flush barriers.\nDictionary change mid-file → new dict version + incompatibility window documented.\nReader ahead of writer → only sealed index entries are visible (MVCC-by-immutability)."
         }
       }
     },
-    "galleryIntro": "Whiteboards I’ve built to make system behavior tangible — explore each demo, its architecture and implementation decisions.",
-    "galleryContents": "Demo · HLD · LLD · Trade-offs",
+    "galleryIntro": "Senior-style reference designs: capacity-aware HLD, deployment UML, and implementation-level LLD — interactive demos included where noted.",
+    "galleryContents": "Demo · HLD · UML · LLD · Pseudo-code · Trade-offs",
     "openDesign": "Open whiteboard",
+    "filter": "Filter",
+    "all": "All",
+    "uml": "Architecture diagram",
     "seeMore": "See more whiteboards",
     "seeLess": "Show top four",
     "detailTabs": "Whiteboard views",
@@ -996,18 +1136,20 @@
       "lld": "Low-level design",
       "decisions": "Trade-offs & failures"
     },
-    "demoScope": "Built for this portfolio: an interactive reference demo. Infrastructure components are simulated in the browser.",
+    "demoScope": "Portfolio reference demo: browser-simulated control flow. Treat HLD/LLD below as the design artifact; the demo is illustrative, not a production deployment claim.",
     "lldLabels": {
       "dataModel": "Data model",
       "api": "API contracts",
-      "execution": "Execution & consistency"
+      "execution": "Execution & consistency",
+      "pseudocode": "Pseudocode"
     },
     "failureModes": "Failure modes & recovery",
     "backToWork": "← Back to Work",
     "pipelineStep": "Stage {current} of {total}",
     "nextStep": "Next stage",
     "restart": "Restart walkthrough",
-    "loading": "Loading whiteboard…"
+    "loading": "Loading whiteboard…",
+    "umlCaption": "Deployment-style component diagram · solid = sync path · dashed = async / degraded"
   },
   "chatbot": {
     "open": "Ask Ayush",
@@ -1045,6 +1187,10 @@
         "quick": {
           "label": "Quick answers · AI off",
           "help": "Fastest and lightest. Quotes portfolio content directly, with no model download or AI memory use."
+        },
+        "server": {
+          "label": "Server AI · no download",
+          "help": "Generates a grounded answer through this site's server when enabled. Your question and recent chat context leave this device; Quick answers are used if the service is unavailable."
         },
         "gpu": {
           "label": "Device GPU",
@@ -1110,7 +1256,8 @@
       "clearChat": "Clear chat",
       "delete": "Delete chat",
       "contextCleared": "Context cleared. Earlier messages remain visible and will not inform new answers.",
-      "chatCleared": "Chat and its context cleared."
+      "chatCleared": "Chat and its context cleared.",
+      "serverUnavailable": "Server AI is unavailable, so Quick answers are active."
     }
   },
   "audio": {
@@ -1120,7 +1267,7 @@
     "play": "Play voice intro",
     "pause": "Pause voice intro",
     "transcriptToggle": "Transcript",
-    "transcript": "Hi, I’m Ayush Yadav, an R&D Software Engineer with 4.5+ years of experience building high-performance systems in C++, Python, and AI-driven automation. At Cadence, I work on Xcelium and large-scale RTL optimization, improving simulation performance, developer productivity, and engineering workflows. I enjoy solving complex systems problems at the intersection of software, performance, and hardware.",
+    "transcript": "Hey, I’m Ayush Yadav! 👋 An R&D Software Engineer at Cadence with over four and a half years of experience building high-performance systems in C++ and Python. 💻\n\nI work on Xcelium, RTL optimization, and AI-powered developer tools, helping boost simulation throughput by up to nineteen percent. 🚀 Basically, I make software faster so progress bars get less screen time. 😄\nHave a look around, explore my projects, and see what I’ve been building. 🔍 If you’re hiring, want to collaborate, or just want more details, drop me a message! 📬\n\nI promise I won’t ask you to reverse a linked list just to say hello! 😉",
     "sfxLabel": "Sound effects",
     "on": "On",
     "off": "Off"
@@ -1210,7 +1357,9 @@
         "analyticsTitle": "Analytics",
         "analyticsBody": "<strong>Vercel Web Analytics</strong> and <strong>Vercel Speed Insights</strong> are enabled. Both are cookie-less and GDPR-exempt: they record aggregate page views and Core Web Vitals using a short-lived hash that’s recomputed daily and never linked back to an individual.",
         "aiTitle": "On-device AI (optional)",
-        "aiBody": "Choosing GPU or CPU in Ask Ayush settings downloads a model from Hugging Face: Llama 3.2 1B (~705 MB) for GPU or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a pinned WebAssembly library from GitHub; the CPU runtime comes from this site. Download hosts see standard requests, including IP address and user-agent. Questions and answers stay on your device. Chats and their separate context boundaries are saved in this tab’s session storage under <code>phoenix:chat:sessions</code>, so closing the assistant or reloading does not erase them. Browser session restoration may retain this data. Clear chat erases the selected transcript and context; Clear context keeps its transcript but excludes earlier messages from future answers; Delete chat removes the selected conversation. <code>phoenix:chat:settings</code> stores preferences and measured speeds in local storage. Turning AI off frees runtime memory. Remove downloaded models clears this site’s model caches and switches AI off; it keeps your chats. Clearing this site’s browser data removes settings and chats as well. No new cookies are set."
+        "aiBody": "Choosing GPU or CPU in Ask Ayush settings downloads a model from Hugging Face: Llama 3.2 1B (~705 MB) for GPU or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a pinned WebAssembly library from GitHub; the CPU runtime comes from this site. Download hosts see standard requests, including IP address and user-agent. Questions and answers stay on your device. Chats and their separate context boundaries are saved in this tab’s session storage under <code>phoenix:chat:sessions</code>, so closing the assistant or reloading does not erase them. Browser session restoration may retain this data. Clear chat erases the selected transcript and context; Clear context keeps its transcript but excludes earlier messages from future answers; Delete chat removes the selected conversation. <code>phoenix:chat:settings</code> stores preferences and measured speeds in local storage. Turning AI off frees runtime memory. Remove downloaded models clears this site’s model caches and switches AI off; it keeps your chats. Clearing this site’s browser data removes settings and chats as well. No new cookies are set.",
+        "aiServerTitle": "Server AI (optional, off by default)",
+        "aiServerBody": "A future <strong>Server</strong> engine in Ask Ayush settings can send your question and a short recent-chat context to this site’s <code>/api/chat</code> endpoint, which may call a managed inference provider. That path is disabled unless the maintainer explicitly enables it. When disabled, selecting Server falls back to quick answers. When enabled, questions leave your device; prefer Quick answers or on-device AI if you want processing to stay local. No new cookies are set for chat."
       },
       "donot": {
         "title": "What we do not do",
@@ -1297,7 +1446,7 @@
       },
       "ticketResolution": {
         "label": "Faster ticket resolution",
-        "detail": "MAESTRO, measured across 22 Jira tickets; RCA time reduced by 55%."
+        "detail": "MAESTRO, measured on an internal evaluation sample; RCA time reduced by 55%."
       },
       "agentSpeedup": {
         "label": "AI-assisted simulation speedup",
@@ -1334,47 +1483,47 @@
       "barLabel": "Bar value {value}"
     },
     "maestro": {
-      "title": "maestro · conductor · simulated",
-      "subtitle": "10 agents · 20 phases · 5 gates",
+      "title": "maestro · omitted",
+      "subtitle": "trade secret — demo not published",
       "stagesLabel": "Workflow stages",
       "gateMarker": "Human approval gate",
-      "docLabel": "Shared analysis document",
-      "empty": "Pick a ticket type and press Run. The conductor walks the phases and stops at every human gate.",
+      "docLabel": "Session log",
+      "empty": "The interactive MAESTRO walkthrough is not published because the system is trade-secret protected.",
       "kindLabel": "Ticket type",
       "defect": "Defect",
       "enhancement": "Enhancement",
       "failOnce": "Fail validation once",
-      "run": "Run ticket",
+      "run": "Unavailable",
       "pause": "Pause",
       "resume": "Resume",
-      "again": "Run again",
-      "approve": "Approve gate",
+      "again": "Unavailable",
+      "approve": "Unavailable",
       "reset": "Reset",
-      "note": "Illustrative — stages and gates mirror the real workflow; the ticket and its log are synthetic.",
+      "note": "Omitted for IP protection — not a map of the production workflow.",
       "stages": {
-        "intake": "intake",
-        "rca": "debug · RCA",
-        "design": "design",
-        "fix": "fix",
-        "validate": "validate",
-        "review": "review",
-        "regress": "regression",
-        "release": "release"
+        "intake": "—",
+        "rca": "—",
+        "design": "—",
+        "fix": "—",
+        "validate": "—",
+        "review": "—",
+        "regress": "—",
+        "release": "—"
       },
       "log": {
-        "start": "conductor · {kind} ticket received",
-        "intake": "intake · ticket parsed and classified; knowledge base searched offline first",
-        "rca": "debug · failing run recorded and rewound to the write that produced the bad value",
-        "design": "design · requirements and design options written to the analysis doc",
-        "fix": "fix · root-cause patch drafted — no symptom-only workarounds",
-        "validate": "validate · targeted tests green on the fixed build",
-        "validateFail": "validate · test red → routed back to {stage} (self-healing loop)",
-        "review": "review · diff and analysis doc packaged for code review",
-        "regress": "regression · run by the engineer; results analysed by script at zero LLM tokens",
-        "release": "release · docs, release notes and knowledge base updated",
-        "gate": "gate · waiting for engineer approval",
-        "approved": "gate · approved by engineer",
-        "done": "resolved · the analysis doc is the full audit trail"
+        "start": "demo unavailable",
+        "intake": "—",
+        "rca": "—",
+        "design": "—",
+        "fix": "—",
+        "validate": "—",
+        "validateFail": "—",
+        "review": "—",
+        "regress": "—",
+        "release": "—",
+        "gate": "—",
+        "approved": "—",
+        "done": "—"
       }
     },
     "xcelium": {
@@ -1432,26 +1581,26 @@
   },
   "architecture": {
     "maestro": {
-      "aria": "MAESTRO architecture: a conductor routes a ticket through seven stages of a 20-phase workflow with five human approval gates, sharing one analysis document, a knowledge base and MCP tools.",
-      "entry": "Jira ticket / CCR",
-      "conductor": "Conductor",
-      "conductorSub": "routes 20 phases",
-      "loop": "red test → back to debug (self-healing)",
+      "aria": "MAESTRO architecture diagram omitted because the system is trade-secret protected.",
+      "entry": "Ticket",
+      "conductor": "Orchestration",
+      "conductorSub": "human-gated",
+      "loop": "review loop",
       "stages": {
-        "intake": "Intake\n& triage",
-        "rca": "Debug\n& RCA",
-        "fix": "Fix",
+        "intake": "Triage",
+        "rca": "Investigate",
+        "fix": "Propose",
         "validate": "Validate",
-        "review": "Docs &\nreview",
-        "regress": "Regression",
-        "release": "Release"
+        "review": "Review",
+        "regress": "Verify",
+        "release": "Close"
       },
-      "state": "Shared analysis document — single source of truth, resumable from any phase",
-      "kb": "Knowledge base",
-      "kbSub": "offline first · written back",
-      "tools": "MCP servers & scripts",
-      "toolsSub": "issues · p4 · review · Undo",
-      "gate": "human approval gate"
+      "state": "Confidential — not published",
+      "kb": "Knowledge",
+      "kbSub": "internal",
+      "tools": "Integrations",
+      "toolsSub": "internal",
+      "gate": "human oversight"
     },
     "xcelium-ai-agents": {
       "aria": "Xcelium AI agents architecture: a planner routes between a deterministic Python lane (intake, simulation runner, profile parser, report) and an LLM reasoning lane (analyse, recode, apply), with a checklist LLM judge comparing reports against a golden.",
@@ -1527,18 +1676,16 @@
     "items": {
       "maestro": {
         "title": "MAESTRO — Multi-Agent Ticket Resolution",
-        "tagline": "One ticket in, a production-ready fix out — a conductor and 10 AI agents carry an engineering ticket from intake to release, with humans at every risky gate.",
+        "tagline": "A Cadence multi-agent system that helps engineers resolve simulation tickets end-to-end — with people in control at the high-risk steps.",
         "category": "Agentic AI × Engineering Workflow",
-        "summary": "MAESTRO (Multi-Agent Engineering System for Ticket Resolution & Orchestration) is a portable, IDE-agnostic multi-agent platform for Xcelium engineering tickets. A conductor drives a 20-phase, human-gated workflow and delegates each phase to one of 10 specialist agents — from intake and root-cause analysis through validation, review, regression and release. Measured across 22 Jiras, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026.",
-        "problem": "Resolving a simulator ticket is a manual relay across R&D, validation and documentation. Evidence is scattered across the issue tracker, email, logs, specs, source control, code review and tribal knowledge, and every handoff re-gathers context the previous person already had. Under pressure steps get skipped, and important-but-not-critical tickets age in the backlog.",
-        "challenge": "Turn the whole ticket lifecycle into one coordinated, trustworthy workflow: keep a single source of truth across 20 phases, ground every conclusion in real evidence, keep engineers in control at the risky steps, and stay cheap enough to run on every ticket — inside whichever IDE the engineer already uses.",
+        "summary": "MAESTRO is a Cadence multi-agent platform for engineering-ticket resolution on Xcelium workflows. It coordinates specialist AI agents under human oversight so tickets move from triage toward a verified fix with clearer handoffs and less repeated context-gathering. Measured on an internal evaluation set, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026 and selected for trade-secret protection — implementation details stay internal.",
+        "problem": "Simulator tickets often bounce across R&D, validation and documentation. Context lives in many places, handoffs re-gather the same evidence, and under pressure important steps get skipped while backlog items age.",
+        "challenge": "Coordinate agent assistance across a ticket’s lifecycle without giving up engineer control, without inventing unsupported conclusions, and without publishing proprietary workflow internals.",
         "approach": {
-          "0": "Designed a conductor that owns the 20-phase flow and delegates each phase to one of 10 specialist agents: intake, triage, debug/RCA, fix, validation, docs, review, regression, release and a cross-cutting memory agent.",
-          "1": "Kept one shared analysis document as the source of truth: every phase reads and writes it, so context is captured once and a run can resume exactly where it stopped.",
-          "2": "Grounded the agents knowledge-first: an offline knowledge base is searched before anything goes online, and every resolved ticket is written back so the next run starts warm.",
-          "3": "Wired engineering systems in through MCP servers and scripts — issue tracking, source control, code review and a time-travel debugger that rewinds a recorded failure to the exact bad write instead of guessing forward from logs.",
-          "4": "Added five human approval gates and handed hours-long steps such as builds and regressions to the engineer, so nothing ships without sign-off and no model time is spent idling.",
-          "5": "Kept it cheap by design: the smallest capable model per phase, with mechanical steps scripted at zero LLM tokens — runs in Cursor, Claude Code or GitHub Copilot."
+          "0": "Framed the product as orchestration plus human gates: agents propose and gather evidence; engineers approve risky transitions.",
+          "1": "Optimized for grounded answers — conclusions tied to retrieved engineering evidence rather than free-form speculation.",
+          "2": "Designed for everyday IDE use so the assistive flow meets engineers where they already work.",
+          "3": "Measured outcomes on an internal ticket sample and treated the system as proprietary Cadence IP after Buildathon recognition."
         }
       },
       "xcelium-ai-agents": {
@@ -1685,7 +1832,7 @@
       "highlights": {
         "0": {
           "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a portable multi-agent platform with a conductor orchestrating 10 AI agents across a 20-phase human-gated workflow; measured across 22 Jiras, it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection."
+          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
         },
         "1": {
           "title": "ChipStack Xcelium AI Agents",
@@ -1713,7 +1860,7 @@
         },
         "7": {
           "title": "MCP Servers for Engineering Tools",
-          "detail": "Wrote 10 Model Context Protocol servers — including a 50-tool time-travel-debugger bridge and code-review, build and LLM-gateway servers — connecting GitHub Copilot, Cursor and Claude Code to EDA and engineering systems."
+          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
         },
         "8": {
           "title": "Corporate VP / MD Recognition",
@@ -1867,7 +2014,7 @@
       "highlights": {
         "0": {
           "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a portable multi-agent platform with a conductor orchestrating 10 AI agents across a 20-phase human-gated workflow; measured across 22 Jiras, it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection."
+          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
         },
         "1": {
           "title": "ChipStack Xcelium AI Agents",
@@ -1887,7 +2034,7 @@
         },
         "5": {
           "title": "MCP Servers for Engineering Tools",
-          "detail": "Wrote 10 Model Context Protocol servers — including a 50-tool time-travel-debugger bridge and code-review, build and LLM-gateway servers — connecting GitHub Copilot, Cursor and Claude Code to EDA and engineering systems."
+          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
         },
         "6": {
           "title": "Reusable Engineering Infrastructure",
@@ -2027,10 +2174,10 @@
   "skillsExplorer": {
     "ariaLabel": "Skills explorer",
     "eyebrow": "/ skills",
-    "heading": "Skills explorer",
-    "intro": "Choose a technical category or an applied engineering area to see its tools and related work.",
-    "filterAriaLabel": "Filter skills by category",
-    "emptyState": "Pick a category above to see the tools in that area.",
+    "heading": "What I work with",
+    "intro": "Browse focus areas for a quick summary, or switch to technical categories for the full tool list.",
+    "filterAriaLabel": "Skills view",
+    "emptyState": "Pick a technical category to see its tools.",
     "toolsCount": "{count} tools",
     "categories": {
       "languages": "Programming Languages",
@@ -2048,7 +2195,7 @@
     },
     "groups": {
       "technical": "Technical categories",
-      "applied": "Applied engineering"
+      "applied": "Focus areas"
     }
   },
   "honorsData": {
@@ -2170,7 +2317,10 @@
       "hint": "Click, press ESC, or type \"matrix\" to exit"
     },
     "commitRain": {
-      "label": "Making it rain commits…"
+      "label": "Making it rain commits…",
+      "dismissHint": "Click or Esc to close",
+      "close": "Close",
+      "count": "{count} commits"
     },
     "boot": {
       "title": "AyushOS boot sequence",

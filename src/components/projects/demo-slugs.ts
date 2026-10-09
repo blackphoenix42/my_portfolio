@@ -2,7 +2,7 @@
 // Exported as a plain module (no "use client") so server components can
 // import `DEMO_SLUGS` / `hasDemo` without crossing the RSC boundary.
 export const DEMO_SLUGS = [
-  "maestro",
+  // MAESTRO interactive walkthrough omitted — system is trade-secret protected.
   "algolens",
   "xcelium-optimization",
   "tezos-premier-league",

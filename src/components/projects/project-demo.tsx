@@ -23,9 +23,6 @@ const loader = (factory: () => Promise<{ default: ComponentType }>) =>
   });
 
 const DEMOS: Record<(typeof DEMO_SLUGS)[number], ComponentType> = {
-  maestro: loader(() =>
-    import("@/components/projects/maestro-demo").then((m) => ({ default: m.MaestroDemo })),
-  ),
   algolens: loader(() =>
     import("@/components/projects/algolens-demo").then((m) => ({ default: m.AlgoLensDemo })),
   ),

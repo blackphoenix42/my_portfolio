@@ -2,13 +2,18 @@
 id: 0012
 title: Optional on-device LLM for "Ask my portfolio" (WebLLM + RAG)
 date: 2026-09-29
-status: Accepted
+status: Accepted (generative default proposed superseded by ADR-0014)
 owners:
   - "@blackphoenix42"
 tags: [ai, security, performance, privacy]
 ---
 
 # 0012 — Optional on-device LLM for "Ask my portfolio" (WebLLM + RAG)
+
+> **Follow-up:** [ADR-0014](0014-server-backed-ask-ayush-inference.md) proposes a
+> same-origin `POST /api/chat` path so visitors do not download model weights.
+> Until that ADR is accepted and enabled, this on-device path remains the
+> opt-in generative engine. Quick answers (ADR-0010) stay the default.
 
 ## Context
 
@@ -96,8 +101,9 @@ Keep ADR-0010's retrieval and add an **opt-in, on-device generator**:
 ## Alternatives considered
 
 - **Server endpoint (Ollama / hosted Llama via an OpenAI-compatible API)** —
-  rejected for now: needs hosting or API keys, costs money, and sends questions
-  off-device.
+  rejected at the time of this ADR: needs hosting or API keys, costs money, and
+  sends questions off-device. **Reopened in ADR-0014** because visitor download
+  size and device latency dominate the on-device experience.
 - **Automatic CPU fallback** — rejected: visitors explicitly choose CPU and
   accept its download and performance trade-offs. Failures use quick answers.
 - **Smaller models (SmolLM2-360M, Qwen2.5-0.5B)** — faster, but noticeably

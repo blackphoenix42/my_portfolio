@@ -250,7 +250,7 @@ export function nowChunks(c: SiteContent): KnowledgeChunk[] {
     {
       source: "Now",
       title: `What ${c.site.name} is doing now`,
-      href: "/competitive-programming#now",
+      href: "/now",
     },
     "now-page",
     `Current focus (updated ${c.now.updated}).`,

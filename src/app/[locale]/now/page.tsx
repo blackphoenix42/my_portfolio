@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("now");
   return {
     title: t("pageTitle"),
-    alternates: { canonical: SITE.url + "/competitive-programming" },
+    alternates: { canonical: SITE.url + "/now" },
   };
 }
 export default async function NowPage({ params }: { params: Promise<{ locale: string }> }) {

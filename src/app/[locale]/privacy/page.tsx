@@ -85,6 +85,17 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
               })}
             </dd>
           </div>
+          <div className="md:col-span-2">
+            <dt className="text-fg text-sm font-semibold">{t("sections.collect.aiServerTitle")}</dt>
+            <dd className="mt-2 text-sm leading-relaxed">
+              {t.rich("sections.collect.aiServerBody", {
+                code: (chunks) => (
+                  <code className="bg-bg-sunken rounded px-1 font-mono text-[11px]">{chunks}</code>
+                ),
+                strong: (chunks) => <strong className="text-fg font-semibold">{chunks}</strong>,
+              })}
+            </dd>
+          </div>
         </dl>
       </section>
 

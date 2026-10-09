@@ -16,8 +16,10 @@ test.describe("/system-design page", () => {
     await page.goto("/system-design");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("System Design");
     await page.getByRole("link", { name: "URL Shortener", exact: true }).click();
-    await expect(page.getByRole("tab", { name: "High-level design" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "URL Shortener" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "High-level design" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Architecture diagram" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Pseudocode" })).toBeVisible();
   });
 });
 

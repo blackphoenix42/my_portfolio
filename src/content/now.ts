@@ -18,7 +18,7 @@ export const NOW = {
       // What I'm spending most working hours on right now.
       items: [
         "R&D software engineering at Cadence — performance work on the Xcelium logic simulator.",
-        "Building multi-agent AI systems — MAESTRO for end-to-end ticket resolution and ChipStack Xcelium agents for simulation performance and memory optimization.",
+        "Building multi-agent AI systems — including MAESTRO (trade-secret ticket-resolution assist; details stay internal) and ChipStack Xcelium agents for simulation performance and memory optimization.",
         "Sharpening C++ performance instincts: profiling, hot-path analysis and low-risk optimization.",
       ],
     },

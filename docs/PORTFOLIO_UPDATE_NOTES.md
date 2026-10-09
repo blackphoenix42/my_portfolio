@@ -2,6 +2,12 @@
 
 Updated: October 1, 2026.
 
+> **Follow-ups (2026-10-09):** Product deltas + original-plan review live in
+> [`docs/plans/portfolio_followup_2026-10.md`](./plans/portfolio_followup_2026-10.md).
+> Server/API Ask Ayush is formalized as proposed
+> [`docs/ADR/0014-server-backed-ask-ayush-inference.md`](./ADR/0014-server-backed-ask-ayush-inference.md)
+> (this file’s “Server/API migration plan” section remains the longer sketch).
+
 ## What changed
 
 - **Ask Ayush** replaces the assistant’s public name. Its settings open from either
@@ -242,7 +248,11 @@ the service; no cost forecast or account credentials were provided here.
 server. It already used time-based revalidation; this update uses a 15-minute cache,
 bounded fetch time, up to 100 GitHub events and the existing optional `GITHUB_TOKEN`.
 If REST fails or returns no usable activity, GitHub’s public Atom feed is a fallback.
-Each panel now has **Open XML feed** in a new tab.
+Each panel now has **Open XML feed** in a new tab. As of 2026-10-09 those
+hrefs still point at Medium/YouTube/GitHub upstream URLs (valid XML over `curl`,
+but browsers often download them or leave the site). The follow-up plan §8
+proposes same-origin `/feeds/medium.xml`, `/feeds/youtube.xml`, and
+`/feeds/github.atom` proxies so Open XML stays on-site with a real XML view.
 
 `npm run feeds:check` runs the same fetchers and reports item counts and newest dates.
 `.github/workflows/refresh-feeds.yml` checks sources and requests the deployed `/feeds`

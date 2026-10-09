@@ -28,8 +28,8 @@ export const experiences: Experience[] = [
       {
         title: "MAESTRO — Multi-Agent Ticket Resolution",
         detail:
-          "Built MAESTRO, a portable multi-agent platform with a conductor orchestrating 10 AI agents across a 20-phase human-gated workflow; measured across 22 Jiras, it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection.",
-        tags: ["Multi-Agent", "LLMs", "MCP", "Orchestration"],
+          "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential.",
+        tags: ["Multi-Agent", "LLMs", "Orchestration", "Human-in-the-loop"],
       },
       {
         title: "ChipStack Xcelium AI Agents",
@@ -58,7 +58,7 @@ export const experiences: Experience[] = [
       {
         title: "MCP Servers for Engineering Tools",
         detail:
-          "Wrote 10 Model Context Protocol servers — including a 50-tool time-travel-debugger bridge and code-review, build and LLM-gateway servers — connecting GitHub Copilot, Cursor and Claude Code to EDA and engineering systems.",
+          "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges.",
         tags: ["MCP", "Python", "Developer Tooling"],
       },
       {

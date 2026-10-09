@@ -19,12 +19,20 @@ const NAV = [
   { href: "/work", labelKey: "work" },
   { href: "/skills", labelKey: "skills" },
   { href: "/experience", labelKey: "experience" },
-  { href: "/competitive-programming", labelKey: "craft" },
+  { href: "/now", labelKey: "now" },
   { href: "/contact", labelKey: "contact" },
 ] as const;
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
+  // Now tab covers the standalone /now page and the CP hub that still embeds it.
+  if (href === "/now") {
+    return (
+      pathname === "/now" ||
+      pathname === "/competitive-programming" ||
+      pathname.startsWith("/competitive-programming/")
+    );
+  }
   return pathname === href || pathname.startsWith(href + "/");
 }
 

@@ -89,7 +89,103 @@ export const MongoIcon = (p: IconProps) => (
 
 export const RedisIcon = (p: IconProps) => (
   <Base title="Redis" {...p}>
-    <path d="M10.5 1.09c-.5 0-.91.41-.91.91s.41.91.91.91h3c.5 0 .91-.41.91-.91s-.41-.91-.91-.91zM7.41 5.18a.9.9 0 0 0-.91.91v11.82a.9.9 0 0 0 .91.91h9.18a.9.9 0 0 0 .91-.91V6.09a.9.9 0 0 0-.91-.91zm.91 1.82h7.36v10H8.32zm0 11.82a.9.9 0 0 0-.91.91v3a.9.9 0 0 0 .91.91h7.36a.9.9 0 0 0 .91-.91v-3a.9.9 0 0 0-.91-.91zM10 21h4v.91h-4z" />
+    <path d="M12 1.8 1.5 7.2v2.4L12 15l10.5-5.4V7.2zm0 8.7L1.5 5.1v3.3L12 19.2l10.5-5.4V10.5zm0 5.1L1.5 10.2v3.3L12 24l10.5-5.4v-3.3z" />
+  </Base>
+);
+
+export const JavaScriptIcon = (p: IconProps) => (
+  <Base title="JavaScript" {...p}>
+    <path d="M0 0h24v24H0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.303-1.53-.545-1.746-1.065-.075-.29-.095-.45-.054-.652.075-.4.45-.68.99-.68.63 0 1.035.3 1.26.9l1.515-.99c-.36-.66-.945-1.215-2.145-1.215-1.455 0-2.415.9-2.415 2.145 0 1.335.795 1.95 2.1 2.445 1.275.48 1.59.78 1.53 1.305-.06.585-.57.855-1.365.855-.795 0-1.35-.36-1.68-1.05l-1.56.945c.42.9 1.29 1.575 3 1.575 1.77 0 2.775-1.005 2.835-2.34zm-6.735-3.27c0 1.65-1.02 2.64-2.655 2.64-1.335 0-2.175-.66-2.64-1.545l1.53-.915c.255.465.615.78 1.155.78.525 0 .855-.255.855-.78V9.39h1.8z" />
+  </Base>
+);
+
+export const CIcon = (p: IconProps) => (
+  <Base title="C" {...p}>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 2.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15zm.2 3.2c1.9 0 3.2.9 3.9 2.1l-1.7 1c-.4-.7-1.1-1.1-2.1-1.1-1.5 0-2.6 1.2-2.6 2.8s1.1 2.8 2.6 2.8c1 0 1.7-.4 2.1-1.1l1.7 1c-.7 1.2-2 2.1-3.9 2.1-2.9 0-5-2.2-5-4.9s2.1-4.9 5-4.9z" />
+  </Base>
+);
+
+export const ExpressIcon = (p: IconProps) => (
+  <Base title="Express" {...p}>
+    <path d="M2.5 7.5h4.2c1.6 0 2.6.9 2.6 2.3 0 1.1-.6 1.9-1.6 2.2l2 3.5H7.8l-1.7-3.2H5.2v3.2H2.5zm2.7 1.7v2.1h1.3c.7 0 1.1-.3 1.1-1s-.4-1.1-1.1-1.1zm8.1-.2 2.4 6.5h-2.8l-.3-1.1h-2.9l-.4 1.1H6.9l2.5-6.5zm-.8 3.9-.9-2.8-.9 2.8zm5.6-3.9h2.7v6.5h-2.7z" />
+  </Base>
+);
+
+export const BashIcon = (p: IconProps) => (
+  <Base title="Bash" {...p}>
+    <path d="M4.2 4.2 2 7v10l2.2 2.8h15.6L22 17V7l-2.2-2.8zm1.6 2.3h12.4L19.5 8v8l-1.3 1.5H6.8L5.5 16V8zm2.4 2.4v1.5l1.9 1-1.9 1v1.5l3.3-1.8v-1.4zm4.6 4.9h3.2v1.4h-3.2z" />
+  </Base>
+);
+
+export const TerraformIcon = (p: IconProps) => (
+  <Base title="Terraform" {...p}>
+    <path d="M1.5 2.5v7.8l6.5 3.8V6.3zm7.4 3.8v7.8l6.5 3.8V10.1zm0 9.2v7.8l6.5-3.8v-7.8zm7.4-5.4v7.8l6.5 3.8V13.9z" />
+  </Base>
+);
+
+export const NginxIcon = (p: IconProps) => (
+  <Base title="Nginx" {...p}>
+    <path d="M12 0 1.5 6v12L12 24l10.5-6V6zm-.4 4.8 6.2 14.1h-2.5L13.8 14l-2.6 5.9H8.8l4.1-9.3-1.7-3.8zm-3.4 2.1h2.5l-4.3 9.7v4.4L4.1 19z" />
+  </Base>
+);
+
+export const VsCodeIcon = (p: IconProps) => (
+  <Base title="VS Code" {...p}>
+    <path d="M23.15 2.587 18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" />
+  </Base>
+);
+
+export const RabbitMqIcon = (p: IconProps) => (
+  <Base title="RabbitMQ" {...p}>
+    <path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm8.5-4.5L18 3.5 22.5 8 16 15zM14 14h7v7h-7z" />
+  </Base>
+);
+
+export const PrometheusIcon = (p: IconProps) => (
+  <Base title="Prometheus" {...p}>
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4a9.6 9.6 0 1 1 0 19.2 9.6 9.6 0 0 1 0-19.2zm-.9 3.3v1.65c-2.1.3-3.75 2.1-3.75 4.35 0 .75.15 1.5.45 2.1L5.7 15.9c-.6-1.05-.9-2.25-.9-3.45 0-3.45 2.55-6.3 5.85-6.75H11.1zm1.8 0h.45c3.3.45 5.85 3.3 5.85 6.75 0 1.2-.3 2.4-.9 3.45l-2.1-2.1c.3-.6.45-1.35.45-2.1 0-2.25-1.65-4.05-3.75-4.35V5.7zm-1.35 3.6c1.2 0 2.25.9 2.25 2.1S13.65 13.5 12.45 13.5 10.2 12.6 10.2 11.4s1.05-2.1 2.25-2.1zm-4.8 6.3 1.8 1.8c-.9.75-1.5 1.8-1.65 3H5.7c.3-1.8 1.2-3.3 2.55-4.35zm9.9 0c1.35 1.05 2.25 2.55 2.55 4.35h-2.1c-.15-1.2-.75-2.25-1.65-3l1.2-1.35zM12 15.6c.6 0 1.2.15 1.65.45l-1.65 1.65-1.65-1.65c.45-.3 1.05-.45 1.65-.45z" />
+  </Base>
+);
+
+export const GrafanaIcon = (p: IconProps) => (
+  <Base title="Grafana" {...p}>
+    <path d="M12.003 0C5.375 0 .002 5.373.002 12S5.375 24 12.003 24 24 18.627 24 12 18.631 0 12.003 0zm0 2.182a9.818 9.818 0 1 1 0 19.636 9.818 9.818 0 0 1 0-19.636zm-.9 3.273v2.018c-1.8.327-3.164 1.91-3.164 3.818 0 .545.11 1.09.327 1.582L5.455 15.27A7.09 7.09 0 0 1 4.8 12c0-3.382 2.4-6.218 5.618-6.873h.685zm1.8 0h.436c3.218.655 5.618 3.491 5.618 6.873 0 1.145-.291 2.236-.873 3.164l-1.91-1.91c.273-.545.436-1.145.436-1.8 0-1.91-1.364-3.49-3.164-3.818V5.455zm-3.927 8.618 1.636 1.636c-.818.655-1.364 1.636-1.5 2.727H6.545c.273-1.636 1.09-3 2.318-3.955zm7.09 0c1.228.955 2.046 2.318 2.318 3.955h-2.018c-.136-1.09-.682-2.072-1.5-2.727l1.2-1.228z" />
+  </Base>
+);
+
+export const JestIcon = (p: IconProps) => (
+  <Base title="Jest" {...p}>
+    <path d="M22.319 16.557c.10.10.0.2.009.09v.001a2.392 2.392 0 0 1-2.394 2.389h-.001a2.396 2.396 0 0 1-2.396-2.397v-.017c0-.022.001-.044.002-.066a3.33 3.33 0 0 1-.316-1.118 3.9 3.9 0 0 1-.046-.425h1.61c.192.168.1.2.046.425a1.91 1.91 0 0 0 1.908 1.657 1.9 1.9 0 0 0 1.578-192.168.2.4 0 0 0 .10.0.0.1 0 0 0 .046-.425zm-9.846-2.55a3.9 3.9 0 0 1-.046-.425h1.61c.192.168.1.2.046.425a1.91 1.91 0 0 0 1.908 1.657 1.91 1.91 0 0 0 1.908-1.657c0-.148.016-.29.046-.425h1.61c-.03.14-.046.283-.046.425A3.52 3.52 0 0 1 15.99 17.5a3.52 3.52 0 0 1-3.517-3.493zm-5.48 0a3.9 3.9 0 0 1-.046-.425h1.61c.192.168.1.2.046.425a1.91 1.91 0 0 0 1.908 1.657 1.91 1.91 0 0 0 1.908-1.657c0-.148.016-.29.046-.425h1.61c-.03.14-.046.283-.046.425A3.52 3.52 0 0 1 10.51 17.5a3.52 3.52 0 0 1-3.517-3.493zM5.4 4.5h13.2v2.1H5.4zm1.5 3.6h10.2v1.5H6.9zM12 1.5 3 6v12l9 4.5L21 18V6z" />
+  </Base>
+);
+
+export const VitestIcon = (p: IconProps) => (
+  <Base title="Vitest" {...p}>
+    <path d="M12 1.5 2.5 6.75v10.5L12 22.5l9.5-5.25V6.75zm0 2.2 7.2 4v2.4L12 14.4l-7.2-4.3v-2.4zm-7.2 8.1 6.3 3.75v4.35l-6.3-3.5zm14.4 0v4.6l-6.3 3.5v-4.35z" />
+  </Base>
+);
+
+export const PostmanIcon = (p: IconProps) => (
+  <Base title="Postman" {...p}>
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm2.85 15.45-2.1-2.1 2.1-2.1c.3-.3.3-.75 0-1.05s-.75-.3-1.05 0l-2.1 2.1-2.1-2.1c-.3-.3-.75-.3-1.05 0s-.3.75 0 1.05l2.1 2.1-2.1 2.1c-.3.3-.3.75 0 1.05.15.15.3.15.525.15s.375 0 .525-.15l2.1-2.1 2.1 2.1c.10.0.2.3.525.15s.375 0 .525-.15c.3-.3.3-.75 0-1.05zM8.4 7.05c0-.9.75-1.65 1.65-1.65h3.9c.9 0 1.65.75 1.65 1.65v.9H8.4z" />
+  </Base>
+);
+
+export const CmakeIcon = (p: IconProps) => (
+  <Base title="CMake" {...p}>
+    <path d="M0 12.5 12 0l3.5 8.5L24 12.5 12 24 8.5 15.5zm12.2-9.3L3.4 12.5l7.4 2.1L12.2 3.2zm1.1.3 1.5 10.9 6.8-1.9zm-1.3 12.2L3.9 13.8l6.5 7.5zm1.5.1 1.8-7.5 6.1 7.1z" />
+  </Base>
+);
+
+export const PytestIcon = (p: IconProps) => (
+  <Base title="pytest" {...p}>
+    <path d="M12.3 2.1c-1.2 0-2.3.4-3.2 1.1C8.3 2.5 7.2 2.1 6 2.1 3.5 2.1 1.5 4.1 1.5 6.6c0 1.2.5 2.3 1.2 3.1-.7.9-1.1 2-1.1 3.2 0 2.5 2 4.5 4.5 4.5 1.1 0 2.2-.4 3-1.1.9.7 2 1.1 3.2 1.1 2.5 0 4.5-2 4.5-4.5 0-1.2-.5-2.3-1.2-3.1.7-.9 1.1-2 1.1-3.2 0-2.5-2-4.5-4.5-4.5zm0 2c1.4 0 2.5 1.1 2.5 2.5S13.7 9.1 12.3 9.1 9.8 8 9.8 6.6s1.1-2.5 2.5-2.5zM6 4.1c1.4 0 2.5 1.1 2.5 2.5S7.4 9.1 6 9.1 3.5 8 3.5 6.6 4.6 4.1 6 4.1zm0 7.5c1.4 0 2.5 1.1 2.5 2.5S7.4 16.6 6 16.6s-2.5-1.1-2.5-2.5S4.6 11.6 6 11.6zm6.3 0c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z" />
+  </Base>
+);
+
+export const GitHubActionsIcon = (p: IconProps) => (
+  <Base title="GitHub Actions" {...p}>
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.02-.02-2.01-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0zm-1.5 16.5v-3l3 1.5-3 1.5zm0-5.5 3-1.5v3L10.5 11z" />
   </Base>
 );
 
@@ -226,12 +322,15 @@ export type TechName =
   | "C"
   | "Python"
   | "TypeScript"
+  | "JavaScript"
   | "Go"
   | "Java"
+  | "Bash"
   | "React"
   | "Tailwind"
   | "Tailwind CSS"
   | "Node.js"
+  | "Express"
   | "Docker"
   | "AWS"
   | "GCP"
@@ -240,10 +339,12 @@ export type TechName =
   | "MongoDB"
   | "Redis"
   | "Kafka"
+  | "RabbitMQ"
   | "Git"
   | "Linux"
   | "GraphQL"
   | "GitHub"
+  | "GitHub Actions"
   | "Next.js"
   | "Kubernetes"
   | "OpenCV"
@@ -252,19 +353,32 @@ export type TechName =
   | "Jenkins"
   | "MediaPipe"
   | "REST"
-  | "OpenTelemetry";
+  | "OpenTelemetry"
+  | "Terraform"
+  | "Nginx"
+  | "VS Code"
+  | "Prometheus"
+  | "Grafana"
+  | "Jest"
+  | "Vitest"
+  | "pytest"
+  | "Postman"
+  | "CMake";
 
 export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   "C++": CppIcon,
-  C: CppIcon,
+  C: CIcon,
   Python: PythonIcon,
   TypeScript: TypeScriptIcon,
+  JavaScript: JavaScriptIcon,
   Go: GoIcon,
   Java: JavaIcon,
+  Bash: BashIcon,
   React: ReactIcon,
   Tailwind: TailwindIcon,
   "Tailwind CSS": TailwindIcon,
   "Node.js": NodeIcon,
+  Express: ExpressIcon,
   Docker: DockerIcon,
   AWS: AwsIcon,
   GCP: GcpIcon,
@@ -273,10 +387,12 @@ export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   MongoDB: MongoIcon,
   Redis: RedisIcon,
   Kafka: KafkaIcon,
+  RabbitMQ: RabbitMqIcon,
   Git: GitIcon,
   Linux: LinuxIcon,
   GraphQL: GraphQLIcon,
   GitHub: GitHubIcon,
+  "GitHub Actions": GitHubActionsIcon,
   "Next.js": NextIcon,
   Kubernetes: KubernetesIcon,
   OpenCV: OpenCVIcon,
@@ -286,6 +402,16 @@ export const TECH_ICONS: Record<TechName, (p: IconProps) => ReactElement> = {
   MediaPipe: MediaPipeIcon,
   REST: RestIcon,
   OpenTelemetry: OpenTelemetryIcon,
+  Terraform: TerraformIcon,
+  Nginx: NginxIcon,
+  "VS Code": VsCodeIcon,
+  Prometheus: PrometheusIcon,
+  Grafana: GrafanaIcon,
+  Jest: JestIcon,
+  Vitest: VitestIcon,
+  pytest: PytestIcon,
+  Postman: PostmanIcon,
+  CMake: CmakeIcon,
 };
 
 export function TechIcon({ name, ...props }: IconProps & { name: TechName }) {

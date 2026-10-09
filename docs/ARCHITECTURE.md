@@ -182,8 +182,9 @@ releases the runtimes, persists quick mode and clears both engine caches. See
 then Public Workbench. `/system-design/[slug]` defines six detail
 routes with a lazy demo and HLD/LLD/decision tabs. The homepage previews two designs.
 `/competitive-programming` combines CP, the reusable `NowSection` and the 2027
-roadmap under Practice & Plans. `/now` remains available for existing links.
-All URLs remain locale-prefix-free. Engineer Mode is visit-scoped and starts off.
+roadmap under **Now** (`/now` in the header; `/competitive-programming` still hosts
+CP + roadmap and highlights the same nav item). All URLs remain locale-prefix-free.
+Engineer Mode is visit-scoped and starts off.
 
 ## Automatic public feeds
 
@@ -192,3 +193,12 @@ and an eight-second upstream timeout. GitHub uses the existing optional token an
 falls back to its public Atom feed. `scripts/check-feeds.mjs` exercises the same
 fetchers. A scheduled GitHub workflow checks sources and warms `/feeds` twice hourly;
 data is fetched automatically and never maintained as checked-in activity entries.
+**Open XML feed** links use same-origin proxies (`/feeds/medium.xml`,
+`/feeds/youtube.xml`, `/feeds/github.atom`) that return upstream XML with the
+correct `Content-Type`.
+
+## Ask Ayush engines
+
+Quick answers (TF-IDF) are the default. Optional on-device GPU/CPU models follow
+ADR-0012. A same-origin `POST /api/chat` scaffold (ADR-0014) exists but stays off
+unless `CHAT_API_ENABLED=true` and provider credentials are set.

@@ -19,7 +19,7 @@ import { ConsoleBanner } from "@/components/eggs/console-banner";
 import { GlobalListeners } from "@/components/eggs/global-listeners";
 import { TerminalMode } from "@/components/eggs/terminal-mode";
 import { MatrixRain } from "@/components/eggs/matrix-rain";
-import { ContributionRain } from "@/components/eggs/contribution-rain";
+import { ContributionRainHost } from "@/components/eggs/contribution-rain-host";
 import { BootSequence } from "@/components/eggs/boot-sequence";
 import { EggToast } from "@/components/eggs/egg-toast";
 import { EggUnlockBurst } from "@/components/eggs/egg-unlock-burst";
@@ -100,7 +100,7 @@ export default async function LocaleLayout({
               <GlobalListeners />
               <TerminalMode />
               <MatrixRain />
-              <ContributionRain />
+              <ContributionRainHost />
               <BootSequence />
               <HaikuRecorder />
               <SelectionWatcher />

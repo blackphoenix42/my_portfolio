@@ -1,117 +1,92 @@
-"use client";
-
-import { useId, useState } from "react";
-import { useTranslations } from "next-intl";
-import { getSystemDesign } from "@/content/system-design";
+import { getTranslations } from "next-intl/server";
+import { getSystemDesign, systemDesignNotes } from "@/content/system-design";
 import { SystemWhiteboard } from "./system-whiteboard";
-import { cn } from "@/lib/utils";
+import { UmlDiagram } from "./uml-diagram";
 
-const TABS = ["demo", "hld", "lld", "decisions"] as const;
-export function DesignDetail({ slug }: { slug: string }) {
-  const t = useTranslations("systemDesign");
-  const [tab, setTab] = useState<(typeof TABS)[number]>("demo");
-  const id = useId();
+export async function DesignDetail({ slug }: { slug: string }) {
+  const t = await getTranslations("systemDesign");
   const item = getSystemDesign(slug)!;
+  const notes = systemDesignNotes[slug]!;
   const text = (key: string) => t(`systems.${slug}.${key}` as never);
+
   return (
-    <>
-      <div role="tablist" aria-label={t("detailTabs")} className="my-8 flex flex-wrap gap-2">
-        {TABS.map((key, i) => (
-          <button
-            key={key}
-            type="button"
-            role="tab"
-            id={`${id}-${key}`}
-            aria-controls={`${id}-panel`}
-            aria-selected={tab === key}
-            tabIndex={tab === key ? 0 : -1}
-            onClick={() => setTab(key)}
-            onKeyDown={(e) => {
-              const next =
-                e.key === "ArrowRight"
-                  ? (i + 1) % TABS.length
-                  : e.key === "ArrowLeft"
-                    ? (i + TABS.length - 1) % TABS.length
-                    : e.key === "Home"
-                      ? 0
-                      : e.key === "End"
-                        ? TABS.length - 1
-                        : -1;
-              if (next >= 0) {
-                e.preventDefault();
-                setTab(TABS[next]!);
-                document.getElementById(`${id}-${TABS[next]}`)?.focus();
-              }
-            }}
-            className={cn("chip px-4 py-2", tab === key && "border-accent-cyan text-accent-cyan")}
-          >
-            {t(`tabs.${key}`)}
-          </button>
-        ))}
-      </div>
-      <div
-        role="tabpanel"
-        id={`${id}-panel`}
-        aria-labelledby={`${id}-${tab}`}
-        tabIndex={0}
-        className="card p-5 sm:p-8"
-      >
-        {tab === "demo" && (
-          <>
-            <p className="text-fg-muted mb-6 text-sm">{t("demoScope")}</p>
-            <SystemWhiteboard slug={slug} />
-          </>
-        )}
-        {tab === "hld" && (
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-lg font-semibold">{t("requirements")}</h2>
-              <ul className="text-fg-muted mt-3 list-disc space-y-2 pl-5">
-                {item.requirements.map((_, i) => (
-                  <li key={i}>{text(`requirements.${i}`)}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-lg font-semibold">{t("components")}</h2>
-              <ol className="mt-4 grid gap-4 sm:grid-cols-2">
-                {item.components.map((_, i) => (
-                  <li key={i} className="border-border rounded-lg border p-4">
-                    <h3 className="text-accent-cyan font-semibold">
-                      {text(`components.${i}.name`)}
-                    </h3>
-                    <p className="text-fg-muted mt-2 text-sm">{text(`components.${i}.role`)}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        )}
-        {tab === "lld" && (
-          <div className="space-y-6">
-            {["dataModel", "api", "execution"].map((key) => (
-              <section key={key}>
-                <h2 className="text-lg font-semibold">{t(`lldLabels.${key}`)}</h2>
-                <p className="text-fg-muted mt-3 text-sm leading-relaxed whitespace-pre-line">
-                  {text(`lld.${key}`)}
-                </p>
-              </section>
+    <div className="mt-10 space-y-12">
+      <section aria-labelledby="demo-heading" className="card p-5 sm:p-8">
+        <h2 id="demo-heading" className="text-xl font-semibold">
+          {t("tabs.demo")}
+        </h2>
+        <p className="text-fg-muted mt-3 mb-6 text-sm">{t("demoScope")}</p>
+        <SystemWhiteboard slug={slug} />
+      </section>
+
+      <section aria-labelledby="hld-heading" className="card space-y-8 p-5 sm:p-8">
+        <h2 id="hld-heading" className="text-xl font-semibold">
+          {t("tabs.hld")}
+        </h2>
+        <div>
+          <h3 className="text-lg font-semibold">{t("requirements")}</h3>
+          <ul className="text-fg-muted mt-3 list-disc space-y-2 pl-5">
+            {item.requirements.map((_, index) => (
+              <li key={index}>{text(`requirements.${index}`)}</li>
             ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold">{t("components")}</h3>
+          <ol className="mt-4 grid gap-4 sm:grid-cols-2">
+            {item.components.map((_, index) => (
+              <li key={index} className="border-border rounded-lg border p-4">
+                <h4 className="text-accent-cyan font-semibold">
+                  {text(`components.${index}.name`)}
+                </h4>
+                <p className="text-fg-muted mt-2 text-sm">{text(`components.${index}.role`)}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold">{t("uml")}</h3>
+          <div className="mt-4">
+            <UmlDiagram slug={slug} />
           </div>
-        )}
-        {tab === "decisions" && (
-          <>
-            <h2 className="text-lg font-semibold">{t("tradeoffs")}</h2>
-            <ul className="text-fg-muted mt-4 list-disc space-y-3 pl-5">
-              {item.tradeoffs.map((_, i) => (
-                <li key={i}>{text(`tradeoffs.${i}`)}</li>
-              ))}
-            </ul>
-            <h2 className="mt-8 text-lg font-semibold">{t("failureModes")}</h2>
-            <p className="text-fg-muted mt-3 text-sm">{text("lld.failures")}</p>
-          </>
-        )}
-      </div>
-    </>
+        </div>
+      </section>
+
+      <section aria-labelledby="lld-heading" className="card space-y-6 p-5 sm:p-8">
+        <h2 id="lld-heading" className="text-xl font-semibold">
+          {t("tabs.lld")}
+        </h2>
+        {(["dataModel", "api", "execution"] as const).map((key) => (
+          <div key={key}>
+            <h3 className="text-lg font-semibold">{t(`lldLabels.${key}`)}</h3>
+            <pre className="text-fg-muted mt-3 font-sans text-sm leading-relaxed whitespace-pre-wrap">
+              {text(`lld.${key}`) || notes[key]}
+            </pre>
+          </div>
+        ))}
+        <div>
+          <h3 className="text-lg font-semibold">{t("lldLabels.pseudocode")}</h3>
+          <pre className="border-border bg-bg-sunken text-fg mt-3 overflow-x-auto rounded-lg border p-4 font-mono text-xs leading-relaxed whitespace-pre-wrap">
+            {text("lld.pseudocode") || notes.pseudocode}
+          </pre>
+        </div>
+      </section>
+
+      <section aria-labelledby="decisions-heading" className="card p-5 sm:p-8">
+        <h2 id="decisions-heading" className="text-xl font-semibold">
+          {t("tabs.decisions")}
+        </h2>
+        <h3 className="mt-6 text-lg font-semibold">{t("tradeoffs")}</h3>
+        <ul className="text-fg-muted mt-4 list-disc space-y-3 pl-5">
+          {item.tradeoffs.map((_, index) => (
+            <li key={index}>{text(`tradeoffs.${index}`)}</li>
+          ))}
+        </ul>
+        <h3 className="mt-8 text-lg font-semibold">{t("failureModes")}</h3>
+        <pre className="text-fg-muted mt-3 font-sans text-sm leading-relaxed whitespace-pre-wrap">
+          {text("lld.failures") || notes.failures}
+        </pre>
+      </section>
+    </div>
   );
 }

@@ -6,6 +6,51 @@ All notable changes to this project are documented here. Format loosely follows
 
 ## [Unreleased]
 
+### Added — endpoints aliases & commit-rain windows
+
+- Permanent redirects for typos/synonyms of all major routes (see
+  [ENDPOINTS.md](ENDPOINTS.md); source `src/lib/route-aliases.mjs`).
+- Commit rain time window in Site settings (week / month / year / all) via
+  `GET /api/commits?window=…` and localStorage preference.
+- Skills UI plan: [skills_ui_frags_and_design_snaps.md](plans/skills_ui_frags_and_design_snaps.md).
+- Commit rain localStorage + process merge caches so GitHub fetches accumulate
+  across opens (Events + Commit Search, limit 100).
+
+### Security — MAESTRO trade-secret scrub
+
+- Public MAESTRO copy reduced to outcomes + high-level intent; removed phase/agent
+  inventories, tooling wiring, workflow-mirroring demo, and architecture whiteboard.
+
+### Changed — system-design depth
+
+- Rewrote all six whiteboards with capacity/SLO-style requirements, richer
+  component sets, senior LLD (schemas, APIs, failure modes, longer pseudo-code),
+  and multi-zone UML diagrams with labeled edges and stereotypes.
+- Respaced UML layouts with elbow routing and label chips to reduce overlaps.
+- Commit rain settings moved to a click-to-open submenu (like language).
+- Skills explorer: focus-area cards (no design-snap stage).
+- Commit rain plays every commit newest→oldest until finished or dismissed.
+
+### Added — 2026-10 follow-up
+
+- Same-origin feed proxies at `/feeds/medium.xml`, `/feeds/youtube.xml`, and
+  `/feeds/github.atom` so **Open XML feed** shows real XML on-site.
+- System-design detail pages now stack Demo, HLD (with UML), LLD (with
+  pseudo-code), and trade-offs on one scrollable page; quirky filters on the
+  gallery.
+- GitHub-backed commit rain (curated fallback) via `ContributionRainHost`.
+- Scaffolded `POST /api/chat` server Ask Ayush path (ADR-0014), **disabled by
+  default** (`CHAT_API_ENABLED=false`).
+- `npm run lint:i18n` / `npm run i18n:sync` for locale key parity.
+
+### Changed — 2026-10 follow-up
+
+- Nav **Practice & Plans** renamed to **Now** (`/now`); CP hub still active for
+  that tab. Engineer settings toggle closes the menu; mode banners put a blank
+  line after the “· on” label.
+- Locale overlays synced to English key coverage (best-effort translations;
+  remaining English strings are intentional interim fill).
+
 ### Changed — October 2026 portfolio update
 
 - Renamed the assistant to Ask Ayush; added independent session chats, context and

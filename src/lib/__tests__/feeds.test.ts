@@ -1,5 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
+  FEED_SOURCES,
+  fetchRawFeed,
   fetchMediumFeed,
   fetchYouTubeFeed,
   fetchGithubActivity,
@@ -123,6 +125,30 @@ describe("fetchMediumFeed", () => {
     mockFetch(async () => new Response(`<rss>${items}</rss>`, { status: 200 }));
     const out = await fetchMediumFeed("@x", 2);
     expect(out).toHaveLength(2);
+  });
+});
+
+describe("feed source proxies", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("uses only the canonical allowlisted upstream URLs", () => {
+    expect(FEED_SOURCES.medium.upstream).toBe("https://binaryphoenix01.medium.com/feed");
+    expect(FEED_SOURCES.youtube.upstream).toContain("youtube.com/feeds/videos.xml");
+    expect(FEED_SOURCES.github.upstream).toBe("https://github.com/blackphoenix42.atom");
+  });
+
+  it("fetches raw XML from the selected allowlisted source", async () => {
+    const fetch = vi.fn(async () => new Response("<feed />"));
+    vi.stubGlobal("fetch", fetch);
+    await expect(fetchRawFeed("github")).resolves.toBe("<feed />");
+    expect(fetch).toHaveBeenCalledWith(
+      FEED_SOURCES.github.upstream,
+      expect.objectContaining({
+        headers: expect.objectContaining({ "User-Agent": "Portfolio-RSS/1.0" }),
+      }),
+    );
   });
 });
 
