@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isAudioAttachment } from "@/lib/contact-attachments";
 
 // Schema messages are short identifiers; the contact form maps them onto
 // translated strings via `messages/*.json → contact.form.errors.*`. Keeping
@@ -14,20 +15,30 @@ export const ROLES = [
 ] as const;
 export type Role = (typeof ROLES)[number];
 
-// Attachment limits — mirror the client-side caps in attachment-field.tsx.
-export const MAX_ATTACHMENTS = 5;
-export const MAX_ATTACHMENT_TOTAL_BYTES = 10 * 1024 * 1024; // 10 MB
-export const ALLOWED_ATTACHMENT_MIME = [
-  "application/pdf",
-  "image/png",
-  "image/jpeg",
-  "image/webp",
-  "image/gif",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "application/msword",
-  "text/plain",
-  "text/markdown",
-] as const;
+export {
+  MAX_ATTACHMENTS,
+  MAX_ATTACHMENT_TOTAL_BYTES,
+  ALLOWED_ATTACHMENT_MIME,
+  ALLOWED_ATTACHMENT_EXTENSIONS,
+  isAllowedAttachment,
+  isAudioAttachment,
+} from "@/lib/contact-attachments";
+
+/** Typed message floor when no audio voice-note is attached. */
+export const MESSAGE_MIN_LENGTH = 20;
+
+/**
+ * Message body may be empty when at least one audio attachment is present
+ * (voice-note-only contact). Otherwise require MESSAGE_MIN_LENGTH chars.
+ */
+export function isContactMessageSatisfied(
+  message: string,
+  attachments: Array<{ name?: string; type?: string }> = [],
+): boolean {
+  if (message.length > 4000) return false;
+  if (attachments.some(isAudioAttachment)) return true;
+  return message.trim().length >= MESSAGE_MIN_LENGTH;
+}
 
 export const contactSchema = z
   .object({
@@ -44,7 +55,8 @@ export const contactSchema = z
     // Free-text "specify" field — required (and only used) when role === "Other".
     otherRole: z.string().max(80, "otherRoleLong").optional().or(z.literal("")),
     subject: z.string().min(3, "subjectShort").max(140, "subjectLong"),
-    message: z.string().min(20, "messageShort").max(4000, "messageLong"),
+    // Length floor enforced via isContactMessageSatisfied (voice notes may omit text).
+    message: z.string().max(4000, "messageLong"),
     opportunity: z.boolean().optional(),
     // honeypot: must be empty
     website: z.string().max(0).optional().or(z.literal("")),

@@ -25,7 +25,7 @@ const NAV = [
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
-  // Now tab covers the standalone /now page and the CP hub that still embeds it.
+  // Now hub also covers legacy /competitive-programming redirects.
   if (href === "/now") {
     return (
       pathname === "/now" ||

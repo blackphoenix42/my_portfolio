@@ -6,5 +6,5 @@ export default async function LabPage({ params }: { params: Promise<{ locale: st
   const safeLocale = (routing.locales as readonly string[]).includes(locale)
     ? (locale as (typeof routing.locales)[number])
     : routing.defaultLocale;
-  redirect({ href: "/competitive-programming", locale: safeLocale });
+  redirect({ href: "/now", locale: safeLocale });
 }

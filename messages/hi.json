@@ -35,8 +35,8 @@
     "demo": "डेमो",
     "year": "वर्ष",
     "present": "वर्तमान",
-    "back": "Back",
-    "privacy": "Privacy"
+    "back": "वापस",
+    "privacy": "गोपनीयता"
   },
   "nav": {
     "home": "होम",
@@ -74,14 +74,14 @@
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel से",
     "copyright": "© {year} {name}",
     "tagline": "प्रदर्शन-महत्वपूर्ण सिस्टम में इंजीनियरिंग बुद्धिमत्ता।",
-    "stackAriaLabel": "Technologies this site is built with"
+    "stackAriaLabel": "यह साइट जिन प्रौद्योगिकियों के साथ बनाई गई है"
   },
   "language": {
     "label": "भाषा",
     "switch": "भाषा बदलें",
     "current": "वर्तमान भाषा: {name}",
     "names": {
-      "en": "English",
+      "en": "अंग्रेज़ी",
       "hi": "हिन्दी",
       "ja": "日本語",
       "sa": "संस्कृतम्",
@@ -122,9 +122,9 @@
     "email": "ईमेल",
     "contact": "संपर्क",
     "exitAria": "रिक्रूटर मोड बंद करें",
-    "modeOn": "Recruiter mode · ON",
-    "summary": "{role} · {location} · Open to software engineering roles in C++ systems, performance engineering & AI tooling.",
-    "impact": "Building performance-critical developer infrastructure with production impact across Apple, Google, Samsung & NVIDIA workloads.",
+    "modeOn": "रिक्रूटर मोड · चालू",
+    "summary": "{role} · {location} · C++ सिस्टम, प्रदर्शन इंजीनियरिंग और AI टूलिंग में सॉफ्टवेयर इंजीनियरिंग भूमिकाओं के लिए खुला।",
+    "impact": "Apple, Google, Samsung और NVIDIA वर्कलोड में उत्पादन प्रभाव के साथ प्रदर्शन-महत्वपूर्ण डेवलपर बुनियादी ढांचे का निर्माण।",
     "github": "GitHub"
   },
   "command": {
@@ -158,13 +158,13 @@
       "contact": "संपर्क",
       "systemDesign": "सिस्टम डिज़ाइन",
       "now": "अभी",
-      "cp": "Now · CP & Roadmap"
+      "cp": "अब · सीपी और रोडमैप"
     },
     "openTerminal": "टर्मिनल मोड खोलें",
     "openMatrix": "मैट्रिक्स रेन खोलें",
     "openSecret": "गुप्त कक्ष खोलें",
     "openCommitRain": "कमिट्स की बारिश",
-    "askPortfolio": "Ask Ayush"
+    "askPortfolio": "आयुष से पूछो"
   },
   "mobileActionBar": {
     "contact": "संपर्क",
@@ -197,13 +197,13 @@
         "out": "सत्यापित फ़िक्स"
       }
     },
-    "headline": "I build <strong>faster systems</strong> and <strong>AI tools that help engineers ship</strong>.",
-    "subhead": "R&D Software Engineer II at Cadence. 4.5+ years building high-performance C++, Python automation and reliable AI workflows — from Xcelium and RTL optimization to developer infrastructure.",
+    "headline": "मैं <strong>तेज़ सिस्टम</strong> और <strong>इंजीनियरों को बेहतर डिलीवरी में मदद करने वाले AI टूल</strong> बनाता हूँ।",
+    "subhead": "Cadence पर R&D सॉफ्टवेयर इंजीनियर II। उच्च-प्रदर्शन C++, Python स्वचालन और विश्वसनीय AI वर्कफ़्लो का निर्माण करने में 4.5+ वर्ष - Xcelium और RTL अनुकूलन से लेकर डेवलपर बुनियादी ढांचे तक।",
     "taglines": {
-      "0": "Performance-critical C++ × distributed systems × agentic AI.",
-      "1": "Production wins on Apple, Google, Samsung and NVIDIA workloads.",
-      "2": "From low-level profiling to AI-assisted developer tooling at scale.",
-      "3": "Owning problems end-to-end — measure, design, ship, operate."
+      "0": "प्रदर्शन-महत्वपूर्ण C++ × वितरित सिस्टम × एजेंटिक AI।",
+      "1": "Apple, Google, Samsung और NVIDIA वर्कलोड पर प्रोडक्शन जीतता है।",
+      "2": "निम्न-स्तरीय प्रोफ़ाइलिंग से लेकर बड़े पैमाने पर AI-सहायता प्राप्त डेवलपर टूलिंग तक।",
+      "3": "समस्याओं का अंत-से-अंत तक समाधान करना - मापना, डिज़ाइन करना, भेजना, संचालित करना।"
     }
   },
   "home": {
@@ -215,25 +215,25 @@
     "eyebrow": "/ परिचय",
     "heading": "संक्षिप्त परिचय",
     "getInTouch": "संपर्क करें",
-    "bio1": "I’m <strong>{name}</strong>, an R&D Software Engineer II with <strong>4.5+ years of experience</strong> in C++, Python and AI-driven automation. At {company}, I work on Xcelium and large-scale RTL optimization for Apple, Google, Samsung and NVIDIA workloads.",
-    "bio2": "My work connects low-level systems performance with engineering productivity: profiling simulators, building multi-agent assistive tooling (including trade-secret work such as MAESTRO), and automating regression and release workflows. I enjoy problems at the intersection of software, performance and hardware.",
-    "principlesEyebrow": "How I build reliable systems",
+    "bio1": "मैं <strong>{name}</strong> हूं, एक R&D सॉफ्टवेयर इंजीनियर II हूं, जिसके पास C++, Python और AI-संचालित ऑटोमेशन में <strong>4.5+ वर्षों का अनुभव</strong> है। {company} में, मैं Xcelium और Apple, Google, Samsung और NVIDIA वर्कलोड के लिए बड़े पैमाने पर RTL अनुकूलन पर काम करता हूं।",
+    "bio2": "मेरा काम निम्न-स्तरीय सिस्टम प्रदर्शन को इंजीनियरिंग उत्पादकता से जोड़ता है: प्रोफाइलिंग सिमुलेटर, मल्टी-एजेंट सहायक टूलींग का निर्माण (MAESTRO जैसे व्यापार-गुप्त कार्य सहित), और प्रतिगमन और रिलीज़ वर्कफ़्लो को स्वचालित करना। मैं सॉफ़्टवेयर, प्रदर्शन और हार्डवेयर के अंतर्संबंध में समस्याओं का आनंद लेता हूँ।",
+    "principlesEyebrow": "मैं विश्वसनीय सिस्टम कैसे बनाता हूँ",
     "principles": {
       "profile": {
-        "title": "Measure before optimizing.",
-        "body": "Use profiles, reproducible benchmarks and workload-specific evidence."
+        "title": "अनुकूलन से पहले मापें.",
+        "body": "प्रोफाइल, प्रतिलिपि प्रस्तुत करने योग्य बेंचमार्क और कार्यभार-विशिष्ट साक्ष्य का उपयोग करें।"
       },
       "gap": {
-        "title": "Make the routine deterministic.",
-        "body": "Use explicit pipelines for repeatable work and AI where reasoning adds value."
+        "title": "दिनचर्या को नियतिपूर्ण बनायें।",
+        "body": "दोहराए जाने योग्य कार्य के लिए स्पष्ट पाइपलाइनों का उपयोग करें और AI जहां तर्क मूल्य जोड़ता है।"
       },
       "trust": {
-        "title": "Keep people in control.",
-        "body": "Design review gates, structured outputs, checkpoints and recovery into agent workflows."
+        "title": "लोगों को नियंत्रण में रखें.",
+        "body": "एजेंट वर्कफ़्लो में समीक्षा गेट, संरचित आउटपुट, चेकपॉइंट और पुनर्प्राप्ति डिज़ाइन करें।"
       },
       "performance": {
-        "title": "Verify the whole change.",
-        "body": "Check correctness, performance and regression behavior before calling an optimization done."
+        "title": "संपूर्ण परिवर्तन सत्यापित करें.",
+        "body": "किसी अनुकूलन को पूरा करने से पहले शुद्धता, प्रदर्शन और प्रतिगमन व्यवहार की जांच करें।"
       }
     }
   },
@@ -302,7 +302,7 @@
       "niit": "NIIT",
       "udemy": "Udemy"
     },
-    "honorsIntro": "Recognition for performance work contributing to a multi-million dollar Samsung deal, proprietary AI engineering IP, conference contributions and earlier grants and competition wins."
+    "honorsIntro": "कई मिलियन डॉलर के Samsung सौदे, मालिकाना AI इंजीनियरिंग आईपी, सम्मेलन योगदान और पहले के अनुदान और प्रतियोगिता जीत में योगदान देने वाले प्रदर्शन कार्य के लिए मान्यता।"
   },
   "work": {
     "title": "कार्य",
@@ -345,7 +345,7 @@
     "linksHeading": "लिंक",
     "relatedHeading": "संबंधित कार्य",
     "demoSubtitle": {
-      "maestro": "Interactive workflow walkthrough omitted — MAESTRO is trade-secret protected.",
+      "maestro": "इंटरएक्टिव वर्कफ़्लो वॉकथ्रू छोड़ा गया - MAESTRO व्यापार-गुप्त संरक्षित है।",
       "algolens": "AlgoLens निष्पादन मॉडल का एक लघु विज़ुअलाइज़र।",
       "xcelium-optimization": "स्लाइडर को खींचें ताकि देख सकें कि RTL/रनटाइम अनुकूलन के साथ प्रोफ़ाइल कैसे संकुचित होती है।",
       "tezos-premier-league": "डिटरमिनिस्टिक ऑन-चेन PvP ब्रैकेट का सिमुलेशन करने के लिए प्ले क्लिक करें।",
@@ -385,8 +385,8 @@
     "internshipsAria": "इंटर्नशिप और फ़ेलोशिप समयरेखा",
     "educationHeading": "शिक्षा",
     "score": "स्कोर:",
-    "present": "Present",
-    "previousRole": "Previous role at Cadence"
+    "present": "वर्तमान",
+    "previousRole": "Cadence पर पिछली भूमिका"
   },
   "competitiveProgramming": {
     "title": "प्रतियोगी प्रोग्रामिंग",
@@ -406,24 +406,24 @@
     "roadmapAria": "इंजीनियरिंग रोडमैप",
     "roadmapTag": "/ रोडमैप",
     "roadmapHeading": "मैं आगे क्या बना रहा हूँ",
-    "pageTitle": "Now · CP & Roadmap",
-    "pageDescription": "Competitive programming, current engineering focus and an incremental plan for the 2027 roadmap.",
-    "craftTag": "/ now",
-    "pageHeading": "What I’m doing now.",
+    "pageTitle": "अब · सीपी और रोडमैप",
+    "pageDescription": "प्रतिस्पर्धी प्रोग्रामिंग, वर्तमान इंजीनियरिंग फोकस और 2027 रोडमैप के लिए एक वृद्धिशील योजना।",
+    "craftTag": "/ अब",
+    "pageHeading": "मैं अब क्या कर रहा हूँ",
     "pageIntro": "Competitive programming, current focus, and the learning and small releases that shape my next systems.",
     "roadmapIntro": "2027 targets for the next set of systems. The approach is incremental: learn the core concepts, build a narrow working slice, then validate it before expanding.",
     "approach": {
       "learn": {
-        "title": "Learn with a concrete problem",
-        "body": "Study queues and backpressure for InfraLens, OpenTelemetry and storage for TraceMind, and graph algorithms and WebAssembly for SiliconGraph. Use focused exercises to test each idea."
+        "title": "किसी ठोस समस्या से सीखें",
+        "body": "InfraLens के लिए कतार और बैकप्रेशर, TraceMind के लिए ओपन टेलीमेट्री और स्टोरेज, और SiliconGraph के लिए ग्राफ एल्गोरिदम और WebAssembly का अध्ययन करें। प्रत्येक विचार का परीक्षण करने के लिए केंद्रित अभ्यासों का उपयोग करें।"
       },
       "build": {
-        "title": "Ship a small working slice",
-        "body": "Start with one traffic path, one trace investigation or one RTL graph. Add capabilities incrementally, keeping each step inspectable and useful on its own."
+        "title": "एक छोटा कार्यशील टुकड़ा भेजें",
+        "body": "एक ट्रैफ़िक पथ, एक ट्रेस जांच या एक RTL ग्राफ़ से प्रारंभ करें। प्रत्येक चरण को अपने आप में निरीक्षण योग्य और उपयोगी रखते हुए क्षमताओं को धीरे-धीरे जोड़ें।"
       },
       "validate": {
-        "title": "Measure, test and iterate",
-        "body": "Create repeatable fixtures, check failure behavior, compare performance and write down trade-offs. Use Q4 2027 for integration, documentation and feedback after the initial targets."
+        "title": "मापें, परीक्षण करें और पुनरावृत्त करें",
+        "body": "दोहराने योग्य फिक्स्चर बनाएं, विफलता व्यवहार की जांच करें, प्रदर्शन की तुलना करें और ट्रेड-ऑफ लिखें। प्रारंभिक लक्ष्यों के बाद एकीकरण, दस्तावेज़ीकरण और फीडबैक के लिए Q4 2027 का उपयोग करें।"
       }
     }
   },
@@ -485,39 +485,70 @@
       "formNote": "दर सीमा और सर्वर सत्यापन द्वारा संरक्षित।",
       "networkError": "नेटवर्क त्रुटि। कृपया पुनः प्रयास करें या सीधे ईमेल करें।",
       "genericServerError": "कुछ गड़बड़ हो गई। कृपया मुझे सीधे ईमेल करें।",
-      "otherRoleLabel": "Specify your role",
-      "otherRolePlaceholder": "e.g. Investor, Journalist, Conference organizer…",
-      "emailHint": "Tip: start typing a domain and press <kbd>Tab</kbd> to autocomplete.",
+      "otherRoleLabel": "अपनी भूमिका निर्दिष्ट करें",
+      "otherRolePlaceholder": "जैसे निवेशक, पत्रकार, सम्मेलन आयोजक...",
+      "emailHint": "युक्ति: एक डोमेन टाइप करना प्रारंभ करें और स्वत: पूर्ण करने के लिए <kbd>Tab</kbd> दबाएँ।",
       "errors": {
-        "nameShort": "Name is too short.",
-        "nameLong": "Name is too long.",
-        "emailInvalid": "Please enter a valid email address.",
-        "emailLong": "Email is too long.",
-        "companyLong": "Company is too long.",
-        "roleInvalid": "Pick one of the listed roles.",
-        "subjectShort": "Subject is too short.",
-        "subjectLong": "Subject is too long.",
-        "messageShort": "Please write at least 20 characters.",
-        "messageLong": "Please shorten your message.",
-        "otherRoleRequired": "Please specify your role.",
-        "otherRoleLong": "Role description is too long.",
-        "phoneInvalid": "Please enter a valid phone number.",
-        "phoneLong": "Phone number is too long."
+        "nameShort": "नाम बहुत छोटा है।",
+        "nameLong": "नाम बहुत लंबा है.",
+        "emailInvalid": "कृपया एक मान्य ईमेल पता प्रविष्ट करें।",
+        "emailLong": "ईमेल बहुत लंबा है.",
+        "companyLong": "कंपनी बहुत लंबी है.",
+        "roleInvalid": "सूचीबद्ध भूमिकाओं में से एक चुनें.",
+        "subjectShort": "विषय बहुत छोटा है.",
+        "subjectLong": "विषय बहुत लंबा है.",
+        "messageShort": "कृपया कम से कम २० अक्षर लिखें, अथवा वॉइस नोट संलग्न करें।",
+        "messageLong": "कृपया अपना संदेश छोटा करें.",
+        "otherRoleRequired": "कृपया अपनी भूमिका निर्दिष्ट करें.",
+        "otherRoleLong": "भूमिका विवरण बहुत लंबा है.",
+        "phoneInvalid": "एक मान्य दूरभाष क्रमांक दर्ज करे।",
+        "phoneLong": "फ़ोन नंबर बहुत लंबा है."
       },
       "attachments": {
-        "label": "Attachments",
-        "dropPrompt": "Drag and drop, or <browse>click to browse</browse>",
-        "dropOverlayTitle": "Drop files to attach",
+        "label": "संलग्नक",
+        "dropPrompt": "खींचें और छोड़ें, या <browse>ब्राउज़ करने के लिए क्लिक करें</browse>",
+        "dropOverlayTitle": "संलग्न करने के लिए फ़ाइलें छोड़ें",
         "hint": "Up to {maxFiles} files, {maxMb} MB total. PDF, images, DOCX, TXT, or MD.",
-        "remove": "Remove {filename}",
-        "tooMany": "You can attach up to {max} files.",
-        "tooLarge": "Total attachment size must be under {maxMb} MB.",
-        "unsupported": "“{filename}” isn’t a supported type.",
-        "totalSize": "{used} / {max} MB"
+        "remove": "{filename} हटाएं",
+        "tooMany": "आप अधिकतम {max} फ़ाइलें संलग्न कर सकते हैं.",
+        "tooLarge": "कुल अनुलग्नक का आकार {maxMb} MB से कम होना चाहिए।",
+        "unsupported": "\"{filename}\" एक समर्थित प्रकार नहीं है।",
+        "totalSize": "{used} / {max} एमबी"
       },
       "rateLimit": {
-        "title": "Slow down a bit",
-        "body": "You’ve sent {limit} messages in the last minute. Please retry in {seconds} second{plural}."
+        "title": "थोड़ा धीरे करो",
+        "body": "आपने अंतिम मिनट में {limit} संदेश भेजे हैं। कृपया {seconds} सेकेंड{plural} में पुनः प्रयास करें।"
+      },
+      "voice": {
+        "dictateOn": "डिक्टेशन शुरू करें",
+        "dictateOff": "डिक्टेशन रोकें",
+        "dictateOnAria": "संदेश में बोलकर लिखने के लिए माइक्रोफ़ोन चालू करें",
+        "dictateOffAria": "माइक्रोफ़ोन बंद करें और ट्रांसक्रिप्ट रखें",
+        "transcribing": "ट्रांसक्राइब हो रहा है… {time}",
+        "transcribingPlaceholder": "सुन रहा है — जैसे आप बोलें, शब्द यहाँ दिखेंगे…",
+        "cancelDictate": "रद्द करें",
+        "record": "वॉइस नोट रिकॉर्ड करें",
+        "stopRecording": "रोकें · {time}",
+        "requestingMic": "माइक्रोफ़ोन अनुमति माँगी जा रही है…",
+        "preparingSpeech": "स्पीच रिकग्निशन तैयार हो रहा है…",
+        "installingSpeechPackTitle": "आपके ब्राउज़र में ऑफ़लाइन स्पीच पैक नहीं है",
+        "installingSpeechPack": "इस ब्राउज़र के लिए एक स्पीच मॉडल डाउनलोड हो रहा है। एक बार का काम, आमतौर पर कुछ दस MB — उसके बाद डिक्टेशन आपके डिवाइस पर चल सकता है।",
+        "installingSpeechPackHint": "इंतज़ार छोड़ने के लिए रद्द करें और टाइप करें या वॉइस नोट रिकॉर्ड करें। ब्राउज़र पृष्ठभूमि में डाउनलोड पूरा कर सकता है।",
+        "cancelSpeechPack": "रद्द करें",
+        "speechPackCancelled": "रद्द किया गया। अपना संदेश टाइप करें या वॉइस नोट रिकॉर्ड करें।",
+        "unavailable": "इस ब्राउज़र में वॉइस इनपुट उपलब्ध नहीं है — इसके बजाय संदेश टाइप करें।",
+        "speechUnsupported": "यहाँ स्पीच-टू-टेक्स्ट समर्थित नहीं है। Chrome या Edge आज़माएँ, या संदेश टाइप करें।",
+        "recordUnsupported": "इस ब्राउज़र में ऑडियो रिकॉर्डिंग समर्थित नहीं है।",
+        "micDenied": "माइक्रोफ़ोन अनुमति अस्वीकृत हुई। पता बार में लॉक आइकन → साइट सेटिंग्स → माइक्रोफ़ोन → अनुमति दें, फिर फिर से कोशिश करें।",
+        "micInsecure": "माइक्रोफ़ोन के लिए सुरक्षित पेज चाहिए (https:// या http://localhost)। साइट को localhost से खोलें, सादे HTTP पर LAN IP से नहीं।",
+        "micNotFound": "कोई माइक्रोफ़ोन नहीं मिला। एक जोड़ें या Windows साउंड सेटिंग्स जाँचें, फिर फिर से कोशिश करें।",
+        "micPolicy": "इस पेज के सुरक्षा हेडर माइक्रोफ़ोन रोक रहे थे। अपडेट के बाद रीलोड करें, या हार्ड-रिफ़्रेश करें (Ctrl+Shift+R)।",
+        "noSpeech": "कोई आवाज़ नहीं मिली — माइक के थोड़ा करीब आकर फिर कोशिश करें।",
+        "speechNetwork": "लाइव डिक्टेशन इस नेटवर्क पर स्पीच सेवा तक नहीं पहुँच सका। ऑडियो भेजने के लिए «वॉइस नोट रिकॉर्ड करें» उपयोग करें, या संदेश टाइप करें। Chrome का ऑफ़लाइन स्पीच पैक इंस्टॉल होने पर भी काम करता है।",
+        "speechError": "डिक्टेशन अचानक रुक गया। आप टेक्स्ट खुद संपादित कर सकते हैं, या वॉइस नोट रिकॉर्ड करें।",
+        "recordTooShort": "रिकॉर्डिंग अटैच करने के लिए बहुत छोटी थी।",
+        "recordAttached": "वॉइस नोट अटैचमेंट में जोड़ दिया गया। टाइप किया हुआ संदेश वैकल्पिक है।",
+        "messageRequiredAgain": "वॉइस नोट हटा दिया गया — कृपया संदेश लिखें (कम से कम 20 अक्षर)।"
       }
     }
   },
@@ -611,7 +642,7 @@
         "2": "प्रोडक्शन स्केल पर वेक्टर डेटाबेस और एम्बेडिंग पाइपलाइन।"
       },
       "building": {
-        "0": "This portfolio — system-design whiteboards and Ask Ayush with independent conversations and optional on-device AI.",
+        "0": "यह पोर्टफोलियो - सिस्टम-डिज़ाइन व्हाइटबोर्ड और स्वतंत्र वार्तालाप और वैकल्पिक ऑन-डिवाइस AI के साथ आस्क आयुष।",
         "1": "AlgoLens — एक इंटरैक्टिव DSA विज़ुअलाइज़र (ओपन सोर्स)।"
       },
       "reading": {
@@ -690,8 +721,8 @@
           "1": "Redirect short → long with very low latency.",
           "2": "Handle a very high read:write ratio (reads ≫ writes).",
           "3": "Optional analytics, expiry and custom aliases.",
-          "4": "Async click analytics that never adds latency to redirects; at-least-once event delivery.",
-          "5": "Abuse controls: destination allowlist/HTTPS, rate limits on create, malware URL denylist hooks."
+          "4": "Async क्लिक एनालिटिक्स जो कभी भी रीडायरेक्ट में विलंबता नहीं जोड़ता; कम से कम एक बार इवेंट डिलीवरी।",
+          "5": "दुरुपयोग नियंत्रण: गंतव्य अनुमति सूची/एचटीटीपीएस, निर्माण पर दर सीमा, मैलवेयर यूआरएल अस्वीकृत सूची हुक।"
         },
         "components": {
           "0": {
@@ -715,28 +746,28 @@
             "role": "Caches redirects close to users."
           },
           "5": {
-            "name": "ID allocator",
-            "role": "Snowflake/range-reserved counters → Base62; avoids central hot lock per request."
+            "name": "आईडी आवंटनकर्ता",
+            "role": "स्नोफ्लेक/रेंज-आरक्षित काउंटर → बेस62; प्रति अनुरोध सेंट्रल हॉट लॉक से बचा जाता है।"
           },
           "6": {
-            "name": "Redis cache",
-            "role": "code → destination (+ expiry); TTL ≤ link expiry; negative-cache 404 briefly."
+            "name": "Redis कैश",
+            "role": "कोड → गंतव्य (+ समाप्ति); टीटीएल ≤ लिंक समाप्ति; नकारात्मक-कैश 404 संक्षेप में।"
           },
           "7": {
-            "name": "Links DB",
-            "role": "Sharded primary for mappings; unique(code), unique(alias) where present."
+            "name": "लिंक डीबी",
+            "role": "मैपिंग के लिए साझा प्राथमिक; अद्वितीय (कोड), अद्वितीय (उपनाम) जहां मौजूद है।"
           },
           "8": {
-            "name": "Analytics bus",
-            "role": "Kafka/Pulsar topic for redirect events; workers aggregate offline."
+            "name": "एनालिटिक्स बस",
+            "role": "पुनर्निर्देशित घटनाओं के लिए Kafka/Pulsar विषय; श्रमिक ऑफ़लाइन एकत्रित होते हैं।"
           }
         },
         "tradeoffs": {
           "0": "301 (permanent, cacheable, loses analytics) vs 302 (temporary, countable).",
           "1": "Hashing (stateless, collisions) vs counter+Base62 (coordination, no collisions).",
           "2": "A read-through cache adds complexity but is essential at this read ratio.",
-          "3": "Global single table vs shard-by-code-prefix (scale vs cross-shard admin queries).",
-          "4": "Strong uniqueness on alias (correct) vs eventual uniqueness (faster writes, repair jobs)."
+          "3": "ग्लोबल सिंगल टेबल बनाम शार्ड-बाय-कोड-प्रीफिक्स (स्केल बनाम क्रॉस-शार्क एडमिन क्वेरीज़)।",
+          "4": "उपनाम (सही) पर मजबूत विशिष्टता बनाम अंतिम विशिष्टता (तेजी से लिखना, मरम्मत कार्य)।"
         },
         "lld": {
           "dataModel": "Link(code PRIMARY KEY, destination, owner_id, created_at, expires_at). A unique index on code arbitrates alias collisions. Cache entries carry a TTL bounded by link expiry.",
@@ -754,8 +785,8 @@
           "1": "Low latency with a clear fail-open or fail-closed policy.",
           "2": "Work across many app servers consistently.",
           "3": "Return 429 with a Retry-After hint.",
-          "4": "Configurable fail-open vs fail-closed per route class when the store is unavailable.",
-          "5": "Observability: allow/deny rates, hot keys, and shadow mode for policy rollouts."
+          "4": "स्टोर अनुपलब्ध होने पर प्रति रूट क्लास कॉन्फ़िगर करने योग्य फेल-ओपन बनाम फेल-क्लोज्ड।",
+          "5": "अवलोकनशीलता: पॉलिसी रोलआउट के लिए दरों, हॉट कुंजियों और छाया मोड की अनुमति/अस्वीकार करें।"
         },
         "components": {
           "0": {
@@ -775,28 +806,28 @@
             "role": "Per-tier limits and burst allowance."
           },
           "4": {
-            "name": "Lua / atomic op",
-            "role": "Refill + consume in one round-trip; avoids race between GET/SET."
+            "name": "लुआ/परमाणु ऑप",
+            "role": "एक राउंड-ट्रिप में पुनः भरना + उपभोग करना; GET/SET के बीच दौड़ से बचा जाता है।"
           },
           "5": {
-            "name": "Local shedder",
-            "role": "Optional process-local token cache for fail-open soft limits."
+            "name": "स्थानीय शेडर",
+            "role": "फेल-ओपन सॉफ्ट सीमाओं के लिए वैकल्पिक प्रक्रिया-स्थानीय टोकन कैश।"
           },
           "6": {
-            "name": "Metrics",
-            "role": "Export allow/deny, latency, and Redis errors for SLO burn alerts."
+            "name": "मेट्रिक्स",
+            "role": "SLO बर्न अलर्ट के लिए निर्यात अनुमति/अस्वीकार, विलंबता और Redis त्रुटियां।"
           },
           "7": {
-            "name": "Admin API",
-            "role": "CRUD policies, purge keys, and emergency global brakes."
+            "name": "एडमिन API",
+            "role": "CRUD नीतियां, पर्ज कुंजी और आपातकालीन वैश्विक ब्रेक।"
           }
         },
         "tradeoffs": {
           "0": "Fixed window (cheap, boundary bursts) vs sliding window (accurate, costlier).",
           "1": "Token bucket allows bursts; leaky bucket smooths output.",
           "2": "Local in-memory (fast, per-node) vs centralized (consistent, network hop).",
-          "3": "Fail-open (availability) vs fail-closed (cost/security) when Redis times out.",
-          "4": "Sync check on every request vs async/optimistic + reconcile (risk of overshoot)."
+          "3": "Redis समय समाप्त होने पर फेल-ओपन (उपलब्धता) बनाम फेल-क्लोज्ड (लागत/सुरक्षा)।",
+          "4": "प्रत्येक अनुरोध पर सिंक जांच बनाम एसिंक/आशावादी + समाधान (ओवरशूट का जोखिम)।"
         },
         "lld": {
           "dataModel": "Bucket(key, tokens, last_refill_ms, capacity, refill_rate). Store expiring keys in Redis. Derive the key from the authenticated principal or a trusted proxy's client address.",
@@ -814,8 +845,8 @@
           "1": "At-least-once execution with retries and backoff.",
           "2": "Scale workers horizontally.",
           "3": "Visibility into pending, running, failed and done jobs.",
-          "4": "Operational visibility: queued/running/failed, attempt history, payload refs.",
-          "5": "Dead-letter after N attempts with operator replay and poison isolation."
+          "4": "परिचालन दृश्यता: कतारबद्ध/चल रहा/विफल, प्रयास इतिहास, पेलोड संदर्भ।",
+          "5": "ऑपरेटर रीप्ले और ज़हर अलगाव के साथ एन प्रयासों के बाद डेड-लेटर।"
         },
         "components": {
           "0": {
@@ -823,7 +854,7 @@
             "role": "Durable job queue (SQS / Kafka / DB table)."
           },
           "1": {
-            "name": "Scheduler",
+            "name": "समयबद्धक",
             "role": "Moves due delayed/cron jobs into the ready queue."
           },
           "2": {
@@ -839,28 +870,28 @@
             "role": "Job state, idempotency keys and results."
           },
           "5": {
-            "name": "Payload object store",
-            "role": "Large blobs off the hot row; immutable per enqueue version."
+            "name": "पेलोड ऑब्जेक्ट स्टोर",
+            "role": "गर्म पंक्ति से बड़ी बूँदें; प्रति एन्क्यू संस्करण अपरिवर्तनीय।"
           },
           "6": {
             "name": "DLQ",
-            "role": "Holds exhausted jobs; separate consumer for ops replay."
+            "role": "थके हुए कार्यों को धारण करता है; ऑप्स रिप्ले के लिए अलग उपभोक्ता।"
           },
           "7": {
-            "name": "Cron expander",
-            "role": "Materializes next fire times without thundering herds."
+            "name": "क्रोन विस्तारक",
+            "role": "झुंडों की गड़गड़ाहट के बिना अगले अग्नि समय को मूर्त रूप देता है।"
           },
           "8": {
-            "name": "Ops console",
-            "role": "Cancel, requeue, inspect attempts, and pause lanes."
+            "name": "ऑप्स कंसोल",
+            "role": "रद्द करें, कतारबद्ध करें, प्रयासों का निरीक्षण करें और लेन रोकें।"
           }
         },
         "tradeoffs": {
           "0": "At-least-once + idempotency (simple, needs dedupe) vs exactly-once (hard).",
           "1": "Push vs pull worker models.",
           "2": "Priority queues vs FIFO fairness.",
-          "3": "Per-tenant queues (isolation) vs shared lanes (efficiency, noisy-neighbor risk).",
-          "4": "Keep payloads in-row (simple) vs object store (scale, extra failure domain)."
+          "3": "प्रति-किरायेदार कतारें (अलगाव) बनाम साझा लेन (दक्षता, शोर-पड़ोसी जोखिम)।",
+          "4": "पेलोड को इन-रो (सरल) बनाम ऑब्जेक्ट स्टोर (स्केल, अतिरिक्त विफलता डोमेन) रखें।"
         },
         "lld": {
           "dataModel": "Job(id, idempotency_key UNIQUE, payload_ref, run_at, priority, attempts, lease_owner, lease_until, status). Keep large payloads in object storage and transitions in a durable record.",
@@ -878,8 +909,8 @@
           "1": "Full-text and structured search.",
           "2": "Time-windowed aggregations and dashboards.",
           "3": "Retention tiers and archival.",
-          "4": "Tenant isolation on every query path; redact PII fields at ingest when configured.",
-          "5": "Exactly-once-ish processing via event_id dedupe + offset commit after durable write."
+          "4": "प्रत्येक क्वेरी पथ पर किरायेदार अलगाव; कॉन्फ़िगर होने पर पीआईआई फ़ील्ड को अंतर्ग्रहण पर संशोधित करें।",
+          "5": "टिकाऊ लेखन के बाद इवेंट_आईडी डीडुप + ऑफसेट कमिट के माध्यम से बिल्कुल एक बार प्रसंस्करण।"
         },
         "components": {
           "0": {
@@ -903,28 +934,28 @@
             "role": "Search and visualize."
           },
           "5": {
-            "name": "Cold object store",
-            "role": "Compressed originals / Parquet for rehydrate and audit."
+            "name": "शीत वस्तु भण्डार",
+            "role": "रिहाइड्रेट और ऑडिट के लिए संपीड़ित मूल / Parquet।"
           },
           "6": {
-            "name": "Query API",
-            "role": "Tenant-scoped search + aggregations with timeouts and cursors."
+            "name": "क्वेरी API",
+            "role": "किरायेदार के दायरे वाली खोज + टाइमआउट और कर्सर के साथ एकत्रीकरण।"
           },
           "7": {
-            "name": "Compactor / tierer",
-            "role": "Rolls shards warm→cold; enforces retention deletes."
+            "name": "कॉम्पेक्टर/टियरर",
+            "role": "रोल्स टुकड़े गरम→ठंडा; प्रतिधारण हटाता लागू करता है।"
           },
           "8": {
-            "name": "Quarantine topic",
-            "role": "Poison/schema-invalid events for offline repair."
+            "name": "संगरोध विषय",
+            "role": "ऑफ़लाइन मरम्मत के लिए ज़हर/स्कीमा-अमान्य घटनाएँ।"
           }
         },
         "tradeoffs": {
           "0": "Index everything (fast queries, costly) vs sample / schema-on-read.",
           "1": "Hot / warm / cold tiering for cost control.",
-          "2": "Shared cluster (efficiency) vs per-tenant indexes (isolation, cost).",
-          "3": "Sync ack to agent after Kafka (durability) vs after index (higher latency).",
-          "4": "Wide events (debuggable) vs strict schemas (predictable cost/perf)."
+          "2": "साझा क्लस्टर (दक्षता) बनाम प्रति-किरायेदार सूचकांक (अलगाव, लागत)।",
+          "3": "Kafka (स्थायित्व) बनाम इंडेक्स (उच्च विलंबता) के बाद एजेंट से सिंक करें।",
+          "4": "विस्तृत ईवेंट (डीबग करने योग्य) बनाम सख्त स्कीमा (अनुमानित लागत/पूर्ण)।"
         },
         "lld": {
           "dataModel": "Event(event_id, tenant_id, timestamp, service, severity, trace_id, body). Partition the ingest stream by tenant and service, and index time-bounded shards. Store compressed originals in object storage.",
@@ -942,8 +973,8 @@
           "1": "Separate new failures from flaky and known failures.",
           "2": "Trend pass-rate over time with per-test history.",
           "3": "Drill into logs and artifacts of a failure.",
-          "4": "Owner routing + SLA clocks for open signatures without paging on flakes.",
-          "5": "History APIs for a test_id across branches with pagination."
+          "4": "फ़्लेक्स पर पेजिंग के बिना खुले हस्ताक्षरों के लिए स्वामी रूटिंग + एसएलए घड़ियाँ।",
+          "5": "पेजिनेशन वाली शाखाओं में test_id के लिए इतिहास APIs।"
         },
         "components": {
           "0": {
@@ -967,28 +998,28 @@
             "role": "Logs and waveforms linked per failure."
           },
           "5": {
-            "name": "Flake classifier",
-            "role": "Rule-based (and optional ML-suggested) intermittent detection."
+            "name": "परत वर्गीकारक",
+            "role": "नियम-आधारित (और वैकल्पिक एमएल-सुझावित) रुक-रुक कर पता लगाना।"
           },
           "6": {
-            "name": "Artifact store",
-            "role": "Logs, FSDB/VCD pointers; lifecycle independent of status."
+            "name": "कलाकृतियों की दुकान",
+            "role": "लॉग, FSDB/VCD पॉइंटर्स; जीवनचक्र स्थिति से स्वतंत्र।"
           },
           "7": {
-            "name": "Diff service",
-            "role": "Compares run vs baseline; computes introduced/resolved sets."
+            "name": "कठिन सेवा",
+            "role": "रन बनाम बेसलाइन की तुलना करता है; प्रस्तुत/समाधान किए गए सेटों की गणना करता है।"
           },
           "8": {
-            "name": "Dashboard UI",
-            "role": "Trends, owners, waive flows, deep-links into artifacts."
+            "name": "डैशबोर्ड यूआई",
+            "role": "रुझान, मालिक, प्रवाह प्रवाह, कलाकृतियों में गहरे लिंक।"
           }
         },
         "tradeoffs": {
           "0": "Store all artifacts (debuggable, large) vs fetch on demand.",
           "1": "Real-time vs batch aggregation.",
-          "2": "Sync classification at ingest vs batch overnight (freshness vs cost).",
-          "3": "Mutable waive state (ops-friendly) vs immutable event log (forensics).",
-          "4": "Per-branch baselines (accurate) vs trunk-only (simpler, noisier)."
+          "2": "अंतर्ग्रहण बनाम बैच रातोंरात (ताजगी बनाम लागत) पर सिंक वर्गीकरण।",
+          "3": "परिवर्तनशील छूट स्थिति (ऑप्स-अनुकूल) बनाम अपरिवर्तनीय इवेंट लॉग (फोरेंसिक)।",
+          "4": "प्रति-शाखा बेसलाइन (सटीक) बनाम केवल-ट्रंक (सरल, अधिक शोर)।"
         },
         "lld": {
           "dataModel": "Run(run_id, revision, branch, started_at), Result(run_id, test_id, attempt, status, signature, artifact_ref), and Failure(signature, first_seen, owner, classification). Use stable test IDs across runs.",
@@ -1006,8 +1037,8 @@
           "1": "Random-access replay at any time point.",
           "2": "Lossless for digital signals.",
           "3": "Fast writes during simulation.",
-          "4": "Dictionary reuse across chunks; versioned format with checksums.",
-          "5": "Compression ratio targets depend on activity; measure, don’t promise a constant."
+          "4": "शब्दकोश का खंडों में पुन: उपयोग; चेकसम के साथ संस्करणित प्रारूप।",
+          "5": "संपीड़न अनुपात लक्ष्य गतिविधि पर निर्भर करते हैं; मापें, स्थिरांक का वादा न करें।"
         },
         "components": {
           "0": {
@@ -1031,28 +1062,28 @@
             "role": "Decompresses windows on demand."
           },
           "5": {
-            "name": "Sparse time index",
-            "role": "Maps time ranges → file offsets for seek."
+            "name": "विरल समय सूचकांक",
+            "role": "मानचित्र समय सीमा → खोज के लिए फ़ाइल ऑफसेट।"
           },
           "6": {
-            "name": "Object / file store",
-            "role": "Durable chunk bytes; immutability after seal."
+            "name": "ऑब्जेक्ट/फ़ाइल स्टोर",
+            "role": "टिकाऊ चंक बाइट्स; सील के बाद अपरिवर्तनीयता."
           },
           "7": {
-            "name": "Replay reader",
-            "role": "Loads snapshot + replays deltas for requested window."
+            "name": "रीप्ले रीडर",
+            "role": "स्नैपशॉट लोड करता है + अनुरोधित विंडो के लिए डेल्टा पुनः चलाता है।"
           },
           "8": {
-            "name": "Format verifier",
-            "role": "Offline round-trip tests and version migration tools."
+            "name": "प्रारूप सत्यापनकर्ता",
+            "role": "ऑफ़लाइन राउंड-ट्रिप परीक्षण और संस्करण माइग्रेशन उपकरण।"
           }
         },
         "tradeoffs": {
           "0": "Event-based (compact for sparse activity) vs sampled.",
           "1": "Bigger blocks compress better but slow random access.",
-          "2": "Shared global dictionary (ratio) vs per-chunk (parallelism, simpler recovery).",
-          "3": "Sync index publish with seal (readers never see holes) vs async (higher write FPS).",
-          "4": "Single-file layout (simple) vs multi-file shards (parallel dump from many scopes)."
+          "2": "साझा वैश्विक शब्दकोश (अनुपात) बनाम प्रति-चंक (समानांतरता, सरल पुनर्प्राप्ति)।",
+          "3": "सिंक इंडेक्स सील के साथ प्रकाशित होता है (पाठक कभी छेद नहीं देखते हैं) बनाम एसिंक (उच्चतर एफपीएस लिखें)।",
+          "4": "सिंगल-फ़ाइल लेआउट (सरल) बनाम मल्टी-फ़ाइल शार्ड (कई स्कोप से समानांतर डंप)।"
         },
         "lld": {
           "dataModel": "Signal dictionary maps IDs to widths and types. Independently compressed chunks contain a time range, an initial state snapshot, delta timestamps, value changes and a checksum. A sparse index maps time ranges to file offsets.",
@@ -1066,33 +1097,33 @@
     "pageIntro": "System-design whiteboards I’ve built: working browser demos, architecture, implementation notes and trade-offs.",
     "galleryIntro": "Whiteboards I’ve built to make system behavior tangible — explore each demo, its architecture and implementation decisions.",
     "galleryContents": "Demo · HLD · LLD · Trade-offs",
-    "openDesign": "Open whiteboard",
-    "filter": "Filter",
-    "all": "All",
+    "openDesign": "व्हाइटबोर्ड खोलें",
+    "filter": "फ़िल्टर",
+    "all": "सभी",
     "uml": "Architecture (UML)",
-    "seeMore": "See more whiteboards",
-    "seeLess": "Show top four",
-    "detailTabs": "Whiteboard views",
+    "seeMore": "अधिक व्हाइटबोर्ड देखें",
+    "seeLess": "शीर्ष चार दिखाएँ",
+    "detailTabs": "व्हाइटबोर्ड दृश्य",
     "tabs": {
-      "demo": "Architecture demo",
-      "hld": "High-level design",
-      "lld": "Low-level design",
-      "decisions": "Trade-offs & failures"
+      "demo": "आर्किटेक्चर डेमो",
+      "hld": "उच्च स्तरीय डिज़ाइन",
+      "lld": "निम्न-स्तरीय डिज़ाइन",
+      "decisions": "ट्रेड-ऑफ़ और विफलताएँ"
     },
     "demoScope": "Built for this portfolio: an interactive reference demo. Infrastructure components are simulated in the browser.",
     "lldLabels": {
-      "dataModel": "Data model",
-      "api": "API contracts",
-      "execution": "Execution & consistency",
-      "pseudocode": "Pseudocode"
+      "dataModel": "डेटा मॉडल",
+      "api": "API अनुबंध",
+      "execution": "निष्पादन एवं निरंतरता",
+      "pseudocode": "स्यूडोकोड"
     },
-    "failureModes": "Failure modes & recovery",
-    "backToWork": "← Back to Work",
-    "pipelineStep": "Stage {current} of {total}",
-    "nextStep": "Next stage",
-    "restart": "Restart walkthrough",
-    "loading": "Loading whiteboard…",
-    "umlCaption": "Deployment-style component diagram · solid = sync path · dashed = async / degraded"
+    "failureModes": "विफलता मोड और पुनर्प्राप्ति",
+    "backToWork": "← काम पर वापस जाएँ",
+    "pipelineStep": "{total} का चरण {current}",
+    "nextStep": "अगला चरण",
+    "restart": "वॉकथ्रू पुनः प्रारंभ करें",
+    "loading": "व्हाइटबोर्ड लोड हो रहा है...",
+    "umlCaption": "डिप्लॉयमेंट-शैली का घटक आरेख · ठोस = सिंक पथ · डैश = एसिंक / डिग्रेडेड"
   },
   "chatbot": {
     "subtitle": "लोकल · एक्सट्रैक्टिव · कोई ट्रैकिंग नहीं",
@@ -1117,91 +1148,91 @@
       "stop": "जनरेट करना रोकें",
       "disclaimer": "AI उत्तर इस साइट की सामग्री से आपके डिवाइस पर जनरेट किए जाते हैं और उनमें गलतियाँ हो सकती हैं। लिंक किए गए स्रोत जाँच लें।"
     },
-    "title": "Ask Ayush",
-    "open": "Ask Ayush",
+    "title": "आयुष से पूछो",
+    "open": "आयुष से पूछो",
     "chats": {
       "new": "नई चैट",
       "select": "चैट चुनें",
       "clearContext": "संदर्भ साफ़ करें",
       "clearChat": "चैट साफ़ करें",
       "delete": "चैट हटाएँ",
-      "untitled": "Chat {number}",
-      "contextCleared": "Context cleared. Earlier messages remain visible and will not inform new answers.",
-      "chatCleared": "Chat and its context cleared.",
-      "serverUnavailable": "Server AI is unavailable, so Quick answers are active."
+      "untitled": "चैट {number}",
+      "contextCleared": "प्रसंग साफ़ हो गया. पहले के संदेश दृश्यमान रहेंगे और नए उत्तरों की सूचना नहीं देंगे।",
+      "chatCleared": "चैट और उसका संदर्भ साफ़ हो गया.",
+      "serverUnavailable": "सर्वर AI अनुपलब्ध है, इसलिए त्वरित उत्तर सक्रिय हैं।"
     },
     "settings": {
       "removeModels": "डाउनलोड किए मॉडल हटाएँ",
-      "title": "Assistant settings",
-      "open": "Open assistant settings",
-      "back": "Back to chat",
-      "intro": "Choose how answers run on this device. Quick answers work immediately. Selecting GPU or CPU enables local AI and starts the download shown below.",
-      "engineLabel": "Answer mode",
+      "title": "सहायक सेटिंग्स",
+      "open": "सहायक सेटिंग खोलें",
+      "back": "चैट पर वापस जाएँ",
+      "intro": "चुनें कि इस डिवाइस पर उत्तर कैसे चलें. त्वरित उत्तर तुरंत काम करते हैं. GPU या CPU का चयन करने से स्थानीय AI सक्षम हो जाता है और नीचे दिखाया गया डाउनलोड शुरू हो जाता है।",
+      "engineLabel": "उत्तर विधा",
       "engines": {
         "quick": {
-          "label": "Quick answers · AI off",
-          "help": "Fastest and lightest. Quotes portfolio content directly, with no model download or AI memory use."
+          "label": "त्वरित उत्तर · AI बंद",
+          "help": "सबसे तेज़ और हल्का. बिना किसी मॉडल डाउनलोड या AI मेमोरी उपयोग के सीधे पोर्टफ़ोलियो सामग्री उद्धृत करता है।"
         },
         "server": {
-          "label": "Server AI · no download",
-          "help": "Generates a grounded answer through this site's server when enabled. Your question and recent chat context leave this device; Quick answers are used if the service is unavailable."
+          "label": "सर्वर AI · कोई डाउनलोड नहीं",
+          "help": "सक्षम होने पर इस साइट के सर्वर के माध्यम से एक जमीनी उत्तर उत्पन्न करता है। आपका प्रश्न और हालिया चैट संदर्भ इस उपकरण को छोड़ दें; यदि सेवा अनुपलब्ध हो तो त्वरित उत्तर का उपयोग किया जाता है।"
         },
         "gpu": {
-          "label": "Device GPU",
-          "help": "Usually the fastest AI option on a supported GPU. Uses graphics memory and more battery; other graphics-heavy apps may slow down."
+          "label": "डिवाइस GPU",
+          "help": "आमतौर पर समर्थित GPU पर सबसे तेज़ AI विकल्प। ग्राफ़िक्स मेमोरी और अधिक बैटरी का उपयोग करता है; अन्य ग्राफ़िक्स-भारी ऐप्स धीमे हो सकते हैं।"
         },
         "cpu": {
-          "label": "Device CPU",
-          "help": "Works without a GPU using a smaller model. Usually slower and less detailed; uses system memory and can increase heat and battery use. Single-threaded browsers can take minutes per answer."
+          "label": "डिवाइस CPU",
+          "help": "छोटे मॉडल का उपयोग करके GPU के बिना काम करता है। आमतौर पर धीमी और कम विस्तृत; सिस्टम मेमोरी का उपयोग करता है और गर्मी और बैटरी का उपयोग बढ़ा सकता है। एकल-थ्रेडेड ब्राउज़र प्रति उत्तर मिनट ले सकते हैं।"
         }
       },
-      "download": "{model} · about {size} MB on first use. Downloaded models are cached in this browser.",
-      "checking": "Checking device support…",
+      "download": "{model} · प्रथम उपयोग पर {size} MB के बारे में। डाउनलोड किए गए मॉडल इस ब्राउज़र में कैश किए गए हैं।",
+      "checking": "डिवाइस समर्थन की जाँच की जा रही है…",
       "unavailable": {
-        "noWebGpu": "GPU AI is unavailable in this browser. CPU or quick answers are available.",
-        "softwareGpu": "A hardware GPU is not available to this browser. Use CPU or quick answers.",
-        "lowMemory": "Quick answers are recommended with less than 4 GB of reported device memory.",
-        "saveData": "Quick answers stay on while Data Saver is enabled."
+        "noWebGpu": "GPU AI इस ब्राउज़र में उपलब्ध नहीं है। CPU या त्वरित उत्तर उपलब्ध हैं।",
+        "softwareGpu": "इस ब्राउज़र के लिए हार्डवेयर GPU उपलब्ध नहीं है। CPU या त्वरित उत्तर का उपयोग करें।",
+        "lowMemory": "4 जीबी से कम रिपोर्ट की गई डिवाइस मेमोरी पर त्वरित उत्तर की अनुशंसा की जाती है।",
+        "saveData": "डेटा सेवर सक्षम होने पर त्वरित उत्तर चालू रहते हैं।"
       },
-      "speed": "Last measured generation speed: about {speed} tokens/s.",
-      "recommended": "Recommended for this device",
+      "speed": "अंतिम मापी गई पीढ़ी की गति: लगभग {speed} टोकन/सेक।",
+      "recommended": "इस डिवाइस के लिए अनुशंसित",
       "recommendations": {
-        "gpuFast": "Your GPU is fast. Short, focused answers with the model kept ready give the quickest experience. You can request more detail when needed.",
-        "gpu": "Your GPU can run local AI. Start with short, focused answers and keep the model ready between chats.",
-        "cpu": "CPU with short answers and focused context is a suitable option here. GPU is usually faster when available.",
-        "slow": "The last measured AI speed was low. Quick answers are recommended; you can still choose an AI engine.",
-        "noAi": "Quick answers are recommended for responsiveness and battery life. You can try an available AI engine.",
-        "saveData": "Use quick answers to avoid model downloads while Data Saver is on."
+        "gpuFast": "आपका GPU तेज़ है। तैयार रखे गए मॉडल के साथ संक्षिप्त, केंद्रित उत्तर सबसे तेज़ अनुभव देते हैं। जरूरत पड़ने पर आप अधिक विवरण का अनुरोध कर सकते हैं।",
+        "gpu": "आपका GPU स्थानीय AI चला सकता है। संक्षिप्त, केंद्रित उत्तरों से शुरुआत करें और चैट के बीच मॉडल तैयार रखें।",
+        "cpu": "संक्षिप्त उत्तरों और केंद्रित संदर्भ के साथ CPU यहां एक उपयुक्त विकल्प है। उपलब्ध होने पर GPU आमतौर पर तेज़ होता है।",
+        "slow": "अंतिम मापी गई AI गति कम थी। त्वरित उत्तर की अनुशंसा की जाती है; आप अभी भी AI इंजन चुन सकते हैं।",
+        "noAi": "प्रतिक्रियाशीलता और बैटरी जीवन के लिए त्वरित उत्तर की अनुशंसा की जाती है। आप उपलब्ध AI इंजन आज़मा सकते हैं।",
+        "saveData": "डेटा सेवर चालू होने पर मॉडल डाउनलोड से बचने के लिए त्वरित उत्तरों का उपयोग करें।"
       },
-      "apply": "Use recommended settings",
-      "applyHint": "Choosing an AI recommendation starts its model download.",
-      "lengthLabel": "AI answer length",
-      "short": "Short",
-      "detailed": "Detailed",
-      "lengthHelp": "Short replies generate fewer tokens and finish sooner. Detailed replies take longer on this device.",
-      "contextLabel": "AI context",
-      "focused": "Focused",
-      "thorough": "Thorough",
-      "contextHelp": "Focused context starts answers sooner. Thorough context includes more source material, but uses more memory and processing time.",
-      "cpuLabel": "CPU usage",
-      "balanced": "Balanced",
-      "max": "Maximum",
-      "cpuHelp": "Balanced leaves more capacity for the page. Maximum may generate faster but increases heat, battery use, and competition with other apps.",
-      "singleThread": "This page uses one CPU thread, so replies can take minutes. Both usage levels run at the same speed here; quick answers are recommended for responsiveness.",
-      "keepLoaded": "Keep AI ready briefly after closing",
-      "keepLoadedHelp": "Keeps the model in memory for up to two minutes for faster reopening. Off frees memory on close. Downloaded files stay cached either way.",
-      "cancel": "Cancel download",
-      "turnOff": "Turn AI off",
-      "active": "Active: {engine}",
-      "fallback": "Quick answers are active. You can choose another mode in settings.",
-      "warmup": "Warming up and measuring speed…",
-      "loading": "Preparing local AI… {percent}%",
-      "removingModels": "Removing models…",
-      "removeHelp": "Deletes this site’s GPU and CPU model downloads and switches to quick answers. Your chats stay available.",
-      "modelsRemoved": "Downloaded models removed. Quick answers are active.",
-      "removeError": "Some model files could not be removed. Close other Ask Ayush tabs and retry. Quick answers remain active."
+      "apply": "अनुशंसित सेटिंग्स का उपयोग करें",
+      "applyHint": "AI सिफ़ारिश को चुनने से इसका मॉडल डाउनलोड शुरू हो जाता है।",
+      "lengthLabel": "AI उत्तर लंबाई",
+      "short": "छोटा",
+      "detailed": "विस्तृत",
+      "lengthHelp": "संक्षिप्त उत्तर कम टोकन उत्पन्न करते हैं और जल्दी समाप्त होते हैं। इस डिवाइस पर विस्तृत उत्तरों में अधिक समय लगता है।",
+      "contextLabel": "AI प्रसंग",
+      "focused": "ध्यान केंद्रित",
+      "thorough": "अच्छी तरह",
+      "contextHelp": "केन्द्रित प्रसंग उत्तर जल्दी देना शुरू कर देता है। संपूर्ण संदर्भ में अधिक स्रोत सामग्री शामिल होती है, लेकिन अधिक मेमोरी और प्रसंस्करण समय का उपयोग होता है।",
+      "cpuLabel": "CPU उपयोग",
+      "balanced": "संतुलित",
+      "max": "अधिकतम",
+      "cpuHelp": "संतुलित पृष्ठ के लिए अधिक क्षमता छोड़ता है। मैक्सिमम तेजी से उत्पन्न हो सकता है लेकिन गर्मी, बैटरी उपयोग और अन्य ऐप्स के साथ प्रतिस्पर्धा बढ़ाता है।",
+      "singleThread": "यह पृष्ठ एक CPU थ्रेड का उपयोग करता है, इसलिए उत्तर देने में कुछ मिनट लग सकते हैं। यहां दोनों उपयोग स्तर समान गति से चलते हैं; प्रतिक्रियाशीलता के लिए त्वरित उत्तर की अनुशंसा की जाती है।",
+      "keepLoaded": "बंद करने के बाद AI को कुछ देर के लिए तैयार रखें",
+      "keepLoadedHelp": "तेजी से दोबारा खोलने के लिए मॉडल को दो मिनट तक मेमोरी में रखता है। बंद करने पर स्मृति मुक्त हो जाती है। डाउनलोड की गई फ़ाइलें किसी भी तरह से कैश्ड रहती हैं।",
+      "cancel": "डाउनलोड रद्द करें",
+      "turnOff": "AI को बंद करें",
+      "active": "सक्रिय: {engine}",
+      "fallback": "त्वरित उत्तर सक्रिय हैं. आप सेटिंग में कोई अन्य मोड चुन सकते हैं.",
+      "warmup": "वार्म अप करना और गति मापना...",
+      "loading": "स्थानीय AI तैयार किया जा रहा है… {percent}%",
+      "removingModels": "मॉडल हटाये जा रहे हैं...",
+      "removeHelp": "इस साइट के GPU और CPU मॉडल डाउनलोड को हटा देता है और त्वरित उत्तर पर स्विच करता है। आपकी चैट उपलब्ध रहती हैं.",
+      "modelsRemoved": "डाउनलोड किए गए मॉडल हटा दिए गए. त्वरित उत्तर सक्रिय हैं.",
+      "removeError": "कुछ मॉडल फ़ाइलें हटाई नहीं जा सकीं. अन्य आस्क आयुष टैब बंद करें और पुनः प्रयास करें। त्वरित उत्तर सक्रिय रहते हैं."
     },
-    "intro": "Ask about my work, skills or experience. Each chat has its own context. Chats stay in this browser tab for this session."
+    "intro": "मेरे काम, कौशल या अनुभव के बारे में पूछें। प्रत्येक चैट का अपना संदर्भ होता है। इस सत्र के लिए चैट इस ब्राउज़र टैब में रहेंगी।"
   },
   "audio": {
     "introTitle": "वॉइस परिचय",
@@ -1213,7 +1244,7 @@
     "sfxLabel": "ध्वनि प्रभाव",
     "on": "चालू",
     "off": "बंद",
-    "transcript": "Hey, I’m Ayush Yadav! 👋 An R&D Software Engineer at Cadence with over four and a half years of experience building high-performance systems in C++ and Python. 💻\n\nI work on Xcelium, RTL optimization, and AI-powered developer tools, helping boost simulation throughput by up to nineteen percent. 🚀 Basically, I make software faster so progress bars get less screen time. 😄\nHave a look around, explore my projects, and see what I’ve been building. 🔍 If you’re hiring, want to collaborate, or just want more details, drop me a message! 📬\n\nI promise I won’t ask you to reverse a linked list just to say hello! 😉"
+    "transcript": "अरे, मैं आयुष यादव हूँ! 👋 Cadence में एक R&D सॉफ्टवेयर इंजीनियर, जिसके पास C++ और Python में उच्च-प्रदर्शन सिस्टम बनाने का साढ़े चार साल से अधिक का अनुभव है। 💻\n\nमैं Xcelium, RTL अनुकूलन और AI-संचालित डेवलपर टूल पर काम करता हूं, जो सिमुलेशन थ्रूपुट को उन्नीस प्रतिशत तक बढ़ाने में मदद करता है। 🚀 मूल रूप से, मैं सॉफ़्टवेयर को तेज़ बनाता हूं ताकि प्रगति बार को कम स्क्रीन समय मिले। 😄\nचारों ओर नज़र डालें, मेरी परियोजनाओं का अन्वेषण करें और देखें कि मैं क्या बना रहा हूँ। 🔍 यदि आप नियुक्ति कर रहे हैं, सहयोग करना चाहते हैं, या बस अधिक विवरण चाहते हैं, तो मुझे एक संदेश भेजें! 📬\n\nमैं वादा करता हूँ कि मैं आपसे केवल नमस्ते कहने के लिए किसी लिंक की गई सूची को उलटने के लिए नहीं कहूँगा! 😉"
   },
   "lab": {
     "title": "लैब",
@@ -1228,56 +1259,56 @@
     "subheading": "आप जो पृष्ठ ढूँढ रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।",
     "cta": "होम वापस",
     "tag": "/ 404",
-    "suggestionsLabel": "Try one of these",
-    "search": "Open command palette",
-    "back": "Go back",
-    "asciiLabel": "ASCII art of a 404 phoenix",
-    "kbdHint": "to jump anywhere on the site",
-    "qrLabel": "QR code linking to the site home page",
-    "qrTitle": "Continue on your phone",
-    "qrCaption": "Scan to open this site on another device.",
+    "suggestionsLabel": "इनमें से किसी एक को आज़माएं",
+    "search": "कमांड पैलेट खोलें",
+    "back": "वापस जाओ",
+    "asciiLabel": "404 फ़ीनिक्स की ASCII कला",
+    "kbdHint": "साइट पर कहीं भी कूदने के लिए",
+    "qrLabel": "क्यूआर कोड साइट होम पेज से लिंक हो रहा है",
+    "qrTitle": "अपने फ़ोन पर जारी रखें",
+    "qrCaption": "इस साइट को किसी अन्य डिवाइस पर खोलने के लिए स्कैन करें।",
     "game": {
-      "title": "Phoenix Run",
-      "pause": "Pause",
-      "canvasLabel": "Phoenix Run — endless runner game canvas",
-      "idleTitle": "Phoenix Run",
-      "idleHint": "Flap through a volcanic world, dodge the ruins, and collect golden feathers. Tap or press Space to begin.",
-      "play": "Play",
-      "best": "Best · {score}",
-      "paused": "Paused",
-      "resume": "Resume",
-      "gameOver": "Lost to the ashes",
-      "newHigh": "new high score!",
-      "feathers": "{count, plural, one {# golden feather} other {# golden feathers}}",
-      "restart": "Restart",
-      "goHome": "Go Home",
-      "dive": "Dive",
-      "controls": "Space/↑/W flap · ↓/S dive · P pause · R restart · F fullscreen · tap to flap, swipe down to dive",
-      "mute": "Mute",
-      "unmute": "Unmute",
-      "fullscreen": "Fullscreen",
-      "exitFullscreen": "Exit fullscreen",
-      "reducedMotion": "Reduced motion is on — the runner uses motion, so play only if you're comfortable.",
-      "ms500": "The Flame Awakens",
-      "ms1000": "Phoenix Rebirth Unlocked",
-      "ms2000": "Inferno Mode Activated",
-      "ms5000": "Legendary Phoenix",
-      "rebirth": "Reborn from the ashes!",
+      "title": "फीनिक्स रन",
+      "pause": "विराम",
+      "canvasLabel": "फीनिक्स रन - अंतहीन धावक खेल कैनवास",
+      "idleTitle": "फीनिक्स रन",
+      "idleHint": "ज्वालामुखीय दुनिया से गुज़रें, खंडहरों से बचें और सुनहरे पंख इकट्ठा करें। शुरू करने के लिए स्पेस टैप करें या दबाएँ।",
+      "play": "खेलें",
+      "best": "सर्वोत्तम · {score}",
+      "paused": "रुका हुआ",
+      "resume": "फिर शुरू करना",
+      "gameOver": "राख में खो गया",
+      "newHigh": "नया उच्च स्कोर!",
+      "feathers": "{count, plural, one {# सुनहरा पंख} other {# सुनहरे पंख}}",
+      "restart": "पुनः आरंभ करें",
+      "goHome": "घर जाओ",
+      "dive": "गोता लगाना",
+      "controls": "स्पेस/↑/डब्ल्यू फ्लैप · ↓/एस डाइव · पी पॉज़ · आर रीस्टार्ट · एफ फ़ुलस्क्रीन · फ़्लैप करने के लिए टैप करें, डाइव करने के लिए नीचे की ओर स्वाइप करें",
+      "mute": "आवाज़ बंद करना",
+      "unmute": "अनम्यूट",
+      "fullscreen": "पूर्ण स्क्रीन",
+      "exitFullscreen": "फ़ुलस्क्रीन से बाहर निकलें",
+      "reducedMotion": "धीमी गति चालू है - धावक गति का उपयोग करता है, इसलिए केवल तभी खेलें जब आप सहज हों।",
+      "ms500": "लौ जागती है",
+      "ms1000": "फीनिक्स पुनर्जन्म अनलॉक",
+      "ms2000": "इन्फर्नो मोड सक्रिय",
+      "ms5000": "पौराणिक फ़ीनिक्स",
+      "rebirth": "राख से पुनर्जन्म!",
       "help": {
-        "open": "How to play",
-        "title": "How to play",
-        "close": "Close",
-        "goal": "Guide the flaming phoenix through a volcanic world. Flap to stay airborne, dodge every obstacle, grab power-ups, and survive as long as you can — the longer you fly, the faster it gets.",
-        "controlsTitle": "Controls",
-        "controlsBody": "Space / ↑ / W   flap upward\n↓ / S           dive / quick drop\nP               pause / resume\nR               restart\nF               fullscreen\nTap             flap (mobile)\nSwipe down      dive (mobile)",
-        "powerupsTitle": "Power-ups",
-        "powerupsBody": "⛨ Flame Shield   absorbs one hit\n✦ Golden Feather  bonus score (collect 5 for an egg)\n✸ Phoenix Burst   clears nearby obstacles\n◷ Slow Time       slows the world briefly\n×2 Double Score   temporary score multiplier",
-        "mechanicsTitle": "Mechanics",
-        "mechanicsBody": "Rebirth — at 1000 you bank one revive; a fatal hit instead reignites you and clears the area.\nInferno Mode — at 2000 the world darkens, speeds up, and scores multiply.\nMilestones — 500, 1000, 2000, 5000 each mark a new chapter.",
-        "settingsTitle": "Settings",
-        "sound": "Sound: {state}",
+        "open": "कैसे खेलें",
+        "title": "कैसे खेलें",
+        "close": "बंद करना",
+        "goal": "ज्वालामुखीय दुनिया के माध्यम से ज्वलंत फ़ीनिक्स का मार्गदर्शन करें। हवा में बने रहने के लिए फ़्लैप करें, हर बाधा से बचें, पावर-अप पकड़ें और जब तक संभव हो जीवित रहें - आप जितनी देर तक उड़ेंगे, उड़ान उतनी ही तेज़ होगी।",
+        "controlsTitle": "नियंत्रण",
+        "controlsBody": "स्पेस / ↑ / डब्ल्यू ऊपर की ओर फ़्लैप करें\n↓ / एस गोता / त्वरित गिरावट\nपी रोकें / फिर से शुरू करें\nआर पुनः आरंभ करें\nएफ फुलस्क्रीन\nटैप फ्लैप (मोबाइल)\nनीचे स्वाइप करें गोता (मोबाइल)",
+        "powerupsTitle": "पावर अप",
+        "powerupsBody": "⛨ फ्लेम शील्ड एक हिट को अवशोषित करता है\n✦ गोल्डन फेदर बोनस स्कोर (एक अंडे के लिए 5 जमा करें)\n✸ फीनिक्स बर्स्ट आस-पास की बाधाओं को दूर करता है\n◷ धीमा समय दुनिया को कुछ समय के लिए धीमा कर देता है\n×2 दोहरा स्कोर अस्थायी स्कोर गुणक",
+        "mechanicsTitle": "यांत्रिकी",
+        "mechanicsBody": "पुनर्जन्म - 1000 पर आप एक पुनर्जीवन का बैंक बनाते हैं; इसके बजाय एक घातक प्रहार आप पर फिर से हावी हो जाता है और क्षेत्र को साफ़ कर देता है।\nइन्फर्नो मोड - 2000 में दुनिया में अंधेरा छा जाता है, गति तेज हो जाती है और स्कोर कई गुना हो जाता है।\nमील के पत्थर - 500, 1000, 2000, 5000 प्रत्येक एक नए अध्याय का प्रतीक है।",
+        "settingsTitle": "सेटिंग्स",
+        "sound": "ध्वनि: {state}",
         "on": "on",
-        "off": "off"
+        "off": "बंद"
       }
     }
   },
@@ -1300,9 +1331,9 @@
         "analyticsTitle": "विश्लेषण",
         "analyticsBody": "<strong>Vercel Web Analytics</strong> और <strong>Vercel Speed Insights</strong> सक्षम हैं। दोनों कुकी-रहित और GDPR-मुक्त हैं।",
         "aiTitle": "ऑन-डिवाइस AI (वैकल्पिक)",
-        "aiBody": "Choosing GPU or CPU in Ask Ayush settings downloads a model from Hugging Face: Llama 3.2 1B (~705 MB) for GPU or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a pinned WebAssembly library from GitHub; the CPU runtime comes from this site. Download hosts see standard requests, including IP address and user-agent. Questions and answers stay on your device. Chats and their separate context boundaries are saved in this tab’s session storage under <code>phoenix:chat:sessions</code>, so closing the assistant or reloading does not erase them. Browser session restoration may retain this data. Clear chat erases the selected transcript and context; Clear context keeps its transcript but excludes earlier messages from future answers; Delete chat removes the selected conversation. <code>phoenix:chat:settings</code> stores preferences and measured speeds in local storage. Turning AI off frees runtime memory. Remove downloaded models clears this site’s model caches and switches AI off; it keeps your chats. Clearing this site’s browser data removes settings and chats as well. No new cookies are set.",
-        "aiServerTitle": "Server AI (optional, off by default)",
-        "aiServerBody": "A future <strong>Server</strong> engine in Ask Ayush settings can send your question and a short recent-chat context to this site’s <code>/api/chat</code> endpoint, which may call a managed inference provider. That path is disabled unless the maintainer explicitly enables it. When disabled, selecting Server falls back to quick answers. When enabled, questions leave your device; prefer Quick answers or on-device AI if you want processing to stay local. No new cookies are set for chat."
+        "aiBody": "आस्क आयुष सेटिंग्स में GPU या CPU चुनने पर Hugging Face से एक मॉडल डाउनलोड होता है: GPU के लिए Llama 3.2 1B (~705 MB) या CPU के लिए Qwen2.5 0.5B (~429 MB)। GPU मोड GitHub से पिन की गई WebAssembly लाइब्रेरी भी डाउनलोड करता है; CPU रनटाइम इस साइट से आता है। डाउनलोड होस्ट आईपी पते और उपयोगकर्ता-एजेंट सहित मानक अनुरोध देखते हैं। प्रश्न और उत्तर आपके डिवाइस पर रहते हैं। चैट और उनकी अलग-अलग संदर्भ सीमाएँ इस टैब के सत्र भंडारण में <code>phoenix:chat:sessions</code> के अंतर्गत सहेजी जाती हैं, इसलिए सहायक को बंद करने या पुनः लोड करने से वे मिटते नहीं हैं। ब्राउज़र सत्र पुनर्स्थापना इस डेटा को बनाए रख सकती है। साफ़ चैट चयनित प्रतिलेख और संदर्भ को मिटा देती है; स्पष्ट संदर्भ इसकी प्रतिलेख रखता है लेकिन भविष्य के उत्तरों से पहले के संदेशों को बाहर कर देता है; चैट हटाएं चयनित वार्तालाप को हटा देता है. <code>phoenix:chat:settings</code> प्राथमिकताओं और मापी गई गति को स्थानीय भंडारण में संग्रहीत करता है। AI को बंद करने से रनटाइम मेमोरी खाली हो जाती है। डाउनलोड किए गए मॉडल को हटाने से इस साइट का मॉडल कैश साफ़ हो जाता है और AI बंद हो जाता है; यह आपकी चैट रखता है. इस साइट के ब्राउज़र डेटा को साफ़ करने से सेटिंग्स और चैट भी हट जाते हैं। कोई नई कुकीज़ सेट नहीं हैं.",
+        "aiServerTitle": "सर्वर AI (वैकल्पिक, डिफ़ॉल्ट रूप से बंद)",
+        "aiServerBody": "आस्क आयुष सेटिंग्स में भविष्य का <strong>Server</strong> इंजन आपके प्रश्न और एक संक्षिप्त हाल-चैट संदर्भ को इस साइट के <code>/api/chat</code> एंडपॉइंट पर भेज सकता है, जो एक प्रबंधित अनुमान प्रदाता को कॉल कर सकता है। वह पथ तब तक अक्षम है जब तक अनुरक्षक स्पष्ट रूप से इसे सक्षम नहीं करता। अक्षम होने पर, सर्वर का चयन त्वरित उत्तरों पर वापस आ जाता है। सक्षम होने पर, प्रश्न आपके डिवाइस को छोड़ देते हैं; यदि आप चाहते हैं कि प्रसंस्करण स्थानीय रहे तो त्वरित उत्तर या ऑन-डिवाइस AI को प्राथमिकता दें। चैट के लिए कोई नई कुकीज़ सेट नहीं की गई हैं."
       },
       "donot": {
         "title": "हम क्या नहीं करते",
@@ -1332,7 +1363,7 @@
             "data": "आपका फ़ॉर्म सबमिशन + अनुलग्नक"
           },
           "vercelAnalytics": {
-            "service": "Vercel Web Analytics + Speed Insights",
+            "service": "Vercel वेब एनालिटिक्स + स्पीड इनसाइट्स",
             "purpose": "समग्र पृष्ठ दृश्य, Core Web Vitals",
             "data": "केवल अनाम, कुकी-रहित समुच्चय"
           },
@@ -1373,33 +1404,33 @@
         "detail": "Knight स्तर · Codeforces Master · CodeChef 6-स्टार (AIR 29)।"
       },
       "throughput": {
-        "label": "Simulation throughput",
-        "detail": "Improvement on large customer workloads in Xcelium Logic Simulator."
+        "label": "सिमुलेशन थ्रूपुट",
+        "detail": "Xcelium लॉजिक सिम्युलेटर में बड़े ग्राहक कार्यभार में सुधार।"
       },
       "rtl": {
-        "label": "RTL parsing speedup",
-        "detail": "Cumulative Xform Engine parsing gains across Apple, Google, Samsung and NVIDIA designs."
+        "label": "RTL पार्सिंग स्पीडअप",
+        "detail": "Apple, Google, Samsung और NVIDIA डिज़ाइनों में संचयी Xform इंजन पार्सिंग लाभ।"
       },
       "rca": {
-        "label": "Debug RCA time",
-        "detail": "Reduction via Top-N profiling and structured diagnostics library."
+        "label": "डीबग आरसीए समय",
+        "detail": "टॉप-एन प्रोफाइलिंग और संरचित डायग्नोस्टिक्स लाइब्रेरी के माध्यम से कमी।"
       },
       "ticketResolution": {
-        "label": "Faster ticket resolution",
-        "detail": "MAESTRO, measured on an internal evaluation sample; RCA time reduced by 55%."
+        "label": "तेज़ टिकट समाधान",
+        "detail": "MAESTRO, आंतरिक मूल्यांकन नमूने पर मापा गया; आरसीए का समय 55% कम हो गया।"
       },
       "agentSpeedup": {
-        "label": "AI-assisted simulation speedup",
-        "detail": "Xcelium optimization agents on a validated benchmark; results are workload-specific."
+        "label": "AI-सहायता प्राप्त सिमुलेशन स्पीडअप",
+        "detail": "एक मान्य बेंचमार्क पर Xcelium अनुकूलन एजेंट; परिणाम कार्यभार-विशिष्ट हैं।"
       },
       "regression": {
-        "label": "Regression failures processed",
-        "detail": "Across 79 runs; 73% of failures were processed in runs by other engineers."
+        "label": "प्रतिगमन विफलताओं पर कार्रवाई की गई",
+        "detail": "79 रन के पार; 73% विफलताओं को अन्य इंजीनियरों द्वारा रन में संसाधित किया गया।"
       }
     },
-    "eyebrow": "Engineering impact",
-    "heading": "Performance gains. Engineering time reclaimed.",
-    "context": "Cadence · systems & AI tooling"
+    "eyebrow": "इंजीनियरिंग प्रभाव",
+    "heading": "प्रदर्शन लाभ. इंजीनियरिंग का समय पुनः प्राप्त हुआ।",
+    "context": "Cadence · सिस्टम और AI टूलींग"
   },
   "techMarquee": {
     "heading": "मैं जिन तकनीकों के साथ शिप करता हूँ"
@@ -1427,17 +1458,17 @@
     },
     "items": {
       "maestro": {
-        "title": "MAESTRO — Multi-Agent Ticket Resolution",
-        "tagline": "A Cadence multi-agent system that helps engineers resolve simulation tickets end-to-end — with people in control at the high-risk steps.",
-        "category": "Agentic AI × Engineering Workflow",
-        "summary": "MAESTRO is a Cadence multi-agent platform for engineering-ticket resolution on Xcelium workflows. It coordinates specialist AI agents under human oversight so tickets move from triage toward a verified fix with clearer handoffs and less repeated context-gathering. Measured on an internal evaluation set, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026 and selected for trade-secret protection — implementation details stay internal.",
-        "problem": "Simulator tickets often bounce across R&D, validation and documentation. Context lives in many places, handoffs re-gather the same evidence, and under pressure important steps get skipped while backlog items age.",
-        "challenge": "Coordinate agent assistance across a ticket’s lifecycle without giving up engineer control, without inventing unsupported conclusions, and without publishing proprietary workflow internals.",
+        "title": "MAESTRO - मल्टी-एजेंट टिकट रिज़ॉल्यूशन",
+        "tagline": "एक Cadence मल्टी-एजेंट सिस्टम जो इंजीनियरों को उच्च जोखिम वाले चरणों पर नियंत्रण में लोगों के साथ, शुरू से अंत तक सिमुलेशन टिकटों को हल करने में मदद करता है।",
+        "category": "एजेंट AI × इंजीनियरिंग वर्कफ़्लो",
+        "summary": "MAESTRO, Xcelium वर्कफ़्लोज़ पर इंजीनियरिंग-टिकट समाधान के लिए एक Cadence मल्टी-एजेंट प्लेटफ़ॉर्म है। यह मानव निरीक्षण के तहत विशेषज्ञ AI एजेंटों का समन्वय करता है ताकि टिकट स्पष्ट हैंडऑफ़ और कम बार-बार संदर्भ-एकत्रीकरण के साथ ट्राइएज से सत्यापित फिक्स की ओर बढ़ें। आंतरिक मूल्यांकन सेट पर मापे जाने पर, इसने टिकट-समाधान समय में 45% और मूल-कारण-विश्लेषण समय में 55% की कटौती की। Cadence AI बिल्डथॉन 2026 के लिए टीम माइंडस्मिथ्स के साथ निर्मित और व्यापार-गुप्त सुरक्षा के लिए चुना गया - कार्यान्वयन विवरण आंतरिक रहते हैं।",
+        "problem": "सिम्युलेटर टिकट अक्सर अनुसंधान एवं विकास, सत्यापन और दस्तावेज़ीकरण में बाउंस हो जाते हैं। संदर्भ कई स्थानों पर रहता है, हैंडऑफ़ वही सबूत फिर से इकट्ठा करते हैं, और दबाव में महत्वपूर्ण कदम छोड़ दिए जाते हैं जबकि बैकलॉग आइटम पुराने हो जाते हैं।",
+        "challenge": "इंजीनियर नियंत्रण को छोड़े बिना, असमर्थित निष्कर्षों का आविष्कार किए बिना, और मालिकाना वर्कफ़्लो आंतरिक प्रकाशित किए बिना टिकट के जीवनचक्र में एजेंट सहायता का समन्वय करें।",
         "approach": {
-          "0": "Framed the product as orchestration plus human gates: agents propose and gather evidence; engineers approve risky transitions.",
-          "1": "Optimized for grounded answers — conclusions tied to retrieved engineering evidence rather than free-form speculation.",
-          "2": "Designed for everyday IDE use so the assistive flow meets engineers where they already work.",
-          "3": "Measured outcomes on an internal ticket sample and treated the system as proprietary Cadence IP after Buildathon recognition."
+          "0": "उत्पाद को ऑर्केस्ट्रेशन प्लस मानव द्वार के रूप में तैयार किया गया: एजेंट प्रस्ताव करते हैं और सबूत इकट्ठा करते हैं; इंजीनियर जोखिम भरे बदलावों को मंजूरी देते हैं।",
+          "1": "जमीनी उत्तरों के लिए अनुकूलित - मुक्त रूप की अटकलों के बजाय पुनर्प्राप्त इंजीनियरिंग साक्ष्य से जुड़े निष्कर्ष।",
+          "2": "रोजमर्रा के आईडीई उपयोग के लिए डिज़ाइन किया गया है ताकि सहायक प्रवाह उन इंजीनियरों से मिल सके जहां वे पहले से ही काम करते हैं।",
+          "3": "आंतरिक टिकट नमूने पर परिणामों को मापा गया और बिल्डथॉन मान्यता के बाद सिस्टम को मालिकाना Cadence आईपी के रूप में माना गया।"
         }
       },
       "xcelium-ai-agents": {
@@ -1583,8 +1614,8 @@
       "summary": "Xcelium लॉजिक सिमुलेटर पर प्रदर्शन R&D — निम्न-स्तरीय C++ अनुकूलन, EDA डायग्नोस्टिक्स, मल्टी-एजेंट AI सिस्टम और रिग्रेशन व रिलीज़ वर्कफ़्लो के लिए डेवलपर टूलिंग का संयोजन।",
       "highlights": {
         "0": {
-          "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+          "title": "MAESTRO - मल्टी-एजेंट टिकट रिज़ॉल्यूशन",
+          "detail": "मानव निरीक्षण के साथ इंजीनियरिंग-टिकट समाधान के लिए एक Cadence मल्टी-एजेंट प्लेटफॉर्म MAESTRO बनाया गया; आंतरिक मूल्यांकन पर इसने टिकट-रिज़ॉल्यूशन समय में 45% और आरसीए समय में 55% की कटौती की। व्यापार-गुप्त सुरक्षा के लिए चयनित - कार्यान्वयन विवरण गोपनीय रहते हैं।"
         },
         "1": {
           "title": "ChipStack Xcelium AI एजेंट",
@@ -1612,7 +1643,7 @@
         },
         "7": {
           "title": "इंजीनियरिंग टूल्स के लिए MCP सर्वर",
-          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
+          "detail": "Model Context Protocol सर्वर लिखे, जो GitHub Copilot, Cursor और Claude Code को EDA व इंजीनियरिंग सिस्टम से जोड़ते हैं—इनमें डिबगिंग, कोड समीक्षा, बिल्ड और LLM गेटवे ब्रिज शामिल हैं।"
         },
         "8": {
           "title": "कॉर्पोरेट VP / MD मान्यता",
@@ -1760,60 +1791,60 @@
       }
     },
     "cadence-engineer-ii": {
-      "role": "R&D Software Engineer II",
-      "location": "Noida, India · Hybrid",
-      "summary": "Building AI-driven engineering infrastructure for Xcelium: ticket resolution, simulation optimization, regression intelligence and release automation.",
+      "role": "आर एंड डी सॉफ्टवेयर इंजीनियर II",
+      "location": "नोएडा, भारत · हाइब्रिड",
+      "summary": "Xcelium के लिए AI-संचालित इंजीनियरिंग बुनियादी ढांचे का निर्माण: टिकट रिज़ॉल्यूशन, सिमुलेशन अनुकूलन, रिग्रेशन इंटेलिजेंस और रिलीज़ ऑटोमेशन।",
       "highlights": {
         "0": {
-          "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+          "title": "MAESTRO - मल्टी-एजेंट टिकट रिज़ॉल्यूशन",
+          "detail": "मानव निरीक्षण के साथ इंजीनियरिंग-टिकट समाधान के लिए एक Cadence मल्टी-एजेंट प्लेटफॉर्म MAESTRO बनाया गया; आंतरिक मूल्यांकन पर इसने टिकट-रिज़ॉल्यूशन समय में 45% और आरसीए समय में 55% की कटौती की। व्यापार-गुप्त सुरक्षा के लिए चयनित - कार्यान्वयन विवरण गोपनीय रहते हैं।"
         },
         "1": {
-          "title": "ChipStack Xcelium AI Agents",
-          "detail": "Developed performance and memory optimization agents using Python, OpenAI Agents SDK and RAG to profile simulations, identify bottlenecks, and recommend, apply and verify optimizations; achieved 31.3% simulation speedup on a validated benchmark."
+          "title": "चिपस्टैक Xcelium AI एजेंट",
+          "detail": "प्रोफ़ाइल सिमुलेशन, बाधाओं की पहचान करने और अनुकूलन की अनुशंसा, लागू करने और सत्यापित करने के लिए Python, OpenAI एजेंट SDK और RAG का उपयोग करके प्रदर्शन और मेमोरी अनुकूलन एजेंट विकसित किए गए; एक मान्य बेंचमार्क पर 31.3% सिमुलेशन स्पीडअप हासिल किया।"
         },
         "2": {
-          "title": "Deterministic-First Agent Workflows",
-          "detail": "Re-architected agent workflows as a deterministic-first Python pipeline, cutting end-to-end execution from 148.3s to 76.8s and analysis from 71.1s to 18.0s on a benchmark design."
+          "title": "नियतिवादी-प्रथम एजेंट वर्कफ़्लोज़",
+          "detail": "री-आर्किटेक्ट एजेंट वर्कफ़्लो एक नियतात्मक-प्रथम Python पाइपलाइन के रूप में होता है, जो बेंचमार्क डिज़ाइन पर एंड-टू-एंड निष्पादन को 148.3s से 76.8s तक और 71.1s से 18.0s तक विश्लेषण करता है।"
         },
         "3": {
-          "title": "Regression Triage & Regold System",
-          "detail": "Built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and JEDAI LLM review to automate triage, regolds, waivers and verification; processed 2,120 failures across 79 runs, 73% of them in runs by other engineers."
+          "title": "रिग्रेशन ट्राइएज और रेगोल्ड सिस्टम",
+          "detail": "ट्राइएज, रेगॉल्ड्स, छूट और सत्यापन को स्वचालित करने के लिए नियम-आधारित वर्गीकरण, TF-IDF क्लस्टरिंग, ऐतिहासिक शिक्षा और JEDAI LLM समीक्षा का उपयोग करके ~16K-लाइन Xcelium रिग्रेशन सिस्टम बनाया गया; 79 रन में 2,120 विफलताएँ संसाधित की गईं, उनमें से 73% अन्य इंजीनियरों द्वारा किए गए रन में थीं।"
         },
         "4": {
-          "title": "Cross-Stream Perforce Replay",
-          "detail": "Built replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-CL backports across Xcelium release branches."
+          "title": "क्रॉस-स्ट्रीम Perforce रीप्ले",
+          "detail": "निर्मित रीप्ले टूलिंग जो प्रत्येक चेंजलिस्ट के स्रोत स्ट्रीम को प्राप्त करती है और चुनिंदा रूप से केवल उन पथों को सिंक करती है जिन्हें यह छूता है, Xcelium रिलीज़ शाखाओं में मल्टी-सीएल बैकपोर्ट को स्वचालित करता है।"
         },
         "5": {
-          "title": "MCP Servers for Engineering Tools",
-          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
+          "title": "इंजीनियरिंग टूल्स के लिए MCP सर्वर",
+          "detail": "Model Context Protocol सर्वर लिखे, जो GitHub Copilot, Cursor और Claude Code को EDA व इंजीनियरिंग सिस्टम से जोड़ते हैं—इनमें डिबगिंग, कोड समीक्षा, बिल्ड और LLM गेटवे ब्रिज शामिल हैं।"
         },
         "6": {
-          "title": "Reusable Engineering Infrastructure",
-          "detail": "Designed graph-based workflow orchestration, checkpoint/resume, structured outputs, failure recovery, LLM-as-judge regression testing and developer automation tooling."
+          "title": "पुन: प्रयोज्य इंजीनियरिंग अवसंरचना",
+          "detail": "डिज़ाइन किया गया ग्राफ़-आधारित वर्कफ़्लो ऑर्केस्ट्रेशन, चेकपॉइंट/रेज़्यूमे, संरचित आउटपुट, विफलता पुनर्प्राप्ति, LLM-ए-जज रिग्रेशन परीक्षण और डेवलपर ऑटोमेशन टूलींग।"
         }
       }
     },
     "cadence-engineer": {
-      "role": "R&D Software Engineer",
-      "location": "Noida, India · On-site",
-      "summary": "Low-level C++ optimization, RTL transformations and distributed performance analysis for Xcelium Logic Simulator.",
+      "role": "आर एंड डी सॉफ्टवेयर इंजीनियर",
+      "location": "नोएडा, भारत · साइट पर",
+      "summary": "निम्न-स्तरीय C++ अनुकूलन, RTL परिवर्तन और Xcelium लॉजिक सिम्युलेटर के लिए वितरित प्रदर्शन विश्लेषण।",
       "highlights": {
         "0": {
-          "title": "Xcelium Throughput & Samsung Performance Win",
-          "detail": "Engineered low-level C++ optimizations and scalable simulator architecture, improving throughput by 18–19% on large-scale distributed workloads. Led benchmarking and distributed performance analysis that contributed to a multi-million dollar Samsung deal."
+          "title": "Xcelium थ्रूपुट और Samsung प्रदर्शन जीत",
+          "detail": "निम्न-स्तरीय C++ अनुकूलन और स्केलेबल सिम्युलेटर आर्किटेक्चर को इंजीनियर किया गया, जिससे बड़े पैमाने पर वितरित कार्यभार पर 18-19% तक थ्रूपुट में सुधार हुआ। एलईडी बेंचमार्किंग और वितरित प्रदर्शन विश्लेषण जिसने कई मिलियन डॉलर के Samsung सौदे में योगदान दिया।"
         },
         "1": {
-          "title": "Xform Engine RTL Transformations",
-          "detail": "Implemented RTL transformations delivering 13–14% cumulative parsing speedups and improved simulation performance for Apple, Google, Samsung and NVIDIA workloads."
+          "title": "एक्सफॉर्म इंजन RTL परिवर्तन",
+          "detail": "RTL परिवर्तनों को कार्यान्वित किया गया, जिससे 13-14% संचयी पार्सिंग स्पीडअप और Apple, Google, Samsung और NVIDIA वर्कलोड के लिए बेहतर सिमुलेशन प्रदर्शन मिला।"
         },
         "2": {
-          "title": "Diagnostics & Cadence India Conference",
-          "detail": "Presented technical findings at Cadence India Conference, driving adoption of diagnostic libraries that reduced root-cause analysis time by ~40% through flag analysis and log parsing."
+          "title": "डायग्नोस्टिक्स और Cadence भारत सम्मेलन",
+          "detail": "Cadence इंडिया कॉन्फ्रेंस में तकनीकी निष्कर्ष प्रस्तुत किए गए, जिससे डायग्नोस्टिक लाइब्रेरीज़ को अपनाने से फ़्लैग विश्लेषण और लॉग पार्सिंग के माध्यम से मूल-कारण विश्लेषण समय ~ 40% कम हो गया।"
         },
         "3": {
-          "title": "Corporate VP Recognition & All-Hands Spotlight",
-          "detail": "Received multiple awards for technical leadership and innovation, including Corporate VP recognition and an All-Hands spotlight for driving Samsung-deal performance wins."
+          "title": "कॉर्पोरेट वीपी मान्यता और ऑल-हैंड्स स्पॉटलाइट",
+          "detail": "तकनीकी नेतृत्व और नवाचार के लिए कई पुरस्कार प्राप्त हुए, जिसमें कॉर्पोरेट वीपी मान्यता और Samsung-डील प्रदर्शन जीत के लिए ऑल-हैंड स्पॉटलाइट शामिल है।"
         }
       }
     }
@@ -1822,7 +1853,7 @@
     "ariaLabel": "रोडमैप",
     "eyebrow": "/ रोडमैप",
     "heading": "आगे मैं क्या बनाऊँगा",
-    "intro": "प्रदर्शन इंजीनियरिंग और बुद्धिमान डेवलपर टूलिंग के संगम पर उत्पाद अवधारणाएँ। <warn>लॉन्च-पूर्व — रिपॉज़ अभी प्लेसहोल्डर हैं</warn> जब तक पहला कमिट नहीं आता।",
+    "intro": "प्रदर्शन इंजीनियरिंग और बुद्धिमान डेवलपर टूलिंग के संगम पर उत्पाद अवधारणाएँ।",
     "placeholderRepo": "प्लेसहोल्डर रिपॉज़िटरी — विकास में",
     "target": "लक्ष्य",
     "status": {
@@ -1850,7 +1881,7 @@
   },
   "workbench": {
     "ariaLabel": "GitHub कार्यबेंच",
-    "eyebrow": "/ github",
+    "eyebrow": "/ GitHub",
     "heading": "सार्वजनिक कार्यबेंच",
     "intro": "एल्गोरिदम, फ़ुल-स्टैक ऐप, मोबाइल, ब्लॉकचेन और प्रतियोगी प्रोग्रामिंग में फैली सार्वजनिक रिपॉज़िटरीज़ का एक क्यूरेटेड हिस्सा।",
     "noDescription": "कोई विवरण उपलब्ध नहीं।",
@@ -1885,7 +1916,7 @@
       "empty": "जब फ़ीड उपलब्ध होगा, हाल की गतिविधि यहाँ दिखाई देगी।"
     },
     "openXml": "XML फ़ीड खोलें",
-    "refreshNote": "Fetched automatically from Medium, YouTube and GitHub with a 15-minute cache. GitHub activity may appear later because its public event feed is delayed."
+    "refreshNote": "15 मिनट के कैश के साथ Medium, YouTube और GitHub से स्वचालित रूप से प्राप्त किया गया। GitHub गतिविधि बाद में दिखाई दे सकती है क्योंकि इसकी सार्वजनिक ईवेंट फ़ीड में देरी हो रही है।"
   },
   "engineeringSpectrum": {
     "ariaLabel": "इंजीनियरिंग स्पेक्ट्रम",
@@ -1966,12 +1997,12 @@
   "honorsData": {
     "maestro-selected-for-trade-secret-protection": {
       "title": "MAESTRO — ट्रेड सीक्रेट सुरक्षा के लिए चयनित",
-      "org": "Cadence Design Systems",
+      "org": "Cadence डिज़ाइन सिस्टम",
       "detail": "MAESTRO, एंड-टू-एंड इंजीनियरिंग-टिकट समाधान के लिए एक मल्टी-एजेंट प्लेटफ़ॉर्म, को मालिकाना IP के रूप में मान्यता मिली और ट्रेड-सीक्रेट सुरक्षा के लिए चुना गया।"
     },
     "10-000-tezos-blockchain-grant": {
       "title": "$10,000 Tezos ब्लॉकचेन अनुदान",
-      "org": "Tezos India · Game Geeks",
+      "org": "Tezos भारत · गेम गीक्स",
       "detail": "Tezos Premier League — Tezos पर एक विकेंद्रीकृत गेमिंग ऐप्लिकेशन और NFT मार्केटप्लेस के विस्तार के लिए सम्मानित।"
     },
     "30-days-of-google-cloud-completion": {
@@ -1981,12 +2012,12 @@
     },
     "runner-up-virtual-fiesta-code-sword": {
       "title": "उपविजेता — Virtual Fiesta (CODE SWORD)",
-      "org": "NSUT",
+      "org": "एनएसयूटी",
       "detail": "NSUT Virtual Fiesta के CODE SWORD प्रोग्रामिंग प्रतियोगिता में उपविजेता।"
     },
     "runner-up-bvest-code-trek": {
       "title": "उपविजेता — BVEST (CODE TREK)",
-      "org": "BVCOE",
+      "org": "बीवीसीओई",
       "detail": "BVEST CODE TREK अंतर-विद्यालय प्रोग्रामिंग प्रतियोगिता में उपविजेता।"
     },
     "second-runner-up-force-fest-pro-sort": {
@@ -2000,26 +2031,26 @@
       "detail": "Digilogous SUDO SOLVE प्रोग्रामिंग प्रतियोगिता में द्वितीय उपविजेता।"
     },
     "niit-it-wizard-very-good": {
-      "title": "NIIT IT Wizard — Very Good",
+      "title": "NIIT आईटी विज़ार्ड - बहुत अच्छा",
       "org": "NIIT",
       "detail": "NIIT के IT Wizard राष्ट्रीय कार्यक्रम में 'Very Good' स्तर पर मान्यता प्राप्त।"
     },
     "niit-it-wizard-excellent": {
-      "title": "NIIT IT Wizard — Excellent",
+      "title": "NIIT आईटी विज़ार्ड - उत्कृष्ट",
       "org": "NIIT",
       "detail": "NIIT के IT Wizard राष्ट्रीय कार्यक्रम में 'Excellent' स्तर पर मान्यता प्राप्त।"
     },
     "samsung-performance-win-corporate-vp-recognition": {
-      "title": "Samsung Performance Win — Corporate VP Recognition",
-      "org": "Cadence Design Systems",
+      "title": "Samsung प्रदर्शन जीत - कॉर्पोरेट वीपी मान्यता",
+      "org": "Cadence डिज़ाइन सिस्टम",
       "date": "2022–2026",
-      "detail": "Benchmarking and distributed performance analysis contributed to a multi-million dollar Samsung deal. Recognized by the Corporate VP and spotlighted in an All-Hands meeting for the performance wins."
+      "detail": "बेंचमार्किंग और वितरित प्रदर्शन विश्लेषण ने कई मिलियन डॉलर के Samsung सौदे में योगदान दिया। कॉर्पोरेट वीपी द्वारा मान्यता प्राप्त और प्रदर्शन जीत के लिए ऑल-हैंड्स मीटिंग में सुर्खियों में आया।"
     },
     "cadence-india-conference-performance-diagnostics": {
-      "title": "Cadence India Conference — Performance Diagnostics",
-      "org": "Cadence Design Systems",
+      "title": "Cadence भारत सम्मेलन - प्रदर्शन निदान",
+      "org": "Cadence डिज़ाइन सिस्टम",
       "date": "2022–2026",
-      "detail": "Presented technical findings that drove adoption of diagnostic libraries, reducing root-cause analysis time by ~40% through flag analysis and log parsing."
+      "detail": "प्रस्तुत तकनीकी निष्कर्षों ने डायग्नोस्टिक पुस्तकालयों को अपनाने को बढ़ावा दिया, जिससे ध्वज विश्लेषण और लॉग पार्सिंग के माध्यम से मूल-कारण विश्लेषण समय ~ 40% कम हो गया।"
     }
   },
   "languagesData": {
@@ -2058,11 +2089,11 @@
     "golang-intermediate": "Golang — मध्यवर्ती",
     "jp-morgan-chase-swe-virtual": "JP Morgan Chase — SWE वर्चुअल",
     "flipkart-d2c-participation": "Flipkart D2C भागीदारी",
-    "freecodecamp-javascript": "freeCodeCamp — JavaScript",
-    "core-java": "Core Java",
-    "advanced-java": "Advanced Java",
+    "freecodecamp-javascript": "freeCodeCamp - JavaScript",
+    "core-java": "कोर जावा",
+    "advanced-java": "उन्नत जावा",
     "python": "Python",
-    "react-hooks-redux": "React Hooks + Redux",
+    "react-hooks-redux": "React हुक + Redux",
     "web-chat-using-react": "React का उपयोग करते हुए वेब चैट",
     "yaml": "YAML",
     "seo": "SEO"
@@ -2083,9 +2114,9 @@
     },
     "commitRain": {
       "label": "कमिट्स की बारिश हो रही है…",
-      "dismissHint": "Click or Esc to close",
-      "close": "Close",
-      "count": "{count} commits"
+      "dismissHint": "बंद करने के लिए क्लिक करें या Esc",
+      "close": "बंद करना",
+      "count": "{count} कमिट"
     },
     "boot": {
       "title": "AyushOS बूट क्रम",
@@ -2102,7 +2133,7 @@
       ]
     },
     "terminal": {
-      "title": "phoenix-shell",
+      "title": "फ़ीनिक्स-शेल",
       "close": "टर्मिनल बंद करें",
       "inputLabel": "टर्मिनल इनपुट",
       "greet": "phoenix-shell में स्वागत है, {name}.",
@@ -2142,7 +2173,7 @@
         "variant": "नोट: “{variant}” रेज़्यूमे संस्करण जल्द आ रहा है — फ़िलहाल डिफ़ॉल्ट संस्करण डाउनलोड हो रहा है।"
       },
       "hiddenImpact": {
-        "0": "🜂 .hidden-impact",
+        "0": "🜂 .छिपा-प्रभाव",
         "1": "प्रोफ़ाइलिंग-आधारित C++ जीत: +18–19% सिमुलेशन थ्रूपुट, ~40% तेज़ RCA।",
         "2": "Apple, Google, Samsung और NVIDIA वर्कलोड पर सत्यापित।"
       },
@@ -2174,8 +2205,8 @@
         "पहले चलने लायक बनाएँ, फिर सही, फिर तेज़ — इसी क्रम में।",
         "पर्याप्त लेटेंसी जोड़ दें, तो हर सिस्टम एक डिस्ट्रिब्यूटेड सिस्टम है।"
       ],
-      "footerHint": "Tab ⇥ autocomplete · ↑↓ history · click to type",
-      "footerCmds": "Esc to exit"
+      "footerHint": "टैब ⇥ स्वत: पूर्ण · ↑↓ इतिहास · टाइप करने के लिए क्लिक करें",
+      "footerCmds": "बाहर निकलने के लिए Esc"
     },
     "dino": {
       "titleRunner": "फ़ीनिक्स रनर",
@@ -2231,114 +2262,114 @@
     },
     "catalogue": {
       "console-banner": {
-        "title": "Console toolkit",
-        "hint": "Opened the devtools console and called help() / phoenix() / hire() / cv() / secrets().",
-        "clue": "Developers know where to look first."
+        "title": "कंसोल टूलकिट",
+        "hint": "डेवटूल्स कंसोल खोला और हेल्प() / फीनिक्स() / हायर() / सीवी() / सीक्रेट्स() को कॉल किया।",
+        "clue": "डेवलपर्स जानते हैं कि पहले कहां देखना है।"
       },
       "html-comment": {
-        "title": "View-source explorer",
-        "hint": "Found the phoenix HTML comment trail in the page source.",
-        "clue": "Ctrl+U is a fine pastime."
+        "title": "व्यू-सोर्स एक्सप्लोरर",
+        "hint": "पेज स्रोत में फ़ीनिक्स HTML टिप्पणी ट्रेल मिला।",
+        "clue": "Ctrl+U एक अच्छा शगल है।"
       },
       "humans-txt": {
-        "title": "humans.txt reader",
-        "hint": "You read /humans.txt — the old-school manifest.",
-        "clue": "There's a file just for humans."
+        "title": "human.txt रीडर",
+        "hint": "आपने / humans.txt पढ़ा - पुराने स्कूल का प्रकटीकरण।",
+        "clue": "वहाँ केवल मनुष्यों के लिए एक फ़ाइल है।"
       },
       "robots-txt": {
-        "title": "robots.txt reader",
-        "hint": "You opened /robots.txt — what the crawlers see.",
-        "clue": "And another, just for robots."
+        "title": "robots.txt रीडर",
+        "hint": "आपने /robots.txt खोला - क्रॉलर क्या देखते हैं।",
+        "clue": "और दूसरा, सिर्फ रोबोट के लिए।"
       },
       "dino-score-5": {
-        "title": "Phoenix Run — 500",
-        "hint": "Soared past score 500 in Phoenix Run on the 404 page.",
-        "clue": "Get lost on purpose, then fly. The flame awakens at five hundred."
+        "title": "फीनिक्स रन - 500",
+        "hint": "404 पेज पर फीनिक्स रन में स्कोर 500 से आगे बढ़ गया।",
+        "clue": "जानबूझकर खो जाओ, फिर उड़ जाओ। पांच सौ पर लौ जागती है."
       },
       "feather-score-5": {
-        "title": "Golden Feather × 5",
-        "hint": "Collected five golden feathers in a single Phoenix Run.",
-        "clue": "Some power-ups are worth chasing. Gather a handful of feathers."
+        "title": "गोल्डन फेदर × 5",
+        "hint": "एक फ़ीनिक्स रन में पाँच सुनहरे पंख एकत्रित किये।",
+        "clue": "कुछ पावर-अप पीछा करने लायक हैं। मुट्ठी भर पंख इकट्ठा करो."
       },
       "konami": {
-        "title": "Konami initiate",
-        "hint": "Entered the classic ↑↑↓↓←→←→BA sequence.",
-        "clue": "Some sequences are written into muscle memory."
+        "title": "कोनामी ने पहल की",
+        "hint": "क्लासिक ↑↑↓↓←→←→BA अनुक्रम दर्ज किया गया।",
+        "clue": "कुछ अनुक्रम मांसपेशियों की स्मृति में लिखे जाते हैं।"
       },
       "terminal-mode": {
-        "title": "phoenix-shell",
-        "hint": "Opened the terminal overlay — type \"terminal\" anywhere.",
-        "clue": "Speak the word and a shell appears."
+        "title": "फ़ीनिक्स-शेल",
+        "hint": "टर्मिनल ओवरले खोला - कहीं भी \"टर्मिनल\" टाइप करें।",
+        "clue": "शब्द बोलो और एक खोल प्रकट हो जाता है।"
       },
       "phoenix-type": {
-        "title": "Speak its name",
-        "hint": "Typed \"phoenix\" anywhere on the page.",
-        "clue": "Names have power."
+        "title": "इसका नाम बोलो",
+        "hint": "पृष्ठ पर कहीं भी \"फ़ीनिक्स\" टाइप किया गया।",
+        "clue": "नाम में शक्ति है."
       },
       "logo-shift-click": {
-        "title": "Hidden phoenix theme",
-        "hint": "Held Shift and clicked the logo five times to summon the phoenix theme.",
-        "clue": "The crest does not mind being clicked."
+        "title": "छुपी हुई फ़ीनिक्स थीम",
+        "hint": "शिफ्ट को होल्ड किया और फीनिक्स थीम को बुलाने के लिए लोगो पर पांच बार क्लिक किया।",
+        "clue": "शिखा को क्लिक किए जाने पर कोई आपत्ति नहीं है।"
       },
       "sanskrit-locale": {
-        "title": "संस्कृतम् reader",
-        "hint": "Switched the site to Sanskrit — a liturgical, classical language at home with phoenix imagery.",
-        "clue": "Six tongues are spoken here."
+        "title": "संस्कृतम् वाचक",
+        "hint": "साइट को संस्कृत में बदल दिया - फीनिक्स इमेजरी के साथ घर पर एक धार्मिक, शास्त्रीय भाषा।",
+        "clue": "यहां छह भाषाएं बोली जाती हैं।"
       },
       "polyglot": {
-        "title": "Polyglot",
-        "hint": "Visited the site in all six supported languages.",
-        "clue": "Try every flag in the menu."
+        "title": "बहुभाषी",
+        "hint": "सभी छह समर्थित भाषाओं में साइट देखी गई।",
+        "clue": "मेनू में प्रत्येक ध्वज को आज़माएँ।"
       },
       "theme-cycler": {
-        "title": "Colour theorist",
-        "hint": "Cycled through all three themes within two seconds — the 't' key is quick.",
-        "clue": "Hammer the theme key."
+        "title": "रंग सिद्धांतकार",
+        "hint": "दो सेकंड के भीतर सभी तीन विषयों को पार कर गया - 'टी' कुंजी त्वरित है।",
+        "clue": "विषय कुंजी अंकित करें."
       },
       "devtools-open": {
-        "title": "Devtools spotted",
-        "hint": "Opened the browser devtools — respect.",
-        "clue": "We see you in the inspector."
+        "title": "डेवटूल्स को देखा गया",
+        "hint": "ब्राउज़र डेवटूल्स खोला - सम्मान।",
+        "clue": "हम आपको इंस्पेक्टर में देखते हैं।"
       },
       "phoenix-route": {
-        "title": "/phoenix visitor",
-        "hint": "Found the hidden /phoenix route, where the codename is explained.",
-        "clue": "Type the codename in the address bar."
+        "title": "/फीनिक्स आगंतुक",
+        "hint": "छिपा हुआ /फीनिक्स मार्ग मिला, जहां कोडनेम समझाया गया है।",
+        "clue": "एड्रेस बार में कोडनेम टाइप करें।"
       },
       "credits-route": {
-        "title": "/credits visitor",
-        "hint": "Found the hidden /credits route — a thank-you to the open-source giants.",
-        "clue": "Every site stands on shoulders."
+        "title": "/आगंतुक को श्रेय देता है",
+        "hint": "छिपा हुआ/क्रेडिट मार्ग मिला - ओपन-सोर्स दिग्गजों को धन्यवाद।",
+        "clue": "प्रत्येक साइट कंधों पर खड़ी है।"
       },
       "haiku-trail": {
-        "title": "Haiku trail",
-        "hint": "Found the three-line haiku hidden across home, about and work.",
-        "clue": "Three pages, three lines, one ember."
+        "title": "हाइकु ट्रेल",
+        "hint": "घर, आसपास और कार्यस्थल पर छिपा हुआ तीन पंक्तियों वाला हाइकु मिला।",
+        "clue": "तीन पन्ने, तीन पंक्तियाँ, एक अंगारा।"
       },
       "css-selection": {
-        "title": "Invisible ink",
-        "hint": "Selected the invisible line under the hero tagline — \"phoenix · rise · /secret\".",
-        "clue": "Some text is only visible when selected."
+        "title": "अदृश्य स्याही",
+        "hint": "हीरो टैगलाइन के अंतर्गत अदृश्य पंक्ति का चयन किया गया - \"फ़ीनिक्स · राइज़ · /सीक्रेट\"।",
+        "clue": "कुछ पाठ केवल चयनित होने पर ही दिखाई देते हैं।"
       },
       "matrix-rain": {
-        "title": "Down the matrix",
-        "hint": "Summoned the matrix-rain overlay — type \"matrix\" anywhere.",
-        "clue": "Green, falling, familiar."
+        "title": "मैट्रिक्स नीचे",
+        "hint": "मैट्रिक्स-रेन ओवरले को बुलाया - कहीं भी \"मैट्रिक्स\" टाइप करें।",
+        "clue": "हरा, गिरता हुआ, परिचित।"
       },
       "og-qr-scan": {
-        "title": "OG QR scanner",
-        "hint": "Spotted (or scanned) the tiny QR code in the social preview image.",
-        "clue": "Look at the share preview, not the page."
+        "title": "ओजी क्यूआर स्कैनर",
+        "hint": "सामाजिक पूर्वावलोकन छवि में छोटा क्यूआर कोड देखा (या स्कैन किया गया)।",
+        "clue": "शेयर पूर्वावलोकन देखें, पेज नहीं."
       },
       "trophy-room-visit": {
-        "title": "Trophy room",
-        "hint": "You found the trophy room itself.",
-        "clue": "Some secrets are about the room they live in."
+        "title": "जयचिह्न का कमरा",
+        "hint": "आपको ट्रॉफी रूम ही मिल गया।",
+        "clue": "कुछ रहस्य उस कमरे के बारे में हैं जिसमें वे रहते हैं।"
       },
       "completionist": {
-        "title": "Completionist",
-        "hint": "Every single egg found. You really did go the long way around.",
-        "clue": "Find everything else first."
+        "title": "पूर्णतावादी",
+        "hint": "हर एक अंडा मिला. आप वास्तव में बहुत आगे तक गए।",
+        "clue": "पहले बाकी सब कुछ खोजें."
       }
     }
   },
@@ -2346,55 +2377,55 @@
     "items": {
       "now": "अभी पेज पर जाएँ",
       "engineer": "इंजीनियर मोड टॉगल करें",
-      "palette": "Open command palette",
-      "search": "Focus search",
-      "help": "Show this help",
-      "escape": "Close menus / overlays",
-      "nextSection": "Jump to next section",
-      "prevSection": "Jump to previous section",
-      "home": "Go home",
-      "work": "Go to work",
-      "skills": "Go to skills",
-      "contact": "Go to contact",
-      "experience": "Go to experience",
-      "about": "Go to about",
-      "theme": "Cycle theme",
-      "recruiter": "Toggle recruiter mode",
-      "language": "Open language picker",
-      "copyEmail": "Copy email address",
-      "downloadResume": "Download résumé",
-      "arrows": "Navigate within a menu"
+      "palette": "कमांड पैलेट खोलें",
+      "search": "खोज पर फ़ोकस करें",
+      "help": "यह सहायता दिखाएँ",
+      "escape": "मेनू/ओवरले बंद करें",
+      "nextSection": "अगले भाग पर जाएँ",
+      "prevSection": "पिछले अनुभाग पर जाएँ",
+      "home": "घर जाओ",
+      "work": "काम पर जाना",
+      "skills": "कौशल पर जाएँ",
+      "contact": "संपर्क पर जाएँ",
+      "experience": "अनुभव पर जाएँ",
+      "about": "के बारे में जाने",
+      "theme": "थीम बदलें",
+      "recruiter": "भर्तीकर्ता मोड टॉगल करें",
+      "language": "भाषा चयनकर्ता खोलें",
+      "copyEmail": "ईमेल पता कॉपी करें",
+      "downloadResume": "बायोडाटा डाउनलोड करें",
+      "arrows": "एक मेनू के भीतर नेविगेट करें"
     },
-    "title": "Keyboard shortcuts",
-    "subtitle": "Press <kbd>?</kbd> any time to reopen this list.",
-    "openLabel": "Open keyboard shortcuts (press ?)",
-    "close": "Close",
+    "title": "कीबोर्ड शॉर्टकट",
+    "subtitle": "इस सूची को दोबारा खोलने के लिए किसी भी समय <kbd>?</kbd> दबाएँ।",
+    "openLabel": "कीबोर्ड शॉर्टकट खोलें (दबाएँ?)",
+    "close": "बंद करें",
     "groups": {
-      "global": "Global",
-      "navigation": "Navigation",
-      "actions": "Actions",
-      "menus": "Menus"
+      "global": "वैश्विक",
+      "navigation": "मार्गदर्शन",
+      "actions": "कार्रवाई",
+      "menus": "मेनू"
     }
   },
   "demos": {
     "maestro": {
-      "title": "maestro · omitted",
-      "subtitle": "trade secret — demo not published",
-      "stagesLabel": "Workflow stages",
-      "gateMarker": "Human approval gate",
-      "docLabel": "Session log",
-      "empty": "The interactive MAESTRO walkthrough is not published because the system is trade-secret protected.",
-      "kindLabel": "Ticket type",
-      "defect": "Defect",
-      "enhancement": "Enhancement",
-      "failOnce": "Fail validation once",
-      "run": "Unavailable",
-      "pause": "Pause",
-      "resume": "Resume",
-      "again": "Unavailable",
-      "approve": "Unavailable",
-      "reset": "Reset",
-      "note": "Omitted for IP protection — not a map of the production workflow.",
+      "title": "MAESTRO · अप्रकाशित",
+      "subtitle": "व्यापार रहस्य - डेमो प्रकाशित नहीं हुआ",
+      "stagesLabel": "कार्यप्रवाह चरण",
+      "gateMarker": "मानव अनुमोदन द्वार",
+      "docLabel": "सत्र लॉग",
+      "empty": "इंटरएक्टिव MAESTRO वॉकथ्रू प्रकाशित नहीं किया गया है क्योंकि सिस्टम ट्रेड-सीक्रेट संरक्षित है।",
+      "kindLabel": "टिकिट का प्रकार",
+      "defect": "दोष",
+      "enhancement": "उन्नति",
+      "failOnce": "एक बार सत्यापन विफल",
+      "run": "अनुपलब्ध",
+      "pause": "विराम",
+      "resume": "फिर शुरू करना",
+      "again": "अनुपलब्ध",
+      "approve": "अनुपलब्ध",
+      "reset": "रीसेट करें",
+      "note": "आईपी ​​सुरक्षा के लिए छोड़ा गया - उत्पादन वर्कफ़्लो का मानचित्र नहीं।",
       "stages": {
         "intake": "—",
         "rca": "—",
@@ -2406,7 +2437,7 @@
         "release": "—"
       },
       "log": {
-        "start": "demo unavailable",
+        "start": "डेमो अनुपलब्ध",
         "intake": "—",
         "rca": "—",
         "design": "—",
@@ -2422,183 +2453,183 @@
       }
     },
     "common": {
-      "play": "Play",
-      "pause": "Pause",
-      "reset": "Reset",
-      "stepBack": "Step back",
-      "stepForward": "Step forward",
-      "tryPrompt": "Try a prompt",
-      "trySample": "Try a sample",
-      "rerun": "rerun",
-      "illustrative": "Illustrative — pipeline mirrors the real flow, but responses are canned."
+      "play": "चलाएँ",
+      "pause": "विराम",
+      "reset": "रीसेट करें",
+      "stepBack": "कदम पीछे खींचना",
+      "stepForward": "आगे कदम",
+      "tryPrompt": "एक संकेत का प्रयास करें",
+      "trySample": "एक नमूना आज़माएँ",
+      "rerun": "फिर से दौड़ना",
+      "illustrative": "उदाहरणात्मक - पाइपलाइन वास्तविक प्रवाह को प्रतिबिंबित करती है, लेकिन प्रतिक्रियाएँ डिब्बाबंद होती हैं।"
     },
     "algolens": {
-      "title": "algolens · bubble-sort · deterministic",
-      "step": "step {current} / {total}",
-      "pseudocode": "Pseudocode",
-      "time": "Time",
-      "space": "Space",
-      "explore": "Explore full AlgoLens →",
-      "barLabel": "Bar value {value}"
+      "title": "एल्गोलेन्स · बबल-सॉर्ट · नियतिवादी",
+      "step": "चरण {current} / {total}",
+      "pseudocode": "स्यूडोकोड",
+      "time": "समय",
+      "space": "स्पेस",
+      "explore": "संपूर्ण AlgoLens का अन्वेषण करें →",
+      "barLabel": "बार मान {value}"
     },
     "xcelium": {
-      "title": "xcelium · runtime profile",
-      "throughputGain": "{pct}% throughput gain",
-      "workloadMix": "workload mix",
-      "before": "before",
-      "after": "after",
-      "mixAriaLabel": "Before / after mix",
-      "note": "Illustrative: bars compress from the \"before\" profile to the optimized \"after\" profile as you drag the slider."
+      "title": "एक्सेलियम · रनटाइम प्रोफ़ाइल",
+      "throughputGain": "{pct}% थ्रूपुट लाभ",
+      "workloadMix": "कार्यभार मिश्रण",
+      "before": "पहले",
+      "after": "बाद",
+      "mixAriaLabel": "मिश्रण से पहले/बाद में",
+      "note": "उदाहरणार्थ: जैसे ही आप स्लाइडर को खींचते हैं, बार \"पहले\" प्रोफ़ाइल से अनुकूलित \"बाद\" प्रोफ़ाइल में संकुचित हो जाते हैं।"
     },
     "tezos": {
-      "title": "tpl · pvp bracket · deterministic sim",
-      "round": "round {current} / {total}",
-      "play": "Play bracket",
-      "championLabel": "champion",
-      "roundLabel": "round {n}",
-      "note": "Illustrative on-chain bracket — winners are derived deterministically (no real wallet)."
+      "title": "टीपीएल · पीवीपी ब्रैकेट · नियतात्मक सिम",
+      "round": "गोल {current} / {total}",
+      "play": "ब्रैकेट खेलें",
+      "championLabel": "चैंपियन",
+      "roundLabel": "गोल {n}",
+      "note": "उदाहरणात्मक ऑन-चेन ब्रैकेट - विजेताओं को नियतात्मक रूप से प्राप्त किया जाता है (कोई वास्तविक वॉलेट नहीं)।"
     },
     "posture": {
-      "title": "postureiq · live rep · simulated",
-      "tracking": "● tracking",
-      "lowConfidence": "○ low confidence",
-      "formScore": "FORM SCORE",
-      "repsConf": "REPS · CONF",
-      "note": "form-score(t) with confidence gate — peaks count when above threshold"
+      "title": "पोस्चरिक · लाइव प्रतिनिधि · सिम्युलेटेड",
+      "tracking": "● ट्रैकिंग",
+      "lowConfidence": "○ कम आत्मविश्वास",
+      "formScore": "फॉर्म स्कोर",
+      "repsConf": "प्रतिनिधि · कॉन्फ़",
+      "note": "कॉन्फिडेंस गेट के साथ फॉर्म-स्कोर (टी) - सीमा से ऊपर होने पर शिखर की गिनती होती है"
     },
     "track": {
-      "title": "track-person · live route · simulated",
-      "inZone": "● in-zone",
-      "distance": "DISTANCE",
-      "waypoint": "WAYPOINT"
+      "title": "ट्रैक-व्यक्ति · लाइव रूट · सिम्युलेटेड",
+      "inZone": "● इन-ज़ोन",
+      "distance": "दूरी",
+      "waypoint": "मार्ग बिंदु"
     },
     "smart": {
-      "title": "smart-brain · vision inference · simulated",
-      "scanning": "scanning…",
-      "ready": "ready",
-      "inferenceLog": "Inference log",
-      "waitingForInput": "waiting for input…",
-      "detections": "Detections",
-      "rerunAriaLabel": "Re-run inference",
-      "sampleObj": "{count} obj"
+      "title": "स्मार्ट-ब्रेन · दृष्टि अनुमान · अनुरूपित",
+      "scanning": "स्कैनिंग...",
+      "ready": "तैयार",
+      "inferenceLog": "अनुमान लॉग",
+      "waitingForInput": "इनपुट की प्रतीक्षा में...",
+      "detections": "पता लगाना",
+      "rerunAriaLabel": "अनुमान पुनः चलाएँ",
+      "sampleObj": "{count} ओब्जेक्ट"
     }
   },
   "architecture": {
     "maestro": {
-      "aria": "MAESTRO architecture diagram omitted because the system is trade-secret protected.",
-      "entry": "Ticket",
-      "conductor": "Orchestration",
-      "conductorSub": "human-gated",
-      "loop": "review loop",
+      "aria": "MAESTRO आर्किटेक्चर आरेख छोड़ दिया गया क्योंकि सिस्टम व्यापार-गुप्त संरक्षित है।",
+      "entry": "टिकट",
+      "conductor": "ऑर्केस्ट्रेशन",
+      "conductorSub": "मानव-द्वारित",
+      "loop": "समीक्षा पाश",
       "stages": {
-        "intake": "Triage",
-        "rca": "Investigate",
-        "fix": "Propose",
-        "validate": "Validate",
-        "review": "Review",
-        "regress": "Verify",
-        "release": "Close"
+        "intake": "ट्राइएज",
+        "rca": "जाँच करना",
+        "fix": "प्रस्ताव",
+        "validate": "सत्यापन",
+        "review": "समीक्षा",
+        "regress": "सत्यापित करें",
+        "release": "समापन"
       },
-      "state": "Confidential — not published",
-      "kb": "Knowledge",
-      "kbSub": "internal",
-      "tools": "Integrations",
-      "toolsSub": "internal",
-      "gate": "human oversight"
+      "state": "गोपनीय - प्रकाशित नहीं",
+      "kb": "ज्ञान",
+      "kbSub": "आंतरिक",
+      "tools": "एकीकरण",
+      "toolsSub": "आंतरिक",
+      "gate": "मानवीय निरीक्षण"
     },
     "xcelium-ai-agents": {
       "aria": "Xcelium AI एजेंट आर्किटेक्चर: एक प्लानर एक डिटर्मिनिस्टिक Python लेन (इनटेक, सिमुलेशन रनर, प्रोफ़ाइल पार्सर, रिपोर्ट) और एक LLM रीज़निंग लेन (विश्लेषण, रीकोड, अप्लाई) के बीच रूट करता है, और एक चेकलिस्ट-आधारित LLM जज रिपोर्टों की तुलना एक गोल्डन से करता है।",
-      "laneDeterministic": "deterministic Python — runs before any model turn",
-      "laneLlm": "LLM reasoning — findings arrive as data",
-      "tui": "ChipStack TUI",
-      "tuiSub": "engineer prompt",
-      "planner": "Planner node",
-      "plannerSub": "routes between phases",
-      "intake": "Python intake",
-      "runner": "Sim runner",
-      "parser": "Profile parser",
-      "report": "Python report",
-      "analyse": "Analyse",
-      "recode": "3-tier recode",
-      "apply": "Apply + backup",
-      "rerun": "re-run & compare",
-      "judge": "Checklist judge",
-      "judgeSub": "5 yes/no questions",
-      "golden": "vs. golden report",
-      "framework": "Shared workflow framework — graph orchestration · checkpointed typed state · strict outputs · JSON recovery · fallbacks"
+      "laneDeterministic": "नियतात्मक Python - किसी भी मॉडल मोड़ से पहले चलता है",
+      "laneLlm": "LLM तर्क - निष्कर्ष डेटा के रूप में आते हैं",
+      "tui": "चिपस्टैक टीयूआई",
+      "tuiSub": "इंजीनियर संकेत",
+      "planner": "योजनाकार नोड",
+      "plannerSub": "चरणों के बीच के मार्ग",
+      "intake": "Python सेवन",
+      "runner": "सिम धावक",
+      "parser": "प्रोफ़ाइल पार्सर",
+      "report": "Python रिपोर्ट",
+      "analyse": "विश्लेषण करें",
+      "recode": "3-स्तरीय रिकोड",
+      "apply": "लागू करें + बैकअप",
+      "rerun": "पुनः चलाएँ और तुलना करें",
+      "judge": "चेकलिस्ट जज",
+      "judgeSub": "5 हां/नहीं प्रश्न",
+      "golden": "बनाम गोल्डन रिपोर्ट",
+      "framework": "साझा वर्कफ़्लो फ़्रेमवर्क - ग्राफ़ ऑर्केस्ट्रेशन · चेकपॉइंट टाइप की गई स्थिति · सख्त आउटपुट · JSON पुनर्प्राप्ति · फ़ॉलबैक"
     },
     "regression-triage": {
       "aria": "रिग्रेशन ट्राइएज आर्किटेक्चर: विफलता सूचियाँ दोबारा चलाई जाती हैं, फ़िंगरप्रिंट की जाती हैं, वर्गीकृत और क्लस्टर की जाती हैं; सलाहकारी LLM समीक्षा वाला एक वर्ग गेट डिफ़ को रीगोल्ड की ओर और अन्य विफलताओं को फ़िल्टर या रूट-कॉज़ विश्लेषण की ओर भेजता है, फिर प्रति मोड सत्यापन करता है और एक लर्निंग स्टोर को डेटा देता है।",
       "stages": {
-        "lists": "Failure lists",
-        "rerun": "Parallel rerun",
-        "signatures": "Signatures\n(masked hashes)",
-        "categorise": "Categorise\nrules + vote",
-        "cluster": "TF-IDF\nclustering"
+        "lists": "विफलता सूचियाँ",
+        "rerun": "समानांतर पुनः चलाएँ",
+        "signatures": "हस्ताक्षर\n(नकाबपोश हैश)",
+        "categorise": "वर्गीकृत करें\nनियम + वोट",
+        "cluster": "TF-IDF\nक्लस्टरिंग"
       },
-      "review": "LLM review\n(advisory)",
-      "gate": "Class gate",
-      "rca": "Root-cause analysis",
-      "rcaSub": "crash · timeout · tool error",
-      "filter": "Filter / waive",
-      "filterSub": "IGNORE · waiver",
-      "regold": "Regold",
-      "regoldSub": "diff class only",
-      "verify": "Per-mode verify",
-      "learning": "Learning store",
-      "learningSub": "outcomes written back",
-      "feedback": "history feeds the vote"
+      "review": "LLM समीक्षा\n(सलाहकार)",
+      "gate": "कक्षा का द्वार",
+      "rca": "मूल कारण विश्लेषण",
+      "rcaSub": "क्रैश · टाइमआउट · टूल त्रुटि",
+      "filter": "फ़िल्टर/माफ़ करें",
+      "filterSub": "अनदेखा · छूट",
+      "regold": "रेगोल्ड",
+      "regoldSub": "केवल भिन्न वर्ग",
+      "verify": "प्रति-मोड सत्यापित करें",
+      "learning": "सीखने की दुकान",
+      "learningSub": "परिणाम वापस लिखे गए",
+      "feedback": "इतिहास वोट खिलाता है"
     },
     "perforce-replay": {
       "aria": "Perforce रीप्ले आर्किटेक्चर: चेंजलिस्ट नंबर और एक टारगेट ब्रांच से स्ट्रीम निर्धारण, क्रम-निर्धारण, छुए गए पाथ की योजना, खराबी-सुधार के साथ चयनात्मक सिंक, क्रमबद्ध मर्ज और एक ही ऑटो-रिज़ॉल्व संचालित होते हैं, जिसका परिणाम मर्ज की गई और अस्वीकृत फ़ाइलों में बँट जाता है।",
-      "input": "CL numbers + target",
+      "input": "सीएल संख्या + लक्ष्य",
       "stages": {
-        "streams": "Derive source\nstreams",
-        "order": "Sort CLs\nascending",
-        "plan": "Plan touched\npaths",
-        "materialise": "Selective sync\n+ view repair",
-        "merge": "Merge each CL\nat its revision",
-        "resolve": "Single\nauto-resolve"
+        "streams": "स्रोत प्राप्त करें\nधाराएँ",
+        "order": "सीएल क्रमबद्ध करें\nआरोही",
+        "plan": "योजना छू गयी\nपथ",
+        "materialise": "चयनात्मक सिंक\n+ मरम्मत देखें",
+        "merge": "प्रत्येक सीएल को मर्ज करें\nइसके पुनरीक्षण पर",
+        "resolve": "एकल\nस्वतः समाधान"
       },
-      "merged": "Merged cleanly",
-      "declined": "Declined files\nnamed",
-      "client": "Disposable client",
-      "clientSub": "optional · config-only sync",
-      "noSubmit": "nothing is submitted automatically — the engineer reviews and submits"
+      "merged": "साफ़-साफ़ मिला दिया गया",
+      "declined": "अस्वीकृत फ़ाइलें\nनामित",
+      "client": "डिस्पोजेबल ग्राहक",
+      "clientSub": "वैकल्पिक · केवल-कॉन्फिग सिंक",
+      "noSubmit": "कुछ भी स्वचालित रूप से सबमिट नहीं किया जाता है - इंजीनियर समीक्षा करता है और सबमिट करता है"
     }
   },
   "settings": {
     "chatbot": "Ask Ayush सेटिंग्स",
-    "menuLabel": "Site settings",
-    "openLabel": "Open site settings",
-    "language": "Language",
-    "theme": "Theme",
-    "shortcuts": "Keyboard shortcuts",
-    "commitRain": "Commit rain",
-    "commitRainHelp": "Which public GitHub commits feed the decorative rain.",
+    "menuLabel": "साइट सेटिंग",
+    "openLabel": "साइट सेटिंग खोलें",
+    "language": "भाषा",
+    "theme": "थीम",
+    "shortcuts": "कुंजीपटल अल्प मार्ग",
+    "commitRain": "कमिट रेन",
+    "commitRainHelp": "सजावटी कमिट रेन में कौन-से सार्वजनिक GitHub कमिट दिखाए जाएँ।",
     "commitRainWindows": {
-      "week": "This week",
-      "month": "This month",
-      "year": "This year",
-      "all": "All time"
+      "week": "इस सप्ताह",
+      "month": "इस महीने",
+      "year": "इस साल",
+      "all": "पूरे समय"
     }
   },
   "consent": {
-    "title": "Cookies & language",
-    "body": "I use a single cookie (<code>NEXT_LOCALE</code>) to remember the language you picked. No analytics cookies, no tracking pixels.",
-    "accept": "Got it",
-    "privacy": "Privacy policy",
-    "dismissAriaLabel": "Dismiss cookie notice"
+    "title": "कुकीज़ और भाषा",
+    "body": "आपके द्वारा चुनी गई भाषा को याद रखने के लिए मैं एक कुकी (<code>NEXT_LOCALE</code>) का उपयोग करता हूं। कोई एनालिटिक्स कुकीज़ नहीं, कोई ट्रैकिंग पिक्सेल नहीं।",
+    "accept": "समझ गया",
+    "privacy": "गोपनीयता नीति",
+    "dismissAriaLabel": "कुकी नोटिस खारिज करें"
   },
   "roadmap": {
-    "tag": "/ 2027 roadmap",
-    "heading": "Delivery timeline · 2027",
+    "tag": "/ 2027 रोडमैप",
+    "heading": "डिलिवरी समयरेखा · 2027",
     "planning": "plan",
-    "note": "Target quarters, not release commitments. Scope will evolve through learning, prototypes and validation.",
+    "note": "लक्ष्य तिमाहियाँ, प्रतिबद्धताएँ जारी नहीं करना। सीखने, प्रोटोटाइप और सत्यापन के माध्यम से दायरा विकसित होगा।",
     "status": {
-      "design": "Design",
-      "prototyping": "Prototyping",
-      "in-development": "In development"
+      "design": "डिज़ाइन",
+      "prototyping": "प्रोटोटाइप",
+      "in-development": "विकास में"
     }
   }
 }

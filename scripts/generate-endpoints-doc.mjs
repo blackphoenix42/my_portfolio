@@ -40,7 +40,7 @@ md += `
 | Path | Notes |
 | ---- | ----- |
 | ${code("/")} | Home |
-| ${code("/lab")} | Redirects to ${code("/competitive-programming")} (legacy) |
+| ${code("/lab")} | Redirects to ${code("/now")} (legacy) |
 | ${code("/humans.txt")} | Content-negotiated humans.txt |
 | ${code("/robots.txt")} | Always plain text |
 | ${code("/sitemap.xml")} | Sitemap |

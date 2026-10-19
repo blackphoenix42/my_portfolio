@@ -14,11 +14,20 @@ import {
   Sparkles,
   UploadCloud,
 } from "lucide-react";
-import { contactSchema, ROLES, type ContactInput } from "@/lib/validation";
+import {
+  contactSchema,
+  ROLES,
+  MESSAGE_MIN_LENGTH,
+  isContactMessageSatisfied,
+  type ContactInput,
+} from "@/lib/validation";
+import { isAudioAttachment } from "@/lib/contact-attachments";
 import { companyFromEmail } from "@/lib/company-from-email";
 import { EmailField } from "@/components/contact/email-field";
 import { PhoneField } from "@/components/contact/phone-field";
 import { AttachmentField, mergeAttachments } from "@/components/contact/attachment-field";
+import { MessageVoiceControls } from "@/components/contact/message-voice-controls";
+import { ContactToast } from "@/components/contact/contact-toast";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -32,7 +41,6 @@ const ROLE_KEYS: { value: ContactInput["role"]; key: string }[] = [
 ];
 
 const MESSAGE_MAX = 4000;
-const MESSAGE_MIN = 20;
 
 export function ContactForm() {
   const t = useTranslations("contact.form");
@@ -50,7 +58,9 @@ export function ContactForm() {
   const [files, setFiles] = useState<File[]>([]);
   const [pageDragActive, setPageDragActive] = useState(false);
   const [dropError, setDropError] = useState<string | null>(null);
+  const [voiceToast, setVoiceToast] = useState<string | null>(null);
   const otherRef = useRef<HTMLInputElement>(null);
+  const hadVoiceNoteRef = useRef(false);
 
   // Auto-fill the company from the email domain (e.g. jane@acme.com → "Acme"),
   // unless the visitor has already typed a company by hand. Free/personal
@@ -64,6 +74,27 @@ export function ContactForm() {
   useEffect(() => {
     if (role === "Other") otherRef.current?.focus();
   }, [role]);
+
+  // If a voice note is removed, a typed message is required again.
+  useEffect(() => {
+    const hasVoice = files.some(isAudioAttachment);
+    const removedVoice = hadVoiceNoteRef.current && !hasVoice;
+    hadVoiceNoteRef.current = hasVoice;
+
+    if (hasVoice || isContactMessageSatisfied(message, files)) {
+      setErrors((prev) => {
+        if (!prev.message) return prev;
+        const next = { ...prev };
+        delete next.message;
+        return next;
+      });
+      return;
+    }
+
+    if (removedVoice) {
+      setVoiceToast(t("voice.messageRequiredAgain"));
+    }
+  }, [files, message, t]);
 
   // Countdown for the rate-limit nudge.
   useEffect(() => {
@@ -128,13 +159,6 @@ export function ContactForm() {
     };
   }, [files, t]);
 
-  // Auto-clear the transient drop-error toast after a few seconds.
-  useEffect(() => {
-    if (!dropError) return;
-    const id = setTimeout(() => setDropError(null), 5000);
-    return () => clearTimeout(id);
-  }, [dropError]);
-
   function localizeErrorCode(code: string) {
     const path = `errors.${code}` as never;
     return t.has(path) ? t(path) : code;
@@ -177,6 +201,12 @@ export function ContactForm() {
         if (!fieldErrors[key]) fieldErrors[key] = localizeErrorCode(issue.message);
       }
       setErrors(fieldErrors);
+      setStatus("error");
+      return;
+    }
+
+    if (!isContactMessageSatisfied(parsed.data.message, files)) {
+      setErrors({ message: localizeErrorCode("messageShort") });
       setStatus("error");
       return;
     }
@@ -256,9 +286,10 @@ export function ContactForm() {
     );
   }
 
+  const hasVoiceNote = files.some(isAudioAttachment);
   const messageCount = message.length;
   const messageOver = messageCount > MESSAGE_MAX;
-  const messageUnder = messageCount > 0 && messageCount < MESSAGE_MIN;
+  const messageUnder = !hasVoiceNote && messageCount > 0 && messageCount < MESSAGE_MIN_LENGTH;
 
   return (
     <>
@@ -276,14 +307,12 @@ export function ContactForm() {
           </div>
         </div>
       )}
-      {dropError && (
-        <div
-          role="alert"
-          className="border-accent-amber/40 bg-accent-amber/10 text-accent-amber fixed bottom-6 left-1/2 z-60 -translate-x-1/2 rounded-md border px-4 py-2 text-sm shadow-lg"
-        >
-          {dropError}
-        </div>
-      )}
+      <ContactToast message={dropError} tone="warn" onDismiss={() => setDropError(null)} />
+      <ContactToast
+        message={voiceToast}
+        lift={Boolean(dropError)}
+        onDismiss={() => setVoiceToast(null)}
+      />
       <form
         onSubmit={onSubmit}
         noValidate
@@ -416,7 +445,8 @@ export function ContactForm() {
                 htmlFor="message"
                 className="text-fg-subtle font-mono text-[11px] tracking-widest uppercase"
               >
-                {t("message")} <span className="text-accent-cyan">*</span>
+                {t("message")}
+                {!hasVoiceNote && <span className="text-accent-cyan"> *</span>}
               </label>
               <span
                 className={
@@ -428,21 +458,60 @@ export function ContactForm() {
                 {messageCount}/{MESSAGE_MAX}
               </span>
             </div>
-            <div className="relative">
-              <MessageSquare className="text-fg-subtle pointer-events-none absolute top-3 left-3 h-4 w-4" />
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                required
-                minLength={MESSAGE_MIN}
-                maxLength={MESSAGE_MAX}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder={t("messagePlaceholderShort")}
-                className="contact-input border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full resize-y rounded-md border py-2.5 pr-3 pl-10 text-sm transition-colors outline-none focus:ring-2"
-              />
-            </div>
+            <MessageVoiceControls
+              message={message}
+              onMessageChange={setMessage}
+              onAddRecording={(file) => {
+                const { files: next, error } = mergeAttachments(files, [file]);
+                setFiles(next);
+                if (error?.code === "tooMany") {
+                  setDropError(t("attachments.tooMany", { max: error.max }));
+                } else if (error?.code === "tooLarge") {
+                  setDropError(t("attachments.tooLarge", { maxMb: error.maxMb }));
+                } else if (error?.code === "unsupported") {
+                  setDropError(t("attachments.unsupported", { filename: error.filename }));
+                } else {
+                  setDropError(null);
+                }
+              }}
+              disabled={status === "submitting"}
+            >
+              {({ dictateControl, dictating, displayValue }) => (
+                <div className="relative">
+                  <MessageSquare className="text-fg-subtle pointer-events-none absolute top-3 left-3 h-4 w-4" />
+                  {dictating && (
+                    <Loader2
+                      className="text-accent-cyan pointer-events-none absolute top-3 right-3 h-4 w-4 animate-spin"
+                      aria-hidden
+                    />
+                  )}
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    required={!hasVoiceNote}
+                    minLength={hasVoiceNote ? undefined : MESSAGE_MIN_LENGTH}
+                    maxLength={MESSAGE_MAX}
+                    value={displayValue}
+                    readOnly={dictating}
+                    aria-readonly={dictating || undefined}
+                    aria-busy={dictating || undefined}
+                    onChange={(e) => {
+                      if (dictating) return;
+                      setMessage(e.target.value);
+                    }}
+                    placeholder={
+                      dictating ? t("voice.transcribingPlaceholder") : t("messagePlaceholderShort")
+                    }
+                    className={
+                      "contact-input border-border bg-bg-elev/60 placeholder:text-fg-subtle/60 focus:border-accent-cyan/60 focus:bg-bg-elev focus:ring-accent-cyan/20 w-full resize-y rounded-md border py-2.5 pr-12 pb-12 pl-10 text-sm transition-colors outline-none focus:ring-2" +
+                      (dictating ? " cursor-not-allowed opacity-90" : "")
+                    }
+                  />
+                  {dictateControl}
+                </div>
+              )}
+            </MessageVoiceControls>
             <FieldError message={errors.message ?? ""} />
           </div>
 

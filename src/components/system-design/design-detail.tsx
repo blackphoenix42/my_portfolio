@@ -7,7 +7,12 @@ export async function DesignDetail({ slug }: { slug: string }) {
   const t = await getTranslations("systemDesign");
   const item = getSystemDesign(slug)!;
   const notes = systemDesignNotes[slug]!;
-  const text = (key: string) => t(`systems.${slug}.${key}` as never);
+  // LLD blobs contain `{…}` that ICU would treat as message args — use raw strings.
+  const text = (key: string) => {
+    const path = `systems.${slug}.${key}` as never;
+    if (key.startsWith("lld.")) return String(t.raw(path) ?? "");
+    return t(path);
+  };
 
   return (
     <div className="mt-10 space-y-12">

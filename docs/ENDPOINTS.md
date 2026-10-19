@@ -7,43 +7,42 @@ Source of truth for redirects: `src/lib/route-aliases.mjs` (wired in
 `next.config.mjs`). Locale prefixes are never used
 (`localePrefix: "never"`).
 
-Generated: 2026-10-09 · **565** redirect rules.
+Generated: 2026-10-14 · **566** redirect rules.
 
 ---
 
 ## Canonical pages
 
-| Canonical                  | Alternates (redirect here)                                                                                                                       |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `/about`                   | `/me`, `/bio`, `/profile`, `/about-me`, `/aboutme`                                                                                               |
-| `/work`                    | `/projects`, `/project`, `/portfolio`, `/case-studies`, `/casestudies`, `/works`                                                                 |
-| `/skills`                  | `/skill`, `/stack`, `/tech`, `/technology`, `/technologies`, `/arsenal`                                                                          |
-| `/experience`              | `/exp`, `/career`, `/jobs`, `/timeline`, `/work-history`, `/workhistory`                                                                         |
-| `/now`                     | `/currently`, `/atm`, `/today`, `/status`, `/doing`                                                                                              |
-| `/competitive-programming` | `/cp`, `/competitive`, `/coding`, `/leetcode`, `/codeforces`, `/practice`, `/plans`, `/practice-and-plans`, `/practiceandplans`, `/craft`        |
-| `/system-design`           | `/sysdesign`, `/systemdesign`, `/system_design`, `/sys-design`, `/sys_design`, `/sd`, `/design`, `/architecture`, `/hld`, `/lld`, `/whiteboards` |
-| `/feeds`                   | `/feed`, `/rss`, `/atom`, `/activity`, `/updates`, `/blog-feed`                                                                                  |
-| `/contact`                 | `/hire`, `/email`, `/reach`, `/get-in-touch`, `/getintouch`, `/connect`                                                                          |
-| `/privacy`                 | `/policy`, `/privacy-policy`, `/privacypolicy`, `/legal`                                                                                         |
-| `/secret`                  | `/secrets`, `/trophy`, `/trophies`, `/easter-eggs`, `/eastereggs`                                                                                |
-| `/credits`                 | `/credit`, `/thanks`, `/acknowledgements`, `/acknowledgments`                                                                                    |
-| `/phoenix`                 | `/bird`, `/mascot`                                                                                                                               |
+| Canonical        | Alternates (redirect here)                                                                                                                                                                                                 |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/about`         | `/me`, `/bio`, `/profile`, `/about-me`, `/aboutme`                                                                                                                                                                         |
+| `/work`          | `/projects`, `/project`, `/portfolio`, `/case-studies`, `/casestudies`, `/works`                                                                                                                                           |
+| `/skills`        | `/skill`, `/stack`, `/tech`, `/technology`, `/technologies`, `/arsenal`                                                                                                                                                    |
+| `/experience`    | `/exp`, `/career`, `/jobs`, `/timeline`, `/work-history`, `/workhistory`                                                                                                                                                   |
+| `/now`           | `/currently`, `/atm`, `/today`, `/status`, `/doing`, `/competitive-programming`, `/cp`, `/competitive`, `/coding`, `/leetcode`, `/codeforces`, `/practice`, `/plans`, `/practice-and-plans`, `/practiceandplans`, `/craft` |
+| `/system-design` | `/sysdesign`, `/systemdesign`, `/system_design`, `/sys-design`, `/sys_design`, `/sd`, `/design`, `/architecture`, `/hld`, `/lld`, `/whiteboards`                                                                           |
+| `/feeds`         | `/feed`, `/rss`, `/atom`, `/activity`, `/updates`, `/blog-feed`                                                                                                                                                            |
+| `/contact`       | `/hire`, `/email`, `/reach`, `/get-in-touch`, `/getintouch`, `/connect`                                                                                                                                                    |
+| `/privacy`       | `/policy`, `/privacy-policy`, `/privacypolicy`, `/legal`                                                                                                                                                                   |
+| `/secret`        | `/secrets`, `/trophy`, `/trophies`, `/easter-eggs`, `/eastereggs`                                                                                                                                                          |
+| `/credits`       | `/credit`, `/thanks`, `/acknowledgements`, `/acknowledgments`                                                                                                                                                              |
+| `/phoenix`       | `/bird`, `/mascot`                                                                                                                                                                                                         |
 
 ### Also canonical (few or no public aliases)
 
-| Path                 | Notes                                            |
-| -------------------- | ------------------------------------------------ |
-| `/`                  | Home                                             |
-| `/lab`               | Redirects to `/competitive-programming` (legacy) |
-| `/humans.txt`        | Content-negotiated humans.txt                    |
-| `/robots.txt`        | Always plain text                                |
-| `/sitemap.xml`       | Sitemap                                          |
-| `/feeds/medium.xml`  | Same-origin Medium RSS proxy                     |
-| `/feeds/youtube.xml` | Same-origin YouTube Atom proxy                   |
-| `/feeds/github.atom` | Same-origin GitHub Atom proxy                    |
-| `/api/contact`       | Contact form POST                                |
-| `/api/chat`          | Ask Ayush server stream (off unless enabled)     |
-| `/api/commits`       | Commit-rain messages by time window              |
+| Path                 | Notes                                        |
+| -------------------- | -------------------------------------------- |
+| `/`                  | Home                                         |
+| `/lab`               | Redirects to `/now` (legacy)                 |
+| `/humans.txt`        | Content-negotiated humans.txt                |
+| `/robots.txt`        | Always plain text                            |
+| `/sitemap.xml`       | Sitemap                                      |
+| `/feeds/medium.xml`  | Same-origin Medium RSS proxy                 |
+| `/feeds/youtube.xml` | Same-origin YouTube Atom proxy               |
+| `/feeds/github.atom` | Same-origin GitHub Atom proxy                |
+| `/api/contact`       | Contact form POST                            |
+| `/api/chat`          | Ask Ayush server stream (off unless enabled) |
+| `/api/commits`       | Commit-rain messages by time window          |
 
 ---
 
@@ -103,16 +102,17 @@ Alternates also work under page aliases (e.g. `/sysdesign/shortener` →
 | `/today`                                  | `/now`                                    |
 | `/status`                                 | `/now`                                    |
 | `/doing`                                  | `/now`                                    |
-| `/cp`                                     | `/competitive-programming`                |
-| `/competitive`                            | `/competitive-programming`                |
-| `/coding`                                 | `/competitive-programming`                |
-| `/leetcode`                               | `/competitive-programming`                |
-| `/codeforces`                             | `/competitive-programming`                |
-| `/practice`                               | `/competitive-programming`                |
-| `/plans`                                  | `/competitive-programming`                |
-| `/practice-and-plans`                     | `/competitive-programming`                |
-| `/practiceandplans`                       | `/competitive-programming`                |
-| `/craft`                                  | `/competitive-programming`                |
+| `/competitive-programming`                | `/now`                                    |
+| `/cp`                                     | `/now`                                    |
+| `/competitive`                            | `/now`                                    |
+| `/coding`                                 | `/now`                                    |
+| `/leetcode`                               | `/now`                                    |
+| `/codeforces`                             | `/now`                                    |
+| `/practice`                               | `/now`                                    |
+| `/plans`                                  | `/now`                                    |
+| `/practice-and-plans`                     | `/now`                                    |
+| `/practiceandplans`                       | `/now`                                    |
+| `/craft`                                  | `/now`                                    |
 | `/sysdesign`                              | `/system-design`                          |
 | `/systemdesign`                           | `/system-design`                          |
 | `/system_design`                          | `/system-design`                          |

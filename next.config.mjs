@@ -28,7 +28,10 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://avatars.githubusercontent.com https://raw.githubusercontent.com https://logo.clearbit.com https://www.google.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://huggingface.co https://*.huggingface.co https://*.hf.co https://raw.githubusercontent.com",
+  // Google hosts: Chrome/Edge Web Speech (dictate) streams audio to Google’s
+  // recognition service — without these, recognition fails with a network error
+  // and no transcript appears.
+  "connect-src 'self' https://huggingface.co https://*.huggingface.co https://*.hf.co https://raw.githubusercontent.com https://www.google.com https://*.google.com https://*.googleapis.com https://www.gstatic.com https://*.gstatic.com wss://www.google.com wss://*.google.com",
   "frame-src 'self'",
   "object-src 'self'",
   "base-uri 'self'",
@@ -65,9 +68,11 @@ const nextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           {
+            // microphone=(self) — contact form dictation + voice notes need getUserMedia.
+            // camera/geo stay disabled. Empty microphone=() blocks the prompt entirely.
             key: "Permissions-Policy",
             value:
-              "camera=(), microphone=(), geolocation=(), interest-cohort=(), browsing-topics=()",
+              "camera=(), microphone=(self), geolocation=(), interest-cohort=(), browsing-topics=()",
           },
           {
             key: "Strict-Transport-Security",

@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work",
     "/experience",
     "/skills",
-    "/competitive-programming",
     "/system-design",
     "/now",
     "/feeds",

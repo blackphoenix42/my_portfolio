@@ -44,6 +44,14 @@ describe("mergeAttachments", () => {
     expect(error).toBeUndefined();
   });
 
+  it("accepts voice-note audio (webm / m4a)", () => {
+    const webm = new File(["xxxx"], "voice-message.webm", { type: "audio/webm" });
+    const m4a = new File(["xxxx"], "voice-message.m4a", { type: "audio/mp4" });
+    expect(mergeAttachments([], [webm]).error).toBeUndefined();
+    expect(mergeAttachments([], [webm]).files).toHaveLength(1);
+    expect(mergeAttachments([], [m4a]).files).toHaveLength(1);
+  });
+
   it("rejects when count exceeds MAX_ATTACHMENTS (5)", () => {
     const existing = Array.from({ length: 5 }, (_, i) => makeFile(`f${i}.pdf`));
     const incoming = [makeFile("extra.pdf")];

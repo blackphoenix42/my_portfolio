@@ -35,12 +35,12 @@
     "demo": "デモ",
     "year": "年",
     "present": "現在",
-    "back": "Back",
-    "privacy": "Privacy"
+    "back": "戻る",
+    "privacy": "プライバシー"
   },
   "nav": {
     "home": "ホーム",
-    "about": "About",
+    "about": "について",
     "work": "作品",
     "skills": "スキル",
     "experience": "経歴",
@@ -73,15 +73,15 @@
     "builtWith": "使用技術",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",
     "copyright": "© {year} {name}",
-    "tagline": "Engineering intelligence into performance-critical systems.",
-    "stackAriaLabel": "Technologies this site is built with"
+    "tagline": "インテリジェンスをエンジニアリングしてパフォーマンスが重要なシステムに組み込む。",
+    "stackAriaLabel": "このサイトが構築されているテクノロジー"
   },
   "language": {
     "label": "言語",
     "switch": "言語を切り替え",
     "current": "現在の言語: {name}",
     "names": {
-      "en": "English",
+      "en": "英語",
       "hi": "हिन्दी",
       "ja": "日本語",
       "sa": "संस्कृतम्",
@@ -118,9 +118,9 @@
     "email": "メール",
     "contact": "お問い合わせ",
     "exitAria": "リクルータービューを終了",
-    "modeOn": "Recruiter mode · ON",
-    "summary": "{role} · {location} · Open to software engineering roles in C++ systems, performance engineering & AI tooling.",
-    "impact": "Building performance-critical developer infrastructure with production impact across Apple, Google, Samsung & NVIDIA workloads.",
+    "modeOn": "リクルーターモード・ON",
+    "summary": "{role} · {location} · C++ システム、パフォーマンス エンジニアリング、AI ツールにおけるソフトウェア エンジニアリングの役割を歓迎します。",
+    "impact": "Apple、Google、Samsung、NVIDIA のワークロード全体で本番環境に影響を与える、パフォーマンスが重要な開発者インフラストラクチャを構築します。",
     "github": "GitHub"
   },
   "scroll": {
@@ -150,21 +150,21 @@
     "footerHintKeys": "キー",
     "items": {
       "home": "ホーム",
-      "about": "About",
+      "about": "について",
       "workNav": "作品",
       "skills": "スキル",
       "experience": "経歴",
       "roadmap": "ロードマップ",
       "contact": "お問い合わせ",
       "systemDesign": "システム設計",
-      "now": "Now",
-      "cp": "Now · CP & Roadmap"
+      "now": "今",
+      "cp": "現在・CPとロードマップ"
     },
     "openTerminal": "ターミナルモードを開く",
     "openMatrix": "マトリックスを開く",
     "openSecret": "秘密の部屋を開く",
     "openCommitRain": "コミットの雨",
-    "askPortfolio": "Ask Ayush"
+    "askPortfolio": "アユシュに聞く"
   },
   "mobileActionBar": {
     "contact": "お問い合わせ",
@@ -197,13 +197,13 @@
         "out": "検証済み修正"
       }
     },
-    "headline": "I build <strong>faster systems</strong> and <strong>AI tools that help engineers ship</strong>.",
-    "subhead": "R&D Software Engineer II at Cadence. 4.5+ years building high-performance C++, Python automation and reliable AI workflows — from Xcelium and RTL optimization to developer infrastructure.",
+    "headline": "私は<strong>より高速なシステム</strong>と<strong>エンジニアの出荷を支援する AI ツール</strong>を構築しています。",
+    "subhead": "Cadence の R&D ソフトウェア エンジニア II。 Xcelium や RTL の最適化から開発者インフラストラクチャに至るまで、高性能 C++、Python 自動化、信頼性の高い AI ワークフローを 4 年以上構築してきました。",
     "taglines": {
-      "0": "Performance-critical C++ × distributed systems × agentic AI.",
-      "1": "Production wins on Apple, Google, Samsung and NVIDIA workloads.",
-      "2": "From low-level profiling to AI-assisted developer tooling at scale.",
-      "3": "Owning problems end-to-end — measure, design, ship, operate."
+      "0": "パフォーマンス重視の C++ × 分散システム × エージェント AI。",
+      "1": "Apple、Google、Samsung、NVIDIA のワークロードでは本番環境が有利です。",
+      "2": "低レベルのプロファイリングから、AI 支援による大規模な開発者ツールまで。",
+      "3": "問題をエンドツーエンドで解決する — 測定、設計、出荷、運用。"
     }
   },
   "home": {
@@ -212,35 +212,35 @@
     "metaTitle": "{name} | パフォーマンスエンジニア、エージェント AI & R&D ソフトウェアエンジニア"
   },
   "aboutSection": {
-    "eyebrow": "/ about",
+    "eyebrow": "/ について",
     "heading": "簡単な自己紹介",
     "getInTouch": "お問い合わせ",
-    "bio1": "I’m <strong>{name}</strong>, an R&D Software Engineer II with <strong>4.5+ years of experience</strong> in C++, Python and AI-driven automation. At {company}, I work on Xcelium and large-scale RTL optimization for Apple, Google, Samsung and NVIDIA workloads.",
-    "bio2": "My work connects low-level systems performance with engineering productivity: profiling simulators, building multi-agent assistive tooling (including trade-secret work such as MAESTRO), and automating regression and release workflows. I enjoy problems at the intersection of software, performance and hardware.",
-    "principlesEyebrow": "How I build reliable systems",
+    "bio1": "私は R&D ソフトウェア エンジニア II の <strong>{name}</strong> で、C++、Python、AI 主導の自動化において<strong> 4.5 年以上の経験</strong> があります。 {company} では、Xcelium と、Apple、Google、Samsung、NVIDIA ワークロード向けの大規模な RTL 最適化に取り組んでいます。",
+    "bio2": "私の仕事は、シミュレーターのプロファイリング、マルチエージェント支援ツールの構築 (MAESTRO などの企業秘密作業を含む)、リグレッションとリリースのワークフローの自動化など、低レベルのシステム パフォーマンスとエンジニアリングの生産性を結びつけています。私はソフトウェア、パフォーマンス、ハードウェアが交差する問題を楽しんでいます。",
+    "principlesEyebrow": "信頼性の高いシステムを構築する方法",
     "principles": {
       "profile": {
-        "title": "Measure before optimizing.",
-        "body": "Use profiles, reproducible benchmarks and workload-specific evidence."
+        "title": "最適化する前に測定してください。",
+        "body": "プロファイル、再現可能なベンチマーク、ワークロード固有の証拠を使用します。"
       },
       "gap": {
-        "title": "Make the routine deterministic.",
-        "body": "Use explicit pipelines for repeatable work and AI where reasoning adds value."
+        "title": "ルーチンを決定的なものにします。",
+        "body": "反復可能な作業と推論により価値が付加される AI には明示的なパイプラインを使用します。"
       },
       "trust": {
-        "title": "Keep people in control.",
-        "body": "Design review gates, structured outputs, checkpoints and recovery into agent workflows."
+        "title": "人々をコントロールしてください。",
+        "body": "レビューゲート、構造化された出力、チェックポイント、およびエージェントワークフローへのリカバリを設計します。"
       },
       "performance": {
-        "title": "Verify the whole change.",
-        "body": "Check correctness, performance and regression behavior before calling an optimization done."
+        "title": "変更全体を確認します。",
+        "body": "最適化の完了を呼び出す前に、正確性、パフォーマンス、および回帰動作をチェックしてください。"
       }
     }
   },
   "about": {
-    "title": "About",
+    "title": "について",
     "description": "背景、哲学、そして取り組んでいること。",
-    "heading": "About",
+    "heading": "について",
     "subheading": "システム性能と応用 AI の交差点にいるエンジニア。",
     "beyondHeading": "コードを超えて",
     "beyondSubheading": "技術を磨き、還元する活動。",
@@ -270,7 +270,7 @@
     "cpBody": "CodeChef (6★)、Codeforces Master、LeetCode Knight、HackerRank 6★ で活動中。",
     "viewProfiles": "プロフィールを見る",
     "tag": "/ About",
-    "pageTitle": "About",
+    "pageTitle": "について",
     "beyondTag": "/ コードを超えて",
     "beyondAriaLabel": "コードを超えた活動",
     "beyondTitle": "コードを超えて",
@@ -297,12 +297,12 @@
     "certCategories": {
       "cloud": "クラウド",
       "codechef": "CodeChef",
-      "hackerrank": "HackerRank",
+      "hackerrank": "ハッカーランク",
       "forage": "Forage",
       "niit": "NIIT",
       "udemy": "Udemy"
     },
-    "honorsIntro": "Recognition for performance work contributing to a multi-million dollar Samsung deal, proprietary AI engineering IP, conference contributions and earlier grants and competition wins."
+    "honorsIntro": "数百万ドルのサムスンとの契約、独自の AI エンジニアリング IP、カンファレンスへの貢献、以前の助成金やコンペティションの勝利に貢献した業績が評価されました。"
   },
   "work": {
     "title": "作品",
@@ -345,7 +345,7 @@
     "linksHeading": "リンク",
     "relatedHeading": "関連作品",
     "demoSubtitle": {
-      "maestro": "Interactive workflow walkthrough omitted — MAESTRO is trade-secret protected.",
+      "maestro": "インタラクティブなワークフローのチュートリアルは省略 — MAESTRO は企業秘密で保護されています。",
       "algolens": "AlgoLens 実行モデルのミニ可視化。",
       "xcelium-optimization": "スライダーをドラッグして RTL/ランタイム最適化でプロファイルが縮むのを確認。",
       "tezos-premier-league": "再生をクリックして決定論的なオンチェーン PvP ブラケットをシミュレート。",
@@ -385,8 +385,8 @@
     "internshipsAria": "インターンシップ・フェローシップのタイムライン",
     "educationHeading": "学歴",
     "score": "スコア:",
-    "present": "Present",
-    "previousRole": "Previous role at Cadence"
+    "present": "現在",
+    "previousRole": "Cadence での前職"
   },
   "competitiveProgramming": {
     "title": "競技プログラミング",
@@ -406,24 +406,24 @@
     "roadmapAria": "エンジニアリングロードマップ",
     "roadmapTag": "/ ロードマップ",
     "roadmapHeading": "次に構築するもの",
-    "pageTitle": "Now · CP & Roadmap",
-    "pageDescription": "Competitive programming, current engineering focus and an incremental plan for the 2027 roadmap.",
-    "craftTag": "/ now",
-    "pageHeading": "What I’m doing now.",
+    "pageTitle": "現在・CPとロードマップ",
+    "pageDescription": "競技プログラミング、現在のエンジニアリングの焦点、および 2027 年のロードマップに向けた増分計画。",
+    "craftTag": "/ 今",
+    "pageHeading": "今私がやっていること。",
     "pageIntro": "Competitive programming, current focus, and the learning and small releases that shape my next systems.",
     "roadmapIntro": "2027 targets for the next set of systems. The approach is incremental: learn the core concepts, build a narrow working slice, then validate it before expanding.",
     "approach": {
       "learn": {
-        "title": "Learn with a concrete problem",
-        "body": "Study queues and backpressure for InfraLens, OpenTelemetry and storage for TraceMind, and graph algorithms and WebAssembly for SiliconGraph. Use focused exercises to test each idea."
+        "title": "具体的な問題で学ぶ",
+        "body": "InfraLens のキューとバックプレッシャー、TraceMind の OpenTelemetry とストレージ、SiliconGraph のグラフ アルゴリズムと WebAssembly を研究します。集中的な演習を使用して、各アイデアをテストします。"
       },
       "build": {
-        "title": "Ship a small working slice",
-        "body": "Start with one traffic path, one trace investigation or one RTL graph. Add capabilities incrementally, keeping each step inspectable and useful on its own."
+        "title": "小さな作業スライスを出荷する",
+        "body": "1 つのトラフィック パス、1 つのトレース調査、または 1 つの RTL グラフから始めます。機能を段階的に追加し、各ステップを検査可能にして単独で有用な状態に保ちます。"
       },
       "validate": {
-        "title": "Measure, test and iterate",
-        "body": "Create repeatable fixtures, check failure behavior, compare performance and write down trade-offs. Use Q4 2027 for integration, documentation and feedback after the initial targets."
+        "title": "測定、テスト、反復",
+        "body": "再現可能なフィクスチャを作成し、障害動作をチェックし、パフォーマンスを比較して、トレードオフを書き留めます。初期目標達成後の統合、文書化、フィードバックには 2027 年第 4 四半期を使用します。"
       }
     }
   },
@@ -485,39 +485,70 @@
       "formNote": "レート制限とサーバー検証で保護されています。",
       "networkError": "ネットワークエラー。再試行するか、直接メールしてください。",
       "genericServerError": "問題が発生しました。直接メールでご連絡ください。",
-      "otherRoleLabel": "Specify your role",
-      "otherRolePlaceholder": "e.g. Investor, Journalist, Conference organizer…",
-      "emailHint": "Tip: start typing a domain and press <kbd>Tab</kbd> to autocomplete.",
+      "otherRoleLabel": "自分の役割を指定する",
+      "otherRolePlaceholder": "例えば投資家、ジャーナリスト、カンファレンスの主催者…",
+      "emailHint": "ヒント: ドメインの入力を開始し、<kbd>Tab</kbd> を押してオートコンプリートします。",
       "errors": {
-        "nameShort": "Name is too short.",
-        "nameLong": "Name is too long.",
-        "emailInvalid": "Please enter a valid email address.",
-        "emailLong": "Email is too long.",
-        "companyLong": "Company is too long.",
-        "roleInvalid": "Pick one of the listed roles.",
-        "subjectShort": "Subject is too short.",
-        "subjectLong": "Subject is too long.",
-        "messageShort": "Please write at least 20 characters.",
-        "messageLong": "Please shorten your message.",
-        "otherRoleRequired": "Please specify your role.",
-        "otherRoleLong": "Role description is too long.",
-        "phoneInvalid": "Please enter a valid phone number.",
-        "phoneLong": "Phone number is too long."
+        "nameShort": "名前が短すぎます。",
+        "nameLong": "名前が長すぎます。",
+        "emailInvalid": "有効なメールアドレスを入力してください。",
+        "emailLong": "メールが長すぎます。",
+        "companyLong": "会社が長すぎる。",
+        "roleInvalid": "リストされた役割のいずれかを選択します。",
+        "subjectShort": "件名が短すぎます。",
+        "subjectLong": "件名が長すぎます。",
+        "messageShort": "20文字以上入力するか、ボイスメモを添付してください。",
+        "messageLong": "メッセージを短くしてください。",
+        "otherRoleRequired": "あなたの役割を指定してください。",
+        "otherRoleLong": "役割の説明が長すぎます。",
+        "phoneInvalid": "有効な電話番号を入力してください。",
+        "phoneLong": "電話番号が長すぎます。"
       },
       "attachments": {
-        "label": "Attachments",
-        "dropPrompt": "Drag and drop, or <browse>click to browse</browse>",
-        "dropOverlayTitle": "Drop files to attach",
+        "label": "添付ファイル",
+        "dropPrompt": "ドラッグ アンド ドロップ、または<browse>クリックして参照</browse>",
+        "dropOverlayTitle": "ファイルをドロップして添付する",
         "hint": "Up to {maxFiles} files, {maxMb} MB total. PDF, images, DOCX, TXT, or MD.",
-        "remove": "Remove {filename}",
-        "tooMany": "You can attach up to {max} files.",
-        "tooLarge": "Total attachment size must be under {maxMb} MB.",
-        "unsupported": "“{filename}” isn’t a supported type.",
+        "remove": "{filename} を削除",
+        "tooMany": "最大 {max} ファイルを添付できます。",
+        "tooLarge": "添付ファイルの合計サイズは {maxMb} MB 未満である必要があります。",
+        "unsupported": "「{filename}」はサポートされているタイプではありません。",
         "totalSize": "{used} / {max} MB"
       },
       "rateLimit": {
-        "title": "Slow down a bit",
-        "body": "You’ve sent {limit} messages in the last minute. Please retry in {seconds} second{plural}."
+        "title": "少しゆっくりしてください",
+        "body": "過去 1 分間に {limit} 件のメッセージを送信しました。 {seconds} 秒{plural} 後に再試行してください。"
+      },
+      "voice": {
+        "dictateOn": "音声入力を開始",
+        "dictateOff": "音声入力を停止",
+        "dictateOnAria": "メッセージへ音声入力するためにマイクをオンにする",
+        "dictateOffAria": "マイクをオフにして文字起こしを残す",
+        "transcribing": "文字起こし中… {time}",
+        "transcribingPlaceholder": "聞き取り中 — 話すとここに文字が表示されます…",
+        "cancelDictate": "キャンセル",
+        "record": "ボイスメモを録音",
+        "stopRecording": "停止 · {time}",
+        "requestingMic": "マイクの許可をリクエストしています…",
+        "preparingSpeech": "音声認識を準備しています…",
+        "installingSpeechPackTitle": "このブラウザにオフライン音声パックがありません",
+        "installingSpeechPack": "このブラウザ用の音声モデルをダウンロードしています。通常は数十MBの一度きりで、完了後は端末上で音声入力できます。",
+        "installingSpeechPackHint": "キャンセルして待つのをやめ、入力するかボイスメモを録音できます。ブラウザはバックグラウンドでダウンロードを続ける場合があります。",
+        "cancelSpeechPack": "キャンセル",
+        "speechPackCancelled": "キャンセルしました。メッセージを入力するか、ボイスメモを録音してください。",
+        "unavailable": "このブラウザでは音声入力を利用できません — 代わりにメッセージを入力してください。",
+        "speechUnsupported": "ここでは音声入力に対応していません。Chrome または Edge を使うか、メッセージを入力してください。",
+        "recordUnsupported": "このブラウザでは音声録音に対応していません。",
+        "micDenied": "マイクの許可が拒否されました。アドレスバーの鍵アイコン → サイトの設定 → マイク → 許可、のあと再試行してください。",
+        "micInsecure": "マイクには安全なページ（https:// または http://localhost）が必要です。LAN の平文 HTTP ではなく localhost で開いてください。",
+        "micNotFound": "マイクが見つかりませんでした。接続するか Windows のサウンド設定を確認してから再試行してください。",
+        "micPolicy": "このページのセキュリティヘッダーがマイクを遮断していました。更新後に再読み込みするか、強制再読み込み（Ctrl+Shift+R）してください。",
+        "noSpeech": "音声が検出されませんでした — マイクに少し近づいて再試行してください。",
+        "speechNetwork": "このネットワークでは音声サービスに接続できませんでした。音声を送るには「ボイスメモを録音」を使うか、メッセージを入力してください。Chrome のオフライン音声パックがインストール済みなら利用できます。",
+        "speechError": "音声入力が予期せず停止しました。手入力で編集するか、ボイスメモを録音してください。",
+        "recordTooShort": "録音が短すぎて添付できませんでした。",
+        "recordAttached": "ボイスメモを添付に追加しました。文字メッセージは任意です。",
+        "messageRequiredAgain": "ボイスメモを削除しました — メッセージを書いてください（20文字以上）。"
       }
     }
   },
@@ -527,7 +558,7 @@
     "subheading": "パフォーマンスエンジニアリング、AI インフラ、開発者ツール、EDA、バックエンド、影響力のあるソフトウェアロールについてオープンです。",
     "cta": "会話を始める",
     "downloadResume": "履歴書をダウンロード",
-    "linkedinHandle": "/in/ayushyadav",
+    "linkedinHandle": "/in/アユシャダフ",
     "githubHandle": "@blackphoenix42",
     "resumeValue": "PDF"
   },
@@ -585,9 +616,9 @@
     "viewSystemDesign": "システム設計を見る"
   },
   "now": {
-    "pageTitle": "Now",
+    "pageTitle": "今",
     "pageDescription": "Ayush Yadav が今取り組んでいること — 現在の仕事、学習、開発、読書。",
-    "tag": "/ now",
+    "tag": "/ 今",
     "pageHeading": "いま取り組んでいること",
     "pageIntro": "いま関心を向けている対象のスナップショット — 集中しているプロジェクト、アイデア、習慣。Derek Sivers の /now ムーブメントに着想を得ています。",
     "updatedLabel": "最終更新 {date}",
@@ -611,7 +642,7 @@
         "2": "本番規模のベクトルデータベースと埋め込みパイプライン。"
       },
       "building": {
-        "0": "This portfolio — system-design whiteboards and Ask Ayush with independent conversations and optional on-device AI.",
+        "0": "このポートフォリオは、システム設計のホワイトボードと、独立した会話とオプションのオンデバイス AI を備えた Ask Ayush です。",
         "1": "AlgoLens — インタラクティブな DSA ビジュアライザー (オープンソース)。"
       },
       "reading": {
@@ -690,8 +721,8 @@
           "1": "Redirect short → long with very low latency.",
           "2": "Handle a very high read:write ratio (reads ≫ writes).",
           "3": "Optional analytics, expiry and custom aliases.",
-          "4": "Async click analytics that never adds latency to redirects; at-least-once event delivery.",
-          "5": "Abuse controls: destination allowlist/HTTPS, rate limits on create, malware URL denylist hooks."
+          "4": "リダイレクトに遅延を追加しない非同期クリック分析。少なくとも 1 回のイベント配信。",
+          "5": "悪用制御: 宛先許可リスト/HTTPS、作成時のレート制限、マルウェア URL 拒否リスト フック。"
         },
         "components": {
           "0": {
@@ -715,28 +746,28 @@
             "role": "Caches redirects close to users."
           },
           "5": {
-            "name": "ID allocator",
-            "role": "Snowflake/range-reserved counters → Base62; avoids central hot lock per request."
+            "name": "ID アロケータ",
+            "role": "スノーフレーク/範囲予約カウンター → Base62;リクエストごとに中央のホットロックを回避します。"
           },
           "6": {
-            "name": "Redis cache",
-            "role": "code → destination (+ expiry); TTL ≤ link expiry; negative-cache 404 briefly."
+            "name": "Redisキャッシュ",
+            "role": "コード → 宛先 (+ 有効期限); TTL ≤ リンクの有効期限。ネガティブキャッシュ 404 を一時的に削除します。"
           },
           "7": {
-            "name": "Links DB",
-            "role": "Sharded primary for mappings; unique(code), unique(alias) where present."
+            "name": "リンクDB",
+            "role": "マッピング用のシャードプライマリ。 unique(code)、unique(alias) が存在する場合。"
           },
           "8": {
-            "name": "Analytics bus",
-            "role": "Kafka/Pulsar topic for redirect events; workers aggregate offline."
+            "name": "分析バス",
+            "role": "リダイレクト イベントの Kafka/Pulsar トピック。ワーカーはオフラインで集計します。"
           }
         },
         "tradeoffs": {
           "0": "301 (permanent, cacheable, loses analytics) vs 302 (temporary, countable).",
           "1": "Hashing (stateless, collisions) vs counter+Base62 (coordination, no collisions).",
           "2": "A read-through cache adds complexity but is essential at this read ratio.",
-          "3": "Global single table vs shard-by-code-prefix (scale vs cross-shard admin queries).",
-          "4": "Strong uniqueness on alias (correct) vs eventual uniqueness (faster writes, repair jobs)."
+          "3": "グローバルな単一テーブルとコードごとのシャード プレフィックス (スケールとシャード間の管理クエリ)。",
+          "4": "エイリアス上の強力な一意性 (正しい) と最終的な一意性 (より高速な書き込み、修復ジョブ)。"
         },
         "lld": {
           "dataModel": "Link(code PRIMARY KEY, destination, owner_id, created_at, expires_at). A unique index on code arbitrates alias collisions. Cache entries carry a TTL bounded by link expiry.",
@@ -754,8 +785,8 @@
           "1": "Low latency with a clear fail-open or fail-closed policy.",
           "2": "Work across many app servers consistently.",
           "3": "Return 429 with a Retry-After hint.",
-          "4": "Configurable fail-open vs fail-closed per route class when the store is unavailable.",
-          "5": "Observability: allow/deny rates, hot keys, and shadow mode for policy rollouts."
+          "4": "ストアが利用できない場合は、ルート クラスごとにフェールオープンとフェールクローズを構成できます。",
+          "5": "可観測性: ポリシー ロールアウトの許可/拒否レート、ホット キー、シャドウ モード。"
         },
         "components": {
           "0": {
@@ -775,28 +806,28 @@
             "role": "Per-tier limits and burst allowance."
           },
           "4": {
-            "name": "Lua / atomic op",
-            "role": "Refill + consume in one round-trip; avoids race between GET/SET."
+            "name": "Lua / アトミックオプ",
+            "role": "1往復で補充+消費。 GET/SET間の競合を回避します。"
           },
           "5": {
-            "name": "Local shedder",
-            "role": "Optional process-local token cache for fail-open soft limits."
+            "name": "ローカルシェダー",
+            "role": "フェールオープン ソフト リミット用のオプションのプロセス ローカル トークン キャッシュ。"
           },
           "6": {
-            "name": "Metrics",
-            "role": "Export allow/deny, latency, and Redis errors for SLO burn alerts."
+            "name": "メトリクス",
+            "role": "SLO 書き込みアラートの許可/拒否、遅延、Redis エラーをエクスポートします。"
           },
           "7": {
-            "name": "Admin API",
-            "role": "CRUD policies, purge keys, and emergency global brakes."
+            "name": "管理者API",
+            "role": "CRUD ポリシー、パージ キー、および緊急グローバル ブレーキ。"
           }
         },
         "tradeoffs": {
           "0": "Fixed window (cheap, boundary bursts) vs sliding window (accurate, costlier).",
           "1": "Token bucket allows bursts; leaky bucket smooths output.",
           "2": "Local in-memory (fast, per-node) vs centralized (consistent, network hop).",
-          "3": "Fail-open (availability) vs fail-closed (cost/security) when Redis times out.",
-          "4": "Sync check on every request vs async/optimistic + reconcile (risk of overshoot)."
+          "3": "Redis がタイムアウトした場合のフェールオープン (可用性) とフェールクローズ (コスト/セキュリティ) の違い。",
+          "4": "すべてのリクエストでの同期チェックと非同期/オプティミスティック + リコンサイル (オーバーシュートのリスク)。"
         },
         "lld": {
           "dataModel": "Bucket(key, tokens, last_refill_ms, capacity, refill_rate). Store expiring keys in Redis. Derive the key from the authenticated principal or a trusted proxy's client address.",
@@ -814,8 +845,8 @@
           "1": "At-least-once execution with retries and backoff.",
           "2": "Scale workers horizontally.",
           "3": "Visibility into pending, running, failed and done jobs.",
-          "4": "Operational visibility: queued/running/failed, attempt history, payload refs.",
-          "5": "Dead-letter after N attempts with operator replay and poison isolation."
+          "4": "操作の可視性: キューに入れられているか、実行中か、失敗したか、試行履歴、ペイロード参照。",
+          "5": "オペレーターのリプレイと毒の分離による N 回の試行後の配信不能。"
         },
         "components": {
           "0": {
@@ -823,7 +854,7 @@
             "role": "Durable job queue (SQS / Kafka / DB table)."
           },
           "1": {
-            "name": "Scheduler",
+            "name": "スケジューラ",
             "role": "Moves due delayed/cron jobs into the ready queue."
           },
           "2": {
@@ -839,28 +870,28 @@
             "role": "Job state, idempotency keys and results."
           },
           "5": {
-            "name": "Payload object store",
-            "role": "Large blobs off the hot row; immutable per enqueue version."
+            "name": "ペイロード オブジェクト ストア",
+            "role": "熱い列から大きな塊が出る。エンキューのバージョンごとに不変です。"
           },
           "6": {
             "name": "DLQ",
-            "role": "Holds exhausted jobs; separate consumer for ops replay."
+            "role": "疲弊した仕事を保持します。 op リプレイ用の別のコンシューマ。"
           },
           "7": {
-            "name": "Cron expander",
-            "role": "Materializes next fire times without thundering herds."
+            "name": "Cron エキスパンダ",
+            "role": "群れを雷鳴させることなく、次の発射回数を実現します。"
           },
           "8": {
-            "name": "Ops console",
-            "role": "Cancel, requeue, inspect attempts, and pause lanes."
+            "name": "運用コンソール",
+            "role": "キャンセル、再キューイング、試行の検査、およびレーンの一時停止。"
           }
         },
         "tradeoffs": {
           "0": "At-least-once + idempotency (simple, needs dedupe) vs exactly-once (hard).",
           "1": "Push vs pull worker models.",
           "2": "Priority queues vs FIFO fairness.",
-          "3": "Per-tenant queues (isolation) vs shared lanes (efficiency, noisy-neighbor risk).",
-          "4": "Keep payloads in-row (simple) vs object store (scale, extra failure domain)."
+          "3": "テナントごとのキュー (分離) と共有レーン (効率、騒々しい隣人のリスク)。",
+          "4": "ペイロードを行内に保持する (シンプル) か、オブジェクト ストア (スケール、追加の障害ドメイン) を維持します。"
         },
         "lld": {
           "dataModel": "Job(id, idempotency_key UNIQUE, payload_ref, run_at, priority, attempts, lease_owner, lease_until, status). Keep large payloads in object storage and transitions in a durable record.",
@@ -878,8 +909,8 @@
           "1": "Full-text and structured search.",
           "2": "Time-windowed aggregations and dashboards.",
           "3": "Retention tiers and archival.",
-          "4": "Tenant isolation on every query path; redact PII fields at ingest when configured.",
-          "5": "Exactly-once-ish processing via event_id dedupe + offset commit after durable write."
+          "4": "すべてのクエリ パスでのテナントの分離。設定されている場合、取り込み時に PII フィールドを編集します。",
+          "5": "永続書き込み後のevent_id重複排除+オフセットコミットによる1回限りの処理。"
         },
         "components": {
           "0": {
@@ -903,28 +934,28 @@
             "role": "Search and visualize."
           },
           "5": {
-            "name": "Cold object store",
-            "role": "Compressed originals / Parquet for rehydrate and audit."
+            "name": "コールド オブジェクト ストア",
+            "role": "圧縮されたオリジナル / 再水和および監査用の寄木細工。"
           },
           "6": {
-            "name": "Query API",
-            "role": "Tenant-scoped search + aggregations with timeouts and cursors."
+            "name": "クエリAPI",
+            "role": "テナント スコープの検索 + タイムアウトとカーソルを使用した集計。"
           },
           "7": {
-            "name": "Compactor / tierer",
-            "role": "Rolls shards warm→cold; enforces retention deletes."
+            "name": "コンパクター/ティアラー",
+            "role": "ロールシャードは温かい→冷たい。保持削除を強制します。"
           },
           "8": {
-            "name": "Quarantine topic",
-            "role": "Poison/schema-invalid events for offline repair."
+            "name": "隔離のトピック",
+            "role": "オフライン修復のための毒/スキーマ無効イベント。"
           }
         },
         "tradeoffs": {
           "0": "Index everything (fast queries, costly) vs sample / schema-on-read.",
           "1": "Hot / warm / cold tiering for cost control.",
-          "2": "Shared cluster (efficiency) vs per-tenant indexes (isolation, cost).",
-          "3": "Sync ack to agent after Kafka (durability) vs after index (higher latency).",
-          "4": "Wide events (debuggable) vs strict schemas (predictable cost/perf)."
+          "2": "共有クラスター (効率) とテナントごとのインデックス (分離、コスト)。",
+          "3": "Kafka の後 (耐久性)、インデックスの後 (待ち時間が長い) とエージェントに ACK を同期します。",
+          "4": "幅広いイベント (デバッグ可能) と厳密なスキーマ (予測可能なコスト/パフォーマンス)。"
         },
         "lld": {
           "dataModel": "Event(event_id, tenant_id, timestamp, service, severity, trace_id, body). Partition the ingest stream by tenant and service, and index time-bounded shards. Store compressed originals in object storage.",
@@ -942,8 +973,8 @@
           "1": "Separate new failures from flaky and known failures.",
           "2": "Trend pass-rate over time with per-test history.",
           "3": "Drill into logs and artifacts of a failure.",
-          "4": "Owner routing + SLA clocks for open signatures without paging on flakes.",
-          "5": "History APIs for a test_id across branches with pagination."
+          "4": "フレークでページングを行わないオープン署名用のオーナー ルーティング + SLA クロック。",
+          "5": "ページネーションを備えたブランチ全体の test_id の履歴 API。"
         },
         "components": {
           "0": {
@@ -967,28 +998,28 @@
             "role": "Logs and waveforms linked per failure."
           },
           "5": {
-            "name": "Flake classifier",
-            "role": "Rule-based (and optional ML-suggested) intermittent detection."
+            "name": "フレーク分級機",
+            "role": "ルールベース (および ML が推奨するオプション) の断続的な検出。"
           },
           "6": {
-            "name": "Artifact store",
-            "role": "Logs, FSDB/VCD pointers; lifecycle independent of status."
+            "name": "アーティファクトストア",
+            "role": "ログ、FSDB/VCD ポインター。ステータスに依存しないライフサイクル。"
           },
           "7": {
-            "name": "Diff service",
-            "role": "Compares run vs baseline; computes introduced/resolved sets."
+            "name": "差分サービス",
+            "role": "実行とベースラインを比較します。導入/解決されたセットを計算します。"
           },
           "8": {
-            "name": "Dashboard UI",
-            "role": "Trends, owners, waive flows, deep-links into artifacts."
+            "name": "ダッシュボードUI",
+            "role": "トレンド、所有者、放棄フロー、アーティファクトへのディープリンク。"
           }
         },
         "tradeoffs": {
           "0": "Store all artifacts (debuggable, large) vs fetch on demand.",
           "1": "Real-time vs batch aggregation.",
-          "2": "Sync classification at ingest vs batch overnight (freshness vs cost).",
-          "3": "Mutable waive state (ops-friendly) vs immutable event log (forensics).",
-          "4": "Per-branch baselines (accurate) vs trunk-only (simpler, noisier)."
+          "2": "取り込み時の分類と夜間のバッチの同期 (鮮度 vs コスト)。",
+          "3": "可変のウェイブ状態 (運用に適した) と不変のイベント ログ (フォレンジック)。",
+          "4": "ブランチごとのベースライン (正確) とトランクのみ (シンプルでノイズが多い) の比較。"
         },
         "lld": {
           "dataModel": "Run(run_id, revision, branch, started_at), Result(run_id, test_id, attempt, status, signature, artifact_ref), and Failure(signature, first_seen, owner, classification). Use stable test IDs across runs.",
@@ -1006,8 +1037,8 @@
           "1": "Random-access replay at any time point.",
           "2": "Lossless for digital signals.",
           "3": "Fast writes during simulation.",
-          "4": "Dictionary reuse across chunks; versioned format with checksums.",
-          "5": "Compression ratio targets depend on activity; measure, don’t promise a constant."
+          "4": "チャンク全体での辞書の再利用。チェックサム付きのバージョン管理された形式。",
+          "5": "圧縮率の目標はアクティビティによって異なります。定数を約束するものではありません。"
         },
         "components": {
           "0": {
@@ -1031,28 +1062,28 @@
             "role": "Decompresses windows on demand."
           },
           "5": {
-            "name": "Sparse time index",
-            "role": "Maps time ranges → file offsets for seek."
+            "name": "スパース時間インデックス",
+            "role": "時間範囲 → シーク用のファイル オフセットをマップします。"
           },
           "6": {
-            "name": "Object / file store",
-            "role": "Durable chunk bytes; immutability after seal."
+            "name": "オブジェクト/ファイルストア",
+            "role": "耐久性のあるチャンクバイト。封印後の不変性。"
           },
           "7": {
-            "name": "Replay reader",
-            "role": "Loads snapshot + replays deltas for requested window."
+            "name": "リプレイリーダー",
+            "role": "スナップショットをロードし、要求されたウィンドウの差分を再生します。"
           },
           "8": {
-            "name": "Format verifier",
-            "role": "Offline round-trip tests and version migration tools."
+            "name": "フォーマットベリファイア",
+            "role": "オフラインのラウンドトリップ テストとバージョン移行ツール。"
           }
         },
         "tradeoffs": {
           "0": "Event-based (compact for sparse activity) vs sampled.",
           "1": "Bigger blocks compress better but slow random access.",
-          "2": "Shared global dictionary (ratio) vs per-chunk (parallelism, simpler recovery).",
-          "3": "Sync index publish with seal (readers never see holes) vs async (higher write FPS).",
-          "4": "Single-file layout (simple) vs multi-file shards (parallel dump from many scopes)."
+          "2": "共有グローバル ディクショナリ (比率) とチャンクごと (並列処理、より簡単なリカバリ)。",
+          "3": "インデックス パブリッシュをシールで同期する (リーダーにホールが表示されない) か、非同期 (書き込み FPS が高い) を使用します。",
+          "4": "単一ファイルのレイアウト (単純) と複数ファイルのシャード (多数のスコープからの並列ダンプ)。"
         },
         "lld": {
           "dataModel": "Signal dictionary maps IDs to widths and types. Independently compressed chunks contain a time range, an initial state snapshot, delta timestamps, value changes and a checksum. A sparse index maps time ranges to file offsets.",
@@ -1066,33 +1097,33 @@
     "pageIntro": "System-design whiteboards I’ve built: working browser demos, architecture, implementation notes and trade-offs.",
     "galleryIntro": "Whiteboards I’ve built to make system behavior tangible — explore each demo, its architecture and implementation decisions.",
     "galleryContents": "Demo · HLD · LLD · Trade-offs",
-    "openDesign": "Open whiteboard",
-    "filter": "Filter",
-    "all": "All",
+    "openDesign": "ホワイトボードを開く",
+    "filter": "フィルター",
+    "all": "全て",
     "uml": "Architecture (UML)",
-    "seeMore": "See more whiteboards",
-    "seeLess": "Show top four",
-    "detailTabs": "Whiteboard views",
+    "seeMore": "ホワイトボードをもっと見る",
+    "seeLess": "上位 4 つを表示",
+    "detailTabs": "ホワイトボードビュー",
     "tabs": {
-      "demo": "Architecture demo",
-      "hld": "High-level design",
-      "lld": "Low-level design",
-      "decisions": "Trade-offs & failures"
+      "demo": "アーキテクチャのデモ",
+      "hld": "高度な設計",
+      "lld": "低レベルの設計",
+      "decisions": "トレードオフと失敗"
     },
     "demoScope": "Built for this portfolio: an interactive reference demo. Infrastructure components are simulated in the browser.",
     "lldLabels": {
-      "dataModel": "Data model",
-      "api": "API contracts",
-      "execution": "Execution & consistency",
-      "pseudocode": "Pseudocode"
+      "dataModel": "データモデル",
+      "api": "APIコントラクト",
+      "execution": "実行と一貫性",
+      "pseudocode": "擬似コード"
     },
-    "failureModes": "Failure modes & recovery",
-    "backToWork": "← Back to Work",
-    "pipelineStep": "Stage {current} of {total}",
-    "nextStep": "Next stage",
-    "restart": "Restart walkthrough",
-    "loading": "Loading whiteboard…",
-    "umlCaption": "Deployment-style component diagram · solid = sync path · dashed = async / degraded"
+    "failureModes": "障害モードとリカバリ",
+    "backToWork": "← 仕事に戻る",
+    "pipelineStep": "ステージ {current}/{total}",
+    "nextStep": "次のステージ",
+    "restart": "ウォークスルーを再開する",
+    "loading": "ホワイトボードを読み込んでいます…",
+    "umlCaption": "導入スタイルのコンポーネント図 · 実線 = 同期パス · 破線 = 非同期 / 劣化"
   },
   "chatbot": {
     "subtitle": "ローカル · 抽出型 · トラッキングなし",
@@ -1117,91 +1148,91 @@
       "stop": "生成を停止",
       "disclaimer": "AI の回答はこのサイトのコンテンツをもとにお使いのデバイス上で生成され、誤りを含む場合があります。リンク先の出典をご確認ください。"
     },
-    "title": "Ask Ayush",
-    "open": "Ask Ayush",
+    "title": "アユシュに聞く",
+    "open": "アユシュに聞く",
     "chats": {
       "new": "新しいチャット",
       "select": "チャットを選択",
       "clearContext": "文脈をクリア",
       "clearChat": "チャットをクリア",
       "delete": "チャットを削除",
-      "untitled": "Chat {number}",
-      "contextCleared": "Context cleared. Earlier messages remain visible and will not inform new answers.",
-      "chatCleared": "Chat and its context cleared.",
-      "serverUnavailable": "Server AI is unavailable, so Quick answers are active."
+      "untitled": "チャット {number}",
+      "contextCleared": "コンテキストがクリアされました。以前のメッセージは表示されたままになり、新しい回答は通知されません。",
+      "chatCleared": "チャットとそのコンテキストがクリアされました。",
+      "serverUnavailable": "Server AI が利用できないため、クイックアンサーがアクティブになります。"
     },
     "settings": {
       "removeModels": "ダウンロード済みモデルを削除",
-      "title": "Assistant settings",
-      "open": "Open assistant settings",
-      "back": "Back to chat",
-      "intro": "Choose how answers run on this device. Quick answers work immediately. Selecting GPU or CPU enables local AI and starts the download shown below.",
-      "engineLabel": "Answer mode",
+      "title": "アシスタントの設定",
+      "open": "アシスタントの設定を開く",
+      "back": "チャットに戻る",
+      "intro": "このデバイスで回答を実行する方法を選択します。クイック回答はすぐに機能します。 GPU または CPU を選択すると、ローカル AI が有効になり、以下に示すダウンロードが開始されます。",
+      "engineLabel": "応答モード",
       "engines": {
         "quick": {
-          "label": "Quick answers · AI off",
-          "help": "Fastest and lightest. Quotes portfolio content directly, with no model download or AI memory use."
+          "label": "クイックアンサー · AI オフ",
+          "help": "最速かつ最軽量。モデルのダウンロードや AI メモリの使用を行わずに、ポートフォリオのコンテンツを直接引用します。"
         },
         "server": {
-          "label": "Server AI · no download",
-          "help": "Generates a grounded answer through this site's server when enabled. Your question and recent chat context leave this device; Quick answers are used if the service is unavailable."
+          "label": "サーバーAI・ダウンロード不要",
+          "help": "有効にすると、このサイトのサーバーを通じて根拠のある回答が生成されます。あなたの質問と最近のチャットのコンテキストがこのデバイスを離れます。サービスが利用できない場合は、クイックアンサーが使用されます。"
         },
         "gpu": {
-          "label": "Device GPU",
-          "help": "Usually the fastest AI option on a supported GPU. Uses graphics memory and more battery; other graphics-heavy apps may slow down."
+          "label": "デバイスのGPU",
+          "help": "通常、サポートされている GPU 上で最も高速な AI オプションです。グラフィックス メモリとより多くのバッテリーを使用します。他のグラフィックスを多用するアプリの速度が低下する可能性があります。"
         },
         "cpu": {
-          "label": "Device CPU",
-          "help": "Works without a GPU using a smaller model. Usually slower and less detailed; uses system memory and can increase heat and battery use. Single-threaded browsers can take minutes per answer."
+          "label": "デバイスCPU",
+          "help": "より小型のモデルを使用すると、GPU なしで動作します。通常は速度が遅く、詳細があまり詳しくありません。システムメモリを使用するため、発熱とバッテリーの使用量が増加する可能性があります。シングルスレッドのブラウザでは、回答ごとに数分かかる場合があります。"
         }
       },
-      "download": "{model} · about {size} MB on first use. Downloaded models are cached in this browser.",
-      "checking": "Checking device support…",
+      "download": "{model} · 初回使用時は約 {size} MB。ダウンロードしたモデルはこのブラウザにキャッシュされます。",
+      "checking": "デバイスのサポートを確認しています…",
       "unavailable": {
-        "noWebGpu": "GPU AI is unavailable in this browser. CPU or quick answers are available.",
-        "softwareGpu": "A hardware GPU is not available to this browser. Use CPU or quick answers.",
-        "lowMemory": "Quick answers are recommended with less than 4 GB of reported device memory.",
-        "saveData": "Quick answers stay on while Data Saver is enabled."
+        "noWebGpu": "このブラウザでは GPU AI を利用できません。 CPU またはクイックアンサーが利用可能です。",
+        "softwareGpu": "このブラウザではハードウェア GPU を使用できません。 CPU またはクイックアンサーを使用します。",
+        "lowMemory": "報告されたデバイス メモリが 4 GB 未満の場合は、クイックアンサーを推奨します。",
+        "saveData": "データセーバーが有効になっている間、クイックアンサーはオンのままになります。"
       },
-      "speed": "Last measured generation speed: about {speed} tokens/s.",
-      "recommended": "Recommended for this device",
+      "speed": "最後に測定された生成速度: 約 {speed} トークン/秒。",
+      "recommended": "このデバイスに推奨される",
       "recommendations": {
-        "gpuFast": "Your GPU is fast. Short, focused answers with the model kept ready give the quickest experience. You can request more detail when needed.",
-        "gpu": "Your GPU can run local AI. Start with short, focused answers and keep the model ready between chats.",
-        "cpu": "CPU with short answers and focused context is a suitable option here. GPU is usually faster when available.",
-        "slow": "The last measured AI speed was low. Quick answers are recommended; you can still choose an AI engine.",
-        "noAi": "Quick answers are recommended for responsiveness and battery life. You can try an available AI engine.",
-        "saveData": "Use quick answers to avoid model downloads while Data Saver is on."
+        "gpuFast": "GPU は高速です。モデルを準備した状態で短く焦点を絞った回答をすると、最も迅速なエクスペリエンスが得られます。必要に応じて詳細をリクエストできます。",
+        "gpu": "GPU はローカル AI を実行できます。短く焦点を絞った回答から始めて、チャットの間にモデルを準備しておきます。",
+        "cpu": "ここでは、短い回答と集中的なコンテキストを備えた CPU が適切なオプションです。 GPU が利用可能な場合は通常、GPU の方が高速です。",
+        "slow": "最後に測定された AI 速度が低かった。すぐに回答することをお勧めします。 AI エンジンを選択することもできます。",
+        "noAi": "応答性とバッテリー寿命の観点から、素早い回答をお勧めします。利用可能な AI エンジンを試すことができます。",
+        "saveData": "データ セーバーがオンになっているときにモデルのダウンロードを回避するには、クイック アンサーを使用します。"
       },
-      "apply": "Use recommended settings",
-      "applyHint": "Choosing an AI recommendation starts its model download.",
-      "lengthLabel": "AI answer length",
-      "short": "Short",
-      "detailed": "Detailed",
-      "lengthHelp": "Short replies generate fewer tokens and finish sooner. Detailed replies take longer on this device.",
-      "contextLabel": "AI context",
-      "focused": "Focused",
-      "thorough": "Thorough",
-      "contextHelp": "Focused context starts answers sooner. Thorough context includes more source material, but uses more memory and processing time.",
-      "cpuLabel": "CPU usage",
-      "balanced": "Balanced",
-      "max": "Maximum",
-      "cpuHelp": "Balanced leaves more capacity for the page. Maximum may generate faster but increases heat, battery use, and competition with other apps.",
-      "singleThread": "This page uses one CPU thread, so replies can take minutes. Both usage levels run at the same speed here; quick answers are recommended for responsiveness.",
-      "keepLoaded": "Keep AI ready briefly after closing",
-      "keepLoadedHelp": "Keeps the model in memory for up to two minutes for faster reopening. Off frees memory on close. Downloaded files stay cached either way.",
-      "cancel": "Cancel download",
-      "turnOff": "Turn AI off",
-      "active": "Active: {engine}",
-      "fallback": "Quick answers are active. You can choose another mode in settings.",
-      "warmup": "Warming up and measuring speed…",
-      "loading": "Preparing local AI… {percent}%",
-      "removingModels": "Removing models…",
-      "removeHelp": "Deletes this site’s GPU and CPU model downloads and switches to quick answers. Your chats stay available.",
-      "modelsRemoved": "Downloaded models removed. Quick answers are active.",
-      "removeError": "Some model files could not be removed. Close other Ask Ayush tabs and retry. Quick answers remain active."
+      "apply": "推奨設定を使用する",
+      "applyHint": "AI 推奨事項を選択すると、そのモデルのダウンロードが開始されます。",
+      "lengthLabel": "AIの回答の長さ",
+      "short": "短い",
+      "detailed": "詳細",
+      "lengthHelp": "短い返信では生成されるトークンが少なくなり、早く終了します。この端末では詳細な返信に時間がかかります。",
+      "contextLabel": "AI コンテキスト",
+      "focused": "集中した",
+      "thorough": "徹底的に",
+      "contextHelp": "焦点を絞ったコンテキストを使用すると、回答が早く開始されます。完全なコンテキストにはより多くのソース素材が含まれますが、より多くのメモリと処理時間を使用します。",
+      "cpuLabel": "CPU使用率",
+      "balanced": "バランスの取れた",
+      "max": "最大",
+      "cpuHelp": "バランスをとった場合、ページの容量がより多く残ります。最大値を使用すると生成が速くなりますが、発熱、バッテリーの使用、他のアプリとの競合が増加します。",
+      "singleThread": "このページは 1 つの CPU スレッドを使用するため、応答には数分かかる場合があります。ここでは両方の使用レベルが同じ速度で実行されます。応答性を高めるために、素早い回答をお勧めします。",
+      "keepLoaded": "閉店後もしばらく AI を準備しておきます",
+      "keepLoadedHelp": "モデルをメモリ内に最大 2 分間保持し、すばやく再度開くことができます。オフにすると、閉じるときにメモリが解放されます。ダウンロードしたファイルはどちらの方法でもキャッシュされたままになります。",
+      "cancel": "ダウンロードをキャンセルする",
+      "turnOff": "AIをオフにする",
+      "active": "アクティブ: {engine}",
+      "fallback": "クイックアンサーはアクティブです。設定で別のモードを選択できます。",
+      "warmup": "ウォーミングアップと速度測定中…",
+      "loading": "ローカル AI を準備中… {percent}%",
+      "removingModels": "モデルを削除しています…",
+      "removeHelp": "このサイトの GPU および CPU モデルのダウンロードを削除し、クイックアンサーに切り替えます。チャットは引き続き利用可能です。",
+      "modelsRemoved": "ダウンロードしたモデルは削除されました。クイックアンサーはアクティブです。",
+      "removeError": "一部のモデル ファイルを削除できませんでした。他の「Ask Ayush」タブを閉じて、再試行してください。クイックアンサーはアクティブなままです。"
     },
-    "intro": "Ask about my work, skills or experience. Each chat has its own context. Chats stay in this browser tab for this session."
+    "intro": "私の仕事、スキル、経験について質問してください。各チャットには独自のコンテキストがあります。このセッションの間、チャットはこのブラウザー タブに残ります。"
   },
   "audio": {
     "introTitle": "音声紹介",
@@ -1213,7 +1244,7 @@
     "sfxLabel": "効果音",
     "on": "オン",
     "off": "オフ",
-    "transcript": "Hey, I’m Ayush Yadav! 👋 An R&D Software Engineer at Cadence with over four and a half years of experience building high-performance systems in C++ and Python. 💻\n\nI work on Xcelium, RTL optimization, and AI-powered developer tools, helping boost simulation throughput by up to nineteen percent. 🚀 Basically, I make software faster so progress bars get less screen time. 😄\nHave a look around, explore my projects, and see what I’ve been building. 🔍 If you’re hiring, want to collaborate, or just want more details, drop me a message! 📬\n\nI promise I won’t ask you to reverse a linked list just to say hello! 😉"
+    "transcript": "こんにちは、私はアユシュ・ヤダフです！ 👋 Cadence の R&D ソフトウェア エンジニアで、C++ と Python で高性能システムを構築した 4 年半以上の経験があります。 💻\n\n私は Xcelium、RTL 最適化、AI を活用した開発者ツールに取り組んでおり、シミュレーションのスループットを最大 19% 向上させることに貢献しています。 🚀 基本的に、私はソフトウェアを高速化するので、プログレスバーの表示時間が短くなります。 😄\n周りを見回し、私のプロジェクトを探索し、私が構築してきたものを見てください。 🔍 採用している場合、コラボレーションしたい場合、または単に詳細が必要な場合は、メッセージを送ってください。 📬\n\n挨拶のためだけにリンク リストを反転するようお願いすることはないと約束します。 😉"
   },
   "lab": {
     "title": "ラボ",
@@ -1228,56 +1259,56 @@
     "subheading": "お探しのページは存在しないか、移動しました。",
     "cta": "ホームへ戻る",
     "tag": "/ 404",
-    "suggestionsLabel": "Try one of these",
-    "search": "Open command palette",
-    "back": "Go back",
-    "asciiLabel": "ASCII art of a 404 phoenix",
-    "kbdHint": "to jump anywhere on the site",
-    "qrLabel": "QR code linking to the site home page",
-    "qrTitle": "Continue on your phone",
-    "qrCaption": "Scan to open this site on another device.",
+    "suggestionsLabel": "これらのいずれかを試してください",
+    "search": "コマンドパレットを開く",
+    "back": "戻る",
+    "asciiLabel": "404フェニックスのアスキーアート",
+    "kbdHint": "サイト上のどこにでもジャンプするには",
+    "qrLabel": "サイトのトップページにリンクするQRコード",
+    "qrTitle": "携帯電話で続行",
+    "qrCaption": "スキャンして別のデバイスでこのサイトを開きます。",
     "game": {
-      "title": "Phoenix Run",
-      "pause": "Pause",
-      "canvasLabel": "Phoenix Run — endless runner game canvas",
-      "idleTitle": "Phoenix Run",
-      "idleHint": "Flap through a volcanic world, dodge the ruins, and collect golden feathers. Tap or press Space to begin.",
-      "play": "Play",
-      "best": "Best · {score}",
-      "paused": "Paused",
-      "resume": "Resume",
-      "gameOver": "Lost to the ashes",
-      "newHigh": "new high score!",
+      "title": "フェニックス ラン",
+      "pause": "一時停止",
+      "canvasLabel": "Phoenix Run — 無限のランナー ゲーム キャンバス",
+      "idleTitle": "フェニックス ラン",
+      "idleHint": "火山の世界を飛び回り、遺跡を避け、黄金の羽根を集めましょう。タップするかスペースを押して開始します。",
+      "play": "遊ぶ",
+      "best": "ベスト · {score}",
+      "paused": "一時停止中",
+      "resume": "再開する",
+      "gameOver": "灰に消えた",
+      "newHigh": "新しいハイスコア！",
       "feathers": "{count, plural, one {# golden feather} other {# golden feathers}}",
-      "restart": "Restart",
-      "goHome": "Go Home",
-      "dive": "Dive",
-      "controls": "Space/↑/W flap · ↓/S dive · P pause · R restart · F fullscreen · tap to flap, swipe down to dive",
-      "mute": "Mute",
-      "unmute": "Unmute",
-      "fullscreen": "Fullscreen",
-      "exitFullscreen": "Exit fullscreen",
-      "reducedMotion": "Reduced motion is on — the runner uses motion, so play only if you're comfortable.",
-      "ms500": "The Flame Awakens",
-      "ms1000": "Phoenix Rebirth Unlocked",
-      "ms2000": "Inferno Mode Activated",
-      "ms5000": "Legendary Phoenix",
-      "rebirth": "Reborn from the ashes!",
+      "restart": "再起動",
+      "goHome": "家に帰れ",
+      "dive": "ダイビング",
+      "controls": "スペース/↑/W フラップ・↓/S ダイブ・P 一時停止・R 再スタート・F フルスクリーン・タップでフラップ、下にスワイプでダイブ",
+      "mute": "ミュート",
+      "unmute": "ミュートを解除する",
+      "fullscreen": "全画面表示",
+      "exitFullscreen": "全画面表示を終了する",
+      "reducedMotion": "モーションの軽減がオンになっています - ランナーはモーションを使用するため、快適な場合にのみプレイしてください。",
+      "ms500": "炎の目覚め",
+      "ms1000": "フェニックス復活のロックが解除されました",
+      "ms2000": "インフェルノモード発動",
+      "ms5000": "伝説のフェニックス",
+      "rebirth": "灰の中から復活！",
       "help": {
-        "open": "How to play",
-        "title": "How to play",
-        "close": "Close",
-        "goal": "Guide the flaming phoenix through a volcanic world. Flap to stay airborne, dodge every obstacle, grab power-ups, and survive as long as you can — the longer you fly, the faster it gets.",
-        "controlsTitle": "Controls",
-        "controlsBody": "Space / ↑ / W   flap upward\n↓ / S           dive / quick drop\nP               pause / resume\nR               restart\nF               fullscreen\nTap             flap (mobile)\nSwipe down      dive (mobile)",
-        "powerupsTitle": "Power-ups",
-        "powerupsBody": "⛨ Flame Shield   absorbs one hit\n✦ Golden Feather  bonus score (collect 5 for an egg)\n✸ Phoenix Burst   clears nearby obstacles\n◷ Slow Time       slows the world briefly\n×2 Double Score   temporary score multiplier",
-        "mechanicsTitle": "Mechanics",
-        "mechanicsBody": "Rebirth — at 1000 you bank one revive; a fatal hit instead reignites you and clears the area.\nInferno Mode — at 2000 the world darkens, speeds up, and scores multiply.\nMilestones — 500, 1000, 2000, 5000 each mark a new chapter.",
-        "settingsTitle": "Settings",
-        "sound": "Sound: {state}",
+        "open": "遊び方",
+        "title": "遊び方",
+        "close": "近い",
+        "goal": "燃えるフェニックスを導き、火山の世界を駆け抜けましょう。羽ばたいて空中に留まり、すべての障害物を避け、パワーアップを手に入れ、できるだけ長く生き残ってください。長く飛べば飛ぶほど速くなります。",
+        "controlsTitle": "コントロール",
+        "controlsBody": "スペース/↑/Wフラップ上向き\n↓ / Sダイブ / クイックドロップ\nP一時停止/再開\nR再起動\nF フルスクリーン\nタップフラップ（モバイル）\n下にスワイプしてダイビング (モバイル)",
+        "powerupsTitle": "パワーアップ",
+        "powerupsBody": "⛨ フレイムシールドは一撃を吸収します\n✦ ゴールデン フェザー ボーナス スコア (5 個集めて卵 1 個)\n✸ フェニックスバーストは近くの障害物を取り除きます\n◷ スロータイムは世界を一時的に遅くします\nダブルスコアの一時的なスコア倍率×2",
+        "mechanicsTitle": "力学",
+        "mechanicsBody": "復活 — 1000 で蘇生を 1 つバンクします。致命的な打撃を受けると、代わりに再点火され、エリアが消滅します。\nインフェルノ モード — 2000 年、世界は暗くなり、スピードが上がり、スコアが倍増します。\nマイルストーン — 500、1000、2000、5000 はそれぞれ新しい章を表します。",
+        "settingsTitle": "設定",
+        "sound": "サウンド: {state}",
         "on": "on",
-        "off": "off"
+        "off": "オフ"
       }
     }
   },
@@ -1300,9 +1331,9 @@
         "analyticsTitle": "分析",
         "analyticsBody": "<strong>Vercel Web Analytics</strong> と <strong>Vercel Speed Insights</strong> が有効です。両者とも Cookie レスで GDPR 対象外: 集計ページビューと Core Web Vitals を毎日再計算される短寿命ハッシュで記録し、個人と紐付けることはありません。",
         "aiTitle": "オンデバイス AI (任意)",
-        "aiBody": "Choosing GPU or CPU in Ask Ayush settings downloads a model from Hugging Face: Llama 3.2 1B (~705 MB) for GPU or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a pinned WebAssembly library from GitHub; the CPU runtime comes from this site. Download hosts see standard requests, including IP address and user-agent. Questions and answers stay on your device. Chats and their separate context boundaries are saved in this tab’s session storage under <code>phoenix:chat:sessions</code>, so closing the assistant or reloading does not erase them. Browser session restoration may retain this data. Clear chat erases the selected transcript and context; Clear context keeps its transcript but excludes earlier messages from future answers; Delete chat removes the selected conversation. <code>phoenix:chat:settings</code> stores preferences and measured speeds in local storage. Turning AI off frees runtime memory. Remove downloaded models clears this site’s model caches and switches AI off; it keeps your chats. Clearing this site’s browser data removes settings and chats as well. No new cookies are set.",
-        "aiServerTitle": "Server AI (optional, off by default)",
-        "aiServerBody": "A future <strong>Server</strong> engine in Ask Ayush settings can send your question and a short recent-chat context to this site’s <code>/api/chat</code> endpoint, which may call a managed inference provider. That path is disabled unless the maintainer explicitly enables it. When disabled, selecting Server falls back to quick answers. When enabled, questions leave your device; prefer Quick answers or on-device AI if you want processing to stay local. No new cookies are set for chat."
+        "aiBody": "Ask Ayush 設定で GPU または CPU を選択すると、Hugging Face からモデルがダウンロードされます: GPU の場合は Llama 3.2 1B (~705 MB)、CPU の場合は Qwen2.5 0.5B (~429 MB)。 GPU モードでは、固定された WebAssembly ライブラリも GitHub からダウンロードします。 CPU ランタイムはこのサイトから入手します。ダウンロード ホストは、IP アドレスやユーザー エージェントなどの標準リクエストを参照します。質問と回答はデバイスに残ります。チャットとその個別のコンテキスト境界は、このタブのセッション ストレージの <code>phoenix:chat:sessions</code> に保存されるため、アシスタントを閉じたり再ロードしても消去されません。ブラウザセッションの復元では、このデータが保持される場合があります。チャットをクリアすると、選択したトランスクリプトとコンテキストが消去されます。明確なコンテキストではトランスクリプトが保持されますが、以前のメッセージは将来の回答から除外されます。チャットを削除すると、選択した会話が削除されます。 <code>phoenix:chat:settings</code> は、設定と測定された速度をローカル ストレージに保存します。 AI をオフにすると、ランタイム メモリが解放されます。ダウンロードしたモデルを削除すると、このサイトのモデル キャッシュがクリアされ、AI がオフになります。チャットを維持します。このサイトのブラウザデータをクリアすると、設定とチャットも削除されます。新しい Cookie は設定されません。",
+        "aiServerTitle": "サーバー AI (オプション、デフォルトではオフ)",
+        "aiServerBody": "Ask Ayush 設定の将来の<strong>サーバー</strong> エンジンは、質問と最近の短いチャット コンテキストをこのサイトの <code>/api/chat</code> エンドポイントに送信し、マネージド推論プロバイダーを呼び出すことができます。メンテナが明示的に有効にしない限り、そのパスは無効になります。無効にすると、サーバーを選択するとクイックアンサーに戻ります。有効にすると、質問がデバイスから送信されます。処理をローカルに保ちたい場合は、クイック アンサーまたはオンデバイス AI を選択します。チャット用に新しい Cookie は設定されません。"
       },
       "donot": {
         "title": "行わないこと",
@@ -1332,7 +1363,7 @@
             "data": "フォーム送信内容 + 添付ファイル"
           },
           "vercelAnalytics": {
-            "service": "Vercel Web Analytics + Speed Insights",
+            "service": "Vercel ウェブ分析 + スピード インサイト",
             "purpose": "ページビュー集計、Core Web Vitals",
             "data": "匿名・Cookieレスの集計のみ"
           },
@@ -1373,33 +1404,33 @@
         "detail": "Knight 階級 · Codeforces Master · CodeChef 6 つ星 (AIR 29)。"
       },
       "throughput": {
-        "label": "Simulation throughput",
-        "detail": "Improvement on large customer workloads in Xcelium Logic Simulator."
+        "label": "シミュレーションのスループット",
+        "detail": "Xcelium Logic Simulator における大規模な顧客ワークロードの改善。"
       },
       "rtl": {
-        "label": "RTL parsing speedup",
-        "detail": "Cumulative Xform Engine parsing gains across Apple, Google, Samsung and NVIDIA designs."
+        "label": "RTL 解析の高速化",
+        "detail": "Apple、Google、Samsung、NVIDIA の設計全体で Xform Engine の解析が累積的に向上しました。"
       },
       "rca": {
-        "label": "Debug RCA time",
-        "detail": "Reduction via Top-N profiling and structured diagnostics library."
+        "label": "デバッグ RCA 時間",
+        "detail": "トップ N プロファイリングと構造化された診断ライブラリによる削減。"
       },
       "ticketResolution": {
-        "label": "Faster ticket resolution",
-        "detail": "MAESTRO, measured on an internal evaluation sample; RCA time reduced by 55%."
+        "label": "チケット解決の迅速化",
+        "detail": "MAESTRO、内部評価サンプルで測定。 RCA 時間が 55% 短縮されました。"
       },
       "agentSpeedup": {
-        "label": "AI-assisted simulation speedup",
-        "detail": "Xcelium optimization agents on a validated benchmark; results are workload-specific."
+        "label": "AI支援によるシミュレーションの高速化",
+        "detail": "検証済みのベンチマークにおける Xcelium 最適化エージェント。結果はワークロード固有です。"
       },
       "regression": {
-        "label": "Regression failures processed",
-        "detail": "Across 79 runs; 73% of failures were processed in runs by other engineers."
+        "label": "回帰エラーの処理",
+        "detail": "79回の実行で。障害の 73% は、他のエンジニアによる実行で処理されました。"
       }
     },
-    "eyebrow": "Engineering impact",
-    "heading": "Performance gains. Engineering time reclaimed.",
-    "context": "Cadence · systems & AI tooling"
+    "eyebrow": "エンジニアリングへの影響",
+    "heading": "パフォーマンスが向上します。エンジニアリング時間を取り戻しました。",
+    "context": "ケイデンス、システム、AI ツール"
   },
   "techMarquee": {
     "heading": "出荷に使う技術"
@@ -1427,17 +1458,17 @@
     },
     "items": {
       "maestro": {
-        "title": "MAESTRO — Multi-Agent Ticket Resolution",
-        "tagline": "A Cadence multi-agent system that helps engineers resolve simulation tickets end-to-end — with people in control at the high-risk steps.",
-        "category": "Agentic AI × Engineering Workflow",
-        "summary": "MAESTRO is a Cadence multi-agent platform for engineering-ticket resolution on Xcelium workflows. It coordinates specialist AI agents under human oversight so tickets move from triage toward a verified fix with clearer handoffs and less repeated context-gathering. Measured on an internal evaluation set, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026 and selected for trade-secret protection — implementation details stay internal.",
-        "problem": "Simulator tickets often bounce across R&D, validation and documentation. Context lives in many places, handoffs re-gather the same evidence, and under pressure important steps get skipped while backlog items age.",
-        "challenge": "Coordinate agent assistance across a ticket’s lifecycle without giving up engineer control, without inventing unsupported conclusions, and without publishing proprietary workflow internals.",
+        "title": "MAESTRO — マルチエージェントのチケット解決",
+        "tagline": "ケイデンスのマルチエージェント システムは、エンジニアがシミュレーション チケットをエンドツーエンドで解決できるように支援します。リスクの高いステップでは担当者が管理します。",
+        "category": "Agentic AI × エンジニアリングワークフロー",
+        "summary": "MAESTRO は、Xcelium ワークフローでのエンジニアリング チケット解決のための Cadence マルチエージェント プラットフォームです。人間の監視の下で専門の AI エージェントを調整するため、チケットはトリアージから検証済みの修正へと移行し、より明確な引き継ぎとコンテキスト収集の繰り返しが少なくなります。内部評価セットで測定したところ、チケット解決時間が 45%、根本原因分析時間が 55% 削減されました。 Cadence AI Buildathon 2026 用に Mindsmiths チームと共同で構築され、企業秘密保護対象に選ばれました。実装の詳細は内部に残ります。",
+        "problem": "シミュレータ チケットは、研究開発、検証、ドキュメント間を行き来することがよくあります。コンテキストはさまざまな場所に存在し、ハンドオフでは同じ証拠が再収集され、バックログ項目が古くなるにつれてプレッシャーの下で重要なステップがスキップされます。",
+        "challenge": "エンジニアの制御を放棄したり、裏付けのない結論をでっち上げたり、独自のワークフロー内部構造を公開したりすることなく、チケットのライフサイクル全体にわたってエージェントの支援を調整します。",
         "approach": {
-          "0": "Framed the product as orchestration plus human gates: agents propose and gather evidence; engineers approve risky transitions.",
-          "1": "Optimized for grounded answers — conclusions tied to retrieved engineering evidence rather than free-form speculation.",
-          "2": "Designed for everyday IDE use so the assistive flow meets engineers where they already work.",
-          "3": "Measured outcomes on an internal ticket sample and treated the system as proprietary Cadence IP after Buildathon recognition."
+          "0": "製品をオーケストレーションと人間のゲートとして構成しました。エージェントが証拠を提案し収集します。エンジニアは危険な移行を承認します。",
+          "1": "根拠のある回答、つまり自由形式の推測ではなく、取得された工学的証拠に関連付けられた結論を得るために最適化されています。",
+          "2": "IDE を日常的に使用できるように設計されているため、既に作業しているエンジニアに支援フローが提供されます。",
+          "3": "内部チケットサンプルで結果を測定し、Buildathon の認定後、システムを独自の Cadence IP として扱いました。"
         }
       },
       "xcelium-ai-agents": {
@@ -1492,86 +1523,86 @@
         "title": "Xcelium Logic Simulator — パフォーマンスエンジニアリング",
         "tagline": "大規模実ワークロードで測定可能なスループット改善をもたらす低レベル最適化作業。",
         "category": "システムパフォーマンス",
-        "summary": "A multi-quarter performance engineering effort on Cadence's Xcelium logic simulator, focused on profiling-driven optimization, RTL transformations and structured diagnostics for production customer workloads.",
-        "problem": "Customer designs of increasing scale stress simulator throughput. Even small inefficiencies in hot paths compound across millions of simulation events, costing engineering hours and infrastructure.",
-        "challenge": "Identify high-leverage bottlenecks across an industrial simulation engine, reason rigorously about runtime behavior, and ship low-risk C++ changes that move the needle on production workloads.",
+        "summary": "ケイデンスの Xcelium ロジック シミュレーターに対する複数四半期にわたるパフォーマンス エンジニアリングの取り組み。プロファイリング主導の最適化、RTL 変換、実稼働顧客ワークロードの構造化診断に重点を置いています。",
+        "problem": "スケール応力シミュレータのスループットを向上させる顧客設計。ホット パスの小さな非効率性であっても、何百万ものシミュレーション イベントに重なり、エンジニアリング時間とインフラストラクチャにコストがかかります。",
+        "challenge": "産業用シミュレーション エンジン全体で高レバレッジのボトルネックを特定し、実行時の動作について厳密に推論し、実稼働ワークロードに大きな変化をもたらす低リスクの C++ 変更を出荷します。",
         "approach": {
-          "0": "Built a reusable C++ performance-analysis library enabling Top-N profiling and structured diagnostics, presented at Cadence India Conference.",
-          "1": "Used Valgrind, AddressSanitizer and runtime profilers to isolate hotspots in critical simulation paths.",
-          "2": "Implemented RTL transformations in the Xform Engine that reshape designs into more simulator-friendly forms.",
-          "3": "Validated improvements against designs from Apple, Google, Samsung and NVIDIA on representative workloads."
+          "0": "トップ N プロファイリングと構造化診断を可能にする再利用可能な C++ パフォーマンス分析ライブラリを構築し、Cadence India Conference で発表しました。",
+          "1": "Valgrind、AddressSanitizer、およびランタイム プロファイラーを使用して、重要なシミュレーション パス内のホットスポットを分離しました。",
+          "2": "Xform Engine に RTL 変換を実装し、設計をよりシミュレータに適した形式に再形成しました。",
+          "3": "代表的なワークロードで Apple、Google、Samsung、NVIDIA の設計に対する改善点を検証しました。"
         }
       },
       "algolens": {
         "title": "AlgoLens — インタラクティブ DSA プラットフォーム",
         "tagline": "アルゴリズムを観察し、再生し、理解できるようにするインタラクティブな環境。",
         "category": "教育 × ビジュアルコンピューティング × 生成 AI",
-        "summary": "AlgoLens is an interactive algorithm visualizer supporting 60+ algorithms with real-time step-through, deterministic replay, FFmpeg-WASM export, GenAI explanations and rich search.",
-        "problem": "Algorithm learning resources tend to be static. Understanding behavior under different inputs, replaying state and exporting visuals for teaching are awkward at best.",
-        "challenge": "Build a fluid, accessible, GPU-friendly visualization engine that handles 60+ algorithms with a unified step model, deterministic replay, video export and AI-assisted understanding — held to product-grade quality bars.",
+        "summary": "AlgoLens は、リアルタイムのステップスルー、決定論的再生、FFmpeg-WASM エクスポート、GenAI の説明、および豊富な検索を備えた 60 以上のアルゴリズムをサポートする対話型アルゴリズム ビジュアライザーです。",
+        "problem": "アルゴリズム学習リソースは静的な傾向があります。さまざまな入力下での動作を理解し、状態を再生し、教育用にビジュアルをエクスポートすることは、ひいき目に見ても厄介です。",
+        "challenge": "統合されたステップ モデル、決定論的再生、ビデオ エクスポート、および AI 支援による理解を使用して 60 以上のアルゴリズムを処理し、製品グレードの品質基準を維持する、流動的でアクセスしやすい GPU フレンドリーな視覚化エンジンを構築します。",
         "approach": {
-          "0": "Designed a step-based execution model with deterministic replay across all algorithms.",
-          "1": "Built Canvas-based renderers with smooth, reduced-motion-aware animations.",
-          "2": "Integrated FFmpeg-WASM for in-browser video export of execution traces.",
-          "3": "Layered GenAI for natural-language explanations and complexity analysis.",
-          "4": "Implemented exact, fuzzy, phonetic and semantic search for algorithm discovery.",
-          "5": "Hardened with WCAG 2.1 AA, Sentry, Web Vitals, Playwright, Storybook, Percy and CI quality gates."
+          "0": "すべてのアルゴリズムにわたって決定論的な再生を備えたステップベースの実行モデルを設計しました。",
+          "1": "滑らかでモーションを意識したアニメーションを備えた Canvas ベースのレンダラーを構築しました。",
+          "2": "実行トレースのブラウザ内ビデオエクスポート用に統合された FFmpeg-WASM。",
+          "3": "自然言語の説明と複雑さの分析のための階層化された GenAI。",
+          "4": "アルゴリズム発見のための正確な、あいまいな、音声的および意味的検索を実装しました。",
+          "5": "WCAG 2.1 AA、Sentry、Web Vitals、Playwright、Storybook、Percy、CI 品質のゲートで強化されています。"
         }
       },
       "postureiq": {
         "title": "PostureIQ — リアルタイム ML 姿勢分析",
         "tagline": "決定論的なフィードバックループでエクササイズのフォームを採点する、60 FPS のコンピュータビジョン・コーチングシステム。",
         "category": "コンピュータビジョン × ML プロダクト",
-        "summary": "PostureIQ is an ML-powered posture and form-coaching system built around real-time pose estimation, temporal smoothing, confidence gating and rep-quality scoring for exercise feedback.",
-        "problem": "Exercise-form feedback is usually delayed, subjective or dependent on a trainer being present. A useful assistant needs to infer pose continuously and provide clear feedback without jitter or false positives.",
-        "challenge": "Maintain real-time capture, inference and rendering while making noisy pose landmarks stable enough for actionable coaching and automated quality scoring.",
+        "summary": "PostureIQ は、リアルタイムの姿勢推定、時間的平滑化、信頼性ゲーティング、運動フィードバックのための反復品質スコアリングを中心に構築された、ML を活用した姿勢およびフォームコーチング システムです。",
+        "problem": "エクササイズフォームのフィードバックは通常、遅れたり、主観的であったり、トレーナーの存在に依存したりするものです。有用なアシスタントは、ポーズを継続的に推論し、ジッターや誤検知のない明確なフィードバックを提供する必要があります。",
+        "challenge": "リアルタイムのキャプチャ、推論、レンダリングを維持しながら、ノイズの多いポーズ ランドマークを実用的なコーチングや自動品質スコアリングに十分な安定性を持たせます。",
         "approach": {
-          "0": "Built a deterministic capture-to-infer-to-render loop with OpenCV and MediaPipe/BlazePose.",
-          "1": "Added temporal smoothing, Kalman filtering, confidence gating, adaptive thresholds and 3D landmark checks to reduce noisy corrections.",
-          "2": "Implemented rep-quality scoring around ROM, tempo and symmetry with audio/visual feedback cues.",
-          "3": "Instrumented FPS, latency and error telemetry with dashboards for repeatable performance analysis.",
-          "4": "Added pytest coverage, golden traces and a CLI for reproducible validation runs."
+          "0": "OpenCV と MediaPipe/BlazePose を使用して、決定論的なキャプチャ、推論、レンダリングのループを構築しました。",
+          "1": "時間的平滑化、カルマン フィルタリング、信頼度ゲート、適応しきい値、および 3D ランドマーク チェックを追加して、ノイズの多い補正を削減します。",
+          "2": "ROM、テンポ、オーディオ/ビジュアルフィードバックキューによる対称性に関するレップ品質のスコアリングを実装しました。",
+          "3": "再現可能なパフォーマンス分析のためのダッシュボードを備えた計測済みの FPS、レイテンシ、エラー テレメトリ。",
+          "4": "pytest カバレッジ、ゴールデン トレース、再現可能な検証実行のための CLI が追加されました。"
         }
       },
       "track-person-app": {
         "title": "Track Person App — 移動トラッキングと可視化",
         "tagline": "人物の位置の軌跡を記録・可視化する React Native の移動トラッキングアプリ。",
         "category": "モバイル × データ可視化",
-        "summary": "A mobile-first tracking and visualization project that stores movement events in MongoDB and renders location history for inspection.",
-        "problem": "Movement data is hard to reason about from raw coordinates alone; users need a visual trail and a clean data model for location events.",
-        "challenge": "Design a lightweight mobile interface and persistence model that can capture, store and replay movement history without turning the app into a heavyweight GIS tool.",
+        "summary": "MongoDB に移動イベントを保存し、検査のために位置履歴をレンダリングする、モバイルファーストの追跡および視覚化プロジェクト。",
+        "problem": "動きのデータは、生の座標だけから推論するのは困難です。ユーザーは、位置情報イベントの視覚的な証跡とクリーンなデータ モデルを必要としています。",
+        "challenge": "アプリを重量級の GIS ツールに変えることなく、移動履歴をキャプチャ、保存、再生できる軽量のモバイル インターフェイスと永続性モデルを設計します。",
         "approach": {
-          "0": "Built the mobile surface in React Native around a simple capture and replay workflow.",
-          "1": "Modeled location samples in MongoDB for flexible movement-history queries.",
-          "2": "Added visualization views for scanning movement paths and spot-checking recorded sessions."
+          "0": "シンプルなキャプチャとリプレイのワークフローを中心に、React Native でモバイル サーフェスを構築しました。",
+          "1": "柔軟な移動履歴クエリのために MongoDB でモデル化された位置サンプル。",
+          "2": "移動パスをスキャンし、記録されたセッションをスポットチェックするための視覚化ビューが追加されました。"
         }
       },
       "smart-brain": {
         "title": "Smart Brain — 顔検出アプリ",
         "tagline": "Clarifai の推論を Express/React のプロダクト UI と統合したフルスタック顔検出アプリ。",
         "category": "フルスタック × コンピュータビジョン",
-        "summary": "Smart Brain is a full-stack application that sends image URLs to Clarifai, receives face-detection predictions and renders bounding boxes in a React interface.",
-        "problem": "Computer-vision APIs are powerful but abstract; a useful learning project needs to make the request/response loop visible and interactive.",
-        "challenge": "Integrate a third-party ML API with a clean backend boundary while keeping the frontend responsive and easy to understand.",
+        "summary": "Smart Brain は、画像 URL を Clarifai に送信し、顔検出予測を受け取り、React インターフェイスで境界ボックスをレンダリングするフルスタック アプリケーションです。",
+        "problem": "コンピューター ビジョン API は強力ですが抽象的です。有用な学習プロジェクトでは、リクエスト/レスポンス ループを可視化してインタラクティブにする必要があります。",
+        "challenge": "フロントエンドの応答性と理解しやすさを維持しながら、サードパーティの ML API をクリーンなバックエンド境界と統合します。",
         "approach": {
-          "0": "Built an Express API layer for Clarifai requests and response normalization.",
-          "1": "Created React UI flows for image submission, prediction rendering and result feedback.",
-          "2": "Modeled the app so API integration details remain isolated from the presentation layer."
+          "0": "Clarifai のリクエストとレスポンスの正規化のための Express API レイヤーを構築しました。",
+          "1": "画像送信、予測レンダリング、結果フィードバック用の React UI フローを作成しました。",
+          "2": "API 統合の詳細がプレゼンテーション層から分離されたままになるようにアプリをモデル化しました。"
         }
       },
       "tezos-premier-league": {
         "title": "Tezos Premier League — 分散型ゲーミング",
         "tagline": "さらなる開発に向けて $10,000 のアワードを受けた分散型ゲーミングの取り組み。",
         "category": "Web3 × プロダクトエンジニアリング",
-        "summary": "A blockchain-based PvP gaming project and NFT marketplace on the Tezos network. The work was selected for a $10,000 award to support continued development.",
-        "problem": "Designing engaging on-chain gaming experiences while keeping the user experience approachable on a non-EVM ecosystem.",
-        "challenge": "Translate game mechanics into Tezos primitives and deliver a usable frontend that hides chain complexity from players.",
+        "summary": "Tezos ネットワーク上のブロックチェーンベースの PvP ゲーム プロジェクトと NFT マーケットプレイス。この作品は、継続的な開発を支援するために 10,000 ドルの賞金に選ばれました。",
+        "problem": "非EVMエコシステムでユーザーエクスペリエンスを親しみやすく保ちながら、魅力的なオンチェーンゲームエクスペリエンスを設計します。",
+        "challenge": "ゲームの仕組みを Tezos プリミティブに変換し、チェーンの複雑さをプレイヤーから隠す、使用可能なフロントエンドを提供します。",
         "approach": {
-          "0": "Designed product flows around bracket-style gameplay.",
-          "1": "Built a React frontend integrating with Tezos infrastructure, Taquito and SmartPy contracts.",
-          "2": "Used Pinata/IPFS for NFT metadata and added safer key-handling flows around wallet interactions.",
-          "3": "Added rate-limited RPC handling and resilient contract-call patterns for a smoother player experience.",
-          "4": "Iterated on UX based on player feedback from early access."
+          "0": "デザインされた製品は、ブラケット スタイルのゲームプレイを中心に流れます。",
+          "1": "Tezos インフラストラクチャ、Taquito、SmartPy コントラクトと統合する React フロントエンドを構築しました。",
+          "2": "NFT メタデータに Pinata/IPFS を使用し、ウォレットの相互作用に関するより安全なキー処理フローを追加しました。",
+          "3": "レート制限された RPC 処理と回復力のあるコントラクト呼び出しパターンが追加され、プレーヤー エクスペリエンスがよりスムーズになりました。",
+          "4": "早期アクセスからのプレイヤーのフィードバックに基づいて UX を反復しました。"
         }
       }
     }
@@ -1592,9 +1623,9 @@
     },
     "commitRain": {
       "label": "コミットの雨を降らせています…",
-      "dismissHint": "Click or Esc to close",
-      "close": "Close",
-      "count": "{count} commits"
+      "dismissHint": "クリックまたは Esc で閉じます",
+      "close": "近い",
+      "count": "{count} コミット"
     },
     "boot": {
       "title": "AyushOS 起動シーケンス",
@@ -1611,7 +1642,7 @@
       ]
     },
     "terminal": {
-      "title": "phoenix-shell",
+      "title": "フェニックスシェル",
       "close": "ターミナルを閉じる",
       "inputLabel": "ターミナル入力",
       "greet": "phoenix-shell へようこそ、{name} さん。",
@@ -1683,8 +1714,8 @@
         "動かす、正しくする、速くする — この順番で。",
         "十分なレイテンシを加えれば、どんなシステムも分散システムになる。"
       ],
-      "footerHint": "Tab ⇥ autocomplete · ↑↓ history · click to type",
-      "footerCmds": "Esc to exit"
+      "footerHint": "タブ ⇥ オートコンプリート · ↑↓ 履歴 · クリックして入力",
+      "footerCmds": "Esc で終了"
     },
     "dino": {
       "titleRunner": "フェニックスランナー",
@@ -1740,114 +1771,114 @@
     },
     "catalogue": {
       "console-banner": {
-        "title": "Console toolkit",
-        "hint": "Opened the devtools console and called help() / phoenix() / hire() / cv() / secrets().",
-        "clue": "Developers know where to look first."
+        "title": "コンソールツールキット",
+        "hint": "devtools コンソールを開き、help() / phoenix() / hire() / cv() / secrets() を呼び出しました。",
+        "clue": "開発者は、最初にどこを見るべきかを知っています。"
       },
       "html-comment": {
-        "title": "View-source explorer",
-        "hint": "Found the phoenix HTML comment trail in the page source.",
-        "clue": "Ctrl+U is a fine pastime."
+        "title": "ビューソースエクスプローラー",
+        "hint": "ページのソース内にフェニックスの HTML コメント跡が見つかりました。",
+        "clue": "Ctrl+U は素晴らしい娯楽です。"
       },
       "humans-txt": {
-        "title": "humans.txt reader",
-        "hint": "You read /humans.txt — the old-school manifest.",
-        "clue": "There's a file just for humans."
+        "title": "human.txt リーダー",
+        "hint": "/humans.txt (昔ながらのマニフェスト) を読みました。",
+        "clue": "人間専用のファイルがあります。"
       },
       "robots-txt": {
-        "title": "robots.txt reader",
-        "hint": "You opened /robots.txt — what the crawlers see.",
-        "clue": "And another, just for robots."
+        "title": "robots.txt リーダー",
+        "hint": "/robots.txt を開くと、クローラーが参照する内容が表示されます。",
+        "clue": "そしてもう 1 つはロボット専用です。"
       },
       "dino-score-5": {
-        "title": "Phoenix Run — 500",
-        "hint": "Soared past score 500 in Phoenix Run on the 404 page.",
-        "clue": "Get lost on purpose, then fly. The flame awakens at five hundred."
+        "title": "フェニックスラン — 500",
+        "hint": "404ページのフェニックスランでスコア500を超えて急上昇しました。",
+        "clue": "わざと道に迷ってから飛んでください。炎は五時に目覚める。"
       },
       "feather-score-5": {
-        "title": "Golden Feather × 5",
-        "hint": "Collected five golden feathers in a single Phoenix Run.",
-        "clue": "Some power-ups are worth chasing. Gather a handful of feathers."
+        "title": "黄金の羽根×5",
+        "hint": "1 回のフェニックス ランで黄金の羽根を 5 枚集めた。",
+        "clue": "いくつかのパワーアップは追いかける価値があります。羽を数枚集めます。"
       },
       "konami": {
-        "title": "Konami initiate",
-        "hint": "Entered the classic ↑↑↓↓←→←→BA sequence.",
-        "clue": "Some sequences are written into muscle memory."
+        "title": "コナミイニシエイト",
+        "hint": "定番の↑↑↓↓←→←→BAシーケンスに入ります。",
+        "clue": "一部のシーケンスはマッスルメモリーに書き込まれます。"
       },
       "terminal-mode": {
-        "title": "phoenix-shell",
-        "hint": "Opened the terminal overlay — type \"terminal\" anywhere.",
-        "clue": "Speak the word and a shell appears."
+        "title": "フェニックスシェル",
+        "hint": "ターミナル オーバーレイを開きます。任意の場所に「ターミナル」と入力します。",
+        "clue": "言葉を話すと貝殻が現れます。"
       },
       "phoenix-type": {
-        "title": "Speak its name",
-        "hint": "Typed \"phoenix\" anywhere on the page.",
-        "clue": "Names have power."
+        "title": "その名前を話してください",
+        "hint": "ページ上の任意の場所に「フェニックス」と入力しました。",
+        "clue": "名前には力があります。"
       },
       "logo-shift-click": {
-        "title": "Hidden phoenix theme",
-        "hint": "Held Shift and clicked the logo five times to summon the phoenix theme.",
-        "clue": "The crest does not mind being clicked."
+        "title": "隠されたフェニックスのテーマ",
+        "hint": "Shift キーを押しながらロゴを 5 回クリックすると、フェニックスのテーマが呼び出されます。",
+        "clue": "紋章はクリックされても構いません。"
       },
       "sanskrit-locale": {
-        "title": "संस्कृतम् reader",
-        "hint": "Switched the site to Sanskrit — a liturgical, classical language at home with phoenix imagery.",
-        "clue": "Six tongues are spoken here."
+        "title": "読者",
+        "hint": "サイトをサンスクリット語に切り替えました。サンスクリット語は、フェニックスをイメージした典礼的古典言語です。",
+        "clue": "ここでは六つの舌が話されています。"
       },
       "polyglot": {
-        "title": "Polyglot",
-        "hint": "Visited the site in all six supported languages.",
-        "clue": "Try every flag in the menu."
+        "title": "多言語",
+        "hint": "サポートされている 6 つの言語すべてでサイトにアクセスしました。",
+        "clue": "メニュー内のすべてのフラグを試してください。"
       },
       "theme-cycler": {
-        "title": "Colour theorist",
-        "hint": "Cycled through all three themes within two seconds — the 't' key is quick.",
-        "clue": "Hammer the theme key."
+        "title": "色彩理論家",
+        "hint": "3 つのテーマすべてを 2 秒以内に循環できます。「t」キーを押すと素早く実行できます。",
+        "clue": "テーマキーをハンマーで叩きます。"
       },
       "devtools-open": {
-        "title": "Devtools spotted",
-        "hint": "Opened the browser devtools — respect.",
-        "clue": "We see you in the inspector."
+        "title": "発見された開発ツール",
+        "hint": "ブラウザの開発ツールを開きました — 敬意を表します。",
+        "clue": "検査官でお会いしましょう。"
       },
       "phoenix-route": {
-        "title": "/phoenix visitor",
-        "hint": "Found the hidden /phoenix route, where the codename is explained.",
-        "clue": "Type the codename in the address bar."
+        "title": "/フェニックスの訪問者",
+        "hint": "コードネームが説明されている隠された/phoenixルートを発見しました。",
+        "clue": "アドレスバーにコードネームを入力します。"
       },
       "credits-route": {
-        "title": "/credits visitor",
-        "hint": "Found the hidden /credits route — a thank-you to the open-source giants.",
-        "clue": "Every site stands on shoulders."
+        "title": "/クレジット訪問者",
+        "hint": "隠された /credits ルートを発見しました - オープンソースの巨人に感謝します。",
+        "clue": "どの現場も肩を並べて立っています。"
       },
       "haiku-trail": {
-        "title": "Haiku trail",
-        "hint": "Found the three-line haiku hidden across home, about and work.",
-        "clue": "Three pages, three lines, one ember."
+        "title": "俳句の道",
+        "hint": "家、周囲、職場のあちこちに隠された三行の俳句を見つけました。",
+        "clue": "3 ページ、3 行、残り火 1 つ。"
       },
       "css-selection": {
-        "title": "Invisible ink",
-        "hint": "Selected the invisible line under the hero tagline — \"phoenix · rise · /secret\".",
-        "clue": "Some text is only visible when selected."
+        "title": "目に見えないインク",
+        "hint": "ヒーローのキャッチフレーズの下にある目に見えない行「フェニックス・ライズ・/秘密」を選択しました。",
+        "clue": "一部のテキストは、選択した場合にのみ表示されます。"
       },
       "matrix-rain": {
-        "title": "Down the matrix",
-        "hint": "Summoned the matrix-rain overlay — type \"matrix\" anywhere.",
-        "clue": "Green, falling, familiar."
+        "title": "マトリックスの下へ",
+        "hint": "マトリックスとレインのオーバーレイを呼び出します。任意の場所に「matrix」と入力します。",
+        "clue": "緑、落ちる、おなじみ。"
       },
       "og-qr-scan": {
-        "title": "OG QR scanner",
-        "hint": "Spotted (or scanned) the tiny QR code in the social preview image.",
-        "clue": "Look at the share preview, not the page."
+        "title": "OG QR スキャナー",
+        "hint": "ソーシャル プレビュー画像内の小さな QR コードを見つけました (またはスキャンしました)。",
+        "clue": "ページではなく、共有プレビューを確認してください。"
       },
       "trophy-room-visit": {
-        "title": "Trophy room",
-        "hint": "You found the trophy room itself.",
-        "clue": "Some secrets are about the room they live in."
+        "title": "トロフィールーム",
+        "hint": "トロフィールーム自体を見つけました。",
+        "clue": "いくつかの秘密は彼らが住んでいる部屋に関するものです。"
       },
       "completionist": {
-        "title": "Completionist",
-        "hint": "Every single egg found. You really did go the long way around.",
-        "clue": "Find everything else first."
+        "title": "完全主義者",
+        "hint": "卵は一つ一つ見つかりました。本当に遠回りしてきましたね。",
+        "clue": "まず他のものをすべて見つけてください。"
       }
     }
   },
@@ -1855,55 +1886,55 @@
     "items": {
       "now": "Now へ移動",
       "engineer": "エンジニアモードを切り替え",
-      "palette": "Open command palette",
-      "search": "Focus search",
-      "help": "Show this help",
-      "escape": "Close menus / overlays",
-      "nextSection": "Jump to next section",
-      "prevSection": "Jump to previous section",
-      "home": "Go home",
-      "work": "Go to work",
-      "skills": "Go to skills",
-      "contact": "Go to contact",
-      "experience": "Go to experience",
-      "about": "Go to about",
-      "theme": "Cycle theme",
-      "recruiter": "Toggle recruiter mode",
-      "language": "Open language picker",
-      "copyEmail": "Copy email address",
-      "downloadResume": "Download résumé",
-      "arrows": "Navigate within a menu"
+      "palette": "コマンドパレットを開く",
+      "search": "フォーカス検索",
+      "help": "このヘルプを表示する",
+      "escape": "メニュー/オーバーレイを閉じる",
+      "nextSection": "次のセクションにジャンプ",
+      "prevSection": "前のセクションにジャンプ",
+      "home": "家に帰れ",
+      "work": "仕事に行く",
+      "skills": "スキルに移動",
+      "contact": "連絡先に行く",
+      "experience": "体験へ行く",
+      "about": "についてに移動",
+      "theme": "サイクルテーマ",
+      "recruiter": "採用担当者モードの切り替え",
+      "language": "言語ピッカーを開く",
+      "copyEmail": "メールアドレスをコピーする",
+      "downloadResume": "履歴書をダウンロード",
+      "arrows": "メニュー内を移動する"
     },
-    "title": "Keyboard shortcuts",
-    "subtitle": "Press <kbd>?</kbd> any time to reopen this list.",
-    "openLabel": "Open keyboard shortcuts (press ?)",
-    "close": "Close",
+    "title": "キーボードショートカット",
+    "subtitle": "<kbd>?</kbd> を押すと、いつでもこのリストを再度開くことができます。",
+    "openLabel": "キーボード ショートカットを開きます (? を押します)",
+    "close": "近い",
     "groups": {
-      "global": "Global",
-      "navigation": "Navigation",
-      "actions": "Actions",
-      "menus": "Menus"
+      "global": "グローバル",
+      "navigation": "ナビゲーション",
+      "actions": "アクション",
+      "menus": "メニュー"
     }
   },
   "demos": {
     "maestro": {
-      "title": "maestro · omitted",
-      "subtitle": "trade secret — demo not published",
-      "stagesLabel": "Workflow stages",
-      "gateMarker": "Human approval gate",
-      "docLabel": "Session log",
-      "empty": "The interactive MAESTRO walkthrough is not published because the system is trade-secret protected.",
-      "kindLabel": "Ticket type",
-      "defect": "Defect",
-      "enhancement": "Enhancement",
-      "failOnce": "Fail validation once",
-      "run": "Unavailable",
-      "pause": "Pause",
-      "resume": "Resume",
-      "again": "Unavailable",
-      "approve": "Unavailable",
-      "reset": "Reset",
-      "note": "Omitted for IP protection — not a map of the production workflow.",
+      "title": "マエストロ・省略",
+      "subtitle": "企業秘密 — デモは公開されていません",
+      "stagesLabel": "ワークフローの段階",
+      "gateMarker": "人間の承認ゲート",
+      "docLabel": "セッションログ",
+      "empty": "システムは企業秘密で保護されているため、インタラクティブな MAESTRO ウォークスルーは公開されていません。",
+      "kindLabel": "チケットの種類",
+      "defect": "欠陥",
+      "enhancement": "強化",
+      "failOnce": "検証に一度失敗する",
+      "run": "利用不可",
+      "pause": "一時停止",
+      "resume": "再開する",
+      "again": "利用不可",
+      "approve": "利用不可",
+      "reset": "リセット",
+      "note": "IP 保護のために省略されています。実稼働ワークフローのマップではありません。",
       "stages": {
         "intake": "—",
         "rca": "—",
@@ -1915,7 +1946,7 @@
         "release": "—"
       },
       "log": {
-        "start": "demo unavailable",
+        "start": "デモは利用できません",
         "intake": "—",
         "rca": "—",
         "design": "—",
@@ -1931,173 +1962,173 @@
       }
     },
     "common": {
-      "play": "Play",
-      "pause": "Pause",
-      "reset": "Reset",
-      "stepBack": "Step back",
-      "stepForward": "Step forward",
-      "tryPrompt": "Try a prompt",
-      "trySample": "Try a sample",
-      "rerun": "rerun",
-      "illustrative": "Illustrative — pipeline mirrors the real flow, but responses are canned."
+      "play": "遊ぶ",
+      "pause": "一時停止",
+      "reset": "リセット",
+      "stepBack": "一歩下がってください",
+      "stepForward": "一歩前進",
+      "tryPrompt": "プロンプトを試してみる",
+      "trySample": "サンプルを試してみる",
+      "rerun": "再実行",
+      "illustrative": "説明 — パイプラインは実際のフローを反映していますが、応答は定型化されています。"
     },
     "algolens": {
-      "title": "algolens · bubble-sort · deterministic",
-      "step": "step {current} / {total}",
-      "pseudocode": "Pseudocode",
-      "time": "Time",
-      "space": "Space",
-      "explore": "Explore full AlgoLens →",
-      "barLabel": "Bar value {value}"
+      "title": "アルゴレンズ · バブルソート · 決定論的",
+      "step": "ステップ {current} / {total}",
+      "pseudocode": "擬似コード",
+      "time": "時間",
+      "space": "空間",
+      "explore": "AlgoLens を詳しく見る →",
+      "barLabel": "バー値 {value}"
     },
     "xcelium": {
-      "title": "xcelium · runtime profile",
-      "throughputGain": "{pct}% throughput gain",
-      "workloadMix": "workload mix",
-      "before": "before",
-      "after": "after",
-      "mixAriaLabel": "Before / after mix",
-      "note": "Illustrative: bars compress from the \"before\" profile to the optimized \"after\" profile as you drag the slider."
+      "title": "xcelium · ランタイム プロファイル",
+      "throughputGain": "{pct}% のスループット向上",
+      "workloadMix": "ワークロードミックス",
+      "before": "前に",
+      "after": "後",
+      "mixAriaLabel": "ミックス前 / ミックス後",
+      "note": "例: スライダーをドラッグすると、バーが「前」のプロファイルから最適化された「後」のプロファイルに圧縮されます。"
     },
     "tezos": {
-      "title": "tpl · pvp bracket · deterministic sim",
-      "round": "round {current} / {total}",
-      "play": "Play bracket",
-      "championLabel": "champion",
-      "roundLabel": "round {n}",
-      "note": "Illustrative on-chain bracket — winners are derived deterministically (no real wallet)."
+      "title": "tpl・pvpブラケット・決定論的sim",
+      "round": "ラウンド {current} / {total}",
+      "play": "プレイブラケット",
+      "championLabel": "チャンピオン",
+      "roundLabel": "{n} ラウンド",
+      "note": "例示的なオンチェーンブラケット — 勝者は決定的に導出されます (実際のウォレットはありません)。"
     },
     "posture": {
-      "title": "postureiq · live rep · simulated",
-      "tracking": "● tracking",
-      "lowConfidence": "○ low confidence",
-      "formScore": "FORM SCORE",
-      "repsConf": "REPS · CONF",
-      "note": "form-score(t) with confidence gate — peaks count when above threshold"
+      "title": "姿勢iq · ライブレップ · シミュレート",
+      "tracking": "●追跡",
+      "lowConfidence": "○ 信頼度が低い",
+      "formScore": "フォームスコア",
+      "repsConf": "担当者・会議",
+      "note": "信頼ゲートを使用した form-score(t) — しきい値を超えた場合のピーク数"
     },
     "track": {
-      "title": "track-person · live route · simulated",
-      "inZone": "● in-zone",
-      "distance": "DISTANCE",
-      "waypoint": "WAYPOINT"
+      "title": "トラック人物 · ライブルート · シミュレート",
+      "inZone": "● インゾーン",
+      "distance": "距離",
+      "waypoint": "ウェイポイント"
     },
     "smart": {
-      "title": "smart-brain · vision inference · simulated",
-      "scanning": "scanning…",
-      "ready": "ready",
-      "inferenceLog": "Inference log",
-      "waitingForInput": "waiting for input…",
-      "detections": "Detections",
-      "rerunAriaLabel": "Re-run inference",
-      "sampleObj": "{count} obj"
+      "title": "スマートブレイン · 視覚推論 · シミュレーション",
+      "scanning": "走査…",
+      "ready": "準備ができて",
+      "inferenceLog": "推論ログ",
+      "waitingForInput": "入力を待っています…",
+      "detections": "検出",
+      "rerunAriaLabel": "推論を再実行する",
+      "sampleObj": "{count}オブジェクト"
     }
   },
   "architecture": {
     "maestro": {
-      "aria": "MAESTRO architecture diagram omitted because the system is trade-secret protected.",
-      "entry": "Ticket",
-      "conductor": "Orchestration",
-      "conductorSub": "human-gated",
-      "loop": "review loop",
+      "aria": "システムは企業秘密で保護されているため、MAESTRO アーキテクチャ図は省略されています。",
+      "entry": "チケット",
+      "conductor": "オーケストレーション",
+      "conductorSub": "人間によるゲート",
+      "loop": "レビューループ",
       "stages": {
-        "intake": "Triage",
-        "rca": "Investigate",
-        "fix": "Propose",
-        "validate": "Validate",
-        "review": "Review",
-        "regress": "Verify",
-        "release": "Close"
+        "intake": "トリアージ",
+        "rca": "調査する",
+        "fix": "プロポーズする",
+        "validate": "検証する",
+        "review": "レビュー",
+        "regress": "確認する",
+        "release": "近い"
       },
-      "state": "Confidential — not published",
-      "kb": "Knowledge",
-      "kbSub": "internal",
-      "tools": "Integrations",
-      "toolsSub": "internal",
-      "gate": "human oversight"
+      "state": "機密 — 公開されていません",
+      "kb": "知識",
+      "kbSub": "内部",
+      "tools": "統合",
+      "toolsSub": "内部",
+      "gate": "人間の監視"
     },
     "xcelium-ai-agents": {
       "aria": "Xcelium AI エージェントのアーキテクチャ: プランナーが、決定論的な Python レーン (受付、シミュレーション実行、プロファイルパーサー、レポート) と LLM 推論レーン (分析、リコード、適用) の間で処理を振り分け、チェックリスト型の LLM ジャッジがレポートをゴールデンと比較する。",
-      "laneDeterministic": "deterministic Python — runs before any model turn",
-      "laneLlm": "LLM reasoning — findings arrive as data",
-      "tui": "ChipStack TUI",
-      "tuiSub": "engineer prompt",
-      "planner": "Planner node",
-      "plannerSub": "routes between phases",
-      "intake": "Python intake",
-      "runner": "Sim runner",
-      "parser": "Profile parser",
-      "report": "Python report",
-      "analyse": "Analyse",
-      "recode": "3-tier recode",
-      "apply": "Apply + backup",
-      "rerun": "re-run & compare",
-      "judge": "Checklist judge",
-      "judgeSub": "5 yes/no questions",
-      "golden": "vs. golden report",
-      "framework": "Shared workflow framework — graph orchestration · checkpointed typed state · strict outputs · JSON recovery · fallbacks"
+      "laneDeterministic": "決定的 Python — モデルが回転する前に実行されます",
+      "laneLlm": "LLM 推論 — 結果はデー​​タとして到着します",
+      "tui": "チップスタック TUI",
+      "tuiSub": "エンジニアのプロンプト",
+      "planner": "プランナーノード",
+      "plannerSub": "フェーズ間のルート",
+      "intake": "Python の導入",
+      "runner": "シムランナー",
+      "parser": "プロファイルパーサー",
+      "report": "Pythonレポート",
+      "analyse": "分析する",
+      "recode": "3層レコード",
+      "apply": "適用+バックアップ",
+      "rerun": "再実行して比較する",
+      "judge": "チェックリスト審査員",
+      "judgeSub": "5 つのはい/いいえの質問",
+      "golden": "vsゴールデンレポート",
+      "framework": "共有ワークフロー フレームワーク — グラフ オーケストレーション · チェックポイントによる型付き状態 · 厳密な出力 · JSON リカバリ · フォールバック"
     },
     "regression-triage": {
       "aria": "回帰トリアージのアーキテクチャ: 失敗リストを再実行し、フィンガープリント化、カテゴリ分け、クラスタリングを行う。助言的な LLM レビューを伴うクラスゲートが、差分をリゴールドへ、その他の失敗をフィルタまたは根本原因分析へ送り、その後モードごとに検証して学習ストアに反映する。",
       "stages": {
-        "lists": "Failure lists",
-        "rerun": "Parallel rerun",
-        "signatures": "Signatures\n(masked hashes)",
-        "categorise": "Categorise\nrules + vote",
-        "cluster": "TF-IDF\nclustering"
+        "lists": "失敗リスト",
+        "rerun": "並行再実行",
+        "signatures": "署名\n(マスクされたハッシュ)",
+        "categorise": "分類する\nルール+投票",
+        "cluster": "TF-IDF\nクラスタリング"
       },
-      "review": "LLM review\n(advisory)",
-      "gate": "Class gate",
-      "rca": "Root-cause analysis",
-      "rcaSub": "crash · timeout · tool error",
-      "filter": "Filter / waive",
-      "filterSub": "IGNORE · waiver",
-      "regold": "Regold",
-      "regoldSub": "diff class only",
-      "verify": "Per-mode verify",
-      "learning": "Learning store",
-      "learningSub": "outcomes written back",
-      "feedback": "history feeds the vote"
+      "review": "LLM レビュー\n(勧告)",
+      "gate": "クラスゲート",
+      "rca": "根本原因分析",
+      "rcaSub": "クラッシュ・タイムアウト・ツールエラー",
+      "filter": "フィルター/放棄",
+      "filterSub": "無視・権利放棄",
+      "regold": "リゴールド",
+      "regoldSub": "差分クラスのみ",
+      "verify": "モードごとの検証",
+      "learning": "学習ストア",
+      "learningSub": "結果が書き戻される",
+      "feedback": "歴史が投票に影響を与える"
     },
     "perforce-replay": {
       "aria": "Perforce リプレイのアーキテクチャ: チェンジリスト番号とターゲットブランチを起点に、ストリームの導出、順序付け、変更対象パスの計画、障害修復付きの選択的同期、順序どおりのマージを行い、最後に 1 回の自動解決でマージ済みファイルと見送られたファイルに分ける。",
-      "input": "CL numbers + target",
+      "input": "CL数+目標",
       "stages": {
-        "streams": "Derive source\nstreams",
-        "order": "Sort CLs\nascending",
-        "plan": "Plan touched\npaths",
-        "materialise": "Selective sync\n+ view repair",
-        "merge": "Merge each CL\nat its revision",
-        "resolve": "Single\nauto-resolve"
+        "streams": "ソースの派生\nストリーム",
+        "order": "CLのソート\n昇順",
+        "plan": "計画が決定されました\nパス",
+        "materialise": "選択的同期\n+ 修理を見る",
+        "merge": "各 CL をマージする\nその改訂版で",
+        "resolve": "シングル\n自動解決"
       },
-      "merged": "Merged cleanly",
-      "declined": "Declined files\nnamed",
-      "client": "Disposable client",
-      "clientSub": "optional · config-only sync",
-      "noSubmit": "nothing is submitted automatically — the engineer reviews and submits"
+      "merged": "きれいに結合されました",
+      "declined": "拒否されたファイル\n名前付き",
+      "client": "使い捨てクライアント",
+      "clientSub": "オプションの設定のみの同期",
+      "noSubmit": "自動的には何も送信されません。エンジニアがレビューして送信します。"
     }
   },
   "experienceData": {
     "cadence-design-systems": {
       "highlights": {
         "0": {
-          "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+          "title": "MAESTRO — マルチエージェントのチケット解決",
+          "detail": "人間の監視によるエンジニアリングチケット解決のためのケイデンスのマルチエージェントプラットフォームである MAESTRO を構築しました。内部評価では、チケット解決時間を 45%、RCA 時間を 55% 削減しました。営業秘密保護対象として選択 - 実装の詳細は機密のままです。"
         },
         "1": {
-          "title": "ChipStack Xcelium AI Agents",
-          "detail": "Built multi-agent performance and memory optimization workflows on the OpenAI Agents SDK, achieving a 31.3% simulation speedup on a validated benchmark; a deterministic-first re-architecture made runs 1.93× faster end to end and analysis 3.9× faster."
+          "title": "ChipStack Xcelium AI エージェント",
+          "detail": "OpenAI Agents SDK 上にマルチエージェントのパフォーマンスとメモリの最適化ワークフローを構築し、検証済みのベンチマークで 31.3% のシミュレーション速度向上を達成しました。決定性優先の再アーキテクチャにより、エンドツーエンドでの実行が 1.93 倍、分析が 3.9 倍高速になりました。"
         },
         "2": {
-          "title": "Xcelium Logic Simulator Optimization",
-          "detail": "Engineered low-level C++ and simulator-architecture optimizations that improved overall throughput by 18–19% on large customer workloads and helped secure a strategic Samsung performance win."
+          "title": "Xcelium ロジック シミュレーターの最適化",
+          "detail": "低レベルの C++ とシミュレーター アーキテクチャの最適化を設計し、大規模な顧客のワークロードで全体のスループットを 18 〜 19% 向上させ、Samsung の戦略的なパフォーマンスの勝利を確保しました。"
         },
         "3": {
-          "title": "Xform Engine RTL Transformations",
-          "detail": "Implemented RTL transformations in the Xform Engine, delivering 13–14% cumulative parsing/runtime gains across designs from Apple, Google, Samsung and NVIDIA."
+          "title": "Xform エンジンの RTL 変換",
+          "detail": "Xform Engine に RTL 変換を実装し、Apple、Google、Samsung、NVIDIA の設計全体で累積解析/実行時間の 13 〜 14% の向上を実現しました。"
         },
         "4": {
-          "title": "Performance-Analysis Library",
-          "detail": "Built reusable C++ diagnostics APIs and a structured-log pipeline across Compile, Elab and Sim; added Top-N profiling, graph-based attribution and Fenwick counters, reducing RCA time by ~40%."
+          "title": "パフォーマンス分析ライブラリ",
+          "detail": "Compile、Elab、Sim にわたる再利用可能な C++ 診断 API と構造化ログ パイプラインを構築しました。トップ N プロファイリング、グラフベースのアトリビューション、フェンウィック カウンターが追加され、RCA 時間が最大 40% 削減されました。"
         },
         "5": {
           "title": "回帰トリアージ & リゴールドシステム",
@@ -2116,204 +2147,204 @@
           "detail": "Cadence India Conference で性能に関する知見を発表し、Samsung 案件の性能改善で複数の賞、Corporate VP からの表彰、All-Hands での紹介を受けた。"
         }
       },
-      "role": "R&D Software Engineer II",
-      "location": "Noida, India",
-      "summary": "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, multi-agent AI systems and developer tooling for regression and release workflows."
+      "role": "研究開発ソフトウェアエンジニアⅡ",
+      "location": "ノイダ、インド",
+      "summary": "Xcelium Logic Simulator でのパフォーマンスの研究開発。低レベルの C++ 最適化、EDA 診断、マルチエージェント AI システム、回帰およびリリースのワークフロー用の開発者ツールを組み合わせます。"
     },
     "game-geeks": {
-      "role": "Blockchain Engineer (Tezos Premier League)",
-      "location": "Remote",
-      "summary": "Designed and shipped Tezos Premier League — a PvP blockchain gaming product and NFT marketplace recognized with a $10,000 grant from Tezos India for continued development.",
+      "role": "ブロックチェーンエンジニア (Tezos Premier League)",
+      "location": "リモート",
+      "summary": "Tezos Premier League を設計、出荷しました。これは、継続的な開発のために Tezos India から 10,000 ドルの助成金が認められた PvP ブロックチェーン ゲーム製品および NFT マーケットプレイスです。",
       "highlights": {
         "0": {
-          "title": "Tezos Premier League — Product Lead",
-          "detail": "Owned the end-to-end product design for a bracket-style PvP gaming dApp on Tezos, translating game mechanics into on-chain primitives and approachable UX."
+          "title": "Tezos プレミア リーグ — プロダクト リード",
+          "detail": "Tezos 上のブラケット スタイル PvP ゲーム dApp のエンドツーエンドの製品設計を担当し、ゲームの仕組みをオンチェーンのプリミティブと親しみやすい UX に変換しました。"
         },
         "1": {
-          "title": "$10,000 Tezos India Grant",
-          "detail": "Won a $10,000 grant from Tezos India to extend the platform after a demo evaluated for product innovation, technical quality and ecosystem fit."
+          "title": "10,000 ドルの Tezos インド助成金",
+          "detail": "製品の革新性、技術的品質、エコシステムへの適合性を評価したデモの後、プラットフォームを拡張するために Tezos India から 10,000 ドルの助成金を獲得しました。"
         },
         "2": {
-          "title": "NFT Marketplace & Smart Contracts",
-          "detail": "Designed an NFT marketplace with Pinata/IPFS storage, SmartPy contracts, Taquito integrations and rate-limited RPC handling for resilient on-chain calls."
+          "title": "NFT マーケットプレイスとスマート コントラクト",
+          "detail": "Pinata/IPFS ストレージ、SmartPy コントラクト、Taquito 統合、および回復力のあるオンチェーン コールのためのレート制限された RPC 処理を備えた NFT マーケットプレイスを設計しました。"
         }
       }
     },
     "omikron-technologies": {
-      "role": "Software Engineer Intern",
-      "location": "Delhi, India",
-      "summary": "Product engineering internship focused on modular single-page applications, release quality and accessibility-minded frontend delivery.",
+      "role": "ソフトウェアエンジニアインターン",
+      "location": "デリー、インド",
+      "summary": "製品エンジニアリングのインターンシップは、モジュール式の単一ページ アプリケーション、リリースの品質、アクセシビリティを重視したフロントエンドの配信に重点を置いています。",
       "highlights": {
         "0": {
-          "title": "Modular SPA Delivery",
-          "detail": "Built modular React/TypeScript SPAs with Redux Toolkit, RTK Query, per-PR CI, test-pyramid coverage and accessibility gates to reduce change-failure risk."
+          "title": "モジュラーSPAの提供",
+          "detail": "Redux Toolkit、RTK Query、PR ごとの CI、テスト ピラミッド カバレッジ、アクセシビリティ ゲートを備えたモジュラー React/TypeScript SPA を構築し、変更失敗のリスクを軽減します。"
         },
         "1": {
-          "title": "Scalable Frontend Architecture",
-          "detail": "Established reusable component, theming and routing patterns that let multiple feature teams ship in parallel without stepping on each other."
+          "title": "スケーラブルなフロントエンド アーキテクチャ",
+          "detail": "確立された再利用可能なコンポーネント、テーマ、ルーティング パターンにより、複数の機能チームが互いに干渉することなく並行して出荷できるようになります。"
         }
       }
     },
     "script-winter-of-code": {
-      "role": "Developer",
-      "location": "Delhi, India",
-      "summary": "Open-source contribution program focused on authentication, identity-provider workflows and secure API design.",
+      "role": "開発者",
+      "location": "デリー、インド",
+      "summary": "認証、ID プロバイダーのワークフロー、安全な API 設計に焦点を当てたオープンソースの貢献プログラム。",
       "highlights": {
         "0": {
-          "title": "UniAuth Identity Provider",
-          "detail": "Implemented UniAuth with OAuth 2.0, OIDC, PKCE, refresh-token rotation, scoped JWTs and a written threat model across Python, TypeScript, Django, Flask and Go services."
+          "title": "UniAuth アイデンティティプロバイダー",
+          "detail": "OAuth 2.0、OIDC、PKCE、リフレッシュ トークン ローテーション、スコープ指定された JWT、および Python、TypeScript、Django、Flask、Go サービス全体にわたって記述された脅威モデルを使用して UniAuth を実装しました。"
         },
         "1": {
-          "title": "Polyglot Service Plumbing",
-          "detail": "Wired the identity flow across TypeScript front-end, Django/Flask Python services and a Go authorization service with consistent error and audit semantics."
+          "title": "多言語サービス配管",
+          "detail": "TypeScript フロントエンド、Django/Flask Python サービス、および一貫したエラーと監査セマンティクスを備えた Go 認証サービスにわたる ID フローを接続しました。"
         }
       }
     },
     "delta-winter-of-code": {
-      "role": "Developer",
-      "location": "Delhi, India",
-      "summary": "Open-source contribution program focused on log analytics, containerization and CI/CD automation.",
+      "role": "開発者",
+      "location": "デリー、インド",
+      "summary": "ログ分析、コンテナ化、CI/CD 自動化に焦点を当てたオープンソース貢献プログラム。",
       "highlights": {
         "0": {
-          "title": "Dockerized Log Analytics",
-          "detail": "Dockerized a full-stack log analyzer (Django REST + Celery + Redis + Elasticsearch), added GitHub Actions CI/CD and structured cardinality-safe logs."
+          "title": "Docker化されたログ分析",
+          "detail": "フルスタック ログ アナライザー (Django REST + Celery + Redis + Elasticsearch) を Docker 化し、GitHub Actions CI/CD と構造化されたカーディナリティ セーフ ログを追加しました。"
         },
         "1": {
-          "title": "CI/CD Pipeline",
-          "detail": "Built reproducible GitHub Actions workflows covering lint, tests, image build and deploy with cached layers and trace context for faster investigations."
+          "title": "CI/CD パイプライン",
+          "detail": "lint、テスト、キャッシュされたレイヤーを使用したイメージの構築とデプロイをカバーする再現可能な GitHub Actions ワークフローを構築し、調査を迅速化するためにコンテキストをトレースします。"
         }
       }
     },
     "tezos-india": {
-      "role": "Fellow",
-      "location": "Delhi, India",
-      "summary": "Blockchain fellowship where a decentralized gaming product and NFT marketplace earned a $10,000 grant for continued development.",
+      "role": "仲間",
+      "location": "デリー、インド",
+      "summary": "分散型ゲーム製品と NFT マーケットプレイスが継続的な開発のために 10,000 ドルの助成金を獲得したブロックチェーン フェローシップ。",
       "highlights": {
         "0": {
-          "title": "PvP Gaming dApp & NFT Marketplace",
-          "detail": "Shipped a Tezos-based PvP gaming dApp with safer key handling, resilient contract calls, Pinata/IPFS storage, Taquito integrations and SmartPy contracts."
+          "title": "PvP ゲーム dApp および NFT マーケットプレイス",
+          "detail": "より安全なキー処理、回復力のあるコントラクト コール、Pinata/IPFS ストレージ、Taquito 統合、SmartPy コントラクトを備えた Tezos ベースの PvP ゲーム dApp を出荷しました。"
         },
         "1": {
-          "title": "PLAY Token Marketplace",
-          "detail": "Designed matchmaking and a PLAY-token-driven marketplace flow so players could buy, sell and use in-game assets across matches."
+          "title": "PLAYトークンマーケットプレイス",
+          "detail": "マッチメイキングと PLAY トークン主導のマーケットプレイス フローを設計し、プレイヤーが試合全体でゲーム内アセットを売買、使用できるようにしました。"
         }
       }
     },
     "programming-club-summer-of-code": {
-      "role": "Developer",
-      "location": "Delhi, India",
-      "summary": "Led a small engineering team building real-time collaboration software with WebRTC and browser-first product architecture.",
+      "role": "開発者",
+      "location": "デリー、インド",
+      "summary": "WebRTC とブラウザファーストの製品アーキテクチャを使用したリアルタイム コラボレーション ソフトウェアを構築する小規模なエンジニアリング チームを率いました。",
       "highlights": {
         "0": {
-          "title": "WebRTC Conferencing Platform",
-          "detail": "Led a 5-member team to deliver a video conferencing app, tuning ICE signaling and congestion behavior to cut join time and stalls by roughly 30%."
+          "title": "WebRTC 会議プラットフォーム",
+          "detail": "5 人のメンバーからなるチームを率いてビデオ会議アプリを提供し、ICE シグナリングと輻輳動作を調整して、参加時間と停止を約 30% 削減しました。"
         },
         "1": {
-          "title": "Team Leadership",
-          "detail": "Coordinated a 5-person team across design, frontend, signaling and infra — running standups, code reviews and a release checklist for predictable shipping."
+          "title": "チームのリーダーシップ",
+          "detail": "設計、フロントエンド、シグナリング、インフラにわたる 5 人チームを調整し、スタンドアップ、コード レビュー、予測可能な出荷のためのリリース チェックリストを実行しました。"
         }
       }
     },
     "trotbee-private-limited": {
-      "role": "Back End Developer Intern (Fenmo App)",
-      "location": "Delhi, India",
-      "summary": "Backend internship on the Fenmo App as part of a 2-member team — building MVC OTP services and S3-backed video APIs, with a 15% latency reduction across hot paths.",
+      "role": "バックエンド開発者インターン (Fenmo アプリ)",
+      "location": "デリー、インド",
+      "summary": "2 人のメンバー チームの一員として Fenmo アプリでバックエンド インターンシップ - ホット パス全体のレイテンシを 15% 削減する MVC OTP サービスと S3 ベースのビデオ API を構築します。",
       "highlights": {
         "0": {
-          "title": "Fenmo MVC OTP & Video APIs",
-          "detail": "As one of a 2-member team, built MVC-structured OTP onboarding and S3-backed video upload/playback APIs with idempotent endpoints, retries with backoff and observability hooks."
+          "title": "Fenmo MVC OTP およびビデオ API",
+          "detail": "2 人のメンバー チームの 1 つとして、冪等エンドポイント、バックオフと可観測性フックによる再試行を備えた MVC 構造の OTP オンボーディングと S3 ベースのビデオ アップロード/再生 API を構築しました。"
         },
         "1": {
-          "title": "15% Latency Reduction",
-          "detail": "Reduced end-to-end API latency by ~15% through query tuning, payload trimming and pre-warmed connections, validated with load tests."
+          "title": "15% のレイテンシー削減",
+          "detail": "負荷テストで検証されたクエリ調整、ペイロード トリミング、事前ウォーム接続により、エンドツーエンド API レイテンシーが最大 15% 削減されました。"
         }
       }
     },
     "miri-infotech": {
-      "role": "Software Development Engineer Intern",
-      "location": "Noida, India",
-      "summary": "Full-stack internship building an encrypted real-time chat app with React/Redux, Sequelize/Postgres, Socket.io and Bcrypt-secured auth.",
+      "role": "ソフトウェア開発エンジニアのインターン",
+      "location": "ノイダ、インド",
+      "summary": "React/Redux、Sequelize/Postgres、Socket.io、および Bcrypt で保護された認証を使用して暗号化されたリアルタイム チャット アプリを構築するフルスタックのインターンシップ。",
       "highlights": {
         "0": {
-          "title": "Encrypted Real-Time Chat",
-          "detail": "Built a full-stack chat app with React/Redux frontend, Sequelize + PostgreSQL persistence, Socket.io real-time delivery and Bcrypt-hashed credentials."
+          "title": "暗号化されたリアルタイムチャット",
+          "detail": "React/Redux フロントエンド、Sequelize + PostgreSQL 永続性、Socket.io リアルタイム配信、Bcrypt ハッシュ認証情報を備えたフルスタック チャット アプリを構築しました。"
         },
         "1": {
-          "title": "Context-Based Messaging",
-          "detail": "Modeled context-based message channels with latency/error SLOs, dashboards and runbooks to reduce MTTR on production incidents."
+          "title": "コンテキストベースのメッセージング",
+          "detail": "遅延/エラー SLO、ダッシュボード、ランブックを備えたモデル化されたコンテキスト ベースのメッセージ チャネルにより、運用インシデントの MTTR を削減します。"
         }
       }
     },
     "dynamix-club": {
-      "role": "Head of Programming",
-      "location": "Ramjas School, Delhi",
-      "summary": "Led the programming wing of Dynamix Club — running competitive-programming sessions, mentoring juniors and representing the school at inter-school coding events.",
+      "role": "プログラミング責任者",
+      "location": "ラムジャス スクール、デリー",
+      "summary": "Dynamix Club のプログラミング部門を率い、競技プログラミング セッションを運営し、後輩を指導し、学校間のコーディング イベントで学校を代表して参加しました。",
       "highlights": {
         "0": {
-          "title": "Programming Wing Leadership",
-          "detail": "Designed weekly DSA / problem-solving sessions for club members, curated a progression from basics to contest-grade topics and ran internal mock contests."
+          "title": "プログラミング部門のリーダーシップ",
+          "detail": "クラブメンバー向けに毎週の DSA / 問題解決セッションを企画し、基礎からコンテストレベルのトピックへの進行を厳選し、社内の模擬コンテストを実施しました。"
         },
         "1": {
-          "title": "Inter-school Competitions",
-          "detail": "Represented the school at multiple inter-school programming and tech events including Force Fest, Digilogous, BVEST and Virtual Fiesta — winning podium finishes."
+          "title": "学校対抗競技会",
+          "detail": "Force Fest、Digilogous、BVEST、Virtual Fiesta など、複数の学校間プログラミングおよびテクノロジー イベントに学校を代表して参加し、表彰台を獲得しました。"
         }
       }
     },
     "cadence-engineer-ii": {
-      "role": "R&D Software Engineer II",
-      "location": "Noida, India · Hybrid",
-      "summary": "Building AI-driven engineering infrastructure for Xcelium: ticket resolution, simulation optimization, regression intelligence and release automation.",
+      "role": "研究開発ソフトウェアエンジニアⅡ",
+      "location": "ノイダ、インド · ハイブリッド",
+      "summary": "Xcelium 向けの AI 主導のエンジニアリング インフラストラクチャの構築: チケット解決、シミュレーションの最適化、回帰インテリジェンス、リリースの自動化。",
       "highlights": {
         "0": {
-          "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+          "title": "MAESTRO — マルチエージェントのチケット解決",
+          "detail": "人間の監視によるエンジニアリングチケット解決のためのケイデンスのマルチエージェントプラットフォームである MAESTRO を構築しました。内部評価では、チケット解決時間を 45%、RCA 時間を 55% 削減しました。営業秘密保護対象として選択 - 実装の詳細は機密のままです。"
         },
         "1": {
-          "title": "ChipStack Xcelium AI Agents",
-          "detail": "Developed performance and memory optimization agents using Python, OpenAI Agents SDK and RAG to profile simulations, identify bottlenecks, and recommend, apply and verify optimizations; achieved 31.3% simulation speedup on a validated benchmark."
+          "title": "ChipStack Xcelium AI エージェント",
+          "detail": "Python、OpenAI Agents SDK、RAG を使用してパフォーマンスとメモリの最適化エージェントを開発し、シミュレーションのプロファイリング、ボトルネックの特定、最適化の推奨、適用、検証を行いました。検証済みのベンチマークで 31.3% のシミュレーション速度向上を達成しました。"
         },
         "2": {
-          "title": "Deterministic-First Agent Workflows",
-          "detail": "Re-architected agent workflows as a deterministic-first Python pipeline, cutting end-to-end execution from 148.3s to 76.8s and analysis from 71.1s to 18.0s on a benchmark design."
+          "title": "決定性優先エージェントのワークフロー",
+          "detail": "エージェント ワークフローを決定論優先の Python パイプラインとして再構築し、ベンチマーク設計でのエンドツーエンドの実行時間を 148.3 秒から 76.8 秒に、分析を 71.1 秒から 18.0 秒に短縮しました。"
         },
         "3": {
-          "title": "Regression Triage & Regold System",
-          "detail": "Built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and JEDAI LLM review to automate triage, regolds, waivers and verification; processed 2,120 failures across 79 runs, 73% of them in runs by other engineers."
+          "title": "回帰トリアージおよびリゴールド システム",
+          "detail": "ルールベースの分類、TF-IDF クラスタリング、履歴学習、JEDAI LLM レビューを使用して、トリアージ、リゴールド、免除、検証を自動化する約 16,000 行の Xcelium 回帰システムを構築しました。 79 回の実行で 2,120 件の障害を処理しました。そのうち 73% は他のエンジニアによる実行でした。"
         },
         "4": {
-          "title": "Cross-Stream Perforce Replay",
-          "detail": "Built replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-CL backports across Xcelium release branches."
+          "title": "クロスストリーム Perforce リプレイ",
+          "detail": "各チェンジリストのソース ストリームを取得し、それに接触するパスのみを選択的に同期する構築されたリプレイ ツールにより、Xcelium リリース ブランチ全体でマルチ CL バックポートが自動化されます。"
         },
         "5": {
-          "title": "MCP Servers for Engineering Tools",
-          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
+          "title": "エンジニアリングツール用のMCPサーバー",
+          "detail": "GitHub Copilot、Cursor、Claude Code を EDA およびエンジニアリング システム (デバッグ、コード レビュー、ビルド、LLM ゲートウェイ ブリッジなど) に接続する Model Context Protocol サーバーを作成しました。"
         },
         "6": {
-          "title": "Reusable Engineering Infrastructure",
-          "detail": "Designed graph-based workflow orchestration, checkpoint/resume, structured outputs, failure recovery, LLM-as-judge regression testing and developer automation tooling."
+          "title": "再利用可能なエンジニアリングインフラストラクチャ",
+          "detail": "グラフベースのワークフロー オーケストレーション、チェックポイント/再開、構造化された出力、障害回復、LLM-as-judge 回帰テスト、開発者自動化ツールを設計しました。"
         }
       }
     },
     "cadence-engineer": {
-      "role": "R&D Software Engineer",
-      "location": "Noida, India · On-site",
-      "summary": "Low-level C++ optimization, RTL transformations and distributed performance analysis for Xcelium Logic Simulator.",
+      "role": "研究開発ソフトウェアエンジニア",
+      "location": "インド、ノイダ · オンサイト",
+      "summary": "Xcelium Logic Simulator の低レベル C++ 最適化、RTL 変換、および分散パフォーマンス分析。",
       "highlights": {
         "0": {
-          "title": "Xcelium Throughput & Samsung Performance Win",
-          "detail": "Engineered low-level C++ optimizations and scalable simulator architecture, improving throughput by 18–19% on large-scale distributed workloads. Led benchmarking and distributed performance analysis that contributed to a multi-million dollar Samsung deal."
+          "title": "Xcelium スループットと Samsung のパフォーマンスの勝利",
+          "detail": "低レベルの C++ 最適化とスケーラブルなシミュレーター アーキテクチャを設計し、大規模な分散ワークロードのスループットを 18 〜 19% 向上させました。ベンチマークと分散パフォーマンス分析を主導し、数百万ドルのサムスンとの契約に貢献しました。"
         },
         "1": {
-          "title": "Xform Engine RTL Transformations",
-          "detail": "Implemented RTL transformations delivering 13–14% cumulative parsing speedups and improved simulation performance for Apple, Google, Samsung and NVIDIA workloads."
+          "title": "Xform エンジンの RTL 変換",
+          "detail": "RTL 変換を実装することで、Apple、Google、Samsung、NVIDIA のワークロードの累積解析速度が 13 〜 14% 向上し、シミュレーション パフォーマンスが向上しました。"
         },
         "2": {
-          "title": "Diagnostics & Cadence India Conference",
-          "detail": "Presented technical findings at Cadence India Conference, driving adoption of diagnostic libraries that reduced root-cause analysis time by ~40% through flag analysis and log parsing."
+          "title": "診断とケイデンス インド カンファレンス",
+          "detail": "Cadence India Conference で技術的成果を発表し、フラグ分析とログ解析を通じて根本原因分析時間を最大 40% 短縮する診断ライブラリの導入を推進しました。"
         },
         "3": {
-          "title": "Corporate VP Recognition & All-Hands Spotlight",
-          "detail": "Received multiple awards for technical leadership and innovation, including Corporate VP recognition and an All-Hands spotlight for driving Samsung-deal performance wins."
+          "title": "企業副社長の表彰と全員参加のスポットライト",
+          "detail": "企業副社長の表彰やサムスンとの取引実績獲得の推進に対するオールハンドのスポットライトなど、技術的なリーダーシップとイノベーションに対して複数の賞を受賞。"
         }
       }
     }
@@ -2321,76 +2352,76 @@
   "honorsData": {
     "maestro-selected-for-trade-secret-protection": {
       "title": "MAESTRO — 営業秘密保護の対象に選定",
-      "org": "Cadence Design Systems",
+      "org": "ケイデンス設計システム",
       "detail": "エンジニアリングチケットをエンドツーエンドで解決するマルチエージェントプラットフォーム MAESTRO が、独自の知的財産として認められ、営業秘密保護の対象に選定された。"
     },
     "10-000-tezos-blockchain-grant": {
-      "title": "$10,000 Tezos Blockchain Grant",
-      "org": "Tezos India · Game Geeks",
-      "detail": "Awarded for expanding Tezos Premier League — a decentralized gaming application and NFT marketplace on Tezos."
+      "title": "10,000 ドルの Tezos ブロックチェーン助成金",
+      "org": "Tezos India · ゲームオタク",
+      "detail": "Tezos 上の分散型ゲーム アプリケーションと NFT マーケットプレイスである Tezos Premier League の拡大に対して授与されました。"
     },
     "30-days-of-google-cloud-completion": {
-      "title": "30 Days of Google Cloud Completion",
-      "org": "Google Cloud",
-      "detail": "Completed 30 Days of Google Cloud — 11 Qwiklabs quests covering core GCP, networking, security and ML services."
+      "title": "Google Cloud の 30 日間の完了",
+      "org": "グーグルクラウド",
+      "detail": "30 日間の Google Cloud を完了しました — コアの GCP、ネットワーキング、セキュリティ、ML サービスをカバーする 11 件の Qwiklabs クエスト。"
     },
     "runner-up-virtual-fiesta-code-sword": {
-      "title": "Runner-Up — Virtual Fiesta (CODE SWORD)",
+      "title": "次点 — バーチャル フィエスタ (CODE SWORD)",
       "org": "NSUT",
-      "detail": "Runner-up at NSUT Virtual Fiesta's CODE SWORD programming contest."
+      "detail": "NSUT Virtual Fiesta の CODE SWORD プログラミング コンテストで準優勝。"
     },
     "runner-up-bvest-code-trek": {
-      "title": "Runner-Up — BVEST (CODE TREK)",
+      "title": "準優勝 — BVEST (CODE TREK)",
       "org": "BVCOE",
-      "detail": "Runner-up at BVEST CODE TREK inter-school programming competition."
+      "detail": "BVEST CODE TREK学校対抗プログラミングコンテスト準優勝。"
     },
     "second-runner-up-force-fest-pro-sort": {
-      "title": "Second Runner-Up — Force Fest (PRO SORT)",
-      "org": "Air Force Bal Bharati School",
-      "detail": "Second runner-up at Force Fest's PRO SORT inter-school coding event."
+      "title": "準優勝 — Force Fest (PRO SORT)",
+      "org": "空軍バル バーラティ学校",
+      "detail": "Force Fest の校内コーディング イベント PRO SORT で準優勝。"
     },
     "second-runner-up-digilogous-sudo-solve": {
-      "title": "Second Runner-Up — Digilogous (SUDO SOLVE)",
-      "org": "Rukmini Devi Public School",
-      "detail": "Second runner-up at Digilogous SUDO SOLVE programming contest."
+      "title": "準優勝 — Digilogous (SUDO SOLVE)",
+      "org": "ルクミニ デヴィ公立学校",
+      "detail": "Digilogous SUDO SOLVEプログラミングコンテスト準優勝。"
     },
     "niit-it-wizard-very-good": {
-      "title": "NIIT IT Wizard — Very Good",
+      "title": "NIIT IT ウィザード — 非常に良い",
       "org": "NIIT",
-      "detail": "Recognized at the 'Very Good' tier in NIIT's IT Wizard national programme."
+      "detail": "NIIT の IT Wizard 全国プログラムで「非常に良い」段階に評価されました。"
     },
     "niit-it-wizard-excellent": {
-      "title": "NIIT IT Wizard — Excellent",
+      "title": "NIIT IT ウィザード — 素晴らしい",
       "org": "NIIT",
-      "detail": "Recognized at the 'Excellent' tier in NIIT's IT Wizard national programme."
+      "detail": "NIIT の IT Wizard 全国プログラムで「Excellent」レベルに認定されました。"
     },
     "samsung-performance-win-corporate-vp-recognition": {
-      "title": "Samsung Performance Win — Corporate VP Recognition",
-      "org": "Cadence Design Systems",
+      "title": "Samsung Performance Win — 企業副社長の表彰",
+      "org": "ケイデンス設計システム",
       "date": "2022–2026",
-      "detail": "Benchmarking and distributed performance analysis contributed to a multi-million dollar Samsung deal. Recognized by the Corporate VP and spotlighted in an All-Hands meeting for the performance wins."
+      "detail": "ベンチマークと分散パフォーマンス分析は、数百万ドルのサムスンとの契約に貢献しました。企業副社長に認められ、業績の勝利により全員参加会議で注目を集めました。"
     },
     "cadence-india-conference-performance-diagnostics": {
-      "title": "Cadence India Conference — Performance Diagnostics",
-      "org": "Cadence Design Systems",
+      "title": "Cadence India Conference — パフォーマンス診断",
+      "org": "ケイデンス設計システム",
       "date": "2022–2026",
-      "detail": "Presented technical findings that drove adoption of diagnostic libraries, reducing root-cause analysis time by ~40% through flag analysis and log parsing."
+      "detail": "診断ライブラリの採用を促進し、フラグ分析とログ解析を通じて根本原因分析時間を最大 40% 削減する技術的知見を発表しました。"
     }
   },
   "settings": {
     "chatbot": "Ask Ayush の設定",
-    "menuLabel": "Site settings",
-    "openLabel": "Open site settings",
-    "language": "Language",
-    "theme": "Theme",
-    "shortcuts": "Keyboard shortcuts",
-    "commitRain": "Commit rain",
-    "commitRainHelp": "Which public GitHub commits feed the decorative rain.",
+    "menuLabel": "サイト設定",
+    "openLabel": "サイト設定を開く",
+    "language": "言語",
+    "theme": "テーマ",
+    "shortcuts": "キーボードショートカット",
+    "commitRain": "雨を降らせる",
+    "commitRainHelp": "どのパブリック GitHub コミットが装飾的な雨を供給するか。",
     "commitRainWindows": {
-      "week": "This week",
-      "month": "This month",
-      "year": "This year",
-      "all": "All time"
+      "week": "今週",
+      "month": "今月",
+      "year": "今年",
+      "all": "ずっと"
     }
   },
   "skillsExplorer": {
@@ -2398,26 +2429,26 @@
       "technical": "技術カテゴリ",
       "applied": "応用エンジニアリング"
     },
-    "ariaLabel": "Skills explorer",
-    "eyebrow": "/ skills",
+    "ariaLabel": "スキルエクスプローラー",
+    "eyebrow": "/ スキル",
     "heading": "Skills explorer",
     "intro": "Choose a technical category or an applied engineering area to see its tools and related work.",
     "filterAriaLabel": "Filter skills by category",
     "emptyState": "Pick a category above to see the tools in that area.",
-    "toolsCount": "{count} tools",
+    "toolsCount": "{count} ツール",
     "categories": {
-      "languages": "Programming Languages",
-      "frontend": "Frontend",
-      "backend": "Backend & APIs",
-      "data": "Databases & Storage",
-      "messaging": "Messaging & Streaming",
+      "languages": "プログラミング言語",
+      "frontend": "フロントエンド",
+      "backend": "バックエンドと API",
+      "data": "データベースとストレージ",
+      "messaging": "メッセージングとストリーミング",
       "ai": "AI / ML",
-      "cloud": "Cloud & DevOps",
-      "performance": "Performance & Systems",
-      "reliability-security": "Reliability & Security",
-      "testing": "Testing & QA",
-      "observability": "Observability",
-      "tooling": "Tooling"
+      "cloud": "クラウドとDevOps",
+      "performance": "パフォーマンスとシステム",
+      "reliability-security": "信頼性とセキュリティ",
+      "testing": "テストとQA",
+      "observability": "可観測性",
+      "tooling": "ツーリング"
     },
     "stageAria": "Design snap stage",
     "stageIdle": "design snap · pick a category",
@@ -2435,170 +2466,170 @@
   },
   "liveFeeds": {
     "openXml": "XML フィードを開く",
-    "ariaLabel": "Live activity feeds",
-    "eyebrow": "/ live feeds",
-    "heading": "Live activity",
-    "intro": "Recent posts, videos and commits — pulled live from Medium, YouTube and GitHub and cached for an hour at the edge.",
+    "ariaLabel": "ライブアクティビティフィード",
+    "eyebrow": "/ ライブフィード",
+    "heading": "ライブ活動",
+    "intro": "最近の投稿、ビデオ、コミット - Medium、YouTube、GitHub からライブで取得され、エッジで 1 時間キャッシュされます。",
     "medium": {
-      "label": "Latest blog posts",
-      "cta": "Read on Medium",
-      "empty": "Visit Medium for the latest articles."
+      "label": "最新のブログ投稿",
+      "cta": "メディアで読む",
+      "empty": "最新の記事については、Medium にアクセスしてください。"
     },
     "youtube": {
-      "label": "Latest YouTube videos",
-      "cta": "Open channel",
-      "empty": "Visit YouTube for the latest videos."
+      "label": "最新の YouTube 動画",
+      "cta": "オープンチャネル",
+      "empty": "最新のビデオについては YouTube にアクセスしてください。"
     },
     "github": {
-      "label": "Recent GitHub activity",
+      "label": "最近の GitHub アクティビティ",
       "cta": "github.com/blackphoenix42",
-      "empty": "Recent activity will appear here when the feed is reachable."
+      "empty": "フィードにアクセスできる場合、最近のアクティビティがここに表示されます。"
     },
-    "refreshNote": "Fetched automatically from Medium, YouTube and GitHub with a 15-minute cache. GitHub activity may appear later because its public event feed is delayed."
+    "refreshNote": "15 分間のキャッシュを使用して、Medium、YouTube、GitHub から自動的に取得されます。 GitHub アクティビティの公開イベント フィードが遅れているため、後で表示される可能性があります。"
   },
   "consent": {
-    "title": "Cookies & language",
-    "body": "I use a single cookie (<code>NEXT_LOCALE</code>) to remember the language you picked. No analytics cookies, no tracking pixels.",
-    "accept": "Got it",
-    "privacy": "Privacy policy",
-    "dismissAriaLabel": "Dismiss cookie notice"
+    "title": "クッキーと言語",
+    "body": "単一の Cookie (<code>NEXT_LOCALE</code>) を使用して、選択した言語を記憶します。分析 Cookie や追跡ピクセルはありません。",
+    "accept": "わかった",
+    "privacy": "プライバシーポリシー",
+    "dismissAriaLabel": "Cookie 通知を無視する"
   },
   "concepts": {
-    "ariaLabel": "Roadmap",
-    "eyebrow": "/ roadmap",
-    "heading": "What I'd build next",
-    "intro": "Product concepts at the intersection of performance engineering and intelligent developer tooling. <warn>Pre-launch — repos are placeholders</warn> until the first commit lands.",
-    "placeholderRepo": "Placeholder repo — in development",
-    "target": "target",
+    "ariaLabel": "ロードマップ",
+    "eyebrow": "/ ロードマップ",
+    "heading": "次に作るもの",
+    "intro": "パフォーマンス エンジニアリングとインテリジェントな開発者ツールが交わる製品コンセプト。",
+    "placeholderRepo": "プレースホルダー リポジトリ — 開発中",
+    "target": "ターゲット",
     "status": {
-      "design": "Design phase",
-      "prototyping": "Prototyping",
-      "inDevelopment": "In development"
+      "design": "設計段階",
+      "prototyping": "プロトタイピング",
+      "inDevelopment": "開発中"
     },
     "items": {
       "tracemind": {
-        "name": "TraceMind",
-        "pitch": "AI-powered distributed tracing assistant for diagnosing production latency regressions.",
-        "description": "An assistant that ingests OpenTelemetry traces and metrics, builds a queryable trace knowledge graph, and uses LLM reasoning to triage latency regressions and propose hypotheses with evidence."
+        "name": "トレースマインド",
+        "pitch": "実稼働レイテンシの回帰を診断するための AI を活用した分散トレース アシスタント。",
+        "description": "OpenTelemetry トレースとメトリクスを取り込み、クエリ可能なトレース ナレッジ グラフを構築し、LLM 推論を使用してレイテンシー回帰を優先順位付けし、証拠を伴う仮説を提案するアシスタント。"
       },
       "silicongraph": {
-        "name": "SiliconGraph",
-        "pitch": "Interactive graph explorer for debugging RTL dependency chains and optimization opportunities.",
-        "description": "A WebAssembly-powered explorer that lets engineers traverse RTL dependency graphs, highlight optimization candidates and run what-if transformations directly in the browser."
+        "name": "シリコングラフ",
+        "pitch": "RTL 依存関係チェーンと最適化の機会をデバッグするための対話型グラフ エクスプローラー。",
+        "description": "WebAssembly を利用したエクスプローラーにより、エンジニアは RTL 依存関係グラフをトラバースし、最適化候補を強調表示し、ブラウザ内で直接 what-if 変換を実行できます。"
       },
       "infralens": {
-        "name": "InfraLens",
-        "pitch": "Visual system-design playground for experimenting with queues, caches, sharding and failure scenarios.",
-        "description": "A live system-design sandbox where you compose services, queues, caches and failure modes, then watch traffic, backpressure and consistency play out in real time."
+        "name": "インフラレンズ",
+        "pitch": "キュー、キャッシュ、シャーディング、障害シナリオを実験するための視覚的なシステム設計のプレイグラウンド。",
+        "description": "サービス、キュー、キャッシュ、障害モードを構成し、トラフィック、バックプレッシャー、一貫性の実行をリアルタイムで監視するライブ システム設計サンドボックス。"
       }
     }
   },
   "workbench": {
-    "ariaLabel": "GitHub workbench",
-    "eyebrow": "/ github",
-    "heading": "Public workbench",
-    "intro": "A curated slice of public repositories spanning algorithms, full-stack apps, mobile, blockchain and competitive programming.",
-    "noDescription": "No description provided.",
+    "ariaLabel": "GitHub ワークベンチ",
+    "eyebrow": "/ ギットハブ",
+    "heading": "公共作業台",
+    "intro": "アルゴリズム、フルスタック アプリ、モバイル、ブロックチェーン、競技プログラミングにまたがるパブリック リポジトリの厳選されたスライス。",
+    "noDescription": "説明はありません。",
     "categories": {
-      "All": "All",
+      "All": "全て",
       "AI": "AI",
-      "Systems": "Systems",
-      "Frontend": "Frontend",
-      "Mobile": "Mobile",
+      "Systems": "システム",
+      "Frontend": "フロントエンド",
+      "Mobile": "携帯",
       "CP": "CP",
-      "Blockchain": "Blockchain"
+      "Blockchain": "ブロックチェーン"
     }
   },
   "engineeringSpectrum": {
-    "ariaLabel": "Engineering spectrum",
-    "eyebrow": "/ skills",
-    "heading": "Engineering spectrum",
-    "intro": "Capability clusters spanning low-level performance, intelligent systems, distributed backends, product engineering, infrastructure and reliability.",
-    "filterAriaLabel": "Filter skills by cluster",
-    "all": "All",
-    "toolsCount": "{count} tools",
-    "appliedIn": "Applied in",
+    "ariaLabel": "エンジニアリングスペクトル",
+    "eyebrow": "/ スキル",
+    "heading": "エンジニアリングスペクトル",
+    "intro": "低レベルのパフォーマンス、インテリジェント システム、分散バックエンド、製品エンジニアリング、インフラストラクチャ、信頼性に及ぶ機能クラスター。",
+    "filterAriaLabel": "クラスタごとにスキルをフィルタリングする",
+    "all": "全て",
+    "toolsCount": "{count} ツール",
+    "appliedIn": "適用時期",
     "clusters": {
       "performance": {
-        "name": "Performance Core",
-        "blurb": "Low-level engineering for simulation, profiling and runtime optimization."
+        "name": "パフォーマンスコア",
+        "blurb": "シミュレーション、プロファイリング、実行時の最適化のための低レベルのエンジニアリング。"
       },
       "intelligent": {
-        "name": "Intelligent Systems",
-        "blurb": "Agentic AI, retrieval, embeddings and computer vision for engineering workflows."
+        "name": "インテリジェントシステム",
+        "blurb": "エンジニアリング ワークフローのためのエージェントティック AI、検索、埋め込み、およびコンピューター ビジョン。"
       },
       "backend": {
-        "name": "Distributed Backend",
-        "blurb": "Service architecture, streaming, identity and storage for scalable systems."
+        "name": "分散バックエンド",
+        "blurb": "スケーラブルなシステムのためのサービス アーキテクチャ、ストリーミング、アイデンティティ、ストレージ。"
       },
       "product": {
-        "name": "Product Engineering",
-        "blurb": "Polished, accessible product surfaces with rigorous quality gates."
+        "name": "製品エンジニアリング",
+        "blurb": "厳格な品質ゲートを備えた、磨き上げられたアクセス可能な製品表面。"
       },
       "infra": {
-        "name": "Infrastructure",
-        "blurb": "Cloud, containers, observability and developer-experience plumbing."
+        "name": "インフラストラクチャー",
+        "blurb": "クラウド、コンテナ、可観測性、開発者エクスペリエンスの配管。"
       },
       "reliability-security": {
-        "name": "Reliability & Security",
-        "blurb": "Identity, hardening, API contracts and production-readiness controls."
+        "name": "信頼性とセキュリティ",
+        "blurb": "アイデンティティ、強化、API コントラクト、および運用準備の制御。"
       }
     }
   },
   "languagesData": {
     "english": {
-      "name": "English",
-      "level": "Native or bilingual"
+      "name": "英語",
+      "level": "ネイティブまたはバイリンガル"
     },
     "hindi": {
-      "name": "Hindi",
-      "level": "Native or bilingual"
+      "name": "ヒンディー語",
+      "level": "ネイティブまたはバイリンガル"
     },
     "japanese": {
-      "name": "Japanese",
-      "level": "Elementary proficiency"
+      "name": "日本語",
+      "level": "初級の習熟度"
     },
     "sanskrit": {
-      "name": "Sanskrit",
-      "level": "Limited working proficiency"
+      "name": "サンスクリット",
+      "level": "限られた作業能力"
     }
   },
   "certsData": {
-    "google-cloud-30-days-completion": "Google Cloud — 30 Days Completion",
-    "gcp-participation-certificate": "GCP Participation Certificate",
-    "aws-fundamentals-coursera": "AWS Fundamentals (Coursera)",
-    "adobe-contest": "Adobe Contest",
-    "amazon-contest": "Amazon Contest",
-    "google-contest": "Google Contest",
-    "microsoft-coding-interview": "Microsoft Coding Interview",
-    "software-engineer": "Software Engineer",
-    "problem-solving-intermediate": "Problem Solving — Intermediate",
-    "rest-api-intermediate": "REST API — Intermediate",
-    "frontend-react": "Frontend (React)",
-    "sql-advanced": "SQL — Advanced",
-    "node-js-intermediate": "Node.js — Intermediate",
-    "javascript-intermediate": "JavaScript — Intermediate",
-    "golang-intermediate": "Golang — Intermediate",
-    "jp-morgan-chase-swe-virtual": "JP Morgan Chase — SWE Virtual",
-    "flipkart-d2c-participation": "Flipkart D2C Participation",
+    "google-cloud-30-days-completion": "Google Cloud — 30 日で完了",
+    "gcp-participation-certificate": "GCP 参加証明書",
+    "aws-fundamentals-coursera": "AWS の基礎 (Coursera)",
+    "adobe-contest": "アドビコンテスト",
+    "amazon-contest": "アマゾンコンテスト",
+    "google-contest": "Googleコンテスト",
+    "microsoft-coding-interview": "Microsoft コーディング インタビュー",
+    "software-engineer": "ソフトウェアエンジニア",
+    "problem-solving-intermediate": "問題解決 - 中級",
+    "rest-api-intermediate": "REST API — 中級",
+    "frontend-react": "フロントエンド (反応)",
+    "sql-advanced": "SQL — 高度な",
+    "node-js-intermediate": "Node.js — 中級",
+    "javascript-intermediate": "JavaScript — 中級",
+    "golang-intermediate": "Golang — 中級者",
+    "jp-morgan-chase-swe-virtual": "JPモルガン・チェース — SWEバーチャル",
+    "flipkart-d2c-participation": "Flipkart D2C への参加",
     "freecodecamp-javascript": "freeCodeCamp — JavaScript",
-    "core-java": "Core Java",
-    "advanced-java": "Advanced Java",
+    "core-java": "コアJava",
+    "advanced-java": "高度な Java",
     "python": "Python",
-    "react-hooks-redux": "React Hooks + Redux",
-    "web-chat-using-react": "Web Chat using React",
+    "react-hooks-redux": "React フック + Redux",
+    "web-chat-using-react": "React を使用した Web チャット",
     "yaml": "YAML",
     "seo": "SEO"
   },
   "roadmap": {
-    "tag": "/ 2027 roadmap",
-    "heading": "Delivery timeline · 2027",
+    "tag": "/ 2027 年のロードマップ",
+    "heading": "納入スケジュール · 2027 年",
     "planning": "plan",
-    "note": "Target quarters, not release commitments. Scope will evolve through learning, prototypes and validation.",
+    "note": "リリースコミットメントではなく、四半期をターゲットにします。 Scope は学習、プロトタイプ、検証を通じて進化します。",
     "status": {
-      "design": "Design",
-      "prototyping": "Prototyping",
-      "in-development": "In development"
+      "design": "デザイン",
+      "prototyping": "プロトタイピング",
+      "in-development": "開発中"
     }
   }
 }

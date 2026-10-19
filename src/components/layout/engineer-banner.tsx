@@ -40,7 +40,7 @@ export function EngineerBanner() {
               <Github className="h-3 w-3" /> {t("bannerGithub")}
             </a>
             <Link
-              href="/now"
+              href="/now#now"
               className="border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan hover:bg-accent-cyan/20 inline-flex items-center gap-1 rounded-md border px-2 py-1"
             >
               <GitBranch className="h-3 w-3" /> {t("bannerAlgorithms")}

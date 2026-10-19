@@ -2,35 +2,22 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Paperclip, X, FileText, ImageIcon, FileType2, UploadCloud } from "lucide-react";
+import { Paperclip, X, FileText, ImageIcon, FileType2, UploadCloud, Mic } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  ALLOWED_ATTACHMENT_EXTENSIONS,
+  ALLOWED_ATTACHMENT_MIME,
+  MAX_ATTACHMENTS,
+  MAX_ATTACHMENT_TOTAL_BYTES,
+  isAllowedAttachment,
+} from "@/lib/contact-attachments";
 
-export const MAX_ATTACHMENTS = 5;
-export const MAX_TOTAL_BYTES = 10 * 1024 * 1024; // 10 MB
-export const ACCEPTED_MIME = [
-  "application/pdf",
-  "image/png",
-  "image/jpeg",
-  "image/webp",
-  "image/gif",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "application/msword",
-  "text/plain",
-  "text/markdown",
-];
+export const MAX_TOTAL_BYTES = MAX_ATTACHMENT_TOTAL_BYTES;
+export { MAX_ATTACHMENTS, ALLOWED_ATTACHMENT_MIME as ACCEPTED_MIME };
 
 const ACCEPT_ATTR = [
-  ".pdf",
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".webp",
-  ".gif",
-  ".docx",
-  ".doc",
-  ".txt",
-  ".md",
-  ...ACCEPTED_MIME,
+  ...ALLOWED_ATTACHMENT_EXTENSIONS.map((ext) => `.${ext}`),
+  ...ALLOWED_ATTACHMENT_MIME,
 ].join(",");
 
 type Item = {
@@ -45,6 +32,7 @@ function formatMb(bytes: number) {
 
 function pickIcon(mime: string) {
   if (mime.startsWith("image/")) return ImageIcon;
+  if (mime.startsWith("audio/")) return Mic;
   if (mime === "application/pdf") return FileText;
   return FileType2;
 }
@@ -67,11 +55,7 @@ export function mergeAttachments(
   const merged: File[] = [...existing];
   let lastError: ValidationError | undefined;
   for (const f of list) {
-    const ext = f.name.split(".").pop()?.toLowerCase() ?? "";
-    const extOk = ["pdf", "png", "jpg", "jpeg", "webp", "gif", "docx", "doc", "txt", "md"].includes(
-      ext,
-    );
-    if (!ACCEPTED_MIME.includes(f.type) && !extOk) {
+    if (!isAllowedAttachment(f)) {
       lastError = { code: "unsupported", filename: f.name };
       continue;
     }
@@ -88,7 +72,7 @@ export function mergeAttachments(
     return { files: existing, error: { code: "tooMany", max: MAX_ATTACHMENTS } };
   }
   const total = merged.reduce((s, f) => s + f.size, 0);
-  if (total > MAX_TOTAL_BYTES) {
+  if (total > MAX_ATTACHMENT_TOTAL_BYTES) {
     return { files: existing, error: { code: "tooLarge", maxMb: 10 } };
   }
   return { files: merged, error: lastError };

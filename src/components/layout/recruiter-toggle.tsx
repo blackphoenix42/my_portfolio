@@ -66,7 +66,7 @@ export function RecruiterToggle() {
               <span className="bg-accent-emerald relative inline-flex h-2 w-2 rounded-full" />
             </span>
             <Check className="h-3.5 w-3.5" />
-            <span className="font-medium">{t("short")}</span>
+            <span className="font-medium">{t("label")}</span>
             <span className="hidden font-mono text-[10px] tracking-widest uppercase sm:inline">
               {t("onShort")}
             </span>
@@ -74,7 +74,7 @@ export function RecruiterToggle() {
         ) : (
           <>
             <Briefcase className="h-3.5 w-3.5" />
-            <span>{t("short")}</span>
+            <span>{t("label")}</span>
           </>
         )}
       </button>

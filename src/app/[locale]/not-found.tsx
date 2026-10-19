@@ -23,7 +23,7 @@ const SUGGESTIONS = [
   { href: "/skills", icon: Cpu, key: "skills" },
   { href: "/experience", icon: Briefcase, key: "experience" },
   { href: "/about", icon: User, key: "about" },
-  { href: "/competitive-programming", icon: Code2, key: "cp" },
+  { href: "/now", icon: Code2, key: "cp" },
   { href: "/contact", icon: Mail, key: "contact" },
 ] as const;
 

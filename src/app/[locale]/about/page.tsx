@@ -95,7 +95,7 @@ const BEYOND = [
     keyCta: "viewProfiles",
     icon: Code2,
     accent: "text-accent-amber border-accent-amber/30 bg-accent-amber/5",
-    href: "/competitive-programming",
+    href: "/now",
   },
 ] as const;
 
@@ -261,6 +261,45 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <AboutSection />
 
+      <section className="section border-border/60 border-t" aria-label={t("honorsAriaLabel")}>
+        <div className="container-tight">
+          <header className="mb-8">
+            <p className="mono-label inline-flex items-center gap-2">
+              <Trophy className="h-3.5 w-3.5" /> {t("honorsTag")}
+            </p>
+            <h2 className="section-title mt-2">{t("honorsTitle")}</h2>
+            <p className="text-fg-muted mt-2 max-w-2xl">{t("honorsIntro")}</p>
+          </header>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {honors.map((h) => {
+              const Icon = h.icon;
+              const slug = slugify(h.title);
+              return (
+                <li key={h.title} className="card p-5">
+                  <div
+                    className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg border ${accentRing[h.accent]}`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-sm font-semibold tracking-tight">
+                    {trHonor(slug, "title", h.title)}
+                  </h3>
+                  <p className="text-fg-subtle mt-1 font-mono text-[11px]">
+                    {trHonor(slug, "org", h.org)} · {h.date}
+                    {h.amount ? ` · ${h.amount}` : ""}
+                  </p>
+                  {h.detail && (
+                    <p className="text-fg-muted mt-2 text-xs leading-relaxed">
+                      {trHonor(slug, "detail", h.detail)}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
       <section className="section border-border/60 border-t" aria-label={t("beyondAriaLabel")}>
         <div className="container-tight">
           <header className="mb-8">
@@ -296,45 +335,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                     >
                       {cta} ↗
                     </a>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section border-border/60 border-t" aria-label={t("honorsAriaLabel")}>
-        <div className="container-tight">
-          <header className="mb-8">
-            <p className="mono-label inline-flex items-center gap-2">
-              <Trophy className="h-3.5 w-3.5" /> {t("honorsTag")}
-            </p>
-            <h2 className="section-title mt-2">{t("honorsTitle")}</h2>
-            <p className="text-fg-muted mt-2 max-w-2xl">{t("honorsIntro")}</p>
-          </header>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {honors.map((h) => {
-              const Icon = h.icon;
-              const slug = slugify(h.title);
-              return (
-                <li key={h.title} className="card p-5">
-                  <div
-                    className={`mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg border ${accentRing[h.accent]}`}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-sm font-semibold tracking-tight">
-                    {trHonor(slug, "title", h.title)}
-                  </h3>
-                  <p className="text-fg-subtle mt-1 font-mono text-[11px]">
-                    {trHonor(slug, "org", h.org)} · {h.date}
-                    {h.amount ? ` · ${h.amount}` : ""}
-                  </p>
-                  {h.detail && (
-                    <p className="text-fg-muted mt-2 text-xs leading-relaxed">
-                      {trHonor(slug, "detail", h.detail)}
-                    </p>
                   )}
                 </li>
               );
@@ -418,7 +418,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t("experienceLink")}
             </Link>
             {t("certsFooterMiddle")}{" "}
-            <Link href="/competitive-programming" className="underline">
+            <Link href="/now" className="underline">
               {t("cpLink")}
             </Link>{" "}
             {t("certsFooterSuffix")}

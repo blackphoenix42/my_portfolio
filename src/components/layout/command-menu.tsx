@@ -5,13 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import {
   Search,
   Briefcase,
-  Code2,
   Mail,
   FileDown,
   User,
   Cpu,
   Layers,
-  Beaker,
   TerminalSquare,
   Sparkles,
   Compass,
@@ -34,9 +32,7 @@ const NAV_ITEMS = [
   { id: "skills", key: "skills", icon: Cpu, href: "/skills" },
   { id: "experience", key: "experience", icon: Briefcase, href: "/experience" },
   { id: "now", key: "now", icon: Compass, href: "/now" },
-  { id: "cp", key: "cp", icon: Code2, href: "/competitive-programming" },
   { id: "system-design", key: "systemDesign", icon: Network, href: "/system-design" },
-  { id: "lab", key: "roadmap", icon: Beaker, href: "/competitive-programming#roadmap" },
   { id: "contact", key: "contact", icon: Mail, href: "/contact" },
 ] as const;
 

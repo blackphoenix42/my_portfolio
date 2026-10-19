@@ -12,14 +12,9 @@ import { buildChatMessages, cleanModelText, selectContext, toHistory } from "@/l
 import bundledCorpus from "../../../public/chatbot/corpus.json";
 import { generationBudget } from "@/lib/chatbot/settings";
 import { ChatSettingsPanel } from "./chat-settings";
+import { ChatListMenu } from "./chat-list-menu";
 import { useLocalLlm, type LocalLlmState } from "./use-local-llm";
-import {
-  CHATS_KEY,
-  MAX_CHATS,
-  parseSessions,
-  updateChat,
-  type Message,
-} from "@/lib/chatbot/sessions";
+import { CHATS_KEY, parseSessions, updateChat, type Message } from "@/lib/chatbot/sessions";
 
 // The build script guarantees numeric sparse vectors; JSON inference adds
 // optional keys when it unions differently shaped chunk vectors.
@@ -388,43 +383,34 @@ export function AskPortfolio({
       ) : (
         <>
           <div className="border-border space-y-2 border-b px-3 py-2">
-            <div className="flex gap-2">
-              <select
-                aria-label={t("chats.select")}
-                value={sessions.activeId}
-                disabled={generating}
-                className="border-border bg-bg-sunken min-w-0 flex-1 rounded border p-1 text-xs"
-                onChange={(e) => {
-                  setSessions((s) => ({ ...s, activeId: e.target.value }));
-                  setInput("");
-                  setChatNotice(null);
-                }}
-              >
-                {sessions.chats.map((chat, i) => (
-                  <option key={chat.id} value={chat.id}>
-                    {chat.messages.find((m) => m.role === "user")?.text.slice(0, 45) ||
-                      t("chats.untitled", { number: i + 1 })}
-                  </option>
-                ))}
-              </select>
-              <button
-                type="button"
-                className="btn-secondary px-2 py-1 text-xs"
-                disabled={generating || sessions.chats.length >= MAX_CHATS}
-                onClick={() => {
-                  const id = crypto.randomUUID();
-                  setSessions((s) => ({
-                    activeId: id,
-                    chats: [...s.chats, { id, messages: [], contextStart: 0 }],
-                  }));
-                  setInput("");
-                  setChatNotice(null);
-                }}
-              >
-                {t("chats.new")}
-              </button>
-            </div>
-            <div className="text-fg-subtle flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
+            <ChatListMenu
+              chats={sessions.chats}
+              activeId={sessions.activeId}
+              disabled={generating}
+              onSelect={(id) => {
+                setSessions((s) => ({ ...s, activeId: id }));
+                setInput("");
+                setChatNotice(null);
+              }}
+              onNew={() => {
+                const id = crypto.randomUUID();
+                setSessions((s) => ({
+                  activeId: id,
+                  chats: [...s.chats, { id, messages: [], contextStart: 0 }],
+                }));
+                setInput("");
+                setChatNotice(null);
+              }}
+              onDelete={() => {
+                setSessions((s) => {
+                  const chats = s.chats.filter((c) => c.id !== s.activeId);
+                  return { chats, activeId: chats[0]!.id };
+                });
+                setInput("");
+                setChatNotice(null);
+              }}
+            />
+            <div className="text-fg-subtle flex flex-wrap gap-x-3 gap-y-1 text-[11px]">
               <button
                 type="button"
                 disabled={generating || messages.length === 0}
@@ -440,21 +426,6 @@ export function AskPortfolio({
                 className="hover:text-fg disabled:opacity-40"
               >
                 {t("chats.clearChat")}
-              </button>
-              <button
-                type="button"
-                disabled={generating || sessions.chats.length < 2}
-                className="hover:text-fg disabled:opacity-40"
-                onClick={() => {
-                  setSessions((s) => {
-                    const chats = s.chats.filter((c) => c.id !== s.activeId);
-                    return { chats, activeId: chats[0]!.id };
-                  });
-                  setInput("");
-                  setChatNotice(null);
-                }}
-              >
-                {t("chats.delete")}
               </button>
             </div>
             {chatNotice && (

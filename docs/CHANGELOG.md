@@ -6,6 +6,51 @@ All notable changes to this project are documented here. Format loosely follows
 
 ## [Unreleased]
 
+### Changed — Home, about, contact & command palette polish
+
+- Removed the home “How I build reliable systems” principles list.
+- Featured work sits above system-design whiteboards on the home page.
+- About: honors & recognition above outside / beyond-code work.
+- Dropped Pre-launch placeholder copy from concept / roadmap intros.
+- Contact voice notices (attached / message required again) auto-dismiss as
+  toasts with an icon, close control, and a countdown bar.
+- Command palette: single Now entry (removed duplicate CP / roadmap anchors).
+- Nav recruiter control uses the full “Recruiter mode” label.
+- System-design LLD notes use `t.raw()` so `{…}` schema snippets no longer
+  trip ICU `INVALID_MESSAGE`.
+
+### Added — Contact voice input
+
+- Dictate via mic icon in the message field (Web Speech API; mic permission
+  first). Record voice note attaches audio; typed message optional when a voice
+  note is present. Privacy copy documents both paths.
+- `Permissions-Policy` allows `microphone=(self)` so the browser can show the
+  mic prompt (empty `microphone=()` was silently blocking it).
+- CSP `connect-src` allows Google speech endpoints so Chrome/Edge dictation can
+  return a transcript; listening shows a timer and locks the message field.
+
+### Changed — System design gallery thumbs
+
+- Whiteboard cards use animated SVG thumbnails (same pattern as featured work).
+
+### Changed — Ask Ayush chat switcher
+
+- Replaced the plain chat `<select>` with a conversation menu (titles, counts,
+  capacity, delete in-menu).
+
+### Changed — Skill chip brand colors
+
+- Skills / concept chips use official tech logo colors instead of cluster accent
+  tints on brand marks.
+
+### Changed — Now hub clarity
+
+- Canonical Now hub is `/now` (nav, shortcuts, sitemap). Legacy
+  `/competitive-programming` and `/cp` aliases redirect there.
+- Roadmap is a single section: concept cards + learn/build/validate strip (no
+  duplicate concept-labs block).
+- Focus cards use a clearer bento layout with accent rails.
+
 ### Added — endpoints aliases & commit-rain windows
 
 - Permanent redirects for typos/synonyms of all major routes (see

@@ -131,7 +131,8 @@ test("independent chats survive closing; context and transcript clear separately
   await expect(dialog.locator(".whitespace-pre-wrap")).toHaveCount(0);
   await dialog.getByPlaceholder("Ask a question…").fill("Tell me about C++");
   await dialog.getByRole("button", { name: "Send", exact: true }).click();
-  await dialog.getByRole("combobox", { name: "Choose a chat" }).selectOption({ index: 0 });
+  await dialog.getByRole("button", { name: "Choose a chat" }).click();
+  await dialog.getByRole("option", { name: /Tell me about MAESTRO/ }).click();
   await expect(dialog.locator(".whitespace-pre-wrap").first()).toHaveText("Tell me about MAESTRO");
   await dialog.getByRole("button", { name: "Clear context", exact: true }).click();
   await expect(dialog.locator(".whitespace-pre-wrap")).toHaveCount(2);
@@ -145,7 +146,8 @@ test("independent chats survive closing; context and transcript clear separately
   await expect(dialog.locator(".whitespace-pre-wrap").first()).toHaveText("Tell me about MAESTRO");
   await dialog.getByRole("button", { name: "Clear chat", exact: true }).click();
   await expect(dialog.locator(".whitespace-pre-wrap")).toHaveCount(0);
-  await dialog.getByRole("combobox", { name: "Choose a chat" }).selectOption({ index: 1 });
+  await dialog.getByRole("button", { name: "Choose a chat" }).click();
+  await dialog.getByRole("option", { name: /Tell me about C\+\+/ }).click();
   await expect(dialog.locator(".whitespace-pre-wrap").first()).toHaveText("Tell me about C++");
 });
 

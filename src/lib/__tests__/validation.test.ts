@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { contactSchema } from "@/lib/validation";
+import { contactSchema, isAudioAttachment, isContactMessageSatisfied } from "@/lib/validation";
 
 const valid = {
   name: "Jane Doe",
@@ -45,14 +45,29 @@ describe("contactSchema", () => {
     expect(r.success).toBe(false);
   });
 
-  it("rejects too-short message", () => {
+  it("accepts a short message at the schema layer (floor checked separately)", () => {
     const r = contactSchema.safeParse({ ...valid, message: "short" });
-    expect(r.success).toBe(false);
+    expect(r.success).toBe(true);
   });
 
   it("rejects message longer than 4000 chars", () => {
     const r = contactSchema.safeParse({ ...valid, message: "a".repeat(4001) });
     expect(r.success).toBe(false);
+  });
+
+  it("requires 20 chars unless an audio attachment is present", () => {
+    expect(isContactMessageSatisfied("short", [])).toBe(false);
+    expect(isContactMessageSatisfied(valid.message, [])).toBe(true);
+    expect(isContactMessageSatisfied("", [{ name: "voice.webm", type: "audio/webm" }])).toBe(true);
+    expect(isContactMessageSatisfied("hi", [{ name: "note.pdf", type: "application/pdf" }])).toBe(
+      false,
+    );
+  });
+
+  it("detects audio attachments by MIME or extension", () => {
+    expect(isAudioAttachment({ type: "audio/webm", name: "x.bin" })).toBe(true);
+    expect(isAudioAttachment({ type: "", name: "voice.m4a" })).toBe(true);
+    expect(isAudioAttachment({ type: "application/pdf", name: "cv.pdf" })).toBe(false);
   });
 
   it("rejects honeypot when filled", () => {

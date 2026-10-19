@@ -26,7 +26,7 @@ const HIGHLIGHTS = [
 export function CPCommandCenter() {
   const t = useTranslations("competitiveProgramming");
   return (
-    <section className="section" aria-label={t("title")}>
+    <section id="cp" className="section scroll-mt-24" aria-label={t("title")}>
       <div className="container-tight">
         <header className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>

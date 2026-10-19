@@ -4,6 +4,8 @@ import {
   ALLOWED_ATTACHMENT_MIME,
   MAX_ATTACHMENTS,
   MAX_ATTACHMENT_TOTAL_BYTES,
+  isContactMessageSatisfied,
+  isAudioAttachment,
   type ContactInput,
 } from "@/lib/validation";
 import { rateLimit } from "@/lib/rate-limit";
@@ -116,13 +118,37 @@ export async function POST(req: Request) {
     );
   }
 
+  if (
+    !isContactMessageSatisfied(
+      parsed.data.message,
+      attachments.map((a) => ({ name: a.filename, type: a.contentType })),
+    )
+  ) {
+    return NextResponse.json(
+      {
+        error: "validationFailed",
+        issues: { fieldErrors: { message: ["messageShort"] }, formErrors: [] },
+      },
+      { status: 422 },
+    );
+  }
+
   // Honeypot — silently accept (don't reveal it's a trap to the bot).
   if (parsed.data.website) {
     return NextResponse.json({ ok: true }, { status: 200 });
   }
 
   try {
-    const result = await sendContactEmail(parsed.data as ContactInput, { ip, ua }, attachments);
+    const hasAudio = attachments.some((a) =>
+      isAudioAttachment({ name: a.filename, type: a.contentType }),
+    );
+    const emailInput: ContactInput = {
+      ...parsed.data,
+      message:
+        parsed.data.message.trim() ||
+        (hasAudio ? "[Voice note attached — see audio attachment.]" : parsed.data.message),
+    };
+    const result = await sendContactEmail(emailInput, { ip, ua }, attachments);
     return NextResponse.json(result);
   } catch (err) {
     // The Resend wrapper now throws on { error } responses; log the detail

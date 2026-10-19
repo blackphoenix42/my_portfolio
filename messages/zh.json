@@ -35,8 +35,8 @@
     "demo": "演示",
     "year": "年",
     "present": "至今",
-    "back": "Back",
-    "privacy": "Privacy"
+    "back": "后退",
+    "privacy": "隐私"
   },
   "nav": {
     "home": "首页",
@@ -73,15 +73,15 @@
     "builtWith": "构建技术",
     "stack": "Next.js · React · TypeScript · Tailwind · Vitest · Playwright · Vercel",
     "copyright": "© {year} {name}",
-    "tagline": "Engineering intelligence into performance-critical systems.",
-    "stackAriaLabel": "Technologies this site is built with"
+    "tagline": "将智能工程融入到性能关键型系统中。",
+    "stackAriaLabel": "该网站构建所采用的技术"
   },
   "language": {
     "label": "语言",
     "switch": "切换语言",
     "current": "当前语言：{name}",
     "names": {
-      "en": "English",
+      "en": "英语",
       "hi": "हिन्दी",
       "ja": "日本語",
       "sa": "संस्कृतम्",
@@ -118,9 +118,9 @@
     "email": "邮箱",
     "contact": "联系",
     "exitAria": "退出招聘者视图",
-    "modeOn": "Recruiter mode · ON",
-    "summary": "{role} · {location} · Open to software engineering roles in C++ systems, performance engineering & AI tooling.",
-    "impact": "Building performance-critical developer infrastructure with production impact across Apple, Google, Samsung & NVIDIA workloads.",
+    "modeOn": "招聘人员模式·ON",
+    "summary": "{role} · {location} · 向 C++ 系统、性能工程和 AI 工具中的软件工程角色开放。",
+    "impact": "构建性能关键的开发人员基础设施，对 Apple、Google、Samsung 和 NVIDIA 工作负载产生生产影响。",
     "github": "GitHub"
   },
   "scroll": {
@@ -158,13 +158,13 @@
       "contact": "联系",
       "systemDesign": "系统设计",
       "now": "近况",
-      "cp": "Now · CP & Roadmap"
+      "cp": "现在 · CP 和路线图"
     },
     "openTerminal": "打开终端模式",
     "openMatrix": "打开矩阵雨",
     "openSecret": "进入秘密房间",
     "openCommitRain": "提交雨",
-    "askPortfolio": "Ask Ayush"
+    "askPortfolio": "询问 Ayush"
   },
   "mobileActionBar": {
     "contact": "联系",
@@ -197,13 +197,13 @@
         "out": "已验证修复"
       }
     },
-    "headline": "I build <strong>faster systems</strong> and <strong>AI tools that help engineers ship</strong>.",
-    "subhead": "R&D Software Engineer II at Cadence. 4.5+ years building high-performance C++, Python automation and reliable AI workflows — from Xcelium and RTL optimization to developer infrastructure.",
+    "headline": "我构建了 <strong> 更快的系统 </strong> 和 <strong>AI 工具，帮助工程师交付 </strong>。",
+    "subhead": "Cadence 二级研发软件工程师。 4.5 年以上的时间构建高性能 C++、Python 自动化和可靠的 AI 工作流程 - 从 Xcelium 和 RTL 优化到开发人员基础设施。",
     "taglines": {
-      "0": "Performance-critical C++ × distributed systems × agentic AI.",
-      "1": "Production wins on Apple, Google, Samsung and NVIDIA workloads.",
-      "2": "From low-level profiling to AI-assisted developer tooling at scale.",
-      "3": "Owning problems end-to-end — measure, design, ship, operate."
+      "0": "性能关键的 C++ × 分布式系统 × 代理 AI。",
+      "1": "Apple、Google、Samsung 和 NVIDIA 工作负载的生产获胜。",
+      "2": "从低级分析到 AI 辅助的大规模开发人员工具。",
+      "3": "端到端地解决问题——测量、设计、运输、操作。"
     }
   },
   "home": {
@@ -215,25 +215,25 @@
     "eyebrow": "/ 关于",
     "heading": "简要介绍",
     "getInTouch": "联系",
-    "bio1": "I’m <strong>{name}</strong>, an R&D Software Engineer II with <strong>4.5+ years of experience</strong> in C++, Python and AI-driven automation. At {company}, I work on Xcelium and large-scale RTL optimization for Apple, Google, Samsung and NVIDIA workloads.",
-    "bio2": "My work connects low-level systems performance with engineering productivity: profiling simulators, building multi-agent assistive tooling (including trade-secret work such as MAESTRO), and automating regression and release workflows. I enjoy problems at the intersection of software, performance and hardware.",
-    "principlesEyebrow": "How I build reliable systems",
+    "bio1": "我是 <strong>{name}</strong>，一名 II 级研发软件工程师，在 C++、Python 和 AI 驱动的自动化领域拥有 <strong>4.5 年以上的 </strong> 经验。在 {company}，我致力于针对 Apple、Google、Samsung 和 NVIDIA 工作负载进行 Xcelium 和大规模 RTL 优化。",
+    "bio2": "我的工作将低级系统性能与工程生产力联系起来：分析模拟器、构建多代理辅助工具（包括 MAESTRO 等商业秘密工作）以及自动化回归和发布工作流程。我喜欢解决软件、性能和硬件交叉点的问题。",
+    "principlesEyebrow": "我如何构建可靠的系统",
     "principles": {
       "profile": {
-        "title": "Measure before optimizing.",
-        "body": "Use profiles, reproducible benchmarks and workload-specific evidence."
+        "title": "优化前进行测量。",
+        "body": "使用配置文件、可重复的基准和特定于工作负载的证据。"
       },
       "gap": {
-        "title": "Make the routine deterministic.",
-        "body": "Use explicit pipelines for repeatable work and AI where reasoning adds value."
+        "title": "使例程具有确定性。",
+        "body": "使用显式管道进行可重复的工作，并使用 AI 进行推理增加价值。"
       },
       "trust": {
-        "title": "Keep people in control.",
-        "body": "Design review gates, structured outputs, checkpoints and recovery into agent workflows."
+        "title": "让人们处于控制之中。",
+        "body": "将审核门、结构化输出、检查点和恢复设计到代理工作流程中。"
       },
       "performance": {
-        "title": "Verify the whole change.",
-        "body": "Check correctness, performance and regression behavior before calling an optimization done."
+        "title": "验证整个更改。",
+        "body": "在调用优化完成之前检查正确性、性能和回归行为。"
       }
     }
   },
@@ -302,7 +302,7 @@
       "niit": "NIIT",
       "udemy": "Udemy"
     },
-    "honorsIntro": "Recognition for performance work contributing to a multi-million dollar Samsung deal, proprietary AI engineering IP, conference contributions and earlier grants and competition wins."
+    "honorsIntro": "对促成数百万美元 Samsung 交易、专有 AI 工程 IP、会议贡献以及早期资助和竞赛胜利做出贡献的绩效工作的认可。"
   },
   "work": {
     "title": "作品",
@@ -345,7 +345,7 @@
     "linksHeading": "链接",
     "relatedHeading": "相关作品",
     "demoSubtitle": {
-      "maestro": "Interactive workflow walkthrough omitted — MAESTRO is trade-secret protected.",
+      "maestro": "省略交互式工作流程演练 — MAESTRO 受商业秘密保护。",
       "algolens": "AlgoLens 执行模型的迷你可视化。",
       "xcelium-optimization": "拖动滑块以查看随着 RTL/运行时优化落地，性能分析如何压缩。",
       "tezos-premier-league": "点击播放以模拟确定性的链上 PvP 赛事。",
@@ -385,8 +385,8 @@
     "internshipsAria": "实习与研修时间线",
     "educationHeading": "教育",
     "score": "分数：",
-    "present": "Present",
-    "previousRole": "Previous role at Cadence"
+    "present": "展示",
+    "previousRole": "曾任职于 Cadence"
   },
   "competitiveProgramming": {
     "title": "算法竞赛",
@@ -406,24 +406,24 @@
     "roadmapAria": "工程路线图",
     "roadmapTag": "/ 路线图",
     "roadmapHeading": "接下来要构建的",
-    "pageTitle": "Now · CP & Roadmap",
-    "pageDescription": "Competitive programming, current engineering focus and an incremental plan for the 2027 roadmap.",
-    "craftTag": "/ now",
-    "pageHeading": "What I’m doing now.",
+    "pageTitle": "现在 · CP 和路线图",
+    "pageDescription": "竞争性编程、当前工程重点以及 2027 年路线图的增量计划。",
+    "craftTag": "/ 现在",
+    "pageHeading": "我现在在做什么。",
     "pageIntro": "Competitive programming, current focus, and the learning and small releases that shape my next systems.",
     "roadmapIntro": "2027 targets for the next set of systems. The approach is incremental: learn the core concepts, build a narrow working slice, then validate it before expanding.",
     "approach": {
       "learn": {
-        "title": "Learn with a concrete problem",
-        "body": "Study queues and backpressure for InfraLens, OpenTelemetry and storage for TraceMind, and graph algorithms and WebAssembly for SiliconGraph. Use focused exercises to test each idea."
+        "title": "结合具体问题进行学习",
+        "body": "研究 InfraLens、OpenTelemetry 的队列和背压以及 TraceMind 的存储，以及 SiliconGraph 的图算法和 WebAssembly。使用集中练习来测试每个想法。"
       },
       "build": {
-        "title": "Ship a small working slice",
-        "body": "Start with one traffic path, one trace investigation or one RTL graph. Add capabilities incrementally, keeping each step inspectable and useful on its own."
+        "title": "运送一个小的工作切片",
+        "body": "从一条流量路径、一项跟踪调查或一张 RTL 图表开始。逐步添加功能，使每个步骤都可检查且独立有用。"
       },
       "validate": {
-        "title": "Measure, test and iterate",
-        "body": "Create repeatable fixtures, check failure behavior, compare performance and write down trade-offs. Use Q4 2027 for integration, documentation and feedback after the initial targets."
+        "title": "测量、测试和迭代",
+        "body": "创建可重复的夹具、检查故障行为、比较性能并记下权衡。在初始目标之后，使用 2027 年第四季度进行整合、记录和反馈。"
       }
     }
   },
@@ -485,39 +485,70 @@
       "formNote": "由速率限制和服务器验证保护。",
       "networkError": "网络错误。请重试或直接发送邮件。",
       "genericServerError": "出了点问题。请直接发送邮件给我。",
-      "otherRoleLabel": "Specify your role",
-      "otherRolePlaceholder": "e.g. Investor, Journalist, Conference organizer…",
-      "emailHint": "Tip: start typing a domain and press <kbd>Tab</kbd> to autocomplete.",
+      "otherRoleLabel": "指定您的角色",
+      "otherRolePlaceholder": "例如投资者、记者、会议组织者……",
+      "emailHint": "提示：开始输入域名并按 <kbd>Tab</kbd> 自动完成。",
       "errors": {
-        "nameShort": "Name is too short.",
-        "nameLong": "Name is too long.",
-        "emailInvalid": "Please enter a valid email address.",
-        "emailLong": "Email is too long.",
-        "companyLong": "Company is too long.",
-        "roleInvalid": "Pick one of the listed roles.",
-        "subjectShort": "Subject is too short.",
-        "subjectLong": "Subject is too long.",
-        "messageShort": "Please write at least 20 characters.",
-        "messageLong": "Please shorten your message.",
-        "otherRoleRequired": "Please specify your role.",
-        "otherRoleLong": "Role description is too long.",
-        "phoneInvalid": "Please enter a valid phone number.",
-        "phoneLong": "Phone number is too long."
+        "nameShort": "名字太短了。",
+        "nameLong": "名字太长了。",
+        "emailInvalid": "请输入有效的电子邮件地址。",
+        "emailLong": "电子邮件太长。",
+        "companyLong": "公司太长了。",
+        "roleInvalid": "选择列出的角色之一。",
+        "subjectShort": "主题太短。",
+        "subjectLong": "主题太长。",
+        "messageShort": "请至少填写 20 个字符，或附加语音留言。",
+        "messageLong": "请缩短您的消息。",
+        "otherRoleRequired": "请具体说明您的角色。",
+        "otherRoleLong": "角色描述太长。",
+        "phoneInvalid": "请输入有效的电话号码。",
+        "phoneLong": "电话号码太长。"
       },
       "attachments": {
-        "label": "Attachments",
-        "dropPrompt": "Drag and drop, or <browse>click to browse</browse>",
-        "dropOverlayTitle": "Drop files to attach",
+        "label": "附件",
+        "dropPrompt": "拖放，或<browse>点击浏览</browse>",
+        "dropOverlayTitle": "拖放要附加的文件",
         "hint": "Up to {maxFiles} files, {maxMb} MB total. PDF, images, DOCX, TXT, or MD.",
-        "remove": "Remove {filename}",
-        "tooMany": "You can attach up to {max} files.",
-        "tooLarge": "Total attachment size must be under {maxMb} MB.",
-        "unsupported": "“{filename}” isn’t a supported type.",
+        "remove": "删除 {filename}",
+        "tooMany": "您最多可以附加 {max} 文件。",
+        "tooLarge": "附件总大小必须低于 {maxMb} MB。",
+        "unsupported": "“{filename}”不是受支持的类型。",
         "totalSize": "{used} / {max} MB"
       },
       "rateLimit": {
-        "title": "Slow down a bit",
-        "body": "You’ve sent {limit} messages in the last minute. Please retry in {seconds} second{plural}."
+        "title": "放慢一点",
+        "body": "您在最后一分钟发送了 {limit} 消息。请在{seconds}第二个{plural}重试。"
+      },
+      "voice": {
+        "dictateOn": "开始听写",
+        "dictateOff": "停止听写",
+        "dictateOnAria": "打开麦克风，将语音转入消息",
+        "dictateOffAria": "关闭麦克风并保留转写文本",
+        "transcribing": "正在转写… {time}",
+        "transcribingPlaceholder": "正在聆听 — 说话时文字会出现在这里…",
+        "cancelDictate": "取消",
+        "record": "录制语音留言",
+        "stopRecording": "停止 · {time}",
+        "requestingMic": "正在请求麦克风权限…",
+        "preparingSpeech": "正在准备语音识别…",
+        "installingSpeechPackTitle": "当前浏览器缺少离线语音包",
+        "installingSpeechPack": "正在为此浏览器下载语音模型。通常只需一次、几十 MB，完成后可在设备上听写。",
+        "installingSpeechPackHint": "可取消等待并改为打字或录制语音留言。浏览器可能仍会在后台完成下载。",
+        "cancelSpeechPack": "取消",
+        "speechPackCancelled": "已取消。请输入消息或录制语音留言。",
+        "unavailable": "此浏览器不支持语音输入 — 请改为输入文字。",
+        "speechUnsupported": "此处不支持语音转文字。请使用 Chrome 或 Edge，或直接输入消息。",
+        "recordUnsupported": "此浏览器不支持录音。",
+        "micDenied": "麦克风权限被拒绝。点击地址栏锁图标 → 网站设置 → 麦克风 → 允许，然后重试。",
+        "micInsecure": "麦克风需要安全页面（https:// 或 http://localhost）。请通过 localhost 打开，不要用局域网明文 HTTP。",
+        "micNotFound": "未找到麦克风。请接入设备或检查 Windows 声音设置后重试。",
+        "micPolicy": "此页的安全响应头曾拦截麦克风。更新后请重新加载，或强制刷新（Ctrl+Shift+R）。",
+        "noSpeech": "未检测到语音 — 请靠近麦克风再试。",
+        "speechNetwork": "实时听写无法连接此网络上的语音服务。请使用「录制语音留言」发送音频，或输入文字。若已安装 Chrome 离线语音包也可使用。",
+        "speechError": "听写意外停止。您可以手动编辑文字，或录制语音留言。",
+        "recordTooShort": "录音太短，无法添加为附件。",
+        "recordAttached": "语音留言已加入附件。文字消息为可选项。",
+        "messageRequiredAgain": "已移除语音留言 — 请撰写消息（至少 20 个字符）。"
       }
     }
   },
@@ -611,7 +642,7 @@
         "2": "生产规模的向量数据库与嵌入流水线。"
       },
       "building": {
-        "0": "This portfolio — system-design whiteboards and Ask Ayush with independent conversations and optional on-device AI.",
+        "0": "该产品组合 — 系统设计白板和具有独立对话功能的 Ask Ayush 以及可选的设备上 AI。",
         "1": "AlgoLens——一个交互式 DSA 可视化工具（开源）。"
       },
       "reading": {
@@ -690,8 +721,8 @@
           "1": "Redirect short → long with very low latency.",
           "2": "Handle a very high read:write ratio (reads ≫ writes).",
           "3": "Optional analytics, expiry and custom aliases.",
-          "4": "Async click analytics that never adds latency to redirects; at-least-once event delivery.",
-          "5": "Abuse controls: destination allowlist/HTTPS, rate limits on create, malware URL denylist hooks."
+          "4": "异步点击分析永远不会增加重定向延迟；至少一次事件传递。",
+          "5": "滥用控制：目标允许列表/HTTPS、创建速率限制、恶意软件 URL 拒绝列表挂钩。"
         },
         "components": {
           "0": {
@@ -715,28 +746,28 @@
             "role": "Caches redirects close to users."
           },
           "5": {
-            "name": "ID allocator",
-            "role": "Snowflake/range-reserved counters → Base62; avoids central hot lock per request."
+            "name": "ID分配器",
+            "role": "雪花/范围保留计数器 → Base62；避免根据请求进行中央热锁。"
           },
           "6": {
-            "name": "Redis cache",
-            "role": "code → destination (+ expiry); TTL ≤ link expiry; negative-cache 404 briefly."
+            "name": "Redis缓存",
+            "role": "代码→目的地（+到期）； TTL≤链接过期；简单地负缓存404。"
           },
           "7": {
-            "name": "Links DB",
-            "role": "Sharded primary for mappings; unique(code), unique(alias) where present."
+            "name": "链接数据库",
+            "role": "用于映射的分片主分区；唯一（代码）、唯一（别名）（如果存在）。"
           },
           "8": {
-            "name": "Analytics bus",
-            "role": "Kafka/Pulsar topic for redirect events; workers aggregate offline."
+            "name": "分析总线",
+            "role": "Kafka/Pulsar 重定向事件主题；工人离线聚合。"
           }
         },
         "tradeoffs": {
           "0": "301 (permanent, cacheable, loses analytics) vs 302 (temporary, countable).",
           "1": "Hashing (stateless, collisions) vs counter+Base62 (coordination, no collisions).",
           "2": "A read-through cache adds complexity but is essential at this read ratio.",
-          "3": "Global single table vs shard-by-code-prefix (scale vs cross-shard admin queries).",
-          "4": "Strong uniqueness on alias (correct) vs eventual uniqueness (faster writes, repair jobs)."
+          "3": "全局单表与按代码前缀分片（规模与跨分片管理查询）。",
+          "4": "别名的强唯一性（正确）与最终的唯一性（更快的写入、修复作业）。"
         },
         "lld": {
           "dataModel": "Link(code PRIMARY KEY, destination, owner_id, created_at, expires_at). A unique index on code arbitrates alias collisions. Cache entries carry a TTL bounded by link expiry.",
@@ -754,8 +785,8 @@
           "1": "Low latency with a clear fail-open or fail-closed policy.",
           "2": "Work across many app servers consistently.",
           "3": "Return 429 with a Retry-After hint.",
-          "4": "Configurable fail-open vs fail-closed per route class when the store is unavailable.",
-          "5": "Observability: allow/deny rates, hot keys, and shadow mode for policy rollouts."
+          "4": "当存储不可用时，每个路由类可配置故障打开与故障关闭。",
+          "5": "可观察性：策略推出的允许/拒绝率、热键和影子模式。"
         },
         "components": {
           "0": {
@@ -775,28 +806,28 @@
             "role": "Per-tier limits and burst allowance."
           },
           "4": {
-            "name": "Lua / atomic op",
-            "role": "Refill + consume in one round-trip; avoids race between GET/SET."
+            "name": "Lua/原子操作",
+            "role": "补充+单程消耗；避免 GET/SET 之间的竞争。"
           },
           "5": {
-            "name": "Local shedder",
-            "role": "Optional process-local token cache for fail-open soft limits."
+            "name": "本地脱落者",
+            "role": "用于故障开放软限制的可选进程本地令牌缓存。"
           },
           "6": {
-            "name": "Metrics",
-            "role": "Export allow/deny, latency, and Redis errors for SLO burn alerts."
+            "name": "指标",
+            "role": "导出 SLO 刻录警报的允许/拒绝、延迟和 Redis 错误。"
           },
           "7": {
-            "name": "Admin API",
-            "role": "CRUD policies, purge keys, and emergency global brakes."
+            "name": "管理员 API",
+            "role": "CRUD 策略、清除密钥和紧急全局制动。"
           }
         },
         "tradeoffs": {
           "0": "Fixed window (cheap, boundary bursts) vs sliding window (accurate, costlier).",
           "1": "Token bucket allows bursts; leaky bucket smooths output.",
           "2": "Local in-memory (fast, per-node) vs centralized (consistent, network hop).",
-          "3": "Fail-open (availability) vs fail-closed (cost/security) when Redis times out.",
-          "4": "Sync check on every request vs async/optimistic + reconcile (risk of overshoot)."
+          "3": "Redis 超时时，故障打开（可用性）与故障关闭（成本/安全性）。",
+          "4": "对每个请求进行同步检查与异步/乐观+协调（超调风险）。"
         },
         "lld": {
           "dataModel": "Bucket(key, tokens, last_refill_ms, capacity, refill_rate). Store expiring keys in Redis. Derive the key from the authenticated principal or a trusted proxy's client address.",
@@ -814,8 +845,8 @@
           "1": "At-least-once execution with retries and backoff.",
           "2": "Scale workers horizontally.",
           "3": "Visibility into pending, running, failed and done jobs.",
-          "4": "Operational visibility: queued/running/failed, attempt history, payload refs.",
-          "5": "Dead-letter after N attempts with operator replay and poison isolation."
+          "4": "操作可见性：排队/运行/失败、尝试历史记录、有效负载参考。",
+          "5": "N 次尝试操作员重放和毒物隔离后出现死信。"
         },
         "components": {
           "0": {
@@ -823,7 +854,7 @@
             "role": "Durable job queue (SQS / Kafka / DB table)."
           },
           "1": {
-            "name": "Scheduler",
+            "name": "调度程序",
             "role": "Moves due delayed/cron jobs into the ready queue."
           },
           "2": {
@@ -839,28 +870,28 @@
             "role": "Job state, idempotency keys and results."
           },
           "5": {
-            "name": "Payload object store",
-            "role": "Large blobs off the hot row; immutable per enqueue version."
+            "name": "有效负载对象存储",
+            "role": "热排中出现大斑点；每个队列版本都是不可变的。"
           },
           "6": {
             "name": "DLQ",
-            "role": "Holds exhausted jobs; separate consumer for ops replay."
+            "role": "承担精疲力尽的工作；单独的消费者用于操作重播。"
           },
           "7": {
-            "name": "Cron expander",
-            "role": "Materializes next fire times without thundering herds."
+            "name": "cron 扩展器",
+            "role": "在没有惊群的情况下实现下一次火灾。"
           },
           "8": {
-            "name": "Ops console",
-            "role": "Cancel, requeue, inspect attempts, and pause lanes."
+            "name": "操作控制台",
+            "role": "取消、重新排队、检查尝试和暂停通道。"
           }
         },
         "tradeoffs": {
           "0": "At-least-once + idempotency (simple, needs dedupe) vs exactly-once (hard).",
           "1": "Push vs pull worker models.",
           "2": "Priority queues vs FIFO fairness.",
-          "3": "Per-tenant queues (isolation) vs shared lanes (efficiency, noisy-neighbor risk).",
-          "4": "Keep payloads in-row (simple) vs object store (scale, extra failure domain)."
+          "3": "每个租户队列（隔离）与共享通道（效率、嘈杂邻居风险）。",
+          "4": "保持有效负载行内（简单）与对象存储（规模、额外故障域）。"
         },
         "lld": {
           "dataModel": "Job(id, idempotency_key UNIQUE, payload_ref, run_at, priority, attempts, lease_owner, lease_until, status). Keep large payloads in object storage and transitions in a durable record.",
@@ -878,8 +909,8 @@
           "1": "Full-text and structured search.",
           "2": "Time-windowed aggregations and dashboards.",
           "3": "Retention tiers and archival.",
-          "4": "Tenant isolation on every query path; redact PII fields at ingest when configured.",
-          "5": "Exactly-once-ish processing via event_id dedupe + offset commit after durable write."
+          "4": "每个查询路径上的租户隔离；配置后，在摄取时编辑 PII 字段。",
+          "5": "通过 event_id 重复数据删除 + 持久写入后的偏移量提交进行一次性处理。"
         },
         "components": {
           "0": {
@@ -903,28 +934,28 @@
             "role": "Search and visualize."
           },
           "5": {
-            "name": "Cold object store",
-            "role": "Compressed originals / Parquet for rehydrate and audit."
+            "name": "冷对象存储",
+            "role": "压缩原件 / Parquet 用于补水和审核。"
           },
           "6": {
-            "name": "Query API",
-            "role": "Tenant-scoped search + aggregations with timeouts and cursors."
+            "name": "查询 API",
+            "role": "租户范围内的搜索+带有超时和游标的聚合。"
           },
           "7": {
-            "name": "Compactor / tierer",
-            "role": "Rolls shards warm→cold; enforces retention deletes."
+            "name": "压实机/分层机",
+            "role": "卷碎片热→冷；强制保留删除。"
           },
           "8": {
-            "name": "Quarantine topic",
-            "role": "Poison/schema-invalid events for offline repair."
+            "name": "检疫话题",
+            "role": "用于离线修复的中毒/架构无效事件。"
           }
         },
         "tradeoffs": {
           "0": "Index everything (fast queries, costly) vs sample / schema-on-read.",
           "1": "Hot / warm / cold tiering for cost control.",
-          "2": "Shared cluster (efficiency) vs per-tenant indexes (isolation, cost).",
-          "3": "Sync ack to agent after Kafka (durability) vs after index (higher latency).",
-          "4": "Wide events (debuggable) vs strict schemas (predictable cost/perf)."
+          "2": "共享集群（效率）与每租户索引（隔离、成本）。",
+          "3": "在 Kafka（持久性）之后与索引之后（较高延迟）同步 ack 到代理。",
+          "4": "宽事件（可调试）与严格模式（可预测的成本/性能）。"
         },
         "lld": {
           "dataModel": "Event(event_id, tenant_id, timestamp, service, severity, trace_id, body). Partition the ingest stream by tenant and service, and index time-bounded shards. Store compressed originals in object storage.",
@@ -942,8 +973,8 @@
           "1": "Separate new failures from flaky and known failures.",
           "2": "Trend pass-rate over time with per-test history.",
           "3": "Drill into logs and artifacts of a failure.",
-          "4": "Owner routing + SLA clocks for open signatures without paging on flakes.",
-          "5": "History APIs for a test_id across branches with pagination."
+          "4": "所有者路由 + SLA 时钟用于开放签名，无需分页。",
+          "5": "具有分页功能的跨分支的 test_id 的历史记录 API。"
         },
         "components": {
           "0": {
@@ -967,28 +998,28 @@
             "role": "Logs and waveforms linked per failure."
           },
           "5": {
-            "name": "Flake classifier",
-            "role": "Rule-based (and optional ML-suggested) intermittent detection."
+            "name": "片状分级机",
+            "role": "基于规则（以及可选的 ML 建议）间歇性检测。"
           },
           "6": {
-            "name": "Artifact store",
-            "role": "Logs, FSDB/VCD pointers; lifecycle independent of status."
+            "name": "神器商店",
+            "role": "日志、FSDB/VCD 指针；生命周期与状态无关。"
           },
           "7": {
-            "name": "Diff service",
-            "role": "Compares run vs baseline; computes introduced/resolved sets."
+            "name": "差异化服务",
+            "role": "比较运行与基线；计算引入/解析集。"
           },
           "8": {
-            "name": "Dashboard UI",
-            "role": "Trends, owners, waive flows, deep-links into artifacts."
+            "name": "仪表板用户界面",
+            "role": "趋势、所有者、放弃流、与工件的深层链接。"
           }
         },
         "tradeoffs": {
           "0": "Store all artifacts (debuggable, large) vs fetch on demand.",
           "1": "Real-time vs batch aggregation.",
-          "2": "Sync classification at ingest vs batch overnight (freshness vs cost).",
-          "3": "Mutable waive state (ops-friendly) vs immutable event log (forensics).",
-          "4": "Per-branch baselines (accurate) vs trunk-only (simpler, noisier)."
+          "2": "摄取时同步分类与过夜批次同步（新鲜度与成本）。",
+          "3": "可变放弃状态（操作友好）与不可变事件日志（取证）。",
+          "4": "每个分支的基线（准确）与仅主干的基线（更简单，噪音更大）。"
         },
         "lld": {
           "dataModel": "Run(run_id, revision, branch, started_at), Result(run_id, test_id, attempt, status, signature, artifact_ref), and Failure(signature, first_seen, owner, classification). Use stable test IDs across runs.",
@@ -1006,8 +1037,8 @@
           "1": "Random-access replay at any time point.",
           "2": "Lossless for digital signals.",
           "3": "Fast writes during simulation.",
-          "4": "Dictionary reuse across chunks; versioned format with checksums.",
-          "5": "Compression ratio targets depend on activity; measure, don’t promise a constant."
+          "4": "跨块的字典重用；带有校验和的版本化格式。",
+          "5": "压缩比目标取决于活动；测量，不要承诺一个常数。"
         },
         "components": {
           "0": {
@@ -1031,28 +1062,28 @@
             "role": "Decompresses windows on demand."
           },
           "5": {
-            "name": "Sparse time index",
-            "role": "Maps time ranges → file offsets for seek."
+            "name": "稀疏时间索引",
+            "role": "映射时间范围 → 文件偏移以进行查找。"
           },
           "6": {
-            "name": "Object / file store",
-            "role": "Durable chunk bytes; immutability after seal."
+            "name": "对象/文件存储",
+            "role": "持久块字节；密封后的不变性。"
           },
           "7": {
-            "name": "Replay reader",
-            "role": "Loads snapshot + replays deltas for requested window."
+            "name": "重播阅读器",
+            "role": "加载快照+重播请求窗口的增量。"
           },
           "8": {
-            "name": "Format verifier",
-            "role": "Offline round-trip tests and version migration tools."
+            "name": "格式验证器",
+            "role": "离线往返测试和版本迁移工具。"
           }
         },
         "tradeoffs": {
           "0": "Event-based (compact for sparse activity) vs sampled.",
           "1": "Bigger blocks compress better but slow random access.",
-          "2": "Shared global dictionary (ratio) vs per-chunk (parallelism, simpler recovery).",
-          "3": "Sync index publish with seal (readers never see holes) vs async (higher write FPS).",
-          "4": "Single-file layout (simple) vs multi-file shards (parallel dump from many scopes)."
+          "2": "共享全局字典（比率）与每块（并行性、更简单的恢复）。",
+          "3": "带密封的同步索引发布（读者永远看不到漏洞）与异步（更高的写入 FPS）。",
+          "4": "单文件布局（简单）与多文件分片（来自多个范围的并行转储）。"
         },
         "lld": {
           "dataModel": "Signal dictionary maps IDs to widths and types. Independently compressed chunks contain a time range, an initial state snapshot, delta timestamps, value changes and a checksum. A sparse index maps time ranges to file offsets.",
@@ -1066,33 +1097,33 @@
     "pageIntro": "System-design whiteboards I’ve built: working browser demos, architecture, implementation notes and trade-offs.",
     "galleryIntro": "Whiteboards I’ve built to make system behavior tangible — explore each demo, its architecture and implementation decisions.",
     "galleryContents": "Demo · HLD · LLD · Trade-offs",
-    "openDesign": "Open whiteboard",
-    "filter": "Filter",
-    "all": "All",
+    "openDesign": "打开白板",
+    "filter": "筛选",
+    "all": "全部",
     "uml": "Architecture (UML)",
-    "seeMore": "See more whiteboards",
-    "seeLess": "Show top four",
-    "detailTabs": "Whiteboard views",
+    "seeMore": "查看更多白板",
+    "seeLess": "显示前四名",
+    "detailTabs": "白板视图",
     "tabs": {
-      "demo": "Architecture demo",
-      "hld": "High-level design",
-      "lld": "Low-level design",
-      "decisions": "Trade-offs & failures"
+      "demo": "架构演示",
+      "hld": "高层设计",
+      "lld": "底层设计",
+      "decisions": "权衡与失败"
     },
     "demoScope": "Built for this portfolio: an interactive reference demo. Infrastructure components are simulated in the browser.",
     "lldLabels": {
-      "dataModel": "Data model",
-      "api": "API contracts",
-      "execution": "Execution & consistency",
-      "pseudocode": "Pseudocode"
+      "dataModel": "数据模型",
+      "api": "API 合约",
+      "execution": "执行力和一致性",
+      "pseudocode": "伪代码"
     },
-    "failureModes": "Failure modes & recovery",
-    "backToWork": "← Back to Work",
-    "pipelineStep": "Stage {current} of {total}",
-    "nextStep": "Next stage",
-    "restart": "Restart walkthrough",
-    "loading": "Loading whiteboard…",
-    "umlCaption": "Deployment-style component diagram · solid = sync path · dashed = async / degraded"
+    "failureModes": "故障模式和恢复",
+    "backToWork": "← 返回工作岗位",
+    "pipelineStep": "阶段 {current}/{total}",
+    "nextStep": "下一阶段",
+    "restart": "重新启动演练",
+    "loading": "正在加载白板...",
+    "umlCaption": "部署式组件图 · 实线 = 同步路径 · 虚线 = 异步/降级"
   },
   "chatbot": {
     "subtitle": "本地 · 抽取式 · 无追踪",
@@ -1117,91 +1148,91 @@
       "stop": "停止生成",
       "disclaimer": "AI 回答由你的设备根据本站内容生成，可能包含错误。请核对所附来源。"
     },
-    "title": "Ask Ayush",
-    "open": "Ask Ayush",
+    "title": "询问 Ayush",
+    "open": "询问 Ayush",
     "chats": {
       "new": "新建聊天",
       "select": "选择聊天",
       "clearContext": "清除上下文",
       "clearChat": "清空聊天",
       "delete": "删除聊天",
-      "untitled": "Chat {number}",
-      "contextCleared": "Context cleared. Earlier messages remain visible and will not inform new answers.",
-      "chatCleared": "Chat and its context cleared.",
-      "serverUnavailable": "Server AI is unavailable, so Quick answers are active."
+      "untitled": "聊天 {number}",
+      "contextCleared": "上下文已清除。较早的消息仍然可见，并且不会通知新的答案。",
+      "chatCleared": "聊天及其上下文已清除。",
+      "serverUnavailable": "服务器 AI 不可用，因此快速应答处于活动状态。"
     },
     "settings": {
       "removeModels": "删除已下载模型",
-      "title": "Assistant settings",
-      "open": "Open assistant settings",
-      "back": "Back to chat",
-      "intro": "Choose how answers run on this device. Quick answers work immediately. Selecting GPU or CPU enables local AI and starts the download shown below.",
-      "engineLabel": "Answer mode",
+      "title": "助手设置",
+      "open": "打开助手设置",
+      "back": "返回聊天",
+      "intro": "选择答案在此设备上的运行方式。快速解答立即生效。选择 GPU 或 CPU 启用本地 AI 并开始下载，如下所示。",
+      "engineLabel": "接听模式",
       "engines": {
         "quick": {
-          "label": "Quick answers · AI off",
-          "help": "Fastest and lightest. Quotes portfolio content directly, with no model download or AI memory use."
+          "label": "快速解答 · AI 关闭",
+          "help": "最快、最轻。直接引用投资组合内容，无需下载模型或使用 AI 内存。"
         },
         "server": {
-          "label": "Server AI · no download",
-          "help": "Generates a grounded answer through this site's server when enabled. Your question and recent chat context leave this device; Quick answers are used if the service is unavailable."
+          "label": "服务器 AI · 无下载",
+          "help": "启用后，通过此站点的服务器生成接地答案。您的问题和最近的聊天上下文离开此设备；如果服务不可用，则使用快速答案。"
         },
         "gpu": {
-          "label": "Device GPU",
-          "help": "Usually the fastest AI option on a supported GPU. Uses graphics memory and more battery; other graphics-heavy apps may slow down."
+          "label": "设备 GPU",
+          "help": "通常是受支持的 GPU 上最快的 AI 选项。使用图形内存和更多电池；其他图形密集型应用程序可能会变慢。"
         },
         "cpu": {
-          "label": "Device CPU",
-          "help": "Works without a GPU using a smaller model. Usually slower and less detailed; uses system memory and can increase heat and battery use. Single-threaded browsers can take minutes per answer."
+          "label": "设备 CPU",
+          "help": "使用较小的型号无需 GPU 即可工作。通常速度较慢且不太详细；使用系统内存并会增加热量和电池使用量。单线程浏览器每个答案可能需要几分钟的时间。"
         }
       },
-      "download": "{model} · about {size} MB on first use. Downloaded models are cached in this browser.",
-      "checking": "Checking device support…",
+      "download": "{model} · 关于首次使用 {size} MB。下载的模型缓存在此浏览器中。",
+      "checking": "检查设备支持...",
       "unavailable": {
-        "noWebGpu": "GPU AI is unavailable in this browser. CPU or quick answers are available.",
-        "softwareGpu": "A hardware GPU is not available to this browser. Use CPU or quick answers.",
-        "lowMemory": "Quick answers are recommended with less than 4 GB of reported device memory.",
-        "saveData": "Quick answers stay on while Data Saver is enabled."
+        "noWebGpu": "GPU AI 在此浏览器中不可用。 CPU 或快速答案可用。",
+        "softwareGpu": "硬件 GPU 不适用于此浏览器。使用 CPU 或快速答案。",
+        "lowMemory": "建议使用报告的设备内存少于 4 GB 快速获得答案。",
+        "saveData": "启用数据保护程序时，快速答案将保持不变。"
       },
-      "speed": "Last measured generation speed: about {speed} tokens/s.",
-      "recommended": "Recommended for this device",
+      "speed": "最后测量的生成速度：大约 {speed} 代币/秒。",
+      "recommended": "推荐用于此设备",
       "recommendations": {
-        "gpuFast": "Your GPU is fast. Short, focused answers with the model kept ready give the quickest experience. You can request more detail when needed.",
-        "gpu": "Your GPU can run local AI. Start with short, focused answers and keep the model ready between chats.",
-        "cpu": "CPU with short answers and focused context is a suitable option here. GPU is usually faster when available.",
-        "slow": "The last measured AI speed was low. Quick answers are recommended; you can still choose an AI engine.",
-        "noAi": "Quick answers are recommended for responsiveness and battery life. You can try an available AI engine.",
-        "saveData": "Use quick answers to avoid model downloads while Data Saver is on."
+        "gpuFast": "您的 GPU 速度很快。简短、集中的答案和准备好的模型可以提供最快的体验。您可以在需要时索取更多详细信息。",
+        "gpu": "您的GPU可以运行本地AI。从简短、集中的答案开始，并在聊天之间保持模型准备就绪。",
+        "cpu": "具有简短答案和重点上下文的 CPU 是一个合适的选择。 GPU 在可用时通常会更快。",
+        "slow": "最后测得AI速度较低。建议快速回答；您仍然可以选择 AI 发动机。",
+        "noAi": "为了响应能力和电池寿命，建议快速回答。您可以尝试可用的 AI 引擎。",
+        "saveData": "使用快速答案以避免在数据保护程序打开时下载模型。"
       },
-      "apply": "Use recommended settings",
-      "applyHint": "Choosing an AI recommendation starts its model download.",
-      "lengthLabel": "AI answer length",
-      "short": "Short",
-      "detailed": "Detailed",
-      "lengthHelp": "Short replies generate fewer tokens and finish sooner. Detailed replies take longer on this device.",
-      "contextLabel": "AI context",
-      "focused": "Focused",
-      "thorough": "Thorough",
-      "contextHelp": "Focused context starts answers sooner. Thorough context includes more source material, but uses more memory and processing time.",
-      "cpuLabel": "CPU usage",
-      "balanced": "Balanced",
-      "max": "Maximum",
-      "cpuHelp": "Balanced leaves more capacity for the page. Maximum may generate faster but increases heat, battery use, and competition with other apps.",
-      "singleThread": "This page uses one CPU thread, so replies can take minutes. Both usage levels run at the same speed here; quick answers are recommended for responsiveness.",
-      "keepLoaded": "Keep AI ready briefly after closing",
-      "keepLoadedHelp": "Keeps the model in memory for up to two minutes for faster reopening. Off frees memory on close. Downloaded files stay cached either way.",
-      "cancel": "Cancel download",
-      "turnOff": "Turn AI off",
-      "active": "Active: {engine}",
-      "fallback": "Quick answers are active. You can choose another mode in settings.",
-      "warmup": "Warming up and measuring speed…",
-      "loading": "Preparing local AI… {percent}%",
-      "removingModels": "Removing models…",
-      "removeHelp": "Deletes this site’s GPU and CPU model downloads and switches to quick answers. Your chats stay available.",
-      "modelsRemoved": "Downloaded models removed. Quick answers are active.",
-      "removeError": "Some model files could not be removed. Close other Ask Ayush tabs and retry. Quick answers remain active."
+      "apply": "使用推荐设置",
+      "applyHint": "选择 AI 推荐开始其模型下载。",
+      "lengthLabel": "AI 答案长度",
+      "short": "短的",
+      "detailed": "详细的",
+      "lengthHelp": "简短的回复生成的令牌更少并且完成得更快。在此设备上详细回复需要更长的时间。",
+      "contextLabel": "AI 上下文",
+      "focused": "专注",
+      "thorough": "彻底",
+      "contextHelp": "集中的上下文可以更快地开始回答。完整的上下文包括更多的源材料，但使用更多的内存和处理时间。",
+      "cpuLabel": "CPU用途",
+      "balanced": "均衡",
+      "max": "最大限度",
+      "cpuHelp": "平衡为页面留下更多容量。 Maximum 可能生成速度更快，但会增加热量、电池使用量以及与其他应用程序的竞争。",
+      "singleThread": "此页面使用一个 CPU 线程，因此回复可能需要几分钟时间。两种使用级别在这里以相同的速度运行；为了提高响应能力，建议快速回答。",
+      "keepLoaded": "关闭后请保持 AI 短暂准备",
+      "keepLoadedHelp": "将模型在内存中保留最多两分钟，以便更快地重新打开。 Off 关闭时释放内存。无论哪种方式，下载的文件都会被缓存。",
+      "cancel": "取消下载",
+      "turnOff": "关闭 AI",
+      "active": "活跃：{engine}",
+      "fallback": "快速解答已激活。您可以在设置中选择其他模式。",
+      "warmup": "热身并测量速度...",
+      "loading": "正在准备本地AI…{percent}%",
+      "removingModels": "正在删除模型...",
+      "removeHelp": "删除本网站的 GPU 和 CPU 模型下载并切换到快速答案。您的聊天仍然可用。",
+      "modelsRemoved": "已删除下载的模型。快速解答已激活。",
+      "removeError": "某些模型文件无法删除。关闭其他“询问 Ayush”选项卡并重试。快速解答仍然有效。"
     },
-    "intro": "Ask about my work, skills or experience. Each chat has its own context. Chats stay in this browser tab for this session."
+    "intro": "询问我的工作、技能或经验。每个聊天都有自己的上下文。本次会话的聊天内容保留在该浏览器选项卡中。"
   },
   "audio": {
     "introTitle": "语音介绍",
@@ -1213,7 +1244,7 @@
     "sfxLabel": "音效",
     "on": "开",
     "off": "关",
-    "transcript": "Hey, I’m Ayush Yadav! 👋 An R&D Software Engineer at Cadence with over four and a half years of experience building high-performance systems in C++ and Python. 💻\n\nI work on Xcelium, RTL optimization, and AI-powered developer tools, helping boost simulation throughput by up to nineteen percent. 🚀 Basically, I make software faster so progress bars get less screen time. 😄\nHave a look around, explore my projects, and see what I’ve been building. 🔍 If you’re hiring, want to collaborate, or just want more details, drop me a message! 📬\n\nI promise I won’t ask you to reverse a linked list just to say hello! 😉"
+    "transcript": "嘿，我是Ayush Yadav！ 👋 Cadence 的研发软件工程师，拥有超过四年半的使用 C++ 和 Python 构建高性能系统的经验。 💻\n\nI 适用于 Xcelium、RTL 优化和 AI 支持的开发人员工具，有助于将模拟吞吐量提高高达 19%。 🚀 基本上，我让软件变得更快，这样进度条就可以减少屏幕时间。 😄\n环顾四周，探索我的项目，看看我一直在构建什么。 🔍如果您正在招聘、想要合作或只是想了解更多详细信息，请给我留言！ 📬\n\n我保证我不会只是为了打个招呼而要求你反转链表！ 😉"
   },
   "lab": {
     "title": "实验室",
@@ -1228,56 +1259,56 @@
     "subheading": "您要查找的页面不存在或已移动。",
     "cta": "返回首页",
     "tag": "/ 404",
-    "suggestionsLabel": "Try one of these",
-    "search": "Open command palette",
-    "back": "Go back",
-    "asciiLabel": "ASCII art of a 404 phoenix",
-    "kbdHint": "to jump anywhere on the site",
-    "qrLabel": "QR code linking to the site home page",
-    "qrTitle": "Continue on your phone",
-    "qrCaption": "Scan to open this site on another device.",
+    "suggestionsLabel": "尝试其中之一",
+    "search": "打开命令面板",
+    "back": "回去",
+    "asciiLabel": "404 凤凰的 ASCII 艺术",
+    "kbdHint": "跳转到网站上的任何位置",
+    "qrLabel": "链接到网站主页的二维码",
+    "qrTitle": "在手机上继续",
+    "qrCaption": "扫描以在其他设备上打开此网站。",
     "game": {
-      "title": "Phoenix Run",
-      "pause": "Pause",
-      "canvasLabel": "Phoenix Run — endless runner game canvas",
-      "idleTitle": "Phoenix Run",
-      "idleHint": "Flap through a volcanic world, dodge the ruins, and collect golden feathers. Tap or press Space to begin.",
-      "play": "Play",
-      "best": "Best · {score}",
-      "paused": "Paused",
-      "resume": "Resume",
-      "gameOver": "Lost to the ashes",
-      "newHigh": "new high score!",
-      "feathers": "{count, plural, one {# golden feather} other {# golden feathers}}",
-      "restart": "Restart",
-      "goHome": "Go Home",
-      "dive": "Dive",
-      "controls": "Space/↑/W flap · ↓/S dive · P pause · R restart · F fullscreen · tap to flap, swipe down to dive",
-      "mute": "Mute",
-      "unmute": "Unmute",
-      "fullscreen": "Fullscreen",
-      "exitFullscreen": "Exit fullscreen",
-      "reducedMotion": "Reduced motion is on — the runner uses motion, so play only if you're comfortable.",
-      "ms500": "The Flame Awakens",
-      "ms1000": "Phoenix Rebirth Unlocked",
-      "ms2000": "Inferno Mode Activated",
-      "ms5000": "Legendary Phoenix",
-      "rebirth": "Reborn from the ashes!",
+      "title": "凤凰跑",
+      "pause": "暂停",
+      "canvasLabel": "Phoenix Run — 无尽的跑步游戏画布",
+      "idleTitle": "凤凰跑",
+      "idleHint": "掠过火山世界，躲避废墟，收集金色羽毛。点击或按空格键开始。",
+      "play": "玩",
+      "best": "最佳·{score}",
+      "paused": "已暂停",
+      "resume": "恢复",
+      "gameOver": "消失在灰烬中",
+      "newHigh": "新高分！",
+      "feathers": "{count, plural, one {# 根金色羽毛} other {# 根金色羽毛}}",
+      "restart": "重新启动",
+      "goHome": "回家",
+      "dive": "潜水",
+      "controls": "空格/↑/W 襟翼 · ↓/S 潜水 · P 暂停 · R 重新启动 · F 全屏 · 点击襟翼，向下滑动潜水",
+      "mute": "沉默的",
+      "unmute": "取消静音",
+      "fullscreen": "全屏",
+      "exitFullscreen": "退出全屏",
+      "reducedMotion": "减少运动已开启 - 跑步者使用运动，因此只有在您感到舒适的情况下才可以玩。",
+      "ms500": "火焰苏醒",
+      "ms1000": "凤凰重生解锁",
+      "ms2000": "地狱模式已激活",
+      "ms5000": "传奇凤凰",
+      "rebirth": "从灰烬中重生！",
       "help": {
-        "open": "How to play",
-        "title": "How to play",
-        "close": "Close",
-        "goal": "Guide the flaming phoenix through a volcanic world. Flap to stay airborne, dodge every obstacle, grab power-ups, and survive as long as you can — the longer you fly, the faster it gets.",
-        "controlsTitle": "Controls",
-        "controlsBody": "Space / ↑ / W   flap upward\n↓ / S           dive / quick drop\nP               pause / resume\nR               restart\nF               fullscreen\nTap             flap (mobile)\nSwipe down      dive (mobile)",
-        "powerupsTitle": "Power-ups",
-        "powerupsBody": "⛨ Flame Shield   absorbs one hit\n✦ Golden Feather  bonus score (collect 5 for an egg)\n✸ Phoenix Burst   clears nearby obstacles\n◷ Slow Time       slows the world briefly\n×2 Double Score   temporary score multiplier",
-        "mechanicsTitle": "Mechanics",
-        "mechanicsBody": "Rebirth — at 1000 you bank one revive; a fatal hit instead reignites you and clears the area.\nInferno Mode — at 2000 the world darkens, speeds up, and scores multiply.\nMilestones — 500, 1000, 2000, 5000 each mark a new chapter.",
-        "settingsTitle": "Settings",
-        "sound": "Sound: {state}",
+        "open": "怎么玩",
+        "title": "怎么玩",
+        "close": "关闭",
+        "goal": "引导火焰凤凰穿越火山世界。襟翼保持在空中，躲避每一个障碍，获取能量，并尽可能地生存——飞得越远，速度就越快。",
+        "controlsTitle": "控制",
+        "controlsBody": "空格/↑/W 襟翼向上\n↓ / S 潜水/快速下降\nP 暂停/恢复\nR 重新启动\nF 全屏\n点击襟翼（移动）\n向下滑动潜水（移动）",
+        "powerupsTitle": "通电",
+        "powerupsBody": "⛨ 火焰护盾吸收一击\n✦ 金羽奖励分数（收集5个鸡蛋）\n✸ 凤凰爆发清除附近的障碍\n◷ 缓慢的时间短暂地减慢世界\n×2双倍分数临时分数乘数",
+        "mechanicsTitle": "力学",
+        "mechanicsBody": "重生 — 在 1000 点时，你可以复活一次； \n 地狱模式 - 2000 时世界变暗、加速，分数倍增。\n 里程碑 - 500、1000、2000、5000 每个都标志着一个新篇章。",
+        "settingsTitle": "设置",
+        "sound": "声音：{state}",
         "on": "on",
-        "off": "off"
+        "off": "离开"
       }
     }
   },
@@ -1300,9 +1331,9 @@
         "analyticsTitle": "分析",
         "analyticsBody": "已启用 <strong>Vercel Web Analytics</strong> 和 <strong>Vercel Speed Insights</strong>。两者均无 Cookie 且符合 GDPR 豁免：使用每天重新计算的短期哈希记录聚合页面浏览和 Core Web Vitals，从不与个人关联。",
         "aiTitle": "本地 AI（可选）",
-        "aiBody": "Choosing GPU or CPU in Ask Ayush settings downloads a model from Hugging Face: Llama 3.2 1B (~705 MB) for GPU or Qwen2.5 0.5B (~429 MB) for CPU. GPU mode also downloads a pinned WebAssembly library from GitHub; the CPU runtime comes from this site. Download hosts see standard requests, including IP address and user-agent. Questions and answers stay on your device. Chats and their separate context boundaries are saved in this tab’s session storage under <code>phoenix:chat:sessions</code>, so closing the assistant or reloading does not erase them. Browser session restoration may retain this data. Clear chat erases the selected transcript and context; Clear context keeps its transcript but excludes earlier messages from future answers; Delete chat removes the selected conversation. <code>phoenix:chat:settings</code> stores preferences and measured speeds in local storage. Turning AI off frees runtime memory. Remove downloaded models clears this site’s model caches and switches AI off; it keeps your chats. Clearing this site’s browser data removes settings and chats as well. No new cookies are set.",
-        "aiServerTitle": "Server AI (optional, off by default)",
-        "aiServerBody": "A future <strong>Server</strong> engine in Ask Ayush settings can send your question and a short recent-chat context to this site’s <code>/api/chat</code> endpoint, which may call a managed inference provider. That path is disabled unless the maintainer explicitly enables it. When disabled, selecting Server falls back to quick answers. When enabled, questions leave your device; prefer Quick answers or on-device AI if you want processing to stay local. No new cookies are set for chat."
+        "aiBody": "在询问 Ayush 设置中选择 GPU 或 CPU 将从 Hugging Face 下载模型：GPU 为 Llama 3.2 1B (~705 MB) 或 CPU 为 Qwen2.5 0.5B (~429 MB)。 GPU 模式还会从 GitHub 下载固定的 WebAssembly 库； CPU 运行时来自该站点。下载主机会看到标准请求，包括 IP 地址和用户代理。问题和答案保留在您的设备上。聊天及其单独的上下文边界保存在此选项卡的会话存储中的 <code>phoenix:chat:sessions</code> 下，因此关闭助手或重新加载不会删除它们。浏览器会话恢复可能会保留此数据。清除聊天会删除所选的文字记录和上下文；清晰的上下文保留了其记录，但从未来的答案中排除了早期的消息；删除聊天会删除选定的对话。 <code>phoenix:chat:settings</code> 将首选项和测量的速度存储在本地存储中。关闭 AI 可释放运行时内存。删除下载的模型会清除该网站的模型缓存并关闭 AI；它会保留您的聊天记录。清除该网站的浏览器数据也会删除设置和聊天。没有设置新的 cookie。",
+        "aiServerTitle": "服务器AI（可选，默认关闭）",
+        "aiServerBody": "“询问 Ayush”设置中未来的 <strong>Server</strong> 引擎可以将您的问题和简短的最近聊天上下文发送到此站点的 <code>/api/chat</code> 端点，该端点可能会调用托管推理提供程序。除非维护者明确启用该路径，否则该路径将被禁用。禁用后，选择服务器会退回到快速答案。启用后，问题将离开您的设备；如果您希望处理保持在本地，则更喜欢快速答案或设备上的 AI。没有为聊天设置新的 cookie。"
       },
       "donot": {
         "title": "我们不做什么",
@@ -1373,33 +1404,33 @@
         "detail": "Knight 等级 · Codeforces Master · CodeChef 6 星 (AIR 29)。"
       },
       "throughput": {
-        "label": "Simulation throughput",
-        "detail": "Improvement on large customer workloads in Xcelium Logic Simulator."
+        "label": "模拟吞吐量",
+        "detail": "Xcelium 逻辑模拟器中大型客户工作负载的改进。"
       },
       "rtl": {
-        "label": "RTL parsing speedup",
-        "detail": "Cumulative Xform Engine parsing gains across Apple, Google, Samsung and NVIDIA designs."
+        "label": "RTL 解析加速",
+        "detail": "Apple、Google、Samsung 和 NVIDIA 设计的累积 Xform Engine 解析增益。"
       },
       "rca": {
-        "label": "Debug RCA time",
-        "detail": "Reduction via Top-N profiling and structured diagnostics library."
+        "label": "调试RCA时间",
+        "detail": "通过 Top-N 分析和结构化诊断库进行减少。"
       },
       "ticketResolution": {
-        "label": "Faster ticket resolution",
-        "detail": "MAESTRO, measured on an internal evaluation sample; RCA time reduced by 55%."
+        "label": "更快地解决问题",
+        "detail": "MAESTRO，在内部评估样品上测量； RCA 时间减少了 55%。"
       },
       "agentSpeedup": {
-        "label": "AI-assisted simulation speedup",
-        "detail": "Xcelium optimization agents on a validated benchmark; results are workload-specific."
+        "label": "AI辅助仿真加速",
+        "detail": "基于经过验证的基准的 Xcelium 优化代理；结果是特定于工作负载的。"
       },
       "regression": {
-        "label": "Regression failures processed",
-        "detail": "Across 79 runs; 73% of failures were processed in runs by other engineers."
+        "label": "已处理回归失败",
+        "detail": "79 次跑步； 73% 的故障是由其他工程师在运行中处理的。"
       }
     },
-    "eyebrow": "Engineering impact",
-    "heading": "Performance gains. Engineering time reclaimed.",
-    "context": "Cadence · systems & AI tooling"
+    "eyebrow": "工程影响",
+    "heading": "性能提升。回收了工程时间。",
+    "context": "Cadence·系统和AI工具"
   },
   "techMarquee": {
     "heading": "我使用的技术"
@@ -1427,17 +1458,17 @@
     },
     "items": {
       "maestro": {
-        "title": "MAESTRO — Multi-Agent Ticket Resolution",
-        "tagline": "A Cadence multi-agent system that helps engineers resolve simulation tickets end-to-end — with people in control at the high-risk steps.",
-        "category": "Agentic AI × Engineering Workflow",
-        "summary": "MAESTRO is a Cadence multi-agent platform for engineering-ticket resolution on Xcelium workflows. It coordinates specialist AI agents under human oversight so tickets move from triage toward a verified fix with clearer handoffs and less repeated context-gathering. Measured on an internal evaluation set, it cut ticket-resolution time by 45% and root-cause-analysis time by 55%. Built with team Mindsmiths for the Cadence AI Buildathon 2026 and selected for trade-secret protection — implementation details stay internal.",
-        "problem": "Simulator tickets often bounce across R&D, validation and documentation. Context lives in many places, handoffs re-gather the same evidence, and under pressure important steps get skipped while backlog items age.",
-        "challenge": "Coordinate agent assistance across a ticket’s lifecycle without giving up engineer control, without inventing unsupported conclusions, and without publishing proprietary workflow internals.",
+        "title": "MAESTRO — 多代理票证解析",
+        "tagline": "Cadence 多代理系统可帮助工程师端到端解决模拟故障单，并由人员控制高风险步骤。",
+        "category": "Agentic AI × 工程工作流程",
+        "summary": "MAESTRO 是一个 Cadence 多代理平台，用于在 Xcelium 工作流程上解决工程票据问题。它在人工监督下协调专业的 AI 代理，以便通过更清晰的交接和更少重复的上下文收集，将票证从分类转向经过验证的修复。根据内部评估集进行测量，它将故障单解决时间缩短了 45%，将根本原因分析时间缩短了 55%。与 Mindsmiths 团队一起为 Cadence AI Buildathon 2026 构建，并被选为商业秘密保护 — 实施细节保留在内部。",
+        "problem": "模拟器门票经常会在研发、验证和文档过程中反复出现。上下文存在于许多地方，交接会重新收集相同的证据，并且在压力下，重要的步骤会在积压项目老化时被跳过。",
+        "challenge": "在整个工单生命周期内协调客服人员协助，无需放弃工程师控制权，无需发明不受支持的结论，也无需发布专有的工作流程内部结构。",
         "approach": {
-          "0": "Framed the product as orchestration plus human gates: agents propose and gather evidence; engineers approve risky transitions.",
-          "1": "Optimized for grounded answers — conclusions tied to retrieved engineering evidence rather than free-form speculation.",
-          "2": "Designed for everyday IDE use so the assistive flow meets engineers where they already work.",
-          "3": "Measured outcomes on an internal ticket sample and treated the system as proprietary Cadence IP after Buildathon recognition."
+          "0": "将产品设计为编排加人门：代理提出并收集证据；工程师批准有风险的转变。",
+          "1": "针对有依据的答案进行了优化——结论与检索到的工程证据相关，而不是自由形式的猜测。",
+          "2": "专为日常 IDE 使用而设计，因此辅助流程可以满足工程师的工作需求。",
+          "3": "在内部票据样本上测量结果，并在 Buildathon 认可后将系统视为专有的 Cadence IP。"
         }
       },
       "xcelium-ai-agents": {
@@ -1492,86 +1523,86 @@
         "title": "Xcelium Logic Simulator — 性能工程",
         "tagline": "在大型真实工作负载上带来可衡量吞吐量改进的底层优化工作。",
         "category": "系统性能",
-        "summary": "A multi-quarter performance engineering effort on Cadence's Xcelium logic simulator, focused on profiling-driven optimization, RTL transformations and structured diagnostics for production customer workloads.",
-        "problem": "Customer designs of increasing scale stress simulator throughput. Even small inefficiencies in hot paths compound across millions of simulation events, costing engineering hours and infrastructure.",
-        "challenge": "Identify high-leverage bottlenecks across an industrial simulation engine, reason rigorously about runtime behavior, and ship low-risk C++ changes that move the needle on production workloads.",
+        "summary": "针对 Cadence 的 Xcelium 逻辑模拟器进行的多季度性能工程工作，重点关注分析驱动的优化、RTL 转换和生产客户工作负载的结构化诊断。",
+        "problem": "客户设计增加规模应力模拟器吞吐量。即使热路径中的小效率低下也会在数百万个模拟事件中加剧，从而耗费工程时间和基础设施。",
+        "challenge": "识别工业仿真引擎中的高杠杆瓶颈，严格推理运行时行为，并发布低风险的 C++ 更改，以推动生产工作负载。",
         "approach": {
-          "0": "Built a reusable C++ performance-analysis library enabling Top-N profiling and structured diagnostics, presented at Cadence India Conference.",
-          "1": "Used Valgrind, AddressSanitizer and runtime profilers to isolate hotspots in critical simulation paths.",
-          "2": "Implemented RTL transformations in the Xform Engine that reshape designs into more simulator-friendly forms.",
-          "3": "Validated improvements against designs from Apple, Google, Samsung and NVIDIA on representative workloads."
+          "0": "构建了一个可重用的 C++ 性能分析库，支持 Top-N 分析和结构化诊断，并在 Cadence 印度会议上展示。",
+          "1": "使用 Valgrind、AddressSanitizer 和运行时分析器来隔离关键仿真路径中的热点。",
+          "2": "在 Xform Engine 中实施了 RTL 转换，将设计重塑为更适合模拟器的形式。",
+          "3": "针对 Apple、Google、Samsung 和 NVIDIA 的设计在代表性工作负载上验证了改进。"
         }
       },
       "algolens": {
         "title": "AlgoLens — 交互式 DSA 平台",
         "tagline": "一个让算法可检视、可回放、可理解的交互式环境。",
         "category": "教育 × 可视化计算 × 生成式 AI",
-        "summary": "AlgoLens is an interactive algorithm visualizer supporting 60+ algorithms with real-time step-through, deterministic replay, FFmpeg-WASM export, GenAI explanations and rich search.",
-        "problem": "Algorithm learning resources tend to be static. Understanding behavior under different inputs, replaying state and exporting visuals for teaching are awkward at best.",
-        "challenge": "Build a fluid, accessible, GPU-friendly visualization engine that handles 60+ algorithms with a unified step model, deterministic replay, video export and AI-assisted understanding — held to product-grade quality bars.",
+        "summary": "AlgoLens 是一款交互式算法可视化工具，支持 60 多种算法，具有实时逐步执行、确定性重播、FFmpeg-WASM 导出、GenAI 解释和丰富的搜索。",
+        "problem": "算法学习资源往往是静态的。理解不同输入下的行为、重放状态以及导出教学视觉效果充其量都是尴尬的。",
+        "challenge": "构建一个流畅、可访问、GPU 友好的可视化引擎，可处理 60 多种算法，具有统一的步骤模型、确定性重放、视频导出和 AI 辅助理解 - 保持产品级质量标准。",
         "approach": {
-          "0": "Designed a step-based execution model with deterministic replay across all algorithms.",
-          "1": "Built Canvas-based renderers with smooth, reduced-motion-aware animations.",
-          "2": "Integrated FFmpeg-WASM for in-browser video export of execution traces.",
-          "3": "Layered GenAI for natural-language explanations and complexity analysis.",
-          "4": "Implemented exact, fuzzy, phonetic and semantic search for algorithm discovery.",
-          "5": "Hardened with WCAG 2.1 AA, Sentry, Web Vitals, Playwright, Storybook, Percy and CI quality gates."
+          "0": "设计了一个基于步骤的执行模型，在所有算法中都具有确定性重播功能。",
+          "1": "构建基于 Canvas 的渲染器，具有平滑、减少运动感知的动画。",
+          "2": "集成 FFmpeg-WASM，用于执行跟踪的浏览器内视频导出。",
+          "3": "用于自然语言解释和复杂性分析的分层 GenAI。",
+          "4": "为算法发现实现了精确、模糊、语音和语义搜索。",
+          "5": "使用 WCAG 2.1 AA、Sentry、Web Vitals、Playwright、Storybook、Percy 和 CI 质量门进行强化。"
         }
       },
       "postureiq": {
         "title": "PostureIQ — 实时 ML 姿态分析",
         "tagline": "一个 60 FPS 的计算机视觉指导系统，通过确定性反馈回路为动作姿势评分。",
         "category": "计算机视觉 × ML 产品",
-        "summary": "PostureIQ is an ML-powered posture and form-coaching system built around real-time pose estimation, temporal smoothing, confidence gating and rep-quality scoring for exercise feedback.",
-        "problem": "Exercise-form feedback is usually delayed, subjective or dependent on a trainer being present. A useful assistant needs to infer pose continuously and provide clear feedback without jitter or false positives.",
-        "challenge": "Maintain real-time capture, inference and rendering while making noisy pose landmarks stable enough for actionable coaching and automated quality scoring.",
+        "summary": "PostureIQ 是一种基于 ML 的姿势和形态指导系统，围绕实时姿势估计、时间平滑、置信门控和运动反馈的重复质量评分而构建。",
+        "problem": "练习形式的反馈通常是延迟的、主观的或依赖于教练在场。有用的助手需要持续推断姿势并提供清晰的反馈，而不会出现抖动或误报。",
+        "challenge": "保持实时捕获、推理和渲染，同时使嘈杂的姿势地标足够稳定，以进行可操作的指导和自动质量评分。",
         "approach": {
-          "0": "Built a deterministic capture-to-infer-to-render loop with OpenCV and MediaPipe/BlazePose.",
-          "1": "Added temporal smoothing, Kalman filtering, confidence gating, adaptive thresholds and 3D landmark checks to reduce noisy corrections.",
-          "2": "Implemented rep-quality scoring around ROM, tempo and symmetry with audio/visual feedback cues.",
-          "3": "Instrumented FPS, latency and error telemetry with dashboards for repeatable performance analysis.",
-          "4": "Added pytest coverage, golden traces and a CLI for reproducible validation runs."
+          "0": "使用 OpenCV 和 MediaPipe/BlazePose 构建了确定性捕获到推断到渲染循环。",
+          "1": "添加了时间平滑、卡尔曼滤波、置信门控、自适应阈值和 3D 地标检查，以减少噪声校正。",
+          "2": "通过音频/视觉反馈提示，围绕 ROM、节奏和对称性实施重复质量评分。",
+          "3": "通过仪表板进行仪表化 FPS、延迟和错误遥测，以进行可重复的性能分析。",
+          "4": "添加了 pytest 覆盖率、黄金跟踪和用于可重复验证运行的 CLI。"
         }
       },
       "track-person-app": {
         "title": "Track Person App — 移动轨迹追踪与可视化",
         "tagline": "一款用于记录并可视化人员位置轨迹的 React Native 移动追踪应用。",
         "category": "移动端 × 数据可视化",
-        "summary": "A mobile-first tracking and visualization project that stores movement events in MongoDB and renders location history for inspection.",
-        "problem": "Movement data is hard to reason about from raw coordinates alone; users need a visual trail and a clean data model for location events.",
-        "challenge": "Design a lightweight mobile interface and persistence model that can capture, store and replay movement history without turning the app into a heavyweight GIS tool.",
+        "summary": "移动优先的跟踪和可视化项目，将移动事件存储在 MongoDB 中并呈现位置历史记录以供检查。",
+        "problem": "仅从原始坐标很难推断运动数据；用户需要位置事件的视觉轨迹和干净的数据模型。",
+        "challenge": "设计一个轻量级的移动界面和持久性模型，可以捕获、存储和重播运动历史记录，而无需将应用程序变成重量级的 GIS 工具。",
         "approach": {
-          "0": "Built the mobile surface in React Native around a simple capture and replay workflow.",
-          "1": "Modeled location samples in MongoDB for flexible movement-history queries.",
-          "2": "Added visualization views for scanning movement paths and spot-checking recorded sessions."
+          "0": "围绕简单的捕获和重放工作流程在 React Native 中构建移动界面。",
+          "1": "MongoDB 中的建模位置样本可实现灵活的移动历史查询。",
+          "2": "添加了用于扫描运动路径和抽查记录会话的可视化视图。"
         }
       },
       "smart-brain": {
         "title": "Smart Brain — 人脸检测应用",
         "tagline": "一个全栈人脸检测应用，将 Clarifai 推理与 Express/React 产品界面相结合。",
         "category": "全栈 × 计算机视觉",
-        "summary": "Smart Brain is a full-stack application that sends image URLs to Clarifai, receives face-detection predictions and renders bounding boxes in a React interface.",
-        "problem": "Computer-vision APIs are powerful but abstract; a useful learning project needs to make the request/response loop visible and interactive.",
-        "challenge": "Integrate a third-party ML API with a clean backend boundary while keeping the frontend responsive and easy to understand.",
+        "summary": "Smart Brain 是一个全栈应用程序，可将图像 URL 发送到 Clarifai、接收人脸检测预测并在 React 界面中渲染边界框。",
+        "problem": "计算机视觉 API 功能强大但抽象；一个有用的学习项目需要使请求/响应循环可见且具有交互性。",
+        "challenge": "将第三方 ML API 与干净的后端边界集成，同时保持前端响应灵敏且易于理解。",
         "approach": {
-          "0": "Built an Express API layer for Clarifai requests and response normalization.",
-          "1": "Created React UI flows for image submission, prediction rendering and result feedback.",
-          "2": "Modeled the app so API integration details remain isolated from the presentation layer."
+          "0": "为 Clarifai 请求和响应规范化构建了 Express API 层。",
+          "1": "创建了 React UI 流程，用于图像提交、预测渲染和结果反馈。",
+          "2": "对应用程序进行建模，以便 API 集成细节与表示层保持隔离。"
         }
       },
       "tezos-premier-league": {
         "title": "Tezos Premier League — 去中心化游戏",
         "tagline": "一项去中心化游戏项目，获得 $10,000 奖励以支持后续开发。",
         "category": "Web3 × 产品工程",
-        "summary": "A blockchain-based PvP gaming project and NFT marketplace on the Tezos network. The work was selected for a $10,000 award to support continued development.",
-        "problem": "Designing engaging on-chain gaming experiences while keeping the user experience approachable on a non-EVM ecosystem.",
-        "challenge": "Translate game mechanics into Tezos primitives and deliver a usable frontend that hides chain complexity from players.",
+        "summary": "Tezos 网络上基于区块链的 PvP 游戏项目和 NFT 市场。该作品获得 10,000 美元的奖励，以支持持续发展。",
+        "problem": "设计引人入胜的链上游戏体验，同时保持非 EVM 生态系统上的用户体验平易近人。",
+        "challenge": "将游戏机制转换为 Tezos 原语，并提供一个可用的前端，向玩家隐藏链的复杂性。",
         "approach": {
-          "0": "Designed product flows around bracket-style gameplay.",
-          "1": "Built a React frontend integrating with Tezos infrastructure, Taquito and SmartPy contracts.",
-          "2": "Used Pinata/IPFS for NFT metadata and added safer key-handling flows around wallet interactions.",
-          "3": "Added rate-limited RPC handling and resilient contract-call patterns for a smoother player experience.",
-          "4": "Iterated on UX based on player feedback from early access."
+          "0": "围绕支架式游戏玩法设计的产品流程。",
+          "1": "构建了与 Tezos 基础设施、Taquito 和 SmartPy 合约集成的 React 前端。",
+          "2": "使用 Pinata/IPFS 作为 NFT 元数据，并围绕钱包交互添加更安全的密钥处理流程。",
+          "3": "添加了速率限制的 RPC 处理和弹性合约调用模式，以提供更流畅的玩家体验。",
+          "4": "根据早期访问的玩家反馈对用户体验进行迭代。"
         }
       }
     }
@@ -1592,9 +1623,9 @@
     },
     "commitRain": {
       "label": "正在让提交下起雨…",
-      "dismissHint": "Click or Esc to close",
-      "close": "Close",
-      "count": "{count} commits"
+      "dismissHint": "单击或 Esc 关闭",
+      "close": "关闭",
+      "count": "{count} 提交"
     },
     "boot": {
       "title": "AyushOS 启动序列",
@@ -1611,7 +1642,7 @@
       ]
     },
     "terminal": {
-      "title": "phoenix-shell",
+      "title": "凤壳",
       "close": "关闭终端",
       "inputLabel": "终端输入",
       "greet": "欢迎来到 phoenix-shell，{name}。",
@@ -1651,7 +1682,7 @@
         "variant": "注意：“{variant}”版本的简历即将推出——暂时先下载默认版本。"
       },
       "hiddenImpact": {
-        "0": "🜂 .hidden-impact",
+        "0": "🜂 .隐藏影响",
         "1": "剖析驱动的 C++ 优化成果：仿真吞吐量 +18–19%，RCA 提速约 40%。",
         "2": "已在 Apple、Google、Samsung 和 NVIDIA 的工作负载上验证。"
       },
@@ -1683,8 +1714,8 @@
         "先让它能用，再让它正确，最后让它更快——按这个顺序。",
         "只要延迟足够高，任何系统都是分布式系统。"
       ],
-      "footerHint": "Tab ⇥ autocomplete · ↑↓ history · click to type",
-      "footerCmds": "Esc to exit"
+      "footerHint": "Tab ⇥ 自动完成 · ↑↓ 历史记录 · 点击输入",
+      "footerCmds": "Esc 退出"
     },
     "dino": {
       "titleRunner": "凤凰跑酷",
@@ -1740,114 +1771,114 @@
     },
     "catalogue": {
       "console-banner": {
-        "title": "Console toolkit",
-        "hint": "Opened the devtools console and called help() / phoenix() / hire() / cv() / secrets().",
-        "clue": "Developers know where to look first."
+        "title": "控制台工具包",
+        "hint": "打开 devtools 控制台并调用 help() /phoenix() /hire() / cv() /secrets()。",
+        "clue": "开发人员知道首先要看哪里。"
       },
       "html-comment": {
-        "title": "View-source explorer",
-        "hint": "Found the phoenix HTML comment trail in the page source.",
-        "clue": "Ctrl+U is a fine pastime."
+        "title": "查看源浏览器",
+        "hint": "在页面源码中找到了phoenix HTML的评论轨迹。",
+        "clue": "Ctrl+U 是一种很好的消遣。"
       },
       "humans-txt": {
-        "title": "humans.txt reader",
-        "hint": "You read /humans.txt — the old-school manifest.",
-        "clue": "There's a file just for humans."
+        "title": "humans.txt 阅读器",
+        "hint": "您阅读了 / humans.txt — 老式的清单。",
+        "clue": "有一个仅供人类使用的文件。"
       },
       "robots-txt": {
-        "title": "robots.txt reader",
-        "hint": "You opened /robots.txt — what the crawlers see.",
-        "clue": "And another, just for robots."
+        "title": "robots.txt阅读器",
+        "hint": "您打开了 /robots.txt — 爬虫看到的内容。",
+        "clue": "还有一个，专门针对机器人。"
       },
       "dino-score-5": {
-        "title": "Phoenix Run — 500",
-        "hint": "Soared past score 500 in Phoenix Run on the 404 page.",
-        "clue": "Get lost on purpose, then fly. The flame awakens at five hundred."
+        "title": "凤凰城跑 — 500",
+        "hint": "在 404 页面的 Phoenix Run 中得分飙升至 500 分。",
+        "clue": "故意迷路，然后飞走。火焰于五百时苏醒。"
       },
       "feather-score-5": {
-        "title": "Golden Feather × 5",
-        "hint": "Collected five golden feathers in a single Phoenix Run.",
-        "clue": "Some power-ups are worth chasing. Gather a handful of feathers."
+        "title": "金色羽毛 × 5",
+        "hint": "在一次凤凰奔跑中收集了五根金色羽毛。",
+        "clue": "有些能力提升值得追逐。收集一把羽毛。"
       },
       "konami": {
-        "title": "Konami initiate",
-        "hint": "Entered the classic ↑↑↓↓←→←→BA sequence.",
-        "clue": "Some sequences are written into muscle memory."
+        "title": "科乐美发起",
+        "hint": "进入经典的↑↑↓↓←→←→BA序列。",
+        "clue": "有些序列被写入肌肉记忆中。"
       },
       "terminal-mode": {
-        "title": "phoenix-shell",
-        "hint": "Opened the terminal overlay — type \"terminal\" anywhere.",
-        "clue": "Speak the word and a shell appears."
+        "title": "凤壳",
+        "hint": "打开终端覆盖层 — 在任意位置输入“terminal”。",
+        "clue": "说出这个词，就会出现一个贝壳。"
       },
       "phoenix-type": {
-        "title": "Speak its name",
-        "hint": "Typed \"phoenix\" anywhere on the page.",
-        "clue": "Names have power."
+        "title": "说出它的名字",
+        "hint": "在页面的任意位置输入“phoenix”。",
+        "clue": "名字有力量。"
       },
       "logo-shift-click": {
-        "title": "Hidden phoenix theme",
-        "hint": "Held Shift and clicked the logo five times to summon the phoenix theme.",
-        "clue": "The crest does not mind being clicked."
+        "title": "隐藏的凤凰主题",
+        "hint": "按住 Shift 键并单击徽标五次即可召唤凤凰主题。",
+        "clue": "波峰不介意被点击。"
       },
       "sanskrit-locale": {
-        "title": "संस्कृतम् reader",
-        "hint": "Switched the site to Sanskrit — a liturgical, classical language at home with phoenix imagery.",
-        "clue": "Six tongues are spoken here."
+        "title": "读者",
+        "hint": "将网站切换到 Sanskrit——一种带有凤凰图像的家庭礼拜仪式、古典语言。",
+        "clue": "这里说六种语言。"
       },
       "polyglot": {
-        "title": "Polyglot",
-        "hint": "Visited the site in all six supported languages.",
-        "clue": "Try every flag in the menu."
+        "title": "多语言",
+        "hint": "以所有六种受支持的语言访问了该网站。",
+        "clue": "尝试菜单中的每个标志。"
       },
       "theme-cycler": {
-        "title": "Colour theorist",
-        "hint": "Cycled through all three themes within two seconds — the 't' key is quick.",
-        "clue": "Hammer the theme key."
+        "title": "色彩理论家",
+        "hint": "在两秒钟内循环浏览所有三个主题 - “t”键速度很快。",
+        "clue": "敲击主题键。"
       },
       "devtools-open": {
-        "title": "Devtools spotted",
-        "hint": "Opened the browser devtools — respect.",
-        "clue": "We see you in the inspector."
+        "title": "发现开发工具",
+        "hint": "打开浏览器devtools——尊重。",
+        "clue": "我们在检查员那里见到你。"
       },
       "phoenix-route": {
-        "title": "/phoenix visitor",
-        "hint": "Found the hidden /phoenix route, where the codename is explained.",
-        "clue": "Type the codename in the address bar."
+        "title": "/凤凰访客",
+        "hint": "找到隐藏的/phoenix路线，其中代号有解释。",
+        "clue": "在地址栏中输入代号。"
       },
       "credits-route": {
-        "title": "/credits visitor",
-        "hint": "Found the hidden /credits route — a thank-you to the open-source giants.",
-        "clue": "Every site stands on shoulders."
+        "title": "/学分访客",
+        "hint": "找到了隐藏的 /credits 路线 - 感谢开源巨头。",
+        "clue": "每个站点都站在肩膀上。"
       },
       "haiku-trail": {
-        "title": "Haiku trail",
-        "hint": "Found the three-line haiku hidden across home, about and work.",
-        "clue": "Three pages, three lines, one ember."
+        "title": "俳句小道",
+        "hint": "发现了隐藏在家庭、关于和工作中的三行俳句。",
+        "clue": "三页，三行，一根余烬。"
       },
       "css-selection": {
-        "title": "Invisible ink",
-        "hint": "Selected the invisible line under the hero tagline — \"phoenix · rise · /secret\".",
-        "clue": "Some text is only visible when selected."
+        "title": "隐形墨水",
+        "hint": "选择英雄口号下的隐形线——“凤凰·崛起·/秘密”。",
+        "clue": "有些文本仅在选择时才可见。"
       },
       "matrix-rain": {
-        "title": "Down the matrix",
-        "hint": "Summoned the matrix-rain overlay — type \"matrix\" anywhere.",
-        "clue": "Green, falling, familiar."
+        "title": "沿着矩阵向下",
+        "hint": "召唤矩阵雨覆盖层——在任何地方输入“矩阵”。",
+        "clue": "绿色，飘落，熟悉。"
       },
       "og-qr-scan": {
-        "title": "OG QR scanner",
-        "hint": "Spotted (or scanned) the tiny QR code in the social preview image.",
-        "clue": "Look at the share preview, not the page."
+        "title": "OG 二维码扫描仪",
+        "hint": "在社交预览图像中发现（或扫描）了微小的二维码。",
+        "clue": "查看共享预览，而不是页面。"
       },
       "trophy-room-visit": {
-        "title": "Trophy room",
-        "hint": "You found the trophy room itself.",
-        "clue": "Some secrets are about the room they live in."
+        "title": "奖杯室",
+        "hint": "你找到了奖杯室本身。",
+        "clue": "有些秘密是关于他们居住的房间的。"
       },
       "completionist": {
-        "title": "Completionist",
-        "hint": "Every single egg found. You really did go the long way around.",
-        "clue": "Find everything else first."
+        "title": "完美主义者",
+        "hint": "发现的每一个鸡蛋。你确实走了很远的路。",
+        "clue": "首先找到其他一切。"
       }
     }
   },
@@ -1855,55 +1886,55 @@
     "items": {
       "now": "前往近况",
       "engineer": "切换工程师模式",
-      "palette": "Open command palette",
-      "search": "Focus search",
-      "help": "Show this help",
-      "escape": "Close menus / overlays",
-      "nextSection": "Jump to next section",
-      "prevSection": "Jump to previous section",
-      "home": "Go home",
-      "work": "Go to work",
-      "skills": "Go to skills",
-      "contact": "Go to contact",
-      "experience": "Go to experience",
-      "about": "Go to about",
-      "theme": "Cycle theme",
-      "recruiter": "Toggle recruiter mode",
-      "language": "Open language picker",
-      "copyEmail": "Copy email address",
-      "downloadResume": "Download résumé",
-      "arrows": "Navigate within a menu"
+      "palette": "打开命令面板",
+      "search": "焦点搜索",
+      "help": "显示此帮助",
+      "escape": "关闭菜单/叠加层",
+      "nextSection": "跳至下一节",
+      "prevSection": "跳转到上一节",
+      "home": "回家吧",
+      "work": "上班",
+      "skills": "前往技能",
+      "contact": "前往联系方式",
+      "experience": "前往体验",
+      "about": "转到关于",
+      "theme": "循环主题",
+      "recruiter": "切换招聘人员模式",
+      "language": "打开语言选择器",
+      "copyEmail": "复制电子邮件地址",
+      "downloadResume": "下载简历",
+      "arrows": "在菜单内导航"
     },
-    "title": "Keyboard shortcuts",
-    "subtitle": "Press <kbd>?</kbd> any time to reopen this list.",
-    "openLabel": "Open keyboard shortcuts (press ?)",
-    "close": "Close",
+    "title": "键盘快捷键",
+    "subtitle": "随时按 <kbd>?</kbd> 可重新打开此列表。",
+    "openLabel": "打开键盘快捷键（按？）",
+    "close": "关闭",
     "groups": {
-      "global": "Global",
-      "navigation": "Navigation",
-      "actions": "Actions",
-      "menus": "Menus"
+      "global": "全球的",
+      "navigation": "导航",
+      "actions": "行动",
+      "menus": "菜单"
     }
   },
   "demos": {
     "maestro": {
-      "title": "maestro · omitted",
-      "subtitle": "trade secret — demo not published",
-      "stagesLabel": "Workflow stages",
-      "gateMarker": "Human approval gate",
-      "docLabel": "Session log",
-      "empty": "The interactive MAESTRO walkthrough is not published because the system is trade-secret protected.",
-      "kindLabel": "Ticket type",
-      "defect": "Defect",
-      "enhancement": "Enhancement",
-      "failOnce": "Fail validation once",
-      "run": "Unavailable",
-      "pause": "Pause",
-      "resume": "Resume",
-      "again": "Unavailable",
-      "approve": "Unavailable",
-      "reset": "Reset",
-      "note": "Omitted for IP protection — not a map of the production workflow.",
+      "title": "大师·省略",
+      "subtitle": "商业秘密——演示未发布",
+      "stagesLabel": "工作流程阶段",
+      "gateMarker": "人工审批门",
+      "docLabel": "会话日志",
+      "empty": "由于系统受商业秘密保护，因此未发布交互式 MAESTRO 演练。",
+      "kindLabel": "门票类型",
+      "defect": "缺点",
+      "enhancement": "强化",
+      "failOnce": "验证失败一次",
+      "run": "不可用",
+      "pause": "暂停",
+      "resume": "恢复",
+      "again": "不可用",
+      "approve": "不可用",
+      "reset": "重置",
+      "note": "因知识产权保护而省略 — 不是生产工作流程图。",
       "stages": {
         "intake": "—",
         "rca": "—",
@@ -1915,7 +1946,7 @@
         "release": "—"
       },
       "log": {
-        "start": "demo unavailable",
+        "start": "演示不可用",
         "intake": "—",
         "rca": "—",
         "design": "—",
@@ -1931,173 +1962,173 @@
       }
     },
     "common": {
-      "play": "Play",
-      "pause": "Pause",
-      "reset": "Reset",
-      "stepBack": "Step back",
-      "stepForward": "Step forward",
-      "tryPrompt": "Try a prompt",
-      "trySample": "Try a sample",
-      "rerun": "rerun",
-      "illustrative": "Illustrative — pipeline mirrors the real flow, but responses are canned."
+      "play": "玩",
+      "pause": "暂停",
+      "reset": "重置",
+      "stepBack": "退后一步",
+      "stepForward": "向前迈出一步",
+      "tryPrompt": "尝试一下提示",
+      "trySample": "尝试样品",
+      "rerun": "重新运行",
+      "illustrative": "说明性 - 管道反映了真实的流程，但响应是固定的。"
     },
     "algolens": {
-      "title": "algolens · bubble-sort · deterministic",
-      "step": "step {current} / {total}",
-      "pseudocode": "Pseudocode",
-      "time": "Time",
-      "space": "Space",
-      "explore": "Explore full AlgoLens →",
-      "barLabel": "Bar value {value}"
+      "title": "algolens · 冒泡排序 · 确​​定性",
+      "step": "步骤 {current} / {total}",
+      "pseudocode": "伪代码",
+      "time": "时间",
+      "space": "空间",
+      "explore": "探索完整的 AlgoLens →",
+      "barLabel": "条形值 {value}"
     },
     "xcelium": {
-      "title": "xcelium · runtime profile",
-      "throughputGain": "{pct}% throughput gain",
-      "workloadMix": "workload mix",
-      "before": "before",
-      "after": "after",
-      "mixAriaLabel": "Before / after mix",
-      "note": "Illustrative: bars compress from the \"before\" profile to the optimized \"after\" profile as you drag the slider."
+      "title": "xcelium · 运行时配置文件",
+      "throughputGain": "{pct}% 吞吐量增益",
+      "workloadMix": "工作负载组合",
+      "before": "前",
+      "after": "后",
+      "mixAriaLabel": "混合前/混合后",
+      "note": "说明：当您拖动滑块时，条形图会从“之前”配置文件压缩到优化的“之后”配置文件。"
     },
     "tezos": {
-      "title": "tpl · pvp bracket · deterministic sim",
-      "round": "round {current} / {total}",
-      "play": "Play bracket",
-      "championLabel": "champion",
-      "roundLabel": "round {n}",
-      "note": "Illustrative on-chain bracket — winners are derived deterministically (no real wallet)."
+      "title": "tpl·pvp支架·确定性模拟",
+      "round": "圆形 {current} / {total}",
+      "play": "播放支架",
+      "championLabel": "冠军",
+      "roundLabel": "圆形 {n}",
+      "note": "说明性的链上支架——获胜者是确定性的（没有真正的钱包）。"
     },
     "posture": {
-      "title": "postureiq · live rep · simulated",
-      "tracking": "● tracking",
-      "lowConfidence": "○ low confidence",
-      "formScore": "FORM SCORE",
-      "repsConf": "REPS · CONF",
-      "note": "form-score(t) with confidence gate — peaks count when above threshold"
+      "title": "姿势iq · 现场代表 · 模拟",
+      "tracking": "● 追踪",
+      "lowConfidence": "○ 低置信度",
+      "formScore": "形式分数",
+      "repsConf": "代表·会议",
+      "note": "带置信门的 form-score(t) — 高于阈值时的峰值计数"
     },
     "track": {
-      "title": "track-person · live route · simulated",
-      "inZone": "● in-zone",
-      "distance": "DISTANCE",
-      "waypoint": "WAYPOINT"
+      "title": "赛道人 · 实时路线 · 模拟",
+      "inZone": "● 区内",
+      "distance": "距离",
+      "waypoint": "航点"
     },
     "smart": {
-      "title": "smart-brain · vision inference · simulated",
-      "scanning": "scanning…",
-      "ready": "ready",
-      "inferenceLog": "Inference log",
-      "waitingForInput": "waiting for input…",
-      "detections": "Detections",
-      "rerunAriaLabel": "Re-run inference",
-      "sampleObj": "{count} obj"
+      "title": "智能大脑·视觉推理·模拟",
+      "scanning": "扫描…",
+      "ready": "准备好",
+      "inferenceLog": "推理日志",
+      "waitingForInput": "等待输入...",
+      "detections": "检测结果",
+      "rerunAriaLabel": "重新运行推理",
+      "sampleObj": "{count} 对象"
     }
   },
   "architecture": {
     "maestro": {
-      "aria": "MAESTRO architecture diagram omitted because the system is trade-secret protected.",
-      "entry": "Ticket",
-      "conductor": "Orchestration",
-      "conductorSub": "human-gated",
-      "loop": "review loop",
+      "aria": "由于系统受商业秘密保护，因此省略了 MAESTRO 架构图。",
+      "entry": "票",
+      "conductor": "编排",
+      "conductorSub": "人为门控",
+      "loop": "审查循环",
       "stages": {
-        "intake": "Triage",
-        "rca": "Investigate",
-        "fix": "Propose",
-        "validate": "Validate",
-        "review": "Review",
-        "regress": "Verify",
-        "release": "Close"
+        "intake": "分诊",
+        "rca": "调查",
+        "fix": "提出",
+        "validate": "证实",
+        "review": "审查",
+        "regress": "核实",
+        "release": "关闭"
       },
-      "state": "Confidential — not published",
-      "kb": "Knowledge",
-      "kbSub": "internal",
-      "tools": "Integrations",
-      "toolsSub": "internal",
-      "gate": "human oversight"
+      "state": "机密 — 未公开",
+      "kb": "知识",
+      "kbSub": "内部的",
+      "tools": "集成",
+      "toolsSub": "内部的",
+      "gate": "人为监督"
     },
     "xcelium-ai-agents": {
       "aria": "Xcelium AI 智能体架构：规划器在两条通道之间进行路由——一条是确定性的 Python 通道（受理、仿真运行器、剖析数据解析器、报告），另一条是 LLM 推理通道（分析、重写、应用）；另有一个基于检查清单的 LLM 裁判，将报告与 golden 参考进行比较。",
-      "laneDeterministic": "deterministic Python — runs before any model turn",
-      "laneLlm": "LLM reasoning — findings arrive as data",
+      "laneDeterministic": "确定性 Python — 在任何模型转动之前运行",
+      "laneLlm": "LLM 推理 — 结果以数据形式出现",
       "tui": "ChipStack TUI",
-      "tuiSub": "engineer prompt",
-      "planner": "Planner node",
-      "plannerSub": "routes between phases",
-      "intake": "Python intake",
-      "runner": "Sim runner",
-      "parser": "Profile parser",
-      "report": "Python report",
-      "analyse": "Analyse",
-      "recode": "3-tier recode",
-      "apply": "Apply + backup",
-      "rerun": "re-run & compare",
-      "judge": "Checklist judge",
-      "judgeSub": "5 yes/no questions",
-      "golden": "vs. golden report",
-      "framework": "Shared workflow framework — graph orchestration · checkpointed typed state · strict outputs · JSON recovery · fallbacks"
+      "tuiSub": "工程师提示",
+      "planner": "规划器节点",
+      "plannerSub": "阶段之间的路线",
+      "intake": "Python进气",
+      "runner": "模拟跑步者",
+      "parser": "配置文件解析器",
+      "report": "Python 报告",
+      "analyse": "分析",
+      "recode": "3 层重新编码",
+      "apply": "应用+备份",
+      "rerun": "重新运行并比较",
+      "judge": "清单判断",
+      "judgeSub": "5 个是/否问题",
+      "golden": "与黄金报告",
+      "framework": "共享工作流程框架——图形编排·检查点类型化状态·严格输出·JSON恢复·回退"
     },
     "regression-triage": {
       "aria": "回归分诊架构：失败列表经过重跑、指纹化、分类和聚类；一个带有建议性 LLM 评审的类别关卡将差异类失败送去 regold，将其他失败送去过滤器或根因分析，随后按模式逐一验证，并将结果写入学习库。",
       "stages": {
-        "lists": "Failure lists",
-        "rerun": "Parallel rerun",
-        "signatures": "Signatures\n(masked hashes)",
-        "categorise": "Categorise\nrules + vote",
-        "cluster": "TF-IDF\nclustering"
+        "lists": "失败清单",
+        "rerun": "并行重新运行",
+        "signatures": "签名\n（屏蔽哈希）",
+        "categorise": "分类\n规则+投票",
+        "cluster": "TF-IDF\n聚类"
       },
-      "review": "LLM review\n(advisory)",
-      "gate": "Class gate",
-      "rca": "Root-cause analysis",
-      "rcaSub": "crash · timeout · tool error",
-      "filter": "Filter / waive",
-      "filterSub": "IGNORE · waiver",
-      "regold": "Regold",
-      "regoldSub": "diff class only",
-      "verify": "Per-mode verify",
-      "learning": "Learning store",
-      "learningSub": "outcomes written back",
-      "feedback": "history feeds the vote"
+      "review": "LLM 评论\n（咨询）",
+      "gate": "班级门口",
+      "rca": "根本原因分析",
+      "rcaSub": "崩溃·超时·工具错误",
+      "filter": "过滤/豁免",
+      "filterSub": "忽略·放弃",
+      "regold": "雷戈尔德",
+      "regoldSub": "仅限差异类",
+      "verify": "按模式验证",
+      "learning": "学习店",
+      "learningSub": "结果写回",
+      "feedback": "历史为选票提供依据"
     },
     "perforce-replay": {
       "aria": "Perforce 重放架构：由变更列表编号和目标分支驱动流推导、排序、生成涉及路径的计划、带故障修复的选择性同步、按序合并，最后执行一次自动解决，并将文件分为已合并和被拒绝两类。",
-      "input": "CL numbers + target",
+      "input": "CL 数字 + 目标",
       "stages": {
-        "streams": "Derive source\nstreams",
-        "order": "Sort CLs\nascending",
-        "plan": "Plan touched\npaths",
-        "materialise": "Selective sync\n+ view repair",
-        "merge": "Merge each CL\nat its revision",
-        "resolve": "Single\nauto-resolve"
+        "streams": "派生源\nstreams",
+        "order": "CLs\n升序排序",
+        "plan": "计划触及\npaths",
+        "materialise": "选择性同步\n+视图修复",
+        "merge": "合并每个 CL\n 的修订版",
+        "resolve": "单\n自动解析"
       },
-      "merged": "Merged cleanly",
-      "declined": "Declined files\nnamed",
-      "client": "Disposable client",
-      "clientSub": "optional · config-only sync",
-      "noSubmit": "nothing is submitted automatically — the engineer reviews and submits"
+      "merged": "干净利落地合并",
+      "declined": "拒绝名为 \n 的文件",
+      "client": "一次性客户端",
+      "clientSub": "可选·仅配置同步",
+      "noSubmit": "不会自动提交任何内容 — 工程师审核并提交"
     }
   },
   "experienceData": {
     "cadence-design-systems": {
       "highlights": {
         "0": {
-          "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+          "title": "MAESTRO — 多代理票证解析",
+          "detail": "构建了 MAESTRO，一个 Cadence 多代理平台，用于在人工监督下解决工程票据问题；根据内部评估，它将故障单解决时间缩短了 45%，将 RCA 时间缩短了 55%。被选为商业秘密保护——实施细节保密。"
         },
         "1": {
-          "title": "ChipStack Xcelium AI Agents",
-          "detail": "Built multi-agent performance and memory optimization workflows on the OpenAI Agents SDK, achieving a 31.3% simulation speedup on a validated benchmark; a deterministic-first re-architecture made runs 1.93× faster end to end and analysis 3.9× faster."
+          "title": "ChipStack Xcelium AI 代理商",
+          "detail": "在 OpenAI Agents SDK 上构建多代理性能和内存优化工作流程，在经过验证的基准上实现 31.3% 的模拟加速；确定性优先的重新架构使端到端运行速度提高了 1.93 倍，分析速度提高了 3.9 倍。"
         },
         "2": {
-          "title": "Xcelium Logic Simulator Optimization",
-          "detail": "Engineered low-level C++ and simulator-architecture optimizations that improved overall throughput by 18–19% on large customer workloads and helped secure a strategic Samsung performance win."
+          "title": "Xcelium逻辑模拟器优化",
+          "detail": "设计了低级 C++ 和模拟器架构优化，将大型客户工作负载的总体吞吐量提高了 18-19%，并帮助确保了战略性的 Samsung 性能胜利。"
         },
         "3": {
-          "title": "Xform Engine RTL Transformations",
-          "detail": "Implemented RTL transformations in the Xform Engine, delivering 13–14% cumulative parsing/runtime gains across designs from Apple, Google, Samsung and NVIDIA."
+          "title": "Xform Engine RTL 转换",
+          "detail": "在 Xform Engine 中实施了 RTL 转换，在 Apple、Google、Samsung 和 NVIDIA 的设计中实现了 13-14% 的累积解析/运行时增益。"
         },
         "4": {
-          "title": "Performance-Analysis Library",
-          "detail": "Built reusable C++ diagnostics APIs and a structured-log pipeline across Compile, Elab and Sim; added Top-N profiling, graph-based attribution and Fenwick counters, reducing RCA time by ~40%."
+          "title": "性能分析库",
+          "detail": "构建了可重用的 C++ 诊断 API 以及跨 Compile、Elab 和 Sim 的结构化日志管道；添加了 Top-N 分析、基于图表的归因和 Fenwick 计数器，将 RCA 时间缩短约 40%。"
         },
         "5": {
           "title": "回归分诊与 Regold 系统",
@@ -2116,204 +2147,204 @@
           "detail": "在 Cadence India Conference 上发表性能研究成果，并凭借 Samsung 合作项目中的性能工作获得多个奖项、公司副总裁表彰，以及全员大会上的重点表彰。"
         }
       },
-      "role": "R&D Software Engineer II",
-      "location": "Noida, India",
-      "summary": "Performance R&D on Xcelium Logic Simulator, combining low-level C++ optimization, EDA diagnostics, multi-agent AI systems and developer tooling for regression and release workflows."
+      "role": "二级研发软件工程师",
+      "location": "印度诺伊达",
+      "summary": "Xcelium 逻辑模拟器的性能研发，结合了低级 C++ 优化、EDA 诊断、多代理 AI 系统以及用于回归和发布工作流程的开发人员工具。"
     },
     "game-geeks": {
-      "role": "Blockchain Engineer (Tezos Premier League)",
-      "location": "Remote",
-      "summary": "Designed and shipped Tezos Premier League — a PvP blockchain gaming product and NFT marketplace recognized with a $10,000 grant from Tezos India for continued development.",
+      "role": "区块链工程师（Tezos Premier League）",
+      "location": "偏僻的",
+      "summary": "设计并交付 Tezos Premier League — 一款 PvP 区块链游戏产品和 NFT 市场，并获得 Tezos India 的 10,000 美元资助用于持续开发。",
       "highlights": {
         "0": {
-          "title": "Tezos Premier League — Product Lead",
-          "detail": "Owned the end-to-end product design for a bracket-style PvP gaming dApp on Tezos, translating game mechanics into on-chain primitives and approachable UX."
+          "title": "Tezos Premier League — 产品负责人",
+          "detail": "拥有 Tezos 上支架式 PvP 游戏 d​​App 的端到端产品设计，将游戏机制转化为链上原语和平易近人的用户体验。"
         },
         "1": {
-          "title": "$10,000 Tezos India Grant",
-          "detail": "Won a $10,000 grant from Tezos India to extend the platform after a demo evaluated for product innovation, technical quality and ecosystem fit."
+          "title": "10,000 美元 Tezos India 补助金",
+          "detail": "在对产品创新、技术质量和生态系统适应性进行演示评估后，获得了 Tezos India 的 10,000 美元资助，用于扩展平台。"
         },
         "2": {
-          "title": "NFT Marketplace & Smart Contracts",
-          "detail": "Designed an NFT marketplace with Pinata/IPFS storage, SmartPy contracts, Taquito integrations and rate-limited RPC handling for resilient on-chain calls."
+          "title": "NFT 市场和智能合约",
+          "detail": "设计了一个 NFT 市场，其中包含 Pinata/IPFS 存储、SmartPy 合约、Taquito 集成和限速 RPC 处理，以实现弹性链上调用。"
         }
       }
     },
     "omikron-technologies": {
-      "role": "Software Engineer Intern",
-      "location": "Delhi, India",
-      "summary": "Product engineering internship focused on modular single-page applications, release quality and accessibility-minded frontend delivery.",
+      "role": "软件工程师实习生",
+      "location": "印度德里",
+      "summary": "产品工程实习专注于模块化单页应用程序、发布质量和具有可访问性的前端交付。",
       "highlights": {
         "0": {
-          "title": "Modular SPA Delivery",
-          "detail": "Built modular React/TypeScript SPAs with Redux Toolkit, RTK Query, per-PR CI, test-pyramid coverage and accessibility gates to reduce change-failure risk."
+          "title": "模块化 SPA 交付",
+          "detail": "使用 Redux Toolkit、RTK 查询、每个 PR CI、测试金字塔覆盖率和可访问性门构建模块化 React/TypeScript SPA，以降低变更失败风险。"
         },
         "1": {
-          "title": "Scalable Frontend Architecture",
-          "detail": "Established reusable component, theming and routing patterns that let multiple feature teams ship in parallel without stepping on each other."
+          "title": "可扩展的前端架构",
+          "detail": "建立了可重用的组件、主题和路由模式，使多个功能团队可以并行交付，而不会互相干扰。"
         }
       }
     },
     "script-winter-of-code": {
-      "role": "Developer",
-      "location": "Delhi, India",
-      "summary": "Open-source contribution program focused on authentication, identity-provider workflows and secure API design.",
+      "role": "开发商",
+      "location": "印度德里",
+      "summary": "开源贡献计划专注于身份验证、身份提供商工作流程和安全 API 设计。",
       "highlights": {
         "0": {
-          "title": "UniAuth Identity Provider",
-          "detail": "Implemented UniAuth with OAuth 2.0, OIDC, PKCE, refresh-token rotation, scoped JWTs and a written threat model across Python, TypeScript, Django, Flask and Go services."
+          "title": "UniAuth 身份提供商",
+          "detail": "使用 OAuth 2.0、OIDC、PKCE、刷新令牌轮换、范围 JWT 以及跨 Python、TypeScript、Django、Flask 和 Go 的书面威胁模型实现了 UniAuth服务。"
         },
         "1": {
-          "title": "Polyglot Service Plumbing",
-          "detail": "Wired the identity flow across TypeScript front-end, Django/Flask Python services and a Go authorization service with consistent error and audit semantics."
+          "title": "多语言服务管道",
+          "detail": "连接 TypeScript 前端、Django/Flask Python 服务和 Go 授权服务之间的身份流，并具有一致的错误和审计语义。"
         }
       }
     },
     "delta-winter-of-code": {
-      "role": "Developer",
-      "location": "Delhi, India",
-      "summary": "Open-source contribution program focused on log analytics, containerization and CI/CD automation.",
+      "role": "开发商",
+      "location": "印度德里",
+      "summary": "开源贡献计划专注于日志分析、容器化和 CI/CD 自动化。",
       "highlights": {
         "0": {
-          "title": "Dockerized Log Analytics",
-          "detail": "Dockerized a full-stack log analyzer (Django REST + Celery + Redis + Elasticsearch), added GitHub Actions CI/CD and structured cardinality-safe logs."
+          "title": "Dockerized 日志分析",
+          "detail": "Docker实现了全栈日志分析器（Django REST + Celery + Redis + Elasticsearch），添加了GitHub Actions CI/CD和结构化基数安全日志。"
         },
         "1": {
-          "title": "CI/CD Pipeline",
-          "detail": "Built reproducible GitHub Actions workflows covering lint, tests, image build and deploy with cached layers and trace context for faster investigations."
+          "title": "CI/CD 管道",
+          "detail": "构建可重现的 GitHub Actions 工作流程，涵盖 lint、测试、映像构建和部署，并使用缓存层和跟踪上下文进行更快的调查。"
         }
       }
     },
     "tezos-india": {
-      "role": "Fellow",
-      "location": "Delhi, India",
-      "summary": "Blockchain fellowship where a decentralized gaming product and NFT marketplace earned a $10,000 grant for continued development.",
+      "role": "院士",
+      "location": "印度德里",
+      "summary": "区块链奖学金为去中心化游戏产品和 NFT 市场赢得了 10,000 美元的持续开发资助。",
       "highlights": {
         "0": {
-          "title": "PvP Gaming dApp & NFT Marketplace",
-          "detail": "Shipped a Tezos-based PvP gaming dApp with safer key handling, resilient contract calls, Pinata/IPFS storage, Taquito integrations and SmartPy contracts."
+          "title": "PvP 游戏 d​​App 和 NFT 市场",
+          "detail": "发布了基于 Tezos 的 PvP 游戏 d​​App，具有更安全的密钥处理、弹性合约调用、Pinata/IPFS 存储、Taquito 集成和 SmartPy 合约。"
         },
         "1": {
-          "title": "PLAY Token Marketplace",
-          "detail": "Designed matchmaking and a PLAY-token-driven marketplace flow so players could buy, sell and use in-game assets across matches."
+          "title": "PLAY 代币市场",
+          "detail": "设计匹配和 PLAY 代币驱动的市场流程，以便玩家可以在比赛中购买、出售和使用游戏内资产。"
         }
       }
     },
     "programming-club-summer-of-code": {
-      "role": "Developer",
-      "location": "Delhi, India",
-      "summary": "Led a small engineering team building real-time collaboration software with WebRTC and browser-first product architecture.",
+      "role": "开发商",
+      "location": "印度德里",
+      "summary": "领导一个小型工程团队使用 WebRTC 和浏览器优先的产品架构构建实时协作软件。",
       "highlights": {
         "0": {
-          "title": "WebRTC Conferencing Platform",
-          "detail": "Led a 5-member team to deliver a video conferencing app, tuning ICE signaling and congestion behavior to cut join time and stalls by roughly 30%."
+          "title": "WebRTC 会议平台",
+          "detail": "领导一个 5 人团队交付视频会议应用程序，调整 ICE 信号和拥塞行为，将加入时间和停顿减少约 30%。"
         },
         "1": {
-          "title": "Team Leadership",
-          "detail": "Coordinated a 5-person team across design, frontend, signaling and infra — running standups, code reviews and a release checklist for predictable shipping."
+          "title": "团队领导力",
+          "detail": "协调设计、前端、信号和基础设施方面的 5 人团队 — 运行站立会议、代码审查和发布检查表以实现可预测的交付。"
         }
       }
     },
     "trotbee-private-limited": {
-      "role": "Back End Developer Intern (Fenmo App)",
-      "location": "Delhi, India",
-      "summary": "Backend internship on the Fenmo App as part of a 2-member team — building MVC OTP services and S3-backed video APIs, with a 15% latency reduction across hot paths.",
+      "role": "后端开发实习生（Fenmo App）",
+      "location": "印度德里",
+      "summary": "作为 2 人团队的一部分，在 Fenmo 应用程序上进行后端实习 — 构建 MVC OTP 服务和 S3 支持的视频 API，跨热路径延迟减少 15%。",
       "highlights": {
         "0": {
-          "title": "Fenmo MVC OTP & Video APIs",
-          "detail": "As one of a 2-member team, built MVC-structured OTP onboarding and S3-backed video upload/playback APIs with idempotent endpoints, retries with backoff and observability hooks."
+          "title": "Fenmo MVC OTP 和视频 APIs",
+          "detail": "作为 2 人团队之一，构建了 MVC 结构的 OTP 登录和 S3 支持的视频上传/播放 API，具有幂等端点、带回退和可观察性挂钩的重试。"
         },
         "1": {
-          "title": "15% Latency Reduction",
-          "detail": "Reduced end-to-end API latency by ~15% through query tuning, payload trimming and pre-warmed connections, validated with load tests."
+          "title": "延迟减少 15%",
+          "detail": "通过查询调整、有效负载修剪和预热连接，将端到端 API 延迟减少约 15%，并通过负载测试进行验证。"
         }
       }
     },
     "miri-infotech": {
-      "role": "Software Development Engineer Intern",
-      "location": "Noida, India",
-      "summary": "Full-stack internship building an encrypted real-time chat app with React/Redux, Sequelize/Postgres, Socket.io and Bcrypt-secured auth.",
+      "role": "软件开发工程师实习生",
+      "location": "印度诺伊达",
+      "summary": "全栈实习使用 React/Redux、Sequelize/Postgres、Socket.io 和 Bcrypt 安全身份验证构建加密实时聊天应用程序。",
       "highlights": {
         "0": {
-          "title": "Encrypted Real-Time Chat",
-          "detail": "Built a full-stack chat app with React/Redux frontend, Sequelize + PostgreSQL persistence, Socket.io real-time delivery and Bcrypt-hashed credentials."
+          "title": "加密实时聊天",
+          "detail": "使用 React/Redux 前端、Sequelize + PostgreSQL 持久性、Socket.io 实时交付和 Bcrypt 哈希凭证构建了全栈聊天应用程序。"
         },
         "1": {
-          "title": "Context-Based Messaging",
-          "detail": "Modeled context-based message channels with latency/error SLOs, dashboards and runbooks to reduce MTTR on production incidents."
+          "title": "基于上下文的消息传递",
+          "detail": "建模基于上下文的消息通道，具有延迟/错误 SLO、仪表板和运行手册，以减少生产事件的 MTTR。"
         }
       }
     },
     "dynamix-club": {
-      "role": "Head of Programming",
-      "location": "Ramjas School, Delhi",
-      "summary": "Led the programming wing of Dynamix Club — running competitive-programming sessions, mentoring juniors and representing the school at inter-school coding events.",
+      "role": "编程主管",
+      "location": "德里拉姆贾斯学校",
+      "summary": "领导 Dynamix Club 的编程部门——举办竞争性编程课程、指导三年级学生并代表学校参加校际编程活动。",
       "highlights": {
         "0": {
-          "title": "Programming Wing Leadership",
-          "detail": "Designed weekly DSA / problem-solving sessions for club members, curated a progression from basics to contest-grade topics and ran internal mock contests."
+          "title": "编程部门领导",
+          "detail": "为俱乐部会员设计每周的 DSA/问题解决课程，策划从基础知识到竞赛级主题的进展，并举办内部模拟竞赛。"
         },
         "1": {
-          "title": "Inter-school Competitions",
-          "detail": "Represented the school at multiple inter-school programming and tech events including Force Fest, Digilogous, BVEST and Virtual Fiesta — winning podium finishes."
+          "title": "校际比赛",
+          "detail": "代表学校参加多项校际编程和技术活动，包括 Force Fest、Digilogous、BVEST 和 Virtual Fiesta，并赢得了领奖台。"
         }
       }
     },
     "cadence-engineer-ii": {
-      "role": "R&D Software Engineer II",
-      "location": "Noida, India · Hybrid",
-      "summary": "Building AI-driven engineering infrastructure for Xcelium: ticket resolution, simulation optimization, regression intelligence and release automation.",
+      "role": "二级研发软件工程师",
+      "location": "印度诺伊达 · 混合动力",
+      "summary": "为 Xcelium 构建 AI 驱动的工程基础设施：工单解析、模拟优化、回归智能和发布自动化。",
       "highlights": {
         "0": {
-          "title": "MAESTRO — Multi-Agent Ticket Resolution",
-          "detail": "Built MAESTRO, a Cadence multi-agent platform for engineering-ticket resolution with human oversight; on an internal evaluation it cut ticket-resolution time by 45% and RCA time by 55%. Selected for trade-secret protection — implementation details remain confidential."
+          "title": "MAESTRO — 多代理票证解析",
+          "detail": "构建了 MAESTRO，一个 Cadence 多代理平台，用于在人工监督下解决工程票据问题；根据内部评估，它将故障单解决时间缩短了 45%，将 RCA 时间缩短了 55%。被选为商业秘密保护——实施细节保密。"
         },
         "1": {
-          "title": "ChipStack Xcelium AI Agents",
-          "detail": "Developed performance and memory optimization agents using Python, OpenAI Agents SDK and RAG to profile simulations, identify bottlenecks, and recommend, apply and verify optimizations; achieved 31.3% simulation speedup on a validated benchmark."
+          "title": "ChipStack Xcelium AI 代理商",
+          "detail": "使用 Python、OpenAI Agents SDK 和 RAG 开发性能和内存优化代理来分析模拟、识别瓶颈并推荐、应用和验证优化；在经过验证的基准上实现了 31.3% 的模拟加速。"
         },
         "2": {
-          "title": "Deterministic-First Agent Workflows",
-          "detail": "Re-architected agent workflows as a deterministic-first Python pipeline, cutting end-to-end execution from 148.3s to 76.8s and analysis from 71.1s to 18.0s on a benchmark design."
+          "title": "确定性优先代理工作流程",
+          "detail": "将代理工作流程重新架构为确定性优先的 Python 管道，将基准设计上的端到端执行时间从 148.3 秒缩短至 76.8 秒，将分析时间从 71.1 秒缩短至 18.0 秒。"
         },
         "3": {
-          "title": "Regression Triage & Regold System",
-          "detail": "Built a ~16K-line Xcelium regression system using rule-based classification, TF-IDF clustering, historical learning and JEDAI LLM review to automate triage, regolds, waivers and verification; processed 2,120 failures across 79 runs, 73% of them in runs by other engineers."
+          "title": "回归分类和重新黄金系统",
+          "detail": "使用基于规则的分类、TF-IDF 聚类、历史学习和 JEDAI LLM 审查构建了约 16K 线的 Xcelium 回归系统，以自动进行分类、重新分配、豁免和验证；在 79 次运行中处理了 2,120 个故障，其中 73% 是由其他工程师进行的。"
         },
         "4": {
-          "title": "Cross-Stream Perforce Replay",
-          "detail": "Built replay tooling that derives each changelist's source stream and selectively syncs only the paths it touches, automating multi-CL backports across Xcelium release branches."
+          "title": "跨流 Perforce 重播",
+          "detail": "构建的重播工具可派生每个变更列表的源流，并有选择地仅同步其涉及的路径，从而自动跨 Xcelium 发布分支进行多 CL 向后移植。"
         },
         "5": {
-          "title": "MCP Servers for Engineering Tools",
-          "detail": "Wrote Model Context Protocol servers that connect GitHub Copilot, Cursor and Claude Code to EDA and engineering systems — including debugging, code-review, build and LLM-gateway bridges."
+          "title": "用于工程工具的 MCP 服务器",
+          "detail": "编写模型上下文协议服务器，将 GitHub Copilot、Cursor 和 Claude Code 连接到 EDA 和工程系统 - 包括调试、代码审查、构建和 LLM 网关桥。"
         },
         "6": {
-          "title": "Reusable Engineering Infrastructure",
-          "detail": "Designed graph-based workflow orchestration, checkpoint/resume, structured outputs, failure recovery, LLM-as-judge regression testing and developer automation tooling."
+          "title": "可重复使用的工程基础设施",
+          "detail": "设计了基于图形的工作流程编排、检查点/恢复、结构化输出、故障恢复、LLM 作为法官回归测试和开发人员自动化工具。"
         }
       }
     },
     "cadence-engineer": {
-      "role": "R&D Software Engineer",
-      "location": "Noida, India · On-site",
-      "summary": "Low-level C++ optimization, RTL transformations and distributed performance analysis for Xcelium Logic Simulator.",
+      "role": "研发软件工程师",
+      "location": "印度诺伊达 · 现场",
+      "summary": "Xcelium 逻辑模拟器的低级 C++ 优化、RTL 转换和分布式性能分析​​。",
       "highlights": {
         "0": {
-          "title": "Xcelium Throughput & Samsung Performance Win",
-          "detail": "Engineered low-level C++ optimizations and scalable simulator architecture, improving throughput by 18–19% on large-scale distributed workloads. Led benchmarking and distributed performance analysis that contributed to a multi-million dollar Samsung deal."
+          "title": "Xcelium 吞吐量和 Samsung 性能获胜",
+          "detail": "设计了低级 C++ 优化和可扩展模拟器架构，将大规模分布式工作负载的吞吐量提高了 18-19%。主导基准测试和分布式性能分析​​，促成了价值数百万美元的 Samsung 交易。"
         },
         "1": {
-          "title": "Xform Engine RTL Transformations",
-          "detail": "Implemented RTL transformations delivering 13–14% cumulative parsing speedups and improved simulation performance for Apple, Google, Samsung and NVIDIA workloads."
+          "title": "Xform Engine RTL 转换",
+          "detail": "实施了 RTL 转换，为 Apple、Google、Samsung 和 NVIDIA 工作负载提供 13-14% 的累积解析加速和改进的模拟性能。"
         },
         "2": {
-          "title": "Diagnostics & Cadence India Conference",
-          "detail": "Presented technical findings at Cadence India Conference, driving adoption of diagnostic libraries that reduced root-cause analysis time by ~40% through flag analysis and log parsing."
+          "title": "诊断和 Cadence 印度会议",
+          "detail": "在 Cadence 印度会议上展示了技术成果，推动了诊断库的采用，通过标志分析和日志解析将根本原因分析时间减少了约 40%。"
         },
         "3": {
-          "title": "Corporate VP Recognition & All-Hands Spotlight",
-          "detail": "Received multiple awards for technical leadership and innovation, including Corporate VP recognition and an All-Hands spotlight for driving Samsung-deal performance wins."
+          "title": "企业副总裁认可和全体员工的关注",
+          "detail": "因技术领导力和创新而获得多项奖项，包括公司副总裁认可和因推动 Samsung 交易绩效获胜而获得的全员聚光灯。"
         }
       }
     }
@@ -2321,76 +2352,76 @@
   "honorsData": {
     "maestro-selected-for-trade-secret-protection": {
       "title": "MAESTRO——入选商业秘密保护",
-      "org": "Cadence Design Systems",
+      "org": "Cadence 设计系统",
       "detail": "MAESTRO 是一个用于端到端工程工单解决的多智能体平台，被认定为专有知识产权，并入选商业秘密保护。"
     },
     "10-000-tezos-blockchain-grant": {
-      "title": "$10,000 Tezos Blockchain Grant",
+      "title": "10,000 美元 Tezos 区块链补助金",
       "org": "Tezos India · Game Geeks",
-      "detail": "Awarded for expanding Tezos Premier League — a decentralized gaming application and NFT marketplace on Tezos."
+      "detail": "因扩展 Tezos Premier League（一种去中心化游戏应用程序）和 Tezos 上的 NFT 市场而获奖。"
     },
     "30-days-of-google-cloud-completion": {
-      "title": "30 Days of Google Cloud Completion",
+      "title": "Google Cloud 30 天完成",
       "org": "Google Cloud",
-      "detail": "Completed 30 Days of Google Cloud — 11 Qwiklabs quests covering core GCP, networking, security and ML services."
+      "detail": "完成了 30 天的 Google Cloud — 11 个 Qwiklabs 任务，涵盖核心 GCP、网络、安全和 ML 服务。"
     },
     "runner-up-virtual-fiesta-code-sword": {
-      "title": "Runner-Up — Virtual Fiesta (CODE SWORD)",
+      "title": "亚军 — 虚拟嘉年华 (CODE SWORD)",
       "org": "NSUT",
-      "detail": "Runner-up at NSUT Virtual Fiesta's CODE SWORD programming contest."
+      "detail": "NSUT Virtual Fiesta 的 CODE SWORD 编程竞赛亚军。"
     },
     "runner-up-bvest-code-trek": {
-      "title": "Runner-Up — BVEST (CODE TREK)",
+      "title": "亚军 — BVEST (CODE TREK)",
       "org": "BVCOE",
-      "detail": "Runner-up at BVEST CODE TREK inter-school programming competition."
+      "detail": "BVEST CODE TREK 校际编程竞赛亚军。"
     },
     "second-runner-up-force-fest-pro-sort": {
-      "title": "Second Runner-Up — Force Fest (PRO SORT)",
+      "title": "季军 — Force Fest（专业类别）",
       "org": "Air Force Bal Bharati School",
-      "detail": "Second runner-up at Force Fest's PRO SORT inter-school coding event."
+      "detail": "在 Force Fest 的 PRO SORT 校际编码活动中获得季军。"
     },
     "second-runner-up-digilogous-sudo-solve": {
-      "title": "Second Runner-Up — Digilogous (SUDO SOLVE)",
+      "title": "季军 — Digilogous (SUDO SOLVE)",
       "org": "Rukmini Devi Public School",
-      "detail": "Second runner-up at Digilogous SUDO SOLVE programming contest."
+      "detail": "Digilogous SUDO SOLVE 编程大赛季军。"
     },
     "niit-it-wizard-very-good": {
-      "title": "NIIT IT Wizard — Very Good",
+      "title": "NIIT IT 向导 — 非常好",
       "org": "NIIT",
-      "detail": "Recognized at the 'Very Good' tier in NIIT's IT Wizard national programme."
+      "detail": "在 NIIT 的 IT Wizard 国家计划中获得“非常好”级别的认可。"
     },
     "niit-it-wizard-excellent": {
-      "title": "NIIT IT Wizard — Excellent",
+      "title": "NIIT IT 向导 — 优秀",
       "org": "NIIT",
-      "detail": "Recognized at the 'Excellent' tier in NIIT's IT Wizard national programme."
+      "detail": "在 NIIT 的 IT Wizard 国家计划中获得“优秀”级别认可。"
     },
     "samsung-performance-win-corporate-vp-recognition": {
-      "title": "Samsung Performance Win — Corporate VP Recognition",
-      "org": "Cadence Design Systems",
+      "title": "Samsung 绩效胜利 — 企业副总裁认可",
+      "org": "Cadence 设计系统",
       "date": "2022–2026",
-      "detail": "Benchmarking and distributed performance analysis contributed to a multi-million dollar Samsung deal. Recognized by the Corporate VP and spotlighted in an All-Hands meeting for the performance wins."
+      "detail": "基准测试和分布式性能分析​​促成了价值数百万美元的 Samsung 交易。获得公司副总裁的认可，并在全体会议上因绩效胜利而受到关注。"
     },
     "cadence-india-conference-performance-diagnostics": {
-      "title": "Cadence India Conference — Performance Diagnostics",
-      "org": "Cadence Design Systems",
+      "title": "Cadence 印度会议 — 性能诊断",
+      "org": "Cadence 设计系统",
       "date": "2022–2026",
-      "detail": "Presented technical findings that drove adoption of diagnostic libraries, reducing root-cause analysis time by ~40% through flag analysis and log parsing."
+      "detail": "提出了推动诊断库采用的技术发现，通过标志分析和日志解析将根本原因分析时间减少了约 40%。"
     }
   },
   "settings": {
     "chatbot": "Ask Ayush 设置",
-    "menuLabel": "Site settings",
-    "openLabel": "Open site settings",
-    "language": "Language",
-    "theme": "Theme",
-    "shortcuts": "Keyboard shortcuts",
-    "commitRain": "Commit rain",
-    "commitRainHelp": "Which public GitHub commits feed the decorative rain.",
+    "menuLabel": "站点设置",
+    "openLabel": "打开站点设置",
+    "language": "语言",
+    "theme": "主题",
+    "shortcuts": "键盘快捷键",
+    "commitRain": "下雨",
+    "commitRainHelp": "哪个公众GitHub犯喂装饰雨。",
     "commitRainWindows": {
-      "week": "This week",
-      "month": "This month",
-      "year": "This year",
-      "all": "All time"
+      "week": "本星期",
+      "month": "本月",
+      "year": "今年",
+      "all": "所有时间"
     }
   },
   "skillsExplorer": {
@@ -2398,26 +2429,26 @@
       "technical": "技术分类",
       "applied": "工程应用"
     },
-    "ariaLabel": "Skills explorer",
-    "eyebrow": "/ skills",
+    "ariaLabel": "技能探索者",
+    "eyebrow": "/ 技能",
     "heading": "Skills explorer",
     "intro": "Choose a technical category or an applied engineering area to see its tools and related work.",
     "filterAriaLabel": "Filter skills by category",
     "emptyState": "Pick a category above to see the tools in that area.",
-    "toolsCount": "{count} tools",
+    "toolsCount": "{count} 工具",
     "categories": {
-      "languages": "Programming Languages",
-      "frontend": "Frontend",
-      "backend": "Backend & APIs",
-      "data": "Databases & Storage",
-      "messaging": "Messaging & Streaming",
+      "languages": "编程语言",
+      "frontend": "前端",
+      "backend": "后端 & API",
+      "data": "数据库和存储",
+      "messaging": "消息传递和流媒体",
       "ai": "AI / ML",
-      "cloud": "Cloud & DevOps",
-      "performance": "Performance & Systems",
-      "reliability-security": "Reliability & Security",
-      "testing": "Testing & QA",
-      "observability": "Observability",
-      "tooling": "Tooling"
+      "cloud": "云与开发运营",
+      "performance": "性能与系统",
+      "reliability-security": "可靠性与安全性",
+      "testing": "测试和质量保证",
+      "observability": "可观察性",
+      "tooling": "工装"
     },
     "stageAria": "Design snap stage",
     "stageIdle": "design snap · pick a category",
@@ -2435,170 +2466,170 @@
   },
   "liveFeeds": {
     "openXml": "打开 XML 订阅源",
-    "ariaLabel": "Live activity feeds",
-    "eyebrow": "/ live feeds",
-    "heading": "Live activity",
-    "intro": "Recent posts, videos and commits — pulled live from Medium, YouTube and GitHub and cached for an hour at the edge.",
+    "ariaLabel": "实时活动动态",
+    "eyebrow": "/ 现场直播",
+    "heading": "现场活动",
+    "intro": "最近的帖子、视频和提交 — 从 Medium、YouTube 和 GitHub 实时提取，并在边缘缓存一小时。",
     "medium": {
-      "label": "Latest blog posts",
-      "cta": "Read on Medium",
-      "empty": "Visit Medium for the latest articles."
+      "label": "最新博客文章",
+      "cta": "阅读 Medium",
+      "empty": "请访问 Medium 获取最新文章。"
     },
     "youtube": {
-      "label": "Latest YouTube videos",
-      "cta": "Open channel",
-      "empty": "Visit YouTube for the latest videos."
+      "label": "最新 YouTube 视频",
+      "cta": "开放渠道",
+      "empty": "访问 YouTube 了解最新视频。"
     },
     "github": {
-      "label": "Recent GitHub activity",
+      "label": "最近的 GitHub 活动",
       "cta": "github.com/blackphoenix42",
-      "empty": "Recent activity will appear here when the feed is reachable."
+      "empty": "当可以访问源时，最近的活动将显示在此处。"
     },
-    "refreshNote": "Fetched automatically from Medium, YouTube and GitHub with a 15-minute cache. GitHub activity may appear later because its public event feed is delayed."
+    "refreshNote": "自动从 Medium、YouTube 和 GitHub 获取，具有 15 分钟缓存。 GitHub 活动可能会稍后出现，因为其公共事件源被延迟。"
   },
   "consent": {
-    "title": "Cookies & language",
-    "body": "I use a single cookie (<code>NEXT_LOCALE</code>) to remember the language you picked. No analytics cookies, no tracking pixels.",
-    "accept": "Got it",
-    "privacy": "Privacy policy",
-    "dismissAriaLabel": "Dismiss cookie notice"
+    "title": "Cookie 和语言",
+    "body": "我使用单个 cookie (<code>NEXT_LOCALE</code>) 来记住您选择的语言。没有分析cookie，没有跟踪像素。",
+    "accept": "知道了",
+    "privacy": "隐私政策",
+    "dismissAriaLabel": "关闭 cookie 通知"
   },
   "concepts": {
-    "ariaLabel": "Roadmap",
-    "eyebrow": "/ roadmap",
-    "heading": "What I'd build next",
-    "intro": "Product concepts at the intersection of performance engineering and intelligent developer tooling. <warn>Pre-launch — repos are placeholders</warn> until the first commit lands.",
-    "placeholderRepo": "Placeholder repo — in development",
-    "target": "target",
+    "ariaLabel": "路线图",
+    "eyebrow": "/ 路线图",
+    "heading": "我接下来要建造什么",
+    "intro": "性能工程和智能开发工具交叉的产品概念。",
+    "placeholderRepo": "占位符存储库 — 正在开发中",
+    "target": "目标",
     "status": {
-      "design": "Design phase",
-      "prototyping": "Prototyping",
-      "inDevelopment": "In development"
+      "design": "设计阶段",
+      "prototyping": "原型制作",
+      "inDevelopment": "开发中"
     },
     "items": {
       "tracemind": {
         "name": "TraceMind",
-        "pitch": "AI-powered distributed tracing assistant for diagnosing production latency regressions.",
-        "description": "An assistant that ingests OpenTelemetry traces and metrics, builds a queryable trace knowledge graph, and uses LLM reasoning to triage latency regressions and propose hypotheses with evidence."
+        "pitch": "AI 支持的分布式跟踪助手，用于诊断生产延迟回归。",
+        "description": "一个助手，可以提取 OpenTelemetry 跟踪和指标，构建可查询的跟踪知识图，并使用 LLM 推理来分类延迟回归并提出有证据的假设。"
       },
       "silicongraph": {
         "name": "SiliconGraph",
-        "pitch": "Interactive graph explorer for debugging RTL dependency chains and optimization opportunities.",
-        "description": "A WebAssembly-powered explorer that lets engineers traverse RTL dependency graphs, highlight optimization candidates and run what-if transformations directly in the browser."
+        "pitch": "用于调试 RTL 依赖链和优化机会的交互式图形浏览器。",
+        "description": "由 WebAssembly 驱动的浏览器，让工程师可以遍历 RTL 依赖图、突出显示优化候选对象并直接在浏览器中运行假设转换。"
       },
       "infralens": {
         "name": "InfraLens",
-        "pitch": "Visual system-design playground for experimenting with queues, caches, sharding and failure scenarios.",
-        "description": "A live system-design sandbox where you compose services, queues, caches and failure modes, then watch traffic, backpressure and consistency play out in real time."
+        "pitch": "用于试验队列、缓存、分片和故障场景的视觉系统设计游乐场。",
+        "description": "实时系统设计沙箱，您可以在其中组合服务、队列、缓存和故障模式，然后实时观察流量、背压和一致性。"
       }
     }
   },
   "workbench": {
-    "ariaLabel": "GitHub workbench",
+    "ariaLabel": "GitHub工作台",
     "eyebrow": "/ github",
-    "heading": "Public workbench",
-    "intro": "A curated slice of public repositories spanning algorithms, full-stack apps, mobile, blockchain and competitive programming.",
-    "noDescription": "No description provided.",
+    "heading": "公共工作台",
+    "intro": "精选的公共存储库，涵盖算法、全栈应用程序、移动、区块链和竞争性编程。",
+    "noDescription": "没有提供描述。",
     "categories": {
-      "All": "All",
+      "All": "全部",
       "AI": "AI",
-      "Systems": "Systems",
-      "Frontend": "Frontend",
-      "Mobile": "Mobile",
+      "Systems": "系统",
+      "Frontend": "前端",
+      "Mobile": "移动的",
       "CP": "CP",
-      "Blockchain": "Blockchain"
+      "Blockchain": "区块链"
     }
   },
   "engineeringSpectrum": {
-    "ariaLabel": "Engineering spectrum",
-    "eyebrow": "/ skills",
-    "heading": "Engineering spectrum",
-    "intro": "Capability clusters spanning low-level performance, intelligent systems, distributed backends, product engineering, infrastructure and reliability.",
-    "filterAriaLabel": "Filter skills by cluster",
-    "all": "All",
-    "toolsCount": "{count} tools",
-    "appliedIn": "Applied in",
+    "ariaLabel": "工程谱",
+    "eyebrow": "/ 技能",
+    "heading": "工程谱",
+    "intro": "能力集群涵盖低级性能、智能系统、分布式后端、产品工程、基础设施和可靠性。",
+    "filterAriaLabel": "按集群过滤技能",
+    "all": "全部",
+    "toolsCount": "{count} 工具",
+    "appliedIn": "应用于",
     "clusters": {
       "performance": {
-        "name": "Performance Core",
-        "blurb": "Low-level engineering for simulation, profiling and runtime optimization."
+        "name": "性能核心",
+        "blurb": "用于模拟、分析和运行时优化的低级工程。"
       },
       "intelligent": {
-        "name": "Intelligent Systems",
-        "blurb": "Agentic AI, retrieval, embeddings and computer vision for engineering workflows."
+        "name": "智能系统",
+        "blurb": "Agentic AI，用于工程工作流程的检索、嵌入和计算机视觉。"
       },
       "backend": {
-        "name": "Distributed Backend",
-        "blurb": "Service architecture, streaming, identity and storage for scalable systems."
+        "name": "分布式后端",
+        "blurb": "可扩展系统的服务架构、流媒体、身份和存储。"
       },
       "product": {
-        "name": "Product Engineering",
-        "blurb": "Polished, accessible product surfaces with rigorous quality gates."
+        "name": "产品工程",
+        "blurb": "抛光、易接近的产品表面具有严格的质量关卡。"
       },
       "infra": {
-        "name": "Infrastructure",
-        "blurb": "Cloud, containers, observability and developer-experience plumbing."
+        "name": "基础设施",
+        "blurb": "云、容器、可观察性和开发人员体验管道。"
       },
       "reliability-security": {
-        "name": "Reliability & Security",
-        "blurb": "Identity, hardening, API contracts and production-readiness controls."
+        "name": "可靠性与安全性",
+        "blurb": "身份、强化、API 合同和生产就绪控制。"
       }
     }
   },
   "languagesData": {
     "english": {
-      "name": "English",
-      "level": "Native or bilingual"
+      "name": "英语",
+      "level": "母语或双语"
     },
     "hindi": {
-      "name": "Hindi",
-      "level": "Native or bilingual"
+      "name": "印地语",
+      "level": "母语或双语"
     },
     "japanese": {
-      "name": "Japanese",
-      "level": "Elementary proficiency"
+      "name": "日语",
+      "level": "初级熟练程度"
     },
     "sanskrit": {
-      "name": "Sanskrit",
-      "level": "Limited working proficiency"
+      "name": "梵语",
+      "level": "工作能力有限"
     }
   },
   "certsData": {
-    "google-cloud-30-days-completion": "Google Cloud — 30 Days Completion",
-    "gcp-participation-certificate": "GCP Participation Certificate",
-    "aws-fundamentals-coursera": "AWS Fundamentals (Coursera)",
-    "adobe-contest": "Adobe Contest",
-    "amazon-contest": "Amazon Contest",
-    "google-contest": "Google Contest",
-    "microsoft-coding-interview": "Microsoft Coding Interview",
-    "software-engineer": "Software Engineer",
-    "problem-solving-intermediate": "Problem Solving — Intermediate",
-    "rest-api-intermediate": "REST API — Intermediate",
-    "frontend-react": "Frontend (React)",
-    "sql-advanced": "SQL — Advanced",
-    "node-js-intermediate": "Node.js — Intermediate",
-    "javascript-intermediate": "JavaScript — Intermediate",
-    "golang-intermediate": "Golang — Intermediate",
-    "jp-morgan-chase-swe-virtual": "JP Morgan Chase — SWE Virtual",
-    "flipkart-d2c-participation": "Flipkart D2C Participation",
+    "google-cloud-30-days-completion": "Google Cloud — 30 天完成",
+    "gcp-participation-certificate": "GCP 参展证书",
+    "aws-fundamentals-coursera": "AWS 基础知识 (Coursera)",
+    "adobe-contest": "Adobe 竞赛",
+    "amazon-contest": "亚马逊大赛",
+    "google-contest": "Google 竞赛",
+    "microsoft-coding-interview": "微软编码面试",
+    "software-engineer": "软件工程师",
+    "problem-solving-intermediate": "解决问题 — 中级",
+    "rest-api-intermediate": "休息 API — 中级",
+    "frontend-react": "前端 (React)",
+    "sql-advanced": "SQL — 高级",
+    "node-js-intermediate": "Node.js — 中级",
+    "javascript-intermediate": "JavaScript — 中级",
+    "golang-intermediate": "Golang — 中级",
+    "jp-morgan-chase-swe-virtual": "摩根大通 — SWE 虚拟",
+    "flipkart-d2c-participation": "Flipkart D2C 参与",
     "freecodecamp-javascript": "freeCodeCamp — JavaScript",
-    "core-java": "Core Java",
-    "advanced-java": "Advanced Java",
+    "core-java": "核心Java",
+    "advanced-java": "高级Java",
     "python": "Python",
-    "react-hooks-redux": "React Hooks + Redux",
-    "web-chat-using-react": "Web Chat using React",
+    "react-hooks-redux": "React 挂钩 + Redux",
+    "web-chat-using-react": "使用 React 进行网络聊天",
     "yaml": "YAML",
     "seo": "SEO"
   },
   "roadmap": {
-    "tag": "/ 2027 roadmap",
-    "heading": "Delivery timeline · 2027",
+    "tag": "/ 2027 年路线图",
+    "heading": "交付时间表·2027",
     "planning": "plan",
-    "note": "Target quarters, not release commitments. Scope will evolve through learning, prototypes and validation.",
+    "note": "目标季度，而不是发布承诺。范围将通过学习、原型和验证而不断发展。",
     "status": {
-      "design": "Design",
-      "prototyping": "Prototyping",
-      "in-development": "In development"
+      "design": "设计",
+      "prototyping": "原型制作",
+      "in-development": "开发中"
     }
   }
 }

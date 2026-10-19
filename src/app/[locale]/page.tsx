@@ -38,6 +38,27 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </div>
       <MetricsStrip />
       <TechMarquee />
+      <EngineerAware
+        engineer={
+          <div className={lazy}>
+            <FeaturedWork limit={4} />
+          </div>
+        }
+        full={
+          <RecruiterAware
+            recruiter={
+              <div className={lazy}>
+                <FeaturedWork limit={4} />
+              </div>
+            }
+            full={
+              <div className={lazy}>
+                <FeaturedWork limit={2} />
+              </div>
+            }
+          />
+        }
+      />
       <div className={lazy}>
         <DesignGallery limit={2} home />
       </div>
@@ -50,9 +71,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
             <div className={lazy}>
               <SystemDesignDiagram />
-            </div>
-            <div className={lazy}>
-              <FeaturedWork limit={4} />
             </div>
             <div className={lazy}>
               <CPCommandCenter />
@@ -73,18 +91,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
                 </div>
                 <div className={lazy}>
-                  <FeaturedWork limit={4} />
-                </div>
-                <div className={lazy}>
                   <ContactCTA />
                 </div>
               </>
             }
             full={
               <>
-                <div className={lazy}>
-                  <FeaturedWork limit={2} />
-                </div>
                 <div className={lazy}>
                   <CareerTimeline cta={{ href: "/experience", label: viewFullExperience }} />
                 </div>

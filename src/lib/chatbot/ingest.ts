@@ -206,7 +206,7 @@ export function backgroundChunks(c: SiteContent): KnowledgeChunk[] {
       id: "competitive-ratings",
       source: "Competitive Programming",
       title: "Competitive programming ratings",
-      href: "/competitive-programming",
+      href: "/now",
       text: c.competitive
         .map((a) =>
           [a.platform, a.rank, a.rating !== undefined && `rating ${a.rating}`, a.detail]

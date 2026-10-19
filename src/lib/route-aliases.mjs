@@ -16,8 +16,14 @@ export const PAGE_ALIASES = {
   "/work": ["/projects", "/project", "/portfolio", "/case-studies", "/casestudies", "/works"],
   "/skills": ["/skill", "/stack", "/tech", "/technology", "/technologies", "/arsenal"],
   "/experience": ["/exp", "/career", "/jobs", "/timeline", "/work-history", "/workhistory"],
-  "/now": ["/currently", "/atm", "/today", "/status", "/doing"],
-  "/competitive-programming": [
+  "/now": [
+    "/currently",
+    "/atm",
+    "/today",
+    "/status",
+    "/doing",
+    // Former CP hub URL + synonyms — Now is the canonical surface.
+    "/competitive-programming",
     "/cp",
     "/competitive",
     "/coding",

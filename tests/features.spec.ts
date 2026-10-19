@@ -6,8 +6,11 @@ import { test, expect } from "@playwright/test";
 test.describe("/now page", () => {
   test("renders the current-focus snapshot", async ({ page }) => {
     await page.goto("/now");
+    await expect(page).toHaveURL(/\/now$/);
     await expect(page.getByRole("heading", { level: 1 })).toContainText("What I'm doing now");
     await expect(page.getByRole("heading", { name: "Current focus" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "What I'm building next" })).toHaveCount(1);
+    await expect(page.getByRole("heading", { name: /What I'd build next/i })).toHaveCount(0);
   });
 });
 

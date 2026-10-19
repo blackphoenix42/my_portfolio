@@ -47,10 +47,17 @@ test("applied skills and consolidated plans are available without footer clutter
     .click();
   await expect(page.getByRole("heading", { name: "Applied in", exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /Xcelium Logic Simulator/ })).toBeVisible();
-  await page.goto("/competitive-programming");
+  await page.goto("/now");
+  await expect(page).toHaveURL(/\/now$/);
   await expect(page.getByRole("heading", { name: "Current focus", exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Delivery timeline · 2027" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "What I'm building next" })).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: /What I'd build next/i })).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Ship a small working slice" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "TraceMind", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "What I'm doing now." })).toHaveCount(1);
+  await expect(page.getByRole("heading", { name: "Focus snapshot" })).toBeVisible();
+  await page.goto("/competitive-programming");
+  await expect(page).toHaveURL(/\/now$/);
   await expect(
     page.locator("footer").getByRole("link", { name: /Now|System design/i }),
   ).toHaveCount(0);
