@@ -138,7 +138,6 @@ export function MessageVoiceControls({
       if (recordTimerRef.current) window.clearInterval(recordTimerRef.current);
       if (dictateTimerRef.current) window.clearInterval(dictateTimerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function stopTracks() {

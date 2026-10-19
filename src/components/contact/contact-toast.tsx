@@ -30,7 +30,10 @@ export function ContactToast({
   const reduce = useReducedMotion();
   const [mounted, setMounted] = useState(false);
   const dismissRef = useRef(onDismiss);
-  dismissRef.current = onDismiss;
+
+  useEffect(() => {
+    dismissRef.current = onDismiss;
+  }, [onDismiss]);
 
   useEffect(() => setMounted(true), []);
 
